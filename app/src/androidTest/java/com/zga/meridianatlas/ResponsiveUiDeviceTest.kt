@@ -231,7 +231,7 @@ class ResponsiveUiDeviceTest {
         compose.onNodeWithText("全部肌肉").assertDoesNotExist()
         assertState { assertFalse(model.state.value.layer.lines); assertFalse(model.state.value.layer.points) }
         mode(AtlasMode.MUSCLES)
-        quickTools("全部肌肉", "浅层", "中层", "深层", "骨骼参照")
+        quickTools("全部肌肉", "浅层", "中层", "深层", "肌肉", "骨骼", "内脏")
         compose.onNodeWithContentDescription("图谱目录").performClick()
         compose.onNodeWithText("肌肉目录").assertIsDisplayed()
         compose.onNodeWithText("解剖目录").assertDoesNotExist()
@@ -247,7 +247,7 @@ class ResponsiveUiDeviceTest {
             assertFalse(model.state.value.layer.points)
         }
         mode(AtlasMode.MERIDIANS)
-        quickTools("经络线", "穴位标记", "中文名称", "体表皮肤", "脏腑关系线", "内脏透视", "左半身透视", "右半身透视")
+        quickTools("经络线", "穴位标记", "中文名称", "皮肤", "肌肉", "骨骼", "内脏", "脏腑关系线", "内脏透视", "左半身透视", "右半身透视")
         compose.onNodeWithText("全部肌肉").assertDoesNotExist()
         compose.onNodeWithContentDescription("图谱目录").performClick()
         compose.onNodeWithText("经络与穴位").assertIsDisplayed()
@@ -384,7 +384,7 @@ class ResponsiveUiDeviceTest {
         mode(AtlasMode.MUSCLES)
         compose.onNodeWithText("肌肉目录").assertIsDisplayed()
         compose.onNodeWithText("解剖目录").assertDoesNotExist()
-        quickTools("全部肌肉", "浅层", "中层", "深层", "骨骼参照")
+        quickTools("全部肌肉", "浅层", "中层", "深层", "肌肉", "骨骼", "内脏")
         assertState { assertEquals(AtlasMode.MUSCLES, model.state.value.mode); assertFalse(model.state.value.layer.bone) }
         // Each mode now owns its catalogue; acupoints are searched in MERIDIANS.
         mode(AtlasMode.MERIDIANS)
@@ -392,7 +392,7 @@ class ResponsiveUiDeviceTest {
         compose.onNodeWithText("肌肉目录").assertDoesNotExist()
         compose.onNodeWithText("经脉").assertDoesNotExist()
         compose.onNodeWithText("穴位").assertDoesNotExist()
-        quickTools("经络线", "穴位标记", "中文名称", "体表皮肤", "脏腑关系线", "内脏透视", "左半身透视", "右半身透视")
+        quickTools("经络线", "穴位标记", "中文名称", "皮肤", "肌肉", "骨骼", "内脏", "脏腑关系线", "内脏透视", "左半身透视", "右半身透视")
         search("fuai")
         compose.onAllNodesWithContentDescription("定位腹哀").assertCountEquals(1)
         compose.onNodeWithContentDescription("定位腹哀").assertIsDisplayed()
@@ -591,7 +591,7 @@ class ResponsiveUiDeviceTest {
             assertState {
                 assertEquals(side, model.state.value.layer.cutawaySide)
                 assertTrue(model.state.value.layer.skin)
-                assertFalse(model.state.value.layer.muscle)
+                assertTrue(model.state.value.layer.muscle)
                 assertTrue(model.state.value.layer.organ)
                 assertTrue(model.state.value.layer.bone)
             }

@@ -1,9 +1,9 @@
 {
-  "applicationVersion": "0.3.0",
+  "applicationVersion": "0.4.0",
   "apk": {
-    "path": "outputs/human-study-0.3.0-arm64.apk",
-    "bytes": 118292258,
-    "sha256": "fe1c4885e79ec761de0d7cfc2becf40fb7a8e385c42171f175b3cf34ce0d3908"
+    "path": "outputs/human-study-0.4.0-arm64.apk",
+    "bytes": 118534614,
+    "sha256": "e0ad9797fcbbedc5a80c4ce95d8c8b93fbd0e211871132d5231af4af62c61ef4"
   },
   "package": "com.zga.meridianatlas",
   "checks": {
@@ -21,8 +21,8 @@
     "instances": 843,
     "meridians": 20,
     "structures": 1239,
-    "fascialConnections": 3,
-    "connectionReferenceRegions": 20
+    "fascialConnections": 7,
+    "connectionReferenceRegions": 38
   },
   "assets": [
     {
@@ -37,8 +37,8 @@
     },
     {
       "path": "content/fascia.json",
-      "bytes": 45493,
-      "sha256": "31cc0df706b4dd8544b44ba592923a30f58a26e37a56471315bef69acd8fc6f3"
+      "bytes": 1941287,
+      "sha256": "5307befdb61497e43d1d52f7523cbbc96033ebe833dc3738f8895499ff4b130e"
     },
     {
       "path": "content/landmarks.json",

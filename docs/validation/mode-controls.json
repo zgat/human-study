@@ -1,0 +1,80 @@
+{
+  "applicationVersion": "0.3.3",
+  "capturedAtUtc": "2026-10-20T13:00:42.449746+00:00",
+  "changesZh": [
+    "三个模式共享独立的肌肉、骨骼、内脏、皮肤快捷开关；保留分层、单结构隐藏及各模式设置",
+    "高亮穴位在目录首次打开或选择改变时展开所属主经/奇穴部位，并以真实列表行索引定位",
+    "经络与经外奇穴分别全选/全不选、全部展开/收起；保持高亮穴位及归经上下文，搜索仍跨分类"
+  ],
+  "build": {
+    "status": "passed",
+    "variants": [
+      "debug",
+      "release",
+      "debugAndroidTest"
+    ],
+    "unitTests": {
+      "tests": 69,
+      "passed": 69,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "lint": {
+      "errors": 0,
+      "warnings": 18
+    }
+  },
+  "domainRuntime": {
+    "status": "passed",
+    "scopeZh": "当前 debug 编译类的主机 JVM 目录领域验证；读取随包 413 个穴位与 20 条经络，逐条核对主经/奇穴部位目标、真实行键与索引。",
+    "points": 413,
+    "meridians": 20,
+    "primaryDestinations": 362,
+    "extraDestinations": 51,
+    "layoutsChecked": 1331,
+    "globalQueryPairsChecked": 434,
+    "assertions": 37597,
+    "limitationsZh": "不是 Android Compose、Filament、安装或真机手势验收；不证明实际滚动像素。穴位使用当前编译 decodePoint 解码；经络夹具保留名称、颜色、类型、合并后的所属/关联穴位 ID，省略目录不使用的几何路径及来源。未枚举 2 的 20 次方个路线组合，覆盖全部收起、全部展开、20 经络各自展开及每个奇穴部位各自展开。"
+  },
+  "domainRuntimeReportSha256": "975c57477783f570582499969f9230552552eddf65c59920d4f787da5fb0b857",
+  "androidUiTests": {
+    "newCases": 4,
+    "compiled": true,
+    "executed": false,
+    "status": "device_unavailable"
+  },
+  "device": {
+    "installation": "not_performed",
+    "runtime": "not_performed",
+    "discovery": "bound_device_not_found",
+    "scopeZh": "仅使用已绑定设备身份自动发现；尚未执行本版真机滚动、触控、画面或持续性能验收"
+  },
+  "apk": {
+    "path": "outputs/human-study-0.3.3-arm64.apk",
+    "bytes": 118308642,
+    "sha256": "c3697d08eb8e97c21e325bbf8766688957b70331ad14a3ac768280b46b0742ea",
+    "package": "com.zga.meridianatlas",
+    "versionName": "0.3.3",
+    "versionCode": 8,
+    "minSdk": 29,
+    "targetSdk": 36,
+    "signingPurpose": "local-testing"
+  },
+  "apkChecks": {
+    "zipCrc": true,
+    "bundledSourceHashes": true,
+    "offlinePermission": true,
+    "arm64Only": true,
+    "elf16KiBAlignment": true,
+    "signature": true,
+    "zip16KiBAlignment": true,
+    "applicationLabel": true
+  },
+  "assetsChangedFrom032": false,
+  "limitationsZh": [
+    "搜索词会保留；高亮穴位不匹配当前查询时，清空查询后定位所属分组",
+    "全不选清除当前分类的手动勾选；当前选穴的归经仍显示，取消选点后按手动集合显示",
+    "主机 JVM 领域验证和编译不替代 Android 实际交互及医学定位审校"
+  ]
+}

@@ -6,6 +6,7 @@ import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
@@ -45,6 +46,7 @@ internal fun AtlasCatalogue(
     onQuery: (String) -> Unit,
     onMeridian: (String) -> Unit,
     onToggleMeridian: (String) -> Unit,
+    onSetMeridians: (Set<String>, Boolean) -> Unit,
     onPoint: (Acupoint) -> Unit,
     onStructure: (AnatomyStructure) -> Unit,
     requestSearchFocus: Int = 0
@@ -74,8 +76,8 @@ internal fun AtlasCatalogue(
     }
     val subtitle = when (state.mode) {
         AtlasMode.MERIDIANS -> "${data.points.distinctBy { it.id }.size} 穴 · ${data.meridians.size} 条路线"
-        AtlasMode.MUSCLES -> "${data.structures.count { it.system == "muscle" }} 个肌肉系统部件 · 分区分层"
-        AtlasMode.OVERVIEW -> "${data.structures.size} 个结构 · 解剖系统"
+        AtlasMode.MUSCLES -> "${data.structureGroups.entries.count { it.representative.system == "muscle" }} 个肌肉结构 · 分区分层"
+        AtlasMode.OVERVIEW -> "${data.structureGroups.entries.size} 个结构 · 解剖系统"
     }
     LaunchedEffect(requestSearchFocus) {
         if (requestSearchFocus > 0) {
@@ -113,7 +115,7 @@ internal fun AtlasCatalogue(
         )
         when (state.mode) {
             AtlasMode.MERIDIANS -> MeridianCatalogue(data, state, query, onMeridian,
-                onToggleMeridian, choosePoint, Modifier.weight(1f))
+                onToggleMeridian, onSetMeridians, choosePoint, Modifier.weight(1f))
             AtlasMode.MUSCLES -> StructureCatalogue(data, state, query, true, chooseStructure, Modifier.weight(1f))
             AtlasMode.OVERVIEW -> StructureCatalogue(data, state, query, false, chooseStructure, Modifier.weight(1f))
         }
@@ -123,92 +125,110 @@ internal fun AtlasCatalogue(
 @Composable
 private fun MeridianCatalogue(data: AtlasData, state: AtlasUiState, query: String,
     onMeridian: (String) -> Unit, onToggleMeridian: (String) -> Unit,
+    onSetMeridians: (Set<String>, Boolean) -> Unit,
     onPoint: (Acupoint) -> Unit, modifier: Modifier = Modifier) {
-    val canonicalPoints = remember(data.points) { data.points.distinctBy { it.id } }
-    val byId = remember(canonicalPoints) { canonicalPoints.associateBy { it.id } }
-    val routeTerms = remember(data) {
-        canonicalPoints.associate { point ->
-            point.id to data.meridians.filter { it.id == point.meridianId || point.id in it.pointIds }
-                .joinToString(" ") { "${it.nameZh} ${it.shortName} ${it.id}" }
-        }
-    }
-    val primaryNames = remember(data.meridians) { data.meridians.associate { it.id to it.nameZh } }
+    val content = remember(data.points, data.meridians) { MeridianCatalogueContent(data) }
+    val listState = rememberLazyListState()
     var expandedRoutes by remember { mutableStateOf(setOfNotNull(state.selectedMeridian)) }
     var expandedRegions by remember { mutableStateOf(emptySet<String>()) }
     var showExtraRegions by rememberSaveable { mutableStateOf(true) }
     var groupFilter by rememberSaveable { mutableStateOf("routes") }
+    var pendingScrollPoint by remember { mutableStateOf<String?>(null) }
     // A restored older UI may still contain "all"; give it the current route default.
     val activeGroup = if (groupFilter == "extra") "extra" else "routes"
     val searching = query.isNotEmpty()
-    val results = remember(canonicalPoints, routeTerms, query) {
-        // The canonical list owns result identity; extraordinary-route associations are
-        // searchable metadata and never create a second result for the same acupoint.
-        canonicalPoints.filter { point -> SearchIndex.matches(query, point.nameZh, point.pinyin,
-            point.id, point.codes.joinToString(" "), point.aliases.joinToString(" "),
-            routeTerms[point.id].orEmpty(), point.region) }
+    // Re-entry creates a new catalogue; while it stays open only a changed point
+    // navigates. Explicit group collapses and category choices therefore remain intact.
+    LaunchedEffect(state.selectedPoint, content) {
+        val destination = content.destination(state.selectedPoint)
+        if (destination != null) {
+            groupFilter = destination.category
+            if (destination.category == "extra") {
+                showExtraRegions = true
+                expandedRegions = expandedRegions + destination.groupId
+            } else expandedRoutes = expandedRoutes + destination.groupId
+        }
+        pendingScrollPoint = state.selectedPoint
+    }
+    val rows = remember(content, query, activeGroup, expandedRoutes, expandedRegions, showExtraRegions) {
+        content.rows(query, activeGroup, expandedRoutes, expandedRegions, showExtraRegions)
+    }
+    val pendingKey = content.selectedRowKey(pendingScrollPoint, query)
+    val pendingIndex = rows.indexOfFirst { it.key == pendingKey }
+    LaunchedEffect(pendingScrollPoint, pendingIndex) {
+        if (pendingScrollPoint != null && pendingIndex >= 0) {
+            // The index comes from the exact keyed row list supplied to LazyColumn,
+            // including route descriptions and preceding expanded groups.
+            listState.scrollToItem(pendingIndex)
+            pendingScrollPoint = null
+        }
     }
     Column(modifier) {
         if (!searching) Row(Modifier.fillMaxWidth().horizontalScroll(rememberScrollState())
             .padding(horizontal = 16.dp, vertical = 5.dp), horizontalArrangement = Arrangement.spacedBy(6.dp)) {
             listOf("routes" to "经络路线", "extra" to "经外奇穴").forEach { (id, label) ->
-                FilterChip(selected = activeGroup == id, onClick = { groupFilter = id },
+                FilterChip(selected = activeGroup == id, onClick = { pendingScrollPoint = null; groupFilter = id },
                     label = { Text(label, fontSize = 11.sp) })
             }
         }
-        LazyColumn(Modifier.weight(1f), contentPadding = PaddingValues(horizontal = 12.dp, vertical = 8.dp),
+        if (!searching) Row(Modifier.fillMaxWidth().horizontalScroll(rememberScrollState())
+            .padding(horizontal = 12.dp), horizontalArrangement = Arrangement.spacedBy(2.dp)) {
+            val routeCategory = activeGroup == "routes"
+            val selectedIds = if (routeCategory) content.routeIds else setOf("__extra__")
+            TextButton(onClick = { onSetMeridians(selectedIds, true) },
+                modifier = Modifier.semantics { contentDescription = if (routeCategory) "经络全选" else "奇穴全选" }) {
+                Text(if (routeCategory) "经络全选" else "奇穴全选", fontSize = 11.sp)
+            }
+            TextButton(onClick = { onSetMeridians(selectedIds, false) },
+                modifier = Modifier.semantics { contentDescription = if (routeCategory) "经络全不选" else "奇穴全不选" }) {
+                Text(if (routeCategory) "经络全不选" else "奇穴全不选", fontSize = 11.sp)
+            }
+            TextButton(onClick = {
+                pendingScrollPoint = null
+                if (routeCategory) expandedRoutes = content.routeIds
+                else { showExtraRegions = true; expandedRegions = content.extraRegions }
+            }, modifier = Modifier.semantics { contentDescription = "全部展开" }) { Text("全部展开", fontSize = 11.sp) }
+            TextButton(onClick = {
+                pendingScrollPoint = null
+                if (routeCategory) expandedRoutes = emptySet()
+                else { showExtraRegions = false; expandedRegions = emptySet() }
+            }, modifier = Modifier.semantics { contentDescription = "全部收起" }) { Text("全部收起", fontSize = 11.sp) }
+        }
+        LazyColumn(Modifier.weight(1f), state = listState,
+            contentPadding = PaddingValues(horizontal = 12.dp, vertical = 8.dp),
             verticalArrangement = Arrangement.spacedBy(5.dp)) {
-            if (searching) {
-                item("search-count") { CatalogueCaption("${results.size} 个穴位 · 按名称与归经查找") }
-                items(results, key = { "search:${it.id}" }) { point ->
-                    CataloguePointRow(point, state.selectedPoint == point.id,
-                        primaryNames[point.meridianId] ?: "经外奇穴 · ${point.region}", onPoint)
-                }
-                if (results.isEmpty()) item("no-points") { CatalogueEmptyResult() }
-            } else {
-                if (activeGroup == "routes") {
-                    item("route-heading") { CatalogueCaption("经络路线 · 展开查看所属穴位与交会穴") }
-                    data.meridians.forEach { meridian ->
-                        val linked = (meridian.pointIds.mapNotNull(byId::get) +
-                            canonicalPoints.filter { it.meridianId == meridian.id }).distinctBy { it.id }
-                        val sixExtra = meridian.routeType == "extraordinary" && meridian.id.uppercase() !in setOf("GV", "CV")
-                        val expanded = meridian.id in expandedRoutes
-                        item("route:${meridian.id}") {
-                            MeridianGroupHeader(meridian, expanded, meridian.id in state.enabledMeridians,
-                                if (sixExtra) "${linked.size} 个关联交会穴" else "${linked.size} 个所属穴位",
+            items(rows, key = { it.key }) { row ->
+                when (row) {
+                    is MeridianCatalogueRow.Caption -> CatalogueCaption(row.text)
+                    is MeridianCatalogueRow.Point -> CataloguePointRow(row.point,
+                        state.selectedPoint == row.point.id, row.subtitle, onPoint)
+                    is MeridianCatalogueRow.RouteHeader -> {
+                        val meridian = row.meridian
+                        MeridianGroupHeader(meridian, row.expanded, meridian.id in state.enabledMeridians,
+                                row.subtitle,
                                 onExpand = {
-                                    expandedRoutes = if (expanded) expandedRoutes - meridian.id else expandedRoutes + meridian.id
-                                    if (!expanded) onMeridian(meridian.id)
+                                    pendingScrollPoint = null
+                                    expandedRoutes = if (row.expanded) expandedRoutes - meridian.id else expandedRoutes + meridian.id
+                                    if (!row.expanded) onMeridian(meridian.id)
                                 }, onToggle = { onToggleMeridian(meridian.id) })
-                        }
-                        if (expanded) {
-                            item("route-description:${meridian.id}") {
-                                Text(meridian.descriptionZh, color = MaterialTheme.colorScheme.onSurfaceVariant,
-                                    fontSize = 11.sp, lineHeight = 18.sp,
-                                    modifier = Modifier.padding(start = 13.dp, end = 10.dp, top = 3.dp, bottom = 6.dp))
-                            }
-                            items(linked, key = { "route:${meridian.id}:${it.id}" }) { point ->
-                                CataloguePointRow(point, state.selectedPoint == point.id,
-                                    if (sixExtra) "交会穴 · ${primaryNames[point.meridianId].orEmpty()}" else null, onPoint)
-                            }
-                        }
                     }
-                }
-                if (activeGroup == "extra") {
-                    val extraPoints = canonicalPoints.filter { it.kind == "extra" }
-                    item("extra-heading") {
+                    is MeridianCatalogueRow.RouteDescription -> Text(row.meridian.descriptionZh,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant, fontSize = 11.sp, lineHeight = 18.sp,
+                        modifier = Modifier.padding(start = 13.dp, end = 10.dp, top = 3.dp, bottom = 6.dp))
+                    is MeridianCatalogueRow.ExtraHeader -> {
                         Row(Modifier.fillMaxWidth().clip(RoundedCornerShape(12.dp))
                             .background(MaterialTheme.colorScheme.secondary.copy(alpha = .08f)),
                             verticalAlignment = Alignment.CenterVertically) {
-                            Row(Modifier.weight(1f).clickable { showExtraRegions = !showExtraRegions }
-                                .semantics { contentDescription = if (showExtraRegions) "收起常用经外奇穴" else "展开常用经外奇穴" }
+                            Row(Modifier.weight(1f).clickable { pendingScrollPoint = null; showExtraRegions = !showExtraRegions }
+                                .semantics { contentDescription = if (row.expanded) "收起常用经外奇穴" else "展开常用经外奇穴" }
                                 .padding(start = 12.dp, top = 12.dp, bottom = 12.dp),
                                 verticalAlignment = Alignment.CenterVertically) {
                                 Column(Modifier.weight(1f)) {
                                     Text("常用经外奇穴", fontSize = 14.sp, color = MaterialTheme.colorScheme.secondary)
-                                    Text("${extraPoints.size} 个条目 · 按身体部位展开", fontSize = 10.sp,
+                                    Text("${row.count} 个条目 · 按身体部位展开", fontSize = 10.sp,
                                         color = MaterialTheme.colorScheme.onSurfaceVariant)
                                 }
-                                Icon(if (showExtraRegions) Icons.Outlined.ExpandLess else Icons.Outlined.ExpandMore,
+                                Icon(if (row.expanded) Icons.Outlined.ExpandLess else Icons.Outlined.ExpandMore,
                                     null, modifier = Modifier.size(18.dp))
                             }
                             Checkbox(checked = "__extra__" in state.enabledMeridians,
@@ -216,18 +236,14 @@ private fun MeridianCatalogue(data: AtlasData, state: AtlasUiState, query: Strin
                                 modifier = Modifier.semantics { contentDescription = "显示经外奇穴" })
                         }
                     }
-                    if (showExtraRegions) extraPoints.groupBy { it.region }.forEach { (region, points) ->
-                        val expanded = region in expandedRegions
-                        item("extra-region:$region") {
-                            CatalogueExpandRow(region, "${points.size} 个奇穴", expanded,
-                                if (expanded) "收起${region}奇穴" else "展开${region}奇穴") {
-                                expandedRegions = if (expanded) expandedRegions - region else expandedRegions + region
-                            }
-                        }
-                        if (expanded) items(points, key = { "extra:${it.id}" }) { point ->
-                            CataloguePointRow(point, state.selectedPoint == point.id, null, onPoint)
+                    is MeridianCatalogueRow.RegionHeader -> {
+                        CatalogueExpandRow(row.region, "${row.count} 个奇穴", row.expanded,
+                            if (row.expanded) "收起${row.region}奇穴" else "展开${row.region}奇穴") {
+                            pendingScrollPoint = null
+                            expandedRegions = if (row.expanded) expandedRegions - row.region else expandedRegions + row.region
                         }
                     }
+                    MeridianCatalogueRow.Empty -> CatalogueEmptyResult()
                 }
             }
         }
@@ -265,11 +281,11 @@ private fun StructureCatalogue(data: AtlasData, state: AtlasUiState, query: Stri
     var region by rememberSaveable { mutableStateOf<String?>(null) }
     var depth by rememberSaveable { mutableStateOf<Int?>(null) }
     var system by rememberSaveable { mutableStateOf<String?>(null) }
-    val filtered = remember(data.structures, query, musclesOnly, region, depth, system) {
-        data.structures.filter { structure ->
-            (if (musclesOnly) structure.system == "muscle" && (region == null || structure.region == region) &&
-                (depth == null || structure.layer == depth) else system == null || structure.system == system) &&
-                SearchIndex.matches(query, structure.nameZh, structure.nameEn, structure.id)
+    val filtered = remember(data.structureGroups, query, musclesOnly, region, depth, system) {
+        data.structureGroups.entries.filter { group ->
+            (if (musclesOnly) group.members.any { it.system == "muscle" && (region == null || it.region == region) &&
+                (depth == null || it.layer == depth) } else system == null || group.representative.system == system) &&
+                group.members.any { SearchIndex.matches(query, it.nameZh, it.nameEn, it.id) }
         }
     }
     Column(modifier) {
@@ -281,18 +297,19 @@ private fun StructureCatalogue(data: AtlasData, state: AtlasUiState, query: Stri
         } else CatalogueFilters("系统", listOf(null to "全部") + catalogueSystems.map { it.key to it.value }, system) { system = it }
         LazyColumn(Modifier.weight(1f), contentPadding = PaddingValues(horizontal = 12.dp, vertical = 8.dp),
             verticalArrangement = Arrangement.spacedBy(5.dp)) {
-            item("structure-count") { CatalogueCaption(if (musclesOnly) "${filtered.size} 个肌肉系统部件" else "${filtered.size} 个解剖结构") }
-            if (musclesOnly) items(filtered, key = { "muscle:${it.id}" }) { structure ->
-                CatalogueStructureRow(structure, state.selectedStructure == structure.id, onStructure)
+            item("structure-count") { CatalogueCaption((if (musclesOnly) "${filtered.size} 个肌肉结构" else "${filtered.size} 个解剖结构") +
+                " · ${filtered.sumOf { it.members.size }} 个模型片段") }
+            if (musclesOnly) items(filtered, key = { "muscle:${it.representative.id}" }) { group ->
+                CatalogueStructureRow(group, state.selectedStructure == group.representative.id, onStructure)
             } else catalogueSystems.forEach { (id, title) ->
-                val group = filtered.filter { it.system == id }
-                if (group.isNotEmpty()) {
+                val systemGroups = filtered.filter { it.representative.system == id }
+                if (systemGroups.isNotEmpty()) {
                     item("system:$id") {
-                        Text("$title · ${group.size}", fontSize = 12.sp, color = MaterialTheme.colorScheme.primary,
+                        Text("$title · ${systemGroups.size}", fontSize = 12.sp, color = MaterialTheme.colorScheme.primary,
                             modifier = Modifier.padding(start = 9.dp, top = 13.dp, bottom = 4.dp))
                     }
-                    items(group, key = { "structure:${it.id}" }) { structure ->
-                        CatalogueStructureRow(structure, state.selectedStructure == structure.id, onStructure)
+                    items(systemGroups, key = { "structure:${it.representative.id}" }) { group ->
+                        CatalogueStructureRow(group, state.selectedStructure == group.representative.id, onStructure)
                     }
                 }
             }
@@ -332,7 +349,8 @@ private fun CataloguePointRow(point: Acupoint, selected: Boolean, subtitle: Stri
 }
 
 @Composable
-private fun CatalogueStructureRow(structure: AnatomyStructure, selected: Boolean, onStructure: (AnatomyStructure) -> Unit) {
+private fun CatalogueStructureRow(group: StructureGroup, selected: Boolean, onStructure: (AnatomyStructure) -> Unit) {
+    val structure = group.representative
     Row(Modifier.fillMaxWidth().clip(RoundedCornerShape(10.dp))
         .background(if (selected) MaterialTheme.colorScheme.primary.copy(alpha = .12f)
             else MaterialTheme.colorScheme.background.copy(alpha = .35f))
@@ -344,6 +362,8 @@ private fun CatalogueStructureRow(structure: AnatomyStructure, selected: Boolean
             Text("${catalogueSystems[structure.system] ?: structure.system} · $region" +
                 if (structure.system == "muscle") " · $depth" else "", fontSize = 10.sp,
                 color = MaterialTheme.colorScheme.onSurfaceVariant)
+            if (group.members.size > 1) Text("${group.members.size} 个片段 · 整体操作", fontSize = 10.sp,
+                color = MaterialTheme.colorScheme.primary)
             Text(structure.nameEn, fontSize = 10.sp, maxLines = 1, overflow = TextOverflow.Ellipsis,
                 color = MaterialTheme.colorScheme.onSurfaceVariant)
         }

@@ -1,0 +1,75 @@
+{
+  "applicationVersion": "0.3.1",
+  "scopeZh": "同名、同来源解剖概念的片段合为一个交互对象；保留底层网格、左右及近中远区别。",
+  "compiledDomain": {
+    "scope": "JVM compiled-domain smoke using current anatomy asset; not Android UI or Room validation",
+    "result": "passed",
+    "rawMeshes": 1239,
+    "structureGroups": 1060,
+    "multiMemberGroups": 74,
+    "memberLookupsChecked": 1239,
+    "groupBoundsAndFocusChecked": 1060,
+    "focusAspectRatios": [
+      1.0,
+      0.4
+    ],
+    "ileumMemberCounts": {
+      "proximal": 10,
+      "middle": 10,
+      "distal": 11
+    },
+    "digastricMemberCounts": {
+      "left": 3,
+      "right": 2
+    },
+    "legacyHiddenVisibleMeshes": 1229,
+    "legacyIsolatedVisibleMeshes": 10,
+    "legacyHiddenAndIsolatedVisibleMeshes": 0,
+    "unknownPersistedIdRetained": true,
+    "anatomySha256": "bf3d37618ab832cf9ce2b828d6db14241c735dba5978ffc3cd227f593a4a044f",
+    "compiledClassSha256": {
+      "AnatomyStructure": "9d6085acec88f3e4dbc749df6040727ddb36928b43b8d93a591bca5fff8c7627",
+      "StructureGroup": "1ef9e38ad92bb0b17eb15788b5898d8001a58ce499349e98b54e916c9af5380b",
+      "StructureGroups": "a5b6fe08b9c331a00140115fea695616f9e319cf8f08b26a3fcd58249c3a5560",
+      "VisibilityPolicy": "d1faf0cf0401cf19c6d5d257116a9fa4d6cac1a385a9b3af31b49abd8ea02a3a"
+    }
+  },
+  "unitTests": {
+    "executed": 50,
+    "passed": 50,
+    "failed": 0,
+    "newGroupingCases": 8
+  },
+  "lint": {
+    "errors": 0,
+    "warnings": 18
+  },
+  "androidDeviceTests": {
+    "compiled": true,
+    "newGroupingCases": 3,
+    "executed": false,
+    "reasonZh": "已绑定设备当前不可连接"
+  },
+  "apk": {
+    "path": "outputs/human-study-0.3.1-arm64.apk",
+    "bytes": 118292258,
+    "sha256": "d062392532ea03cf863505613c314cc897630ab3a7074a859ea563fe640d842f",
+    "package": "com.zga.meridianatlas",
+    "versionName": "0.3.1",
+    "versionCode": 6,
+    "minSdk": 29,
+    "targetSdk": 36,
+    "signingPurpose": "local-testing"
+  },
+  "apkChecks": {
+    "zipCrc": true,
+    "bundledSourceHashes": true,
+    "offlinePermission": true,
+    "arm64Only": true,
+    "elf16KiBAlignment": true,
+    "signature": true,
+    "zip16KiBAlignment": true,
+    "applicationLabel": true
+  },
+  "geometryAndAnchorsChanged": false
+}

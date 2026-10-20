@@ -43,4 +43,29 @@ class ViewerMathTest {
         assertTrue(fractionToLeftEdge > 0f && fractionToLeftEdge < 1f)
         assertEquals(500f, result[0].yPx + fractionToLeftEdge*(result[1].yPx-result[0].yPx), .001f)
     }
+
+    @Test fun offscreenFascialSegmentsRemainInTheirOwnCoordinatesAndClipAtTheViewport() {
+        val points = listOf(ProjectionAnchor("fascia-route:group|path|0", Vec3(-2f,0f,0f)),
+            ProjectionAnchor("fascia-route:group|path|1", Vec3(0f,0f,0f)),
+            ProjectionAnchor("fascial-target:region", Vec3(-2f,0f,0f)),
+            ProjectionAnchor("fascia-route:group|path|2", Vec3(0f,0f,5f)))
+        val result = AnchorProjector.project(points, projection, view, Vec3(0f,0f,3f),1000,1000)
+        assertTrue(result[0].visible && result[1].visible)
+        assertTrue(result[0].xPx < 0f)
+        assertFalse(result[2].visible)
+        assertFalse(result[3].visible)
+    }
+
+    @Test fun observedRegionFitsTheNarrowerFieldOfViewWithoutTheSmallStructureDistanceCap() {
+        val min = Vec3(-.4f,0f,-.2f); val max = Vec3(.4f,1.7f,.2f)
+        val wide = regionFocusDistance(min, max, 1f)
+        val narrow = regionFocusDistance(min, max, .4f)
+        assertTrue(narrow > wide)
+        assertTrue("A long selected chain must be allowed a full-body camera distance", narrow > 2.8f)
+        // A sphere covering all eight box corners must fit within the narrower half-angle.
+        val radius = kotlin.math.sqrt(.8f*.8f + 1.7f*1.7f + .4f*.4f) / 2f
+        val halfFov = kotlin.math.atan(kotlin.math.tan(Math.PI.toFloat()/8f)*.4f)
+        assertTrue(radius / narrow < kotlin.math.sin(halfFov))
+        assertEquals(.35f, regionFocusDistance(min, min, .4f), .00001f)
+    }
 }

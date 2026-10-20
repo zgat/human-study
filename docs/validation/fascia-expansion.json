@@ -1,0 +1,114 @@
+{
+  "applicationVersion": "0.4.0",
+  "capturedAtUtc": "2026-10-20T13:34:51.654796+00:00",
+  "changesZh": [
+    "四组新增研究连接，合计七组/14侧别实例/38连接区",
+    "组织范围路径沿真实三角面走廊，约束共享边交点收紧，固定两端并在面内采样",
+    "实线与虚线分别表示组织范围与局部关系，保持原20参考区及既有模型/穴位几何",
+    "修正数字颜色解码，支持全选和单组/批量范围取景，保留穴位选择"
+  ],
+  "coverage": {
+    "connections": 7,
+    "instances": 14,
+    "targets": 38,
+    "originalTargetsUnchanged": 20,
+    "relationPaths": 16,
+    "contextPaths": 32,
+    "contextSamples": 1692,
+    "professionalAnatomicalReviewedTargets": 0,
+    "clinicalTargets": 0
+  },
+  "geometry": {
+    "maxReconstructionErrorM": 8.142934825848317e-11,
+    "maxDistanceToLowSurfaceM": 0.0037684678410324418
+  },
+  "data": {
+    "path": "app/src/main/assets/content/fascia.json",
+    "sha256": "5307befdb61497e43d1d52f7523cbbc96033ebe833dc3738f8895499ff4b130e"
+  },
+  "build": {
+    "status": "passed",
+    "variants": [
+      "debug",
+      "release",
+      "debugAndroidTest"
+    ],
+    "unitTests": {
+      "tests": 75,
+      "passed": 75,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "lint": {
+      "errors": 0,
+      "warnings": 18
+    }
+  },
+  "hostGeometryTests": {
+    "tests": 8,
+    "passed": 8,
+    "scopeZh": "实际GLB三角面、逐段曲面约束、端点保持、长度不增、侧别/来源/双档差异；不替代医学审校"
+  },
+  "compiledCoreAudit": {
+    "status": "passed",
+    "scopeZh": "使用当前debug编译类，直接调用FascialContentKt.decodeFascialConnection读取实际fascia.json数值颜色、全部路径/法线/参考区/研究说明，并调用buildFascialOverlay核验6种皮肤与半身状态；未重写解码和覆盖构建算法。",
+    "checks": 40537,
+    "contextSamples": 1692,
+    "groups": 7,
+    "targets": 38,
+    "distinctNumericColors": 7,
+    "localRelations": 16,
+    "contextPaths": 32,
+    "limitationsZh": "主机JVM领域核验，不是Android Compose绘制、Filament深度遮挡、安装或真机画面验收。org.json仅为临时主机依赖，未加入产品；不执行Android图形API，字符串颜色分支未覆盖。三角面医学定位与专业审校不由此证明。"
+  },
+  "compiledCoreReportSha256": "d6a5537085c6daa094f13d13eb9c6ea0dade1a982dfa76225a57c7b2b91fe259",
+  "visualGeometryPreview": {
+    "path": "outputs/fascia-expansion-preview.png",
+    "sha256": "fd192d729b6c7ecf8f37f434c3c89d7045c241b84093eb563f3fd4dfe28b152f",
+    "scopeZh": "真实GLB离线几何图；人工核对无明显整体漂移，收紧后无原中心折返锯齿，不代表Android实际绘制/遮挡"
+  },
+  "androidUiTests": {
+    "newCases": 2,
+    "compiled": true,
+    "executed": false,
+    "installation": "not_performed",
+    "reasonZh": "绑定设备不可自动发现"
+  },
+  "apk": {
+    "path": "outputs/human-study-0.4.0-arm64.apk",
+    "bytes": 118534614,
+    "sha256": "e0ad9797fcbbedc5a80c4ce95d8c8b93fbd0e211871132d5231af4af62c61ef4",
+    "package": "com.zga.meridianatlas",
+    "versionName": "0.4.0",
+    "versionCode": 9,
+    "minSdk": 29,
+    "targetSdk": 36,
+    "signingPurpose": "local-testing"
+  },
+  "apkChecks": {
+    "zipCrc": true,
+    "bundledSourceHashes": true,
+    "offlinePermission": true,
+    "arm64Only": true,
+    "elf16KiBAlignment": true,
+    "signature": true,
+    "zip16KiBAlignment": true,
+    "applicationLabel": true
+  },
+  "limitsZh": [
+    "不是完整解剖列车线路，未提供通用治疗靶点坐标",
+    "固定皮肤遮挡只用于完整可见皮肤；皮肤隐藏/半身时为关系叠加，不保证深部实体互相遮挡",
+    "Z-Anatomy和BodyParts3D沿用整体配准，专业医学审校数量仍为0",
+    "没有本版Android触控、画面、持续性能或安装验收"
+  ],
+  "publicReproduction": {
+    "geometryTests": 8,
+    "geometryPassed": 8,
+    "privateManifestsPresent": false,
+    "rawDownloadedSourcesPresent": false,
+    "publicEvidenceTests": 3,
+    "publicEvidencePassed": 3,
+    "geometryLogSha256": "26fa7d6de5188b08cf16ea36ea2cf85d3b31080dc50ab3b11bd7b9e80d53c884"
+  }
+}

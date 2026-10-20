@@ -31,6 +31,7 @@ import com.zga.meridianatlas.model.ModelQuality
 import com.zga.meridianatlas.model.ProjectedAnchor
 import com.zga.meridianatlas.model.ProjectionAnchor
 import com.zga.meridianatlas.model.Vec3
+import com.zga.meridianatlas.model.StructureGroup
 import java.io.IOException
 import java.nio.ByteBuffer
 import java.nio.ByteOrder
@@ -103,13 +104,15 @@ class AnatomySurfaceView(context: Context) : SurfaceView(context), AutoCloseable
     private val entityIds = HashMap<Int, String>()
     private val entitiesById = HashMap<String, MutableList<Int>>()
     private var visibleIds: Set<String>? = null
-    private var selectedId: String? = null
+    private var selectedIds: Set<String> = emptySet()
     private var referenceSkinEnabled = false
     private var referenceSkinIds: Set<String> = emptySet()
     private var opaqueSkinOcclusionEnabled = false
     private var exteriorStructureIds: Set<String> = emptySet()
     private var cutawaySide = 0
     private var cutawayStructureIds: Set<String> = emptySet()
+    private var sourceBaseColors: Map<String, List<FloatArray>> = emptyMap()
+    private var cutawayBaseColors: Map<String, List<FloatArray>> = emptyMap()
     private val highlighted = ArrayList<HighlightBinding>()
     private var anchors: List<ProjectionAnchor> = emptyList()
     private var pose = OrbitPose()
@@ -235,8 +238,9 @@ class AnatomySurfaceView(context: Context) : SurfaceView(context), AutoCloseable
         loadTask = io.submit {
             try {
                 val buffer = readAsset(assetPath)
+                val colors = GlbBaseColors.read(buffer)
                 main.post {
-                    if (!closed && generation == requestGeneration) installModel(buffer)
+                    if (!closed && generation == requestGeneration) installModel(buffer, colors)
                 }
             } catch (failure: Exception) {
                 main.post {
@@ -257,10 +261,13 @@ class AnatomySurfaceView(context: Context) : SurfaceView(context), AutoCloseable
         applyHighlight()
     }
 
-    fun selectStructure(id: String?) {
+    fun selectStructure(id: String?) = selectStructures(setOfNotNull(id))
+
+    /** One anatomical selection can span several independent source meshes. */
+    fun selectStructures(ids: Set<String>) {
         requireMainThread()
-        if (closed || selectedId == id) return
-        selectedId = id
+        if (closed || selectedIds == ids) return
+        selectedIds = ids.toSet()
         applyHighlight()
     }
 
@@ -294,7 +301,7 @@ class AnatomySurfaceView(context: Context) : SurfaceView(context), AutoCloseable
      * Remove fragments on exactly one anatomical side of the x=0 sagittal plane. +1 exposes
      * anatomical left (+X), -1 right (-X), 0 restores the uncut source materials. A structure
      * crossing the midline is genuinely clipped, rather than hidden by its bounding-box centre.
-     * Organs / bones are excluded by the caller and therefore remain complete inside the body.
+     * Eye/lip exterior surfaces follow the skin; deep organs, teeth and bones stay complete.
      */
     fun setCutawaySide(side: Int, outerIds: Set<String>) {
         requireMainThread()
@@ -328,6 +335,17 @@ class AnatomySurfaceView(context: Context) : SurfaceView(context), AutoCloseable
         })
         updateCamera()
         publishProjection()
+    }
+
+    fun focusOnStructure(group: StructureGroup) {
+        val aspect = viewportWidth.toFloat() / viewportHeight.coerceAtLeast(1)
+        focusOn(group.representative.center, group.focusDistance(aspect))
+    }
+
+    fun focusOnRegion(min: Vec3, max: Vec3, normal: Vec3? = null) {
+        val center = Vec3((min.x + max.x) / 2f, (min.y + max.y) / 2f, (min.z + max.z) / 2f)
+        val aspect = viewportWidth.toFloat() / viewportHeight.coerceAtLeast(1)
+        focusOn(center, regionFocusDistance(min, max, aspect), normal)
     }
 
     /** Saves the current orbit once so a sequence of selected points has a stable return view. */
@@ -548,9 +566,10 @@ class AnatomySurfaceView(context: Context) : SurfaceView(context), AutoCloseable
         }
     }
 
-    private fun installModel(buffer: ByteBuffer) {
+    private fun installModel(buffer: ByteBuffer, colors: Map<String, List<FloatArray>>) {
         try {
             destroyModel()
+            sourceBaseColors = colors
             val next = assetLoader.createAsset(buffer) ?: error("GLB 格式无效")
             asset = next
             installedGeneration = generation
@@ -577,6 +596,7 @@ class AnatomySurfaceView(context: Context) : SurfaceView(context), AutoCloseable
     private fun indexEntities() {
         entityIds.clear()
         entitiesById.clear()
+        cutawayBaseColors = sourceBaseColors.mapKeys { (nodeName, _) -> nodeBindings[nodeName] ?: nodeName }
         val current = asset ?: return
         current.renderableEntities.forEach { entity ->
             val name = current.getName(entity)
@@ -613,7 +633,7 @@ class AnatomySurfaceView(context: Context) : SurfaceView(context), AutoCloseable
         entitiesById.forEach { (id, entities) ->
             val skin = id in referenceSkinIds
             val reference = isReferenceSkin(id)
-            val selected = id == selectedId
+            val selected = id in selectedIds && isNormallyVisible(id)
             val cutaway = cutawaySide != 0 && id in cutawayStructureIds && isNormallyVisible(id)
             if (!skin && !reference && !selected && !cutaway) return@forEach
             entities.forEach entityLoop@ { entity ->
@@ -626,8 +646,9 @@ class AnatomySurfaceView(context: Context) : SurfaceView(context), AutoCloseable
                         else MaterialInstance.duplicate(original, "atlas-override")
                     if (cutaway) {
                         replacement.setParameter("cutSign", cutawaySide.toFloat())
-                        replacement.setParameter("baseColorFactor", if (skin) 0.73f else 0.63f,
-                            if (skin) 0.49f else 0.15f, if (skin) 0.34f else 0.16f, 1f)
+                        val color = cutawayBaseColors[id]?.getOrNull(primitive)
+                            ?: floatArrayOf(1f, 1f, 1f, 1f)
+                        replacement.setParameter("baseColorFactor", color[0], color[1], color[2], color[3])
                     }
                     if (skin) {
                         // gltfio's double-sided BLEND mode draws back/front passes and ignores
@@ -825,6 +846,8 @@ class AnatomySurfaceView(context: Context) : SurfaceView(context), AutoCloseable
         assetLoader.gc()
         entityIds.clear()
         entitiesById.clear()
+        sourceBaseColors = emptyMap()
+        cutawayBaseColors = emptyMap()
         loadingResources = false
     }
 

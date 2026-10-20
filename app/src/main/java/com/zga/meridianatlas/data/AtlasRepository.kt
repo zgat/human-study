@@ -82,7 +82,10 @@ internal fun decodeStructure(item: JSONObject): AnatomyStructure {
         item.optString("nameEn"), item.getString("system"), item.optString("region", "whole"),
         item.optInt("layer"), item.optString("nodeName", item.getString("id")), center,
         item.optString("descriptionZh"), item.optString("originZh"), item.optString("insertionZh"), item.optString("functionZh"),
-        item.optString("tissueType"), item.optString("tissueTypeZh"), item.optString("sourceConceptNoteZh"))
+        item.optString("tissueType"), item.optString("tissueTypeZh"), item.optString("sourceConceptNoteZh"),
+        sourceConceptId = item.optString("sourceConceptId").takeUnless { it == "null" }.orEmpty(),
+        sourceDataset = item.optString("sourceDataset").takeUnless { it == "null" }.orEmpty(),
+        boundsMin = min, boundsMax = max)
 }
 internal fun decodePoint(item: JSONObject): Acupoint = Acupoint(
     item.getString("id"), item.optString("kind", "meridian"), item.getString("nameZh"),

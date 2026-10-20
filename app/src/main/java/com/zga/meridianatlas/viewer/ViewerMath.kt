@@ -6,6 +6,8 @@ import com.zga.meridianatlas.model.Vec3
 import kotlin.math.cos
 import kotlin.math.sin
 import kotlin.math.tan
+import kotlin.math.atan
+import kotlin.math.sqrt
 
 /** Camera and annotation math uses the model's original metre / Y-up coordinate system. */
 internal data class OrbitPose(
@@ -60,7 +62,7 @@ internal object AnchorProjector {
         // Keep valid projected route endpoints and let Canvas clip the segment at its edge.
         val inViewport = nx in -1f..1f && ny in -1f..1f
         val visible = cw > 0.000001 && -vz >= 0.01 &&
-            (inViewport || anchor.id.startsWith("route:"))
+            (inViewport || anchor.id.startsWith("route:") || anchor.id.startsWith("fascia-route:"))
         ProjectedAnchor(
             id = anchor.id,
             xPx = (nx + 1f) * width / 2f,
@@ -71,4 +73,12 @@ internal object AnchorProjector {
             occluded = visible && anchor.occlusionTest && occluder?.isOccluded(eye, p) == true,
         )
     }
+}
+
+/** Frame a whole observed region within the narrower viewport field of view. */
+internal fun regionFocusDistance(min: Vec3, max: Vec3, aspectRatio: Float): Float {
+    val dx = max.x - min.x; val dy = max.y - min.y; val dz = max.z - min.z
+    val radius = sqrt(dx * dx + dy * dy + dz * dz) / 2f
+    val halfFov = atan(tan(Math.PI.toFloat() / 8f) * aspectRatio.coerceIn(.2f, 1f))
+    return (radius / sin(halfFov) * 1.15f).coerceAtLeast(.35f)
 }

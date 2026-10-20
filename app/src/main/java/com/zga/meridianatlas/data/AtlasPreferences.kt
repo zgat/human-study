@@ -16,6 +16,7 @@ class AtlasPreferences(private val context: Context) {
     suspend fun read(): SavedPreferences? = runCatching {
         val raw = context.atlasPreferences.data.first()[key] ?: return null
         val item = JSONObject(raw)
+        val profileVersion = item.optInt("profileVersion", 1)
         val states = AtlasMode.entries.associateWith { mode ->
             val layer = item.getJSONObject("layers").getJSONObject(mode.name)
             val state = LayerState(layer.getBoolean("skin"), layer.getBoolean("muscle"), layer.getBoolean("organ"),
@@ -30,7 +31,8 @@ class AtlasPreferences(private val context: Context) {
                 fasciaChains = layer.optBoolean("fasciaChains", false),
                 fasciaTargets = layer.optBoolean("fasciaTargets", true),
                 enabledFascialConnections = layer.optJSONArray("fascialConnections").strings().toSet())
-            if (item.optInt("profileVersion", 1) < 2) VisibilityPolicy.migrateLegacyDefault(mode, state) else state
+            val defaultsMigrated = if (profileVersion < 2) VisibilityPolicy.migrateLegacyDefault(mode, state) else state
+            if (profileVersion < 3) VisibilityPolicy.migrateLegacyHalfBody(mode, defaultsMigrated) else defaultsMigrated
         }
         SavedPreferences(AtlasMode.valueOf(item.getString("mode")), ModelQuality.valueOf(item.getString("quality")),
             states, item.optJSONArray("meridians").strings().toSet())
@@ -48,7 +50,7 @@ class AtlasPreferences(private val context: Context) {
             put("fasciaChains", state.fasciaChains); put("fasciaTargets", state.fasciaTargets)
             put("fascialConnections", JSONArray(state.enabledFascialConnections.toList()))
         }) }
-        val json = JSONObject().put("profileVersion", 2).put("mode", value.mode.name).put("quality", value.quality.name)
+        val json = JSONObject().put("profileVersion", 3).put("mode", value.mode.name).put("quality", value.quality.name)
             .put("layers", layers).put("meridians", JSONArray(value.meridians.toList())).toString()
         context.atlasPreferences.edit { it[key] = json }
     }

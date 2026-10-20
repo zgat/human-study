@@ -31,7 +31,9 @@ data class FascialPath(
     val points: List<Vec3>,
     val targetIds: List<String> = emptyList(),
     val kind: String = "unoriented_connection_schematic",
-    val reviewStatus: String = "provisional"
+    val reviewStatus: String = "provisional",
+    /** Normals from sampled real surfaces; descriptive only for thin or two-sided tissue. */
+    val normals: List<Vec3> = emptyList()
 )
 
 data class FascialConnection(
@@ -46,5 +48,9 @@ data class FascialConnection(
     val sourceRefs: List<FascialSource>,
     val geometryCoverageZh: String = "",
     val unmappedStructures: List<String> = emptyList(),
-    val reviewStatus: String = "provisional"
+    val reviewStatus: String = "provisional",
+    val coverageKind: String = "local_research_relation",
+    val bodyRegionsZh: List<String> = emptyList(),
+    /** Camera suggestion only, never a force direction or a surface registration transform. */
+    val preferredViewNormal: Vec3? = null
 )

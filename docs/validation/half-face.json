@@ -1,0 +1,338 @@
+{
+  "applicationVersion": "0.3.2",
+  "purposeZh": "半身观察只剖露指定侧，保留另一侧肌肉与五官外表，沿用当前同名组织整体交互。",
+  "unitTests": {
+    "executed": 57,
+    "passed": 57,
+    "failed": 0,
+    "newHalfBodyCases": 7
+  },
+  "lint": {
+    "errors": 0,
+    "warnings": 18
+  },
+  "builds": {
+    "debug": "passed",
+    "release": "passed",
+    "androidTest": "passed"
+  },
+  "compiledDomainAndMaterialMetadata": {
+    "limitationsZh": "这不是 Android Filament 渲染、安装或像素截图验收；不证明实际设备上完好半边的视觉效果。未修改网格、锚点或产品运行依赖。",
+    "models": [
+      {
+        "path": "app/src/main/assets/models/body-standard.glb",
+        "facialColors": [
+          {
+            "color": [
+              0.57,
+              0.29,
+              0.29,
+              1
+            ],
+            "nameZh": "上颌牙龈",
+            "id": "FJ1252"
+          },
+          {
+            "color": [
+              0.57,
+              0.29,
+              0.29,
+              1
+            ],
+            "nameZh": "下颌牙龈",
+            "id": "FJ1253"
+          },
+          {
+            "color": [
+              0.57,
+              0.29,
+              0.29,
+              1
+            ],
+            "nameZh": "左侧角膜",
+            "id": "FJ1289"
+          },
+          {
+            "color": [
+              0.57,
+              0.29,
+              0.29,
+              1
+            ],
+            "nameZh": "左侧虹膜",
+            "id": "FJ1297"
+          },
+          {
+            "color": [
+              0.57,
+              0.29,
+              0.29,
+              1
+            ],
+            "nameZh": "左侧巩膜",
+            "id": "FJ1317"
+          },
+          {
+            "color": [
+              0.57,
+              0.29,
+              0.29,
+              1
+            ],
+            "nameZh": "右侧角膜",
+            "id": "FJ1340"
+          },
+          {
+            "color": [
+              0.57,
+              0.29,
+              0.29,
+              1
+            ],
+            "nameZh": "右侧虹膜",
+            "id": "FJ1348"
+          },
+          {
+            "color": [
+              0.57,
+              0.29,
+              0.29,
+              1
+            ],
+            "nameZh": "右侧巩膜",
+            "id": "FJ1368"
+          },
+          {
+            "color": [
+              0.57,
+              0.29,
+              0.29,
+              1
+            ],
+            "nameZh": "口唇",
+            "id": "FJ2814"
+          }
+        ],
+        "sha256": "a1588838552e7503142a51cc5f23681bbcc3cd33098bca80739f4794fed2ceee",
+        "muscleColorNodes": 499,
+        "bytes": 59941576,
+        "colorNodeCount": 1239,
+        "quality": "standard"
+      },
+      {
+        "path": "app/src/main/assets/models/body-low.glb",
+        "facialColors": [
+          {
+            "color": [
+              0.57,
+              0.29,
+              0.29,
+              1
+            ],
+            "nameZh": "上颌牙龈",
+            "id": "FJ1252"
+          },
+          {
+            "color": [
+              0.57,
+              0.29,
+              0.29,
+              1
+            ],
+            "nameZh": "下颌牙龈",
+            "id": "FJ1253"
+          },
+          {
+            "color": [
+              0.57,
+              0.29,
+              0.29,
+              1
+            ],
+            "nameZh": "左侧角膜",
+            "id": "FJ1289"
+          },
+          {
+            "color": [
+              0.57,
+              0.29,
+              0.29,
+              1
+            ],
+            "nameZh": "左侧虹膜",
+            "id": "FJ1297"
+          },
+          {
+            "color": [
+              0.57,
+              0.29,
+              0.29,
+              1
+            ],
+            "nameZh": "左侧巩膜",
+            "id": "FJ1317"
+          },
+          {
+            "color": [
+              0.57,
+              0.29,
+              0.29,
+              1
+            ],
+            "nameZh": "右侧角膜",
+            "id": "FJ1340"
+          },
+          {
+            "color": [
+              0.57,
+              0.29,
+              0.29,
+              1
+            ],
+            "nameZh": "右侧虹膜",
+            "id": "FJ1348"
+          },
+          {
+            "color": [
+              0.57,
+              0.29,
+              0.29,
+              1
+            ],
+            "nameZh": "右侧巩膜",
+            "id": "FJ1368"
+          },
+          {
+            "color": [
+              0.57,
+              0.29,
+              0.29,
+              1
+            ],
+            "nameZh": "口唇",
+            "id": "FJ2814"
+          }
+        ],
+        "sha256": "9d4b8f75a3d12fb5695039594dab82af5223af7bccf8b69f511b64815e3329e3",
+        "muscleColorNodes": 499,
+        "bytes": 48115592,
+        "colorNodeCount": 1239,
+        "quality": "low"
+      }
+    ],
+    "appVersion": "0.3.2",
+    "schemaVersion": 1,
+    "halfStates": [
+      {
+        "organ": true,
+        "side": "LEFT",
+        "cutSign": 1,
+        "muscle": true,
+        "skin": true,
+        "bone": true,
+        "visibleIds": 1167
+      },
+      {
+        "organ": true,
+        "side": "RIGHT",
+        "cutSign": -1,
+        "muscle": true,
+        "skin": true,
+        "bone": true,
+        "visibleIds": 1167
+      }
+    ],
+    "sources": [
+      {
+        "path": "app/src/main/java/com/zga/meridianatlas/model/CutawayPolicy.kt",
+        "sha256": "ffea6d7840f06ec52c884343bc8f54c5d31efa6fcf5235037993c590e719b223",
+        "bytes": 1338
+      },
+      {
+        "path": "app/src/main/java/com/zga/meridianatlas/model/VisibilityPolicy.kt",
+        "sha256": "0c70c22a7f83f9e5c92b627bc4f27ea1202a6028d198a7153858c24ebfbbd816",
+        "bytes": 4047
+      },
+      {
+        "path": "app/src/main/java/com/zga/meridianatlas/viewer/GlbBaseColors.kt",
+        "sha256": "80bf015c2b931335f0cb2010dc372f81da56cbf8c53258282dd0c366b7e0065b",
+        "bytes": 2380
+      }
+    ],
+    "anatomy": {
+      "path": "app/src/main/assets/anatomy.json",
+      "sha256": "bf3d37618ab832cf9ce2b828d6db14241c735dba5978ffc3cd227f593a4a044f",
+      "bytes": 2002808
+    },
+    "structures": 1239,
+    "outerIdsCount": 509,
+    "fullVisibleIds": 667,
+    "checkCount": 3532,
+    "compiledClasses": [
+      {
+        "path": "app/build/tmp/kotlin-classes/debug/com/zga/meridianatlas/model/CutawayPolicy.class",
+        "sha256": "bac4ba84c0a0e6b75454f683ea13aebff1f7c85956adfad20a29e3a8d3956463",
+        "bytes": 5075
+      },
+      {
+        "path": "app/build/tmp/kotlin-classes/debug/com/zga/meridianatlas/model/VisibilityPolicy.class",
+        "sha256": "79debfb41bc324a3c8cec0694dfb75e8b4256c210fda0156de6040c1a2ffd54a",
+        "bytes": 14390
+      },
+      {
+        "path": "app/build/tmp/kotlin-classes/debug/com/zga/meridianatlas/viewer/GlbBaseColors.class",
+        "sha256": "5c842e6fb6690504c38c9bc3e89f0973d439702cb56e349a8741b6a1faf4b221",
+        "bytes": 7565
+      }
+    ],
+    "exteriorIdsCount": 40,
+    "scopeZh": "使用本轮 debug Kotlin 编译类，读取真实 anatomy 与两档 GLB 的主机 JVM 领域及材料元数据验证。",
+    "checks": [
+      "真实 anatomy 1239 唯一结构与两档 GLB 1239 node ID 一致",
+      "9 面部表层 / 509 裁切对象 / 40 完整体表外表对象",
+      "左、右半身均保留肌肉及 skin/organ/bone；未按 node 中心隐藏",
+      "完整内脏视图关闭 skin/muscle；体表仅 skin 加 9 面部表层",
+      "晶状体、视网膜、舌、肝、额骨和牙齿均不进入表层裁切集合",
+      "两档实际 GLB 每个 node 的 primitive 基色读取成功，源 ByteBuffer position 不变",
+      "9 面部表层保留 organ 基色 [.57,.29,.29,1]，499 肌肉保留 muscle 基色 [.63,.15,.16,1]"
+    ],
+    "temporaryHostJsonLibrary": {
+      "sha256": "3cf6cd6892e32e2b4c1c39e0f52f5248a2f5b37646fdfbb79a66b46b618414ed",
+      "coordinates": "org.json:json:20240303",
+      "productDependency": false,
+      "source": "https://repo.maven.apache.org/maven2/org/json/json/20240303/json-20240303.jar"
+    },
+    "facialSurfaceIds": [
+      "FJ1252",
+      "FJ1253",
+      "FJ1289",
+      "FJ1297",
+      "FJ1317",
+      "FJ1340",
+      "FJ1348",
+      "FJ1368",
+      "FJ2814"
+    ],
+    "capturedAt": "2026-10-20T12:47:28.668Z",
+    "surfaceVisibleIds": 10,
+    "status": "passed"
+  },
+  "androidDeviceVerification": {
+    "executed": false,
+    "newHalfBodyCasesCompiled": 3,
+    "reasonZh": "已绑定设备不可连接，未安装本版APK或采集左右实际像素对比"
+  },
+  "geometryAndAnchorsChanged": false,
+  "materialBinaryChanged": false,
+  "apk": {
+    "path": "outputs/human-study-0.3.2-arm64.apk",
+    "bytes": 118308642,
+    "sha256": "2d0d39d81b2dadec47003a228fd55683dcdc9038b646f4d1704abec3b3bece55",
+    "package": "com.zga.meridianatlas",
+    "versionName": "0.3.2",
+    "versionCode": 7,
+    "minSdk": 29,
+    "targetSdk": 36,
+    "signingPurpose": "local-testing"
+  }
+}

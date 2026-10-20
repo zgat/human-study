@@ -1,5 +1,5 @@
 {
-  "applicationVersion": "0.3.0",
+  "applicationVersion": "0.4.0",
   "versions": {
     "gradle": "8.14.3",
     "agp": "8.13.2",
@@ -12,7 +12,7 @@
     "buildTools": "35.0.0"
   },
   "commands": [
-    "./tools/build.sh :app:assembleDebug :app:assembleRelease :app:testDebugUnitTest :app:assembleDebugAndroidTest :app:lintDebug"
+    "./tools/build.sh :app:testDebugUnitTest :app:assembleDebug :app:assembleRelease :app:assembleDebugAndroidTest :app:lintDebug"
   ],
   "releaseParameters": {
     "variant": "release",
@@ -27,7 +27,7 @@
     {
       "path": "app/build.gradle.kts",
       "bytes": 2647,
-      "sha256": "b29ccf350422b71064d9a1db878cfcdc4d415ba35f73c027c81c359a37b132f1"
+      "sha256": "88430b12f40dba1a1444f9c239eaa23d02955040a80fceedaab78f8308cb3a51"
     },
     {
       "path": "app/libs/filament-v1.78.0-android.aar",
@@ -45,6 +45,11 @@
       "sha256": "c17bd6e4f224a2e59f928bdd8a8e2f930bad996ba017452173bedefc3095147f"
     },
     {
+      "path": "app/src/androidTest/java/com/zga/meridianatlas/AtlasControlsDeviceTest.kt",
+      "bytes": 10292,
+      "sha256": "1c1d9337955416a04017b182b1411c18ba75ec439c77651818edafc94b36a05d"
+    },
+    {
       "path": "app/src/androidTest/java/com/zga/meridianatlas/AtlasDataDeviceTest.kt",
       "bytes": 2386,
       "sha256": "64278092fda6705e033906324bf573cdd4152c59fac0fafa20d37a7a666c53d0"
@@ -55,14 +60,29 @@
       "sha256": "fe31fb8004ca5a18f5e789cf46385422bf5b7d317d6269307d11a1fe15717c14"
     },
     {
+      "path": "app/src/androidTest/java/com/zga/meridianatlas/FasciaExpansionDeviceTest.kt",
+      "bytes": 13125,
+      "sha256": "9cb4d3cf1da467ce6683b2244436d5f94e2c06f7f026fb14c133512e467cde40"
+    },
+    {
+      "path": "app/src/androidTest/java/com/zga/meridianatlas/HalfBodyFaceDeviceTest.kt",
+      "bytes": 10667,
+      "sha256": "95f06824c39bf510bdba2759006d141d42a02c64f078dac8b5d30c827b89445c"
+    },
+    {
       "path": "app/src/androidTest/java/com/zga/meridianatlas/ResponsiveUiDeviceTest.kt",
-      "bytes": 41695,
-      "sha256": "68f815d0158ebf601c9cea2fffccadc7262204fc71b6336785adad5a8532d49e"
+      "bytes": 41770,
+      "sha256": "f969a3fba10aecee4de8a74d1561d5c9640f6379d91892b5dc50a2e3d65caf63"
     },
     {
       "path": "app/src/androidTest/java/com/zga/meridianatlas/SelectionStateDeviceTest.kt",
       "bytes": 7331,
       "sha256": "5419959f74ef917382ac7edc5d14d3689a10471662bad955515a2ce380263796"
+    },
+    {
+      "path": "app/src/androidTest/java/com/zga/meridianatlas/StructureGroupDeviceTest.kt",
+      "bytes": 10700,
+      "sha256": "75c0cab5f09f120926ed496dcd04ffdfea24830a64419e53233d808ef8fc63c2"
     },
     {
       "path": "app/src/main/AndroidManifest.xml",
@@ -81,8 +101,8 @@
     },
     {
       "path": "app/src/main/assets/content/fascia.json",
-      "bytes": 45493,
-      "sha256": "31cc0df706b4dd8544b44ba592923a30f58a26e37a56471315bef69acd8fc6f3"
+      "bytes": 1941287,
+      "sha256": "5307befdb61497e43d1d52f7523cbbc96033ebe833dc3738f8895499ff4b130e"
     },
     {
       "path": "app/src/main/assets/content/landmarks.json",
@@ -176,28 +196,38 @@
     },
     {
       "path": "app/src/main/java/com/zga/meridianatlas/data/AtlasPreferences.kt",
-      "bytes": 3645,
-      "sha256": "9204faf3e1c4db894c0e47e8a9821afb7de200f2e68321f4a8af19eda71a6810"
+      "bytes": 3833,
+      "sha256": "d62e6501a64765694f05229cf52295febd475c9d5e3f2b16bfafe6c86607b7bd"
     },
     {
       "path": "app/src/main/java/com/zga/meridianatlas/data/AtlasRepository.kt",
-      "bytes": 8331,
-      "sha256": "51dedb62290424b7d094b90f66834fea3a3671fecf8ce7de8ac02b39068e4682"
+      "bytes": 8567,
+      "sha256": "29990f00266d1ed50fa9896aa3a99021bfe09641aca448fcc2d571646a1018a1"
     },
     {
       "path": "app/src/main/java/com/zga/meridianatlas/data/FascialContent.kt",
-      "bytes": 1997,
-      "sha256": "8e6d087fc54376bb14f34c4dc90b581220874e795d102273dd741c56f3140787"
+      "bytes": 2533,
+      "sha256": "92d5db96908b038a2611e9ab0c18cdfbecc5ea53d37a968bfe000910e73aef3a"
     },
     {
       "path": "app/src/main/java/com/zga/meridianatlas/model/AtlasModels.kt",
-      "bytes": 3527,
-      "sha256": "45e716449771ae7f5b10351c1277cffc5eb6740b14e81e310ed3a34a4389917e"
+      "bytes": 3744,
+      "sha256": "b7b73af96ed29584fe2ed490119adb42eb8529abf4526f1aa38ad322703457d4"
+    },
+    {
+      "path": "app/src/main/java/com/zga/meridianatlas/model/CutawayPolicy.kt",
+      "bytes": 1338,
+      "sha256": "ffea6d7840f06ec52c884343bc8f54c5d31efa6fcf5235037993c590e719b223"
     },
     {
       "path": "app/src/main/java/com/zga/meridianatlas/model/FascialModels.kt",
-      "bytes": 1468,
-      "sha256": "2f44e5078ace9367559e077ea4689b921a21f1cfe00e1cdee825ce7e48f0ffda"
+      "bytes": 1853,
+      "sha256": "078458a40d6b03ef51b463f2db575cc522bebc420965620b946d5312274a12a4"
+    },
+    {
+      "path": "app/src/main/java/com/zga/meridianatlas/model/MeridianSelectionPolicy.kt",
+      "bytes": 627,
+      "sha256": "868ad962749f173325436cc93825e19912ade4f68f97066fa2e4a64d4285bb9a"
     },
     {
       "path": "app/src/main/java/com/zga/meridianatlas/model/SearchIndex.kt",
@@ -205,19 +235,24 @@
       "sha256": "3ac2f3a42d5c7ad3fd50c0de3bff914c4b0c97edd7360c4708e1036ae4e5ba99"
     },
     {
+      "path": "app/src/main/java/com/zga/meridianatlas/model/StructureGroups.kt",
+      "bytes": 3130,
+      "sha256": "9eeb123e8f80ae920a406f29e1e85e5f6ab9331d5b454c863392bdaa78d57f9a"
+    },
+    {
       "path": "app/src/main/java/com/zga/meridianatlas/model/VisibilityPolicy.kt",
-      "bytes": 3339,
-      "sha256": "3cc968d9fb4a41d90f9b467d688efc1ac7550c0fb1aa33d2b88e762c27ef888d"
+      "bytes": 4631,
+      "sha256": "b4e42f2d1f20dcb6758fe099294591356c7802d877ff46bcf44d7ff89d77c20a"
     },
     {
       "path": "app/src/main/java/com/zga/meridianatlas/ui/AtlasApp.kt",
-      "bytes": 48894,
-      "sha256": "7a359957574e3840c12741c7d9fcfa0f112a28a48ddce965b6d7694d23497977"
+      "bytes": 50602,
+      "sha256": "e9d7b20fbfcf962e0f21b5d782d8d32210dd869506dbd4a2dd6ab93da8dcf788"
     },
     {
       "path": "app/src/main/java/com/zga/meridianatlas/ui/AtlasCatalogue.kt",
-      "bytes": 22150,
-      "sha256": "9c844a78836115df3f97530392f5703f2a520e4284fc448a07def7e2d4e336b6"
+      "bytes": 23409,
+      "sha256": "ba008ea8f184589b4054b328af0a0a13b32b246e2af54c8b653587c7ec7d537e"
     },
     {
       "path": "app/src/main/java/com/zga/meridianatlas/ui/AtlasOverlay.kt",
@@ -226,23 +261,33 @@
     },
     {
       "path": "app/src/main/java/com/zga/meridianatlas/ui/AtlasViewModel.kt",
-      "bytes": 11350,
-      "sha256": "d5e73c896605eafc7fadfb7b46f580a06f3ea837ed233ba46bf07caa14e8fed9"
+      "bytes": 12503,
+      "sha256": "8a8ee3274cd994fb9c5e910556bbdde21c2c936386edd7c54ce597b750db9d4b"
     },
     {
       "path": "app/src/main/java/com/zga/meridianatlas/ui/FasciaOverlay.kt",
-      "bytes": 4529,
-      "sha256": "fed719cbf223d36da76712e4166350cb7e94b8a71d3422cb475291769a61345e"
+      "bytes": 8809,
+      "sha256": "97af66c819189d68c948cde7ea03fc5bb1b0127ac473d68e3bf742cffe7f2455"
     },
     {
       "path": "app/src/main/java/com/zga/meridianatlas/ui/FasciaPanel.kt",
-      "bytes": 6260,
-      "sha256": "13576ed161e7d867121024c358e593e773379ee8e7dc7e40530f819408cf8fa0"
+      "bytes": 10825,
+      "sha256": "7f0231013c705c1909ffbbc29448ce699aaa73f9670883a124bf29bad9fe3fdc"
+    },
+    {
+      "path": "app/src/main/java/com/zga/meridianatlas/ui/MeridianCatalogueContent.kt",
+      "bytes": 5365,
+      "sha256": "0a09790903b97f2eb112471940a0e4a49194d37549fa907f626673cd99176800"
     },
     {
       "path": "app/src/main/java/com/zga/meridianatlas/viewer/AnatomySurfaceView.kt",
-      "bytes": 35748,
-      "sha256": "237dba698fc0fb5876f45c29b89f03f769ae5870bbd50736bfa702933d887a1e"
+      "bytes": 37079,
+      "sha256": "895b975993f263e8b911458c10c3fc9cf0c6191f8b30fc3b13002c123fc004a9"
+    },
+    {
+      "path": "app/src/main/java/com/zga/meridianatlas/viewer/GlbBaseColors.kt",
+      "bytes": 2380,
+      "sha256": "80bf015c2b931335f0cb2010dc372f81da56cbf8c53258282dd0c366b7e0065b"
     },
     {
       "path": "app/src/main/java/com/zga/meridianatlas/viewer/SkinOccluder.kt",
@@ -256,8 +301,8 @@
     },
     {
       "path": "app/src/main/java/com/zga/meridianatlas/viewer/ViewerMath.kt",
-      "bytes": 3266,
-      "sha256": "028548f5e7343d2034d06bf731c9850f94c26fb5075fbab9774502343d7d845a"
+      "bytes": 3801,
+      "sha256": "78783aba87c803259fb2b5b3f50991d5b029085578cd7af398f10fd1ac24fe74"
     },
     {
       "path": "app/src/main/res/drawable/ic_atlas_foreground.xml",
@@ -285,19 +330,39 @@
       "sha256": "6526e032421954a737cf66f9239a95e00d4aa7ce02d7c19435b3766a11d07e05"
     },
     {
+      "path": "app/src/test/java/com/zga/meridianatlas/CutawayPolicyTest.kt",
+      "bytes": 3455,
+      "sha256": "a279e9236ae71629739595b85b36a1e8d38bed32c9452cf413850295d602d97c"
+    },
+    {
+      "path": "app/src/test/java/com/zga/meridianatlas/MeridianCatalogueContentTest.kt",
+      "bytes": 4169,
+      "sha256": "f1c27c193ef2245fc1fb0354746683783bdb7f1a3553d50f319346269b5b6655"
+    },
+    {
+      "path": "app/src/test/java/com/zga/meridianatlas/MeridianSelectionPolicyTest.kt",
+      "bytes": 2401,
+      "sha256": "174715d9cdd25ec32247eb7e10e80e64ceb7af5fed6f836363170ba999251838"
+    },
+    {
       "path": "app/src/test/java/com/zga/meridianatlas/SearchIndexTest.kt",
       "bytes": 798,
       "sha256": "2eeba49ed1050e09aab237b36f9f747b42a974a1bb41ef56d8bbb01b965f3f49"
     },
     {
+      "path": "app/src/test/java/com/zga/meridianatlas/StructureGroupsTest.kt",
+      "bytes": 6996,
+      "sha256": "6c9de7ffbfe751343ae59de1d1859144ab6a0397565de4c5755432c194c6ad7d"
+    },
+    {
       "path": "app/src/test/java/com/zga/meridianatlas/VisibilityPolicyTest.kt",
-      "bytes": 6248,
-      "sha256": "c6aa47a3beb97445b506d1fdda8774c478feb332f2ce1261c402027fd67445f0"
+      "bytes": 11780,
+      "sha256": "66b46edf3b9543b6937595aff1d9fb4f150bfb120fbe2c0efffbc28b354e8669"
     },
     {
       "path": "app/src/test/java/com/zga/meridianatlas/ui/FasciaOverlayTest.kt",
-      "bytes": 1623,
-      "sha256": "c1cf881c58fd336624b599d94d7cc74a7d820422b537d674c9add64ef1286294"
+      "bytes": 4579,
+      "sha256": "b7cd6a416a105df56195d61aae9517daeb86f8a307bb1d26d049ca0f62770c75"
     },
     {
       "path": "app/src/test/java/com/zga/meridianatlas/ui/OverlayPolicyTest.kt",
@@ -321,8 +386,8 @@
     },
     {
       "path": "app/src/test/java/com/zga/meridianatlas/viewer/ViewerMathTest.kt",
-      "bytes": 2636,
-      "sha256": "00ced4dfbfcaa0a7da8dce84365034c629c83242a91037e9e2fc0d82c7fee407"
+      "bytes": 4117,
+      "sha256": "d1cc544215f5a335366d5e1b4fd46891b003b76f0ce7679d07c3301dd8da1110"
     },
     {
       "path": "build.gradle.kts",
@@ -355,15 +420,30 @@
       "sha256": "3883e45745b9d40a1f068aa3c19caa6dfce1de6af3fbc59cf1ad9ba5a7797bea"
     },
     {
+      "path": "tools/assets/build_cutaway_material.py",
+      "bytes": 2644,
+      "sha256": "6368172cb8d8cd5cc094a2ffc0a2ba4ef74fe49111d7b29a082b8030e8ea3bb8"
+    },
+    {
       "path": "tools/build.sh",
       "bytes": 653,
       "sha256": "c47c70aa304b6701caa5f6666247b9ed1f046ed6e740ec48a2dbe21d1f9ea41e"
+    },
+    {
+      "path": "tools/content/build_fascia.py",
+      "bytes": 52066,
+      "sha256": "ec48145eb34737cf24f75a31235ee1580add4790711e6ea61c50c8990cc329e7"
+    },
+    {
+      "path": "tools/qa/test_fascia_geometry.py",
+      "bytes": 8570,
+      "sha256": "c5bd06cd5fd4a3aab7910fe7340496fe9490da0761d006f8fa35865fec0fe3fc"
     }
   ],
   "releaseArtifact": {
-    "path": "outputs/human-study-0.3.0-arm64.apk",
-    "bytes": 118292258,
-    "sha256": "fe1c4885e79ec761de0d7cfc2becf40fb7a8e385c42171f175b3cf34ce0d3908"
+    "path": "outputs/human-study-0.4.0-arm64.apk",
+    "bytes": 118534614,
+    "sha256": "e0ad9797fcbbedc5a80c4ce95d8c8b93fbd0e211871132d5231af4af62c61ef4"
   },
   "scopeZh": "构建输入与当前APK字节核验；不表示目标版本已重新执行历史整轮功能或性能测试。"
 }

@@ -25,6 +25,8 @@ import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
@@ -97,10 +99,15 @@ private fun AtlasWorkspace(state: AtlasUiState, model: AtlasViewModel) {
     val latestState by rememberUpdatedState(state)
     val latestProjections by rememberUpdatedState(projections)
     val point = data.points.find { it.id == state.selectedPoint }
-    val structure = data.structures.find { it.id == state.selectedStructure }
-    val visibleIds = remember(state.layer, data.structures) { VisibilityPolicy.visibleIds(data.structures, state.layer) }
+    val structureGroup = data.structureGroups.find(state.selectedStructure)
+    val structure = structureGroup?.representative
+    val visibleIds = remember(state.layer, data.structures) { VisibilityPolicy.visibleIds(data.structures, state.layer, data.structureGroups) }
     val displayPoint = point?.takeIf { state.mode == AtlasMode.MERIDIANS }
-    val displayStructure = structure?.takeIf { VisibilityPolicy.isRelevantStructure(state.mode, it) && it.id in visibleIds }
+    val displayStructure = structure?.takeIf { VisibilityPolicy.isRelevantStructure(state.mode, it) &&
+        structureGroup?.memberIds?.any { id -> id in visibleIds } == true }
+    val visibleStructureCount = remember(data.structureGroups, visibleIds) {
+        data.structureGroups.entries.count { group -> group.memberIds.any { it in visibleIds } }
+    }
     val fascialSelection = data.fascialConnections.asSequence()
         .filter { state.mode == AtlasMode.OVERVIEW && state.layer.fasciaChains && it.id in state.layer.enabledFascialConnections }
         .mapNotNull { connection -> connection.targets.find { it.id == selectedFascialTarget }?.let { connection to it } }.firstOrNull()
@@ -117,22 +124,39 @@ private fun AtlasWorkspace(state: AtlasUiState, model: AtlasViewModel) {
             additionalEmphasizedMeridian = state.activeMeridian)
     }
     val fascialOverlay = remember(data.fascialConnections, state.mode, state.layer.fasciaChains,
-        state.layer.fasciaTargets, state.layer.enabledFascialConnections) {
+        state.layer.fasciaTargets, state.layer.enabledFascialConnections, state.layer.skin, state.layer.cutawaySide, visibleIds) {
+        val skinVisible = state.layer.skin && data.structures.any { it.system == "skin" && it.id in visibleIds }
         buildFascialOverlay(data.fascialConnections,
-            if (state.mode == AtlasMode.OVERVIEW) state.layer else state.layer.copy(fasciaChains = false))
+            state.layer.copy(skin = skinVisible, fasciaChains = state.mode == AtlasMode.OVERVIEW && state.layer.fasciaChains))
     }
     fun updateQuery(value: String) { queries = queries + (state.mode to value) }
     fun dismissKeyboard() { focusManager.clearFocus(); keyboard?.hide() }
+    fun focusStructure(target: AnatomyStructure, isolate: Boolean = false) {
+        val group = data.structureGroups.find(target.id) ?: return
+        selectedFascialTarget = null
+        dismissKeyboard()
+        viewer.captureCamera(state.mode.name)
+        if (isolate) model.revealStructure(group.representative.id) else model.locateStructure(group.representative.id)
+        viewer.focusOnStructure(group)
+    }
     fun restoreFocus() {
         val keepPointView = state.selectedPoint != null
         if (model.prepareObservationPreset() && !keepPointView) viewer.restoreCamera(state.mode.name)
     }
-    fun observeConnection(connection: FascialConnection) {
+    fun observeConnections(connections: List<FascialConnection>) {
+        if (connections.isEmpty()) return
+        val ids = connections.flatMapTo(linkedSetOf()) { it.structureIds }
         viewer.captureCamera(state.mode.name)
-        model.observeFascialStructures(connection.structureIds.toSet())
-        model.layer { it.copy(fasciaChains = true, enabledFascialConnections = it.enabledFascialConnections + connection.id) }
-        selectedFascialTarget = null
-        viewer.applyCameraPreset(CameraPreset.RESET)
+        model.observeFascialStructures(ids)
+        model.layer { it.copy(fasciaChains = true,
+            enabledFascialConnections = it.enabledFascialConnections + connections.map { connection -> connection.id }) }
+        val bounds = data.structures.filter { it.id in ids }.flatMap { part ->
+            listOf(part.boundsMin ?: part.center, part.boundsMax ?: part.center)
+        } + connections.flatMap { connection -> connection.paths.flatMap { it.points } }
+        if (bounds.isNotEmpty()) viewer.focusOnRegion(
+            Vec3(bounds.minOf { it.x }, bounds.minOf { it.y }, bounds.minOf { it.z }),
+            Vec3(bounds.maxOf { it.x }, bounds.maxOf { it.y }, bounds.maxOf { it.z }),
+            connections.first().preferredViewNormal)
     }
     fun focusConnectionTarget(connection: FascialConnection, target: FascialTarget) {
         viewer.captureCamera(state.mode.name)
@@ -179,7 +203,7 @@ private fun AtlasWorkspace(state: AtlasUiState, model: AtlasViewModel) {
         viewer.onTap = { x, y ->
             val current = latestState
             val referenceHit = if (current.mode == AtlasMode.OVERVIEW && current.layer.fasciaChains && current.layer.fasciaTargets)
-                latestProjections.filter { it.visible && it.id.startsWith("fascial-target:") }
+                latestProjections.filter { it.visible && !it.occluded && it.id.startsWith("fascial-target:") }
                     .minByOrNull { hypot((it.xPx-x).toDouble(), (it.yPx-y).toDouble()) } else null
             if (referenceHit != null && hypot((referenceHit.xPx-x).toDouble(), (referenceHit.yPx-y).toDouble()) < 26*density) {
                 val targetId = referenceHit.id.substringAfter(":")
@@ -225,20 +249,20 @@ private fun AtlasWorkspace(state: AtlasUiState, model: AtlasViewModel) {
     }
     LaunchedEffect(visibleIds) { viewer.setVisibleStructureIds(visibleIds) }
     LaunchedEffect(state.layer.skin, state.layer.cutawaySide) {
-        val exterior = data.structures.filter { item -> item.system == "skin" ||
-            listOf("cornea", "sclera", "iris", "pupil", "eyeball", "tooth", "teeth", "gingiva").any { item.nameEn.contains(it, ignoreCase = true) }
-        }.map { it.id }.toSet()
+        val exterior = CutawayPolicy.exteriorIds(data.structures)
         viewer.setOpaqueSkinOcclusion(state.layer.skin && state.layer.cutawaySide == CutawaySide.NONE, exterior)
     }
     LaunchedEffect(state.layer.cutawaySide, data.structures) {
-        viewer.setCutawaySide(state.layer.cutawaySide.sign, data.structures.filter { it.system == "skin" || it.system == "muscle" }.map { it.id }.toSet())
+        viewer.setCutawaySide(state.layer.cutawaySide.sign, CutawayPolicy.outerIds(data.structures))
     }
     LaunchedEffect(state.layer.skin, state.layer.points, state.layer.lines, state.layer.focusIds) {
         viewer.setReferenceSkin(!state.layer.skin && state.layer.focusIds.isEmpty() && (state.layer.points || state.layer.lines),
             data.structures.filter { it.system == "skin" }.map { it.id }.toSet())
     }
-    LaunchedEffect(displayStructure?.id, fascialSelection?.second?.id) {
-        viewer.selectStructure(fascialSelection?.second?.structureIds?.firstOrNull() ?: displayStructure?.id)
+    LaunchedEffect(displayStructure?.id, fascialSelection?.second?.id, visibleIds) {
+        val selectionIds = fascialSelection?.second?.structureIds?.toSet()
+            ?: displayStructure?.let { data.structureGroups.memberIds(it.id) }.orEmpty()
+        viewer.selectStructures(selectionIds.intersect(visibleIds))
     }
     LaunchedEffect(overlay, fascialOverlay) { viewer.setAnchors(overlay.anchors + fascialOverlay.anchors) }
 
@@ -260,7 +284,7 @@ private fun AtlasWorkspace(state: AtlasUiState, model: AtlasViewModel) {
                             Text(state.mode.title, fontSize = 23.sp, fontWeight = FontWeight.Medium)
                             Text(when (state.mode) { AtlasMode.OVERVIEW -> "观察皮肤、内脏与骨骼的空间关系"; AtlasMode.MERIDIANS -> "点按体表查看附近穴位，联动所属经络"; AtlasMode.MUSCLES -> "点选查看说明，可逐块隐藏肌肉" }, fontSize = 11.sp, color = Muted)
                             Row(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
-                                SmallBadge("${visibleIds.size} 个启用部件", Accent)
+                                SmallBadge("$visibleStructureCount 个启用结构", Accent)
                                 if (state.layer.points || state.layer.lines) SmallBadge("教学定位 · 待校对", Amber)
                             }
                             if (state.layer.cutawaySide != CutawaySide.NONE) Text("${state.layer.cutawaySide.title} · 按人体自身左右", color = Accent, fontSize = 10.sp)
@@ -287,7 +311,8 @@ private fun AtlasWorkspace(state: AtlasUiState, model: AtlasViewModel) {
                                 onExpand = { panel = Panel.FASCIA }, onClose = { selectedFascialTarget = null }, modifier = cardModifier)
                             else SelectionCard(displayPoint, displayStructure, onExpand = { dismissKeyboard(); panel = Panel.DETAILS },
                                 onClose = model::clearSelection,
-                                onHideMuscle = if (displayStructure?.system == "muscle") model::hideSelectedStructure else null,
+                                onHide = if (displayStructure != null) model::hideSelectedStructure else null,
+                                groupSize = if (displayStructure != null) structureGroup?.members?.size ?: 1 else 1,
                                 modifier = cardModifier)
                         }
                         if (loadingModel || modelError != null) Box(Modifier.fillMaxSize().background(Ink.copy(alpha = .65f)), contentAlignment = Alignment.Center) {
@@ -298,14 +323,15 @@ private fun AtlasWorkspace(state: AtlasUiState, model: AtlasViewModel) {
                         }
                     }
                     ModeTools(state, data, model, beforePreset = ::restoreFocus, onFascia = { panel = Panel.FASCIA })
-                    if (state.mode == AtlasMode.OVERVIEW) QuickLayers(state.layer, model::layer)
+                    QuickLayers(state.layer, model::toggleAnatomySystem)
                 }
                 if (wide) {
                     VerticalDivider(color = LineColor)
                     Box(Modifier.width(340.dp).fillMaxHeight().background(PanelColor)) {
                         AtlasCatalogue(data, state, query, ::updateQuery,
                             onMeridian = model::selectMeridianForCatalogue, onToggleMeridian = model::toggleMeridian,
-                            onPoint = { focusPoint(it) }, onStructure = { selectedFascialTarget = null; dismissKeyboard(); viewer.captureCamera(state.mode.name); model.locateStructure(it.id); viewer.focusOn(it.center, .45f) }, requestSearchFocus = searchRequest)
+                            onSetMeridians = model::setMeridians,
+                            onPoint = { focusPoint(it) }, onStructure = { focusStructure(it) }, requestSearchFocus = searchRequest)
                     }
                 }
             }
@@ -329,12 +355,14 @@ private fun AtlasWorkspace(state: AtlasUiState, model: AtlasViewModel) {
                     when (panel) {
                         Panel.CATALOGUE -> AtlasCatalogue(data, state, query, ::updateQuery,
                             onMeridian = model::selectMeridianForCatalogue, onToggleMeridian = model::toggleMeridian,
+                            onSetMeridians = model::setMeridians,
                             onPoint = { focusPoint(it); panel = null },
-                            onStructure = { selectedFascialTarget = null; dismissKeyboard(); viewer.captureCamera(state.mode.name); model.locateStructure(it.id); viewer.focusOn(it.center, .45f); panel = null }, requestSearchFocus = searchRequest)
+                            onStructure = { focusStructure(it); panel = null }, requestSearchFocus = searchRequest)
                         Panel.LAYERS -> LayersPanel(data, state, model, onReset = { restoreFocus(); model.resetLayers() })
                         Panel.DETAILS -> DetailPanel(point, structure, selectedInstance, onSide = { index -> point?.let { focusPoint(it, index) } },
                             onHide = { model.hideSelectedStructure(); panel = null },
-                            onIsolate = { structure?.let { target -> viewer.captureCamera(state.mode.name); model.revealStructure(target.id); viewer.focusOn(target.center, .45f); panel = null } })
+                            onIsolate = { structure?.let { focusStructure(it, isolate = true); panel = null } },
+                            memberIds = structureGroup?.members?.map { it.id }.orEmpty())
                         Panel.ABOUT -> AboutPanel(data) { panel = Panel.LICENSES }
                         Panel.LICENSES -> LicensePanel()
                         Panel.FASCIA -> FasciaPanel(data.fascialConnections, state.layer,
@@ -342,7 +370,10 @@ private fun AtlasWorkspace(state: AtlasUiState, model: AtlasViewModel) {
                             onTargets = { model.layer { it.copy(fasciaTargets = !it.fasciaTargets) } },
                             onToggle = { id -> model.layer { it.copy(fasciaChains = true,
                                 enabledFascialConnections = if (id in it.enabledFascialConnections) it.enabledFascialConnections - id else it.enabledFascialConnections + id) } },
-                            onObserve = { observeConnection(it); panel = null }, onTarget = ::focusConnectionTarget)
+                            onObserve = { observeConnections(listOf(it)); panel = null }, onTarget = ::focusConnectionTarget,
+                            onSetConnections = { ids -> model.layer { it.copy(fasciaChains = it.fasciaChains || ids.isNotEmpty(),
+                                enabledFascialConnections = ids) } },
+                            onObserveAll = { observeConnections(it); panel = null }, selectedTargetId = selectedFascialTarget)
                         else -> Unit
                     }
                 }
@@ -372,15 +403,14 @@ private fun AtlasWorkspace(state: AtlasUiState, model: AtlasViewModel) {
         Box(Modifier.size(40.dp), contentAlignment = Alignment.Center) { Icon(icon, title, Modifier.size(19.dp), Accent) }
     }
 }
-@Composable private fun QuickLayers(state: LayerState, change: ((LayerState) -> LayerState) -> Unit) {
+@Composable private fun QuickLayers(state: LayerState, onToggle: (String) -> Unit) {
     Row(Modifier.fillMaxWidth().horizontalScroll(rememberScrollState()).padding(horizontal = 12.dp, vertical = 5.dp), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-        listOf(Triple("皮肤", state.skin, "skin"), Triple("肌肉", state.muscle, "muscle"),
-            Triple("筋膜·腱韧带", state.connective, "connective"), Triple("内脏", state.organ, "organ"), Triple("骨骼", state.bone, "bone")).forEach { (name, enabled, key) ->
-            FilterChip(selected = enabled, onClick = { change { when (key) {
-                "skin" -> it.copy(skin = !it.skin); "muscle" -> it.copy(muscle = !it.muscle)
-                "organ" -> it.copy(organ = !it.organ); "connective" -> it.copy(connective = !it.connective)
-                else -> it.copy(bone = !it.bone)
-            } } }, label = { Text(name, fontSize = 12.sp) }, leadingIcon = {
+        listOf(Triple("肌肉", state.muscle, "muscle"), Triple("骨骼", state.bone, "bone"),
+            Triple("内脏", state.organ, "organ"), Triple("皮肤", state.skin, "skin"),
+            Triple("筋膜·腱韧带", state.connective, "connective")).forEach { (name, enabled, key) ->
+            FilterChip(selected = enabled, onClick = { onToggle(key) },
+                modifier = Modifier.semantics { contentDescription = "显示$name" },
+                label = { Text(name, fontSize = 12.sp) }, leadingIcon = {
                 Box(Modifier.size(6.dp).background(if (enabled) Accent else Muted, CircleShape))
             }, border = FilterChipDefaults.filterChipBorder(enabled = true, selected = enabled, borderColor = LineColor, selectedBorderColor = Accent.copy(alpha = .45f)),
                 colors = FilterChipDefaults.filterChipColors(selectedContainerColor = Accent.copy(alpha = .1f), selectedLabelColor = Accent))
@@ -410,17 +440,13 @@ private fun AtlasWorkspace(state: AtlasUiState, model: AtlasViewModel) {
                     val selected = state.layer.muscle && state.layer.isolateId == null && state.layer.focusIds.isEmpty() && state.layer.disabledRegionLayers == disabled
                     FilterChip(selected = selected, onClick = { beforePreset(); model.layer { VisibilityPolicy.muscleDepth(it, data.structures, depth) } }, label = { Text(title) })
                 }
-                FilterChip(selected = state.layer.bone, onClick = { model.layer {
-                    val focus = it.isolateId?.let { id -> setOf(id) + data.structures.filter { item -> item.system == "bone" }.map { item -> item.id } } ?: it.focusIds
-                    it.copy(bone = !it.bone, isolateId = null, focusIds = focus)
-                } }, label = { Text("骨骼参照") })
             }
             AtlasMode.MERIDIANS -> {
                 listOf(Triple("经络线", state.layer.lines, "lines"), Triple("穴位标记", state.layer.points, "points"),
-                    Triple("中文名称", state.layer.labels, "labels"), Triple("体表皮肤", state.layer.skin, "skin")).forEach { (title, selected, key) ->
-                    FilterChip(selected = selected, onClick = { if (key == "skin") beforePreset(); model.layer { when (key) {
+                    Triple("中文名称", state.layer.labels, "labels")).forEach { (title, selected, key) ->
+                    FilterChip(selected = selected, onClick = { model.layer { when (key) {
                         "lines" -> it.copy(lines = !it.lines); "points" -> it.copy(points = !it.points)
-                        "labels" -> it.copy(labels = !it.labels); else -> it.copy(skin = !selected, cutawaySide = CutawaySide.NONE)
+                        else -> it.copy(labels = !it.labels)
                     } } }, label = { Text(title) })
                 }
             }
@@ -448,14 +474,14 @@ private fun AtlasWorkspace(state: AtlasUiState, model: AtlasViewModel) {
     if (state.mode == AtlasMode.OVERVIEW) Text(when {
         !state.layer.fasciaChains -> "按系统浏览解剖结构 · 筋膜力线可查看研究连接"
         state.layer.enabledFascialConnections.isEmpty() -> "筋膜研究链 · 请先在筋膜力线中勾选连接链"
-        else -> "筋膜研究链 · 菱形为连接参考区 · 虚线无受力方向或力值"
+        else -> "实线：组织范围参考 · 虚线：连接关系 · 菱形：参考区"
     }, color = Muted, fontSize = 10.sp, maxLines = 1, overflow = TextOverflow.Ellipsis,
         modifier = Modifier.padding(horizontal = 16.dp, vertical = 4.dp))
     }
 }
 
 @Composable private fun SelectionCard(point: Acupoint?, structure: AnatomyStructure?, onExpand: () -> Unit, onClose: () -> Unit,
-    onHideMuscle: (() -> Unit)? = null, modifier: Modifier = Modifier) {
+    onHide: (() -> Unit)? = null, groupSize: Int = 1, modifier: Modifier = Modifier) {
     Surface(onClick = onExpand, modifier = modifier, shape = RoundedCornerShape(16.dp),
         color = PanelColor.copy(alpha = .97f), border = BorderStroke(1.dp, LineColor), shadowElevation = 8.dp) {
         Column(Modifier.padding(start = 14.dp, end = 8.dp, top = 8.dp, bottom = 6.dp), verticalArrangement = Arrangement.spacedBy(3.dp)) {
@@ -463,7 +489,8 @@ private fun AtlasWorkspace(state: AtlasUiState, model: AtlasViewModel) {
                 Column(Modifier.weight(1f)) {
                     Text(point?.nameZh ?: structure?.nameZh ?: "", fontWeight = FontWeight.SemiBold, fontSize = 16.sp,
                         maxLines = 1, overflow = TextOverflow.Ellipsis)
-                    Text(point?.codes?.joinToString(" / ")?.ifBlank { "经外奇穴" } ?: "解剖结构", color = Accent, fontSize = 11.sp,
+                    Text(point?.codes?.joinToString(" / ")?.ifBlank { "经外奇穴" } ?:
+                        if (groupSize > 1) "$groupSize 个片段 · 整体操作" else "解剖结构", color = Accent, fontSize = 11.sp,
                         maxLines = 1, overflow = TextOverflow.Ellipsis)
                 }
                 IconButton(onClick = onClose, modifier = Modifier.size(36.dp)) { Icon(Icons.Outlined.Close, "取消选中", tint = Muted, modifier = Modifier.size(18.dp)) }
@@ -471,8 +498,8 @@ private fun AtlasWorkspace(state: AtlasUiState, model: AtlasViewModel) {
             Text(point?.locationZh ?: structure?.descriptionZh?.ifBlank { structure.nameEn } ?: "", maxLines = 1,
                 overflow = TextOverflow.Ellipsis, color = Muted, fontSize = 12.sp, lineHeight = 19.sp)
             Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.End, verticalAlignment = Alignment.CenterVertically) {
-                if (onHideMuscle != null) TextButton(onClick = onHideMuscle, modifier = Modifier.height(32.dp), contentPadding = PaddingValues(horizontal = 8.dp)) {
-                    Text("隐藏这一块", fontSize = 12.sp)
+                if (onHide != null) TextButton(onClick = onHide, modifier = Modifier.height(32.dp), contentPadding = PaddingValues(horizontal = 8.dp)) {
+                    Text(if (groupSize > 1) "隐藏同名组织" else if (structure?.system == "muscle") "隐藏这一块" else "隐藏此结构", fontSize = 12.sp)
                 }
                 TextButton(onClick = onExpand, modifier = Modifier.height(32.dp), contentPadding = PaddingValues(horizontal = 8.dp)) {
                     Text("完整说明", fontSize = 12.sp)
@@ -491,12 +518,12 @@ private fun toggleInternalRelations(layer: LayerState): LayerState =
     LazyColumn(Modifier.fillMaxWidth(), contentPadding = PaddingValues(horizontal = 22.dp, vertical = 12.dp)) {
         item { Text("图层控制", fontSize = 22.sp, fontWeight = FontWeight.SemiBold); Text("${state.mode.title} · 各模式独立保存", color = Muted, fontSize = 12.sp, modifier = Modifier.padding(top = 5.dp, bottom = 18.dp)) }
         item { SectionLabel("解剖系统") }
-        item { ToggleRow("皮肤", "关闭后显露下层结构", layer.skin) { model.layer { it.copy(skin = !it.skin) } } }
-        item { ToggleRow("肌肉总开关", "重新开启时保留分层和单肌设置", layer.muscle) { model.layer { it.copy(muscle = !it.muscle) } } }
-        item { ToggleRow("内脏", "保留独立器官部件", layer.organ) { model.layer { it.copy(organ = !it.organ) } } }
-        item { ToggleRow("骨骼", "观察骨性标志与深部结构", layer.bone) { model.layer { it.copy(bone = !it.bone) } } }
-        item { ToggleRow("筋膜·腱韧带", "筋膜、腱膜、肌腱、韧带等分别标注组织类型", layer.connective) { model.layer { it.copy(connective = !it.connective) } } }
-        if (data.structures.any { it.system == "space" }) item { ToggleRow("解剖腔隙参考", "脑室等腔隙的区域模型，单独显示", layer.spaces) { model.layer { it.copy(spaces = !it.spaces) } } }
+        item { ToggleRow("皮肤", "关闭后显露下层结构", layer.skin) { model.toggleAnatomySystem("skin") } }
+        item { ToggleRow("肌肉总开关", "重新开启时保留分层和单肌设置", layer.muscle) { model.toggleAnatomySystem("muscle") } }
+        item { ToggleRow("内脏", "同名组织的模型片段整体选择与隐藏", layer.organ) { model.toggleAnatomySystem("organ") } }
+        item { ToggleRow("骨骼", "观察骨性标志与深部结构", layer.bone) { model.toggleAnatomySystem("bone") } }
+        item { ToggleRow("筋膜·腱韧带", "筋膜、腱膜、肌腱、韧带等分别标注组织类型", layer.connective) { model.toggleAnatomySystem("connective") } }
+        if (data.structures.any { it.system == "space" }) item { ToggleRow("解剖腔隙参考", "脑室等腔隙的区域模型，单独显示", layer.spaces) { model.toggleAnatomySystem("space") } }
         item { HorizontalDivider(Modifier.padding(vertical = 16.dp), color = LineColor); SectionLabel("肌肉区域与深度") }
         regionNames.filterKeys { it != "whole" }.forEach { (region, name) ->
             val depths = data.structures.filter { it.system == "muscle" && it.region == region }.map { it.layer }.distinct().sorted()
@@ -538,7 +565,7 @@ private fun toggleInternalRelations(layer: LayerState): LayerState =
 }
 
 @Composable private fun DetailPanel(point: Acupoint?, structure: AnatomyStructure?, instance: PointInstance?,
-    onSide: (Int) -> Unit, onHide: () -> Unit, onIsolate: () -> Unit) {
+    onSide: (Int) -> Unit, onHide: () -> Unit, onIsolate: () -> Unit, memberIds: List<String> = emptyList()) {
     Column(Modifier.fillMaxWidth().verticalScroll(rememberScrollState()).padding(horizontal = 24.dp, vertical = 12.dp), verticalArrangement = Arrangement.spacedBy(16.dp)) {
         Text(point?.nameZh ?: structure?.nameZh ?: "未选择对象", fontSize = 28.sp, fontWeight = FontWeight.SemiBold)
         if (point != null) {
@@ -562,6 +589,7 @@ private fun toggleInternalRelations(layer: LayerState): LayerState =
         if (structure != null) {
             Text(structure.nameEn, color = Muted)
             Text("${systemName(structure.system)} · ${regionNames[structure.region] ?: structure.region}${if (structure.system == "muscle") " · ${depthName(structure.layer)}" else ""}", color = Accent)
+            if (memberIds.size > 1) Text("${memberIds.size} 个模型片段 · 选中、高亮、隐藏及单独显示作用于同名组织整体", color = Accent, fontSize = 12.sp)
             if (structure.tissueTypeZh.isNotBlank()) Text("组织类型：${structure.tissueTypeZh}", color = Muted, fontSize = 12.sp)
             if (structure.sourceConceptNoteZh.isNotBlank()) Text(structure.sourceConceptNoteZh, color = Muted, fontSize = 12.sp)
             if (structure.descriptionZh.isNotBlank()) DetailText("说明", structure.descriptionZh)
@@ -569,8 +597,8 @@ private fun toggleInternalRelations(layer: LayerState): LayerState =
             if (structure.insertionZh.isNotBlank()) DetailText("止点", structure.insertionZh)
             if (structure.functionZh.isNotBlank()) DetailText("作用", structure.functionZh)
             if (structure.system == "muscle" && structure.originZh.isBlank()) Text("该部件起止点和作用尚未完成中文内容校对。", color = Amber, fontSize = 12.sp)
-            Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) { Button(onClick = onIsolate) { Text("单独显示") }; OutlinedButton(onClick = onHide) { Text("隐藏此结构") } }
-            DetailText("结构编号", structure.id)
+            Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) { Button(onClick = onIsolate) { Text(if (memberIds.size > 1) "单独显示整体" else "单独显示") }; OutlinedButton(onClick = onHide) { Text(if (memberIds.size > 1) "隐藏同名组织" else "隐藏此结构") } }
+            DetailText(if (memberIds.size > 1) "模型片段编号" else "结构编号", memberIds.ifEmpty { listOf(structure.id) }.joinToString("、"))
         }
         Spacer(Modifier.height(20.dp))
     }
@@ -584,7 +612,7 @@ private fun toggleInternalRelations(layer: LayerState): LayerState =
     Column(Modifier.fillMaxWidth().verticalScroll(rememberScrollState()).padding(24.dp), verticalArrangement = Arrangement.spacedBy(18.dp)) {
         Text(stringResource(R.string.about_app_title, stringResource(R.string.app_name)), fontSize = 25.sp, fontWeight = FontWeight.SemiBold)
         Text(stringResource(R.string.about_app_summary, BuildConfig.VERSION_NAME), color = Accent)
-        DetailText("覆盖", "${data.points.size} 个标准穴位条目，${data.meridians.size} 类经络路线，${data.structures.size} 个解剖部件。\n三维已映射 $mapped 条；定位已校对 $reviewed 条。")
+        DetailText("覆盖", "${data.points.size} 个标准穴位条目，${data.meridians.size} 类经络路线，${data.structureGroups.entries.size} 个解剖结构（${data.structures.size} 个模型片段）。\n三维已映射 $mapped 条；定位已校对 $reviewed 条。")
         DetailText("穴位依据", "GB/T 12346—2021《经穴名称与定位》：362 个经穴。\nGB/T 40997—2021《经外奇穴名称与定位》：51 个常用经外奇穴。\n奇经路线依据中医经络教学资料编排，均为教学示意。")
         DetailText("模型来源", "BodyParts3D, © The Database Center for Life Science, CC Attribution 4.0 International.\n补充肌肉来自 Z-Anatomy；合并模型按 CC BY-SA 4.0 提供。坐标转换、分类、移动端优化与逐项来源见离线许可资料。")
         OutlinedButton(onClick = onLicenses) { Text("查看离线来源与许可") }

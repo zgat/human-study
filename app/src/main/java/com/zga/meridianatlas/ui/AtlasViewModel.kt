@@ -24,7 +24,7 @@ data class AtlasUiState(
     val selectedPointMeridian: String? get() = data?.points?.firstOrNull { it.id == selectedPoint }?.meridianId
 
     /** A route checkbox changes the browsing set, not the selected point's anatomical context. */
-    val effectiveMeridians: Set<String> get() = enabledMeridians + setOfNotNull(selectedPointMeridian)
+    val effectiveMeridians: Set<String> get() = MeridianSelectionPolicy.effective(enabledMeridians, selectedPointMeridian)
 }
 
 class AtlasViewModel(application: Application) : AndroidViewModel(application) {
@@ -70,20 +70,36 @@ class AtlasViewModel(application: Application) : AndroidViewModel(application) {
     fun layer(transform: (LayerState) -> LayerState) {
         mutable.update { it.copy(layers = it.layers + (it.mode to transform(it.layer))) }; persist()
     }
+    fun toggleAnatomySystem(system: String) {
+        val value = mutable.value
+        val enabled = !VisibilityPolicy.systemVisible(value.layer, system)
+        focusSnapshots[value.mode]?.let { snapshot ->
+            focusSnapshots[value.mode] = snapshot.copy(layer = VisibilityPolicy.setSystemVisible(snapshot.layer, system, enabled))
+        }
+        layer { VisibilityPolicy.setSystemVisible(it, system, enabled) }
+    }
     fun toggleMeridian(id: String) {
-        val wasEnabled = id in mutable.value.enabledMeridians
+        setMeridians(setOf(id), id !in mutable.value.enabledMeridians)
+    }
+    fun setMeridians(ids: Set<String>, checked: Boolean) {
+        val value = mutable.value
+        val validIds = ids.intersect(value.data?.meridians?.map { it.id }.orEmpty().toSet() + "__extra__")
+        if (validIds.isEmpty()) return
+        val withRoutes = validIds.any { it != "__extra__" }
         focusSnapshots[AtlasMode.MERIDIANS]?.let { snapshot -> snapshot.meridians?.let { stable ->
-            focusSnapshots[AtlasMode.MERIDIANS] = snapshot.copy(meridians = if (wasEnabled) stable - id else stable + id,
-                layer = if (wasEnabled) snapshot.layer else snapshot.layer.copy(lines = if (id == "__extra__") snapshot.layer.lines else true, points = true))
+            focusSnapshots[AtlasMode.MERIDIANS] = snapshot.copy(
+                meridians = MeridianSelectionPolicy.setEnabled(stable, validIds, checked),
+                layer = if (!checked) snapshot.layer else snapshot.layer.copy(lines = snapshot.layer.lines || withRoutes, points = true))
         } }
         mutable.update { value ->
-            val enabled = if (id in value.enabledMeridians) value.enabledMeridians - id else value.enabledMeridians + id
-            value.copy(enabledMeridians = enabled, activeMeridian = id.takeIf { !wasEnabled && it != "__extra__" }
-                ?: enabled.lastOrNull { it != "__extra__" }, selectedMeridian = value.selectedPointMeridian
-                ?: id.takeIf { it != "__extra__" && it in enabled }
-                ?: enabled.lastOrNull { it != "__extra__" })
+            val enabled = MeridianSelectionPolicy.setEnabled(value.enabledMeridians, validIds, checked)
+            val active = validIds.lastOrNull { checked && it != "__extra__" }
+                ?: value.activeMeridian?.takeIf { it in enabled }
+                ?: enabled.lastOrNull { it != "__extra__" }
+            value.copy(enabledMeridians = enabled, activeMeridian = active,
+                selectedMeridian = value.selectedPointMeridian ?: active)
         }
-        if (!wasEnabled) layer { it.copy(lines = if (id == "__extra__") it.lines else true, points = true) }
+        if (checked) layer { it.copy(lines = it.lines || withRoutes, points = true) }
         persist()
     }
     fun selectMeridianForCatalogue(id: String) { mutable.update { it.copy(selectedMeridian = it.selectedPointMeridian ?: id, activeMeridian = id) } }
@@ -103,38 +119,45 @@ class AtlasViewModel(application: Application) : AndroidViewModel(application) {
             isolateId = if (reveal) null else it.isolateId, focusIds = if (reveal) emptySet() else it.focusIds) }
     }
     fun selectStructure(id: String?) {
-        mutable.update { it.copy(selectedStructure = id, selectedPoint = null) }
-        if (id != null) layer { it.copy(details = true) }
+        val group = mutable.value.data?.structureGroups?.find(id)
+        if (id != null && group == null) return
+        mutable.update { it.copy(selectedStructure = group?.id, selectedPoint = null) }
+        if (group != null) layer { it.copy(details = true) }
     }
     fun revealStructure(id: String) {
         val value = mutable.value
-        val structure = value.data?.structures?.find { it.id == id } ?: return
+        val group = value.data?.structureGroups?.find(id) ?: return
+        val structure = group.representative
+        val memberLayers = group.members.map { "${it.region}:${it.layer}" }.toSet()
         focusSnapshots.putIfAbsent(value.mode, FocusSnapshot(value.mode, value.layer))
-        mutable.update { it.copy(selectedStructure = id, selectedPoint = null, canRestore = true) }
+        mutable.update { it.copy(selectedStructure = group.id, selectedPoint = null, canRestore = true) }
         layer { it.copy(skin = structure.system == "skin", muscle = structure.system == "muscle" || it.muscle,
             organ = structure.system == "organ" || it.organ, bone = structure.system == "bone" || it.bone,
             connective = structure.system == "connective" || it.connective,
             spaces = structure.system == "space" || it.spaces,
-            hiddenIds = it.hiddenIds - id, disabledRegionLayers = it.disabledRegionLayers - "${structure.region}:${structure.layer}",
-            isolateId = id, focusIds = emptySet(), details = true) }
+            hiddenIds = it.hiddenIds - group.memberIds, disabledRegionLayers = it.disabledRegionLayers - memberLayers,
+            isolateId = group.id, focusIds = emptySet(), details = true) }
     }
     fun locateStructure(id: String) {
         val value = mutable.value
-        val structure = value.data?.structures?.find { it.id == id } ?: return
+        val group = value.data?.structureGroups?.find(id) ?: return
+        val structure = group.representative
+        val memberLayers = group.members.map { "${it.region}:${it.layer}" }.toSet()
         focusSnapshots.putIfAbsent(value.mode, FocusSnapshot(value.mode, value.layer))
-        mutable.update { it.copy(selectedStructure = id, selectedPoint = null, canRestore = true) }
+        mutable.update { it.copy(selectedStructure = group.id, selectedPoint = null, canRestore = true) }
         layer { it.copy(skin = structure.system == "skin", muscle = if (structure.system in setOf("organ", "bone", "connective", "space")) false else structure.system == "muscle" || it.muscle,
             organ = if (structure.system in setOf("bone", "connective", "space")) false else structure.system == "organ" || it.organ,
             bone = structure.system == "bone" || it.bone, connective = structure.system == "connective" || it.connective,
             spaces = structure.system == "space" || it.spaces,
-            hiddenIds = it.hiddenIds - id, disabledRegionLayers = it.disabledRegionLayers - "${structure.region}:${structure.layer}",
+            hiddenIds = it.hiddenIds - group.memberIds, disabledRegionLayers = it.disabledRegionLayers - memberLayers,
             isolateId = null, focusIds = emptySet(), details = true) }
     }
     fun hideSelectedStructure() {
-        val id = mutable.value.selectedStructure ?: return
-        val mode = mutable.value.mode
-        focusSnapshots[mode]?.let { snapshot -> focusSnapshots[mode] = snapshot.copy(layer = VisibilityPolicy.hideOnly(snapshot.layer, id)) }
-        layer { VisibilityPolicy.hideOnly(it, id) }
+        val value = mutable.value
+        val ids = value.data?.structureGroups?.find(value.selectedStructure)?.memberIds ?: return
+        val mode = value.mode
+        focusSnapshots[mode]?.let { snapshot -> focusSnapshots[mode] = snapshot.copy(layer = VisibilityPolicy.hideOnly(snapshot.layer, ids)) }
+        layer { VisibilityPolicy.hideOnly(it, ids) }
         mutable.update { it.copy(selectedStructure = null) }
     }
 

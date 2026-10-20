@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "targetApplicationVersion": "0.3.0",
+  "targetApplicationVersion": "0.4.0",
   "files": [
     {
       "path": "content-anchor-audit.json",
@@ -29,13 +29,13 @@
     },
     {
       "path": "cutaway-material.json",
-      "bytes": 1452,
-      "sha256": "8941db3e91e4123db2bb4a7cb1c84165186acb8f038923da903ae678c12bf4ff"
+      "bytes": 1512,
+      "sha256": "b188f9b5bd8fefaa26bdb3713fdf397245d9f7a63a87e2d3152a3fe4ec040833"
     },
     {
       "path": "fascia-content.json",
-      "bytes": 9388,
-      "sha256": "32dfc5b190f88f434e556611007705e6c294d25ead742e8ea79950c2d26d8c10"
+      "bytes": 503166,
+      "sha256": "e1faad578963d94fbc67ba449f6ef3bd52dbe07e1644977f56e3cc14dda3055b"
     },
     {
       "path": "meridian-palette.json",
@@ -109,18 +109,18 @@
     },
     {
       "path": "test-summary.json",
-      "bytes": 5195,
-      "sha256": "24efc811796ad5b7f5121683cc6e072d1208fc43395294a39370698ddf3712cd"
+      "bytes": 6231,
+      "sha256": "ad0f41b059a44f82fb8a5e862b40117a9e20a3a7d9f86a72eb87feada903b3a7"
     },
     {
       "path": "build-evidence.json",
-      "bytes": 13290,
-      "sha256": "0dbf9898e52357dced2f230aa77f6946505be00eebb39f618b8f93dd160c73c2"
+      "bytes": 16445,
+      "sha256": "7bf3ce97973c6afce5021657facb4a956bc1d8ddbd9c7014075f67878cdc60e6"
     },
     {
       "path": "delivery-evidence.json",
-      "bytes": 4878,
-      "sha256": "839b045228b4ad1842a69f73ab40404ba56c526e4b434ae05fbad76d8adefbeb"
+      "bytes": 4880,
+      "sha256": "b991ce749998dbdcad754577eb5c4630b9610144761ca5d2037d27917b75e136"
     }
   ],
   "policyZh": "固定素材清单白名单；设备与历史原件不复制；构建证据须显式启用并与当前版本和APK哈希匹配。"

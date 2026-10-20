@@ -14,7 +14,9 @@ data class AnatomyStructure(
     val region: String, val layer: Int, val nodeName: String,
     val center: Vec3, val descriptionZh: String = "", val originZh: String = "",
     val insertionZh: String = "", val functionZh: String = "",
-    val tissueType: String = "", val tissueTypeZh: String = "", val sourceConceptNoteZh: String = ""
+    val tissueType: String = "", val tissueTypeZh: String = "", val sourceConceptNoteZh: String = "",
+    val sourceConceptId: String = "", val sourceDataset: String = "",
+    val boundsMin: Vec3? = null, val boundsMax: Vec3? = null
 )
 data class PointInstance(val id: String, val side: String, val ordinal: Int,
     val position: Vec3?, val normal: Vec3? = null, val viewId: String = "body",
@@ -51,4 +53,6 @@ data class LayerState(
 )
 data class AtlasData(val structures: List<AnatomyStructure>, val points: List<Acupoint>,
     val meridians: List<Meridian>, val sourceNotes: String = "",
-    val fascialConnections: List<FascialConnection> = emptyList())
+    val fascialConnections: List<FascialConnection> = emptyList()) {
+    val structureGroups: StructureGroups by lazy { StructureGroups(structures) }
+}
