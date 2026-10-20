@@ -67,21 +67,25 @@
     {
       "quality": "standard",
       "path": "app/src/main/assets/models/body-standard.glb",
-      "bytes": 59941576,
-      "sha256": "a1588838552e7503142a51cc5f23681bbcc3cd33098bca80739f4794fed2ceee",
-      "structures": 1239,
-      "vertices": 1610861,
-      "triangles": 2570132,
-      "unchangedSmallMeshes": 0
+      "bytes": 63196840,
+      "sha256": "a9db567003aefceae40bab4930dfc709b95031025fad59a8018465b2dbb8b0ba",
+      "structures": 1291,
+      "vertices": 1701130,
+      "triangles": 2744721,
+      "unchangedSmallMeshes": 0,
+      "existingBinPrefixSha256": "dd57ff8813fc73fdea4b1573c16ac15d184bf8f6f4a97941e878a15c02a86ea5",
+      "existingBinPrefixBytes": 59011924,
+      "existingBinPrefixUnchanged": true,
+      "existingNodePrimitiveMaterialAccessorJsonUnchanged": true
     },
     {
       "quality": "low",
       "path": "app/src/main/assets/models/body-low.glb",
-      "bytes": 48115592,
-      "sha256": "9d4b8f75a3d12fb5695039594dab82af5223af7bccf8b69f511b64815e3329e3",
-      "structures": 1239,
-      "vertices": 1292216,
-      "triangles": 1921262,
+      "bytes": 51370856,
+      "sha256": "732db523e4fc217f575c944b7ca1dcfd169231d01aa4b128f7c992428bea1042",
+      "structures": 1291,
+      "vertices": 1382485,
+      "triangles": 2095851,
       "unchangedSmallMeshes": 44,
       "geometryExceptions": [
         {
@@ -91,7 +95,11 @@
           "cellMm": 1.5,
           "reasonZh": "皮肤薄层避免 5 mm 聚类合并相反朝向的表面。"
         }
-      ]
+      ],
+      "existingBinPrefixSha256": "97cee60425c907eebd2ab017fa2eb37deda3cced1d5498c02db0dc2fda9313a8",
+      "existingBinPrefixBytes": 47179372,
+      "existingBinPrefixUnchanged": true,
+      "existingNodePrimitiveMaterialAccessorJsonUnchanged": true
     }
   ],
   "coordinateSystem": {
@@ -107,7 +115,7 @@
     "organ": 382,
     "bone": 285,
     "space": 13,
-    "connective": 59,
+    "connective": 111,
     "muscle": 499,
     "skin": 1
   },
@@ -5616,12 +5624,16 @@
   },
   "anatomyMetadata": {
     "path": "app/src/main/assets/anatomy.json",
-    "sha256": "bf3d37618ab832cf9ce2b828d6db14241c735dba5978ffc3cd227f593a4a044f"
+    "sha256": "9cf2b598b0e4cd61ed3f2f8092bcc65f7cd471d02f37b9f50307e45ba52ab93b"
   },
   "pipelineFiles": [
     {
       "path": "tools/assets/README.md",
-      "sha256": "f8a893467d2a1fa053b16f509078462442f15f6a7d2104a3df38e87a3394175e"
+      "sha256": "d685ca65928f54cbce0bcca1a76029675befd15881e75313d71efc8b1dfd3edb"
+    },
+    {
+      "path": "tools/assets/append_fascia_assets.py",
+      "sha256": "9b468aad9e0728a86a730cdbdcc5447760be6b07e2ce2291ca4d309525d584b2"
     },
     {
       "path": "tools/assets/audit_muscle_topology.py",
@@ -5633,7 +5645,7 @@
     },
     {
       "path": "tools/assets/build_models.py",
-      "sha256": "f32abfdcb58ca4867ad3b00a9b20df2089ec0be20a642ad7c1c18003a93fe177"
+      "sha256": "afa4cea82d0f0e1f0fdcfcc45ce814b18b22a0ec6c0c5b6d68bd1a63923c8a9b"
     },
     {
       "path": "tools/assets/chinese-names-extra.json",
@@ -5645,7 +5657,7 @@
     },
     {
       "path": "tools/assets/connective_supplement.py",
-      "sha256": "870d793190feb91fe40d6ad6af5954356cb6a78453602ef142cc2146ba064c13"
+      "sha256": "07575b20cd9678f040e86853e955bf447a380d5da7443efe1d6d35812c844026"
     },
     {
       "path": "tools/assets/fbx_extract.py",
@@ -5681,7 +5693,7 @@
     },
     {
       "path": "tools/assets/taxonomy.json",
-      "sha256": "f677d7d6e1433602e794edafb9acdf56590847c6c1fb168b85b301eb29802630"
+      "sha256": "3ad25da20964db2eec327f3a0737337cea59d8b734cc0414f4f577d889aa73d3"
     },
     {
       "path": "tools/assets/taxonomy.py",
@@ -5693,7 +5705,7 @@
     },
     {
       "path": "tools/assets/update_taxonomy_assets.py",
-      "sha256": "9cc0ab1f22fa777dba730616f1f473f4b6c7214a51e7b32fca2d412819727eee"
+      "sha256": "da26ed90a2094963c41899933aaad7bf8e64437590ad4d991cd2055bc8ae7ad9"
     },
     {
       "path": "tools/assets/vendor/meshopt_simplifier.mjs",
@@ -5701,7 +5713,7 @@
     },
     {
       "path": "tools/assets/verify_models.py",
-      "sha256": "1448ae673ca44e9f1aa157f319af469d68f0a9a0ef6b0d4a56d27627fa150c52"
+      "sha256": "f73ff1af671a1a8632749349889ac17a7cfbb5861e65f9e77b1ebf07586f8088"
     },
     {
       "path": "tools/assets/verify_muscle_fix.py",
@@ -5719,7 +5731,7 @@
     },
     {
       "path": "licenses/DEPENDENCY-NOTICES.md",
-      "sha256": "1c8f4704ff6245c63577dbdc85eafc0c81c62c606797ba2df4d88b7f065cf5e6"
+      "sha256": "16691f8e811a6fec28767981fbd381f83e003eb4d91b67b1c635643a70b11328"
     },
     {
       "path": "licenses/FILAMENT-Apache-2.0.txt",
@@ -5727,7 +5739,7 @@
     },
     {
       "path": "licenses/MODEL-NOTICE.md",
-      "sha256": "8ff89005f38b2ae145685b18064634f0a548cc73436fd87ec3177e0929377287"
+      "sha256": "e4ba37f2e99e55591bd621bc84660c8e09220c3d3a632605ac412f9448e4ecfd"
     },
     {
       "path": "licenses/Z-Anatomy-upstream.txt",
@@ -5741,16 +5753,10 @@
   "taxonomyManifest": "manifests/model-taxonomy.json",
   "connectiveSupplementManifest": "manifests/model-connective-supplement.json",
   "metadataAndAppendBuild": {
-    "entryPoint": "tools/assets/update_taxonomy_assets.py",
-    "existingGeometryPolicy": "All previous node POSITION/NORMAL/index payloads and original BIN prefix retained byte-exact.",
-    "newGeometryPolicy": "Eight authorized source fascia/aponeurosis meshes retained at source resolution in both tiers.",
-    "authorizedGeometryExceptionIds": [
-      "FJ1520",
-      "FJ1520M",
-      "FJ1521",
-      "FJ1521M"
-    ],
-    "geometryExceptionEntryPoint": "tools/assets/fix_trapezius.py"
+    "entryPoint": "tools/assets/append_fascia_assets.py",
+    "existingGeometryPolicy": "Every existing node/primitive/material/accessor value and complete BIN prefix retained byte-exact.",
+    "newGeometryPolicy": "Source-resolution thin sheets and retinacula retained with identical topology in both tiers."
   },
-  "trapeziusFixManifest": "manifests/model-trapezius-fix.json"
+  "trapeziusFixManifest": "manifests/model-trapezius-fix.json",
+  "fasciaExpansionManifest": "manifests/model-fascia-expansion.json"
 }

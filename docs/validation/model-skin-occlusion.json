@@ -15,7 +15,7 @@
   },
   "input": {
     "path": "app/src/main/assets/models/body-low.glb",
-    "sha256": "9d4b8f75a3d12fb5695039594dab82af5223af7bccf8b69f511b64815e3329e3",
+    "sha256": "732db523e4fc217f575c944b7ca1dcfd169231d01aa4b128f7c992428bea1042",
     "nodeName": "FJ2810",
     "triangles": 193566,
     "geometrySource": "Official BodyParts3D 4.0 FJ2810 skin; low-tier skin exactly reuses standard-tier 1.5 mm clustered geometry",
@@ -38,7 +38,9 @@
       }
     },
     "skinPayloadUnchangedDuringTaxonomyAppend": true,
-    "skinPayloadUnchangedDuringTrapeziusFix": true
+    "skinPayloadUnchangedDuringTrapeziusFix": true,
+    "beforeFasciaExpansionContainerSha256": "9d4b8f75a3d12fb5695039594dab82af5223af7bccf8b69f511b64815e3329e3",
+    "skinPayloadUnchangedDuringFasciaAppend": true
   },
   "simplifier": {
     "name": "meshoptimizer MeshoptSimplifier",

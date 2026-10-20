@@ -124,7 +124,8 @@ private fun AtlasWorkspace(state: AtlasUiState, model: AtlasViewModel) {
             additionalEmphasizedMeridian = state.activeMeridian)
     }
     val fascialOverlay = remember(data.fascialConnections, state.mode, state.layer.fasciaChains,
-        state.layer.fasciaTargets, state.layer.enabledFascialConnections, state.layer.skin, state.layer.cutawaySide, visibleIds) {
+        state.layer.fasciaTargets, state.layer.fasciaRelations, state.layer.fasciaContext,
+        state.layer.enabledFascialConnections, state.layer.skin, state.layer.cutawaySide, visibleIds) {
         val skinVisible = state.layer.skin && data.structures.any { it.system == "skin" && it.id in visibleIds }
         buildFascialOverlay(data.fascialConnections,
             state.layer.copy(skin = skinVisible, fasciaChains = state.mode == AtlasMode.OVERVIEW && state.layer.fasciaChains))
@@ -373,7 +374,11 @@ private fun AtlasWorkspace(state: AtlasUiState, model: AtlasViewModel) {
                             onObserve = { observeConnections(listOf(it)); panel = null }, onTarget = ::focusConnectionTarget,
                             onSetConnections = { ids -> model.layer { it.copy(fasciaChains = it.fasciaChains || ids.isNotEmpty(),
                                 enabledFascialConnections = ids) } },
-                            onObserveAll = { observeConnections(it); panel = null }, selectedTargetId = selectedFascialTarget)
+                            onObserveAll = { observeConnections(it); panel = null }, selectedTargetId = selectedFascialTarget,
+                            structures = data.structureGroups.entries,
+                            onStructure = { focusStructure(it.representative, isolate = true); panel = null },
+                            onRelations = { model.layer { it.copy(fasciaRelations = !it.fasciaRelations) } },
+                            onContext = { model.layer { it.copy(fasciaContext = !it.fasciaContext) } })
                         else -> Unit
                     }
                 }
@@ -431,7 +436,7 @@ private fun AtlasWorkspace(state: AtlasUiState, model: AtlasViewModel) {
                 }
                 FilterChip(selected = selected, onClick = { beforePreset(); model.layer { VisibilityPolicy.overviewPreset(it, preset) } }, label = { Text(preset.title) })
             }
-            FilterChip(selected = state.layer.fasciaChains, onClick = onFascia, label = { Text("筋膜力线") })
+            FilterChip(selected = state.layer.fasciaChains, onClick = onFascia, label = { Text("筋膜解剖") })
             }
             AtlasMode.MUSCLES -> {
                 val keys = data.structures.filter { it.system == "muscle" }.map { "${it.region}:${it.layer}" }.toSet()
@@ -472,9 +477,9 @@ private fun AtlasWorkspace(state: AtlasUiState, model: AtlasViewModel) {
             modifier = Modifier.padding(start = 16.dp, end = 12.dp, bottom = 4.dp))
     }
     if (state.mode == AtlasMode.OVERVIEW) Text(when {
-        !state.layer.fasciaChains -> "按系统浏览解剖结构 · 筋膜力线可查看研究连接"
-        state.layer.enabledFascialConnections.isEmpty() -> "筋膜研究链 · 请先在筋膜力线中勾选连接链"
-        else -> "实线：组织范围参考 · 虚线：连接关系 · 菱形：参考区"
+        !state.layer.fasciaChains -> "筋膜解剖：真实组织与局部文献连接"
+        state.layer.enabledFascialConnections.isEmpty() -> "筋膜解剖可查看真实结构；文献连接需另行勾选"
+        else -> "虚线：局部关系示意 · 菱形：参考区 · 组织范围辅助线可单独开启"
     }, color = Muted, fontSize = 10.sp, maxLines = 1, overflow = TextOverflow.Ellipsis,
         modifier = Modifier.padding(horizontal = 16.dp, vertical = 4.dp))
     }

@@ -86,3 +86,9 @@ python3 tools/qa/frametimeline.py outputs/qa/<运行标识>/model-frametimeline.
 分析严格要求本包 `SurfaceView` 的 actual surface frame，以 `display_frame_token` 关联 SurfaceFlinger actual DisplayFrame，使用后者 `ts + dur` 作为呈现时间；应用 slice 结束仅代表 GPU/提交结束，不能充当实际呈现。结果按实际呈现时间去重后计算 FPS、帧间隔分位数与逐秒呈现数量，并检查观察区间和 trace 覆盖/解析错误。
 
 [Perfetto 官方 FrameTimeline 文档](https://perfetto.dev/docs/data-sources/frametimeline) 当前仍注明 SurfaceViews 可能不受支持。数据源存在不能证明模型帧存在；若 trace 仅包含本应用 Compose 顶层窗口，模型呈现测量仍为 `inconclusive`。工具会保留 `own-app-layers.csv`、匹配呈现原始行与统计查询，便于核查。
+
+## 1.7 筋膜解剖与证据检查
+
+`FasciaEvidenceDeviceTest` 使用随包真实数据和紧凑界面，检查默认解剖目录、搜索与组织独显，关系线/辅助线/标记独立开关且保留穴位，以及逐项研究条件、限制和出处。`FasciaDeviceTest`、`FasciaExpansionDeviceTest` 继续覆盖已有观察、恢复和参考区操作。测试APK编译通过不表示设备用例已执行，实际执行范围见验收报告。
+
+主机可运行 `test_fascia_geometry.py` 与 `test_fascia_evidence.py`；前者验证三角面、重心坐标及固定几何，后者验证研究关联与范围线无传力证据。`preview_fascia_assets.py` 使用NumPy和Pillow生成真实GLB的离线正交预览，仅用于素材几何检查，不连接设备，不代替Filament截图或医学验收。

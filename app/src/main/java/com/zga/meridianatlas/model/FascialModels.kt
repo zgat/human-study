@@ -10,6 +10,19 @@ data class FascialSource(
     val noteZh: String = ""
 )
 
+/** What a particular study observed; these categories are not evidence strength grades. */
+data class FascialEvidence(
+    val id: String,
+    val kind: String,
+    val sourceIds: List<String>,
+    val scopeZh: String,
+    val sampleZh: String,
+    val conditionsZh: String,
+    val measurementZh: String,
+    val limitationsZh: String,
+    val relatedPathIds: List<String>
+)
+
 data class FascialTarget(
     val id: String,
     val nameZh: String,
@@ -33,7 +46,10 @@ data class FascialPath(
     val kind: String = "unoriented_connection_schematic",
     val reviewStatus: String = "provisional",
     /** Normals from sampled real surfaces; descriptive only for thin or two-sided tissue. */
-    val normals: List<Vec3> = emptyList()
+    val normals: List<Vec3> = emptyList(),
+    /** Empty for surface context lines: a geometric shortest path is not a loading experiment. */
+    val evidenceIds: List<String> = emptyList(),
+    val meaningZh: String = ""
 )
 
 data class FascialConnection(
@@ -52,5 +68,6 @@ data class FascialConnection(
     val coverageKind: String = "local_research_relation",
     val bodyRegionsZh: List<String> = emptyList(),
     /** Camera suggestion only, never a force direction or a surface registration transform. */
-    val preferredViewNormal: Vec3? = null
+    val preferredViewNormal: Vec3? = null,
+    val evidenceReferences: List<FascialEvidence> = emptyList()
 )

@@ -60,6 +60,7 @@ class AtlasViewModel(application: Application) : AndroidViewModel(application) {
             val value = mutable.value
             val stableLayers = value.layers.mapValues { (mode, layer) -> focusSnapshots[mode]?.layer?.copy(
                 fasciaChains = layer.fasciaChains, fasciaTargets = layer.fasciaTargets,
+                fasciaRelations = layer.fasciaRelations, fasciaContext = layer.fasciaContext,
                 enabledFascialConnections = layer.enabledFascialConnections) ?: layer }
             val stableMeridians = focusSnapshots[AtlasMode.MERIDIANS]?.meridians ?: value.enabledMeridians
             preferences.write(SavedPreferences(value.mode, value.quality, stableLayers, stableMeridians))
@@ -185,6 +186,7 @@ class AtlasViewModel(application: Application) : AndroidViewModel(application) {
                 labels = value.layer.labels, details = value.layer.details,
                 internalRelations = value.layer.internalRelations,
                 fasciaChains = value.layer.fasciaChains, fasciaTargets = value.layer.fasciaTargets,
+                fasciaRelations = value.layer.fasciaRelations, fasciaContext = value.layer.fasciaContext,
                 enabledFascialConnections = value.layer.enabledFascialConnections)
             value.copy(layers = value.layers + (value.mode to restoredLayer), canRestore = false,
                 selectedMeridian = value.selectedPointMeridian ?: value.selectedMeridian)

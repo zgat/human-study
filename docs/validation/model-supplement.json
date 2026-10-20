@@ -11233,13 +11233,1001 @@
           0.17368029057979584
         ]
       }
+    },
+    {
+      "id": "ZA_84510682",
+      "sourceModelName": "Epicranial aponeurosis.r",
+      "system": "connective",
+      "nameZh": "右侧帽状腱膜",
+      "sourceGeometryId": "806703872",
+      "bounds": {
+        "min": [
+          -0.06690321862697601,
+          1.608381748199463,
+          -0.004949189256876707
+        ],
+        "max": [
+          -1.9195214917999692e-05,
+          1.7174354791641235,
+          0.18355603516101837
+        ]
+      }
+    },
+    {
+      "id": "ZA_849343592",
+      "sourceModelName": "Epicranial aponeurosis.l",
+      "system": "connective",
+      "nameZh": "左侧帽状腱膜",
+      "sourceGeometryId": "806703872",
+      "bounds": {
+        "min": [
+          5.489931709234952e-07,
+          1.608381748199463,
+          -0.004949187859892845
+        ],
+        "max": [
+          0.06688456982374191,
+          1.7174354791641235,
+          0.18355603516101837
+        ]
+      }
+    },
+    {
+      "id": "ZA_661418671",
+      "sourceModelName": "Superficial layer of temporal fascia.r",
+      "system": "connective",
+      "nameZh": "右侧颞筋膜浅层",
+      "sourceGeometryId": "329274767",
+      "bounds": {
+        "min": [
+          -0.0770677849650383,
+          1.5885107517242432,
+          0.0487201027572155
+        ],
+        "max": [
+          -0.04859941080212593,
+          1.6729942560195923,
+          0.16253149509429932
+        ]
+      }
+    },
+    {
+      "id": "ZA_772631811",
+      "sourceModelName": "Superficial layer of temporal fascia.l",
+      "system": "connective",
+      "nameZh": "左侧颞筋膜浅层",
+      "sourceGeometryId": "329274767",
+      "bounds": {
+        "min": [
+          0.048580870032310486,
+          1.5885107517242432,
+          0.0487200990319252
+        ],
+        "max": [
+          0.07704924792051315,
+          1.6729942560195923,
+          0.16253149509429932
+        ]
+      }
+    },
+    {
+      "id": "ZA_633010665",
+      "sourceModelName": "Masseteric fascia.r",
+      "system": "connective",
+      "nameZh": "右侧咬肌筋膜",
+      "sourceGeometryId": "26130384",
+      "bounds": {
+        "min": [
+          -0.06322383880615234,
+          1.5212632417678833,
+          0.10921478271484375
+        ],
+        "max": [
+          -0.03491808846592903,
+          1.590227484703064,
+          0.15647676587104797
+        ]
+      }
+    },
+    {
+      "id": "ZA_629531657",
+      "sourceModelName": "Masseteric fascia.l",
+      "system": "connective",
+      "nameZh": "左侧咬肌筋膜",
+      "sourceGeometryId": "26130384",
+      "bounds": {
+        "min": [
+          0.034899551421403885,
+          1.5212632417678833,
+          0.10921479016542435
+        ],
+        "max": [
+          0.0632053017616272,
+          1.590227484703064,
+          0.15647678077220917
+        ]
+      }
+    },
+    {
+      "id": "ZA_853384501",
+      "sourceModelName": "Superficial investing cervical fascia.r",
+      "system": "connective",
+      "nameZh": "右侧颈筋膜封套层",
+      "sourceGeometryId": "806195974",
+      "bounds": {
+        "min": [
+          -0.1743037849664688,
+          1.3808945417404175,
+          -0.019296491518616676
+        ],
+        "max": [
+          0.0019432216649875045,
+          1.5964514017105103,
+          0.17447708547115326
+        ]
+      }
+    },
+    {
+      "id": "ZA_446380389",
+      "sourceModelName": "Superficial investing cervical fascia.l",
+      "system": "connective",
+      "nameZh": "左侧颈筋膜封套层",
+      "sourceGeometryId": "806195974",
+      "bounds": {
+        "min": [
+          -0.001961878966540098,
+          1.3808945417404175,
+          -0.01929648034274578
+        ],
+        "max": [
+          0.1742851287126541,
+          1.5964514017105103,
+          0.17447708547115326
+        ]
+      }
+    },
+    {
+      "id": "ZA_518493617",
+      "sourceModelName": "Pectoral fascia.r",
+      "system": "connective",
+      "nameZh": "右侧胸筋膜",
+      "sourceGeometryId": "458539563",
+      "bounds": {
+        "min": [
+          -0.1722840517759323,
+          1.2275433540344238,
+          0.11173292249441147
+        ],
+        "max": [
+          -6.251561899262015e-06,
+          1.4244166612625122,
+          0.227203831076622
+        ]
+      }
+    },
+    {
+      "id": "ZA_480595436",
+      "sourceModelName": "Pectoral fascia.l",
+      "system": "connective",
+      "nameZh": "左侧胸筋膜",
+      "sourceGeometryId": "458539563",
+      "bounds": {
+        "min": [
+          -1.2301433343964163e-05,
+          1.2275431156158447,
+          0.1117328554391861
+        ],
+        "max": [
+          0.17226548492908478,
+          1.424416422843933,
+          0.22720380127429962
+        ]
+      }
+    },
+    {
+      "id": "ZA_182375068",
+      "sourceModelName": "Investing abdominal fascia.r",
+      "system": "connective",
+      "nameZh": "右侧腹部包被筋膜（源模型命名）",
+      "sourceGeometryId": "607205088",
+      "bounds": {
+        "min": [
+          -0.17076267302036285,
+          0.8539774417877197,
+          -0.030871128663420677
+        ],
+        "max": [
+          -9.295124073105399e-06,
+          1.4070985317230225,
+          0.2263333797454834
+        ]
+      }
+    },
+    {
+      "id": "ZA_210225933",
+      "sourceModelName": "Investing abdominal fascia.l",
+      "system": "connective",
+      "nameZh": "左侧腹部包被筋膜（源模型命名）",
+      "sourceGeometryId": "607205088",
+      "bounds": {
+        "min": [
+          -9.291398782806937e-06,
+          0.8539773225784302,
+          -0.030871298164129257
+        ],
+        "max": [
+          0.17074407637119293,
+          1.4070985317230225,
+          0.22633332014083862
+        ]
+      }
+    },
+    {
+      "id": "ZA_451051828",
+      "sourceModelName": "Clavipectoral fascia.r",
+      "system": "connective",
+      "nameZh": "右侧锁胸筋膜",
+      "sourceGeometryId": "895624605",
+      "bounds": {
+        "min": [
+          -0.1934257447719574,
+          1.2582290172576904,
+          0.06359867006540298
+        ],
+        "max": [
+          -0.04198940098285675,
+          1.418063998222351,
+          0.17587685585021973
+        ]
+      }
+    },
+    {
+      "id": "ZA_866142449",
+      "sourceModelName": "Clavipectoral fascia.l",
+      "system": "connective",
+      "nameZh": "左侧锁胸筋膜",
+      "sourceGeometryId": "895624605",
+      "bounds": {
+        "min": [
+          0.04197084903717041,
+          1.25822913646698,
+          0.0635986179113388
+        ],
+        "max": [
+          0.19340717792510986,
+          1.418063998222351,
+          0.17587679624557495
+        ]
+      }
+    },
+    {
+      "id": "ZA_688771959",
+      "sourceModelName": "Transversalis fascia",
+      "system": "connective",
+      "nameZh": "腹横筋膜",
+      "sourceGeometryId": "998952165",
+      "bounds": {
+        "min": [
+          -0.11662723869085312,
+          0.8612579703330994,
+          0.046322379261255264
+        ],
+        "max": [
+          0.11660856008529663,
+          1.2392934560775757,
+          0.19996970891952515
+        ]
+      }
+    },
+    {
+      "id": "ZA_200191819",
+      "sourceModelName": "Diaphragmatic fascia",
+      "system": "connective",
+      "nameZh": "膈筋膜（源模型命名）",
+      "sourceGeometryId": "556243448",
+      "bounds": {
+        "min": [
+          -0.11835289746522903,
+          1.071858286857605,
+          0.038932278752326965
+        ],
+        "max": [
+          0.11730445921421051,
+          1.2657254934310913,
+          0.19828368723392487
+        ]
+      }
+    },
+    {
+      "id": "ZA_632156718",
+      "sourceModelName": "Piriformis fascia.r",
+      "system": "connective",
+      "nameZh": "右侧梨状肌筋膜",
+      "sourceGeometryId": "405671358",
+      "bounds": {
+        "min": [
+          -0.13417206704616547,
+          0.8655911684036255,
+          0.025983737781643867
+        ],
+        "max": [
+          -0.0234246626496315,
+          0.9295914769172668,
+          0.08578671514987946
+        ]
+      }
+    },
+    {
+      "id": "ZA_392888165",
+      "sourceModelName": "Piriformis fascia.l",
+      "system": "connective",
+      "nameZh": "左侧梨状肌筋膜",
+      "sourceGeometryId": "405671358",
+      "bounds": {
+        "min": [
+          0.023405946791172028,
+          0.865591287612915,
+          0.02598372846841812
+        ],
+        "max": [
+          0.1341533362865448,
+          0.9295915961265564,
+          0.08578671514987946
+        ]
+      }
+    },
+    {
+      "id": "ZA_491848518",
+      "sourceModelName": "Iliopsoas fascia.r",
+      "system": "connective",
+      "nameZh": "右侧髂腰筋膜",
+      "sourceGeometryId": "95073148",
+      "bounds": {
+        "min": [
+          -0.11662723869085312,
+          0.791820228099823,
+          0.06340497732162476
+        ],
+        "max": [
+          -0.019503571093082428,
+          1.128839135169983,
+          0.14907339215278625
+        ]
+      }
+    },
+    {
+      "id": "ZA_408214219",
+      "sourceModelName": "Iliopsoas fascia.l",
+      "system": "connective",
+      "nameZh": "左侧髂腰筋膜",
+      "sourceGeometryId": "95073148",
+      "bounds": {
+        "min": [
+          0.003461698768660426,
+          0.8025686740875244,
+          0.06340497732162476
+        ],
+        "max": [
+          0.10058535635471344,
+          1.1395875215530396,
+          0.14907339215278625
+        ]
+      }
+    },
+    {
+      "id": "ZA_211792739",
+      "sourceModelName": "Deltoid fascia.r",
+      "system": "connective",
+      "nameZh": "右侧三角肌筋膜",
+      "sourceGeometryId": "121961883",
+      "bounds": {
+        "min": [
+          -0.23505108058452606,
+          1.2742255926132202,
+          -0.010269684717059135
+        ],
+        "max": [
+          -0.09131047129631042,
+          1.4366180896759033,
+          0.12219398468732834
+        ]
+      }
+    },
+    {
+      "id": "ZA_869110256",
+      "sourceModelName": "Deltoid fascia.l",
+      "system": "connective",
+      "nameZh": "左侧三角肌筋膜",
+      "sourceGeometryId": "121961883",
+      "bounds": {
+        "min": [
+          0.09129196405410767,
+          1.2742255926132202,
+          -0.01026968564838171
+        ],
+        "max": [
+          0.2350325733423233,
+          1.4366180896759033,
+          0.12219398468732834
+        ]
+      }
+    },
+    {
+      "id": "ZA_311271772",
+      "sourceModelName": "Brachial fascia.r",
+      "system": "connective",
+      "nameZh": "右侧臂筋膜",
+      "sourceGeometryId": "381419273",
+      "bounds": {
+        "min": [
+          -0.24650125205516815,
+          1.1340620517730713,
+          0.009345967322587967
+        ],
+        "max": [
+          -0.1584450900554657,
+          1.3358551263809204,
+          0.11086879670619965
+        ]
+      }
+    },
+    {
+      "id": "ZA_911661179",
+      "sourceModelName": "Brachial fascia.l",
+      "system": "connective",
+      "nameZh": "左侧臂筋膜",
+      "sourceGeometryId": "381419273",
+      "bounds": {
+        "min": [
+          0.15842656791210175,
+          1.1340620517730713,
+          0.009345955215394497
+        ],
+        "max": [
+          0.246482715010643,
+          1.3358551263809204,
+          0.11086878180503845
+        ]
+      }
+    },
+    {
+      "id": "ZA_333450372",
+      "sourceModelName": "Antebrachial fascia.r",
+      "system": "connective",
+      "nameZh": "右侧前臂筋膜",
+      "sourceGeometryId": "157807969",
+      "bounds": {
+        "min": [
+          -0.2880905568599701,
+          0.8762930631637573,
+          0.03178418055176735
+        ],
+        "max": [
+          -0.18295732140541077,
+          1.1624548435211182,
+          0.13430163264274597
+        ]
+      }
+    },
+    {
+      "id": "ZA_244669373",
+      "sourceModelName": "Antebrachial fascia.l",
+      "system": "connective",
+      "nameZh": "左侧前臂筋膜",
+      "sourceGeometryId": "157807969",
+      "bounds": {
+        "min": [
+          0.18293876945972443,
+          0.8762930631637573,
+          0.031784169375896454
+        ],
+        "max": [
+          0.28807201981544495,
+          1.1624548435211182,
+          0.13430164754390717
+        ]
+      }
+    },
+    {
+      "id": "ZA_647872028",
+      "sourceModelName": "Dorsal fascia of hand.r",
+      "system": "connective",
+      "nameZh": "右侧手背筋膜",
+      "sourceGeometryId": "383081805",
+      "bounds": {
+        "min": [
+          -0.33539971709251404,
+          0.7095832824707031,
+          0.10450895130634308
+        ],
+        "max": [
+          -0.2252233326435089,
+          0.866157591342926,
+          0.19738830626010895
+        ]
+      }
+    },
+    {
+      "id": "ZA_916496480",
+      "sourceModelName": "Dorsal fascia of hand.l",
+      "system": "connective",
+      "nameZh": "左侧手背筋膜",
+      "sourceGeometryId": "383081805",
+      "bounds": {
+        "min": [
+          0.22520481050014496,
+          0.7095833420753479,
+          0.10450894385576248
+        ],
+        "max": [
+          0.3353812098503113,
+          0.866157591342926,
+          0.19738832116127014
+        ]
+      }
+    },
+    {
+      "id": "ZA_547570908",
+      "sourceModelName": "Palmar aponeurosis.r",
+      "system": "connective",
+      "nameZh": "右侧掌腱膜",
+      "sourceGeometryId": "491568536",
+      "bounds": {
+        "min": [
+          -0.3353680372238159,
+          0.7102823257446289,
+          0.12944139540195465
+        ],
+        "max": [
+          -0.22605836391448975,
+          0.8663350343704224,
+          0.19755786657333374
+        ]
+      }
+    },
+    {
+      "id": "ZA_675376731",
+      "sourceModelName": "Palmar aponeurosis.l",
+      "system": "connective",
+      "nameZh": "左侧掌腱膜",
+      "sourceGeometryId": "491568536",
+      "bounds": {
+        "min": [
+          0.2260398417711258,
+          0.7102823853492737,
+          0.12944138050079346
+        ],
+        "max": [
+          0.33534952998161316,
+          0.8663350343704224,
+          0.19755786657333374
+        ]
+      }
+    },
+    {
+      "id": "ZA_131836467",
+      "sourceModelName": "Fascia lata.r",
+      "system": "connective",
+      "nameZh": "右侧阔筋膜",
+      "sourceGeometryId": "502155420",
+      "bounds": {
+        "min": [
+          -0.15937292575836182,
+          0.4405573904514313,
+          -0.014096717350184917
+        ],
+        "max": [
+          -9.313750524597708e-06,
+          1.0104713439941406,
+          0.16104194521903992
+        ]
+      }
+    },
+    {
+      "id": "ZA_664437283",
+      "sourceModelName": "Fascia lata.l",
+      "system": "connective",
+      "nameZh": "左侧阔筋膜",
+      "sourceGeometryId": "502155420",
+      "bounds": {
+        "min": [
+          -9.403157491760794e-06,
+          0.4405573308467865,
+          -0.0140967583283782
+        ],
+        "max": [
+          0.15935419499874115,
+          1.0104714632034302,
+          0.1610419601202011
+        ]
+      }
+    },
+    {
+      "id": "ZA_743661520",
+      "sourceModelName": "Popliteal fascia.r",
+      "system": "connective",
+      "nameZh": "右侧腘筋膜",
+      "sourceGeometryId": "237931788",
+      "bounds": {
+        "min": [
+          -0.11134147644042969,
+          0.4540885090827942,
+          0.020100263878703117
+        ],
+        "max": [
+          -0.039905037730932236,
+          0.550843358039856,
+          0.04047810658812523
+        ]
+      }
+    },
+    {
+      "id": "ZA_392175318",
+      "sourceModelName": "Popliteal fascia.l",
+      "system": "connective",
+      "nameZh": "左侧腘筋膜",
+      "sourceGeometryId": "237931788",
+      "bounds": {
+        "min": [
+          0.03988632187247276,
+          0.4540884792804718,
+          0.02010026015341282
+        ],
+        "max": [
+          0.11132276058197021,
+          0.550843358039856,
+          0.04047809913754463
+        ]
+      }
+    },
+    {
+      "id": "ZA_769068412",
+      "sourceModelName": "Crural fascia.r",
+      "system": "connective",
+      "nameZh": "右侧小腿筋膜",
+      "sourceGeometryId": "899925216",
+      "bounds": {
+        "min": [
+          -0.14687539637088776,
+          0.016629690304398537,
+          -0.006883030757308006
+        ],
+        "max": [
+          -0.025927603244781494,
+          0.45863282680511475,
+          0.23767408728599548
+        ]
+      }
+    },
+    {
+      "id": "ZA_27084790",
+      "sourceModelName": "Crural fascia.l",
+      "system": "connective",
+      "nameZh": "左侧小腿筋膜",
+      "sourceGeometryId": "899925216",
+      "bounds": {
+        "min": [
+          0.02590888738632202,
+          0.016629595309495926,
+          -0.006883065216243267
+        ],
+        "max": [
+          0.1468566656112671,
+          0.45863279700279236,
+          0.23767414689064026
+        ]
+      }
+    },
+    {
+      "id": "ZA_330125342",
+      "sourceModelName": "Extensor retinaculum of wrist.r",
+      "system": "connective",
+      "nameZh": "右侧腕伸肌支持带",
+      "sourceGeometryId": "895927402",
+      "bounds": {
+        "min": [
+          -0.293979674577713,
+          0.846700131893158,
+          0.09584729373455048
+        ],
+        "max": [
+          -0.23634284734725952,
+          0.8867018818855286,
+          0.119008868932724
+        ]
+      }
+    },
+    {
+      "id": "ZA_971929399",
+      "sourceModelName": "Extensor retinaculum of wrist.l",
+      "system": "connective",
+      "nameZh": "左侧腕伸肌支持带",
+      "sourceGeometryId": "951445259",
+      "bounds": {
+        "min": [
+          0.2363242506980896,
+          0.846700131893158,
+          0.09584730863571167
+        ],
+        "max": [
+          0.2939610779285431,
+          0.8867018818855286,
+          0.11900889128446579
+        ]
+      }
+    },
+    {
+      "id": "ZA_497593817",
+      "sourceModelName": "Lateral patellar retinaculum.r",
+      "system": "connective",
+      "nameZh": "右侧髌外侧支持带",
+      "sourceGeometryId": "494074284",
+      "bounds": {
+        "min": [
+          -0.1161167249083519,
+          0.4451397657394409,
+          0.06115420535206795
+        ],
+        "max": [
+          -0.10225388407707214,
+          0.4680255651473999,
+          0.11010728031396866
+        ]
+      }
+    },
+    {
+      "id": "ZA_391652619",
+      "sourceModelName": "Lateral patellar retinaculum.l",
+      "system": "connective",
+      "nameZh": "左侧髌外侧支持带",
+      "sourceGeometryId": "694544051",
+      "bounds": {
+        "min": [
+          0.10223531723022461,
+          0.44513964653015137,
+          0.06115417554974556
+        ],
+        "max": [
+          0.11609815806150436,
+          0.46802544593811035,
+          0.11010728031396866
+        ]
+      }
+    },
+    {
+      "id": "ZA_344109556",
+      "sourceModelName": "Medial patellar retinaculum.r",
+      "system": "connective",
+      "nameZh": "右侧髌内侧支持带",
+      "sourceGeometryId": "854448454",
+      "bounds": {
+        "min": [
+          -0.06461957097053528,
+          0.4510524272918701,
+          0.06581637263298035
+        ],
+        "max": [
+          -0.03184656426310539,
+          0.4647253751754761,
+          0.11160501092672348
+        ]
+      }
+    },
+    {
+      "id": "ZA_925501647",
+      "sourceModelName": "Medial patellar retinaculum.l",
+      "system": "connective",
+      "nameZh": "左侧髌内侧支持带",
+      "sourceGeometryId": "923640127",
+      "bounds": {
+        "min": [
+          0.03182796761393547,
+          0.4510524272918701,
+          0.06581636518239975
+        ],
+        "max": [
+          0.06460096687078476,
+          0.4647253453731537,
+          0.11160501837730408
+        ]
+      }
+    },
+    {
+      "id": "ZA_316486140",
+      "sourceModelName": "Superior extensor retinaculum of ankle.r",
+      "system": "connective",
+      "nameZh": "右侧伸肌上支持带（踝）",
+      "sourceGeometryId": "700055795",
+      "bounds": {
+        "min": [
+          -0.10616715252399445,
+          0.12000546604394913,
+          0.05627308040857315
+        ],
+        "max": [
+          -0.06885030120611191,
+          0.15154114365577698,
+          0.08518987149000168
+        ]
+      }
+    },
+    {
+      "id": "ZA_134091191",
+      "sourceModelName": "Superior extensor retinaculum of ankle.l",
+      "system": "connective",
+      "nameZh": "左侧伸肌上支持带（踝）",
+      "sourceGeometryId": "12115434",
+      "bounds": {
+        "min": [
+          0.06883157044649124,
+          0.12000539898872375,
+          0.05627307668328285
+        ],
+        "max": [
+          0.10614842176437378,
+          0.1515410840511322,
+          0.08518987149000168
+        ]
+      }
+    },
+    {
+      "id": "ZA_372542288",
+      "sourceModelName": "Inferior extensor retinaculum of ankle.r",
+      "system": "connective",
+      "nameZh": "右侧伸肌下支持带（踝）",
+      "sourceGeometryId": "860513340",
+      "bounds": {
+        "min": [
+          -0.10607527196407318,
+          0.08796041458845139,
+          0.05688992142677307
+        ],
+        "max": [
+          -0.05322038754820824,
+          0.1163974478840828,
+          0.09371614456176758
+        ]
+      }
+    },
+    {
+      "id": "ZA_360316970",
+      "sourceModelName": "Inferior extensor retinaculum of ankle.l",
+      "system": "connective",
+      "nameZh": "左侧伸肌下支持带（踝）",
+      "sourceGeometryId": "781551200",
+      "bounds": {
+        "min": [
+          0.05320168659090996,
+          0.08796031773090363,
+          0.05688991770148277
+        ],
+        "max": [
+          0.1060565710067749,
+          0.11639735847711563,
+          0.09371615201234818
+        ]
+      }
+    },
+    {
+      "id": "ZA_653592180",
+      "sourceModelName": "Superior fibular retinaculum.r",
+      "system": "connective",
+      "nameZh": "右侧腓骨肌上支持带",
+      "sourceGeometryId": "41700239",
+      "bounds": {
+        "min": [
+          -0.10843376815319061,
+          0.04615423083305359,
+          0.037953633815050125
+        ],
+        "max": [
+          -0.05106820911169052,
+          0.10590694844722748,
+          0.11899664252996445
+        ]
+      }
+    },
+    {
+      "id": "ZA_106520629",
+      "sourceModelName": "Superior fibular retinaculum.l",
+      "system": "connective",
+      "nameZh": "左侧腓骨肌上支持带",
+      "sourceGeometryId": "234867696",
+      "bounds": {
+        "min": [
+          0.05104950815439224,
+          0.04615412652492523,
+          0.03795362636446953
+        ],
+        "max": [
+          0.10841505974531174,
+          0.10590685904026031,
+          0.11899664998054504
+        ]
+      }
+    },
+    {
+      "id": "ZA_419234530",
+      "sourceModelName": "Inferior fibular retinaculum.r",
+      "system": "connective",
+      "nameZh": "右侧腓骨肌下支持带",
+      "sourceGeometryId": "759521465",
+      "bounds": {
+        "min": [
+          -0.12020767480134964,
+          0.034774359315633774,
+          0.09052863717079163
+        ],
+        "max": [
+          -0.09271624684333801,
+          0.0835648849606514,
+          0.11876621097326279
+        ]
+      }
+    },
+    {
+      "id": "ZA_365024117",
+      "sourceModelName": "Inferior fibular retinaculum.l",
+      "system": "connective",
+      "nameZh": "左侧腓骨肌下支持带",
+      "sourceGeometryId": "759521465",
+      "bounds": {
+        "min": [
+          0.09269754588603973,
+          0.034774232655763626,
+          0.09052863717079163
+        ],
+        "max": [
+          0.12018897384405136,
+          0.08356477320194244,
+          0.11876621842384338
+        ]
+      }
+    },
+    {
+      "id": "ZA_818253022",
+      "sourceModelName": "Flexor retinaculum of ankle.r",
+      "system": "connective",
+      "nameZh": "右侧屈肌支持带（踝）",
+      "sourceGeometryId": "171661213",
+      "bounds": {
+        "min": [
+          -0.062250107526779175,
+          0.023468613624572754,
+          0.015834838151931763
+        ],
+        "max": [
+          -0.046278391033411026,
+          0.10299266874790192,
+          0.07024390250444412
+        ]
+      }
+    },
+    {
+      "id": "ZA_888530236",
+      "sourceModelName": "Flexor retinaculum of ankle.l",
+      "system": "connective",
+      "nameZh": "左侧屈肌支持带（踝）",
+      "sourceGeometryId": "493368831",
+      "bounds": {
+        "min": [
+          0.046259671449661255,
+          0.023468516767024994,
+          0.015834826976060867
+        ],
+        "max": [
+          0.0622313916683197,
+          0.10299259424209595,
+          0.07024389505386353
+        ]
+      }
     }
   ],
   "unavailableRequestedMuscles": [],
-  "scopeZh": "明确白名单：缺失骨骼肌74个网格，以及胸腰筋膜前中后层双侧6片、足底腱膜双侧2片；未导入NC器官。",
+  "scopeZh": "明确白名单：缺失骨骼肌74个网格及真实结缔组织60个网格（筋膜、腱膜、支持带）；未导入NC器官。",
   "limitationZh": "共同肌肉包围盒中心的稳健平移配准是几何参考，并非逐点医学配准；需专业视觉审校。",
   "addedMeshCountsBySystem": {
     "muscle": 74,
-    "connective": 8
+    "connective": 60
   }
 }

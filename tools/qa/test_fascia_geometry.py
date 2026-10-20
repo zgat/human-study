@@ -11,7 +11,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / 'tools/content'))
-from build_fascia import Model, norm, sub, point_triangle_distance
+from build_fascia import Model, norm, sub, point_triangle_distance, geometry_identity
 
 
 class FasciaGeometryTest(unittest.TestCase):
@@ -25,9 +25,10 @@ class FasciaGeometryTest(unittest.TestCase):
     def test_original_twenty_reference_regions_are_unchanged(self):
         targets = [target for group in self.groups[:3] for target in group['targets']]
         self.assertEqual(20, len(targets))
-        digest = hashlib.sha256(json.dumps(targets, ensure_ascii=False, sort_keys=True,
-            separators=(',', ':')).encode()).hexdigest()
-        self.assertEqual('db9b2f0f316f433a596427888410e24635d823fe923a2a441a31b808d917ee26', digest)
+        identity = geometry_identity(self.groups)
+        self.assertEqual('8e28113043836ded1de9452f41463a93d727e55844ad6a76244c281d437b7d68', identity['first20TargetsSha256'])
+        self.assertEqual('465d15f78380391320dc4739231f4877f6ec74f884afab2100b07257791465e8', identity['all38TargetsSha256'])
+        self.assertEqual('20b69435c2227040de34af93405ceed0b3f55242b92927f4a1c7e33e9b73fe3f', identity['all48PathsSha256'])
 
     def test_seven_distinct_bilateral_research_groups_keep_evidence_and_limits(self):
         self.assertEqual(7, len(self.groups))

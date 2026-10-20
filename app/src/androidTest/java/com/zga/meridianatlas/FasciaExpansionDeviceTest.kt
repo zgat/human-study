@@ -62,8 +62,9 @@ class FasciaExpansionDeviceTest {
     }
 
     private fun openFascia() {
-        compose.onAllNodes(hasText("筋膜力线") and hasClickAction()).onFirst().performScrollTo().performClick()
-        compose.onNodeWithText("筋膜与连接链").assertIsDisplayed()
+        compose.onAllNodes(hasText("筋膜解剖") and hasClickAction()).onFirst().performScrollTo().performClick()
+        compose.onNodeWithText("筋膜解剖与连接").assertIsDisplayed()
+        compose.onNodeWithText("文献连接").performClick()
     }
 
     private fun panelClick(matcher: SemanticsMatcher) {
@@ -187,7 +188,7 @@ class FasciaExpansionDeviceTest {
         val union = data.fascialConnections.flatMap { it.structureIds }.toSet()
         compose.runOnUiThread { model.selectPoint("lu1", reveal = false) }
         openFascia()
-        panelClick(hasContentDescription("全选筋膜连接链"))
+        panelClick(hasContentDescription("全选筋膜文献连接"))
         compose.runOnIdle {
             assertEquals(allIds, model.state.value.layer.enabledFascialConnections)
             assertTrue(model.state.value.layer.fasciaChains)
@@ -195,15 +196,15 @@ class FasciaExpansionDeviceTest {
         }
         expectLungPoint()
         panelClick(hasText("显示连接参考区"))
-        panelClick(hasText("显示连接链"))
+        panelClick(hasText("显示连接图层"))
         compose.runOnIdle {
             assertFalse(model.state.value.layer.fasciaTargets)
             assertFalse(model.state.value.layer.fasciaChains)
             assertEquals(allIds, model.state.value.layer.enabledFascialConnections)
         }
-        panelClick(hasText("显示连接链"))
+        panelClick(hasText("显示连接图层"))
         panelClick(hasText("观察已选结构"))
-        compose.onNodeWithText("筋膜与连接链").assertDoesNotExist()
+        compose.onNodeWithText("筋膜解剖与连接").assertDoesNotExist()
         compose.runOnIdle {
             val layer = model.state.value.layer
             assertEquals(union, layer.focusIds)
@@ -226,7 +227,7 @@ class FasciaExpansionDeviceTest {
         val viewer = surface()
         openFascia()
         panelClick(hasContentDescription("观察筋膜连接组${connection.id}"))
-        compose.onNodeWithText("筋膜与连接链").assertDoesNotExist()
+        compose.onNodeWithText("筋膜解剖与连接").assertDoesNotExist()
         val target = cameraTarget(viewer, "pose")
         assertEquals(expectedCenter.x, target.x, .000001f)
         assertEquals(expectedCenter.y, target.y, .000001f)
@@ -236,7 +237,7 @@ class FasciaExpansionDeviceTest {
         expectLungPoint()
 
         openFascia()
-        panelClick(hasContentDescription("全不选筋膜连接链"))
+        panelClick(hasContentDescription("全不选筋膜文献连接"))
         compose.runOnIdle {
             val layer = model.state.value.layer
             assertTrue(layer.enabledFascialConnections.isEmpty())

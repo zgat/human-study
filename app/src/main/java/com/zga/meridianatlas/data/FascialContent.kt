@@ -17,7 +17,8 @@ internal fun decodeFascialConnection(item: JSONObject): FascialConnection {
                     (0 until points.length()).mapNotNull { points.optJSONArray(it).vec() } },
                 path.optJSONArray("targetIds").strings(), path.optString("kind"), path.optString("reviewStatus"),
                 normals = path.optJSONArray("normals").let { normals -> if (normals == null) emptyList() else
-                    (0 until normals.length()).mapNotNull { normals.optJSONArray(it).vec() } })
+                    (0 until normals.length()).mapNotNull { normals.optJSONArray(it).vec() } },
+                evidenceIds = path.optJSONArray("evidenceIds").strings(), meaningZh = path.optString("meaningZh"))
         }, item.optJSONArray("targets").objects().map { target ->
             FascialTarget(target.getString("id"), target.getString("nameZh"),
                 requireNotNull(target.optJSONArray("position").vec()), target.optJSONArray("structureIds").strings(),
@@ -31,5 +32,11 @@ internal fun decodeFascialConnection(item: JSONObject): FascialConnection {
         item.optString("reviewStatus", "provisional"),
         coverageKind = item.optString("coverageKind", "local_research_relation"),
         bodyRegionsZh = item.optJSONArray("bodyRegionsZh").strings(),
-        preferredViewNormal = item.optJSONArray("preferredViewNormal").vec())
+        preferredViewNormal = item.optJSONArray("preferredViewNormal").vec(),
+        evidenceReferences = item.optJSONArray("evidenceReferences").objects().map { evidence ->
+            FascialEvidence(evidence.getString("id"), evidence.getString("kind"),
+                evidence.optJSONArray("sourceIds").strings(), evidence.getString("scopeZh"),
+                evidence.getString("sampleZh"), evidence.getString("conditionsZh"), evidence.getString("measurementZh"),
+                evidence.getString("limitationsZh"), evidence.optJSONArray("relatedPathIds").strings())
+        })
 }

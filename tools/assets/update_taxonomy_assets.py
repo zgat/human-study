@@ -99,7 +99,7 @@ def main():
                 'system':'connective','nameZh':m['nameZh'],'sourceGeometryId':m['sourceGeometryId'],'bounds':m['bounds']})
     supplement['addedMeshCountsBySystem']={'muscle':sum(row.get('system','muscle')=='muscle' for row in supplement['addedMeshes']),
         'connective':sum(row.get('system')=='connective' for row in supplement['addedMeshes'])}
-    supplement['scopeZh']='明确白名单：缺失骨骼肌74个网格，以及胸腰筋膜前中后层双侧6片、足底腱膜双侧2片；未导入NC器官。'
+    supplement['scopeZh']='明确白名单：缺失骨骼肌74个网格及真实结缔组织60个网格（筋膜、腱膜、支持带）；未导入NC器官。'
     atomic_json(supplement_path,supplement)
     build_path=MANIFEST/'model-build.json';build=json.loads(build_path.read_text())
     build.update(outputs=outputs,countsBySystem=taxonomy['countsBySystem'],
@@ -114,7 +114,7 @@ def main():
     build['licenseFiles']=[{'path':str(p.relative_to(ROOT)),'sha256':digest(p)} for p in sorted((ROOT/'licenses').glob('*')) if p.is_file()]
     build['metadataAndAppendBuild']={'entryPoint':'tools/assets/update_taxonomy_assets.py',
         'existingGeometryPolicy':'All previous node POSITION/NORMAL/index payloads and original BIN prefix retained byte-exact.',
-        'newGeometryPolicy':'Eight authorized source fascia/aponeurosis meshes retained at source resolution in both tiers.'}
+        'newGeometryPolicy':'Explicit source fascia/aponeurosis/retinaculum meshes retained at source resolution in both tiers.'}
     atomic_json(build_path,build)
     changes=[]
     for s in anatomy['structures']:

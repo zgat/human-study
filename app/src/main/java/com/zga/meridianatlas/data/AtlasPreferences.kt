@@ -30,7 +30,9 @@ class AtlasPreferences(private val context: Context) {
                 spaces = layer.optBoolean("spaces", false),
                 fasciaChains = layer.optBoolean("fasciaChains", false),
                 fasciaTargets = layer.optBoolean("fasciaTargets", true),
-                enabledFascialConnections = layer.optJSONArray("fascialConnections").strings().toSet())
+                enabledFascialConnections = layer.optJSONArray("fascialConnections").strings().toSet(),
+                fasciaRelations = layer.optBoolean("fasciaRelations", true),
+                fasciaContext = layer.optBoolean("fasciaContext", false))
             val defaultsMigrated = if (profileVersion < 2) VisibilityPolicy.migrateLegacyDefault(mode, state) else state
             if (profileVersion < 3) VisibilityPolicy.migrateLegacyHalfBody(mode, defaultsMigrated) else defaultsMigrated
         }
@@ -48,9 +50,10 @@ class AtlasPreferences(private val context: Context) {
             put("cutawaySide", state.cutawaySide.name); put("internalRelations", state.internalRelations)
             put("connective", state.connective); put("spaces", state.spaces)
             put("fasciaChains", state.fasciaChains); put("fasciaTargets", state.fasciaTargets)
+            put("fasciaRelations", state.fasciaRelations); put("fasciaContext", state.fasciaContext)
             put("fascialConnections", JSONArray(state.enabledFascialConnections.toList()))
         }) }
-        val json = JSONObject().put("profileVersion", 3).put("mode", value.mode.name).put("quality", value.quality.name)
+        val json = JSONObject().put("profileVersion", 4).put("mode", value.mode.name).put("quality", value.quality.name)
             .put("layers", layers).put("meridians", JSONArray(value.meridians.toList())).toString()
         context.atlasPreferences.edit { it[key] = json }
     }

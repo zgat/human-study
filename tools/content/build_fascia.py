@@ -140,7 +140,7 @@ SOURCES={
     '18具未固定尸体的解剖与力学研究报告阔筋膜张肌插入髂胫束，后者分浅深层；此处仅表示连接关系，不把研究工况下的力值赋予静态模型。'),
  'stecco2007palmaris':source('stecco2007palmaris','Tendinous muscular insertions onto the deep fascia of the upper limb. First part: anatomical study',
     'https://pubmed.ncbi.nlm.nih.gov/17574470/',2007,'cadaver_anatomy',
-    '30条上肢尸解观察掌长肌向腕屈肌支持带及鱼际表面筋膜的腱性扩展；当前显示已有支持带邻区，未独立建模掌腱膜或鱼际筋膜。'),
+    '30条上肢尸解观察掌长肌向腕屈肌支持带及鱼际表面筋膜的腱性扩展；当前显示支持带邻区，并提供掌腱膜网格供观察，远端扩展纤维和鱼际筋膜尚未独立建模。'),
  'barker2007anatomy':source('barker2007anatomy','The middle layer of lumbar fascia and attachments to lumbar transverse processes: implications for segmental control and fracture',
     'https://pubmed.ncbi.nlm.nih.gov/17924150/',2007,'cadaver_anatomy',
     '18具尸体的双侧解剖观察中层外侧与腹横肌腱膜、肌束连续；当前网格未细分附着纤维和全部腱膜。'),
@@ -148,6 +148,158 @@ SOURCES={
     'https://pubmed.ncbi.nlm.nih.gov/14722403/',2004,'cadaver_loading',
     '8具未固定尸体在10N肌附着处牵拉下，用L3测力及标记位移观察到腹横肌向腰筋膜中层和后层的张力传递；示意分支不是个体力矢量或定量力场。')
 }
+
+
+def evidence_record(eid,kind,sources,scope,sample,conditions,measurement,limits,paths):
+    return {'id':eid,'kind':kind,'sourceIds':sources,'scopeZh':scope,'sampleZh':sample,
+        'conditionsZh':conditions,'measurementZh':measurement,'limitationsZh':limits,'relatedPathIds':paths}
+
+
+def attach_evidence(connections):
+    """Keep the study claim separate from the geometry used to locate it.
+
+    Related paths are local relationship schematics, not reconstructed specimen
+    fibres. Context paths deliberately have no study-evidence attribution.
+    """
+    records={
+      'latissimus-thoracolumbar-contralateral-gluteus':[
+        ('ld-tlf-anatomy','anatomical_continuity',['vleeming1995'],
+         '胸腰筋膜后层及其与背阔肌、臀大肌的附着关系。','10具人体标本。',
+         '固定尸体后层的浅、深板解剖；肉眼检查及栅格摄影。',
+         '直接观察后层分板及肌肉附着；为连接提供形态学基础。',
+         '形态连续不能单独确定活体传力大小，也未把模型中整条跨侧折线逐点证实为纤维。',None),
+        ('ld-tlf-loading','experimental_loading',['vleeming1995'],
+         '肌附着牵拉与胸腰筋膜后层位移、部分下腰部跨侧响应。','同一研究的10具人体标本。',
+         '在固定尸体上牵拉相关肌肉以模拟作用，使用栅格摄影观察筋膜标记。',
+         '测到后层位移；研究报告下腰部的跨侧响应，未在每处直接测量内力矢量。',
+         '尸体模拟牵拉与静态位移观察不能外推为所有活体姿势的完整传力路线。',None),
+        ('ld-tlf-human','human_indirect_observation',['carvalhais2013'],
+         '背阔肌张力改变时的对侧髋被动力学变量。','37名纳入分析的健康受试者。',
+         '对照、被动牵张背阔肌、主动收缩三种条件；等速测力仪测试髋旋转，肌电监测肌肉活动。',
+         '间接测量髋静息角和被动刚度；主动条件改变两者，被动条件改变静息角而未改变刚度。',
+         '关节变量支持力学耦合解释，但不能排定唯一传递组织，未直接测量每段筋膜内力。',None)],
+      'achilles-calcaneal-region-plantar-aponeurosis':[
+        ('heel-anatomy','anatomical_continuity',['stecco2013'],
+         '跟腱腱周膜经跟骨骨膜与足底腱膜的关系。','12只未固定尸体足；尸解及组织学。',
+         '分离足底腱膜并取样染色，观察跟骨周围连接。',
+         '直接观察足底腱膜与跟腱腱周膜经骨膜的联系，而非跟腱主体的统一直接延续。',
+         '此模型缺独立腱周膜和跟骨骨膜网格；骨面参考区不能代替这些软组织。',None),
+        ('heel-loading','experimental_loading',['erdemir2004'],
+         '步态支撑期跟腱力与足底腱膜张力的关联。','7只尸体足。',
+         '重现胫骨运动及地面反力，给足外在肌腱施力以模拟步态支撑期。',
+         '用校准后的光纤传感器输出估计足底腱膜力，并同步记录施加的肌腱力；两者存在相关。',
+         '尸体动态模拟不等于活体实测；足部多组织参与负荷，不能据相关性指定一根直接纤维路线。',None),
+        ('heel-human-imaging','human_indirect_observation',['stecco2013'],
+         '跟腱影像异常与足底腱膜、腱周膜厚度的关系。','52例有非特异性踝足疼痛者的MRI。',
+         '按是否存在跟腱退变或炎症影像表现分组，测量足底腱膜及腱周膜厚度。',
+         '影像厚度存在组间差异和相关；这是形态学间接观察，未测量传力。',
+         '有症状样本的影像关联不能证明因果、力的方向或适用于健康人群的治疗点。',None)],
+      'biceps-long-head-ischial-sacrotuberous-region':[
+        ('hamstring-anatomy','anatomical_continuity',['miguelperez2024'],
+         '股二头肌长头近端与骶结节韧带等邻接组织的连续关系。','66具冷冻保存标本的97侧坐骨结节与腘绳肌近端；另有分组超声、切片和组织学。',
+         '标本超声、分层尸解及组织学比较近端附着与周围结缔组织。',
+         '直接形态观察支持长头与骶结节韧带的连续，并描述其分层。',
+         '标本结构关系存在变异；本模型缺独立骶结节韧带，不能把坐骨骨面线视为韧带纤维。',None),
+        ('hamstring-loading','experimental_loading',['wingerden1993'],
+         '模拟股二头肌力时骶结节韧带张力的响应。','人体解剖标本；可核对摘要未列出样本量。',
+         '对股二头肌腱施力以模拟肌肉作用，观察骶结节韧带张力变化。',
+         '实验报告肌腱施力会影响韧带张力；当前摘要未给出完整测力设置，图谱不补造参数。',
+         '不能外推到所有个体或姿势；这条参考线终止于骨面邻区，缺失韧带未被重建。',None)],
+      'gluteus-maximus-iliotibial-tract':[
+        ('gm-itb-anatomy','anatomical_continuity',['stecco2013gluteus'],
+         '臀大肌向阔筋膜、髂胫束及外侧肌间隔的附着。','6具尸体，4男2女，平均69岁。',
+         '逐层解剖臀大肌远端，比较筋膜性与骨性附着。',
+         '直接观察广泛筋膜附着及与髂胫束的形态连续。',
+         '该解剖研究未测量当前模型中的力或传力比例；形态解释不能作为定量力学结果。',None)],
+      'tensor-fasciae-latae-iliotibial-tract':[
+        ('tfl-itb-anatomy','anatomical_continuity',['birnbaum2004'],
+         '阔筋膜张肌附着于髂胫束，以及髂胫束深浅分层。','18具未固定尸体。',
+         '解剖髋关节及髂胫束与周围结构。',
+         '直接观察阔筋膜张肌插入及髂胫束分层。',
+         '现有髂胫束网格未分出研究中的各层；邻接参考点不等于完整附着边界。',None),
+        ('tfl-itb-loading','experimental_loading',['birnbaum2004'],
+         '髂胫束材料力学及髋位改变时大转子邻区的负荷。','同研究18具未固定尸体；另在12名患者术中核对大转子处负荷。',
+         '单轴拉伸、不同髋外展内收位的束下传感器及测力假体；术中测量用于局部核对。',
+         '直接测量组织载荷—变形及局部负荷；与阔筋膜张肌附着相关的组织具承载能力。',
+         '没有沿当前两点折线逐段测力；材料及术中工况不能定义通用的全身力线。',None)],
+      'palmaris-longus-flexor-retinaculum':[
+        ('palmaris-anatomy','anatomical_continuity',['stecco2007palmaris'],
+         '掌长肌腱向腕屈肌支持带和鱼际表面筋膜的扩展。','30条上肢标本。',
+         '尸解辨认上肢肌腱向深筋膜的插入和扩展。',
+         '直接观察掌长肌远端扇形扩展及支持带、鱼际筋膜邻接关系。',
+         '本文此连接的展示依据为形态观察；张力维持是作者的机制假说，不能当作此静态网格的实测力场。',None)],
+      'transversus-abdominis-thoracolumbar-fascia':[
+        ('tra-tlf-middle-anatomy','anatomical_continuity',['barker2007anatomy'],
+         '腹横肌与腰筋膜中层、腰椎横突的附着连续。','18具固定尸体。',
+         '解剖并测量中层厚度、纤维角、宽度和横突附着。',
+         '直接观察中层与腹横肌的连续及横突附着。',
+         '这条形态证据仅关联中层分支；不能借它单独证明后层分支或本模型未拆分的微细腱膜。','middle'),
+        ('tra-tlf-loading','experimental_loading',['barker2004'],
+         '腹横肌附着牵拉时腰筋膜中层和后层的张力与位移响应。','8具未固定尸体。',
+         '肌附着处施加10 N牵拉；L3处测力并拍摄筋膜标记位移。',
+         '直接测量局部张力并观察位移；腹横肌牵拉可影响中层及后层。',
+         '10 N为原实验工况，未赋给当前静态模型；两条分支不表示同一纤维，也未给出全身传力比例。',None)]}
+    for connection in connections:
+        relation_paths=[p for p in connection['paths'] if p['kind']=='unoriented_connection_schematic']
+        evidence=[]
+        for row in records[connection['id']]:
+            *fields,restrict=row
+            related=[p['id'] for p in relation_paths if restrict is None or p['id'].endswith('-'+restrict)]
+            evidence.append(evidence_record(*fields,related))
+        connection['evidenceReferences']=evidence
+        for local_path in connection['paths']:
+            context=local_path['kind']=='anatomical_context_schematic'
+            local_path['evidenceIds']=[] if context else [e['id'] for e in evidence if local_path['id'] in e['relatedPathIds']]
+            local_path['meaningZh']='组织范围辅助线（非力线）' if context else '文献连接关系示意（非实测受力路径）'
+
+
+def consensus_basis():
+    return {
+      'approach':'anatomy_first_with_local_study_evidence',
+      'summaryZh':'依据已命名的真实筋膜解剖及逐段研究关系组织图谱。命名建议和运动医学共识没有给出统一的全身力线路线与节点；本图不建立这类标准。',
+      'sourcePolicyZh':'研究类型分别说明观察了什么、样本与条件、可支持的局部结论和限制；分类不代表强弱评级。人体间接观察不等同直接测力。',
+      'coordinatePolicyZh':'连接折线连接模型参考区；组织范围辅助线沿模型曲面采样。两者都不是实验纤维重建、方向箭头或有限元力场。',
+      'references':[
+        {'id':'frs-nomenclature','title':'Fascia Research Society: Fascia Nomenclature','url':'https://fasciaresearchsociety.org/science-research/fascia-nomenclature','role':'society_terminology_recommendation','noteZh':'区分可解剖分离的筋膜与广义筋膜系统；提供定义，不提供全身力线路线或坐标。'},
+        {'id':'fnc2019','title':'Fascial nomenclature: Update on related consensus process','url':'https://pubmed.ncbi.nlm.nih.gov/31183880/','year':2019,'role':'terminology_consensus_process','noteZh':'报告FNC的Delphi命名建议；正式建议的范围是两个定义，不能把作者其余讨论视为学会统一声明。'},
+        {'id':'connect2018','title':'Fascial tissue research in sports medicine: from molecules to tissue adaptation, injury and diagnostics: consensus statement','url':'https://pubmed.ncbi.nlm.nih.gov/30072398/','year':2018,'role':'sports_medicine_consensus_statement','noteZh':'讨论筋膜结构、适应及传力机制和研究需求；不能据此认定静态模型具有统一全身力场。'},
+        {'id':'stecco2025proposal','title':'Towards a comprehensive definition of the human fascial system','url':'https://doi.org/10.1111/joa.14212','year':2025,'role':'definition_proposal_not_universal_standard','noteZh':'提出广义筋膜系统分类方案；作为正在讨论的提案列示，不当作已统一的解剖标准。'},
+        {'id':'neumann2026discussion','title':'Fascia, Eh. What Is It? What Is It Good for?','url':'https://pubmed.ncbi.nlm.nih.gov/41277747/','year':2026,'role':'critical_nomenclature_discussion','noteZh':'继续讨论定义边界和候选组织；说明争议仍在，不是全身力线标准。'}]}
+
+
+def geometry_identity(connections):
+    """Hash semantic geometry, independent of container hash or explanatory text."""
+    def geom(g):return {k:g[k] for k in ('nodeName','primitiveIndex','triangleIndex','vertexIndices','indexBase','barycentric','meshGeometrySha256')}
+    targets=[{k:t[k] for k in ('id','position','normal','structureIds')}|{'sourceGeometry':geom(t['sourceGeometry'])}
+             for c in connections for t in c['targets']]
+    paths=[{k:p[k] for k in ('id','side','kind','points','normals','targetIds')}|
+           {'sourceGeometrySamples':[geom(g) for g in p['sourceGeometrySamples']]}
+           for c in connections for p in c['paths']]
+    def sha(rows):return hashlib.sha256(json.dumps(rows,sort_keys=True,separators=(',',':')).encode()).hexdigest()
+    return {'first20TargetsSha256':sha(targets[:20]),'all38TargetsSha256':sha(targets),'all48PathsSha256':sha(paths)}
+
+
+def validate_evidence(connections):
+    counts={kind:0 for kind in ('anatomical_continuity','experimental_loading','human_indirect_observation')}
+    for connection in connections:
+        sources={s['id'] for s in connection['sourceRefs']}
+        paths={p['id']:p for p in connection['paths']}
+        evidence={e['id']:e for e in connection['evidenceReferences']}
+        assert len(evidence)==len(connection['evidenceReferences'])
+        for e in evidence.values():
+            assert e['kind'] in counts and e['sourceIds'] and set(e['sourceIds'])<=sources
+            assert all(e[k].strip() for k in ('scopeZh','sampleZh','conditionsZh','measurementZh','limitationsZh'))
+            assert e['relatedPathIds'] and set(e['relatedPathIds'])<=paths.keys()
+            assert all(paths[pid]['kind']=='unoriented_connection_schematic' for pid in e['relatedPathIds'])
+            counts[e['kind']]+=1
+        for pid,p in paths.items():
+            assert set(p['evidenceIds'])<=evidence.keys()
+            if p['kind']=='anatomical_context_schematic':
+                assert not p['evidenceIds'] and p['meaningZh']=='组织范围辅助线（非力线）'
+            else:
+                assert p['evidenceIds'] and '非实测受力路径' in p['meaningZh']
+                assert set(p['evidenceIds'])=={e['id'] for e in evidence.values() if pid in e['relatedPathIds']}
+    return counts
 
 
 def path(pid,side,targets):
@@ -432,8 +584,8 @@ def build_additional_connections(model,common):
          ['birnbaum2004'],'阔筋膜张肌和髂胫束均为真实网格；源模型未分出髂胫束各层及完整包绕关系。',['髂胫束深浅层分区']),
         ('palmaris-longus-flexor-retinaculum','掌长肌—腕屈肌支持带',0xffe5abdf,
          '掌长肌腱与腕屈肌支持带邻区的解剖关系。',
-         '上肢尸解观察到掌长肌向屈肌支持带及鱼际筋膜的腱性扩展。本图只显示已有掌长肌及支持带，不把未建模鱼际筋膜、掌腱膜补成直接连续结构。',
-         ['stecco2007palmaris'],'掌长肌与腕屈肌支持带均为真实网格；远端扩展纤维未逐束建模，掌腱膜与鱼际筋膜未进入当前GLB。',['掌腱膜','鱼际筋膜','掌长肌远端扩展纤维']),
+         '上肢尸解观察到掌长肌向屈肌支持带及鱼际筋膜的腱性扩展。掌腱膜另有真实网格供观察；模型邻近不等于远端纤维已被重建。',
+         ['stecco2007palmaris'],'掌长肌、腕屈肌支持带和掌腱膜均有真实网格；既有连接折线仍表示掌长肌与支持带邻区，鱼际筋膜与远端扩展纤维未逐束建模。',['鱼际筋膜','掌长肌远端扩展纤维']),
         ('transversus-abdominis-thoracolumbar-fascia','腹横肌—胸腰筋膜中后层',0xffa8cc78,
          '腹横肌腱膜与胸腰筋膜中层、后层的分支关系。',
          '尸解研究观察胸腰筋膜中层外侧与腹横肌腱膜、肌束连续；牵拉实验报告向中层和后层的张力传递。两条局部虚线分支表示研究关系，不代表同一根纤维穿行所有层。',
@@ -484,7 +636,7 @@ def build_additional_connections(model,common):
                     '在腕屈肌支持带前55%的真实面中选择最接近掌长肌腱参考区的面。',radius=.008)
                 own=[a,b];paths.append(path(f'palmaris-{side}',side,own))
                 paths.append(surface_context(model,ids['pl'],f'context-palmaris-{side}',side,
-                    pick(model,ids['pl'],seed(pl,.5,.94,.8)),a,'掌长肌前臂近端至腕部肌腱的实际表面范围参考，不补画缺失掌腱膜。'))
+                    pick(model,ids['pl'],seed(pl,.5,.94,.8)),a,'掌长肌前臂近端至腕部肌腱的实际表面范围参考；此辅助线未延伸到另有网格的掌腱膜，也未重建远端扩展纤维。'))
                 paths.append(context_between_seeds(model,ids['fr'],f'context-retinaculum-{side}',side,
                     (.08,.5,.9),(.92,.5,.9),'腕屈肌支持带掌侧横向范围参考，不表示纤维牵拉方向。'))
             else:
@@ -515,6 +667,8 @@ def build_additional_connections(model,common):
             'paths':paths,'targets':targets,'sourceRefs':[SOURCES[key] for key in refs],
             'geometryCoverageZh':coverage,'unmappedStructures':missing,'reviewStatus':'provisional'})
         connections[-1]['structureIds']=list(dict.fromkeys(connections[-1]['structureIds']))
+        if cid=='palmaris-longus-flexor-retinaculum':
+            connections[-1]['structureIds']+=['ZA_547570908','ZA_675376731']
     return connections
 
 
@@ -602,14 +756,20 @@ def main():
     missing=required-standard.nodes.keys()
     if missing:raise RuntimeError('追加真实筋膜网格尚未进入标准GLB，请等待资产构建完成: '+','.join(sorted(missing)))
     anatomy_path=ASSETS/'anatomy.json';anatomy=json.loads(anatomy_path.read_text())
-    connections=build_connections(standard);audit=validate(connections,standard,low,anatomy)
+    connections=build_connections(standard);attach_evidence(connections)
+    audit=validate(connections,standard,low,anatomy);evidence_counts=validate_evidence(connections)
     original_targets=[t for connection in connections[:3] for t in connection['targets']]
-    original_targets_sha=hashlib.sha256(json.dumps(original_targets,ensure_ascii=False,sort_keys=True,separators=(',',':')).encode()).hexdigest()
-    assert original_targets_sha=='db9b2f0f316f433a596427888410e24635d823fe923a2a441a31b808d917ee26','Original 20 targets changed'
-    document={'schemaVersion':2,'modelId':anatomy['modelId'],'sex':'male',
+    preserved=geometry_identity(connections)
+    assert preserved=={'first20TargetsSha256':'8e28113043836ded1de9452f41463a93d727e55844ad6a76244c281d437b7d68',
+        'all38TargetsSha256':'465d15f78380391320dc4739231f4877f6ec74f884afab2100b07257791465e8',
+        'all48PathsSha256':'20b69435c2227040de34af93405ceed0b3f55242b92927f4a1c7e33e9b73fe3f'},'Preserved local geometry changed'
+    document={'schemaVersion':3,'modelId':anatomy['modelId'],'sex':'male',
         'displayPolicy':{'lineKind':'unoriented_connection_schematic','forceVectors':False,'forceMagnitudes':False,
             'targetMeaningZh':'连接参考区：真实模型局部表面上的教学参照，不是触发点、治疗点或个体病灶。',
+            'contextLineMeaningZh':'组织范围辅助线（非力线）',
+            'relationLineMeaningZh':'文献连接关系示意（非实测受力路径）',
             'professionalAnatomicalReviewedTargets':0},
+        'consensusBasis':consensus_basis(),
         'geometryLicenseNoteZh':'参考区坐标来自BodyParts3D与Z-Anatomy的派生模型，沿用随包提供的模型署名与CC BY-SA 4.0许可；研究说明为自行概述，未复制文献图版或长段原文。',
         'terminologyZh':'单个筋膜与更广义的筋膜系统分别标识。腱、腱膜和韧带保留其解剖名称；关系示意不构成国际或国家筋膜链点位标准。',
         'terminologySources':[
@@ -626,7 +786,11 @@ def main():
         'relationPaths':sum(p['kind']=='unoriented_connection_schematic' for c in connections for p in c['paths']),
         'contextPaths':sum(p['kind']=='anatomical_context_schematic' for c in connections for p in c['paths']),
         'targets':sum(len(c['targets']) for c in connections),'professionalAnatomicalReviewedTargets':0,'clinicalTargets':0,
-        'originalTargetsUnchanged':len(original_targets),'originalTargetsCanonicalSha256':original_targets_sha,
+        'originalTargetsUnchanged':len(original_targets),'preservedGeometryIdentity':preserved,
+        'preservedTargetsUnchanged':sum(len(c['targets']) for c in connections),
+        'preservedPathsUnchanged':sum(len(c['paths']) for c in connections),
+        'evidenceReferences':sum(evidence_counts.values()),'evidenceKinds':evidence_counts,
+        'evidenceClassMeaningZh':'类别区分研究观察，不是自定义强弱评分；辅助线不挂接传力证据。',
         'pathKinds':{kind:sum(p['kind']==kind for c in connections for p in c['paths'])
             for kind in ('unoriented_connection_schematic','anatomical_context_schematic')},
         'contextSamples':sum(len(p['points']) for c in connections for p in c['paths'] if p['kind']=='anatomical_context_schematic'),

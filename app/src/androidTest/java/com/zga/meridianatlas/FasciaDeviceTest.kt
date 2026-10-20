@@ -60,8 +60,9 @@ class FasciaDeviceTest {
         .performScrollTo().performClick()
 
     private fun openFascia() {
-        quick("筋膜力线")
-        compose.onNodeWithText("筋膜与连接链").assertIsDisplayed()
+        quick("筋膜解剖")
+        compose.onNodeWithText("筋膜解剖与连接").assertIsDisplayed()
+        compose.onNodeWithText("文献连接").performClick()
     }
 
     private fun panelFind(matcher: SemanticsMatcher): SemanticsNodeInteraction {
@@ -148,10 +149,10 @@ class FasciaDeviceTest {
         assertTrue("The reference region must retain source triangle/barycentric provenance", target.sourceGeometry.isNotBlank())
         assertTrue(target.structureIds.isNotEmpty())
         openFascia()
-        panelFind(hasContentDescription("显示${connection.nameZh}连接链")).performClick()
+        panelFind(hasContentDescription("显示${connection.nameZh}文献连接")).performClick()
         compose.runOnIdle { assertTrue(connection.id in model.state.value.layer.enabledFascialConnections) }
         panelFind(hasText("观察这组结构") and hasClickAction()).performClick()
-        compose.onNodeWithText("筋膜与连接链").assertDoesNotExist()
+        compose.onNodeWithText("筋膜解剖与连接").assertDoesNotExist()
         compose.runOnIdle {
             assertTrue(model.state.value.layer.fasciaChains)
             assertTrue(model.state.value.layer.connective)
@@ -171,7 +172,7 @@ class FasciaDeviceTest {
 
         openFascia()
         panelFind(hasContentDescription("定位连接参考区${target.id}")).performClick()
-        compose.onNodeWithText("连接说明与出处").assertIsDisplayed()
+        compose.onNodeWithText("连接证据与条件").assertIsDisplayed()
         compose.onNodeWithText(target.nameZh).assertExists()
 
         val latest = AtomicReference<List<ProjectedAnchor>>(emptyList())
@@ -185,7 +186,7 @@ class FasciaDeviceTest {
                 viewer.focusOn(target.position, .41f, target.normal)
             }
             compose.onNode(hasText("关闭") and hasClickAction()).performClick()
-            compose.onNodeWithText("连接说明与出处").assertDoesNotExist()
+            compose.onNodeWithText("连接证据与条件").assertDoesNotExist()
             compose.waitUntil(30_000) { latest.get().any { it.id == "fascial-target:${target.id}" && it.visible } }
             val projected = latest.get().single { it.id == "fascial-target:${target.id}" }
             val location = IntArray(2)
@@ -198,7 +199,7 @@ class FasciaDeviceTest {
                     .apply { source = InputDevice.SOURCE_TOUCHSCREEN }
                 try { instrumentation.sendPointerSync(event) } finally { event.recycle() }
             }
-            compose.waitUntil(10_000) { compose.onAllNodesWithText("连接说明与出处").fetchSemanticsNodes().isNotEmpty() }
+            compose.waitUntil(10_000) { compose.onAllNodesWithText("连接证据与条件").fetchSemanticsNodes().isNotEmpty() }
             compose.onNodeWithText(target.nameZh).assertExists()
         } finally {
             original?.let { callback -> compose.runOnUiThread { viewer.onProjection = callback } }
@@ -208,14 +209,15 @@ class FasciaDeviceTest {
     @Test fun evidenceSourcesAndIndependentModePreferencesRemainAccessible() {
         val connection = firstConnection()
         openFascia()
-        panelFind(hasContentDescription("显示${connection.nameZh}连接链")).performClick()
+        panelFind(hasContentDescription("显示${connection.nameZh}文献连接")).performClick()
         panelFind(hasText("显示连接参考区") and hasClickAction()).performClick()
-        panelFind(hasText(connection.evidenceZh)).assertIsDisplayed()
+        assertTrue(connection.evidenceReferences.isNotEmpty())
+        panelFind(hasText(connection.evidenceReferences.first().scopeZh)).assertIsDisplayed()
         if (connection.geometryCoverageZh.isNotBlank()) panelFind(hasText(connection.geometryCoverageZh)).assertIsDisplayed()
         val source = connection.sourceRefs.first()
         assertTrue(source.url.startsWith("https://"))
         panelFind(hasText(source.title, substring = true)).assertIsDisplayed()
-        panelFind(hasText("采用的命名与学习范围")).assertIsDisplayed()
+        panelFind(hasText("命名与证据边界")).assertIsDisplayed()
         instrumentation.sendKeyDownUpSync(android.view.KeyEvent.KEYCODE_BACK)
         compose.waitForIdle()
         val overview = model.state.value.layer

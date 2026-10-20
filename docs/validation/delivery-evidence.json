@@ -1,9 +1,9 @@
 {
-  "applicationVersion": "0.4.0",
+  "applicationVersion": "0.5.0",
   "apk": {
-    "path": "outputs/human-study-0.4.0-arm64.apk",
-    "bytes": 118534614,
-    "sha256": "e0ad9797fcbbedc5a80c4ce95d8c8b93fbd0e211871132d5231af4af62c61ef4"
+    "path": "outputs/human-study-0.5.0-arm64.apk",
+    "bytes": 125111754,
+    "sha256": "f318710f0d611a52cfe9fa9bb9a779f9c0d95205c2e347c9a6c29a2437f24d8c"
   },
   "package": "com.zga.meridianatlas",
   "checks": {
@@ -20,15 +20,15 @@
     "acupoints": 413,
     "instances": 843,
     "meridians": 20,
-    "structures": 1239,
+    "structures": 1291,
     "fascialConnections": 7,
     "connectionReferenceRegions": 38
   },
   "assets": [
     {
       "path": "anatomy.json",
-      "bytes": 2002808,
-      "sha256": "bf3d37618ab832cf9ce2b828d6db14241c735dba5978ffc3cd227f593a4a044f"
+      "bytes": 2136568,
+      "sha256": "9cf2b598b0e4cd61ed3f2f8092bcc65f7cd471d02f37b9f50307e45ba52ab93b"
     },
     {
       "path": "content/acupoints.json",
@@ -37,8 +37,8 @@
     },
     {
       "path": "content/fascia.json",
-      "bytes": 1941287,
-      "sha256": "5307befdb61497e43d1d52f7523cbbc96033ebe833dc3738f8895499ff4b130e"
+      "bytes": 1970286,
+      "sha256": "fad1312eae8ddb0cf0f7ecb0a53248703510b7f17cc34ede9ed966fefd88328e"
     },
     {
       "path": "content/landmarks.json",
@@ -82,8 +82,8 @@
     },
     {
       "path": "licenses/MODEL-NOTICE.md",
-      "bytes": 3323,
-      "sha256": "e66e7fa56b67c1464f4401cb41f895f6ed26d5fc68efae18d4c4c4856d1efbb0"
+      "bytes": 3556,
+      "sha256": "e4ba37f2e99e55591bd621bc84660c8e09220c3d3a632605ac412f9448e4ecfd"
     },
     {
       "path": "licenses/PROJECT-Apache-2.0.txt",
@@ -112,13 +112,13 @@
     },
     {
       "path": "models/body-low.glb",
-      "bytes": 48115592,
-      "sha256": "9d4b8f75a3d12fb5695039594dab82af5223af7bccf8b69f511b64815e3329e3"
+      "bytes": 51370856,
+      "sha256": "732db523e4fc217f575c944b7ca1dcfd169231d01aa4b128f7c992428bea1042"
     },
     {
       "path": "models/body-standard.glb",
-      "bytes": 59941576,
-      "sha256": "a1588838552e7503142a51cc5f23681bbcc3cd33098bca80739f4794fed2ceee"
+      "bytes": 63196840,
+      "sha256": "a9db567003aefceae40bab4930dfc709b95031025fad59a8018465b2dbb8b0ba"
     },
     {
       "path": "models/skin-occlusion.bin",

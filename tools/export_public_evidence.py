@@ -20,7 +20,7 @@ PUBLIC_MANIFESTS = (
     "content-anchor-audit.json", "content-artifacts.json", "content-functions.json",
     "content-sources.json", "content-validation.json", "cutaway-material.json",
     "fascia-content.json", "meridian-palette.json", "model-build.json",
-    "model-connective-supplement.json", "model-landmarks.json", "model-muscle-content.json",
+    "model-connective-supplement.json", "model-fascia-expansion.json", "model-landmarks.json", "model-muscle-content.json",
     "model-muscle-fix.json", "model-muscle-simplification.json", "model-muscle-topology.json",
     "model-skin-occlusion.json", "model-supplement.json", "model-taxonomy.json",
     "model-trapezius-fix.json", "model-validation.json", "route-rendering.json",
@@ -175,7 +175,10 @@ def evidence_summary(root: Path, version: str) -> dict:
             "structuresBySystem": build["countsBySystem"],
             "acupoints": {key: content[key] for key in ("entries", "meridianEntries", "extraEntries", "instances", "routes")},
             "fascialConnections": fascia["connections"], "fascialInstances": fascia["instances"],
-            "fascialReferenceRegions": fascia["targets"], "addedFasciaAndAponeurosisMeshes": len(supplement["addedMeshes"]),
+            "fascialReferenceRegions": fascia["targets"],
+            "addedConnectiveTissueMeshes": len(supplement["addedMeshes"]),
+            "addedFasciaAndAponeurosisMeshes": sum(item.get("tissueType") in {"fascia", "aponeurosis"}
+                for item in supplement["addedMeshes"]),
         },
         "professionalReview": {
             "acupointInstancesCompleted": content["medicalReviewedInstances"],

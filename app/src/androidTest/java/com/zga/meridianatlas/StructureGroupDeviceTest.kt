@@ -77,8 +77,8 @@ class StructureGroupDeviceTest {
 
     @Test fun selectingAnyIleumFragmentHidesAndRestoresItsWholeNamedStructureOnly() {
         val data = model.state.value.data!!
-        assertEquals("Raw source meshes and point anchors must retain their original IDs", 1239, data.structures.size)
-        assertEquals(1060, data.structureGroups.entries.size)
+        assertEquals("Original structures plus separately appended connective tissue meshes", 1291, data.structures.size)
+        assertEquals(1112, data.structureGroups.entries.size)
         val proximal = group("回肠近侧部")
         val middle = group("回肠中部")
         val distal = group("回肠远侧部")

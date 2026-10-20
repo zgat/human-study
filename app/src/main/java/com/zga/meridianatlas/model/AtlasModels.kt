@@ -49,7 +49,8 @@ data class LayerState(
     val cutawaySide: CutawaySide = CutawaySide.NONE, val internalRelations: Boolean = false,
     val connective: Boolean = false, val spaces: Boolean = false,
     val fasciaChains: Boolean = false, val fasciaTargets: Boolean = true,
-    val enabledFascialConnections: Set<String> = emptySet()
+    val enabledFascialConnections: Set<String> = emptySet(),
+    val fasciaRelations: Boolean = true, val fasciaContext: Boolean = false
 )
 data class AtlasData(val structures: List<AnatomyStructure>, val points: List<Acupoint>,
     val meridians: List<Meridian>, val sourceNotes: String = "",

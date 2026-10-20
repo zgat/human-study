@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "targetApplicationVersion": "0.4.0",
+  "targetApplicationVersion": "0.5.0",
   "files": [
     {
       "path": "content-anchor-audit.json",
@@ -34,8 +34,8 @@
     },
     {
       "path": "fascia-content.json",
-      "bytes": 503166,
-      "sha256": "e1faad578963d94fbc67ba449f6ef3bd52dbe07e1644977f56e3cc14dda3055b"
+      "bytes": 503724,
+      "sha256": "22c9d97eba9344a03c8666ac8ab561cb9f9e738cf2404a32f78689369d289486"
     },
     {
       "path": "meridian-palette.json",
@@ -44,13 +44,18 @@
     },
     {
       "path": "model-build.json",
-      "bytes": 162864,
-      "sha256": "50c4305d95f93952ecb2ad596511e506b5f450cbfa25764d83fa5020694301cc"
+      "bytes": 163408,
+      "sha256": "930211e35548f178af04e8150ac7902b2476cd20c7c63e74bfbf51f682b0ed26"
     },
     {
       "path": "model-connective-supplement.json",
-      "bytes": 18718,
-      "sha256": "89ba38e55c8728f42ac67d5583c98d3ac406b54976b4e651dac25639eb927a9a"
+      "bytes": 159481,
+      "sha256": "7df2c6e1fcec49d020832eabcd6cc96ddbc12de5ac1af174eb473c9cae8d0d33"
+    },
+    {
+      "path": "model-fascia-expansion.json",
+      "bytes": 3159108,
+      "sha256": "6a3a3ee8d733d87148cbe021b6a08412ebfe4c5c266346187755afa48ec77ac4"
     },
     {
       "path": "model-landmarks.json",
@@ -79,18 +84,18 @@
     },
     {
       "path": "model-skin-occlusion.json",
-      "bytes": 3469,
-      "sha256": "8c9aaa5831034df447c703b7529dddfa88d412aa8264b4289ec53c142d07b706"
+      "bytes": 3633,
+      "sha256": "94926fc70ab8518c025f6b41bc51014423f5972f990507de42f52f87e170e3c1"
     },
     {
       "path": "model-supplement.json",
-      "bytes": 255575,
-      "sha256": "c25f15f34020b3dca5b02487ea1bb8ddab63cb0f9e339c353e9744c95f36ee54"
+      "bytes": 280044,
+      "sha256": "205b476694544de9a6582170ff00b9e3389c6fb7650a477ef711832a49c769be"
     },
     {
       "path": "model-taxonomy.json",
-      "bytes": 2991240,
-      "sha256": "cd9c17f68e9db79bf7ec8abab6122538f3c05ab475a5e6187d707edfde25dd8d"
+      "bytes": 3077287,
+      "sha256": "d4da64610910ccc97140acd42fb33911bec5d56717242f58398777f02f1e4cb2"
     },
     {
       "path": "model-trapezius-fix.json",
@@ -99,8 +104,8 @@
     },
     {
       "path": "model-validation.json",
-      "bytes": 1573,
-      "sha256": "246b4b1d0b794f2fa04514cd79d799ad7c6587efba2c68d600e278deb87e8734"
+      "bytes": 1687,
+      "sha256": "114a45f4455962fabba7f0e370ffe00d938f3e3fea2ff30db04bbfaaea2aaaab"
     },
     {
       "path": "route-rendering.json",
@@ -109,18 +114,18 @@
     },
     {
       "path": "test-summary.json",
-      "bytes": 6231,
-      "sha256": "ad0f41b059a44f82fb8a5e862b40117a9e20a3a7d9f86a72eb87feada903b3a7"
+      "bytes": 6273,
+      "sha256": "45d928b9b08a1f4d9e77d2f150a1d8d23255b29262c53f9adb5bc3c6ad705bea"
     },
     {
       "path": "build-evidence.json",
-      "bytes": 16445,
-      "sha256": "7bf3ce97973c6afce5021657facb4a956bc1d8ddbd9c7014075f67878cdc60e6"
+      "bytes": 27551,
+      "sha256": "a35a83b3a594a4cfb782499bebd5866267d9af8deaf10ea4b641fd3842d0c724"
     },
     {
       "path": "delivery-evidence.json",
       "bytes": 4880,
-      "sha256": "b991ce749998dbdcad754577eb5c4630b9610144761ca5d2037d27917b75e136"
+      "sha256": "b81566b5971b9028d138fe7545834cb11951a7a58bf64a7387c29a807f062c05"
     }
   ],
   "policyZh": "固定素材清单白名单；设备与历史原件不复制；构建证据须显式启用并与当前版本和APK哈希匹配。"

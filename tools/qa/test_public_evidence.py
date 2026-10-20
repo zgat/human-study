@@ -39,7 +39,7 @@ class PublicEvidenceTest(unittest.TestCase):
         self.write(root, "fascia-content.json", {"connections": 3, "instances": 6, "targets": 20,
             "professionalAnatomicalReviewedTargets": 0, "clinicalTargets": 0,
             "inputs": [standard, low, anatomy], "outputs": [fascia]})
-        self.write(root, "model-connective-supplement.json", {"addedMeshes": [{"id": str(i)} for i in range(8)]})
+        self.write(root, "model-connective-supplement.json", {"addedMeshes": [{"id": str(i), "tissueType": "fascia"} for i in range(8)]})
         self.write(root, "fascia-validation.json", {"applicationVersion": "0.2.2",
             "jvm": [{"name": "fixture", "tests": 42, "failures": 0, "errors": 0}], "lint": {"errors": 0, "warnings": 18}})
         self.write(root, "fascia-functional-device.json", {"applicationVersion": "0.2.2", "status": "passed",

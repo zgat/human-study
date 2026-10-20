@@ -143,7 +143,23 @@ def main():
         for quality in ['standard','low']:
             actual,_=geometry(ASSETS/f'models/body-{quality}.glb')
             assert all(actual['nodes'][key]==value for key,value in fixed['modelsBefore'][quality]['nodes'].items() if key not in exceptions)
-    assert len(structures)==1239
+    expansion_path=ROOT/'manifests/model-fascia-expansion.json'
+    if expansion_path.exists():
+        expansion=json.loads(expansion_path.read_text())
+        assert expansion['status']=='passed' and expansion['baselineStructures']==1239
+        assert expansion['addedStructures']==52 and len(structures)==expansion['totalStructures']==1291
+        assert expansion['originalStructureMetadataValuesUnchanged']
+        assert expansion['existingGeometryPayloadsByteExact']
+        assert expansion['existingNodePrimitiveMaterialAccessorJsonUnchanged']
+        assert expansion['newTierGeometryByteExact'] and expansion['skinOcclusionUnchanged']
+        assert digest(ASSETS/'anatomy.json')==expansion['anatomyMetadata']['sha256']
+        actual_by_quality={q:geometry(ASSETS/f'models/body-{q}.glb')[0] for q in ['standard','low']}
+        for quality,actual in actual_by_quality.items():
+            assert all(actual['nodes'][key]==value for key,value in expansion['modelsBefore'][quality]['nodes'].items())
+        for item in expansion['addedMeshes']:
+            assert actual_by_quality['standard']['nodes'][item['id']]==actual_by_quality['low']['nodes'][item['id']]==item['targetPayloads']
+    else:
+        assert len(structures)==1239
     assert next(x for x in structures if x['id']=='FJ3178')['nameZh']=='胸骨体'
     assert next(x for x in structures if x['id']=='FJ3153')['nameZh']=='剑突'
     assert all(next(x for x in structures if x['id']==key)['system']=='muscle'
@@ -167,7 +183,9 @@ def main():
                         'all muscle learning fields and source links','MSO1 skin occlusion header, hash and finite nondegenerate triangles',
                         'low-tier skin exact POSITION/NORMAL/index equality with standard tier',
                         'explicit systems and tissue/source concept metadata','previous geometry payloads byte-exact outside four authorized trapezius fixes',
-                        'eight genuine source fascia additions','skin occlusion file unchanged'],
+                        'explicitly enumerated genuine source connective-tissue additions',
+                        'old anchor geometry unchanged and new source sheets identical across both tiers',
+                        'skin occlusion file unchanged'],
               'limitsZh':['未验证真实 Android 帧率。','未进行医学专业审校或完整视觉验收。']}
     (ROOT/'manifests/model-validation.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
     print(json.dumps(report,ensure_ascii=False,indent=2))

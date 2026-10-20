@@ -16,7 +16,7 @@
 
 来源为 [Z-Anatomy 官方 Unity 项目中的 MuscularSystem100.fbx](https://github.com/LluisV/Z-Anatomy/blob/PC-Version/Resources/Models/FBX/MuscularSystem100.fbx)，遵循 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。上游原始署名与说明保留于 `Z-Anatomy-upstream.txt`，许可全文保留于 `CC-BY-SA-4.0.txt`。
 
-仅使用明确白名单中的 74 个肌肉网格及 8 个筋膜、腱膜网格：胸腰筋膜前、中、后层各双侧，以及双侧足底腱膜。不导入内耳、肾脏或其他器官网格。转换包括 FBX 层级变换求值、厘米到米、共同肌肉的稳健平移配准与法线计算；肌肉使用受误差预算约束的边折叠简化，8 片筋膜和腱膜保留源网格分辨率。配准及肌肉分层尚需专业审校。
+仅使用明确白名单中的 74 个肌肉网格及 60 个结缔组织网格：44 片筋膜或腱膜、16 片支持带。包含胸腰筋膜前、中、后层、足底和掌腱膜，以及头颈、躯干与四肢的可用筋膜；支持带单独标注组织类型。已存在的腕屈肌支持带、髂胫束未重复导入，阔筋膜张肌仍归肌肉。不导入内耳、肾脏或其他器官网格。转换包括 FBX 层级变换求值、厘米到米、共同肌肉的稳健平移配准与法线计算；肌肉使用受误差预算约束的边折叠简化，60 片结缔组织在两档均保留源网格分辨率。配准及肌肉分层尚需专业审校。
 
 发布的合并 `body-standard.glb` 和 `body-low.glb` 均以 CC BY-SA 4.0 分发。该模型许可不用于变更本项目自行编写的应用代码许可。
 
@@ -24,4 +24,4 @@
 
 中文名称与概述由本项目编写；引用的解剖教材用于事实核查，不包含教材图片或原文段落。中文术语、肌肉起止点、功能、层级与补充网格配准未经过专业人员逐项验收。
 
-输入和输出 SHA-256、原始元件 ID、补充白名单、坐标变换及配准残差见 `docs/validation/model-build.json`、`docs/validation/model-supplement.json` 与 `docs/validation/model-connective-supplement.json`。分类与具体概念选择见 `docs/validation/model-taxonomy.json`。筋膜、腱、韧带等组成结缔支持组织显示组，不等于每项都是筋膜；解剖腔隙独立保留为参考模型。低精度和标准精度包含相同结构 ID；未用程序几何图元代替缺少的解剖结构。运行时半身剖露仅按正中矢状面裁切皮肤和肌肉片元，不增加组织或改变穴位坐标；肌肉修复的源网格、开边和非流形对比见 `docs/validation/model-muscle-fix.json`。
+输入和输出 SHA-256、原始元件 ID、补充白名单、坐标变换及配准残差见 `docs/validation/model-build.json`、`docs/validation/model-supplement.json` 与 `docs/validation/model-connective-supplement.json`。分类与具体概念选择见 `docs/validation/model-taxonomy.json`。筋膜、腱、韧带等组成结缔支持组织显示组，不等于每项都是筋膜；解剖腔隙独立保留为参考模型。低精度和标准精度包含相同结构 ID；未用程序几何图元代替缺少的解剖结构。运行时半身剖露仅按正中矢状面裁切皮肤、肌肉和眼口外表面片元，不增加组织或改变穴位坐标；肌肉修复的源网格、开边和非流形对比见 `docs/validation/model-muscle-fix.json`。

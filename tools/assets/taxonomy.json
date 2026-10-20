@@ -17389,6 +17389,1098 @@
       "sourceConceptNoteZh": "对应官方原始网格元件；应用系统分组不等同于 FMA 本体中的 organ 大类。",
       "taxonomyPreviousSystem": "connective",
       "taxonomyReviewStatus": "source-checked-professional-review-pending"
+    },
+    "ZA_84510682": {
+      "nameEn": "right epicranial aponeurosis",
+      "nameZh": "右侧帽状腱膜",
+      "system": "connective",
+      "geometrySystem": "connective",
+      "geometryNameEn": "right epicranial aponeurosis",
+      "tissueType": "aponeurosis",
+      "tissueTypeZh": "腱膜",
+      "sourceConceptNameEn": "Epicranial aponeurosis.r",
+      "sourceConceptNoteZh": "逐个核对 Z-Anatomy 官方 FBX 的命名及模型 ID；仅导入源有网格，不把组织范围解释为传力路径。",
+      "taxonomyReviewStatus": "source-checked-professional-review-pending",
+      "descriptionZh": "右侧帽状腱膜，位于颅顶。这是源模型按该名称提供的实际腱膜网格；中文名称与局部边界仍待专业审校。形态供解剖观察，不表示标准力线、疼痛点或治疗靶点。",
+      "functionZh": "结缔组织膜层参与局部组织的包裹、连接或支持；单个网格不能确定远程传力路线或传力大小。",
+      "descriptionSources": [
+        {
+          "title": "Z-Anatomy MuscularSystem100.fbx source names and geometry",
+          "url": "https://github.com/LluisV/Z-Anatomy/blob/PC-Version/Resources/Models/FBX/MuscularSystem100.fbx"
+        }
+      ],
+      "taxonomyPreviousSystem": "connective"
+    },
+    "ZA_849343592": {
+      "nameEn": "left epicranial aponeurosis",
+      "nameZh": "左侧帽状腱膜",
+      "system": "connective",
+      "geometrySystem": "connective",
+      "geometryNameEn": "left epicranial aponeurosis",
+      "tissueType": "aponeurosis",
+      "tissueTypeZh": "腱膜",
+      "sourceConceptNameEn": "Epicranial aponeurosis.l",
+      "sourceConceptNoteZh": "逐个核对 Z-Anatomy 官方 FBX 的命名及模型 ID；仅导入源有网格，不把组织范围解释为传力路径。",
+      "taxonomyReviewStatus": "source-checked-professional-review-pending",
+      "descriptionZh": "左侧帽状腱膜，位于颅顶。这是源模型按该名称提供的实际腱膜网格；中文名称与局部边界仍待专业审校。形态供解剖观察，不表示标准力线、疼痛点或治疗靶点。",
+      "functionZh": "结缔组织膜层参与局部组织的包裹、连接或支持；单个网格不能确定远程传力路线或传力大小。",
+      "descriptionSources": [
+        {
+          "title": "Z-Anatomy MuscularSystem100.fbx source names and geometry",
+          "url": "https://github.com/LluisV/Z-Anatomy/blob/PC-Version/Resources/Models/FBX/MuscularSystem100.fbx"
+        }
+      ],
+      "taxonomyPreviousSystem": "connective"
+    },
+    "ZA_661418671": {
+      "nameEn": "right superficial layer of temporal fascia",
+      "nameZh": "右侧颞筋膜浅层",
+      "system": "connective",
+      "geometrySystem": "connective",
+      "geometryNameEn": "right superficial layer of temporal fascia",
+      "tissueType": "fascia",
+      "tissueTypeZh": "筋膜",
+      "sourceConceptNameEn": "Superficial layer of temporal fascia.r",
+      "sourceConceptNoteZh": "逐个核对 Z-Anatomy 官方 FBX 的命名及模型 ID；仅导入源有网格，不把组织范围解释为传力路径。",
+      "taxonomyReviewStatus": "source-checked-professional-review-pending",
+      "descriptionZh": "右侧颞筋膜浅层，位于颞区。这是源模型按该名称提供的实际筋膜网格；中文名称与局部边界仍待专业审校。形态供解剖观察，不表示标准力线、疼痛点或治疗靶点。",
+      "functionZh": "结缔组织膜层参与局部组织的包裹、连接或支持；单个网格不能确定远程传力路线或传力大小。",
+      "descriptionSources": [
+        {
+          "title": "Z-Anatomy MuscularSystem100.fbx source names and geometry",
+          "url": "https://github.com/LluisV/Z-Anatomy/blob/PC-Version/Resources/Models/FBX/MuscularSystem100.fbx"
+        }
+      ],
+      "taxonomyPreviousSystem": "connective"
+    },
+    "ZA_772631811": {
+      "nameEn": "left superficial layer of temporal fascia",
+      "nameZh": "左侧颞筋膜浅层",
+      "system": "connective",
+      "geometrySystem": "connective",
+      "geometryNameEn": "left superficial layer of temporal fascia",
+      "tissueType": "fascia",
+      "tissueTypeZh": "筋膜",
+      "sourceConceptNameEn": "Superficial layer of temporal fascia.l",
+      "sourceConceptNoteZh": "逐个核对 Z-Anatomy 官方 FBX 的命名及模型 ID；仅导入源有网格，不把组织范围解释为传力路径。",
+      "taxonomyReviewStatus": "source-checked-professional-review-pending",
+      "descriptionZh": "左侧颞筋膜浅层，位于颞区。这是源模型按该名称提供的实际筋膜网格；中文名称与局部边界仍待专业审校。形态供解剖观察，不表示标准力线、疼痛点或治疗靶点。",
+      "functionZh": "结缔组织膜层参与局部组织的包裹、连接或支持；单个网格不能确定远程传力路线或传力大小。",
+      "descriptionSources": [
+        {
+          "title": "Z-Anatomy MuscularSystem100.fbx source names and geometry",
+          "url": "https://github.com/LluisV/Z-Anatomy/blob/PC-Version/Resources/Models/FBX/MuscularSystem100.fbx"
+        }
+      ],
+      "taxonomyPreviousSystem": "connective"
+    },
+    "ZA_633010665": {
+      "nameEn": "right masseteric fascia",
+      "nameZh": "右侧咬肌筋膜",
+      "system": "connective",
+      "geometrySystem": "connective",
+      "geometryNameEn": "right masseteric fascia",
+      "tissueType": "fascia",
+      "tissueTypeZh": "筋膜",
+      "sourceConceptNameEn": "Masseteric fascia.r",
+      "sourceConceptNoteZh": "逐个核对 Z-Anatomy 官方 FBX 的命名及模型 ID；仅导入源有网格，不把组织范围解释为传力路径。",
+      "taxonomyReviewStatus": "source-checked-professional-review-pending",
+      "descriptionZh": "右侧咬肌筋膜，位于咬肌表面。这是源模型按该名称提供的实际筋膜网格；中文名称与局部边界仍待专业审校。形态供解剖观察，不表示标准力线、疼痛点或治疗靶点。",
+      "functionZh": "结缔组织膜层参与局部组织的包裹、连接或支持；单个网格不能确定远程传力路线或传力大小。",
+      "descriptionSources": [
+        {
+          "title": "Z-Anatomy MuscularSystem100.fbx source names and geometry",
+          "url": "https://github.com/LluisV/Z-Anatomy/blob/PC-Version/Resources/Models/FBX/MuscularSystem100.fbx"
+        }
+      ],
+      "taxonomyPreviousSystem": "connective"
+    },
+    "ZA_629531657": {
+      "nameEn": "left masseteric fascia",
+      "nameZh": "左侧咬肌筋膜",
+      "system": "connective",
+      "geometrySystem": "connective",
+      "geometryNameEn": "left masseteric fascia",
+      "tissueType": "fascia",
+      "tissueTypeZh": "筋膜",
+      "sourceConceptNameEn": "Masseteric fascia.l",
+      "sourceConceptNoteZh": "逐个核对 Z-Anatomy 官方 FBX 的命名及模型 ID；仅导入源有网格，不把组织范围解释为传力路径。",
+      "taxonomyReviewStatus": "source-checked-professional-review-pending",
+      "descriptionZh": "左侧咬肌筋膜，位于咬肌表面。这是源模型按该名称提供的实际筋膜网格；中文名称与局部边界仍待专业审校。形态供解剖观察，不表示标准力线、疼痛点或治疗靶点。",
+      "functionZh": "结缔组织膜层参与局部组织的包裹、连接或支持；单个网格不能确定远程传力路线或传力大小。",
+      "descriptionSources": [
+        {
+          "title": "Z-Anatomy MuscularSystem100.fbx source names and geometry",
+          "url": "https://github.com/LluisV/Z-Anatomy/blob/PC-Version/Resources/Models/FBX/MuscularSystem100.fbx"
+        }
+      ],
+      "taxonomyPreviousSystem": "connective"
+    },
+    "ZA_853384501": {
+      "nameEn": "right superficial investing cervical fascia",
+      "nameZh": "右侧颈筋膜封套层",
+      "system": "connective",
+      "geometrySystem": "connective",
+      "geometryNameEn": "right superficial investing cervical fascia",
+      "tissueType": "fascia",
+      "tissueTypeZh": "筋膜",
+      "sourceConceptNameEn": "Superficial investing cervical fascia.r",
+      "sourceConceptNoteZh": "逐个核对 Z-Anatomy 官方 FBX 的命名及模型 ID；仅导入源有网格，不把组织范围解释为传力路径。",
+      "taxonomyReviewStatus": "source-checked-professional-review-pending",
+      "descriptionZh": "右侧颈筋膜封套层，位于颈部。这是源模型按该名称提供的实际筋膜网格；中文名称与局部边界仍待专业审校。形态供解剖观察，不表示标准力线、疼痛点或治疗靶点。",
+      "functionZh": "结缔组织膜层参与局部组织的包裹、连接或支持；单个网格不能确定远程传力路线或传力大小。",
+      "descriptionSources": [
+        {
+          "title": "Z-Anatomy MuscularSystem100.fbx source names and geometry",
+          "url": "https://github.com/LluisV/Z-Anatomy/blob/PC-Version/Resources/Models/FBX/MuscularSystem100.fbx"
+        }
+      ],
+      "taxonomyPreviousSystem": "connective"
+    },
+    "ZA_446380389": {
+      "nameEn": "left superficial investing cervical fascia",
+      "nameZh": "左侧颈筋膜封套层",
+      "system": "connective",
+      "geometrySystem": "connective",
+      "geometryNameEn": "left superficial investing cervical fascia",
+      "tissueType": "fascia",
+      "tissueTypeZh": "筋膜",
+      "sourceConceptNameEn": "Superficial investing cervical fascia.l",
+      "sourceConceptNoteZh": "逐个核对 Z-Anatomy 官方 FBX 的命名及模型 ID；仅导入源有网格，不把组织范围解释为传力路径。",
+      "taxonomyReviewStatus": "source-checked-professional-review-pending",
+      "descriptionZh": "左侧颈筋膜封套层，位于颈部。这是源模型按该名称提供的实际筋膜网格；中文名称与局部边界仍待专业审校。形态供解剖观察，不表示标准力线、疼痛点或治疗靶点。",
+      "functionZh": "结缔组织膜层参与局部组织的包裹、连接或支持；单个网格不能确定远程传力路线或传力大小。",
+      "descriptionSources": [
+        {
+          "title": "Z-Anatomy MuscularSystem100.fbx source names and geometry",
+          "url": "https://github.com/LluisV/Z-Anatomy/blob/PC-Version/Resources/Models/FBX/MuscularSystem100.fbx"
+        }
+      ],
+      "taxonomyPreviousSystem": "connective"
+    },
+    "ZA_518493617": {
+      "nameEn": "right pectoral fascia",
+      "nameZh": "右侧胸筋膜",
+      "system": "connective",
+      "geometrySystem": "connective",
+      "geometryNameEn": "right pectoral fascia",
+      "tissueType": "fascia",
+      "tissueTypeZh": "筋膜",
+      "sourceConceptNameEn": "Pectoral fascia.r",
+      "sourceConceptNoteZh": "逐个核对 Z-Anatomy 官方 FBX 的命名及模型 ID；仅导入源有网格，不把组织范围解释为传力路径。",
+      "taxonomyReviewStatus": "source-checked-professional-review-pending",
+      "descriptionZh": "右侧胸筋膜，位于胸前壁。这是源模型按该名称提供的实际筋膜网格；中文名称与局部边界仍待专业审校。形态供解剖观察，不表示标准力线、疼痛点或治疗靶点。",
+      "functionZh": "结缔组织膜层参与局部组织的包裹、连接或支持；单个网格不能确定远程传力路线或传力大小。",
+      "descriptionSources": [
+        {
+          "title": "Z-Anatomy MuscularSystem100.fbx source names and geometry",
+          "url": "https://github.com/LluisV/Z-Anatomy/blob/PC-Version/Resources/Models/FBX/MuscularSystem100.fbx"
+        }
+      ],
+      "taxonomyPreviousSystem": "connective"
+    },
+    "ZA_480595436": {
+      "nameEn": "left pectoral fascia",
+      "nameZh": "左侧胸筋膜",
+      "system": "connective",
+      "geometrySystem": "connective",
+      "geometryNameEn": "left pectoral fascia",
+      "tissueType": "fascia",
+      "tissueTypeZh": "筋膜",
+      "sourceConceptNameEn": "Pectoral fascia.l",
+      "sourceConceptNoteZh": "逐个核对 Z-Anatomy 官方 FBX 的命名及模型 ID；仅导入源有网格，不把组织范围解释为传力路径。",
+      "taxonomyReviewStatus": "source-checked-professional-review-pending",
+      "descriptionZh": "左侧胸筋膜，位于胸前壁。这是源模型按该名称提供的实际筋膜网格；中文名称与局部边界仍待专业审校。形态供解剖观察，不表示标准力线、疼痛点或治疗靶点。",
+      "functionZh": "结缔组织膜层参与局部组织的包裹、连接或支持；单个网格不能确定远程传力路线或传力大小。",
+      "descriptionSources": [
+        {
+          "title": "Z-Anatomy MuscularSystem100.fbx source names and geometry",
+          "url": "https://github.com/LluisV/Z-Anatomy/blob/PC-Version/Resources/Models/FBX/MuscularSystem100.fbx"
+        }
+      ],
+      "taxonomyPreviousSystem": "connective"
+    },
+    "ZA_182375068": {
+      "nameEn": "right investing abdominal fascia",
+      "nameZh": "右侧腹部包被筋膜（源模型命名）",
+      "system": "connective",
+      "geometrySystem": "connective",
+      "geometryNameEn": "right investing abdominal fascia",
+      "tissueType": "fascia",
+      "tissueTypeZh": "筋膜",
+      "sourceConceptNameEn": "Investing abdominal fascia.r",
+      "sourceConceptNoteZh": "逐个核对 Z-Anatomy 官方 FBX 的命名及模型 ID；仅导入源有网格，不把组织范围解释为传力路径。",
+      "taxonomyReviewStatus": "source-checked-professional-review-pending",
+      "descriptionZh": "右侧腹部包被筋膜（源模型命名），位于腹壁。这是源模型按该名称提供的实际筋膜网格；中文名称与局部边界仍待专业审校。形态供解剖观察，不表示标准力线、疼痛点或治疗靶点。",
+      "functionZh": "结缔组织膜层参与局部组织的包裹、连接或支持；单个网格不能确定远程传力路线或传力大小。",
+      "descriptionSources": [
+        {
+          "title": "Z-Anatomy MuscularSystem100.fbx source names and geometry",
+          "url": "https://github.com/LluisV/Z-Anatomy/blob/PC-Version/Resources/Models/FBX/MuscularSystem100.fbx"
+        }
+      ],
+      "taxonomyPreviousSystem": "connective"
+    },
+    "ZA_210225933": {
+      "nameEn": "left investing abdominal fascia",
+      "nameZh": "左侧腹部包被筋膜（源模型命名）",
+      "system": "connective",
+      "geometrySystem": "connective",
+      "geometryNameEn": "left investing abdominal fascia",
+      "tissueType": "fascia",
+      "tissueTypeZh": "筋膜",
+      "sourceConceptNameEn": "Investing abdominal fascia.l",
+      "sourceConceptNoteZh": "逐个核对 Z-Anatomy 官方 FBX 的命名及模型 ID；仅导入源有网格，不把组织范围解释为传力路径。",
+      "taxonomyReviewStatus": "source-checked-professional-review-pending",
+      "descriptionZh": "左侧腹部包被筋膜（源模型命名），位于腹壁。这是源模型按该名称提供的实际筋膜网格；中文名称与局部边界仍待专业审校。形态供解剖观察，不表示标准力线、疼痛点或治疗靶点。",
+      "functionZh": "结缔组织膜层参与局部组织的包裹、连接或支持；单个网格不能确定远程传力路线或传力大小。",
+      "descriptionSources": [
+        {
+          "title": "Z-Anatomy MuscularSystem100.fbx source names and geometry",
+          "url": "https://github.com/LluisV/Z-Anatomy/blob/PC-Version/Resources/Models/FBX/MuscularSystem100.fbx"
+        }
+      ],
+      "taxonomyPreviousSystem": "connective"
+    },
+    "ZA_451051828": {
+      "nameEn": "right clavipectoral fascia",
+      "nameZh": "右侧锁胸筋膜",
+      "system": "connective",
+      "geometrySystem": "connective",
+      "geometryNameEn": "right clavipectoral fascia",
+      "tissueType": "fascia",
+      "tissueTypeZh": "筋膜",
+      "sourceConceptNameEn": "Clavipectoral fascia.r",
+      "sourceConceptNoteZh": "逐个核对 Z-Anatomy 官方 FBX 的命名及模型 ID；仅导入源有网格，不把组织范围解释为传力路径。",
+      "taxonomyReviewStatus": "source-checked-professional-review-pending",
+      "descriptionZh": "右侧锁胸筋膜，位于胸前壁深部。这是源模型按该名称提供的实际筋膜网格；中文名称与局部边界仍待专业审校。形态供解剖观察，不表示标准力线、疼痛点或治疗靶点。",
+      "functionZh": "结缔组织膜层参与局部组织的包裹、连接或支持；单个网格不能确定远程传力路线或传力大小。",
+      "descriptionSources": [
+        {
+          "title": "Z-Anatomy MuscularSystem100.fbx source names and geometry",
+          "url": "https://github.com/LluisV/Z-Anatomy/blob/PC-Version/Resources/Models/FBX/MuscularSystem100.fbx"
+        }
+      ],
+      "taxonomyPreviousSystem": "connective"
+    },
+    "ZA_866142449": {
+      "nameEn": "left clavipectoral fascia",
+      "nameZh": "左侧锁胸筋膜",
+      "system": "connective",
+      "geometrySystem": "connective",
+      "geometryNameEn": "left clavipectoral fascia",
+      "tissueType": "fascia",
+      "tissueTypeZh": "筋膜",
+      "sourceConceptNameEn": "Clavipectoral fascia.l",
+      "sourceConceptNoteZh": "逐个核对 Z-Anatomy 官方 FBX 的命名及模型 ID；仅导入源有网格，不把组织范围解释为传力路径。",
+      "taxonomyReviewStatus": "source-checked-professional-review-pending",
+      "descriptionZh": "左侧锁胸筋膜，位于胸前壁深部。这是源模型按该名称提供的实际筋膜网格；中文名称与局部边界仍待专业审校。形态供解剖观察，不表示标准力线、疼痛点或治疗靶点。",
+      "functionZh": "结缔组织膜层参与局部组织的包裹、连接或支持；单个网格不能确定远程传力路线或传力大小。",
+      "descriptionSources": [
+        {
+          "title": "Z-Anatomy MuscularSystem100.fbx source names and geometry",
+          "url": "https://github.com/LluisV/Z-Anatomy/blob/PC-Version/Resources/Models/FBX/MuscularSystem100.fbx"
+        }
+      ],
+      "taxonomyPreviousSystem": "connective"
+    },
+    "ZA_688771959": {
+      "nameEn": "transversalis fascia",
+      "nameZh": "腹横筋膜",
+      "system": "connective",
+      "geometrySystem": "connective",
+      "geometryNameEn": "transversalis fascia",
+      "tissueType": "fascia",
+      "tissueTypeZh": "筋膜",
+      "sourceConceptNameEn": "Transversalis fascia",
+      "sourceConceptNoteZh": "逐个核对 Z-Anatomy 官方 FBX 的命名及模型 ID；仅导入源有网格，不把组织范围解释为传力路径。",
+      "taxonomyReviewStatus": "source-checked-professional-review-pending",
+      "descriptionZh": "腹横筋膜，位于腹壁内面。这是源模型按该名称提供的实际筋膜网格；中文名称与局部边界仍待专业审校。形态供解剖观察，不表示标准力线、疼痛点或治疗靶点。",
+      "functionZh": "结缔组织膜层参与局部组织的包裹、连接或支持；单个网格不能确定远程传力路线或传力大小。",
+      "descriptionSources": [
+        {
+          "title": "Z-Anatomy MuscularSystem100.fbx source names and geometry",
+          "url": "https://github.com/LluisV/Z-Anatomy/blob/PC-Version/Resources/Models/FBX/MuscularSystem100.fbx"
+        }
+      ],
+      "taxonomyPreviousSystem": "connective"
+    },
+    "ZA_200191819": {
+      "nameEn": "diaphragmatic fascia",
+      "nameZh": "膈筋膜（源模型命名）",
+      "system": "connective",
+      "geometrySystem": "connective",
+      "geometryNameEn": "diaphragmatic fascia",
+      "tissueType": "fascia",
+      "tissueTypeZh": "筋膜",
+      "sourceConceptNameEn": "Diaphragmatic fascia",
+      "sourceConceptNoteZh": "逐个核对 Z-Anatomy 官方 FBX 的命名及模型 ID；仅导入源有网格，不把组织范围解释为传力路径。",
+      "taxonomyReviewStatus": "source-checked-professional-review-pending",
+      "descriptionZh": "膈筋膜（源模型命名），位于膈区。这是源模型按该名称提供的实际筋膜网格；中文名称与局部边界仍待专业审校。形态供解剖观察，不表示标准力线、疼痛点或治疗靶点。",
+      "functionZh": "结缔组织膜层参与局部组织的包裹、连接或支持；单个网格不能确定远程传力路线或传力大小。",
+      "descriptionSources": [
+        {
+          "title": "Z-Anatomy MuscularSystem100.fbx source names and geometry",
+          "url": "https://github.com/LluisV/Z-Anatomy/blob/PC-Version/Resources/Models/FBX/MuscularSystem100.fbx"
+        }
+      ],
+      "taxonomyPreviousSystem": "connective"
+    },
+    "ZA_632156718": {
+      "nameEn": "right piriformis fascia",
+      "nameZh": "右侧梨状肌筋膜",
+      "system": "connective",
+      "geometrySystem": "connective",
+      "geometryNameEn": "right piriformis fascia",
+      "tissueType": "fascia",
+      "tissueTypeZh": "筋膜",
+      "sourceConceptNameEn": "Piriformis fascia.r",
+      "sourceConceptNoteZh": "逐个核对 Z-Anatomy 官方 FBX 的命名及模型 ID；仅导入源有网格，不把组织范围解释为传力路径。",
+      "taxonomyReviewStatus": "source-checked-professional-review-pending",
+      "descriptionZh": "右侧梨状肌筋膜，位于盆部梨状肌区域。这是源模型按该名称提供的实际筋膜网格；中文名称与局部边界仍待专业审校。形态供解剖观察，不表示标准力线、疼痛点或治疗靶点。",
+      "functionZh": "结缔组织膜层参与局部组织的包裹、连接或支持；单个网格不能确定远程传力路线或传力大小。",
+      "descriptionSources": [
+        {
+          "title": "Z-Anatomy MuscularSystem100.fbx source names and geometry",
+          "url": "https://github.com/LluisV/Z-Anatomy/blob/PC-Version/Resources/Models/FBX/MuscularSystem100.fbx"
+        }
+      ],
+      "taxonomyPreviousSystem": "connective"
+    },
+    "ZA_392888165": {
+      "nameEn": "left piriformis fascia",
+      "nameZh": "左侧梨状肌筋膜",
+      "system": "connective",
+      "geometrySystem": "connective",
+      "geometryNameEn": "left piriformis fascia",
+      "tissueType": "fascia",
+      "tissueTypeZh": "筋膜",
+      "sourceConceptNameEn": "Piriformis fascia.l",
+      "sourceConceptNoteZh": "逐个核对 Z-Anatomy 官方 FBX 的命名及模型 ID；仅导入源有网格，不把组织范围解释为传力路径。",
+      "taxonomyReviewStatus": "source-checked-professional-review-pending",
+      "descriptionZh": "左侧梨状肌筋膜，位于盆部梨状肌区域。这是源模型按该名称提供的实际筋膜网格；中文名称与局部边界仍待专业审校。形态供解剖观察，不表示标准力线、疼痛点或治疗靶点。",
+      "functionZh": "结缔组织膜层参与局部组织的包裹、连接或支持；单个网格不能确定远程传力路线或传力大小。",
+      "descriptionSources": [
+        {
+          "title": "Z-Anatomy MuscularSystem100.fbx source names and geometry",
+          "url": "https://github.com/LluisV/Z-Anatomy/blob/PC-Version/Resources/Models/FBX/MuscularSystem100.fbx"
+        }
+      ],
+      "taxonomyPreviousSystem": "connective"
+    },
+    "ZA_491848518": {
+      "nameEn": "right iliopsoas fascia",
+      "nameZh": "右侧髂腰筋膜",
+      "system": "connective",
+      "geometrySystem": "connective",
+      "geometryNameEn": "right iliopsoas fascia",
+      "tissueType": "fascia",
+      "tissueTypeZh": "筋膜",
+      "sourceConceptNameEn": "Iliopsoas fascia.r",
+      "sourceConceptNoteZh": "逐个核对 Z-Anatomy 官方 FBX 的命名及模型 ID；仅导入源有网格，不把组织范围解释为传力路径。",
+      "taxonomyReviewStatus": "source-checked-professional-review-pending",
+      "descriptionZh": "右侧髂腰筋膜，位于髂腰肌区域。这是源模型按该名称提供的实际筋膜网格；中文名称与局部边界仍待专业审校。形态供解剖观察，不表示标准力线、疼痛点或治疗靶点。",
+      "functionZh": "结缔组织膜层参与局部组织的包裹、连接或支持；单个网格不能确定远程传力路线或传力大小。",
+      "descriptionSources": [
+        {
+          "title": "Z-Anatomy MuscularSystem100.fbx source names and geometry",
+          "url": "https://github.com/LluisV/Z-Anatomy/blob/PC-Version/Resources/Models/FBX/MuscularSystem100.fbx"
+        }
+      ],
+      "taxonomyPreviousSystem": "connective"
+    },
+    "ZA_408214219": {
+      "nameEn": "left iliopsoas fascia",
+      "nameZh": "左侧髂腰筋膜",
+      "system": "connective",
+      "geometrySystem": "connective",
+      "geometryNameEn": "left iliopsoas fascia",
+      "tissueType": "fascia",
+      "tissueTypeZh": "筋膜",
+      "sourceConceptNameEn": "Iliopsoas fascia.l",
+      "sourceConceptNoteZh": "逐个核对 Z-Anatomy 官方 FBX 的命名及模型 ID；仅导入源有网格，不把组织范围解释为传力路径。",
+      "taxonomyReviewStatus": "source-checked-professional-review-pending",
+      "descriptionZh": "左侧髂腰筋膜，位于髂腰肌区域。这是源模型按该名称提供的实际筋膜网格；中文名称与局部边界仍待专业审校。形态供解剖观察，不表示标准力线、疼痛点或治疗靶点。",
+      "functionZh": "结缔组织膜层参与局部组织的包裹、连接或支持；单个网格不能确定远程传力路线或传力大小。",
+      "descriptionSources": [
+        {
+          "title": "Z-Anatomy MuscularSystem100.fbx source names and geometry",
+          "url": "https://github.com/LluisV/Z-Anatomy/blob/PC-Version/Resources/Models/FBX/MuscularSystem100.fbx"
+        }
+      ],
+      "taxonomyPreviousSystem": "connective"
+    },
+    "ZA_211792739": {
+      "nameEn": "right deltoid fascia",
+      "nameZh": "右侧三角肌筋膜",
+      "system": "connective",
+      "geometrySystem": "connective",
+      "geometryNameEn": "right deltoid fascia",
+      "tissueType": "fascia",
+      "tissueTypeZh": "筋膜",
+      "sourceConceptNameEn": "Deltoid fascia.r",
+      "sourceConceptNoteZh": "逐个核对 Z-Anatomy 官方 FBX 的命名及模型 ID；仅导入源有网格，不把组织范围解释为传力路径。",
+      "taxonomyReviewStatus": "source-checked-professional-review-pending",
+      "descriptionZh": "右侧三角肌筋膜，位于肩部三角肌表面。这是源模型按该名称提供的实际筋膜网格；中文名称与局部边界仍待专业审校。形态供解剖观察，不表示标准力线、疼痛点或治疗靶点。",
+      "functionZh": "结缔组织膜层参与局部组织的包裹、连接或支持；单个网格不能确定远程传力路线或传力大小。",
+      "descriptionSources": [
+        {
+          "title": "Z-Anatomy MuscularSystem100.fbx source names and geometry",
+          "url": "https://github.com/LluisV/Z-Anatomy/blob/PC-Version/Resources/Models/FBX/MuscularSystem100.fbx"
+        }
+      ],
+      "taxonomyPreviousSystem": "connective"
+    },
+    "ZA_869110256": {
+      "nameEn": "left deltoid fascia",
+      "nameZh": "左侧三角肌筋膜",
+      "system": "connective",
+      "geometrySystem": "connective",
+      "geometryNameEn": "left deltoid fascia",
+      "tissueType": "fascia",
+      "tissueTypeZh": "筋膜",
+      "sourceConceptNameEn": "Deltoid fascia.l",
+      "sourceConceptNoteZh": "逐个核对 Z-Anatomy 官方 FBX 的命名及模型 ID；仅导入源有网格，不把组织范围解释为传力路径。",
+      "taxonomyReviewStatus": "source-checked-professional-review-pending",
+      "descriptionZh": "左侧三角肌筋膜，位于肩部三角肌表面。这是源模型按该名称提供的实际筋膜网格；中文名称与局部边界仍待专业审校。形态供解剖观察，不表示标准力线、疼痛点或治疗靶点。",
+      "functionZh": "结缔组织膜层参与局部组织的包裹、连接或支持；单个网格不能确定远程传力路线或传力大小。",
+      "descriptionSources": [
+        {
+          "title": "Z-Anatomy MuscularSystem100.fbx source names and geometry",
+          "url": "https://github.com/LluisV/Z-Anatomy/blob/PC-Version/Resources/Models/FBX/MuscularSystem100.fbx"
+        }
+      ],
+      "taxonomyPreviousSystem": "connective"
+    },
+    "ZA_311271772": {
+      "nameEn": "right brachial fascia",
+      "nameZh": "右侧臂筋膜",
+      "system": "connective",
+      "geometrySystem": "connective",
+      "geometryNameEn": "right brachial fascia",
+      "tissueType": "fascia",
+      "tissueTypeZh": "筋膜",
+      "sourceConceptNameEn": "Brachial fascia.r",
+      "sourceConceptNoteZh": "逐个核对 Z-Anatomy 官方 FBX 的命名及模型 ID；仅导入源有网格，不把组织范围解释为传力路径。",
+      "taxonomyReviewStatus": "source-checked-professional-review-pending",
+      "descriptionZh": "右侧臂筋膜，位于上臂。这是源模型按该名称提供的实际筋膜网格；中文名称与局部边界仍待专业审校。形态供解剖观察，不表示标准力线、疼痛点或治疗靶点。",
+      "functionZh": "结缔组织膜层参与局部组织的包裹、连接或支持；单个网格不能确定远程传力路线或传力大小。",
+      "descriptionSources": [
+        {
+          "title": "Z-Anatomy MuscularSystem100.fbx source names and geometry",
+          "url": "https://github.com/LluisV/Z-Anatomy/blob/PC-Version/Resources/Models/FBX/MuscularSystem100.fbx"
+        }
+      ],
+      "taxonomyPreviousSystem": "connective"
+    },
+    "ZA_911661179": {
+      "nameEn": "left brachial fascia",
+      "nameZh": "左侧臂筋膜",
+      "system": "connective",
+      "geometrySystem": "connective",
+      "geometryNameEn": "left brachial fascia",
+      "tissueType": "fascia",
+      "tissueTypeZh": "筋膜",
+      "sourceConceptNameEn": "Brachial fascia.l",
+      "sourceConceptNoteZh": "逐个核对 Z-Anatomy 官方 FBX 的命名及模型 ID；仅导入源有网格，不把组织范围解释为传力路径。",
+      "taxonomyReviewStatus": "source-checked-professional-review-pending",
+      "descriptionZh": "左侧臂筋膜，位于上臂。这是源模型按该名称提供的实际筋膜网格；中文名称与局部边界仍待专业审校。形态供解剖观察，不表示标准力线、疼痛点或治疗靶点。",
+      "functionZh": "结缔组织膜层参与局部组织的包裹、连接或支持；单个网格不能确定远程传力路线或传力大小。",
+      "descriptionSources": [
+        {
+          "title": "Z-Anatomy MuscularSystem100.fbx source names and geometry",
+          "url": "https://github.com/LluisV/Z-Anatomy/blob/PC-Version/Resources/Models/FBX/MuscularSystem100.fbx"
+        }
+      ],
+      "taxonomyPreviousSystem": "connective"
+    },
+    "ZA_333450372": {
+      "nameEn": "right antebrachial fascia",
+      "nameZh": "右侧前臂筋膜",
+      "system": "connective",
+      "geometrySystem": "connective",
+      "geometryNameEn": "right antebrachial fascia",
+      "tissueType": "fascia",
+      "tissueTypeZh": "筋膜",
+      "sourceConceptNameEn": "Antebrachial fascia.r",
+      "sourceConceptNoteZh": "逐个核对 Z-Anatomy 官方 FBX 的命名及模型 ID；仅导入源有网格，不把组织范围解释为传力路径。",
+      "taxonomyReviewStatus": "source-checked-professional-review-pending",
+      "descriptionZh": "右侧前臂筋膜，位于前臂。这是源模型按该名称提供的实际筋膜网格；中文名称与局部边界仍待专业审校。形态供解剖观察，不表示标准力线、疼痛点或治疗靶点。",
+      "functionZh": "结缔组织膜层参与局部组织的包裹、连接或支持；单个网格不能确定远程传力路线或传力大小。",
+      "descriptionSources": [
+        {
+          "title": "Z-Anatomy MuscularSystem100.fbx source names and geometry",
+          "url": "https://github.com/LluisV/Z-Anatomy/blob/PC-Version/Resources/Models/FBX/MuscularSystem100.fbx"
+        }
+      ],
+      "taxonomyPreviousSystem": "connective"
+    },
+    "ZA_244669373": {
+      "nameEn": "left antebrachial fascia",
+      "nameZh": "左侧前臂筋膜",
+      "system": "connective",
+      "geometrySystem": "connective",
+      "geometryNameEn": "left antebrachial fascia",
+      "tissueType": "fascia",
+      "tissueTypeZh": "筋膜",
+      "sourceConceptNameEn": "Antebrachial fascia.l",
+      "sourceConceptNoteZh": "逐个核对 Z-Anatomy 官方 FBX 的命名及模型 ID；仅导入源有网格，不把组织范围解释为传力路径。",
+      "taxonomyReviewStatus": "source-checked-professional-review-pending",
+      "descriptionZh": "左侧前臂筋膜，位于前臂。这是源模型按该名称提供的实际筋膜网格；中文名称与局部边界仍待专业审校。形态供解剖观察，不表示标准力线、疼痛点或治疗靶点。",
+      "functionZh": "结缔组织膜层参与局部组织的包裹、连接或支持；单个网格不能确定远程传力路线或传力大小。",
+      "descriptionSources": [
+        {
+          "title": "Z-Anatomy MuscularSystem100.fbx source names and geometry",
+          "url": "https://github.com/LluisV/Z-Anatomy/blob/PC-Version/Resources/Models/FBX/MuscularSystem100.fbx"
+        }
+      ],
+      "taxonomyPreviousSystem": "connective"
+    },
+    "ZA_647872028": {
+      "nameEn": "right dorsal fascia of hand",
+      "nameZh": "右侧手背筋膜",
+      "system": "connective",
+      "geometrySystem": "connective",
+      "geometryNameEn": "right dorsal fascia of hand",
+      "tissueType": "fascia",
+      "tissueTypeZh": "筋膜",
+      "sourceConceptNameEn": "Dorsal fascia of hand.r",
+      "sourceConceptNoteZh": "逐个核对 Z-Anatomy 官方 FBX 的命名及模型 ID；仅导入源有网格，不把组织范围解释为传力路径。",
+      "taxonomyReviewStatus": "source-checked-professional-review-pending",
+      "descriptionZh": "右侧手背筋膜，位于手背。这是源模型按该名称提供的实际筋膜网格；中文名称与局部边界仍待专业审校。形态供解剖观察，不表示标准力线、疼痛点或治疗靶点。",
+      "functionZh": "结缔组织膜层参与局部组织的包裹、连接或支持；单个网格不能确定远程传力路线或传力大小。",
+      "descriptionSources": [
+        {
+          "title": "Z-Anatomy MuscularSystem100.fbx source names and geometry",
+          "url": "https://github.com/LluisV/Z-Anatomy/blob/PC-Version/Resources/Models/FBX/MuscularSystem100.fbx"
+        }
+      ],
+      "taxonomyPreviousSystem": "connective"
+    },
+    "ZA_916496480": {
+      "nameEn": "left dorsal fascia of hand",
+      "nameZh": "左侧手背筋膜",
+      "system": "connective",
+      "geometrySystem": "connective",
+      "geometryNameEn": "left dorsal fascia of hand",
+      "tissueType": "fascia",
+      "tissueTypeZh": "筋膜",
+      "sourceConceptNameEn": "Dorsal fascia of hand.l",
+      "sourceConceptNoteZh": "逐个核对 Z-Anatomy 官方 FBX 的命名及模型 ID；仅导入源有网格，不把组织范围解释为传力路径。",
+      "taxonomyReviewStatus": "source-checked-professional-review-pending",
+      "descriptionZh": "左侧手背筋膜，位于手背。这是源模型按该名称提供的实际筋膜网格；中文名称与局部边界仍待专业审校。形态供解剖观察，不表示标准力线、疼痛点或治疗靶点。",
+      "functionZh": "结缔组织膜层参与局部组织的包裹、连接或支持；单个网格不能确定远程传力路线或传力大小。",
+      "descriptionSources": [
+        {
+          "title": "Z-Anatomy MuscularSystem100.fbx source names and geometry",
+          "url": "https://github.com/LluisV/Z-Anatomy/blob/PC-Version/Resources/Models/FBX/MuscularSystem100.fbx"
+        }
+      ],
+      "taxonomyPreviousSystem": "connective"
+    },
+    "ZA_547570908": {
+      "nameEn": "right palmar aponeurosis",
+      "nameZh": "右侧掌腱膜",
+      "system": "connective",
+      "geometrySystem": "connective",
+      "geometryNameEn": "right palmar aponeurosis",
+      "tissueType": "aponeurosis",
+      "tissueTypeZh": "腱膜",
+      "sourceConceptNameEn": "Palmar aponeurosis.r",
+      "sourceConceptNoteZh": "逐个核对 Z-Anatomy 官方 FBX 的命名及模型 ID；仅导入源有网格，不把组织范围解释为传力路径。",
+      "taxonomyReviewStatus": "source-checked-professional-review-pending",
+      "descriptionZh": "右侧掌腱膜，位于手掌。这是源模型按该名称提供的实际腱膜网格；中文名称与局部边界仍待专业审校。形态供解剖观察，不表示标准力线、疼痛点或治疗靶点。",
+      "functionZh": "结缔组织膜层参与局部组织的包裹、连接或支持；单个网格不能确定远程传力路线或传力大小。",
+      "descriptionSources": [
+        {
+          "title": "Z-Anatomy MuscularSystem100.fbx source names and geometry",
+          "url": "https://github.com/LluisV/Z-Anatomy/blob/PC-Version/Resources/Models/FBX/MuscularSystem100.fbx"
+        }
+      ],
+      "taxonomyPreviousSystem": "connective"
+    },
+    "ZA_675376731": {
+      "nameEn": "left palmar aponeurosis",
+      "nameZh": "左侧掌腱膜",
+      "system": "connective",
+      "geometrySystem": "connective",
+      "geometryNameEn": "left palmar aponeurosis",
+      "tissueType": "aponeurosis",
+      "tissueTypeZh": "腱膜",
+      "sourceConceptNameEn": "Palmar aponeurosis.l",
+      "sourceConceptNoteZh": "逐个核对 Z-Anatomy 官方 FBX 的命名及模型 ID；仅导入源有网格，不把组织范围解释为传力路径。",
+      "taxonomyReviewStatus": "source-checked-professional-review-pending",
+      "descriptionZh": "左侧掌腱膜，位于手掌。这是源模型按该名称提供的实际腱膜网格；中文名称与局部边界仍待专业审校。形态供解剖观察，不表示标准力线、疼痛点或治疗靶点。",
+      "functionZh": "结缔组织膜层参与局部组织的包裹、连接或支持；单个网格不能确定远程传力路线或传力大小。",
+      "descriptionSources": [
+        {
+          "title": "Z-Anatomy MuscularSystem100.fbx source names and geometry",
+          "url": "https://github.com/LluisV/Z-Anatomy/blob/PC-Version/Resources/Models/FBX/MuscularSystem100.fbx"
+        }
+      ],
+      "taxonomyPreviousSystem": "connective"
+    },
+    "ZA_131836467": {
+      "nameEn": "right fascia lata",
+      "nameZh": "右侧阔筋膜",
+      "system": "connective",
+      "geometrySystem": "connective",
+      "geometryNameEn": "right fascia lata",
+      "tissueType": "fascia",
+      "tissueTypeZh": "筋膜",
+      "sourceConceptNameEn": "Fascia lata.r",
+      "sourceConceptNoteZh": "逐个核对 Z-Anatomy 官方 FBX 的命名及模型 ID；仅导入源有网格，不把组织范围解释为传力路径。",
+      "taxonomyReviewStatus": "source-checked-professional-review-pending",
+      "descriptionZh": "右侧阔筋膜，位于大腿。这是源模型按该名称提供的实际筋膜网格；中文名称与局部边界仍待专业审校。形态供解剖观察，不表示标准力线、疼痛点或治疗靶点。",
+      "functionZh": "结缔组织膜层参与局部组织的包裹、连接或支持；单个网格不能确定远程传力路线或传力大小。",
+      "descriptionSources": [
+        {
+          "title": "Z-Anatomy MuscularSystem100.fbx source names and geometry",
+          "url": "https://github.com/LluisV/Z-Anatomy/blob/PC-Version/Resources/Models/FBX/MuscularSystem100.fbx"
+        }
+      ],
+      "taxonomyPreviousSystem": "connective"
+    },
+    "ZA_664437283": {
+      "nameEn": "left fascia lata",
+      "nameZh": "左侧阔筋膜",
+      "system": "connective",
+      "geometrySystem": "connective",
+      "geometryNameEn": "left fascia lata",
+      "tissueType": "fascia",
+      "tissueTypeZh": "筋膜",
+      "sourceConceptNameEn": "Fascia lata.l",
+      "sourceConceptNoteZh": "逐个核对 Z-Anatomy 官方 FBX 的命名及模型 ID；仅导入源有网格，不把组织范围解释为传力路径。",
+      "taxonomyReviewStatus": "source-checked-professional-review-pending",
+      "descriptionZh": "左侧阔筋膜，位于大腿。这是源模型按该名称提供的实际筋膜网格；中文名称与局部边界仍待专业审校。形态供解剖观察，不表示标准力线、疼痛点或治疗靶点。",
+      "functionZh": "结缔组织膜层参与局部组织的包裹、连接或支持；单个网格不能确定远程传力路线或传力大小。",
+      "descriptionSources": [
+        {
+          "title": "Z-Anatomy MuscularSystem100.fbx source names and geometry",
+          "url": "https://github.com/LluisV/Z-Anatomy/blob/PC-Version/Resources/Models/FBX/MuscularSystem100.fbx"
+        }
+      ],
+      "taxonomyPreviousSystem": "connective"
+    },
+    "ZA_743661520": {
+      "nameEn": "right popliteal fascia",
+      "nameZh": "右侧腘筋膜",
+      "system": "connective",
+      "geometrySystem": "connective",
+      "geometryNameEn": "right popliteal fascia",
+      "tissueType": "fascia",
+      "tissueTypeZh": "筋膜",
+      "sourceConceptNameEn": "Popliteal fascia.r",
+      "sourceConceptNoteZh": "逐个核对 Z-Anatomy 官方 FBX 的命名及模型 ID；仅导入源有网格，不把组织范围解释为传力路径。",
+      "taxonomyReviewStatus": "source-checked-professional-review-pending",
+      "descriptionZh": "右侧腘筋膜，位于膝后腘区。这是源模型按该名称提供的实际筋膜网格；中文名称与局部边界仍待专业审校。形态供解剖观察，不表示标准力线、疼痛点或治疗靶点。",
+      "functionZh": "结缔组织膜层参与局部组织的包裹、连接或支持；单个网格不能确定远程传力路线或传力大小。",
+      "descriptionSources": [
+        {
+          "title": "Z-Anatomy MuscularSystem100.fbx source names and geometry",
+          "url": "https://github.com/LluisV/Z-Anatomy/blob/PC-Version/Resources/Models/FBX/MuscularSystem100.fbx"
+        }
+      ],
+      "taxonomyPreviousSystem": "connective"
+    },
+    "ZA_392175318": {
+      "nameEn": "left popliteal fascia",
+      "nameZh": "左侧腘筋膜",
+      "system": "connective",
+      "geometrySystem": "connective",
+      "geometryNameEn": "left popliteal fascia",
+      "tissueType": "fascia",
+      "tissueTypeZh": "筋膜",
+      "sourceConceptNameEn": "Popliteal fascia.l",
+      "sourceConceptNoteZh": "逐个核对 Z-Anatomy 官方 FBX 的命名及模型 ID；仅导入源有网格，不把组织范围解释为传力路径。",
+      "taxonomyReviewStatus": "source-checked-professional-review-pending",
+      "descriptionZh": "左侧腘筋膜，位于膝后腘区。这是源模型按该名称提供的实际筋膜网格；中文名称与局部边界仍待专业审校。形态供解剖观察，不表示标准力线、疼痛点或治疗靶点。",
+      "functionZh": "结缔组织膜层参与局部组织的包裹、连接或支持；单个网格不能确定远程传力路线或传力大小。",
+      "descriptionSources": [
+        {
+          "title": "Z-Anatomy MuscularSystem100.fbx source names and geometry",
+          "url": "https://github.com/LluisV/Z-Anatomy/blob/PC-Version/Resources/Models/FBX/MuscularSystem100.fbx"
+        }
+      ],
+      "taxonomyPreviousSystem": "connective"
+    },
+    "ZA_769068412": {
+      "nameEn": "right crural fascia",
+      "nameZh": "右侧小腿筋膜",
+      "system": "connective",
+      "geometrySystem": "connective",
+      "geometryNameEn": "right crural fascia",
+      "tissueType": "fascia",
+      "tissueTypeZh": "筋膜",
+      "sourceConceptNameEn": "Crural fascia.r",
+      "sourceConceptNoteZh": "逐个核对 Z-Anatomy 官方 FBX 的命名及模型 ID；仅导入源有网格，不把组织范围解释为传力路径。",
+      "taxonomyReviewStatus": "source-checked-professional-review-pending",
+      "descriptionZh": "右侧小腿筋膜，位于小腿。这是源模型按该名称提供的实际筋膜网格；中文名称与局部边界仍待专业审校。形态供解剖观察，不表示标准力线、疼痛点或治疗靶点。",
+      "functionZh": "结缔组织膜层参与局部组织的包裹、连接或支持；单个网格不能确定远程传力路线或传力大小。",
+      "descriptionSources": [
+        {
+          "title": "Z-Anatomy MuscularSystem100.fbx source names and geometry",
+          "url": "https://github.com/LluisV/Z-Anatomy/blob/PC-Version/Resources/Models/FBX/MuscularSystem100.fbx"
+        }
+      ],
+      "taxonomyPreviousSystem": "connective"
+    },
+    "ZA_27084790": {
+      "nameEn": "left crural fascia",
+      "nameZh": "左侧小腿筋膜",
+      "system": "connective",
+      "geometrySystem": "connective",
+      "geometryNameEn": "left crural fascia",
+      "tissueType": "fascia",
+      "tissueTypeZh": "筋膜",
+      "sourceConceptNameEn": "Crural fascia.l",
+      "sourceConceptNoteZh": "逐个核对 Z-Anatomy 官方 FBX 的命名及模型 ID；仅导入源有网格，不把组织范围解释为传力路径。",
+      "taxonomyReviewStatus": "source-checked-professional-review-pending",
+      "descriptionZh": "左侧小腿筋膜，位于小腿。这是源模型按该名称提供的实际筋膜网格；中文名称与局部边界仍待专业审校。形态供解剖观察，不表示标准力线、疼痛点或治疗靶点。",
+      "functionZh": "结缔组织膜层参与局部组织的包裹、连接或支持；单个网格不能确定远程传力路线或传力大小。",
+      "descriptionSources": [
+        {
+          "title": "Z-Anatomy MuscularSystem100.fbx source names and geometry",
+          "url": "https://github.com/LluisV/Z-Anatomy/blob/PC-Version/Resources/Models/FBX/MuscularSystem100.fbx"
+        }
+      ],
+      "taxonomyPreviousSystem": "connective"
+    },
+    "ZA_330125342": {
+      "nameEn": "right extensor retinaculum of wrist",
+      "nameZh": "右侧腕伸肌支持带",
+      "system": "connective",
+      "geometrySystem": "connective",
+      "geometryNameEn": "right extensor retinaculum of wrist",
+      "tissueType": "retinaculum",
+      "tissueTypeZh": "支持带",
+      "sourceConceptNameEn": "Extensor retinaculum of wrist.r",
+      "sourceConceptNoteZh": "逐个核对 Z-Anatomy 官方 FBX 的命名及模型 ID；仅导入源有网格，不把组织范围解释为传力路径。",
+      "taxonomyReviewStatus": "source-checked-professional-review-pending",
+      "descriptionZh": "右侧腕伸肌支持带，位于腕背侧。这是源模型按该名称提供的实际支持带网格；中文名称与局部边界仍待专业审校。形态供解剖观察，不表示标准力线、疼痛点或治疗靶点。",
+      "functionZh": "支持带为局部增厚的纤维性结构，约束其邻近肌腱的走行；具体功能需结合局部解剖学习。",
+      "descriptionSources": [
+        {
+          "title": "Z-Anatomy MuscularSystem100.fbx source names and geometry",
+          "url": "https://github.com/LluisV/Z-Anatomy/blob/PC-Version/Resources/Models/FBX/MuscularSystem100.fbx"
+        }
+      ],
+      "taxonomyPreviousSystem": "connective"
+    },
+    "ZA_971929399": {
+      "nameEn": "left extensor retinaculum of wrist",
+      "nameZh": "左侧腕伸肌支持带",
+      "system": "connective",
+      "geometrySystem": "connective",
+      "geometryNameEn": "left extensor retinaculum of wrist",
+      "tissueType": "retinaculum",
+      "tissueTypeZh": "支持带",
+      "sourceConceptNameEn": "Extensor retinaculum of wrist.l",
+      "sourceConceptNoteZh": "逐个核对 Z-Anatomy 官方 FBX 的命名及模型 ID；仅导入源有网格，不把组织范围解释为传力路径。",
+      "taxonomyReviewStatus": "source-checked-professional-review-pending",
+      "descriptionZh": "左侧腕伸肌支持带，位于腕背侧。这是源模型按该名称提供的实际支持带网格；中文名称与局部边界仍待专业审校。形态供解剖观察，不表示标准力线、疼痛点或治疗靶点。",
+      "functionZh": "支持带为局部增厚的纤维性结构，约束其邻近肌腱的走行；具体功能需结合局部解剖学习。",
+      "descriptionSources": [
+        {
+          "title": "Z-Anatomy MuscularSystem100.fbx source names and geometry",
+          "url": "https://github.com/LluisV/Z-Anatomy/blob/PC-Version/Resources/Models/FBX/MuscularSystem100.fbx"
+        }
+      ],
+      "taxonomyPreviousSystem": "connective"
+    },
+    "ZA_497593817": {
+      "nameEn": "right lateral patellar retinaculum",
+      "nameZh": "右侧髌外侧支持带",
+      "system": "connective",
+      "geometrySystem": "connective",
+      "geometryNameEn": "right lateral patellar retinaculum",
+      "tissueType": "retinaculum",
+      "tissueTypeZh": "支持带",
+      "sourceConceptNameEn": "Lateral patellar retinaculum.r",
+      "sourceConceptNoteZh": "逐个核对 Z-Anatomy 官方 FBX 的命名及模型 ID；仅导入源有网格，不把组织范围解释为传力路径。",
+      "taxonomyReviewStatus": "source-checked-professional-review-pending",
+      "descriptionZh": "右侧髌外侧支持带，位于髌骨外侧。这是源模型按该名称提供的实际支持带网格；中文名称与局部边界仍待专业审校。形态供解剖观察，不表示标准力线、疼痛点或治疗靶点。",
+      "functionZh": "支持带为局部增厚的纤维性结构，约束其邻近肌腱的走行；具体功能需结合局部解剖学习。",
+      "descriptionSources": [
+        {
+          "title": "Z-Anatomy MuscularSystem100.fbx source names and geometry",
+          "url": "https://github.com/LluisV/Z-Anatomy/blob/PC-Version/Resources/Models/FBX/MuscularSystem100.fbx"
+        }
+      ],
+      "taxonomyPreviousSystem": "connective"
+    },
+    "ZA_391652619": {
+      "nameEn": "left lateral patellar retinaculum",
+      "nameZh": "左侧髌外侧支持带",
+      "system": "connective",
+      "geometrySystem": "connective",
+      "geometryNameEn": "left lateral patellar retinaculum",
+      "tissueType": "retinaculum",
+      "tissueTypeZh": "支持带",
+      "sourceConceptNameEn": "Lateral patellar retinaculum.l",
+      "sourceConceptNoteZh": "逐个核对 Z-Anatomy 官方 FBX 的命名及模型 ID；仅导入源有网格，不把组织范围解释为传力路径。",
+      "taxonomyReviewStatus": "source-checked-professional-review-pending",
+      "descriptionZh": "左侧髌外侧支持带，位于髌骨外侧。这是源模型按该名称提供的实际支持带网格；中文名称与局部边界仍待专业审校。形态供解剖观察，不表示标准力线、疼痛点或治疗靶点。",
+      "functionZh": "支持带为局部增厚的纤维性结构，约束其邻近肌腱的走行；具体功能需结合局部解剖学习。",
+      "descriptionSources": [
+        {
+          "title": "Z-Anatomy MuscularSystem100.fbx source names and geometry",
+          "url": "https://github.com/LluisV/Z-Anatomy/blob/PC-Version/Resources/Models/FBX/MuscularSystem100.fbx"
+        }
+      ],
+      "taxonomyPreviousSystem": "connective"
+    },
+    "ZA_344109556": {
+      "nameEn": "right medial patellar retinaculum",
+      "nameZh": "右侧髌内侧支持带",
+      "system": "connective",
+      "geometrySystem": "connective",
+      "geometryNameEn": "right medial patellar retinaculum",
+      "tissueType": "retinaculum",
+      "tissueTypeZh": "支持带",
+      "sourceConceptNameEn": "Medial patellar retinaculum.r",
+      "sourceConceptNoteZh": "逐个核对 Z-Anatomy 官方 FBX 的命名及模型 ID；仅导入源有网格，不把组织范围解释为传力路径。",
+      "taxonomyReviewStatus": "source-checked-professional-review-pending",
+      "descriptionZh": "右侧髌内侧支持带，位于髌骨内侧。这是源模型按该名称提供的实际支持带网格；中文名称与局部边界仍待专业审校。形态供解剖观察，不表示标准力线、疼痛点或治疗靶点。",
+      "functionZh": "支持带为局部增厚的纤维性结构，约束其邻近肌腱的走行；具体功能需结合局部解剖学习。",
+      "descriptionSources": [
+        {
+          "title": "Z-Anatomy MuscularSystem100.fbx source names and geometry",
+          "url": "https://github.com/LluisV/Z-Anatomy/blob/PC-Version/Resources/Models/FBX/MuscularSystem100.fbx"
+        }
+      ],
+      "taxonomyPreviousSystem": "connective"
+    },
+    "ZA_925501647": {
+      "nameEn": "left medial patellar retinaculum",
+      "nameZh": "左侧髌内侧支持带",
+      "system": "connective",
+      "geometrySystem": "connective",
+      "geometryNameEn": "left medial patellar retinaculum",
+      "tissueType": "retinaculum",
+      "tissueTypeZh": "支持带",
+      "sourceConceptNameEn": "Medial patellar retinaculum.l",
+      "sourceConceptNoteZh": "逐个核对 Z-Anatomy 官方 FBX 的命名及模型 ID；仅导入源有网格，不把组织范围解释为传力路径。",
+      "taxonomyReviewStatus": "source-checked-professional-review-pending",
+      "descriptionZh": "左侧髌内侧支持带，位于髌骨内侧。这是源模型按该名称提供的实际支持带网格；中文名称与局部边界仍待专业审校。形态供解剖观察，不表示标准力线、疼痛点或治疗靶点。",
+      "functionZh": "支持带为局部增厚的纤维性结构，约束其邻近肌腱的走行；具体功能需结合局部解剖学习。",
+      "descriptionSources": [
+        {
+          "title": "Z-Anatomy MuscularSystem100.fbx source names and geometry",
+          "url": "https://github.com/LluisV/Z-Anatomy/blob/PC-Version/Resources/Models/FBX/MuscularSystem100.fbx"
+        }
+      ],
+      "taxonomyPreviousSystem": "connective"
+    },
+    "ZA_316486140": {
+      "nameEn": "right superior extensor retinaculum of ankle",
+      "nameZh": "右侧伸肌上支持带（踝）",
+      "system": "connective",
+      "geometrySystem": "connective",
+      "geometryNameEn": "right superior extensor retinaculum of ankle",
+      "tissueType": "retinaculum",
+      "tissueTypeZh": "支持带",
+      "sourceConceptNameEn": "Superior extensor retinaculum of ankle.r",
+      "sourceConceptNoteZh": "逐个核对 Z-Anatomy 官方 FBX 的命名及模型 ID；仅导入源有网格，不把组织范围解释为传力路径。",
+      "taxonomyReviewStatus": "source-checked-professional-review-pending",
+      "descriptionZh": "右侧伸肌上支持带（踝），位于踝前上部。这是源模型按该名称提供的实际支持带网格；中文名称与局部边界仍待专业审校。形态供解剖观察，不表示标准力线、疼痛点或治疗靶点。",
+      "functionZh": "支持带为局部增厚的纤维性结构，约束其邻近肌腱的走行；具体功能需结合局部解剖学习。",
+      "descriptionSources": [
+        {
+          "title": "Z-Anatomy MuscularSystem100.fbx source names and geometry",
+          "url": "https://github.com/LluisV/Z-Anatomy/blob/PC-Version/Resources/Models/FBX/MuscularSystem100.fbx"
+        }
+      ],
+      "taxonomyPreviousSystem": "connective"
+    },
+    "ZA_134091191": {
+      "nameEn": "left superior extensor retinaculum of ankle",
+      "nameZh": "左侧伸肌上支持带（踝）",
+      "system": "connective",
+      "geometrySystem": "connective",
+      "geometryNameEn": "left superior extensor retinaculum of ankle",
+      "tissueType": "retinaculum",
+      "tissueTypeZh": "支持带",
+      "sourceConceptNameEn": "Superior extensor retinaculum of ankle.l",
+      "sourceConceptNoteZh": "逐个核对 Z-Anatomy 官方 FBX 的命名及模型 ID；仅导入源有网格，不把组织范围解释为传力路径。",
+      "taxonomyReviewStatus": "source-checked-professional-review-pending",
+      "descriptionZh": "左侧伸肌上支持带（踝），位于踝前上部。这是源模型按该名称提供的实际支持带网格；中文名称与局部边界仍待专业审校。形态供解剖观察，不表示标准力线、疼痛点或治疗靶点。",
+      "functionZh": "支持带为局部增厚的纤维性结构，约束其邻近肌腱的走行；具体功能需结合局部解剖学习。",
+      "descriptionSources": [
+        {
+          "title": "Z-Anatomy MuscularSystem100.fbx source names and geometry",
+          "url": "https://github.com/LluisV/Z-Anatomy/blob/PC-Version/Resources/Models/FBX/MuscularSystem100.fbx"
+        }
+      ],
+      "taxonomyPreviousSystem": "connective"
+    },
+    "ZA_372542288": {
+      "nameEn": "right inferior extensor retinaculum of ankle",
+      "nameZh": "右侧伸肌下支持带（踝）",
+      "system": "connective",
+      "geometrySystem": "connective",
+      "geometryNameEn": "right inferior extensor retinaculum of ankle",
+      "tissueType": "retinaculum",
+      "tissueTypeZh": "支持带",
+      "sourceConceptNameEn": "Inferior extensor retinaculum of ankle.r",
+      "sourceConceptNoteZh": "逐个核对 Z-Anatomy 官方 FBX 的命名及模型 ID；仅导入源有网格，不把组织范围解释为传力路径。",
+      "taxonomyReviewStatus": "source-checked-professional-review-pending",
+      "descriptionZh": "右侧伸肌下支持带（踝），位于踝前下部。这是源模型按该名称提供的实际支持带网格；中文名称与局部边界仍待专业审校。形态供解剖观察，不表示标准力线、疼痛点或治疗靶点。",
+      "functionZh": "支持带为局部增厚的纤维性结构，约束其邻近肌腱的走行；具体功能需结合局部解剖学习。",
+      "descriptionSources": [
+        {
+          "title": "Z-Anatomy MuscularSystem100.fbx source names and geometry",
+          "url": "https://github.com/LluisV/Z-Anatomy/blob/PC-Version/Resources/Models/FBX/MuscularSystem100.fbx"
+        }
+      ],
+      "taxonomyPreviousSystem": "connective"
+    },
+    "ZA_360316970": {
+      "nameEn": "left inferior extensor retinaculum of ankle",
+      "nameZh": "左侧伸肌下支持带（踝）",
+      "system": "connective",
+      "geometrySystem": "connective",
+      "geometryNameEn": "left inferior extensor retinaculum of ankle",
+      "tissueType": "retinaculum",
+      "tissueTypeZh": "支持带",
+      "sourceConceptNameEn": "Inferior extensor retinaculum of ankle.l",
+      "sourceConceptNoteZh": "逐个核对 Z-Anatomy 官方 FBX 的命名及模型 ID；仅导入源有网格，不把组织范围解释为传力路径。",
+      "taxonomyReviewStatus": "source-checked-professional-review-pending",
+      "descriptionZh": "左侧伸肌下支持带（踝），位于踝前下部。这是源模型按该名称提供的实际支持带网格；中文名称与局部边界仍待专业审校。形态供解剖观察，不表示标准力线、疼痛点或治疗靶点。",
+      "functionZh": "支持带为局部增厚的纤维性结构，约束其邻近肌腱的走行；具体功能需结合局部解剖学习。",
+      "descriptionSources": [
+        {
+          "title": "Z-Anatomy MuscularSystem100.fbx source names and geometry",
+          "url": "https://github.com/LluisV/Z-Anatomy/blob/PC-Version/Resources/Models/FBX/MuscularSystem100.fbx"
+        }
+      ],
+      "taxonomyPreviousSystem": "connective"
+    },
+    "ZA_653592180": {
+      "nameEn": "right superior fibular retinaculum",
+      "nameZh": "右侧腓骨肌上支持带",
+      "system": "connective",
+      "geometrySystem": "connective",
+      "geometryNameEn": "right superior fibular retinaculum",
+      "tissueType": "retinaculum",
+      "tissueTypeZh": "支持带",
+      "sourceConceptNameEn": "Superior fibular retinaculum.r",
+      "sourceConceptNoteZh": "逐个核对 Z-Anatomy 官方 FBX 的命名及模型 ID；仅导入源有网格，不把组织范围解释为传力路径。",
+      "taxonomyReviewStatus": "source-checked-professional-review-pending",
+      "descriptionZh": "右侧腓骨肌上支持带，位于外踝后上方。这是源模型按该名称提供的实际支持带网格；中文名称与局部边界仍待专业审校。形态供解剖观察，不表示标准力线、疼痛点或治疗靶点。",
+      "functionZh": "支持带为局部增厚的纤维性结构，约束其邻近肌腱的走行；具体功能需结合局部解剖学习。",
+      "descriptionSources": [
+        {
+          "title": "Z-Anatomy MuscularSystem100.fbx source names and geometry",
+          "url": "https://github.com/LluisV/Z-Anatomy/blob/PC-Version/Resources/Models/FBX/MuscularSystem100.fbx"
+        }
+      ],
+      "taxonomyPreviousSystem": "connective"
+    },
+    "ZA_106520629": {
+      "nameEn": "left superior fibular retinaculum",
+      "nameZh": "左侧腓骨肌上支持带",
+      "system": "connective",
+      "geometrySystem": "connective",
+      "geometryNameEn": "left superior fibular retinaculum",
+      "tissueType": "retinaculum",
+      "tissueTypeZh": "支持带",
+      "sourceConceptNameEn": "Superior fibular retinaculum.l",
+      "sourceConceptNoteZh": "逐个核对 Z-Anatomy 官方 FBX 的命名及模型 ID；仅导入源有网格，不把组织范围解释为传力路径。",
+      "taxonomyReviewStatus": "source-checked-professional-review-pending",
+      "descriptionZh": "左侧腓骨肌上支持带，位于外踝后上方。这是源模型按该名称提供的实际支持带网格；中文名称与局部边界仍待专业审校。形态供解剖观察，不表示标准力线、疼痛点或治疗靶点。",
+      "functionZh": "支持带为局部增厚的纤维性结构，约束其邻近肌腱的走行；具体功能需结合局部解剖学习。",
+      "descriptionSources": [
+        {
+          "title": "Z-Anatomy MuscularSystem100.fbx source names and geometry",
+          "url": "https://github.com/LluisV/Z-Anatomy/blob/PC-Version/Resources/Models/FBX/MuscularSystem100.fbx"
+        }
+      ],
+      "taxonomyPreviousSystem": "connective"
+    },
+    "ZA_419234530": {
+      "nameEn": "right inferior fibular retinaculum",
+      "nameZh": "右侧腓骨肌下支持带",
+      "system": "connective",
+      "geometrySystem": "connective",
+      "geometryNameEn": "right inferior fibular retinaculum",
+      "tissueType": "retinaculum",
+      "tissueTypeZh": "支持带",
+      "sourceConceptNameEn": "Inferior fibular retinaculum.r",
+      "sourceConceptNoteZh": "逐个核对 Z-Anatomy 官方 FBX 的命名及模型 ID；仅导入源有网格，不把组织范围解释为传力路径。",
+      "taxonomyReviewStatus": "source-checked-professional-review-pending",
+      "descriptionZh": "右侧腓骨肌下支持带，位于外踝下方。这是源模型按该名称提供的实际支持带网格；中文名称与局部边界仍待专业审校。形态供解剖观察，不表示标准力线、疼痛点或治疗靶点。",
+      "functionZh": "支持带为局部增厚的纤维性结构，约束其邻近肌腱的走行；具体功能需结合局部解剖学习。",
+      "descriptionSources": [
+        {
+          "title": "Z-Anatomy MuscularSystem100.fbx source names and geometry",
+          "url": "https://github.com/LluisV/Z-Anatomy/blob/PC-Version/Resources/Models/FBX/MuscularSystem100.fbx"
+        }
+      ],
+      "taxonomyPreviousSystem": "connective"
+    },
+    "ZA_365024117": {
+      "nameEn": "left inferior fibular retinaculum",
+      "nameZh": "左侧腓骨肌下支持带",
+      "system": "connective",
+      "geometrySystem": "connective",
+      "geometryNameEn": "left inferior fibular retinaculum",
+      "tissueType": "retinaculum",
+      "tissueTypeZh": "支持带",
+      "sourceConceptNameEn": "Inferior fibular retinaculum.l",
+      "sourceConceptNoteZh": "逐个核对 Z-Anatomy 官方 FBX 的命名及模型 ID；仅导入源有网格，不把组织范围解释为传力路径。",
+      "taxonomyReviewStatus": "source-checked-professional-review-pending",
+      "descriptionZh": "左侧腓骨肌下支持带，位于外踝下方。这是源模型按该名称提供的实际支持带网格；中文名称与局部边界仍待专业审校。形态供解剖观察，不表示标准力线、疼痛点或治疗靶点。",
+      "functionZh": "支持带为局部增厚的纤维性结构，约束其邻近肌腱的走行；具体功能需结合局部解剖学习。",
+      "descriptionSources": [
+        {
+          "title": "Z-Anatomy MuscularSystem100.fbx source names and geometry",
+          "url": "https://github.com/LluisV/Z-Anatomy/blob/PC-Version/Resources/Models/FBX/MuscularSystem100.fbx"
+        }
+      ],
+      "taxonomyPreviousSystem": "connective"
+    },
+    "ZA_818253022": {
+      "nameEn": "right flexor retinaculum of ankle",
+      "nameZh": "右侧屈肌支持带（踝）",
+      "system": "connective",
+      "geometrySystem": "connective",
+      "geometryNameEn": "right flexor retinaculum of ankle",
+      "tissueType": "retinaculum",
+      "tissueTypeZh": "支持带",
+      "sourceConceptNameEn": "Flexor retinaculum of ankle.r",
+      "sourceConceptNoteZh": "逐个核对 Z-Anatomy 官方 FBX 的命名及模型 ID；仅导入源有网格，不把组织范围解释为传力路径。",
+      "taxonomyReviewStatus": "source-checked-professional-review-pending",
+      "descriptionZh": "右侧屈肌支持带（踝），位于内踝后方。这是源模型按该名称提供的实际支持带网格；中文名称与局部边界仍待专业审校。形态供解剖观察，不表示标准力线、疼痛点或治疗靶点。",
+      "functionZh": "支持带为局部增厚的纤维性结构，约束其邻近肌腱的走行；具体功能需结合局部解剖学习。",
+      "descriptionSources": [
+        {
+          "title": "Z-Anatomy MuscularSystem100.fbx source names and geometry",
+          "url": "https://github.com/LluisV/Z-Anatomy/blob/PC-Version/Resources/Models/FBX/MuscularSystem100.fbx"
+        }
+      ],
+      "taxonomyPreviousSystem": "connective"
+    },
+    "ZA_888530236": {
+      "nameEn": "left flexor retinaculum of ankle",
+      "nameZh": "左侧屈肌支持带（踝）",
+      "system": "connective",
+      "geometrySystem": "connective",
+      "geometryNameEn": "left flexor retinaculum of ankle",
+      "tissueType": "retinaculum",
+      "tissueTypeZh": "支持带",
+      "sourceConceptNameEn": "Flexor retinaculum of ankle.l",
+      "sourceConceptNoteZh": "逐个核对 Z-Anatomy 官方 FBX 的命名及模型 ID；仅导入源有网格，不把组织范围解释为传力路径。",
+      "taxonomyReviewStatus": "source-checked-professional-review-pending",
+      "descriptionZh": "左侧屈肌支持带（踝），位于内踝后方。这是源模型按该名称提供的实际支持带网格；中文名称与局部边界仍待专业审校。形态供解剖观察，不表示标准力线、疼痛点或治疗靶点。",
+      "functionZh": "支持带为局部增厚的纤维性结构，约束其邻近肌腱的走行；具体功能需结合局部解剖学习。",
+      "descriptionSources": [
+        {
+          "title": "Z-Anatomy MuscularSystem100.fbx source names and geometry",
+          "url": "https://github.com/LluisV/Z-Anatomy/blob/PC-Version/Resources/Models/FBX/MuscularSystem100.fbx"
+        }
+      ],
+      "taxonomyPreviousSystem": "connective"
     }
   }
 }

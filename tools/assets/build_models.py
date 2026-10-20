@@ -496,7 +496,7 @@ def build(args):
         for index, (meta, vs, fs) in enumerate(selected):
             geometry_system=meta.get('geometrySystem',meta['system'])
             if meta['id'].startswith('ZA_') and meta['system']=='connective':
-                pass # Genuine thin fascia/aponeurosis source geometry is retained exactly.
+                pass # Genuine thin fascia/aponeurosis/retinaculum source geometry is retained exactly.
             elif geometry_system == 'muscle':
                 vs, fs = muscle_geometry[quality][meta['id']]
             elif quality == 'low':
@@ -567,7 +567,9 @@ def build(args):
                   HERE/'chinese-names.json',HERE/'chinese-names-extra.json',HERE/'muscle-descriptions.json',
                   HERE/'muscle_learning.py',HERE/'muscle-learning.tsv',HERE/'update_muscle_content.py',
                   HERE/'inspect_skin_fix.py',HERE/'muscle_geometry.py',HERE/'simplify_muscles.mjs',
-                  HERE/'vendor/meshopt_simplifier.mjs',HERE/'audit_muscle_topology.py']]
+                  HERE/'vendor/meshopt_simplifier.mjs',HERE/'audit_muscle_topology.py',
+                  HERE/'taxonomy.py',HERE/'taxonomy.json',HERE/'connective_supplement.py',
+                  HERE/'append_fascia_assets.py']]
     audit['licenseFiles'] = [{'path':str(p.relative_to(ROOT)), 'sha256':sha256(p)}
                              for p in sorted((ROOT/'licenses').glob('*')) if p.is_file()]
     MANIFEST.mkdir(exist_ok=True)

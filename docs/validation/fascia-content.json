@@ -2,28 +2,28 @@
   "schemaVersion": 1,
   "generator": {
     "path": "tools/content/build_fascia.py",
-    "sha256": "ec48145eb34737cf24f75a31235ee1580add4790711e6ea61c50c8990cc329e7"
+    "sha256": "c5fac0bcdce16ae58672a72b4aeeac1f5f8bcfd9cb23ec9002104d713567e438"
   },
   "reproduceCommand": "python3 tools/content/build_fascia.py",
   "purposeZh": "核验筋膜关系示意的真实网格表面来源与双档坐标一致性，不是医学审校。",
   "inputs": [
     {
       "path": "app/src/main/assets/models/body-standard.glb",
-      "sha256": "a1588838552e7503142a51cc5f23681bbcc3cd33098bca80739f4794fed2ceee"
+      "sha256": "a9db567003aefceae40bab4930dfc709b95031025fad59a8018465b2dbb8b0ba"
     },
     {
       "path": "app/src/main/assets/models/body-low.glb",
-      "sha256": "9d4b8f75a3d12fb5695039594dab82af5223af7bccf8b69f511b64815e3329e3"
+      "sha256": "732db523e4fc217f575c944b7ca1dcfd169231d01aa4b128f7c992428bea1042"
     },
     {
       "path": "app/src/main/assets/anatomy.json",
-      "sha256": "bf3d37618ab832cf9ce2b828d6db14241c735dba5978ffc3cd227f593a4a044f"
+      "sha256": "9cf2b598b0e4cd61ed3f2f8092bcc65f7cd471d02f37b9f50307e45ba52ab93b"
     }
   ],
   "outputs": [
     {
       "path": "app/src/main/assets/content/fascia.json",
-      "sha256": "5307befdb61497e43d1d52f7523cbbc96033ebe833dc3738f8895499ff4b130e"
+      "sha256": "fad1312eae8ddb0cf0f7ecb0a53248703510b7f17cc34ede9ed966fefd88328e"
     }
   ],
   "connections": 7,
@@ -34,7 +34,20 @@
   "professionalAnatomicalReviewedTargets": 0,
   "clinicalTargets": 0,
   "originalTargetsUnchanged": 20,
-  "originalTargetsCanonicalSha256": "db9b2f0f316f433a596427888410e24635d823fe923a2a441a31b808d917ee26",
+  "preservedGeometryIdentity": {
+    "first20TargetsSha256": "8e28113043836ded1de9452f41463a93d727e55844ad6a76244c281d437b7d68",
+    "all38TargetsSha256": "465d15f78380391320dc4739231f4877f6ec74f884afab2100b07257791465e8",
+    "all48PathsSha256": "20b69435c2227040de34af93405ceed0b3f55242b92927f4a1c7e33e9b73fe3f"
+  },
+  "preservedTargetsUnchanged": 38,
+  "preservedPathsUnchanged": 48,
+  "evidenceReferences": 14,
+  "evidenceKinds": {
+    "anatomical_continuity": 7,
+    "experimental_loading": 5,
+    "human_indirect_observation": 2
+  },
+  "evidenceClassMeaningZh": "类别区分研究观察，不是自定义强弱评分；辅助线不挂接传力证据。",
   "pathKinds": {
     "unoriented_connection_schematic": 16,
     "anatomical_context_schematic": 32

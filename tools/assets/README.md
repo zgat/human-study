@@ -28,7 +28,7 @@ python3 tools/assets/audit_muscle_topology.py
 
 最终单位为米，Y 向上、前方为 +Z、人体解剖左侧为 +X。原 BodyParts3D 为毫米、Z 向上、前方为 -Y。统一变换为 `[x/1000, (z+78.1112)/1000, -y/1000]`；脚底基准取自真实皮肤网格，不拉伸人体。
 
-Z-Anatomy 只引入白名单中的缺失肌肉。先求 FBX 每个模型节点的完整层级变换，再将厘米转为米；以两套数据共同肌肉包围盒中心差的逐轴中位数计算统一平移。原始层级矩阵、配准对及残差均写入模型清单，不能把该配准当作经过临床验收的逐点配准。
+Z-Anatomy 只引入明确白名单中的74个肌肉网格及60个结缔组织网格（44片筋膜或腱膜、16片支持带）。先求 FBX 每个模型节点的完整层级变换，再将厘米转为米；以两套数据共同肌肉包围盒中心差的逐轴中位数计算统一平移。原始层级矩阵、配准对及残差均写入模型清单，不能把该配准当作经过临床验收的逐点配准。
 
 模型导出到 `app/src/main/assets/models/`，结构信息导出到 `app/src/main/assets/anatomy.json`。同一概念包含多个原始元件时保留独立原件，不重复导出复合概念的叠加网格。所有结构能回查原始 FJ 或 Z-Anatomy FBX ID。
 
@@ -49,3 +49,14 @@ python3 tools/assets/build_cutaway_material.py --matc /path/to/filament-1.78.0/b
 ## 1.4 验证范围
 
 验证脚本核验 ZIP CRC、输入与模型 SHA-256、glTF 文件长度/访问器/顶点索引、有限坐标和法线、两档 ID 一致、中文名称覆盖及主要肌肉实际存在。它不证明医学精确性、设备帧率或用户视觉验收。完整许可和已知限制见 `licenses/MODEL-NOTICE.md`。
+
+## 1.5 追加真实筋膜网格
+
+当前已打包资产包含新增的52片筋膜、腱膜和支持带。常规构建直接使用随源码分发的GLB，无需重新导入。`append_fascia_assets.py` 仅适用于仍有1239个部件的0.4.0基线：
+
+```sh
+python3 tools/assets/append_fascia_assets.py
+python3 tools/assets/verify_models.py
+```
+
+该命令需要原FBX和既有模型构建输入；不是对当前1291部件资产可重复执行的日常命令。追加过程验证原节点、材质、primitive、访问器与BIN前缀不变，保留穴位及筋膜表面锚点所依赖的三角形和顶点顺序；来源与检查见公开 `docs/validation/model-fascia-expansion.json`。新增薄片在标准与流畅档均保留源拓扑，可能包含自然边界，未做独立低档减面或专业配准验收。

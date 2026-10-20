@@ -4,22 +4,22 @@
   "models": [
     {
       "path": "app/src/main/assets/models/body-standard.glb",
-      "sha256": "a1588838552e7503142a51cc5f23681bbcc3cd33098bca80739f4794fed2ceee",
-      "bytes": 59941576,
-      "structures": 1239,
-      "vertices": 1610861,
-      "triangles": 2570132
+      "sha256": "a9db567003aefceae40bab4930dfc709b95031025fad59a8018465b2dbb8b0ba",
+      "bytes": 63196840,
+      "structures": 1291,
+      "vertices": 1701130,
+      "triangles": 2744721
     },
     {
       "path": "app/src/main/assets/models/body-low.glb",
-      "sha256": "9d4b8f75a3d12fb5695039594dab82af5223af7bccf8b69f511b64815e3329e3",
-      "bytes": 48115592,
-      "structures": 1239,
-      "vertices": 1292216,
-      "triangles": 1921262
+      "sha256": "732db523e4fc217f575c944b7ca1dcfd169231d01aa4b128f7c992428bea1042",
+      "bytes": 51370856,
+      "structures": 1291,
+      "vertices": 1382485,
+      "triangles": 2095851
     }
   ],
-  "anatomySha256": "bf3d37618ab832cf9ce2b828d6db14241c735dba5978ffc3cd227f593a4a044f",
+  "anatomySha256": "9cf2b598b0e4cd61ed3f2f8092bcc65f7cd471d02f37b9f50307e45ba52ab93b",
   "checks": [
     "source SHA-256",
     "ZIP CRC",
@@ -36,7 +36,8 @@
     "low-tier skin exact POSITION/NORMAL/index equality with standard tier",
     "explicit systems and tissue/source concept metadata",
     "previous geometry payloads byte-exact outside four authorized trapezius fixes",
-    "eight genuine source fascia additions",
+    "explicitly enumerated genuine source connective-tissue additions",
+    "old anchor geometry unchanged and new source sheets identical across both tiers",
     "skin occlusion file unchanged"
   ],
   "limitsZh": [

@@ -1,0 +1,840 @@
+{
+  "schemaVersion": 1,
+  "applicationVersion": "0.5.0",
+  "collectedAtUtc": "2026-10-20T15:26:45.363796+00:00",
+  "sourceScopeZh": "真实筋膜解剖优先，研究连接逐项区分条件，辅助线独立且默认关闭。",
+  "build": {
+    "status": "passed",
+    "variants": [
+      "debug",
+      "release",
+      "debugAndroidTest"
+    ],
+    "log": {
+      "path": "logs/build-fascia-standards-final.log",
+      "bytes": 9387,
+      "sha256": "0415e732cb695420785b663004a817c960d3d5781e7bda39e35866232e3fbec3"
+    }
+  },
+  "jvm": {
+    "tests": 79,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "suites": [
+      {
+        "name": "com.zga.meridianatlas.CutawayPolicyTest",
+        "tests": 4,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "report": {
+          "path": "app/build/test-results/testDebugUnitTest/TEST-com.zga.meridianatlas.CutawayPolicyTest.xml",
+          "bytes": 947,
+          "sha256": "68763bef6581a3962647e12be30700162794992679da8bf0312690e4d5823211"
+        }
+      },
+      {
+        "name": "com.zga.meridianatlas.MeridianCatalogueContentTest",
+        "tests": 5,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "report": {
+          "path": "app/build/test-results/testDebugUnitTest/TEST-com.zga.meridianatlas.MeridianCatalogueContentTest.xml",
+          "bytes": 1156,
+          "sha256": "72a409deaef28a078b8681b631aed3c7fc4a7f982fda76b7de0e1a85d6417d1e"
+        }
+      },
+      {
+        "name": "com.zga.meridianatlas.MeridianSelectionPolicyTest",
+        "tests": 5,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "report": {
+          "path": "app/build/test-results/testDebugUnitTest/TEST-com.zga.meridianatlas.MeridianSelectionPolicyTest.xml",
+          "bytes": 1088,
+          "sha256": "8c730e12b0ee5fae91ee5645fd76eb4d3ffad44585579359bbfba112c69d85da"
+        }
+      },
+      {
+        "name": "com.zga.meridianatlas.SearchIndexTest",
+        "tests": 3,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "report": {
+          "path": "app/build/test-results/testDebugUnitTest/TEST-com.zga.meridianatlas.SearchIndexTest.xml",
+          "bytes": 717,
+          "sha256": "4f2a9dd90047e48cc18029862e7b74fda1caac16062066ae2400f23c25b7091a"
+        }
+      },
+      {
+        "name": "com.zga.meridianatlas.StructureGroupsTest",
+        "tests": 8,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "report": {
+          "path": "app/build/test-results/testDebugUnitTest/TEST-com.zga.meridianatlas.StructureGroupsTest.xml",
+          "bytes": 1437,
+          "sha256": "dae72db74ac6af55ecd3cd81f3137239b44099895eb5d19edfd20eb7d509c89b"
+        }
+      },
+      {
+        "name": "com.zga.meridianatlas.VisibilityPolicyTest",
+        "tests": 16,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "report": {
+          "path": "app/build/test-results/testDebugUnitTest/TEST-com.zga.meridianatlas.VisibilityPolicyTest.xml",
+          "bytes": 2646,
+          "sha256": "243e3b9b1a3289b44cbba008175d5031364b7ba21cd400b0056effec71895119"
+        }
+      },
+      {
+        "name": "com.zga.meridianatlas.ui.FasciaOverlayTest",
+        "tests": 10,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "report": {
+          "path": "app/build/test-results/testDebugUnitTest/TEST-com.zga.meridianatlas.ui.FasciaOverlayTest.xml",
+          "bytes": 1871,
+          "sha256": "55be3294dba95256f273145a8c09fd5c7f4be1e75e501f5d6a36895f672546e8"
+        }
+      },
+      {
+        "name": "com.zga.meridianatlas.ui.OverlayPolicyTest",
+        "tests": 9,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "report": {
+          "path": "app/build/test-results/testDebugUnitTest/TEST-com.zga.meridianatlas.ui.OverlayPolicyTest.xml",
+          "bytes": 1642,
+          "sha256": "9fa6b433755e3b31481e2ba97b55401ba8ffc6d415e8fa85b9b535291a5be082"
+        }
+      },
+      {
+        "name": "com.zga.meridianatlas.viewer.SkinOccluderTest",
+        "tests": 10,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "report": {
+          "path": "app/build/test-results/testDebugUnitTest/TEST-com.zga.meridianatlas.viewer.SkinOccluderTest.xml",
+          "bytes": 1695,
+          "sha256": "2ef66ca3db3aa2285f2f87b119a0fbd009665225da1acdd6c519b23762927e8e"
+        }
+      },
+      {
+        "name": "com.zga.meridianatlas.viewer.SurfaceRouteAssetTest",
+        "tests": 1,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "report": {
+          "path": "app/build/test-results/testDebugUnitTest/TEST-com.zga.meridianatlas.viewer.SurfaceRouteAssetTest.xml",
+          "bytes": 4174,
+          "sha256": "b3d019009039492e1a87798ca6360ebd0168ef7e83d5a4c5d62adabc5c9bd248"
+        }
+      },
+      {
+        "name": "com.zga.meridianatlas.viewer.SurfaceRoutesTest",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "report": {
+          "path": "app/build/test-results/testDebugUnitTest/TEST-com.zga.meridianatlas.viewer.SurfaceRoutesTest.xml",
+          "bytes": 658,
+          "sha256": "768d9698d947ce577ace2ce1935fb56d4a34df572839fdd0c905209ebaea97e2"
+        }
+      },
+      {
+        "name": "com.zga.meridianatlas.viewer.ViewerMathTest",
+        "tests": 6,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "report": {
+          "path": "app/build/test-results/testDebugUnitTest/TEST-com.zga.meridianatlas.viewer.ViewerMathTest.xml",
+          "bytes": 1230,
+          "sha256": "8203743f6a952c547ae5a6709c7b2e1ed6e2463adaa861216e3e06f97f8518e5"
+        }
+      }
+    ]
+  },
+  "hostPython": {
+    "tests": 37,
+    "failed": 0,
+    "log": {
+      "path": "logs/qa-fascia-standards.txt",
+      "bytes": 6292,
+      "sha256": "186f5ebb36c20c105e89b0789be8981be53d28888112039f7452c8589b73cb9c"
+    },
+    "includes": {
+      "fasciaGeometry": 8,
+      "fasciaEvidence": 6,
+      "publicEvidencePrivacy": 3
+    }
+  },
+  "lint": {
+    "errors": 0,
+    "warnings": 18,
+    "report": {
+      "path": "app/build/reports/lint-results-debug.xml",
+      "bytes": 19372,
+      "sha256": "fe9d7c93eee958254b176dd7be6c439eb98ccf07888cc89a4149cbf4f05fb15d"
+    }
+  },
+  "models": {
+    "status": "passed",
+    "structures": 1291,
+    "interactionGroups": 1112,
+    "existingStructuresPreserved": 1239,
+    "addedStructures": 52,
+    "addedByTissueType": {
+      "fascia": 32,
+      "aponeurosis": 4,
+      "retinaculum": 16
+    },
+    "anatomyCatalogueMeshes": 64,
+    "checks": [
+      {
+        "path": "manifests/model-validation.json",
+        "bytes": 1687,
+        "sha256": "114a45f4455962fabba7f0e370ffe00d938f3e3fea2ff30db04bbfaaea2aaaab"
+      },
+      {
+        "path": "manifests/model-fascia-expansion.json",
+        "bytes": 3159108,
+        "sha256": "6a3a3ee8d733d87148cbe021b6a08412ebfe4c5c266346187755afa48ec77ac4"
+      }
+    ]
+  },
+  "content": {
+    "connections": 7,
+    "studyRecords": 14,
+    "evidenceKinds": {
+      "anatomical_continuity": 7,
+      "experimental_loading": 5,
+      "human_indirect_observation": 2
+    },
+    "relationPaths": 16,
+    "tissueRangePaths": 32,
+    "tissueRangeDefault": false,
+    "referenceRegions": 38,
+    "professionalReviewCompleted": 0
+  },
+  "apk": {
+    "path": "outputs/human-study-0.5.0-arm64.apk",
+    "bytes": 125111754,
+    "sha256": "f318710f0d611a52cfe9fa9bb9a779f9c0d95205c2e347c9a6c29a2437f24d8c"
+  },
+  "delivery": {
+    "status": "passed",
+    "checks": {
+      "zipCrc": true,
+      "bundledSourceHashes": true,
+      "offlinePermission": true,
+      "arm64Only": true,
+      "elf16KiBAlignment": true,
+      "signature": true,
+      "zip16KiBAlignment": true,
+      "applicationLabel": true
+    }
+  },
+  "device": {
+    "status": "unavailable",
+    "newTestsCompiled": 3,
+    "newTestsExecuted": 0,
+    "installed": false,
+    "started": false,
+    "visualAcceptance": false,
+    "performanceAcceptance": false,
+    "reasonZh": "当前自动发现未找到已配对设备，未尝试其他设备。"
+  },
+  "limitsZh": [
+    "主机几何预览、单元与领域验证不等于Android画面、DataStore落盘、断网首启或帧率验收。",
+    "补充网格仅共同平移配准，未完成逐片专业审校；部分源薄片存在边界及非流形边。",
+    "本版引用的共识不提供全身标准力线；局部关系线不表达受力大小、方向或临床靶点。"
+  ],
+  "compiledHostDomain": {
+    "catalogueKinds": {
+      "fascia": 40,
+      "aponeurosis": 6,
+      "retinaculum": 18
+    },
+    "decodedNormalSamples": 1732,
+    "evidenceReferences": 14,
+    "data": {
+      "path": "app/src/main/assets/content/fascia.json",
+      "sha256": "fad1312eae8ddb0cf0f7ecb0a53248703510b7f17cc34ede9ed966fefd88328e",
+      "bytes": 1970286
+    },
+    "sources": [
+      {
+        "path": "app/src/main/java/com/zga/meridianatlas/data/FascialContent.kt",
+        "sha256": "38739d2950fe28600168c0bbf99742bdf010b3e3e8e27c1bbf73067a460d3b28",
+        "bytes": 3156
+      },
+      {
+        "path": "app/src/main/java/com/zga/meridianatlas/data/AtlasRepository.kt",
+        "sha256": "29990f00266d1ed50fa9896aa3a99021bfe09641aca448fcc2d571646a1018a1",
+        "bytes": 8567
+      },
+      {
+        "path": "app/src/main/java/com/zga/meridianatlas/model/FascialModels.kt",
+        "sha256": "044fdfb7b9cfcb95c0d3f106d343faede5e0b83ea132bc8a0bc5e59c6fb17c38",
+        "bytes": 2476
+      },
+      {
+        "path": "app/src/main/java/com/zga/meridianatlas/model/AtlasModels.kt",
+        "sha256": "68b8580df45cba3020bf185ca16824b3b0905f57fd37f53805e39b5575f44f13",
+        "bytes": 3821
+      },
+      {
+        "path": "app/src/main/java/com/zga/meridianatlas/ui/FasciaOverlay.kt",
+        "sha256": "5320d15485156724601575970cdb7df9d6825e8fe5969ee19bd5c4760c94782a",
+        "bytes": 9494
+      },
+      {
+        "path": "app/src/main/java/com/zga/meridianatlas/ui/FasciaPanel.kt",
+        "sha256": "d14c6a7b5aa559749347b8c2a8f33f4157cd15f5d824079959b82e7ac0f64c04",
+        "bytes": 18950
+      },
+      {
+        "path": "app/src/main/java/com/zga/meridianatlas/data/AtlasPreferences.kt",
+        "sha256": "4944a99197e02cf95ba6addaa622b619f25f2631805776ee7494fe19dc069e9d",
+        "bytes": 4085
+      },
+      {
+        "path": "app/src/main/java/com/zga/meridianatlas/model/StructureGroups.kt",
+        "sha256": "9eeb123e8f80ae920a406f29e1e85e5f6ab9331d5b454c863392bdaa78d57f9a",
+        "bytes": 3130
+      }
+    ],
+    "dataStoreRuntimeExecuted": false,
+    "contextPaths": 32,
+    "compiledClasses": [
+      {
+        "path": "app/build/tmp/kotlin-classes/debug/com/zga/meridianatlas/data/FascialContentKt.class",
+        "sha256": "49e80c076648752007b5ec60b9884b9d13a381d9c886ff26ead1cccbae99b59c",
+        "bytes": 12793
+      },
+      {
+        "path": "app/build/tmp/kotlin-classes/debug/com/zga/meridianatlas/data/AtlasRepositoryKt.class",
+        "sha256": "8b31c7970486468c72701b5beb235a52c42d5a814b27c16bce899f81bf710ccb",
+        "bytes": 19220
+      },
+      {
+        "path": "app/build/tmp/kotlin-classes/debug/com/zga/meridianatlas/model/FascialConnection.class",
+        "sha256": "6f573987dc31f7bfa94b515acce1b9343d7cdee18a4fd78d1d3894f5105fe567",
+        "bytes": 12817
+      },
+      {
+        "path": "app/build/tmp/kotlin-classes/debug/com/zga/meridianatlas/model/FascialPath.class",
+        "sha256": "f0eb17d856e6c51c3415a28cd8dd9cecdc62aa9b9debd77cf5b3d98026c0bb6e",
+        "bytes": 7853
+      },
+      {
+        "path": "app/build/tmp/kotlin-classes/debug/com/zga/meridianatlas/model/FascialTarget.class",
+        "sha256": "65330d22288772cb912831f0bab45a701d47a20505877ccddb778e071df3c5f6",
+        "bytes": 8735
+      },
+      {
+        "path": "app/build/tmp/kotlin-classes/debug/com/zga/meridianatlas/model/FascialSource.class",
+        "sha256": "73ee56f63245571fd864f2acb84e52c505725633d59a1db3e6648a7945ab4ace",
+        "bytes": 4991
+      },
+      {
+        "path": "app/build/tmp/kotlin-classes/debug/com/zga/meridianatlas/model/Vec3.class",
+        "sha256": "fb957072f93022fae5c440f173c71b4fbfaa872c8875d7a5eb66fa28255085f6",
+        "bytes": 2835
+      },
+      {
+        "path": "app/build/tmp/kotlin-classes/debug/com/zga/meridianatlas/model/ProjectionAnchor.class",
+        "sha256": "9dd606cae1e3d62046f9f91551340e01e3c8fd535a534b77bdaa5fc05a77fe7c",
+        "bytes": 4425
+      },
+      {
+        "path": "app/build/tmp/kotlin-classes/debug/com/zga/meridianatlas/model/LayerState.class",
+        "sha256": "0a516f1b58b3a25a0fc2e1811063af52fd4866b93ab332f18b59d0af3970a823",
+        "bytes": 11949
+      },
+      {
+        "path": "app/build/tmp/kotlin-classes/debug/com/zga/meridianatlas/ui/FasciaOverlayKt.class",
+        "sha256": "ff6fac895fc88db768762d19db9a88b895a7cdaf61156f06ff5198b8d3322b13",
+        "bytes": 35772
+      },
+      {
+        "path": "app/build/tmp/kotlin-classes/debug/com/zga/meridianatlas/ui/FascialOverlayData.class",
+        "sha256": "a03a1b204995bd248e4bb446fb81f9d3acc04e761f7ce2a5f7c630ecb8ff609b",
+        "bytes": 5771
+      },
+      {
+        "path": "app/build/tmp/kotlin-classes/debug/com/zga/meridianatlas/ui/FascialOverlayLine.class",
+        "sha256": "5089b1ef7274ff4358e0bd4f51db53067a1de0685ec2f617e945db4db140fd11",
+        "bytes": 4584
+      },
+      {
+        "path": "app/build/tmp/kotlin-classes/debug/com/zga/meridianatlas/ui/FascialOverlayTarget.class",
+        "sha256": "b0ca35e2ca50ef2c0faed088c1c876ca2f887948589674408ff5efb890856d7e",
+        "bytes": 4414
+      },
+      {
+        "path": "app/build/tmp/kotlin-classes/debug/com/zga/meridianatlas/model/FascialEvidence.class",
+        "sha256": "3d54443ed1395dfe6bb68ac19ad5d2d91b6ab0c311a01bde766e9d35b351efd6",
+        "bytes": 7026
+      },
+      {
+        "path": "app/build/tmp/kotlin-classes/debug/com/zga/meridianatlas/model/StructureGroups.class",
+        "sha256": "a5b6fe08b9c331a00140115fea695616f9e319cf8f08b26a3fcd58249c3a5560",
+        "bytes": 14256
+      },
+      {
+        "path": "app/build/tmp/kotlin-classes/debug/com/zga/meridianatlas/model/StructureGroup.class",
+        "sha256": "1ef9e38ad92bb0b17eb15788b5898d8001a58ce499349e98b54e916c9af5380b",
+        "bytes": 6681
+      },
+      {
+        "path": "app/build/tmp/kotlin-classes/debug/com/zga/meridianatlas/ui/FasciaPanelKt.class",
+        "sha256": "789ce5c31519988179a61e52ce4bda744d48d651d4f8b9668dd4bc5654787937",
+        "bytes": 124807
+      },
+      {
+        "path": "app/build/tmp/kotlin-classes/debug/com/zga/meridianatlas/data/SavedPreferences.class",
+        "sha256": "c8343699fd513d2789a2188439308d4fbc7c8f31972cb11b2c9f8cd481727547",
+        "bytes": 5441
+      }
+    ],
+    "decodedEvidence": [
+      {
+        "kind": "anatomical_continuity",
+        "connectionId": "latissimus-thoracolumbar-contralateral-gluteus",
+        "id": "ld-tlf-anatomy",
+        "sourceIds": [
+          "vleeming1995"
+        ],
+        "relatedPathIds": [
+          "ld-tlf-right",
+          "ld-tlf-left"
+        ]
+      },
+      {
+        "kind": "experimental_loading",
+        "connectionId": "latissimus-thoracolumbar-contralateral-gluteus",
+        "id": "ld-tlf-loading",
+        "sourceIds": [
+          "vleeming1995"
+        ],
+        "relatedPathIds": [
+          "ld-tlf-right",
+          "ld-tlf-left"
+        ]
+      },
+      {
+        "kind": "human_indirect_observation",
+        "connectionId": "latissimus-thoracolumbar-contralateral-gluteus",
+        "id": "ld-tlf-human",
+        "sourceIds": [
+          "carvalhais2013"
+        ],
+        "relatedPathIds": [
+          "ld-tlf-right",
+          "ld-tlf-left"
+        ]
+      },
+      {
+        "kind": "anatomical_continuity",
+        "connectionId": "achilles-calcaneal-region-plantar-aponeurosis",
+        "id": "heel-anatomy",
+        "sourceIds": [
+          "stecco2013"
+        ],
+        "relatedPathIds": [
+          "heel-right",
+          "heel-left"
+        ]
+      },
+      {
+        "kind": "experimental_loading",
+        "connectionId": "achilles-calcaneal-region-plantar-aponeurosis",
+        "id": "heel-loading",
+        "sourceIds": [
+          "erdemir2004"
+        ],
+        "relatedPathIds": [
+          "heel-right",
+          "heel-left"
+        ]
+      },
+      {
+        "kind": "human_indirect_observation",
+        "connectionId": "achilles-calcaneal-region-plantar-aponeurosis",
+        "id": "heel-human-imaging",
+        "sourceIds": [
+          "stecco2013"
+        ],
+        "relatedPathIds": [
+          "heel-right",
+          "heel-left"
+        ]
+      },
+      {
+        "kind": "anatomical_continuity",
+        "connectionId": "biceps-long-head-ischial-sacrotuberous-region",
+        "id": "hamstring-anatomy",
+        "sourceIds": [
+          "miguelperez2024"
+        ],
+        "relatedPathIds": [
+          "hamstring-right",
+          "hamstring-left"
+        ]
+      },
+      {
+        "kind": "experimental_loading",
+        "connectionId": "biceps-long-head-ischial-sacrotuberous-region",
+        "id": "hamstring-loading",
+        "sourceIds": [
+          "wingerden1993"
+        ],
+        "relatedPathIds": [
+          "hamstring-right",
+          "hamstring-left"
+        ]
+      },
+      {
+        "kind": "anatomical_continuity",
+        "connectionId": "gluteus-maximus-iliotibial-tract",
+        "id": "gm-itb-anatomy",
+        "sourceIds": [
+          "stecco2013gluteus"
+        ],
+        "relatedPathIds": [
+          "gm-itb-right",
+          "gm-itb-left"
+        ]
+      },
+      {
+        "kind": "anatomical_continuity",
+        "connectionId": "tensor-fasciae-latae-iliotibial-tract",
+        "id": "tfl-itb-anatomy",
+        "sourceIds": [
+          "birnbaum2004"
+        ],
+        "relatedPathIds": [
+          "tfl-itb-right",
+          "tfl-itb-left"
+        ]
+      },
+      {
+        "kind": "experimental_loading",
+        "connectionId": "tensor-fasciae-latae-iliotibial-tract",
+        "id": "tfl-itb-loading",
+        "sourceIds": [
+          "birnbaum2004"
+        ],
+        "relatedPathIds": [
+          "tfl-itb-right",
+          "tfl-itb-left"
+        ]
+      },
+      {
+        "kind": "anatomical_continuity",
+        "connectionId": "palmaris-longus-flexor-retinaculum",
+        "id": "palmaris-anatomy",
+        "sourceIds": [
+          "stecco2007palmaris"
+        ],
+        "relatedPathIds": [
+          "palmaris-right",
+          "palmaris-left"
+        ]
+      },
+      {
+        "kind": "anatomical_continuity",
+        "connectionId": "transversus-abdominis-thoracolumbar-fascia",
+        "id": "tra-tlf-middle-anatomy",
+        "sourceIds": [
+          "barker2007anatomy"
+        ],
+        "relatedPathIds": [
+          "tra-tlf-right-middle",
+          "tra-tlf-left-middle"
+        ]
+      },
+      {
+        "kind": "experimental_loading",
+        "connectionId": "transversus-abdominis-thoracolumbar-fascia",
+        "id": "tra-tlf-loading",
+        "sourceIds": [
+          "barker2004"
+        ],
+        "relatedPathIds": [
+          "tra-tlf-right-middle",
+          "tra-tlf-right-posterior",
+          "tra-tlf-left-middle",
+          "tra-tlf-left-posterior"
+        ]
+      }
+    ],
+    "targets": 38,
+    "scopeZh": "使用当前debug编译类，直接调用FascialContentKt.decodeFascialConnection读取实际fascia.json数值颜色、全部路径/法线/参考区/研究说明，并调用buildFascialOverlay核验6种皮肤与半身状态、三开关8组合、真实筋膜目录及SavedPreferences三模式模型字段；未重写解码和覆盖构建算法。",
+    "evidenceKinds": {
+      "anatomical_continuity": 7,
+      "experimental_loading": 5,
+      "human_indirect_observation": 2
+    },
+    "anatomyData": {
+      "path": "app/src/main/assets/anatomy.json",
+      "sha256": "9cf2b598b0e4cd61ed3f2f8092bcc65f7cd471d02f37b9f50307e45ba52ab93b",
+      "bytes": 2136568
+    },
+    "catalogueGroups": 64,
+    "preferencesDomainModelModes": 3,
+    "decoded": [
+      {
+        "color": 4286173629,
+        "colorArgb": "#FF79D1BD",
+        "nameZh": "背阔肌—胸腰筋膜—对侧臀大肌",
+        "paths": 8,
+        "id": "latissimus-thoracolumbar-contralateral-gluteus",
+        "targets": 8,
+        "sourceIds": [
+          "vleeming1995",
+          "carvalhais2013"
+        ]
+      },
+      {
+        "color": 4292328827,
+        "colorArgb": "#FFD7BD7B",
+        "nameZh": "跟腱—跟骨邻区—足底腱膜",
+        "paths": 8,
+        "id": "achilles-calcaneal-region-plantar-aponeurosis",
+        "targets": 8,
+        "sourceIds": [
+          "stecco2013",
+          "erdemir2004"
+        ]
+      },
+      {
+        "color": 4290291166,
+        "colorArgb": "#FFB8A5DE",
+        "nameZh": "股二头肌长头—坐骨结节邻区",
+        "paths": 4,
+        "id": "biceps-long-head-ischial-sacrotuberous-region",
+        "targets": 4,
+        "sourceIds": [
+          "wingerden1993",
+          "miguelperez2024"
+        ]
+      },
+      {
+        "color": 4293761150,
+        "colorArgb": "#FFED987E",
+        "nameZh": "臀大肌—髂胫束",
+        "paths": 6,
+        "id": "gluteus-maximus-iliotibial-tract",
+        "targets": 4,
+        "sourceIds": [
+          "stecco2013gluteus"
+        ]
+      },
+      {
+        "color": 4287411694,
+        "colorArgb": "#FF8CB5EE",
+        "nameZh": "阔筋膜张肌—髂胫束",
+        "paths": 6,
+        "id": "tensor-fasciae-latae-iliotibial-tract",
+        "targets": 4,
+        "sourceIds": [
+          "birnbaum2004"
+        ]
+      },
+      {
+        "color": 4293241823,
+        "colorArgb": "#FFE5ABDF",
+        "nameZh": "掌长肌—腕屈肌支持带",
+        "paths": 6,
+        "id": "palmaris-longus-flexor-retinaculum",
+        "targets": 4,
+        "sourceIds": [
+          "stecco2007palmaris"
+        ]
+      },
+      {
+        "color": 4289252472,
+        "colorArgb": "#FFA8CC78",
+        "nameZh": "腹横肌—胸腰筋膜中后层",
+        "paths": 10,
+        "id": "transversus-abdominis-thoracolumbar-fascia",
+        "targets": 6,
+        "sourceIds": [
+          "barker2004",
+          "barker2007anatomy"
+        ]
+      }
+    ],
+    "contextSamples": 1692,
+    "limitationsZh": "主机JVM领域核验，不是Android Compose绘制、Filament深度遮挡、安装或真机画面验收。org.json仅为临时主机依赖，未加入产品；不执行Android图形API，字符串颜色分支未覆盖。三角面医学定位与专业审校不由此证明。DataStore未在主机执行，未验证实际落盘或重启恢复；仅核对当前编译SavedPreferences模型与源码读写键契约。",
+    "schemaVersion": 1,
+    "overlayStates": [
+      {
+        "side": "NONE",
+        "occlusionTest": true,
+        "skin": true,
+        "anchors": 1818,
+        "lines": 48,
+        "targets": 38
+      },
+      {
+        "side": "LEFT",
+        "occlusionTest": false,
+        "skin": true,
+        "anchors": 1818,
+        "lines": 48,
+        "targets": 38
+      },
+      {
+        "side": "RIGHT",
+        "occlusionTest": false,
+        "skin": true,
+        "anchors": 1818,
+        "lines": 48,
+        "targets": 38
+      },
+      {
+        "side": "NONE",
+        "occlusionTest": false,
+        "skin": false,
+        "anchors": 1818,
+        "lines": 48,
+        "targets": 38
+      },
+      {
+        "side": "LEFT",
+        "occlusionTest": false,
+        "skin": false,
+        "anchors": 1818,
+        "lines": 48,
+        "targets": 38
+      },
+      {
+        "side": "RIGHT",
+        "occlusionTest": false,
+        "skin": false,
+        "anchors": 1818,
+        "lines": 48,
+        "targets": 38
+      }
+    ],
+    "overlaySwitchCombinations": [
+      {
+        "fasciaContext": false,
+        "fasciaRelations": false,
+        "savedModelModes": 3,
+        "fasciaTargets": false,
+        "lines": 0,
+        "targets": 0
+      },
+      {
+        "fasciaContext": false,
+        "fasciaRelations": false,
+        "savedModelModes": 3,
+        "fasciaTargets": true,
+        "lines": 0,
+        "targets": 38
+      },
+      {
+        "fasciaContext": true,
+        "fasciaRelations": false,
+        "savedModelModes": 3,
+        "fasciaTargets": false,
+        "lines": 32,
+        "targets": 0
+      },
+      {
+        "fasciaContext": true,
+        "fasciaRelations": false,
+        "savedModelModes": 3,
+        "fasciaTargets": true,
+        "lines": 32,
+        "targets": 38
+      },
+      {
+        "fasciaContext": false,
+        "fasciaRelations": true,
+        "savedModelModes": 3,
+        "fasciaTargets": false,
+        "lines": 16,
+        "targets": 0
+      },
+      {
+        "fasciaContext": false,
+        "fasciaRelations": true,
+        "savedModelModes": 3,
+        "fasciaTargets": true,
+        "lines": 16,
+        "targets": 38
+      },
+      {
+        "fasciaContext": true,
+        "fasciaRelations": true,
+        "savedModelModes": 3,
+        "fasciaTargets": false,
+        "lines": 48,
+        "targets": 0
+      },
+      {
+        "fasciaContext": true,
+        "fasciaRelations": true,
+        "savedModelModes": 3,
+        "fasciaTargets": true,
+        "lines": 48,
+        "targets": 38
+      }
+    ],
+    "anatomyStructures": 1291,
+    "logicalStructureGroups": 1112,
+    "groups": 7,
+    "hostJavaVersion": "21.0.12.1",
+    "distinctNumericColors": 7,
+    "catalogueMeshes": 64,
+    "checks": 40994,
+    "temporaryHostJsonLibrary": {
+      "path": "[local-path]",
+      "sha256": "3cf6cd6892e32e2b4c1c39e0f52f5248a2f5b37646fdfbb79a66b46b618414ed",
+      "coordinates": "org.json:json:20240303",
+      "productDependency": false
+    },
+    "harness": {
+      "path": "[local-path]",
+      "sha256": "19c2afba7729f4d79d346d6d767dc8092e3038db68d4bf3ae5a8e7dbc4feca84",
+      "bytes": 21836
+    },
+    "localRelations": 16,
+    "capturedAt": "2026-10-20T15:26:48.828635Z",
+    "catalogueRegions": {
+      "trunk": 18,
+      "head_neck": 10,
+      "lower_limb": 24,
+      "upper_limb": 12
+    },
+    "status": "passed",
+    "harnessCompileLog": {
+      "path": "[local-path]",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "harnessRunLog": {
+      "path": "[local-path]",
+      "sha256": "4093ac2c787fd9e0cc7ee8a1f5b444b7fc23f640ec9712fd1f22ac132341fcc9"
+    }
+  },
+  "compiledHostScopeZh": "40994条主机领域断言通过；不是40994项单元测试，不代替Android界面、持久化落盘或实际绘制。"
+}

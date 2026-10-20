@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "targetApplicationVersion": "0.4.0",
+  "targetApplicationVersion": "0.5.0",
   "evidenceApplicationVersion": "0.2.2",
   "targetVersionFullSuiteExecuted": false,
-  "versionBoundaryZh": "以下历史整轮计数来自已完成的0.2.2功能回归；当前目标版本0.4.0没有因此被记作执行了整套测试。改名后的单元测试、安装与冒烟结果另列。",
+  "versionBoundaryZh": "以下历史整轮计数来自已完成的0.2.2功能回归；当前目标版本0.5.0没有因此被记作执行了整套测试。改名后的单元测试、安装与冒烟结果另列。",
   "historicalRegression": {
     "buildVariant": "debug",
     "unit": {
@@ -30,25 +30,25 @@
     "models": [
       {
         "path": "app/src/main/assets/models/body-standard.glb",
-        "bytes": 59941576,
-        "sha256": "a1588838552e7503142a51cc5f23681bbcc3cd33098bca80739f4794fed2ceee"
+        "bytes": 63196840,
+        "sha256": "a9db567003aefceae40bab4930dfc709b95031025fad59a8018465b2dbb8b0ba"
       },
       {
         "path": "app/src/main/assets/models/body-low.glb",
-        "bytes": 48115592,
-        "sha256": "9d4b8f75a3d12fb5695039594dab82af5223af7bccf8b69f511b64815e3329e3"
+        "bytes": 51370856,
+        "sha256": "732db523e4fc217f575c944b7ca1dcfd169231d01aa4b128f7c992428bea1042"
       }
     ],
     "anatomy": {
       "path": "app/src/main/assets/anatomy.json",
-      "bytes": 2002808,
-      "sha256": "bf3d37618ab832cf9ce2b828d6db14241c735dba5978ffc3cd227f593a4a044f"
+      "bytes": 2136568,
+      "sha256": "9cf2b598b0e4cd61ed3f2f8092bcc65f7cd471d02f37b9f50307e45ba52ab93b"
     },
     "structuresBySystem": {
       "organ": 382,
       "bone": 285,
       "space": 13,
-      "connective": 59,
+      "connective": 111,
       "muscle": 499,
       "skin": 1
     },
@@ -62,7 +62,8 @@
     "fascialConnections": 7,
     "fascialInstances": 14,
     "fascialReferenceRegions": 38,
-    "addedFasciaAndAponeurosisMeshes": 8
+    "addedConnectiveTissueMeshes": 60,
+    "addedFasciaAndAponeurosisMeshes": 44
   },
   "professionalReview": {
     "acupointInstancesCompleted": 0,
@@ -86,13 +87,13 @@
     "limitsZh": "这是所标版本的Debug短时统计；不作为目标版本、十分钟稳定性或Release性能证明。"
   },
   "currentUnitTests": {
-    "applicationVersion": "0.4.0",
+    "applicationVersion": "0.5.0",
     "buildVariant": "debug",
-    "tests": 75,
+    "tests": 79,
     "failures": 0,
     "errors": 0,
     "skipped": 0,
-    "passed": 75,
+    "passed": 79,
     "suites": [
       {
         "name": "com.zga.meridianatlas.CutawayPolicyTest",
@@ -100,7 +101,7 @@
         "failures": 0,
         "errors": 0,
         "skipped": 0,
-        "reportSha256": "0db27dc36b912a1085908101ba0f2e09ece9c4c030cb973f82bf1ce41797fef3"
+        "reportSha256": "68763bef6581a3962647e12be30700162794992679da8bf0312690e4d5823211"
       },
       {
         "name": "com.zga.meridianatlas.MeridianCatalogueContentTest",
@@ -108,7 +109,7 @@
         "failures": 0,
         "errors": 0,
         "skipped": 0,
-        "reportSha256": "b8f72c426379937adbf687baa6a5b1cf1a3679881a220d3d3817c2d42fda2341"
+        "reportSha256": "72a409deaef28a078b8681b631aed3c7fc4a7f982fda76b7de0e1a85d6417d1e"
       },
       {
         "name": "com.zga.meridianatlas.MeridianSelectionPolicyTest",
@@ -116,7 +117,7 @@
         "failures": 0,
         "errors": 0,
         "skipped": 0,
-        "reportSha256": "89c82f95c768310ff7947cfcf9339c336944cb4d3c2dcfa8b535261d8707b07d"
+        "reportSha256": "8c730e12b0ee5fae91ee5645fd76eb4d3ffad44585579359bbfba112c69d85da"
       },
       {
         "name": "com.zga.meridianatlas.SearchIndexTest",
@@ -124,7 +125,7 @@
         "failures": 0,
         "errors": 0,
         "skipped": 0,
-        "reportSha256": "711691df666d48cd42b139d0280d20a6a437d6b4de7ae1b988821408b6587e67"
+        "reportSha256": "4f2a9dd90047e48cc18029862e7b74fda1caac16062066ae2400f23c25b7091a"
       },
       {
         "name": "com.zga.meridianatlas.StructureGroupsTest",
@@ -132,7 +133,7 @@
         "failures": 0,
         "errors": 0,
         "skipped": 0,
-        "reportSha256": "02d5a992c5ca282401b8fe0c86ada944fc14471821dc4cea25ecaee6b04de9c5"
+        "reportSha256": "dae72db74ac6af55ecd3cd81f3137239b44099895eb5d19edfd20eb7d509c89b"
       },
       {
         "name": "com.zga.meridianatlas.VisibilityPolicyTest",
@@ -140,15 +141,15 @@
         "failures": 0,
         "errors": 0,
         "skipped": 0,
-        "reportSha256": "0587c998ea542bc9779a48cce03a935186c734441357b5568f29ee1d3c3d1c45"
+        "reportSha256": "243e3b9b1a3289b44cbba008175d5031364b7ba21cd400b0056effec71895119"
       },
       {
         "name": "com.zga.meridianatlas.ui.FasciaOverlayTest",
-        "tests": 6,
+        "tests": 10,
         "failures": 0,
         "errors": 0,
         "skipped": 0,
-        "reportSha256": "ddf9af4bfefd64637f51d47e3827ce821a27af844f44541c93b14a9db42b86e4"
+        "reportSha256": "55be3294dba95256f273145a8c09fd5c7f4be1e75e501f5d6a36895f672546e8"
       },
       {
         "name": "com.zga.meridianatlas.ui.OverlayPolicyTest",
@@ -156,7 +157,7 @@
         "failures": 0,
         "errors": 0,
         "skipped": 0,
-        "reportSha256": "221255e397fff34d1339bf7da1fe94c1fe65d9c8063fdc90635e1d2aa57527ab"
+        "reportSha256": "9fa6b433755e3b31481e2ba97b55401ba8ffc6d415e8fa85b9b535291a5be082"
       },
       {
         "name": "com.zga.meridianatlas.viewer.SkinOccluderTest",
@@ -164,7 +165,7 @@
         "failures": 0,
         "errors": 0,
         "skipped": 0,
-        "reportSha256": "8f6286dac22f7c841a4316bc464fd61e05e54abb11dda85d991aba6a38b842be"
+        "reportSha256": "2ef66ca3db3aa2285f2f87b119a0fbd009665225da1acdd6c519b23762927e8e"
       },
       {
         "name": "com.zga.meridianatlas.viewer.SurfaceRouteAssetTest",
@@ -172,7 +173,7 @@
         "failures": 0,
         "errors": 0,
         "skipped": 0,
-        "reportSha256": "c1c3276c569a1132de8ff105d28ee5541871e3aa434f793119329990ab811707"
+        "reportSha256": "b3d019009039492e1a87798ca6360ebd0168ef7e83d5a4c5d62adabc5c9bd248"
       },
       {
         "name": "com.zga.meridianatlas.viewer.SurfaceRoutesTest",
@@ -180,7 +181,7 @@
         "failures": 0,
         "errors": 0,
         "skipped": 0,
-        "reportSha256": "251f97a1b262b48a8abc977a62cac74555e4855aa301caf3611c3986507036bd"
+        "reportSha256": "768d9698d947ce577ace2ce1935fb56d4a34df572839fdd0c905209ebaea97e2"
       },
       {
         "name": "com.zga.meridianatlas.viewer.ViewerMathTest",
@@ -188,7 +189,7 @@
         "failures": 0,
         "errors": 0,
         "skipped": 0,
-        "reportSha256": "16f9ea6bf6710ab576bf5d97810a4a728f4671e2e15b5963c92f7aef6f240150"
+        "reportSha256": "8203743f6a952c547ae5a6709c7b2e1ed6e2463adaa861216e3e06f97f8518e5"
       }
     ],
     "scopeZh": "本轮JUnit XML计数与摘要；不替代该版本的设备功能回归、安装或性能测试。"

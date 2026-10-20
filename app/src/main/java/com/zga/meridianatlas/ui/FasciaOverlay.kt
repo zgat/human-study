@@ -61,10 +61,16 @@ internal fun buildFascialOverlay(connections: List<FascialConnection>, layer: La
     // opaque and complete; using it after observation hides the exposed deep structures.
     val skinOcclusion = layer.skin && layer.cutawaySide == CutawaySide.NONE
     connections.filter { it.id in layer.enabledFascialConnections }.forEach { connection ->
-        connection.paths.forEach { path ->
+        connection.paths.forEach pathLoop@ { path ->
+            val surfaceContext = path.kind == "anatomical_context_schematic"
+            val visible = when (path.kind) {
+                "anatomical_context_schematic" -> layer.fasciaContext
+                "unoriented_connection_schematic" -> layer.fasciaRelations
+                else -> false
+            }
+            if (!visible) return@pathLoop
             // Authored polylines describe local relations or real tissue extents, never
             // skin routes, reconstructed fascia sheets or measured force vectors.
-            val surfaceContext = path.kind == "anatomical_context_schematic"
             // Context samples come from real triangles; preserve them instead of generating
             // new supposed surface positions between samples. Only abstract local bridges
             // receive linear display samples for finer occlusion boundaries.
@@ -133,15 +139,21 @@ internal fun FasciaOverlay(projected: List<ProjectedAnchor>, data: FascialOverla
             }
         } }
         if (data.lines.isNotEmpty()) {
-            val text = "实线 · 组织范围参照   虚线 · 局部连接"
+            val legend = buildList {
+                if (data.lines.any { it.kind == "unoriented_connection_schematic" }) add("虚线 · 文献局部连接示意")
+                if (data.lines.any { it.kind == "anatomical_context_schematic" }) add("实线 · 组织范围辅助（非力线）")
+            }
             val paint = Paint(Paint.ANTI_ALIAS_FLAG).apply { textSize = 9*density; color = 0xffb4c9d4.toInt() }
-            val y = size.height-110*density
-            val box = Rect(14*density, y-13*density, 24*density+paint.measureText(text), y+5*density)
+            val y = size.height-(110+14*(legend.size-1))*density
+            val box = Rect(14*density, y-13*density, 24*density+legend.maxOf { paint.measureText(it) },
+                y+(5+14*(legend.size-1))*density)
             if (y > 140*density && box.right <= size.width-8*density &&
                 (labelExclusion == null || !labelExclusion.overlaps(box))) {
                 drawRoundRect(Color(0xdc14222d), Offset(box.left, box.top), box.size,
                     cornerRadius = androidx.compose.ui.geometry.CornerRadius(4*density))
-                drawContext.canvas.nativeCanvas.drawText(text, 19*density, y, paint)
+                legend.forEachIndexed { index, text ->
+                    drawContext.canvas.nativeCanvas.drawText(text, 19*density, y+index*14*density, paint)
+                }
             }
         }
     }
