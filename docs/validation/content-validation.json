@@ -1,0 +1,216 @@
+{
+  "schemaVersion": 1,
+  "checksPassed": true,
+  "entries": 413,
+  "meridianEntries": 362,
+  "extraEntries": 51,
+  "instances": 843,
+  "routes": 20,
+  "paths": 71,
+  "sourceIds": [
+    "acupoint-function-supplement-1",
+    "acupoint-function-supplement-2",
+    "acupoint-function-supplement-3",
+    "acupoint-function-supplement-4",
+    "acupoint-function-supplement-5",
+    "acupoint-function-web-1",
+    "acupoint-function-web-2",
+    "acupoint-function-web-3",
+    "acupoint-function-web-4",
+    "acupoint-function-web-5",
+    "acupoint-function-web-6",
+    "bucm-meridian-overview",
+    "gb12346-2021",
+    "gb40997-2021",
+    "keiketsu-kaige-224855",
+    "shutcm-acupoint-1",
+    "shutcm-acupoint-10",
+    "shutcm-acupoint-11",
+    "shutcm-acupoint-12",
+    "shutcm-acupoint-13",
+    "shutcm-acupoint-14",
+    "shutcm-acupoint-15",
+    "shutcm-acupoint-2",
+    "shutcm-acupoint-3",
+    "shutcm-acupoint-4",
+    "shutcm-acupoint-5",
+    "shutcm-acupoint-6",
+    "shutcm-acupoint-7",
+    "shutcm-acupoint-8",
+    "shutcm-acupoint-9",
+    "zjdc-100871",
+    "zjdc-180321",
+    "zjdc-193489",
+    "zjdc-276262",
+    "zjdc-329916",
+    "zjdc-347460",
+    "zjdc-374152",
+    "zjdc-61338",
+    "zjdc-651961",
+    "zjdc-658980",
+    "zjdc-714046",
+    "zjdc-749521",
+    "zjdc-803347",
+    "zjdc-81828",
+    "zjdc-wikisource-9"
+  ],
+  "medicalReviewedInstances": 0,
+  "geometry": {
+    "sourceSurfaceReconstructionMaxDistanceMetres": 7.063004241059812e-08,
+    "normalUnitLengthMaxError": 7.032649751437248e-08,
+    "pairedInstances": 392,
+    "maxMirrorDifferenceMetres": 0.01664710950916096,
+    "mirrorDifferenceThresholdMetres": 0.025,
+    "normalAndViewIdPresent": true
+  },
+  "coincidentCoordinateGroups": [
+    {
+      "position": [
+        0.101744,
+        0.2380152,
+        0.0979092
+      ],
+      "instanceIds": [
+        "st40-left-1",
+        "gb36-left-1"
+      ],
+      "reviewStatus": "pending-coincidence-review"
+    },
+    {
+      "position": [
+        0.0904797,
+        0.0395053,
+        0.188781
+      ],
+      "instanceIds": [
+        "sp2-left-1",
+        "lr2-left-1"
+      ],
+      "reviewStatus": "pending-coincidence-review"
+    },
+    {
+      "position": [
+        -0.0904656,
+        0.040077,
+        0.187125
+      ],
+      "instanceIds": [
+        "sp2-right-1",
+        "lr2-right-1"
+      ],
+      "reviewStatus": "pending-coincidence-review"
+    },
+    {
+      "position": [
+        -0.0470711,
+        0.0798543,
+        0.0941955
+      ],
+      "instanceIds": [
+        "sp5-right-1",
+        "lr4-right-1"
+      ],
+      "reviewStatus": "pending-coincidence-review"
+    },
+    {
+      "position": [
+        0.242515,
+        0.8894142,
+        0.0896863
+      ],
+      "instanceIds": [
+        "si4-left-1",
+        "si5-left-1"
+      ],
+      "reviewStatus": "pending-coincidence-review"
+    },
+    {
+      "position": [
+        -0.244734,
+        0.8887062,
+        0.0902144
+      ],
+      "instanceIds": [
+        "si4-right-1",
+        "si5-right-1"
+      ],
+      "reviewStatus": "pending-coincidence-review"
+    },
+    {
+      "position": [
+        0.276587,
+        0.7312792,
+        0.192731
+      ],
+      "instanceIds": [
+        "pc9-left-1",
+        "ex-ue11-left-3"
+      ],
+      "reviewStatus": "pending-coincidence-review"
+    },
+    {
+      "position": [
+        -0.276542,
+        0.7313432,
+        0.19279
+      ],
+      "instanceIds": [
+        "pc9-right-1",
+        "ex-ue11-right-3"
+      ],
+      "reviewStatus": "pending-coincidence-review"
+    },
+    {
+      "position": [
+        0.261635,
+        0.8915652,
+        0.090728
+      ],
+      "instanceIds": [
+        "te4-left-1",
+        "ex-ue3-left-1"
+      ],
+      "reviewStatus": "pending-coincidence-review"
+    },
+    {
+      "position": [
+        -0.26019,
+        0.8875652,
+        0.0937955
+      ],
+      "instanceIds": [
+        "te4-right-1",
+        "ex-ue3-right-1"
+      ],
+      "reviewStatus": "pending-coincidence-review"
+    },
+    {
+      "position": [
+        -0.0780505,
+        1.6230512,
+        0.064997
+      ],
+      "instanceIds": [
+        "te20-right-1",
+        "gb7-right-1"
+      ],
+      "reviewStatus": "pending-coincidence-review"
+    }
+  ],
+  "boundariesZh": [
+    "检查证明目录、引用、实例数量与几何范围一致，不代表专业医学审校。",
+    "部分独立条目在当前分辨率和初步定位下共点，清单保留供后续精细校对。",
+    "经外奇穴公开副本仍需与正式出版社版逐条比对。"
+  ],
+  "functions": {
+    "describedEntries": 413,
+    "traditionalIndicationSummaries": 408,
+    "contextOnlyEntries": 4,
+    "referenceOnlyEntries": 1,
+    "professionalReviewedEntries": 0
+  },
+  "routeColors": {
+    "count": 20,
+    "unique": true
+  }
+}

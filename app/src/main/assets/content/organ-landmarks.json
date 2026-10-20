@@ -1,0 +1,405 @@
+{
+  "schemaVersion": 1,
+  "modelId": "bodyparts3d-male-v4",
+  "organs": {
+    "heart": {
+      "position": [
+        0.019118350000000003,
+        1.3070812,
+        0.1214402
+      ],
+      "structureIds": [
+        "FJ2417",
+        "FJ2418",
+        "FJ2419",
+        "FJ2420",
+        "FJ2421",
+        "FJ2426",
+        "FJ2427",
+        "FJ2429",
+        "FJ2430",
+        "FJ2431",
+        "FJ2432",
+        "FJ2433",
+        "FJ2434",
+        "FJ2435",
+        "FJ2436",
+        "FJ2437",
+        "FJ2438",
+        "FJ2439"
+      ],
+      "method": "aggregate-real-structure-bounds"
+    },
+    "left-lung": {
+      "position": [
+        0.0730324,
+        1.3171062,
+        0.09909245
+      ],
+      "structureIds": [
+        "FJ2441",
+        "FJ2442",
+        "FJ2443",
+        "FJ2444",
+        "FJ2445",
+        "FJ2446",
+        "FJ2447",
+        "FJ2448",
+        "FJ2460",
+        "FJ2461",
+        "FJ2462",
+        "FJ2463",
+        "FJ2464",
+        "FJ2465",
+        "FJ2466",
+        "FJ2467",
+        "FJ2468",
+        "FJ2469",
+        "FJ2471",
+        "FJ2472",
+        "FJ2473",
+        "FJ2474",
+        "FJ2475",
+        "FJ2476",
+        "FJ2477",
+        "FJ2478",
+        "FJ2479",
+        "FJ2480",
+        "FJ2482",
+        "FJ2483",
+        "FJ2484",
+        "FJ2485",
+        "FJ2527",
+        "FJ2528",
+        "FJ2529",
+        "FJ2530",
+        "FJ2531",
+        "FJ2532",
+        "FJ2533",
+        "FJ2534",
+        "FJ2535",
+        "FJ2536",
+        "FJ2537",
+        "FJ2538",
+        "FJ2540"
+      ],
+      "method": "aggregate-real-structure-bounds"
+    },
+    "right-lung": {
+      "position": [
+        -0.06264226,
+        1.3198912,
+        0.09899089999999999
+      ],
+      "structureIds": [
+        "FJ2449",
+        "FJ2451",
+        "FJ2452",
+        "FJ2453",
+        "FJ2454",
+        "FJ2455",
+        "FJ2456",
+        "FJ2457",
+        "FJ2458",
+        "FJ2459",
+        "FJ2470",
+        "FJ2481",
+        "FJ2486",
+        "FJ2487",
+        "FJ2488",
+        "FJ2489",
+        "FJ2490",
+        "FJ2491",
+        "FJ2492",
+        "FJ2493",
+        "FJ2494",
+        "FJ2495",
+        "FJ2496",
+        "FJ2497",
+        "FJ2498",
+        "FJ2499",
+        "FJ2500",
+        "FJ2501",
+        "FJ2502",
+        "FJ2503",
+        "FJ2504",
+        "FJ2505",
+        "FJ2506",
+        "FJ2507",
+        "FJ2508",
+        "FJ2509",
+        "FJ2510",
+        "FJ2511",
+        "FJ2512",
+        "FJ2513",
+        "FJ2514",
+        "FJ2515",
+        "FJ2516",
+        "FJ2517",
+        "FJ2518",
+        "FJ2519",
+        "FJ2520",
+        "FJ2521",
+        "FJ2522",
+        "FJ2523",
+        "FJ2524",
+        "FJ2525",
+        "FJ2526"
+      ],
+      "method": "aggregate-real-structure-bounds"
+    },
+    "liver": {
+      "position": [
+        -0.0103486,
+        1.1836512000000003,
+        0.12287085
+      ],
+      "structureIds": [
+        "FJ1883",
+        "FJ2409",
+        "FJ2816",
+        "FJ2818",
+        "FJ2819",
+        "FJ2820",
+        "FJ2821",
+        "FJ2822",
+        "FJ2823",
+        "FJ2824",
+        "FJ3071",
+        "FJ3072",
+        "FJ3088",
+        "FJ3089",
+        "FJ3090",
+        "FJ3096",
+        "FJ3103",
+        "FJ3104",
+        "FJ3105",
+        "FJ3108",
+        "FJ3109",
+        "FJ3110",
+        "FJ3123"
+      ],
+      "method": "aggregate-real-structure-bounds"
+    },
+    "small-intestine": {
+      "position": [
+        0.009783549999999995,
+        1.0193112,
+        0.143661
+      ],
+      "structureIds": [
+        "FJ2573",
+        "FJ2574",
+        "FJ2575",
+        "FJ2576",
+        "FJ2577",
+        "FJ2578",
+        "FJ2579",
+        "FJ2580",
+        "FJ2581",
+        "FJ2582",
+        "FJ2583",
+        "FJ2584",
+        "FJ2585",
+        "FJ2586",
+        "FJ2587",
+        "FJ2588",
+        "FJ2589",
+        "FJ2590",
+        "FJ2591",
+        "FJ2592",
+        "FJ2593",
+        "FJ2594",
+        "FJ2595",
+        "FJ2596",
+        "FJ2597",
+        "FJ2598",
+        "FJ2599",
+        "FJ2600",
+        "FJ2601",
+        "FJ2602",
+        "FJ2603",
+        "FJ2604",
+        "FJ2605",
+        "FJ2606",
+        "FJ2607",
+        "FJ2608",
+        "FJ2609",
+        "FJ2610",
+        "FJ2611",
+        "FJ2612",
+        "FJ2613",
+        "FJ2614",
+        "FJ2615",
+        "FJ2616",
+        "FJ2617",
+        "FJ2618",
+        "FJ2619",
+        "FJ2620",
+        "FJ2621",
+        "FJ2622",
+        "FJ2623",
+        "FJ2624",
+        "FJ2625",
+        "FJ2626",
+        "FJ2627",
+        "FJ2628"
+      ],
+      "method": "aggregate-real-structure-bounds"
+    },
+    "large-intestine": {
+      "position": [
+        -0.004650500000000002,
+        0.9891397000000001,
+        0.10410590000000002
+      ],
+      "structureIds": [
+        "FJ2566",
+        "FJ2567",
+        "FJ2568",
+        "FJ2569",
+        "FJ2570",
+        "FJ2571",
+        "FJ2572",
+        "FJ2599"
+      ],
+      "method": "aggregate-real-structure-bounds"
+    },
+    "gallbladder": {
+      "position": [
+        -0.04506105,
+        1.1493862000000001,
+        0.1543555
+      ],
+      "structureIds": [
+        "FJ2817"
+      ],
+      "method": "aggregate-real-structure-bounds"
+    },
+    "stomach": {
+      "position": [
+        0.038286200000000006,
+        1.1764962000000003,
+        0.13792495000000002
+      ],
+      "structureIds": [
+        "FJ2564"
+      ],
+      "method": "aggregate-real-structure-bounds"
+    },
+    "spleen": {
+      "position": [
+        0.08475105,
+        1.1648361999999999,
+        0.09372905000000001
+      ],
+      "structureIds": [
+        "FJ2561"
+      ],
+      "method": "aggregate-real-structure-bounds"
+    },
+    "left-kidney": {
+      "position": [
+        0.06161145,
+        1.1155782,
+        0.0798882
+      ],
+      "structureIds": [
+        "FJ3145"
+      ],
+      "method": "aggregate-real-structure-bounds"
+    },
+    "right-kidney": {
+      "position": [
+        -0.0590015,
+        1.0971372000000001,
+        0.08827755000000001
+      ],
+      "structureIds": [
+        "FJ3147"
+      ],
+      "method": "aggregate-real-structure-bounds"
+    },
+    "bladder": {
+      "position": [
+        -0.0007613999999999989,
+        0.8879717,
+        0.09238265000000001
+      ],
+      "structureIds": [
+        "FJ3149"
+      ],
+      "method": "aggregate-real-structure-bounds"
+    },
+    "brain": {
+      "position": [
+        -0.0005234999999999962,
+        1.6255912000000001,
+        0.07967384999999999
+      ],
+      "structureIds": [
+        "FJ1730",
+        "FJ1731",
+        "FJ1732",
+        "FJ1733",
+        "FJ1738",
+        "FJ1739",
+        "FJ1740",
+        "FJ1743",
+        "FJ1744",
+        "FJ1745",
+        "FJ1746",
+        "FJ1747",
+        "FJ1748",
+        "FJ1749",
+        "FJ1750",
+        "FJ1751",
+        "FJ1758",
+        "FJ1759",
+        "FJ1760",
+        "FJ1762",
+        "FJ1767",
+        "FJ1769",
+        "FJ1770",
+        "FJ1775",
+        "FJ1779",
+        "FJ1780",
+        "FJ1781",
+        "FJ1783",
+        "FJ1784",
+        "FJ1785",
+        "FJ1786",
+        "FJ1787",
+        "FJ1788",
+        "FJ1789",
+        "FJ1790",
+        "FJ1791",
+        "FJ1792",
+        "FJ1795",
+        "FJ1797",
+        "FJ1798",
+        "FJ1800",
+        "FJ1801",
+        "FJ1806",
+        "FJ1807",
+        "FJ1808",
+        "FJ1810",
+        "FJ1814",
+        "FJ1817",
+        "FJ1822",
+        "FJ1826",
+        "FJ1828",
+        "FJ1830",
+        "FJ1831",
+        "FJ1833",
+        "FJ1834",
+        "FJ1835",
+        "FJ1836",
+        "FJ1841",
+        "FJ1842"
+      ],
+      "method": "aggregate-real-structure-bounds"
+    }
+  },
+  "reviewStatus": "geometry-derived-provisional"
+}

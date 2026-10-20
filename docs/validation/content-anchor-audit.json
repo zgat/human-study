@@ -1,0 +1,3727 @@
+{
+  "modelId": "bodyparts3d-male-v4",
+  "entryCount": 413,
+  "instanceCount": 843,
+  "medicalReviewCompleted": false,
+  "medicalReviewedInstances": 0,
+  "mappedInstances": 843,
+  "entries": [
+    {
+      "id": "lu1",
+      "nameZh": "中府",
+      "instances": 2,
+      "methods": [
+        "regional-cun-and-rib-landmark-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "lu2",
+      "nameZh": "云门",
+      "instances": 2,
+      "methods": [
+        "regional-cun-and-rib-landmark-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "lu3",
+      "nameZh": "天府",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "lu4",
+      "nameZh": "侠白",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "lu5",
+      "nameZh": "尺泽",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "lu6",
+      "nameZh": "孔最",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "lu7",
+      "nameZh": "列缺",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "lu8",
+      "nameZh": "经渠",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "lu9",
+      "nameZh": "太渊",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "lu10",
+      "nameZh": "鱼际",
+      "instances": 2,
+      "methods": [
+        "metacarpal-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "lu11",
+      "nameZh": "少商",
+      "instances": 2,
+      "methods": [
+        "digit-phalanx-tip-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "li1",
+      "nameZh": "商阳",
+      "instances": 2,
+      "methods": [
+        "digit-phalanx-tip-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "li2",
+      "nameZh": "二间",
+      "instances": 2,
+      "methods": [
+        "metacarpal-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "li3",
+      "nameZh": "三间",
+      "instances": 2,
+      "methods": [
+        "metacarpal-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "li4",
+      "nameZh": "合谷",
+      "instances": 2,
+      "methods": [
+        "metacarpal-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "li5",
+      "nameZh": "阳溪",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "li6",
+      "nameZh": "偏历",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "li7",
+      "nameZh": "温溜",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "li8",
+      "nameZh": "下廉",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "li9",
+      "nameZh": "上廉",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "li10",
+      "nameZh": "手三里",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "li11",
+      "nameZh": "曲池",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "li12",
+      "nameZh": "肘髎",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "li13",
+      "nameZh": "手五里",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "li14",
+      "nameZh": "臂臑",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "li15",
+      "nameZh": "肩髃",
+      "instances": 2,
+      "methods": [
+        "bone-or-vertebra-regional-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "li16",
+      "nameZh": "巨骨",
+      "instances": 2,
+      "methods": [
+        "bone-or-vertebra-regional-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "li17",
+      "nameZh": "天鼎",
+      "instances": 2,
+      "methods": [
+        "cervical-surface-landmark-provisional"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "li18",
+      "nameZh": "扶突",
+      "instances": 2,
+      "methods": [
+        "cervical-surface-landmark-provisional"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "li19",
+      "nameZh": "口禾髎",
+      "instances": 2,
+      "methods": [
+        "regional-face-landmark-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "li20",
+      "nameZh": "迎香",
+      "instances": 2,
+      "methods": [
+        "regional-face-landmark-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "st1",
+      "nameZh": "承泣",
+      "instances": 2,
+      "methods": [
+        "regional-face-landmark-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "st2",
+      "nameZh": "四白",
+      "instances": 2,
+      "methods": [
+        "regional-face-landmark-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "st3",
+      "nameZh": "巨髎",
+      "instances": 2,
+      "methods": [
+        "regional-face-landmark-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "st4",
+      "nameZh": "地仓",
+      "instances": 2,
+      "methods": [
+        "regional-face-landmark-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "st5",
+      "nameZh": "大迎",
+      "instances": 2,
+      "methods": [
+        "regional-face-landmark-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "st6",
+      "nameZh": "颊车",
+      "instances": 2,
+      "methods": [
+        "regional-face-landmark-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "st7",
+      "nameZh": "下关",
+      "instances": 2,
+      "methods": [
+        "regional-face-landmark-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "st8",
+      "nameZh": "头维",
+      "instances": 2,
+      "methods": [
+        "scalp-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "st9",
+      "nameZh": "人迎",
+      "instances": 2,
+      "methods": [
+        "cervical-surface-landmark-provisional"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "st10",
+      "nameZh": "水突",
+      "instances": 2,
+      "methods": [
+        "cervical-surface-landmark-provisional"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "st11",
+      "nameZh": "气舍",
+      "instances": 2,
+      "methods": [
+        "cervical-surface-landmark-provisional"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "st12",
+      "nameZh": "缺盆",
+      "instances": 2,
+      "methods": [
+        "cervical-surface-landmark-provisional"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "st13",
+      "nameZh": "气户",
+      "instances": 2,
+      "methods": [
+        "regional-cun-and-rib-landmark-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "st14",
+      "nameZh": "库房",
+      "instances": 2,
+      "methods": [
+        "regional-cun-and-rib-landmark-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "st15",
+      "nameZh": "屋翳",
+      "instances": 2,
+      "methods": [
+        "regional-cun-and-rib-landmark-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "st16",
+      "nameZh": "膺窗",
+      "instances": 2,
+      "methods": [
+        "regional-cun-and-rib-landmark-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "st17",
+      "nameZh": "乳中",
+      "instances": 2,
+      "methods": [
+        "regional-cun-and-rib-landmark-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "st18",
+      "nameZh": "乳根",
+      "instances": 2,
+      "methods": [
+        "regional-cun-and-rib-landmark-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "st19",
+      "nameZh": "不容",
+      "instances": 2,
+      "methods": [
+        "regional-cun-and-rib-landmark-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "st20",
+      "nameZh": "承满",
+      "instances": 2,
+      "methods": [
+        "regional-cun-and-rib-landmark-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "st21",
+      "nameZh": "梁门",
+      "instances": 2,
+      "methods": [
+        "regional-cun-and-rib-landmark-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "st22",
+      "nameZh": "关门",
+      "instances": 2,
+      "methods": [
+        "regional-cun-and-rib-landmark-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "st23",
+      "nameZh": "太乙",
+      "instances": 2,
+      "methods": [
+        "regional-cun-and-rib-landmark-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "st24",
+      "nameZh": "滑肉门",
+      "instances": 2,
+      "methods": [
+        "regional-cun-and-rib-landmark-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "st25",
+      "nameZh": "天枢",
+      "instances": 2,
+      "methods": [
+        "regional-cun-and-rib-landmark-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "st26",
+      "nameZh": "外陵",
+      "instances": 2,
+      "methods": [
+        "regional-cun-and-rib-landmark-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "st27",
+      "nameZh": "大巨",
+      "instances": 2,
+      "methods": [
+        "regional-cun-and-rib-landmark-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "st28",
+      "nameZh": "水道",
+      "instances": 2,
+      "methods": [
+        "regional-cun-and-rib-landmark-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "st29",
+      "nameZh": "归来",
+      "instances": 2,
+      "methods": [
+        "regional-cun-and-rib-landmark-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "st30",
+      "nameZh": "气冲",
+      "instances": 2,
+      "methods": [
+        "regional-cun-and-rib-landmark-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "st31",
+      "nameZh": "髀关",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "st32",
+      "nameZh": "伏兔",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "st33",
+      "nameZh": "阴市",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "st34",
+      "nameZh": "梁丘",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "st35",
+      "nameZh": "犊鼻",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "st36",
+      "nameZh": "足三里",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "st37",
+      "nameZh": "上巨虚",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "st38",
+      "nameZh": "条口",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "st39",
+      "nameZh": "下巨虚",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "st40",
+      "nameZh": "丰隆",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "st41",
+      "nameZh": "解溪",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "st42",
+      "nameZh": "冲阳",
+      "instances": 2,
+      "methods": [
+        "tarsal-metatarsal-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "st43",
+      "nameZh": "陷谷",
+      "instances": 2,
+      "methods": [
+        "tarsal-metatarsal-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "st44",
+      "nameZh": "内庭",
+      "instances": 2,
+      "methods": [
+        "tarsal-metatarsal-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "st45",
+      "nameZh": "厉兑",
+      "instances": 2,
+      "methods": [
+        "toe-phalanx-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "sp1",
+      "nameZh": "隐白",
+      "instances": 2,
+      "methods": [
+        "toe-phalanx-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "sp2",
+      "nameZh": "大都",
+      "instances": 2,
+      "methods": [
+        "tarsal-metatarsal-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "sp3",
+      "nameZh": "太白",
+      "instances": 2,
+      "methods": [
+        "tarsal-metatarsal-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "sp4",
+      "nameZh": "公孙",
+      "instances": 2,
+      "methods": [
+        "tarsal-metatarsal-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "sp5",
+      "nameZh": "商丘",
+      "instances": 2,
+      "methods": [
+        "tarsal-metatarsal-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "sp6",
+      "nameZh": "三阴交",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "sp7",
+      "nameZh": "漏谷",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "sp8",
+      "nameZh": "地机",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "sp9",
+      "nameZh": "阴陵泉",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "sp10",
+      "nameZh": "血海",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "sp11",
+      "nameZh": "箕门",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "sp12",
+      "nameZh": "冲门",
+      "instances": 2,
+      "methods": [
+        "regional-cun-and-rib-landmark-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "sp13",
+      "nameZh": "府舍",
+      "instances": 2,
+      "methods": [
+        "regional-cun-and-rib-landmark-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "sp14",
+      "nameZh": "腹结",
+      "instances": 2,
+      "methods": [
+        "regional-cun-and-rib-landmark-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "sp15",
+      "nameZh": "大横",
+      "instances": 2,
+      "methods": [
+        "regional-cun-and-rib-landmark-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "sp16",
+      "nameZh": "腹哀",
+      "instances": 2,
+      "methods": [
+        "regional-cun-and-rib-landmark-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "sp17",
+      "nameZh": "食窦",
+      "instances": 2,
+      "methods": [
+        "regional-cun-and-rib-landmark-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "sp18",
+      "nameZh": "天溪",
+      "instances": 2,
+      "methods": [
+        "regional-cun-and-rib-landmark-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "sp19",
+      "nameZh": "胸乡",
+      "instances": 2,
+      "methods": [
+        "regional-cun-and-rib-landmark-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "sp20",
+      "nameZh": "周荣",
+      "instances": 2,
+      "methods": [
+        "regional-cun-and-rib-landmark-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "sp21",
+      "nameZh": "大包",
+      "instances": 2,
+      "methods": [
+        "regional-cun-and-rib-landmark-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ht1",
+      "nameZh": "极泉",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ht2",
+      "nameZh": "青灵",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ht3",
+      "nameZh": "少海",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ht4",
+      "nameZh": "灵道",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ht5",
+      "nameZh": "通里",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ht6",
+      "nameZh": "阴郄",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ht7",
+      "nameZh": "神门",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ht8",
+      "nameZh": "少府",
+      "instances": 2,
+      "methods": [
+        "metacarpal-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ht9",
+      "nameZh": "少冲",
+      "instances": 2,
+      "methods": [
+        "digit-phalanx-tip-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "si1",
+      "nameZh": "少泽",
+      "instances": 2,
+      "methods": [
+        "digit-phalanx-tip-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "si2",
+      "nameZh": "前谷",
+      "instances": 2,
+      "methods": [
+        "metacarpal-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "si3",
+      "nameZh": "后溪",
+      "instances": 2,
+      "methods": [
+        "metacarpal-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "si4",
+      "nameZh": "腕骨",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "si5",
+      "nameZh": "阳谷",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "si6",
+      "nameZh": "养老",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "si7",
+      "nameZh": "支正",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "si8",
+      "nameZh": "小海",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "si9",
+      "nameZh": "肩贞",
+      "instances": 2,
+      "methods": [
+        "bone-or-vertebra-regional-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "si10",
+      "nameZh": "臑俞",
+      "instances": 2,
+      "methods": [
+        "bone-or-vertebra-regional-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "si11",
+      "nameZh": "天宗",
+      "instances": 2,
+      "methods": [
+        "bone-or-vertebra-regional-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "si12",
+      "nameZh": "秉风",
+      "instances": 2,
+      "methods": [
+        "bone-or-vertebra-regional-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "si13",
+      "nameZh": "曲垣",
+      "instances": 2,
+      "methods": [
+        "bone-or-vertebra-regional-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "si14",
+      "nameZh": "肩外俞",
+      "instances": 2,
+      "methods": [
+        "bone-or-vertebra-regional-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "si15",
+      "nameZh": "肩中俞",
+      "instances": 2,
+      "methods": [
+        "bone-or-vertebra-regional-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "si16",
+      "nameZh": "天窗",
+      "instances": 2,
+      "methods": [
+        "cervical-surface-landmark-provisional"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "si17",
+      "nameZh": "天容",
+      "instances": 2,
+      "methods": [
+        "cervical-surface-landmark-provisional"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "si18",
+      "nameZh": "颧髎",
+      "instances": 2,
+      "methods": [
+        "regional-face-landmark-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "si19",
+      "nameZh": "听宫",
+      "instances": 2,
+      "methods": [
+        "regional-face-landmark-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "bl1",
+      "nameZh": "睛明",
+      "instances": 2,
+      "methods": [
+        "regional-face-landmark-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "bl2",
+      "nameZh": "攒竹",
+      "instances": 2,
+      "methods": [
+        "regional-face-landmark-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "bl3",
+      "nameZh": "眉冲",
+      "instances": 2,
+      "methods": [
+        "scalp-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "bl4",
+      "nameZh": "曲差",
+      "instances": 2,
+      "methods": [
+        "scalp-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "bl5",
+      "nameZh": "五处",
+      "instances": 2,
+      "methods": [
+        "scalp-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "bl6",
+      "nameZh": "承光",
+      "instances": 2,
+      "methods": [
+        "scalp-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "bl7",
+      "nameZh": "通天",
+      "instances": 2,
+      "methods": [
+        "scalp-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "bl8",
+      "nameZh": "络却",
+      "instances": 2,
+      "methods": [
+        "scalp-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "bl9",
+      "nameZh": "玉枕",
+      "instances": 2,
+      "methods": [
+        "scalp-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "bl10",
+      "nameZh": "天柱",
+      "instances": 2,
+      "methods": [
+        "cervical-surface-landmark-provisional"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "bl11",
+      "nameZh": "大杼",
+      "instances": 2,
+      "methods": [
+        "vertebral-level-lateral-cun-skin-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "bl12",
+      "nameZh": "风门",
+      "instances": 2,
+      "methods": [
+        "vertebral-level-lateral-cun-skin-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "bl13",
+      "nameZh": "肺俞",
+      "instances": 2,
+      "methods": [
+        "vertebral-level-lateral-cun-skin-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "bl14",
+      "nameZh": "厥阴俞",
+      "instances": 2,
+      "methods": [
+        "vertebral-level-lateral-cun-skin-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "bl15",
+      "nameZh": "心俞",
+      "instances": 2,
+      "methods": [
+        "vertebral-level-lateral-cun-skin-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "bl16",
+      "nameZh": "督俞",
+      "instances": 2,
+      "methods": [
+        "vertebral-level-lateral-cun-skin-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "bl17",
+      "nameZh": "膈俞",
+      "instances": 2,
+      "methods": [
+        "vertebral-level-lateral-cun-skin-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "bl18",
+      "nameZh": "肝俞",
+      "instances": 2,
+      "methods": [
+        "vertebral-level-lateral-cun-skin-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "bl19",
+      "nameZh": "胆俞",
+      "instances": 2,
+      "methods": [
+        "vertebral-level-lateral-cun-skin-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "bl20",
+      "nameZh": "脾俞",
+      "instances": 2,
+      "methods": [
+        "vertebral-level-lateral-cun-skin-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "bl21",
+      "nameZh": "胃俞",
+      "instances": 2,
+      "methods": [
+        "vertebral-level-lateral-cun-skin-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "bl22",
+      "nameZh": "三焦俞",
+      "instances": 2,
+      "methods": [
+        "vertebral-level-lateral-cun-skin-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "bl23",
+      "nameZh": "肾俞",
+      "instances": 2,
+      "methods": [
+        "vertebral-level-lateral-cun-skin-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "bl24",
+      "nameZh": "气海俞",
+      "instances": 2,
+      "methods": [
+        "vertebral-level-lateral-cun-skin-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "bl25",
+      "nameZh": "大肠俞",
+      "instances": 2,
+      "methods": [
+        "vertebral-level-lateral-cun-skin-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "bl26",
+      "nameZh": "关元俞",
+      "instances": 2,
+      "methods": [
+        "vertebral-level-lateral-cun-skin-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "bl27",
+      "nameZh": "小肠俞",
+      "instances": 2,
+      "methods": [
+        "sacral-region-landmark-projection-provisional"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "bl28",
+      "nameZh": "膀胱俞",
+      "instances": 2,
+      "methods": [
+        "sacral-region-landmark-projection-provisional"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "bl29",
+      "nameZh": "中膂俞",
+      "instances": 2,
+      "methods": [
+        "sacral-region-landmark-projection-provisional"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "bl30",
+      "nameZh": "白环俞",
+      "instances": 2,
+      "methods": [
+        "sacral-region-landmark-projection-provisional"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "bl31",
+      "nameZh": "上髎",
+      "instances": 2,
+      "methods": [
+        "sacral-region-landmark-projection-provisional"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "bl32",
+      "nameZh": "次髎",
+      "instances": 2,
+      "methods": [
+        "sacral-region-landmark-projection-provisional"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "bl33",
+      "nameZh": "中髎",
+      "instances": 2,
+      "methods": [
+        "sacral-region-landmark-projection-provisional"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "bl34",
+      "nameZh": "下髎",
+      "instances": 2,
+      "methods": [
+        "sacral-region-landmark-projection-provisional"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "bl35",
+      "nameZh": "会阳",
+      "instances": 2,
+      "methods": [
+        "sacral-region-landmark-projection-provisional"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "bl36",
+      "nameZh": "承扶",
+      "instances": 2,
+      "methods": [
+        "bone-or-vertebra-regional-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "bl37",
+      "nameZh": "殷门",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "bl38",
+      "nameZh": "浮郄",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "bl39",
+      "nameZh": "委阳",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "bl40",
+      "nameZh": "委中",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "bl41",
+      "nameZh": "附分",
+      "instances": 2,
+      "methods": [
+        "vertebral-level-lateral-cun-skin-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "bl42",
+      "nameZh": "魄户",
+      "instances": 2,
+      "methods": [
+        "vertebral-level-lateral-cun-skin-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "bl43",
+      "nameZh": "膏肓",
+      "instances": 2,
+      "methods": [
+        "vertebral-level-lateral-cun-skin-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "bl44",
+      "nameZh": "神堂",
+      "instances": 2,
+      "methods": [
+        "vertebral-level-lateral-cun-skin-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "bl45",
+      "nameZh": "譩譆",
+      "instances": 2,
+      "methods": [
+        "vertebral-level-lateral-cun-skin-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "bl46",
+      "nameZh": "膈关",
+      "instances": 2,
+      "methods": [
+        "vertebral-level-lateral-cun-skin-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "bl47",
+      "nameZh": "魂门",
+      "instances": 2,
+      "methods": [
+        "vertebral-level-lateral-cun-skin-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "bl48",
+      "nameZh": "阳纲",
+      "instances": 2,
+      "methods": [
+        "vertebral-level-lateral-cun-skin-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "bl49",
+      "nameZh": "意舍",
+      "instances": 2,
+      "methods": [
+        "vertebral-level-lateral-cun-skin-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "bl50",
+      "nameZh": "胃仓",
+      "instances": 2,
+      "methods": [
+        "vertebral-level-lateral-cun-skin-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "bl51",
+      "nameZh": "肓门",
+      "instances": 2,
+      "methods": [
+        "vertebral-level-lateral-cun-skin-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "bl52",
+      "nameZh": "志室",
+      "instances": 2,
+      "methods": [
+        "vertebral-level-lateral-cun-skin-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "bl53",
+      "nameZh": "胞肓",
+      "instances": 2,
+      "methods": [
+        "sacral-lateral-cun-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "bl54",
+      "nameZh": "秩边",
+      "instances": 2,
+      "methods": [
+        "sacral-lateral-cun-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "bl55",
+      "nameZh": "合阳",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "bl56",
+      "nameZh": "承筋",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "bl57",
+      "nameZh": "承山",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "bl58",
+      "nameZh": "飞扬",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "bl59",
+      "nameZh": "跗阳",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "bl60",
+      "nameZh": "昆仑",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "bl61",
+      "nameZh": "仆参",
+      "instances": 2,
+      "methods": [
+        "tarsal-metatarsal-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "bl62",
+      "nameZh": "申脉",
+      "instances": 2,
+      "methods": [
+        "tarsal-metatarsal-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "bl63",
+      "nameZh": "金门",
+      "instances": 2,
+      "methods": [
+        "tarsal-metatarsal-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "bl64",
+      "nameZh": "京骨",
+      "instances": 2,
+      "methods": [
+        "tarsal-metatarsal-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "bl65",
+      "nameZh": "束骨",
+      "instances": 2,
+      "methods": [
+        "tarsal-metatarsal-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "bl66",
+      "nameZh": "足通谷",
+      "instances": 2,
+      "methods": [
+        "tarsal-metatarsal-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "bl67",
+      "nameZh": "至阴",
+      "instances": 2,
+      "methods": [
+        "toe-phalanx-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ki1",
+      "nameZh": "涌泉",
+      "instances": 2,
+      "methods": [
+        "tarsal-metatarsal-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ki2",
+      "nameZh": "然谷",
+      "instances": 2,
+      "methods": [
+        "tarsal-metatarsal-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ki3",
+      "nameZh": "太溪",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ki4",
+      "nameZh": "大钟",
+      "instances": 2,
+      "methods": [
+        "tarsal-metatarsal-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ki5",
+      "nameZh": "水泉",
+      "instances": 2,
+      "methods": [
+        "tarsal-metatarsal-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ki6",
+      "nameZh": "照海",
+      "instances": 2,
+      "methods": [
+        "tarsal-metatarsal-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ki7",
+      "nameZh": "复溜",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ki8",
+      "nameZh": "交信",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ki9",
+      "nameZh": "筑宾",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ki10",
+      "nameZh": "阴谷",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ki11",
+      "nameZh": "横骨",
+      "instances": 2,
+      "methods": [
+        "regional-cun-and-rib-landmark-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ki12",
+      "nameZh": "大赫",
+      "instances": 2,
+      "methods": [
+        "regional-cun-and-rib-landmark-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ki13",
+      "nameZh": "气穴",
+      "instances": 2,
+      "methods": [
+        "regional-cun-and-rib-landmark-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ki14",
+      "nameZh": "四满",
+      "instances": 2,
+      "methods": [
+        "regional-cun-and-rib-landmark-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ki15",
+      "nameZh": "中注",
+      "instances": 2,
+      "methods": [
+        "regional-cun-and-rib-landmark-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ki16",
+      "nameZh": "肓俞",
+      "instances": 2,
+      "methods": [
+        "regional-cun-and-rib-landmark-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ki17",
+      "nameZh": "商曲",
+      "instances": 2,
+      "methods": [
+        "regional-cun-and-rib-landmark-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ki18",
+      "nameZh": "石关",
+      "instances": 2,
+      "methods": [
+        "regional-cun-and-rib-landmark-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ki19",
+      "nameZh": "阴都",
+      "instances": 2,
+      "methods": [
+        "regional-cun-and-rib-landmark-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ki20",
+      "nameZh": "腹通谷",
+      "instances": 2,
+      "methods": [
+        "regional-cun-and-rib-landmark-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ki21",
+      "nameZh": "幽门",
+      "instances": 2,
+      "methods": [
+        "regional-cun-and-rib-landmark-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ki22",
+      "nameZh": "步廊",
+      "instances": 2,
+      "methods": [
+        "regional-cun-and-rib-landmark-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ki23",
+      "nameZh": "神封",
+      "instances": 2,
+      "methods": [
+        "regional-cun-and-rib-landmark-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ki24",
+      "nameZh": "灵墟",
+      "instances": 2,
+      "methods": [
+        "regional-cun-and-rib-landmark-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ki25",
+      "nameZh": "神藏",
+      "instances": 2,
+      "methods": [
+        "regional-cun-and-rib-landmark-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ki26",
+      "nameZh": "彧中",
+      "instances": 2,
+      "methods": [
+        "regional-cun-and-rib-landmark-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ki27",
+      "nameZh": "俞府",
+      "instances": 2,
+      "methods": [
+        "regional-cun-and-rib-landmark-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "pc1",
+      "nameZh": "天池",
+      "instances": 2,
+      "methods": [
+        "regional-cun-and-rib-landmark-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "pc2",
+      "nameZh": "天泉",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "pc3",
+      "nameZh": "曲泽",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "pc4",
+      "nameZh": "郄门",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "pc5",
+      "nameZh": "间使",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "pc6",
+      "nameZh": "内关",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "pc7",
+      "nameZh": "大陵",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "pc8",
+      "nameZh": "劳宫",
+      "instances": 2,
+      "methods": [
+        "metacarpal-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "pc9",
+      "nameZh": "中冲",
+      "instances": 2,
+      "methods": [
+        "digit-phalanx-tip-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "te1",
+      "nameZh": "关冲",
+      "instances": 2,
+      "methods": [
+        "digit-phalanx-tip-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "te2",
+      "nameZh": "液门",
+      "instances": 2,
+      "methods": [
+        "metacarpal-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "te3",
+      "nameZh": "中渚",
+      "instances": 2,
+      "methods": [
+        "metacarpal-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "te4",
+      "nameZh": "阳池",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "te5",
+      "nameZh": "外关",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "te6",
+      "nameZh": "支沟",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "te7",
+      "nameZh": "会宗",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "te8",
+      "nameZh": "三阳络",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "te9",
+      "nameZh": "四渎",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "te10",
+      "nameZh": "天井",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "te11",
+      "nameZh": "清泠渊",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "te12",
+      "nameZh": "消泺",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "te13",
+      "nameZh": "臑会",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "te14",
+      "nameZh": "肩髎",
+      "instances": 2,
+      "methods": [
+        "bone-or-vertebra-regional-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "te15",
+      "nameZh": "天髎",
+      "instances": 2,
+      "methods": [
+        "bone-or-vertebra-regional-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "te16",
+      "nameZh": "天牖",
+      "instances": 2,
+      "methods": [
+        "cervical-surface-landmark-provisional"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "te17",
+      "nameZh": "翳风",
+      "instances": 2,
+      "methods": [
+        "auricular-posterior-regional-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "te18",
+      "nameZh": "瘈脉",
+      "instances": 2,
+      "methods": [
+        "auricular-posterior-regional-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "te19",
+      "nameZh": "颅息",
+      "instances": 2,
+      "methods": [
+        "auricular-posterior-regional-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "te20",
+      "nameZh": "角孙",
+      "instances": 2,
+      "methods": [
+        "auricular-posterior-regional-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "te21",
+      "nameZh": "耳门",
+      "instances": 2,
+      "methods": [
+        "regional-face-landmark-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "te22",
+      "nameZh": "耳和髎",
+      "instances": 2,
+      "methods": [
+        "regional-face-landmark-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "te23",
+      "nameZh": "丝竹空",
+      "instances": 2,
+      "methods": [
+        "regional-face-landmark-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "gb1",
+      "nameZh": "瞳子髎",
+      "instances": 2,
+      "methods": [
+        "regional-face-landmark-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "gb2",
+      "nameZh": "听会",
+      "instances": 2,
+      "methods": [
+        "regional-face-landmark-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "gb3",
+      "nameZh": "上关",
+      "instances": 2,
+      "methods": [
+        "regional-face-landmark-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "gb4",
+      "nameZh": "颔厌",
+      "instances": 2,
+      "methods": [
+        "regional-face-landmark-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "gb5",
+      "nameZh": "悬颅",
+      "instances": 2,
+      "methods": [
+        "regional-face-landmark-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "gb6",
+      "nameZh": "悬厘",
+      "instances": 2,
+      "methods": [
+        "regional-face-landmark-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "gb7",
+      "nameZh": "曲鬓",
+      "instances": 2,
+      "methods": [
+        "regional-face-landmark-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "gb8",
+      "nameZh": "率谷",
+      "instances": 2,
+      "methods": [
+        "regional-face-landmark-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "gb9",
+      "nameZh": "天冲",
+      "instances": 2,
+      "methods": [
+        "regional-face-landmark-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "gb10",
+      "nameZh": "浮白",
+      "instances": 2,
+      "methods": [
+        "auricular-posterior-regional-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "gb11",
+      "nameZh": "头窍阴",
+      "instances": 2,
+      "methods": [
+        "auricular-posterior-regional-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "gb12",
+      "nameZh": "完骨",
+      "instances": 2,
+      "methods": [
+        "auricular-posterior-regional-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "gb13",
+      "nameZh": "本神",
+      "instances": 2,
+      "methods": [
+        "scalp-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "gb14",
+      "nameZh": "阳白",
+      "instances": 2,
+      "methods": [
+        "regional-face-landmark-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "gb15",
+      "nameZh": "头临泣",
+      "instances": 2,
+      "methods": [
+        "scalp-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "gb16",
+      "nameZh": "目窗",
+      "instances": 2,
+      "methods": [
+        "scalp-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "gb17",
+      "nameZh": "正营",
+      "instances": 2,
+      "methods": [
+        "scalp-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "gb18",
+      "nameZh": "承灵",
+      "instances": 2,
+      "methods": [
+        "scalp-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "gb19",
+      "nameZh": "脑空",
+      "instances": 2,
+      "methods": [
+        "scalp-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "gb20",
+      "nameZh": "风池",
+      "instances": 2,
+      "methods": [
+        "cervical-surface-landmark-provisional"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "gb21",
+      "nameZh": "肩井",
+      "instances": 2,
+      "methods": [
+        "cervical-surface-landmark-provisional"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "gb22",
+      "nameZh": "渊腋",
+      "instances": 2,
+      "methods": [
+        "regional-cun-and-rib-landmark-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "gb23",
+      "nameZh": "辄筋",
+      "instances": 2,
+      "methods": [
+        "regional-cun-and-rib-landmark-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "gb24",
+      "nameZh": "日月",
+      "instances": 2,
+      "methods": [
+        "regional-cun-and-rib-landmark-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "gb25",
+      "nameZh": "京门",
+      "instances": 2,
+      "methods": [
+        "regional-cun-and-rib-landmark-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "gb26",
+      "nameZh": "带脉",
+      "instances": 2,
+      "methods": [
+        "regional-cun-and-rib-landmark-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "gb27",
+      "nameZh": "五枢",
+      "instances": 2,
+      "methods": [
+        "regional-cun-and-rib-landmark-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "gb28",
+      "nameZh": "维道",
+      "instances": 2,
+      "methods": [
+        "regional-cun-and-rib-landmark-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "gb29",
+      "nameZh": "居髎",
+      "instances": 2,
+      "methods": [
+        "bone-or-vertebra-regional-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "gb30",
+      "nameZh": "环跳",
+      "instances": 2,
+      "methods": [
+        "bone-or-vertebra-regional-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "gb31",
+      "nameZh": "风市",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "gb32",
+      "nameZh": "中渎",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "gb33",
+      "nameZh": "膝阳关",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "gb34",
+      "nameZh": "阳陵泉",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "gb35",
+      "nameZh": "阳交",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "gb36",
+      "nameZh": "外丘",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "gb37",
+      "nameZh": "光明",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "gb38",
+      "nameZh": "阳辅",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "gb39",
+      "nameZh": "悬钟",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "gb40",
+      "nameZh": "丘墟",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "gb41",
+      "nameZh": "足临泣",
+      "instances": 2,
+      "methods": [
+        "tarsal-metatarsal-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "gb42",
+      "nameZh": "地五会",
+      "instances": 2,
+      "methods": [
+        "tarsal-metatarsal-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "gb43",
+      "nameZh": "侠溪",
+      "instances": 2,
+      "methods": [
+        "tarsal-metatarsal-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "gb44",
+      "nameZh": "足窍阴",
+      "instances": 2,
+      "methods": [
+        "toe-phalanx-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "lr1",
+      "nameZh": "大敦",
+      "instances": 2,
+      "methods": [
+        "toe-phalanx-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "lr2",
+      "nameZh": "行间",
+      "instances": 2,
+      "methods": [
+        "tarsal-metatarsal-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "lr3",
+      "nameZh": "太冲",
+      "instances": 2,
+      "methods": [
+        "tarsal-metatarsal-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "lr4",
+      "nameZh": "中封",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "lr5",
+      "nameZh": "蠡沟",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "lr6",
+      "nameZh": "中都",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "lr7",
+      "nameZh": "膝关",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "lr8",
+      "nameZh": "曲泉",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "lr9",
+      "nameZh": "阴包",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "lr10",
+      "nameZh": "足五里",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "lr11",
+      "nameZh": "阴廉",
+      "instances": 2,
+      "methods": [
+        "segment-bone-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "lr12",
+      "nameZh": "急脉",
+      "instances": 2,
+      "methods": [
+        "regional-cun-and-rib-landmark-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "lr13",
+      "nameZh": "章门",
+      "instances": 2,
+      "methods": [
+        "regional-cun-and-rib-landmark-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "lr14",
+      "nameZh": "期门",
+      "instances": 2,
+      "methods": [
+        "regional-cun-and-rib-landmark-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "gv1",
+      "nameZh": "长强",
+      "instances": 1,
+      "methods": [
+        "perineal-local-anatomical-interval-provisional"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "gv2",
+      "nameZh": "腰俞",
+      "instances": 1,
+      "methods": [
+        "sacral-hiatus-region-provisional"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "gv3",
+      "nameZh": "腰阳关",
+      "instances": 1,
+      "methods": [
+        "vertebral-spinous-inferior-skin-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "gv4",
+      "nameZh": "命门",
+      "instances": 1,
+      "methods": [
+        "vertebral-spinous-inferior-skin-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "gv5",
+      "nameZh": "悬枢",
+      "instances": 1,
+      "methods": [
+        "vertebral-spinous-inferior-skin-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "gv6",
+      "nameZh": "脊中",
+      "instances": 1,
+      "methods": [
+        "vertebral-spinous-inferior-skin-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "gv7",
+      "nameZh": "中枢",
+      "instances": 1,
+      "methods": [
+        "vertebral-spinous-inferior-skin-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "gv8",
+      "nameZh": "筋缩",
+      "instances": 1,
+      "methods": [
+        "vertebral-spinous-inferior-skin-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "gv9",
+      "nameZh": "至阳",
+      "instances": 1,
+      "methods": [
+        "vertebral-spinous-inferior-skin-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "gv10",
+      "nameZh": "灵台",
+      "instances": 1,
+      "methods": [
+        "vertebral-spinous-inferior-skin-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "gv11",
+      "nameZh": "神道",
+      "instances": 1,
+      "methods": [
+        "vertebral-spinous-inferior-skin-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "gv12",
+      "nameZh": "身柱",
+      "instances": 1,
+      "methods": [
+        "vertebral-spinous-inferior-skin-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "gv13",
+      "nameZh": "陶道",
+      "instances": 1,
+      "methods": [
+        "vertebral-spinous-inferior-skin-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "gv14",
+      "nameZh": "大椎",
+      "instances": 1,
+      "methods": [
+        "vertebral-spinous-inferior-skin-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "gv15",
+      "nameZh": "哑门",
+      "instances": 1,
+      "methods": [
+        "occipital-nuchal-surface-provisional"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "gv16",
+      "nameZh": "风府",
+      "instances": 1,
+      "methods": [
+        "occipital-nuchal-surface-provisional"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "gv17",
+      "nameZh": "脑户",
+      "instances": 1,
+      "methods": [
+        "midline-scalp-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "gv18",
+      "nameZh": "强间",
+      "instances": 1,
+      "methods": [
+        "midline-scalp-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "gv19",
+      "nameZh": "后顶",
+      "instances": 1,
+      "methods": [
+        "midline-scalp-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "gv20",
+      "nameZh": "百会",
+      "instances": 1,
+      "methods": [
+        "midline-scalp-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "gv21",
+      "nameZh": "前顶",
+      "instances": 1,
+      "methods": [
+        "midline-scalp-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "gv22",
+      "nameZh": "囟会",
+      "instances": 1,
+      "methods": [
+        "midline-scalp-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "gv23",
+      "nameZh": "上星",
+      "instances": 1,
+      "methods": [
+        "midline-scalp-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "gv24",
+      "nameZh": "神庭",
+      "instances": 1,
+      "methods": [
+        "midline-scalp-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "gv24-plus",
+      "nameZh": "印堂",
+      "instances": 1,
+      "methods": [
+        "brow-midpoint-surface"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "gv25",
+      "nameZh": "素髎",
+      "instances": 1,
+      "methods": [
+        "facial-midline-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "gv26",
+      "nameZh": "水沟",
+      "instances": 1,
+      "methods": [
+        "facial-midline-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "gv27",
+      "nameZh": "兑端",
+      "instances": 1,
+      "methods": [
+        "facial-midline-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "gv28",
+      "nameZh": "龈交",
+      "instances": 1,
+      "methods": [
+        "upper-gingiva-local-surface"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "cv1",
+      "nameZh": "会阴",
+      "instances": 1,
+      "methods": [
+        "perineal-local-anatomical-interval-provisional"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "cv2",
+      "nameZh": "曲骨",
+      "instances": 1,
+      "methods": [
+        "midline-landmark-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "cv3",
+      "nameZh": "中极",
+      "instances": 1,
+      "methods": [
+        "midline-landmark-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "cv4",
+      "nameZh": "关元",
+      "instances": 1,
+      "methods": [
+        "midline-landmark-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "cv5",
+      "nameZh": "石门",
+      "instances": 1,
+      "methods": [
+        "midline-landmark-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "cv6",
+      "nameZh": "气海",
+      "instances": 1,
+      "methods": [
+        "midline-landmark-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "cv7",
+      "nameZh": "阴交",
+      "instances": 1,
+      "methods": [
+        "midline-landmark-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "cv8",
+      "nameZh": "神阙",
+      "instances": 1,
+      "methods": [
+        "midline-landmark-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "cv9",
+      "nameZh": "水分",
+      "instances": 1,
+      "methods": [
+        "midline-landmark-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "cv10",
+      "nameZh": "下脘",
+      "instances": 1,
+      "methods": [
+        "midline-landmark-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "cv11",
+      "nameZh": "建里",
+      "instances": 1,
+      "methods": [
+        "midline-landmark-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "cv12",
+      "nameZh": "中脘",
+      "instances": 1,
+      "methods": [
+        "midline-landmark-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "cv13",
+      "nameZh": "上脘",
+      "instances": 1,
+      "methods": [
+        "midline-landmark-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "cv14",
+      "nameZh": "巨阙",
+      "instances": 1,
+      "methods": [
+        "midline-landmark-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "cv15",
+      "nameZh": "鸠尾",
+      "instances": 1,
+      "methods": [
+        "midline-landmark-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "cv16",
+      "nameZh": "中庭",
+      "instances": 1,
+      "methods": [
+        "midline-landmark-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "cv17",
+      "nameZh": "膻中",
+      "instances": 1,
+      "methods": [
+        "midline-landmark-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "cv18",
+      "nameZh": "玉堂",
+      "instances": 1,
+      "methods": [
+        "midline-landmark-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "cv19",
+      "nameZh": "紫宫",
+      "instances": 1,
+      "methods": [
+        "midline-landmark-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "cv20",
+      "nameZh": "华盖",
+      "instances": 1,
+      "methods": [
+        "midline-landmark-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "cv21",
+      "nameZh": "璇玑",
+      "instances": 1,
+      "methods": [
+        "midline-landmark-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "cv22",
+      "nameZh": "天突",
+      "instances": 1,
+      "methods": [
+        "midline-landmark-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "cv23",
+      "nameZh": "廉泉",
+      "instances": 1,
+      "methods": [
+        "midline-landmark-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "cv24",
+      "nameZh": "承浆",
+      "instances": 1,
+      "methods": [
+        "midline-landmark-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ex-hn1",
+      "nameZh": "四神聪",
+      "instances": 4,
+      "methods": [
+        "scalp-four-point-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ex-hn2",
+      "nameZh": "当阳",
+      "instances": 2,
+      "methods": [
+        "craniofacial-landmark-projection-provisional"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ex-hn4",
+      "nameZh": "鱼腰",
+      "instances": 2,
+      "methods": [
+        "craniofacial-landmark-projection-provisional"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ex-hn5",
+      "nameZh": "太阳",
+      "instances": 2,
+      "methods": [
+        "craniofacial-landmark-projection-provisional"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ex-hn6",
+      "nameZh": "耳尖",
+      "instances": 2,
+      "methods": [
+        "craniofacial-landmark-projection-provisional"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ex-hn7",
+      "nameZh": "球后",
+      "instances": 2,
+      "methods": [
+        "craniofacial-landmark-projection-provisional"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ex-hn8",
+      "nameZh": "上迎香",
+      "instances": 2,
+      "methods": [
+        "craniofacial-landmark-projection-provisional"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ex-hn9",
+      "nameZh": "内迎香",
+      "instances": 2,
+      "methods": [
+        "intranasal-concha-surface-provisional"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ex-hn10",
+      "nameZh": "聚泉",
+      "instances": 1,
+      "methods": [
+        "oral-tongue-surface-frenulum-region-provisional"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ex-hn11",
+      "nameZh": "海泉",
+      "instances": 1,
+      "methods": [
+        "oral-tongue-surface-frenulum-region-provisional"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ex-hn12-hn13",
+      "nameZh": "金津玉液",
+      "instances": 2,
+      "methods": [
+        "oral-tongue-surface-frenulum-region-provisional"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ex-hn14",
+      "nameZh": "翳明",
+      "instances": 2,
+      "methods": [
+        "cervical-surface-landmark-provisional"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "extra-anmian",
+      "nameZh": "安眠",
+      "instances": 2,
+      "methods": [
+        "cervical-surface-landmark-provisional"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "extra-qianzheng",
+      "nameZh": "牵正",
+      "instances": 2,
+      "methods": [
+        "craniofacial-landmark-projection-provisional"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "extra-xinshe",
+      "nameZh": "新设",
+      "instances": 2,
+      "methods": [
+        "cervical-surface-landmark-provisional"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ex-hn15",
+      "nameZh": "颈百劳",
+      "instances": 2,
+      "methods": [
+        "cervical-surface-landmark-provisional"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "extra-xueyadian",
+      "nameZh": "血压点",
+      "instances": 2,
+      "methods": [
+        "cervical-surface-landmark-provisional"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "extra-tituo",
+      "nameZh": "提托",
+      "instances": 2,
+      "methods": [
+        "regional-cun-and-rib-landmark-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ex-ca1",
+      "nameZh": "子宫",
+      "instances": 2,
+      "methods": [
+        "regional-cun-and-rib-landmark-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ex-b1",
+      "nameZh": "定喘",
+      "instances": 2,
+      "methods": [
+        "bone-or-vertebra-regional-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ex-b2",
+      "nameZh": "夹脊",
+      "instances": 34,
+      "methods": [
+        "bone-or-vertebra-regional-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ex-b3",
+      "nameZh": "胃脘下俞",
+      "instances": 2,
+      "methods": [
+        "bone-or-vertebra-regional-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "extra-jieji",
+      "nameZh": "接脊",
+      "instances": 1,
+      "methods": [
+        "bone-or-vertebra-regional-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ex-b4",
+      "nameZh": "痞根",
+      "instances": 2,
+      "methods": [
+        "bone-or-vertebra-regional-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ex-b6",
+      "nameZh": "腰宜",
+      "instances": 2,
+      "methods": [
+        "bone-or-vertebra-regional-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ex-b7",
+      "nameZh": "腰眼",
+      "instances": 2,
+      "methods": [
+        "bone-or-vertebra-regional-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ex-b8",
+      "nameZh": "十七椎",
+      "instances": 1,
+      "methods": [
+        "bone-or-vertebra-regional-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "extra-jianqian",
+      "nameZh": "肩前",
+      "instances": 2,
+      "methods": [
+        "bone-or-vertebra-regional-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ex-ue1",
+      "nameZh": "肘尖",
+      "instances": 2,
+      "methods": [
+        "olecranon-region-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ex-ue2",
+      "nameZh": "二白",
+      "instances": 4,
+      "methods": [
+        "paired-forearm-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ex-ue3",
+      "nameZh": "中泉",
+      "instances": 2,
+      "methods": [
+        "dorsal-wrist-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ex-ue4",
+      "nameZh": "中魁",
+      "instances": 2,
+      "methods": [
+        "phalangeal-joint-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ex-ue5",
+      "nameZh": "大骨空",
+      "instances": 2,
+      "methods": [
+        "phalangeal-joint-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ex-ue6",
+      "nameZh": "小骨空",
+      "instances": 2,
+      "methods": [
+        "phalangeal-joint-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ex-ue7",
+      "nameZh": "腰痛点",
+      "instances": 4,
+      "methods": [
+        "metacarpal-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ex-ue8",
+      "nameZh": "外劳宫",
+      "instances": 2,
+      "methods": [
+        "metacarpal-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ex-ue9",
+      "nameZh": "八邪",
+      "instances": 8,
+      "methods": [
+        "interdigital-web-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ex-ue10",
+      "nameZh": "四缝",
+      "instances": 8,
+      "methods": [
+        "phalangeal-joint-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ex-ue11",
+      "nameZh": "十宣",
+      "instances": 10,
+      "methods": [
+        "digit-phalanx-tip-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ex-le1",
+      "nameZh": "髋骨",
+      "instances": 4,
+      "methods": [
+        "paired-parapatellar-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ex-le2",
+      "nameZh": "鹤顶",
+      "instances": 2,
+      "methods": [
+        "patella-superior-midpoint-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ex-le3",
+      "nameZh": "百虫窝",
+      "instances": 2,
+      "methods": [
+        "patella-medial-superior-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ex-le4",
+      "nameZh": "内膝眼",
+      "instances": 2,
+      "methods": [
+        "medial-patellar-ligament-region-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ex-le6",
+      "nameZh": "胆囊",
+      "instances": 2,
+      "methods": [
+        "fibular-head-distal-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ex-le7",
+      "nameZh": "阑尾",
+      "instances": 2,
+      "methods": [
+        "tibial-anterior-distal-proportional-cun"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ex-le8",
+      "nameZh": "内踝尖",
+      "instances": 2,
+      "methods": [
+        "malleolar-bone-extremum-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ex-le9",
+      "nameZh": "外踝尖",
+      "instances": 2,
+      "methods": [
+        "malleolar-bone-extremum-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ex-le10",
+      "nameZh": "八风",
+      "instances": 8,
+      "methods": [
+        "interdigital-toe-web-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "extra-lineiting",
+      "nameZh": "里内庭",
+      "instances": 2,
+      "methods": [
+        "tarsal-metatarsal-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ex-le11",
+      "nameZh": "独阴",
+      "instances": 2,
+      "methods": [
+        "toe-phalanx-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "ex-le12",
+      "nameZh": "气端",
+      "instances": 10,
+      "methods": [
+        "toe-phalanx-surface-projection"
+      ],
+      "reviewStatus": "provisional"
+    }
+  ]
+}

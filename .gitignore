@@ -1,0 +1,25 @@
+.gradle/
+.tools/
+local.properties
+**/build/
+tools/assets/source/
+tools/content/source/
+tools/content/sources/
+app/libs/filament-utils-v1.78.0-android.aar
+__pycache__/
+*.py[cod]
+tools/qa/empty-fixture-analysis/
+tools/qa/empty-fixture.perfetto-trace
+tools/qa/perfetto-query.txt
+*.hprof
+
+# Local evidence, delivery artifacts and device identity remain private.
+logs/
+outputs/
+manifests/
+内部记录/
+*.jks
+*.keystore
+.env
+.env.*
+.DS_Store

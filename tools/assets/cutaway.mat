@@ -1,0 +1,24 @@
+// Coordinates stay in the original metre / Y-up anatomy space. +X is anatomical left.
+material {
+    name : "Atlas sagittal cutaway",
+    shadingModel : lit,
+    blending : masked,
+    maskThreshold : 0.5,
+    alphaToCoverage : false,
+    doubleSided : true,
+    useDefaultDepthVariant : false,
+    parameters : [
+        { type : float4, name : baseColorFactor },
+        { type : float, name : cutSign }
+    ],
+    variantFilter : [ skinning, shadowReceiver, fog, vsm, ssr, stereo ]
+}
+fragment {
+    void material(inout MaterialInputs material) {
+        prepareMaterial(material);
+        material.baseColor = materialParams.baseColorFactor;
+        material.baseColor.a = materialParams.cutSign * getUserWorldPosition().x > 0.0 ? 0.0 : 1.0;
+        material.metallic = 0.0;
+        material.roughness = 0.73;
+    }
+}

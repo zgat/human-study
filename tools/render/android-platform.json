@@ -1,0 +1,28 @@
+{
+  "component": "Android SDK Platform",
+  "package": "platforms;android-37.0",
+  "revision": 2,
+  "source_repository": "https://dl.google.com/android/repository/repository2-4.xml",
+  "source_archive": "https://dl.google.com/android/repository/platform-37.0_r02.zip",
+  "source_archive_bytes": 67281901,
+  "source_archive_sha1_from_google": "ed8ebf7f8822a4de5686d427f237d2fa30ff7410",
+  "install_method": "Existing Java SDK Manager, explicit project sdk_root; shared SDK only read through symlinks",
+  "installed_path": ".tools/android-sdk/platforms/android-37.0",
+  "android_jar_sha256": "bf1b4387cc7ca94fc6ef684f040d9d16fbf16248e181819f020736ea2053f177",
+  "source_properties": [
+    "Pkg.Desc=Android SDK Platform 17",
+    "Pkg.UserSrc=false",
+    "Platform.Version=17",
+    "Platform.CodeName=",
+    "Pkg.Revision=2",
+    "AndroidVersion.ApiLevel=37.0",
+    "AndroidVersion.CodeName=",
+    "AndroidVersion.ExtensionLevel=22",
+    "AndroidVersion.IsBaseSdk=true",
+    "AndroidVersion.PreviewSdkInt=0",
+    "AndroidVersion.BetaVersion=",
+    "Layoutlib.Api=15",
+    "Layoutlib.Revision=1",
+    "Platform.MinToolsRev=22"
+  ]
+}

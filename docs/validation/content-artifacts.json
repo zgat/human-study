@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "files": [
+    {
+      "path": "app/src/main/assets/content/acupoints.json",
+      "bytes": 1622631,
+      "sha256": "2de017d6bee27b3356969181f49ec94de04b725b95af6ddf0096700a22c1018e"
+    },
+    {
+      "path": "app/src/main/assets/content/landmarks.json",
+      "bytes": 19457,
+      "sha256": "79570bc4dbb3cd759a981441677b4ce4fa254c249e789f5af331a8a624d9a418"
+    },
+    {
+      "path": "app/src/main/assets/content/meridians.json",
+      "bytes": 183807,
+      "sha256": "382ce05df71c208fa490f216981523ccf8c3743214493d093c4f15568d3fc382"
+    },
+    {
+      "path": "app/src/main/assets/content/organ-landmarks.json",
+      "bytes": 7676,
+      "sha256": "3fa4a9a614b3a4ff61d03897474a3da76a92883b6cc4a572aab58b3a4748618d"
+    },
+    {
+      "path": "app/src/main/assets/content/sources.json",
+      "bytes": 35142,
+      "sha256": "690417de6b1e760a0615ee76fb105d158dbdf005975a99347f1c2c142fa02a2a"
+    }
+  ]
+}

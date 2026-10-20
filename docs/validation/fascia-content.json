@@ -1,0 +1,224 @@
+{
+  "schemaVersion": 1,
+  "generator": {
+    "path": "tools/content/build_fascia.py",
+    "sha256": "0fd0244cb975dda0797071e6ea2f25cd123ce88409dc15e30b74509c5515a927"
+  },
+  "reproduceCommand": "python3 tools/content/build_fascia.py",
+  "purposeZh": "核验筋膜关系示意的真实网格表面来源与双档坐标一致性，不是医学审校。",
+  "inputs": [
+    {
+      "path": "app/src/main/assets/models/body-standard.glb",
+      "sha256": "a1588838552e7503142a51cc5f23681bbcc3cd33098bca80739f4794fed2ceee"
+    },
+    {
+      "path": "app/src/main/assets/models/body-low.glb",
+      "sha256": "9d4b8f75a3d12fb5695039594dab82af5223af7bccf8b69f511b64815e3329e3"
+    },
+    {
+      "path": "app/src/main/assets/anatomy.json",
+      "sha256": "bf3d37618ab832cf9ce2b828d6db14241c735dba5978ffc3cd227f593a4a044f"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "app/src/main/assets/content/fascia.json",
+      "sha256": "31cc0df706b4dd8544b44ba592923a30f58a26e37a56471315bef69acd8fc6f3"
+    }
+  ],
+  "connections": 3,
+  "instances": 6,
+  "targets": 20,
+  "professionalAnatomicalReviewedTargets": 0,
+  "clinicalTargets": 0,
+  "maxReconstructionErrorM": 7.579150140983015e-11,
+  "maxDistanceToLowSurfaceM": 0.00170667051163945,
+  "targetAudit": [
+    {
+      "targetId": "ld-tlf-right-ld",
+      "nodeName": "ZA_172472462",
+      "triangleIndex": 384,
+      "standardReconstructionErrorM": 4.811377619183063e-11,
+      "distanceToLowSurfaceM": 3.3520306400543994e-11,
+      "normalUnitError": 3.6293190674996367e-13,
+      "selectionRuleZh": "在背阔肌下38%且距正中线75毫米以内的真实面中，选择近下内侧参考位置。"
+    },
+    {
+      "targetId": "ld-tlf-right-tlf-ipsi",
+      "nodeName": "ZA_390108657",
+      "triangleIndex": 187,
+      "standardReconstructionErrorM": 5.3627247688592233e-11,
+      "distanceToLowSurfaceM": 1.4302483948696142e-12,
+      "normalUnitError": 3.005085069673896e-11,
+      "selectionRuleZh": "在同侧胸腰筋膜后层真实面中选择最接近背阔肌参考位置的面。"
+    },
+    {
+      "targetId": "ld-tlf-right-tlf-contra",
+      "nodeName": "ZA_655962380",
+      "triangleIndex": 27,
+      "standardReconstructionErrorM": 1.279240214104654e-11,
+      "distanceToLowSurfaceM": 1.0294889855412241e-12,
+      "normalUnitError": 1.4662715486224442e-11,
+      "selectionRuleZh": "在对侧胸腰筋膜后层真实面中选择最接近臀大肌上内侧参考位置的面。"
+    },
+    {
+      "targetId": "ld-tlf-right-gm",
+      "nodeName": "FJ1418M",
+      "triangleIndex": 228,
+      "standardReconstructionErrorM": 1.856866132747401e-11,
+      "distanceToLowSurfaceM": 0.0003013797323401461,
+      "normalUnitError": 2.0564216995921925e-11,
+      "selectionRuleZh": "在对侧臀大肌上90毫米且距正中线65毫米以内的真实面中选择上内侧面。"
+    },
+    {
+      "targetId": "ld-tlf-left-ld",
+      "nodeName": "ZA_817053160",
+      "triangleIndex": 4566,
+      "standardReconstructionErrorM": 4.465659475178448e-11,
+      "distanceToLowSurfaceM": 6.913445865675628e-12,
+      "normalUnitError": 2.974176460668332e-11,
+      "selectionRuleZh": "在背阔肌下38%且距正中线75毫米以内的真实面中，选择近下内侧参考位置。"
+    },
+    {
+      "targetId": "ld-tlf-left-tlf-ipsi",
+      "nodeName": "ZA_655962380",
+      "triangleIndex": 173,
+      "standardReconstructionErrorM": 5.6635888984136365e-11,
+      "distanceToLowSurfaceM": 4.8735879658814956e-11,
+      "normalUnitError": 3.0721314381310094e-11,
+      "selectionRuleZh": "在同侧胸腰筋膜后层真实面中选择最接近背阔肌参考位置的面。"
+    },
+    {
+      "targetId": "ld-tlf-left-tlf-contra",
+      "nodeName": "ZA_390108657",
+      "triangleIndex": 76,
+      "standardReconstructionErrorM": 5.1993017513351884e-11,
+      "distanceToLowSurfaceM": 6.190164599724521e-12,
+      "normalUnitError": 4.069988790433854e-11,
+      "selectionRuleZh": "在对侧胸腰筋膜后层真实面中选择最接近臀大肌上内侧参考位置的面。"
+    },
+    {
+      "targetId": "ld-tlf-left-gm",
+      "nodeName": "FJ1418",
+      "triangleIndex": 1747,
+      "standardReconstructionErrorM": 5.449396610915442e-11,
+      "distanceToLowSurfaceM": 0.00170667051163945,
+      "normalUnitError": 1.0681788786826019e-11,
+      "selectionRuleZh": "在对侧臀大肌上90毫米且距正中线65毫米以内的真实面中选择上内侧面。"
+    },
+    {
+      "targetId": "heel-right-at",
+      "nodeName": "FJ1405",
+      "triangleIndex": 200,
+      "standardReconstructionErrorM": 6.826178851770063e-11,
+      "distanceToLowSurfaceM": 5.182515724272367e-11,
+      "normalUnitError": 4.7051362805916597e-11,
+      "selectionRuleZh": "仅在跟腱远端25%的真实面中选择最接近跟骨后部的面。"
+    },
+    {
+      "targetId": "heel-right-posterior",
+      "nodeName": "FJ3360",
+      "triangleIndex": 223,
+      "standardReconstructionErrorM": 6.27714587035135e-11,
+      "distanceToLowSurfaceM": 0.0006244142760255727,
+      "normalUnitError": 7.511768984613809e-12,
+      "selectionRuleZh": "在跟骨后45%的真实骨面中选择最接近跟腱远端参考点的面。"
+    },
+    {
+      "targetId": "heel-right-plantar",
+      "nodeName": "FJ3360",
+      "triangleIndex": 58,
+      "standardReconstructionErrorM": 3.547192559879215e-11,
+      "distanceToLowSurfaceM": 8.568581454017388e-05,
+      "normalUnitError": 4.773026418547488e-11,
+      "selectionRuleZh": "在跟骨下62%及后60%的真实骨面中选择最接近足底腱膜近端的面。"
+    },
+    {
+      "targetId": "heel-right-pa",
+      "nodeName": "ZA_753149753",
+      "triangleIndex": 200,
+      "standardReconstructionErrorM": 7.579150140983015e-11,
+      "distanceToLowSurfaceM": 2.3642535422904542e-11,
+      "normalUnitError": 1.7672530105983242e-11,
+      "selectionRuleZh": "在真实足底腱膜靠后16%的面中选择近跟骨参考位置。"
+    },
+    {
+      "targetId": "heel-left-at",
+      "nodeName": "FJ1405M",
+      "triangleIndex": 200,
+      "standardReconstructionErrorM": 6.826178851770063e-11,
+      "distanceToLowSurfaceM": 5.182515724272367e-11,
+      "normalUnitError": 4.7051362805916597e-11,
+      "selectionRuleZh": "仅在跟腱远端25%的真实面中选择最接近跟骨后部的面。"
+    },
+    {
+      "targetId": "heel-left-posterior",
+      "nodeName": "FJ3256",
+      "triangleIndex": 107,
+      "standardReconstructionErrorM": 5.960200626528048e-11,
+      "distanceToLowSurfaceM": 0.00029918640356570354,
+      "normalUnitError": 3.196420905737796e-11,
+      "selectionRuleZh": "在跟骨后45%的真实骨面中选择最接近跟腱远端参考点的面。"
+    },
+    {
+      "targetId": "heel-left-plantar",
+      "nodeName": "FJ3256",
+      "triangleIndex": 267,
+      "standardReconstructionErrorM": 4.7194617130807024e-11,
+      "distanceToLowSurfaceM": 1.5725566952346137e-05,
+      "normalUnitError": 7.118750033896504e-12,
+      "selectionRuleZh": "在跟骨下62%及后60%的真实骨面中选择最接近足底腱膜近端的面。"
+    },
+    {
+      "targetId": "heel-left-pa",
+      "nodeName": "ZA_375911140",
+      "triangleIndex": 200,
+      "standardReconstructionErrorM": 4.77393980730783e-11,
+      "distanceToLowSurfaceM": 2.5389735079928787e-11,
+      "normalUnitError": 2.850608638027552e-12,
+      "selectionRuleZh": "在真实足底腱膜靠后16%的面中选择近跟骨参考位置。"
+    },
+    {
+      "targetId": "hamstring-right-bf",
+      "nodeName": "FJ1395",
+      "triangleIndex": 436,
+      "standardReconstructionErrorM": 6.63706904406637e-11,
+      "distanceToLowSurfaceM": 2.236029353407803e-11,
+      "normalUnitError": 3.596367648128762e-11,
+      "selectionRuleZh": "仅在长头近端28毫米内的真实三角面中选取代表位置。"
+    },
+    {
+      "targetId": "hamstring-right-ischium",
+      "nodeName": "FJ3152",
+      "triangleIndex": 35,
+      "standardReconstructionErrorM": 3.6251748639082687e-11,
+      "distanceToLowSurfaceM": 0.00031372099002510326,
+      "normalUnitError": 1.017208539622061e-11,
+      "selectionRuleZh": "限制在真实髋骨最下55毫米及后60%的面中，选择最接近长头近端的骨面；禁止使用全髋骨中心。"
+    },
+    {
+      "targetId": "hamstring-left-bf",
+      "nodeName": "FJ1395M",
+      "triangleIndex": 436,
+      "standardReconstructionErrorM": 4.0265804305047015e-11,
+      "distanceToLowSurfaceM": 5.026904944447979e-12,
+      "normalUnitError": 4.991695945477659e-11,
+      "selectionRuleZh": "仅在长头近端28毫米内的真实三角面中选取代表位置。"
+    },
+    {
+      "targetId": "hamstring-left-ischium",
+      "nodeName": "FJ3288",
+      "triangleIndex": 37,
+      "standardReconstructionErrorM": 6.308662759275181e-11,
+      "distanceToLowSurfaceM": 0.00017288000961928766,
+      "normalUnitError": 1.703692742438534e-11,
+      "selectionRuleZh": "限制在真实髋骨最下55毫米及后60%的面中，选择最接近长头近端的骨面；禁止使用全髋骨中心。"
+    }
+  ],
+  "limitsZh": [
+    "所有参考区仍待专业解剖定位审校。",
+    "连接线只表达文献关系，不代表真实纤维轨迹或力矢量。",
+    "骶结节韧带、跟骨骨膜与跟腱腱周膜没有独立网格，未假造。",
+    "Z-Anatomy与BodyParts3D的共同配准为教学参考，不能等同个体精确配准。"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "status": "passed",
+  "modelId": "bodyparts3d-male-v4",
+  "models": [
+    {
+      "path": "app/src/main/assets/models/body-standard.glb",
+      "sha256": "a1588838552e7503142a51cc5f23681bbcc3cd33098bca80739f4794fed2ceee",
+      "bytes": 59941576,
+      "structures": 1239,
+      "vertices": 1610861,
+      "triangles": 2570132
+    },
+    {
+      "path": "app/src/main/assets/models/body-low.glb",
+      "sha256": "9d4b8f75a3d12fb5695039594dab82af5223af7bccf8b69f511b64815e3329e3",
+      "bytes": 48115592,
+      "structures": 1239,
+      "vertices": 1292216,
+      "triangles": 1921262
+    }
+  ],
+  "anatomySha256": "bf3d37618ab832cf9ce2b828d6db14241c735dba5978ffc3cd227f593a4a044f",
+  "checks": [
+    "source SHA-256",
+    "ZIP CRC",
+    "early skin equals complete archive",
+    "glTF headers and buffers",
+    "finite indexed geometry and unit normals",
+    "accessor bounds",
+    "same IDs and order across quality tiers",
+    "Chinese labels",
+    "major muscle mesh coverage",
+    "skin-only alpha blending",
+    "all muscle learning fields and source links",
+    "MSO1 skin occlusion header, hash and finite nondegenerate triangles",
+    "low-tier skin exact POSITION/NORMAL/index equality with standard tier",
+    "explicit systems and tissue/source concept metadata",
+    "previous geometry payloads byte-exact outside four authorized trapezius fixes",
+    "eight genuine source fascia additions",
+    "skin occlusion file unchanged"
+  ],
+  "limitsZh": [
+    "未验证真实 Android 帧率。",
+    "未进行医学专业审校或完整视觉验收。"
+  ]
+}

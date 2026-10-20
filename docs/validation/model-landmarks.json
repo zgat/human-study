@@ -1,0 +1,1987 @@
+{
+  "modelId": "bodyparts3d-male-v4",
+  "groundZ": -78.1112,
+  "bodyBounds": {
+    "min": [
+      -0.33411900000000005,
+      0.0,
+      -0.0452476
+    ],
+    "max": [
+      0.332825,
+      1.7194711999999999,
+      0.24678299999999997
+    ]
+  },
+  "coordinateTransform": "[x/1000,(z-groundZ)/1000,-y/1000]",
+  "landmarkMeshes": {
+    "FJ3152": {
+      "nameEn": "right hip bone",
+      "bounds": {
+        "min": [
+          -0.144872,
+          0.8302642000000001,
+          0.0011187800000000002
+        ],
+        "max": [
+          -0.0027903,
+          1.0359802,
+          0.139019
+        ]
+      },
+      "sourceConceptId": "FMA16586"
+    },
+    "FJ3153": {
+      "nameEn": "process of organ",
+      "bounds": {
+        "min": [
+          -0.0103378,
+          1.2421312,
+          0.198509
+        ],
+        "max": [
+          0.0106039,
+          1.2626112,
+          0.21335300000000001
+        ]
+      },
+      "sourceConceptId": "FMA67601"
+    },
+    "FJ3176": {
+      "nameEn": "atlas",
+      "bounds": {
+        "min": [
+          -0.0413646,
+          1.5403212000000002,
+          0.040595799999999994
+        ],
+        "max": [
+          0.0402307,
+          1.5595412000000002,
+          0.08764419999999999
+        ]
+      },
+      "sourceConceptId": "FMA12519"
+    },
+    "FJ3177": {
+      "nameEn": "axis",
+      "bounds": {
+        "min": [
+          -0.0259616,
+          1.5112812000000002,
+          0.036670900000000006
+        ],
+        "max": [
+          0.0245742,
+          1.5564612,
+          0.08653910000000001
+        ]
+      },
+      "sourceConceptId": "FMA12520"
+    },
+    "FJ3178": {
+      "nameEn": "body of organ",
+      "bounds": {
+        "min": [
+          -0.023614899999999998,
+          1.2577612000000002,
+          0.165166
+        ],
+        "max": [
+          0.0239556,
+          1.3677512,
+          0.213832
+        ]
+      },
+      "sourceConceptId": "FMA45734"
+    },
+    "FJ3237": {
+      "nameEn": "left clavicle",
+      "bounds": {
+        "min": [
+          0.00837873,
+          1.3866412000000001,
+          0.054387500000000005
+        ],
+        "max": [
+          0.14394200000000001,
+          1.4332912000000002,
+          0.14707800000000001
+        ]
+      },
+      "sourceConceptId": "FMA13323"
+    },
+    "FJ3259": {
+      "nameEn": "left femur",
+      "bounds": {
+        "min": [
+          0.0319662,
+          0.4461672,
+          0.0494822
+        ],
+        "max": [
+          0.15023699999999998,
+          0.9123502000000001,
+          0.112276
+        ]
+      },
+      "sourceConceptId": "FMA24475"
+    },
+    "FJ3260": {
+      "nameEn": "left fibula",
+      "bounds": {
+        "min": [
+          0.08452899999999999,
+          0.05292059999999999,
+          0.048534
+        ],
+        "max": [
+          0.120108,
+          0.43724219999999997,
+          0.078119
+        ]
+      },
+      "sourceConceptId": "FMA24481"
+    },
+    "FJ3262": {
+      "nameEn": "left humerus",
+      "bounds": {
+        "min": [
+          0.140073,
+          1.1073212000000001,
+          0.0510559
+        ],
+        "max": [
+          0.24076,
+          1.4146312,
+          0.100229
+        ]
+      },
+      "sourceConceptId": "FMA23131"
+    },
+    "FJ3275": {
+      "nameEn": "left patella",
+      "bounds": {
+        "min": [
+          0.0605925,
+          0.4396082,
+          0.10090099999999999
+        ],
+        "max": [
+          0.10222400000000001,
+          0.47887419999999997,
+          0.122751
+        ]
+      },
+      "sourceConceptId": "FMA24487"
+    },
+    "FJ3277": {
+      "nameEn": "left radius",
+      "bounds": {
+        "min": [
+          0.219836,
+          0.8842742,
+          0.0614693
+        ],
+        "max": [
+          0.279143,
+          1.1131212000000001,
+          0.127252
+        ]
+      },
+      "sourceConceptId": "FMA23465"
+    },
+    "FJ3279": {
+      "nameEn": "left scapula",
+      "bounds": {
+        "min": [
+          0.0570614,
+          1.2620612,
+          -0.0050764
+        ],
+        "max": [
+          0.166464,
+          1.4279712,
+          0.10284499999999999
+        ]
+      },
+      "sourceConceptId": "FMA13396"
+    },
+    "FJ3280": {
+      "nameEn": "left talus",
+      "bounds": {
+        "min": [
+          0.049635399999999996,
+          0.046805599999999996,
+          0.048814
+        ],
+        "max": [
+          0.09017839999999999,
+          0.08120931,
+          0.10567700000000001
+        ]
+      },
+      "sourceConceptId": "FMA24483"
+    },
+    "FJ3282": {
+      "nameEn": "left tibia",
+      "bounds": {
+        "min": [
+          0.0350342,
+          0.07201587,
+          0.0519821
+        ],
+        "max": [
+          0.109455,
+          0.4519732,
+          0.114515
+        ]
+      },
+      "sourceConceptId": "FMA24478"
+    },
+    "FJ3286": {
+      "nameEn": "left ulna",
+      "bounds": {
+        "min": [
+          0.19689199999999998,
+          0.8831271999999999,
+          0.0445523
+        ],
+        "max": [
+          0.24712,
+          1.1305812000000002,
+          0.123279
+        ]
+      },
+      "sourceConceptId": "FMA23468"
+    },
+    "FJ3288": {
+      "nameEn": "left hip bone",
+      "bounds": {
+        "min": [
+          0.0027503099999999997,
+          0.8300622000000001,
+          0.00131494
+        ],
+        "max": [
+          0.144754,
+          1.0362012,
+          0.139095
+        ]
+      },
+      "sourceConceptId": "FMA16587"
+    },
+    "FJ3290": {
+      "nameEn": "zone of bone organ",
+      "bounds": {
+        "min": [
+          -0.0274497,
+          1.3583812,
+          0.130801
+        ],
+        "max": [
+          0.0274497,
+          1.4033612,
+          0.178588
+        ]
+      },
+      "sourceConceptId": "FMA10483"
+    },
+    "FJ3349": {
+      "nameEn": "right radius",
+      "bounds": {
+        "min": [
+          -0.27953500000000003,
+          0.8839462000000001,
+          0.0611026
+        ],
+        "max": [
+          -0.219833,
+          1.1131612,
+          0.126908
+        ]
+      },
+      "sourceConceptId": "FMA23464"
+    },
+    "FJ3362": {
+      "nameEn": "right clavicle",
+      "bounds": {
+        "min": [
+          -0.145277,
+          1.3867312,
+          0.0544125
+        ],
+        "max": [
+          -0.009661649999999999,
+          1.4335512000000001,
+          0.146948
+        ]
+      },
+      "sourceConceptId": "FMA13322"
+    },
+    "FJ3365": {
+      "nameEn": "right femur",
+      "bounds": {
+        "min": [
+          -0.150134,
+          0.44626119999999997,
+          0.0495302
+        ],
+        "max": [
+          -0.0318943,
+          0.9123632,
+          0.11219199999999999
+        ]
+      },
+      "sourceConceptId": "FMA24474"
+    },
+    "FJ3366": {
+      "nameEn": "right fibula",
+      "bounds": {
+        "min": [
+          -0.12016500000000001,
+          0.0528313,
+          0.0484874
+        ],
+        "max": [
+          -0.0843445,
+          0.43726119999999996,
+          0.07816880000000001
+        ]
+      },
+      "sourceConceptId": "FMA24480"
+    },
+    "FJ3368": {
+      "nameEn": "right humerus",
+      "bounds": {
+        "min": [
+          -0.240841,
+          1.1073112,
+          0.0510391
+        ],
+        "max": [
+          -0.14009,
+          1.4146512,
+          0.10021899999999999
+        ]
+      },
+      "sourceConceptId": "FMA23130"
+    },
+    "FJ3381": {
+      "nameEn": "right patella",
+      "bounds": {
+        "min": [
+          -0.10228799999999999,
+          0.43959719999999997,
+          0.100992
+        ],
+        "max": [
+          -0.0606208,
+          0.4789072,
+          0.122727
+        ]
+      },
+      "sourceConceptId": "FMA24486"
+    },
+    "FJ3384": {
+      "nameEn": "right scapula",
+      "bounds": {
+        "min": [
+          -0.166464,
+          1.2620712,
+          -0.00508275
+        ],
+        "max": [
+          -0.0570538,
+          1.4279712,
+          0.10285599999999999
+        ]
+      },
+      "sourceConceptId": "FMA13395"
+    },
+    "FJ3385": {
+      "nameEn": "right talus",
+      "bounds": {
+        "min": [
+          -0.0901136,
+          0.0469551,
+          0.048754
+        ],
+        "max": [
+          -0.0496273,
+          0.08122212999999999,
+          0.105569
+        ]
+      },
+      "sourceConceptId": "FMA24482"
+    },
+    "FJ3387": {
+      "nameEn": "right tibia",
+      "bounds": {
+        "min": [
+          -0.10935299999999999,
+          0.07207403999999999,
+          0.0520729
+        ],
+        "max": [
+          -0.035216000000000004,
+          0.4520312,
+          0.11483499999999999
+        ]
+      },
+      "sourceConceptId": "FMA24477"
+    },
+    "FJ3391": {
+      "nameEn": "right ulna",
+      "bounds": {
+        "min": [
+          -0.247179,
+          0.8832842000000001,
+          0.0447992
+        ],
+        "max": [
+          -0.196881,
+          1.1305612,
+          0.123494
+        ]
+      },
+      "sourceConceptId": "FMA23467"
+    },
+    "FJ1282": {
+      "nameEn": "anterior chamber of left eyeball",
+      "bounds": {
+        "min": [
+          0.0234085,
+          1.5895212,
+          0.161462
+        ],
+        "max": [
+          0.0361584,
+          1.6022812000000002,
+          0.165201
+        ]
+      },
+      "sourceConceptId": "FMA58082"
+    },
+    "FJ1289": {
+      "nameEn": "left cornea",
+      "bounds": {
+        "min": [
+          0.022752099999999997,
+          1.5888412,
+          0.16118000000000002
+        ],
+        "max": [
+          0.0368423,
+          1.6029112,
+          0.166049
+        ]
+      },
+      "sourceConceptId": "FMA58240"
+    },
+    "FJ1317": {
+      "nameEn": "left sclera",
+      "bounds": {
+        "min": [
+          0.015989200000000002,
+          1.5830712,
+          0.138829
+        ],
+        "max": [
+          0.0423104,
+          1.6093012000000002,
+          0.16345500000000002
+        ]
+      },
+      "sourceConceptId": "FMA58272"
+    },
+    "FJ1332": {
+      "nameEn": "anterior chamber of right eyeball",
+      "bounds": {
+        "min": [
+          -0.0374648,
+          1.5895212,
+          0.16146000000000002
+        ],
+        "max": [
+          -0.024716000000000002,
+          1.6022712000000001,
+          0.165202
+        ]
+      },
+      "sourceConceptId": "FMA58081"
+    },
+    "FJ1340": {
+      "nameEn": "right cornea",
+      "bounds": {
+        "min": [
+          -0.0381509,
+          1.5888412,
+          0.161155
+        ],
+        "max": [
+          0.030854299999999998,
+          1.6029112,
+          0.16605099999999998
+        ]
+      },
+      "sourceConceptId": "FMA58239"
+    },
+    "FJ1368": {
+      "nameEn": "right sclera",
+      "bounds": {
+        "min": [
+          -0.0436181,
+          1.5830712,
+          0.138829
+        ],
+        "max": [
+          0.0312616,
+          1.6093012000000002,
+          0.163464
+        ]
+      },
+      "sourceConceptId": "FMA58271"
+    },
+    "FJ1450": {
+      "nameEn": "superficial perineal muscle",
+      "bounds": {
+        "min": [
+          -0.0147874,
+          0.8317211999999999,
+          0.016943899999999998
+        ],
+        "max": [
+          -0.00328195,
+          0.8529722,
+          0.038724299999999996
+        ]
+      },
+      "sourceConceptId": "FMA19728"
+    },
+    "FJ1450M": {
+      "nameEn": "superficial perineal muscle",
+      "bounds": {
+        "min": [
+          0.00328195,
+          0.8317211999999999,
+          0.016943899999999998
+        ],
+        "max": [
+          0.0147874,
+          0.8529722,
+          0.038724400000000006
+        ]
+      },
+      "sourceConceptId": "FMA19728"
+    },
+    "FJ1559": {
+      "nameEn": "left geniohyoid",
+      "bounds": {
+        "min": [
+          -0.000548999,
+          1.5011712,
+          0.12096299999999999
+        ],
+        "max": [
+          0.00702057,
+          1.5149912,
+          0.160248
+        ]
+      },
+      "sourceConceptId": "FMA46327"
+    },
+    "FJ1562": {
+      "nameEn": "left mylohyoid",
+      "bounds": {
+        "min": [
+          -0.000655269,
+          1.5097312,
+          0.122195
+        ],
+        "max": [
+          0.025460899999999998,
+          1.5339912000000002,
+          0.15880699999999998
+        ]
+      },
+      "sourceConceptId": "FMA46322"
+    },
+    "FJ1565": {
+      "nameEn": "left omohyoid",
+      "bounds": {
+        "min": [
+          0.0113209,
+          1.3959812,
+          0.026451699999999998
+        ],
+        "max": [
+          0.10451,
+          1.5053412000000002,
+          0.122259
+        ]
+      },
+      "sourceConceptId": "FMA13349"
+    },
+    "FJ1574": {
+      "nameEn": "left sternohyoid",
+      "bounds": {
+        "min": [
+          0.00248157,
+          1.3915812,
+          0.10789
+        ],
+        "max": [
+          0.0249927,
+          1.5071512,
+          0.137632
+        ]
+      },
+      "sourceConceptId": "FMA13347"
+    },
+    "FJ1576": {
+      "nameEn": "left stylohyoid",
+      "bounds": {
+        "min": [
+          0.00903238,
+          1.5077012,
+          0.0849427
+        ],
+        "max": [
+          0.0393847,
+          1.5681312,
+          0.124315
+        ]
+      },
+      "sourceConceptId": "FMA45827"
+    },
+    "FJ1577": {
+      "nameEn": "left thyrohyoid",
+      "bounds": {
+        "min": [
+          0.00647703,
+          1.4760812,
+          0.0968339
+        ],
+        "max": [
+          0.0187587,
+          1.5069312,
+          0.123106
+        ]
+      },
+      "sourceConceptId": "FMA13353"
+    },
+    "FJ1580": {
+      "nameEn": "right geniohyoid",
+      "bounds": {
+        "min": [
+          -0.0083421,
+          1.5011612,
+          0.121041
+        ],
+        "max": [
+          -0.000738788,
+          1.5150112000000002,
+          0.160239
+        ]
+      },
+      "sourceConceptId": "FMA46326"
+    },
+    "FJ1583": {
+      "nameEn": "right mylohyoid",
+      "bounds": {
+        "min": [
+          -0.026749099999999998,
+          1.5098212000000002,
+          0.122195
+        ],
+        "max": [
+          -0.0006329090000000001,
+          1.5339912000000002,
+          0.15884
+        ]
+      },
+      "sourceConceptId": "FMA46321"
+    },
+    "FJ1586": {
+      "nameEn": "right omohyoid",
+      "bounds": {
+        "min": [
+          -0.105864,
+          1.3959812,
+          0.026392099999999998
+        ],
+        "max": [
+          -0.0127414,
+          1.5053412000000002,
+          0.122262
+        ]
+      },
+      "sourceConceptId": "FMA13348"
+    },
+    "FJ1596": {
+      "nameEn": "right sternohyoid",
+      "bounds": {
+        "min": [
+          -0.0262347,
+          1.3915612000000002,
+          0.107833
+        ],
+        "max": [
+          -0.00376191,
+          1.5071412,
+          0.13778
+        ]
+      },
+      "sourceConceptId": "FMA13346"
+    },
+    "FJ1598": {
+      "nameEn": "right stylohyoid",
+      "bounds": {
+        "min": [
+          -0.040708100000000004,
+          1.5077712,
+          0.08494070000000001
+        ],
+        "max": [
+          -0.0102945,
+          1.5678412000000002,
+          0.124303
+        ]
+      },
+      "sourceConceptId": "FMA45826"
+    },
+    "FJ1599": {
+      "nameEn": "right thyrohyoid",
+      "bounds": {
+        "min": [
+          -0.0201625,
+          1.4760612000000002,
+          0.09683199999999999
+        ],
+        "max": [
+          0.0175242,
+          1.5069312,
+          0.12311799999999999
+        ]
+      },
+      "sourceConceptId": "FMA13352"
+    },
+    "FJ1725": {
+      "nameEn": "right vertebral artery",
+      "bounds": {
+        "min": [
+          -0.0336651,
+          1.4765212,
+          0.0585749
+        ],
+        "max": [
+          0.000384026,
+          1.5841512,
+          0.0868712
+        ]
+      },
+      "sourceConceptId": "FMA3958"
+    },
+    "FJ1725M": {
+      "nameEn": "left vertebral artery",
+      "bounds": {
+        "min": [
+          -0.000384026,
+          1.4765212,
+          0.0585749
+        ],
+        "max": [
+          0.0336652,
+          1.5841412,
+          0.08687109999999999
+        ]
+      },
+      "sourceConceptId": "FMA4066"
+    },
+    "FJ2543": {
+      "nameEn": "superficial perineal muscle",
+      "bounds": {
+        "min": [
+          0.00329066,
+          0.8317521999999999,
+          0.0169086
+        ],
+        "max": [
+          0.014844099999999999,
+          0.8530172,
+          0.0386396
+        ]
+      },
+      "sourceConceptId": "FMA19728"
+    },
+    "FJ2548": {
+      "nameEn": "superficial perineal muscle",
+      "bounds": {
+        "min": [
+          -0.0147874,
+          0.8317211999999999,
+          0.016943899999999998
+        ],
+        "max": [
+          -0.00328195,
+          0.8529722,
+          0.038724400000000006
+        ]
+      },
+      "sourceConceptId": "FMA19728"
+    },
+    "FJ2556": {
+      "nameEn": "left lateral nasal cartilage",
+      "bounds": {
+        "min": [
+          -0.000345748,
+          1.5604412,
+          0.170817
+        ],
+        "max": [
+          0.0136251,
+          1.5889412,
+          0.208453
+        ]
+      },
+      "sourceConceptId": "FMA59513"
+    },
+    "FJ2557": {
+      "nameEn": "septal nasal cartilage",
+      "bounds": {
+        "min": [
+          -0.00294678,
+          1.5572312,
+          0.16503
+        ],
+        "max": [
+          0.00171475,
+          1.5909712,
+          0.208368
+        ]
+      },
+      "sourceConceptId": "FMA59503"
+    },
+    "FJ2558": {
+      "nameEn": "right lateral nasal cartilage",
+      "bounds": {
+        "min": [
+          -0.0146005,
+          1.5607412000000003,
+          0.17091
+        ],
+        "max": [
+          -0.000818862,
+          1.5889112,
+          0.208456
+        ]
+      },
+      "sourceConceptId": "FMA59512"
+    },
+    "FJ2571": {
+      "nameEn": "rectum",
+      "bounds": {
+        "min": [
+          -0.0262148,
+          0.8354382,
+          0.011280799999999999
+        ],
+        "max": [
+          0.0354317,
+          0.9520282,
+          0.0735788
+        ]
+      },
+      "sourceConceptId": "FMA14544"
+    },
+    "FJ2744": {
+      "nameEn": "left pterygomandibular raphe",
+      "bounds": {
+        "min": [
+          0.025386299999999997,
+          1.5390512,
+          0.118524
+        ],
+        "max": [
+          0.033715499999999995,
+          1.5610512,
+          0.130344
+        ]
+      },
+      "sourceConceptId": "FMA55620"
+    },
+    "FJ2756": {
+      "nameEn": "right pterygomandibular raphe",
+      "bounds": {
+        "min": [
+          -0.035031799999999995,
+          1.5390412000000002,
+          0.11851600000000001
+        ],
+        "max": [
+          -0.0266914,
+          1.5610412,
+          0.130355
+        ]
+      },
+      "sourceConceptId": "FMA55619"
+    },
+    "FJ2761": {
+      "nameEn": "tongue",
+      "bounds": {
+        "min": [
+          -0.0199706,
+          1.5090712000000002,
+          0.110473
+        ],
+        "max": [
+          0.0188003,
+          1.5454312,
+          0.169904
+        ]
+      },
+      "sourceConceptId": "FMA54640"
+    },
+    "FJ2763": {
+      "nameEn": "left stylohyoid ligament",
+      "bounds": {
+        "min": [
+          0.0116624,
+          1.5114612,
+          0.0868472
+        ],
+        "max": [
+          0.0408725,
+          1.5563212000000002,
+          0.123393
+        ]
+      },
+      "sourceConceptId": "FMA72311"
+    },
+    "FJ2764": {
+      "nameEn": "right stylohyoid ligament",
+      "bounds": {
+        "min": [
+          -0.0421703,
+          1.5114412,
+          0.0868352
+        ],
+        "max": [
+          -0.0129676,
+          1.5563112000000001,
+          0.123386
+        ]
+      },
+      "sourceConceptId": "FMA72309"
+    },
+    "FJ2766": {
+      "nameEn": "left submandibular gland",
+      "bounds": {
+        "min": [
+          0.0143972,
+          1.5165512,
+          0.11859099999999999
+        ],
+        "max": [
+          0.0302661,
+          1.5389112,
+          0.141519
+        ]
+      },
+      "sourceConceptId": "FMA59803"
+    },
+    "FJ2768": {
+      "nameEn": "right submandibular gland",
+      "bounds": {
+        "min": [
+          -0.031553899999999996,
+          1.5165512,
+          0.118612
+        ],
+        "max": [
+          -0.0156831,
+          1.5389412,
+          0.14135
+        ]
+      },
+      "sourceConceptId": "FMA59802"
+    },
+    "FJ2772": {
+      "nameEn": "hyoid bone",
+      "bounds": {
+        "min": [
+          -0.019524200000000002,
+          1.5004811999999998,
+          0.0944187
+        ],
+        "max": [
+          0.0182825,
+          1.5189712,
+          0.129
+        ]
+      },
+      "sourceConceptId": "FMA52749"
+    },
+    "FJ2779": {
+      "nameEn": "left lateral thyrohyoid ligament",
+      "bounds": {
+        "min": [
+          0.0149276,
+          1.5060112,
+          0.0925645
+        ],
+        "max": [
+          0.0186646,
+          1.5171112,
+          0.0975473
+        ]
+      },
+      "sourceConceptId": "FMA55141"
+    },
+    "FJ2786": {
+      "nameEn": "left thyrohyoid membrane",
+      "bounds": {
+        "min": [
+          0.00398273,
+          1.4940712,
+          0.0935193
+        ],
+        "max": [
+          0.0182601,
+          1.5162412,
+          0.121994
+        ]
+      },
+      "sourceConceptId": "FMA55134"
+    },
+    "FJ2790": {
+      "nameEn": "median thyrohyoid ligament",
+      "bounds": {
+        "min": [
+          -0.00917397,
+          1.4845912,
+          0.118491
+        ],
+        "max": [
+          0.0079,
+          1.5022212,
+          0.126048
+        ]
+      },
+      "sourceConceptId": "FMA55138"
+    },
+    "FJ2797": {
+      "nameEn": "right lateral thyrohyoid ligament",
+      "bounds": {
+        "min": [
+          -0.019979900000000002,
+          1.5060512000000001,
+          0.0925779
+        ],
+        "max": [
+          -0.0162152,
+          1.5171012000000001,
+          0.0975448
+        ]
+      },
+      "sourceConceptId": "FMA55140"
+    },
+    "FJ2804": {
+      "nameEn": "right thyrohyoid membrane",
+      "bounds": {
+        "min": [
+          -0.019554600000000002,
+          1.4940312000000002,
+          0.0935148
+        ],
+        "max": [
+          -0.00529227,
+          1.5162512000000001,
+          0.121975
+        ]
+      },
+      "sourceConceptId": "FMA55133"
+    },
+    "FJ3134": {
+      "nameEn": "glans penis",
+      "bounds": {
+        "min": [
+          -0.0155145,
+          0.7857502,
+          0.176125
+        ],
+        "max": [
+          0.0141674,
+          0.8162272,
+          0.20086099999999998
+        ]
+      },
+      "sourceConceptId": "FMA18247"
+    },
+    "FJ3154": {
+      "nameEn": "tenth thoracic vertebra",
+      "bounds": {
+        "min": [
+          -0.033656799999999994,
+          1.1778812,
+          0.0078225
+        ],
+        "max": [
+          0.032245199999999995,
+          1.2352412000000002,
+          0.0840578
+        ]
+      },
+      "sourceConceptId": "FMA10037"
+    },
+    "FJ3155": {
+      "nameEn": "eleventh thoracic vertebra",
+      "bounds": {
+        "min": [
+          -0.026761,
+          1.1538312000000002,
+          0.0130089
+        ],
+        "max": [
+          0.0255593,
+          1.2073812,
+          0.0925324
+        ]
+      },
+      "sourceConceptId": "FMA10059"
+    },
+    "FJ3156": {
+      "nameEn": "twelfth thoracic vertebra",
+      "bounds": {
+        "min": [
+          -0.022386399999999997,
+          1.1280712000000002,
+          0.022560900000000002
+        ],
+        "max": [
+          0.0210548,
+          1.1797012,
+          0.101385
+        ]
+      },
+      "sourceConceptId": "FMA10081"
+    },
+    "FJ3157": {
+      "nameEn": "first lumbar vertebra",
+      "bounds": {
+        "min": [
+          -0.0357798,
+          1.0933112,
+          0.0292224
+        ],
+        "max": [
+          0.034461399999999996,
+          1.1500912,
+          0.10948000000000001
+        ]
+      },
+      "sourceConceptId": "FMA13072"
+    },
+    "FJ3158": {
+      "nameEn": "first thoracic vertebra",
+      "bounds": {
+        "min": [
+          -0.037383,
+          1.4253312,
+          0.0170867
+        ],
+        "max": [
+          0.0359162,
+          1.4550112000000002,
+          0.0868719
+        ]
+      },
+      "sourceConceptId": "FMA9165"
+    },
+    "FJ3159": {
+      "nameEn": "second lumbar vertebra",
+      "bounds": {
+        "min": [
+          -0.0403509,
+          1.0704272000000001,
+          0.0343488
+        ],
+        "max": [
+          0.0390608,
+          1.1178712,
+          0.11472
+        ]
+      },
+      "sourceConceptId": "FMA13073"
+    },
+    "FJ3160": {
+      "nameEn": "second thoracic vertebra",
+      "bounds": {
+        "min": [
+          -0.0359221,
+          1.4047011999999999,
+          0.0121205
+        ],
+        "max": [
+          0.0345784,
+          1.4384712,
+          0.0826758
+        ]
+      },
+      "sourceConceptId": "FMA9187"
+    },
+    "FJ3161": {
+      "nameEn": "third cervical vertebra",
+      "bounds": {
+        "min": [
+          -0.0298428,
+          1.4951112,
+          0.038133099999999996
+        ],
+        "max": [
+          0.0285393,
+          1.5238512,
+          0.0878132
+        ]
+      },
+      "sourceConceptId": "FMA12521"
+    },
+    "FJ3162": {
+      "nameEn": "third lumbar vertebra",
+      "bounds": {
+        "min": [
+          -0.0402029,
+          1.0458042,
+          0.029514
+        ],
+        "max": [
+          0.038841,
+          1.0878412000000002,
+          0.115353
+        ]
+      },
+      "sourceConceptId": "FMA13074"
+    },
+    "FJ3163": {
+      "nameEn": "third thoracic vertebra",
+      "bounds": {
+        "min": [
+          -0.0329661,
+          1.3803412000000002,
+          0.0013601099999999999
+        ],
+        "max": [
+          0.0318409,
+          1.4199612,
+          0.0767363
+        ]
+      },
+      "sourceConceptId": "FMA9209"
+    },
+    "FJ3164": {
+      "nameEn": "fourth cervical vertebra",
+      "bounds": {
+        "min": [
+          -0.027753399999999998,
+          1.4827112,
+          0.0406936
+        ],
+        "max": [
+          0.0263775,
+          1.5102512000000001,
+          0.0891081
+        ]
+      },
+      "sourceConceptId": "FMA12522"
+    },
+    "FJ3165": {
+      "nameEn": "fourth lumbar vertebra",
+      "bounds": {
+        "min": [
+          -0.0427661,
+          1.0167752,
+          0.026156199999999998
+        ],
+        "max": [
+          0.0414154,
+          1.0615132,
+          0.110405
+        ]
+      },
+      "sourceConceptId": "FMA13075"
+    },
+    "FJ3166": {
+      "nameEn": "fourth thoracic vertebra",
+      "bounds": {
+        "min": [
+          -0.0354617,
+          1.3558512,
+          0.00019789599999999998
+        ],
+        "max": [
+          0.03428199999999999,
+          1.3995212000000001,
+          0.0696049
+        ]
+      },
+      "sourceConceptId": "FMA9248"
+    },
+    "FJ3167": {
+      "nameEn": "fifth cervical vertebra",
+      "bounds": {
+        "min": [
+          -0.0296978,
+          1.4718812000000001,
+          0.0360825
+        ],
+        "max": [
+          0.028333200000000003,
+          1.4961012,
+          0.0907726
+        ]
+      },
+      "sourceConceptId": "FMA12523"
+    },
+    "FJ3168": {
+      "nameEn": "fifth lumbar vertebra",
+      "bounds": {
+        "min": [
+          -0.0510007,
+          0.9827062000000001,
+          0.018245
+        ],
+        "max": [
+          0.0495736,
+          1.0329442,
+          0.0990765
+        ]
+      },
+      "sourceConceptId": "FMA13076"
+    },
+    "FJ3169": {
+      "nameEn": "fifth thoracic vertebra",
+      "bounds": {
+        "min": [
+          -0.036151499999999996,
+          1.3178812,
+          -1.85499e-05
+        ],
+        "max": [
+          0.034889699999999996,
+          1.3753812,
+          0.066009
+        ]
+      },
+      "sourceConceptId": "FMA9922"
+    },
+    "FJ3170": {
+      "nameEn": "sixth cervical vertebra",
+      "bounds": {
+        "min": [
+          -0.0312652,
+          1.4597012,
+          0.0291794
+        ],
+        "max": [
+          0.0299477,
+          1.4828512,
+          0.091671
+        ]
+      },
+      "sourceConceptId": "FMA12524"
+    },
+    "FJ3171": {
+      "nameEn": "sixth thoracic vertebra",
+      "bounds": {
+        "min": [
+          -0.0364227,
+          1.2874912,
+          0.0011924300000000002
+        ],
+        "max": [
+          0.0350339,
+          1.3471912,
+          0.0652209
+        ]
+      },
+      "sourceConceptId": "FMA9945"
+    },
+    "FJ3172": {
+      "nameEn": "seventh cervical vertebra",
+      "bounds": {
+        "min": [
+          -0.0332293,
+          1.4428212,
+          0.0212664
+        ],
+        "max": [
+          0.0319316,
+          1.4699512,
+          0.0900319
+        ]
+      },
+      "sourceConceptId": "FMA12525"
+    },
+    "FJ3173": {
+      "nameEn": "seventh thoracic vertebra",
+      "bounds": {
+        "min": [
+          -0.037226300000000004,
+          1.2574112,
+          0.000671493
+        ],
+        "max": [
+          0.0363206,
+          1.3199112,
+          0.0669792
+        ]
+      },
+      "sourceConceptId": "FMA9968"
+    },
+    "FJ3174": {
+      "nameEn": "eighth thoracic vertebra",
+      "bounds": {
+        "min": [
+          -0.0336594,
+          1.2318612,
+          0.0009317959999999999
+        ],
+        "max": [
+          0.032152700000000006,
+          1.2911612,
+          0.07202760000000001
+        ]
+      },
+      "sourceConceptId": "FMA9991"
+    },
+    "FJ3175": {
+      "nameEn": "ninth thoracic vertebra",
+      "bounds": {
+        "min": [
+          -0.034394799999999996,
+          1.2047412000000002,
+          0.00615606
+        ],
+        "max": [
+          0.032998,
+          1.2629512,
+          0.0776529
+        ]
+      },
+      "sourceConceptId": "FMA10014"
+    },
+    "FJ3201": {
+      "nameEn": "hyoid bone",
+      "bounds": {
+        "min": [
+          -0.019524200000000002,
+          1.5004811999999998,
+          0.0944187
+        ],
+        "max": [
+          0.0182825,
+          1.5189712,
+          0.129
+        ]
+      },
+      "sourceConceptId": "FMA52749"
+    },
+    "FJ3202": {
+      "nameEn": "intervertebral disk of axis",
+      "bounds": {
+        "min": [
+          -0.0134404,
+          1.5195612,
+          0.0692213
+        ],
+        "max": [
+          0.011684,
+          1.5290512,
+          0.0872534
+        ]
+      },
+      "sourceConceptId": "FMA25058"
+    },
+    "FJ3203": {
+      "nameEn": "intervertebral disk of fourth thoracic vertebra",
+      "bounds": {
+        "min": [
+          -0.0154939,
+          1.3561412,
+          0.0376833
+        ],
+        "max": [
+          0.0142347,
+          1.3694412,
+          0.0667359
+        ]
+      },
+      "sourceConceptId": "FMA13501"
+    },
+    "FJ3204": {
+      "nameEn": "intervertebral disk of fifth thoracic vertebra",
+      "bounds": {
+        "min": [
+          -0.0159234,
+          1.3326112,
+          0.0335565
+        ],
+        "max": [
+          0.0146322,
+          1.3431112,
+          0.0653025
+        ]
+      },
+      "sourceConceptId": "FMA13502"
+    },
+    "FJ3205": {
+      "nameEn": "intervertebral disk of sixth thoracic vertebra",
+      "bounds": {
+        "min": [
+          -0.0176541,
+          1.3052012,
+          0.030606500000000002
+        ],
+        "max": [
+          0.0163522,
+          1.3172512,
+          0.06619889999999999
+        ]
+      },
+      "sourceConceptId": "FMA13503"
+    },
+    "FJ3206": {
+      "nameEn": "intervertebral disk of seventh thoracic vertebra",
+      "bounds": {
+        "min": [
+          -0.017619,
+          1.2790612000000001,
+          0.0328435
+        ],
+        "max": [
+          0.0162887,
+          1.2912912,
+          0.0694926
+        ]
+      },
+      "sourceConceptId": "FMA13504"
+    },
+    "FJ3207": {
+      "nameEn": "intervertebral disk of eighth thoracic vertebra",
+      "bounds": {
+        "min": [
+          -0.0184752,
+          1.2528312000000001,
+          0.0383823
+        ],
+        "max": [
+          0.017160699999999997,
+          1.2674812,
+          0.0741825
+        ]
+      },
+      "sourceConceptId": "FMA13505"
+    },
+    "FJ3208": {
+      "nameEn": "intervertebral disk of ninth thoracic vertebra",
+      "bounds": {
+        "min": [
+          -0.019579100000000002,
+          1.2252212,
+          0.0435852
+        ],
+        "max": [
+          0.0182622,
+          1.2406512,
+          0.0796317
+        ]
+      },
+      "sourceConceptId": "FMA13506"
+    },
+    "FJ3209": {
+      "nameEn": "intervertebral disk of tenth thoracic vertebra",
+      "bounds": {
+        "min": [
+          -0.0199665,
+          1.1980212000000001,
+          0.049681499999999996
+        ],
+        "max": [
+          0.018669599999999998,
+          1.2134212,
+          0.0877942
+        ]
+      },
+      "sourceConceptId": "FMA13507"
+    },
+    "FJ3210": {
+      "nameEn": "intervertebral disk of eleventh thoracic vertebra",
+      "bounds": {
+        "min": [
+          -0.0207728,
+          1.1697212,
+          0.0569869
+        ],
+        "max": [
+          0.0194286,
+          1.1863512,
+          0.0970122
+        ]
+      },
+      "sourceConceptId": "FMA13508"
+    },
+    "FJ3211": {
+      "nameEn": "intervertebral disk",
+      "bounds": {
+        "min": [
+          -0.021774599999999998,
+          1.1396112,
+          0.065797
+        ],
+        "max": [
+          0.0204661,
+          1.1570012,
+          0.10512600000000001
+        ]
+      },
+      "sourceConceptId": "FMA10446"
+    },
+    "FJ3212": {
+      "nameEn": "intervertebral disk of first lumbar vertebra",
+      "bounds": {
+        "min": [
+          -0.0218952,
+          1.1106712,
+          0.0745321
+        ],
+        "max": [
+          0.020598199999999997,
+          1.1266812,
+          0.112303
+        ]
+      },
+      "sourceConceptId": "FMA16033"
+    },
+    "FJ3213": {
+      "nameEn": "intervertebral disk of third cervical vertebra",
+      "bounds": {
+        "min": [
+          -0.0119711,
+          1.5050012000000001,
+          0.0726619
+        ],
+        "max": [
+          0.0106614,
+          1.5111812,
+          0.088691
+        ]
+      },
+      "sourceConceptId": "FMA13896"
+    },
+    "FJ3214": {
+      "nameEn": "intervertebral disk of second lumbar vertebra",
+      "bounds": {
+        "min": [
+          -0.022969899999999998,
+          1.0792312,
+          0.0781293
+        ],
+        "max": [
+          0.021649,
+          1.0906812,
+          0.115991
+        ]
+      },
+      "sourceConceptId": "FMA16034"
+    },
+    "FJ3215": {
+      "nameEn": "intervertebral disk of third lumbar vertebra",
+      "bounds": {
+        "min": [
+          -0.023009699999999998,
+          1.0414052,
+          0.0745784
+        ],
+        "max": [
+          0.0217167,
+          1.0588182,
+          0.112853
+        ]
+      },
+      "sourceConceptId": "FMA16035"
+    },
+    "FJ3216": {
+      "nameEn": "intervertebral disk of fourth lumbar vertebra",
+      "bounds": {
+        "min": [
+          -0.0252531,
+          1.0087392,
+          0.06425499999999999
+        ],
+        "max": [
+          0.023898700000000002,
+          1.0317041999999998,
+          0.102767
+        ]
+      },
+      "sourceConceptId": "FMA16036"
+    },
+    "FJ3217": {
+      "nameEn": "intervertebral disk of fifth lumbar vertebra",
+      "bounds": {
+        "min": [
+          -0.024355,
+          0.9729372000000001,
+          0.053946
+        ],
+        "max": [
+          0.0229925,
+          1.0018822,
+          0.0910785
+        ]
+      },
+      "sourceConceptId": "FMA16037"
+    },
+    "FJ3218": {
+      "nameEn": "intervertebral disk of fourth cervical vertebra",
+      "bounds": {
+        "min": [
+          -0.0133902,
+          1.4868212,
+          0.0742152
+        ],
+        "max": [
+          0.0120673,
+          1.4974412,
+          0.0912835
+        ]
+      },
+      "sourceConceptId": "FMA13897"
+    },
+    "FJ3219": {
+      "nameEn": "intervertebral disk of fifth cervical vertebra",
+      "bounds": {
+        "min": [
+          -0.0148096,
+          1.4706812,
+          0.0755214
+        ],
+        "max": [
+          0.013479,
+          1.4814412,
+          0.0919798
+        ]
+      },
+      "sourceConceptId": "FMA13898"
+    },
+    "FJ3220": {
+      "nameEn": "intervertebral disk of sixth cervical vertebra",
+      "bounds": {
+        "min": [
+          -0.014826,
+          1.4552912,
+          0.0735229
+        ],
+        "max": [
+          0.013355,
+          1.4648612,
+          0.0903012
+        ]
+      },
+      "sourceConceptId": "FMA13899"
+    },
+    "FJ3221": {
+      "nameEn": "intervertebral disk of seventh cervical vertebra",
+      "bounds": {
+        "min": [
+          -0.0163312,
+          1.4381112,
+          0.0697753
+        ],
+        "max": [
+          0.014939000000000001,
+          1.4497812,
+          0.0876123
+        ]
+      },
+      "sourceConceptId": "FMA13900"
+    },
+    "FJ3222": {
+      "nameEn": "intervertebral disk of first thoracic vertebra",
+      "bounds": {
+        "min": [
+          -0.017064,
+          1.4200112000000003,
+          0.0639087
+        ],
+        "max": [
+          0.0155358,
+          1.4328612,
+          0.08378189999999999
+        ]
+      },
+      "sourceConceptId": "FMA10458"
+    },
+    "FJ3223": {
+      "nameEn": "intervertebral disk of second thoracic vertebra",
+      "bounds": {
+        "min": [
+          -0.0166084,
+          1.3988512,
+          0.0553544
+        ],
+        "max": [
+          0.015304700000000001,
+          1.4137312,
+          0.0782662
+        ]
+      },
+      "sourceConceptId": "FMA13495"
+    },
+    "FJ3224": {
+      "nameEn": "intervertebral disk of third thoracic vertebra",
+      "bounds": {
+        "min": [
+          -0.0155442,
+          1.3778412,
+          0.0456897
+        ],
+        "max": [
+          0.0142062,
+          1.3925112000000002,
+          0.07158339999999999
+        ]
+      },
+      "sourceConceptId": "FMA13500"
+    },
+    "FJ3263": {
+      "nameEn": "left inferior nasal concha",
+      "bounds": {
+        "min": [
+          0.00459121,
+          1.5607712,
+          0.133951
+        ],
+        "max": [
+          0.0159399,
+          1.5761612,
+          0.16948
+        ]
+      },
+      "sourceConceptId": "FMA54738"
+    },
+    "FJ3269": {
+      "nameEn": "left maxilla",
+      "bounds": {
+        "min": [
+          -0.00306793,
+          1.5421012,
+          0.12681399999999998
+        ],
+        "max": [
+          0.0457952,
+          1.6114012,
+          0.18288
+        ]
+      },
+      "sourceConceptId": "FMA53650"
+    },
+    "FJ3272": {
+      "nameEn": "left nasal bone",
+      "bounds": {
+        "min": [
+          -0.00252242,
+          1.5799612,
+          0.16929
+        ],
+        "max": [
+          0.00719993,
+          1.6116012,
+          0.18946700000000002
+        ]
+      },
+      "sourceConceptId": "FMA53648"
+    },
+    "FJ3289": {
+      "nameEn": "mandible",
+      "bounds": {
+        "min": [
+          -0.0538459,
+          1.4997412,
+          0.08985370000000001
+        ],
+        "max": [
+          0.0525541,
+          1.5842112,
+          0.173832
+        ]
+      },
+      "sourceConceptId": "FMA52748"
+    },
+    "FJ3369": {
+      "nameEn": "right inferior nasal concha",
+      "bounds": {
+        "min": [
+          -0.0165321,
+          1.5566312,
+          0.12996100000000002
+        ],
+        "max": [
+          -0.00668817,
+          1.5765912,
+          0.166327
+        ]
+      },
+      "sourceConceptId": "FMA54737"
+    },
+    "FJ3375": {
+      "nameEn": "right maxilla",
+      "bounds": {
+        "min": [
+          -0.0476107,
+          1.5421012,
+          0.129374
+        ],
+        "max": [
+          -0.000251054,
+          1.6114612,
+          0.184029
+        ]
+      },
+      "sourceConceptId": "FMA53649"
+    },
+    "FJ3378": {
+      "nameEn": "right nasal bone",
+      "bounds": {
+        "min": [
+          -0.00914871,
+          1.5792812,
+          0.169585
+        ],
+        "max": [
+          -0.0007414110000000001,
+          1.6113012000000002,
+          0.190833
+        ]
+      },
+      "sourceConceptId": "FMA53647"
+    },
+    "FJ3393": {
+      "nameEn": "sacrum",
+      "bounds": {
+        "min": [
+          -0.059591200000000004,
+          0.8609482,
+          -0.00725375
+        ],
+        "max": [
+          0.0582029,
+          1.0053112000000002,
+          0.0813964
+        ]
+      },
+      "sourceConceptId": "FMA16202"
+    }
+  }
+}

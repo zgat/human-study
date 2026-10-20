@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "colors": {
+    "LU": "#F0C030",
+    "LI": "#F040F0",
+    "ST": "#20C0F0",
+    "SP": "#20F020",
+    "HT": "#F06070",
+    "SI": "#50A060",
+    "BL": "#C090E0",
+    "KI": "#F07020",
+    "PC": "#C0F050",
+    "TE": "#20F0E0",
+    "GB": "#F0B080",
+    "LR": "#20F090",
+    "GV": "#D0E090",
+    "CV": "#F060B0",
+    "CHONG": "#40B020",
+    "DAI": "#90A020",
+    "YINQIAO": "#5090F0",
+    "YANGQIAO": "#D080A0",
+    "YINWEI": "#90F0B0",
+    "YANGWEI": "#C070F0"
+  },
+  "count": 20,
+  "allUnique": true,
+  "algorithm": "sRGB 32..240 step 16; D65 CIELAB; L*58..90, chroma>=35, panel contrast>=5; seed nearest #F0C030 then greedy farthest-point CIE76",
+  "background": "#14222D",
+  "minimumPanelContrastRatio": 5.043259497061479,
+  "minimumPairwiseCie76DeltaE": 28.26822834929524,
+  "routeGeometryAndAssociationsUnchanged": true,
+  "limitationsZh": [
+    "色差和对比为标准色彩空间计算，不能保证所有色觉差异下20色均可辨认；名称、选中强调和目录开关仍为识别依据。",
+    "对比值针对暗色面板，不代表覆盖在皮肤或器官上时的最小对比。"
+  ],
+  "meridiansSha256": "382ce05df71c208fa490f216981523ccf8c3743214493d093c4f15568d3fc382"
+}

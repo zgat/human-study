@@ -1,0 +1,168 @@
+{
+  "applicationVersion": "0.3.0",
+  "apk": {
+    "path": "outputs/human-study-0.3.0-arm64.apk",
+    "bytes": 118292258,
+    "sha256": "fe1c4885e79ec761de0d7cfc2becf40fb7a8e385c42171f175b3cf34ce0d3908"
+  },
+  "package": "com.zga.meridianatlas",
+  "checks": {
+    "zipCrc": true,
+    "bundledSourceHashes": true,
+    "offlinePermission": true,
+    "arm64Only": true,
+    "elf16KiBAlignment": true,
+    "signature": true,
+    "zip16KiBAlignment": true,
+    "applicationLabel": true
+  },
+  "counts": {
+    "acupoints": 413,
+    "instances": 843,
+    "meridians": 20,
+    "structures": 1239,
+    "fascialConnections": 3,
+    "connectionReferenceRegions": 20
+  },
+  "assets": [
+    {
+      "path": "anatomy.json",
+      "bytes": 2002808,
+      "sha256": "bf3d37618ab832cf9ce2b828d6db14241c735dba5978ffc3cd227f593a4a044f"
+    },
+    {
+      "path": "content/acupoints.json",
+      "bytes": 1622631,
+      "sha256": "2de017d6bee27b3356969181f49ec94de04b725b95af6ddf0096700a22c1018e"
+    },
+    {
+      "path": "content/fascia.json",
+      "bytes": 45493,
+      "sha256": "31cc0df706b4dd8544b44ba592923a30f58a26e37a56471315bef69acd8fc6f3"
+    },
+    {
+      "path": "content/landmarks.json",
+      "bytes": 19457,
+      "sha256": "79570bc4dbb3cd759a981441677b4ce4fa254c249e789f5af331a8a624d9a418"
+    },
+    {
+      "path": "content/meridians.json",
+      "bytes": 183807,
+      "sha256": "382ce05df71c208fa490f216981523ccf8c3743214493d093c4f15568d3fc382"
+    },
+    {
+      "path": "content/organ-landmarks.json",
+      "bytes": 7676,
+      "sha256": "3fa4a9a614b3a4ff61d03897474a3da76a92883b6cc4a572aab58b3a4748618d"
+    },
+    {
+      "path": "content/sources.json",
+      "bytes": 35142,
+      "sha256": "690417de6b1e760a0615ee76fb105d158dbdf005975a99347f1c2c142fa02a2a"
+    },
+    {
+      "path": "licenses/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744"
+    },
+    {
+      "path": "licenses/CC-BY-SA-4.0.txt",
+      "bytes": 18375,
+      "sha256": "cde7883b9050a1104f4ac19a1572aafd6e5d7323b68351aaf51fbf4beba54966"
+    },
+    {
+      "path": "licenses/DEPENDENCY-NOTICES.md",
+      "bytes": 83442,
+      "sha256": "16691f8e811a6fec28767981fbd381f83e003eb4d91b67b1c635643a70b11328"
+    },
+    {
+      "path": "licenses/FILAMENT-Apache-2.0.txt",
+      "bytes": 11362,
+      "sha256": "02d70b593dd8e9355dd8e1ca8d13c303bee5bcaf3065b66ff6e4f534e1e6a2c1"
+    },
+    {
+      "path": "licenses/MODEL-NOTICE.md",
+      "bytes": 3323,
+      "sha256": "e66e7fa56b67c1464f4401cb41f895f6ed26d5fc68efae18d4c4c4856d1efbb0"
+    },
+    {
+      "path": "licenses/PROJECT-Apache-2.0.txt",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "licenses/PROJECT-NOTICE.md",
+      "bytes": 1492,
+      "sha256": "b97aadf9772a7a29386432da54ee0ca67629ffa79a8e236d55e1780d0995b5b1"
+    },
+    {
+      "path": "licenses/Z-Anatomy-upstream.txt",
+      "bytes": 2754,
+      "sha256": "196b66b56551a862e59872f7cdb70e6d9a6ad84e9105962fca8ec28c14e97520"
+    },
+    {
+      "path": "licenses/meshoptimizer-MIT.txt",
+      "bytes": 1079,
+      "sha256": "f03037ca7bad1e3eb7f4a63fa6084a8baabd5ba30d3c239a9a7f35705d873e26"
+    },
+    {
+      "path": "materials/cutaway.filamat",
+      "bytes": 39805,
+      "sha256": "62daacb1b8e6a7360ae318bf2974f5c002b53d8e06da72bd33908c621f9aa8d9"
+    },
+    {
+      "path": "models/body-low.glb",
+      "bytes": 48115592,
+      "sha256": "9d4b8f75a3d12fb5695039594dab82af5223af7bccf8b69f511b64815e3329e3"
+    },
+    {
+      "path": "models/body-standard.glb",
+      "bytes": 59941576,
+      "sha256": "a1588838552e7503142a51cc5f23681bbcc3cd33098bca80739f4794fed2ceee"
+    },
+    {
+      "path": "models/skin-occlusion.bin",
+      "bytes": 1800008,
+      "sha256": "69d81671883717189708d2609aac4eb180d6c0ab17c535d83941c7fb640f80a4"
+    }
+  ],
+  "nativeLibraries": [
+    {
+      "path": "lib/arm64-v8a/libandroidx.graphics.path.so",
+      "sha256": "41e9a793c43a0f4fddb19e33f346bace464f30f888ba7b9eaf96294ea115bfb6",
+      "loadAlignments": [
+        16384,
+        16384,
+        16384
+      ]
+    },
+    {
+      "path": "lib/arm64-v8a/libdatastore_shared_counter.so",
+      "sha256": "d3e48717c9aa147e0ab21063ba0e8e0211cabf8bf40b222640829519edbf58e1",
+      "loadAlignments": [
+        16384,
+        16384,
+        16384
+      ]
+    },
+    {
+      "path": "lib/arm64-v8a/libfilament-jni.so",
+      "sha256": "dd0b60f022f75c8e057f7380ee085775d270e0c87165296463b532e437c3a640",
+      "loadAlignments": [
+        16384,
+        16384,
+        16384
+      ]
+    },
+    {
+      "path": "lib/arm64-v8a/libgltfio-jni.so",
+      "sha256": "12695105867b287539a7cd1763ecfe2bc8aee1e11fac4208ad0b7088fc5bc030",
+      "loadAlignments": [
+        16384,
+        16384,
+        16384
+      ]
+    }
+  ],
+  "clinicalReviewCompleted": false
+}

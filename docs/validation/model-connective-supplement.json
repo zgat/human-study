@@ -1,0 +1,566 @@
+{
+  "schemaVersion": 1,
+  "sourcePath": "tools/assets/source/MuscularSystem100.fbx",
+  "sourceUrl": "https://raw.githubusercontent.com/LluisV/Z-Anatomy/PC-Version/Resources/Models/FBX/MuscularSystem100.fbx",
+  "sourceSha256": "4c19df534d5d84aabbce08604306aa0485b43e8a2483c72a95b569e1dfea2279",
+  "license": "CC-BY-SA-4.0",
+  "addedMeshes": [
+    {
+      "id": "ZA_390108657",
+      "nodeName": "ZA_390108657",
+      "nameEn": "right posterior layer of thoracolumbar fascia",
+      "nameZh": "右侧胸腰筋膜后层",
+      "system": "connective",
+      "region": "trunk",
+      "layer": 0,
+      "bounds": {
+        "min": [
+          -0.07181146740913391,
+          0.937201976776123,
+          0.010161813348531723
+        ],
+        "max": [
+          -9.284982297685929e-06,
+          1.1729308366775513,
+          0.053979527205228806
+        ]
+      },
+      "tissueType": "fascia",
+      "tissueTypeZh": "筋膜",
+      "structureType": "fascia",
+      "sourceDataset": "Z-Anatomy MuscularSystem100.fbx",
+      "sourceElementId": "390108657",
+      "sourceGeometryId": "957700298",
+      "sourceLicense": "CC-BY-SA-4.0",
+      "sourceConceptNameEn": "Posterior layer of thoracolumbar fascia.r",
+      "sourceConceptNoteZh": "对应官方 FBX 命名的实际筋膜或腱膜网格；没有另造几何。",
+      "sourceWorldMatrixCentimetres": [
+        [
+          99.9999811251797,
+          3.204421373349668e-13,
+          -6.000033853779101e-12,
+          -4.490569532780219
+        ],
+        [
+          -3.204418020417932e-13,
+          99.99997647603152,
+          -1.629206473283181e-05,
+          104.40742917478002
+        ],
+        [
+          -6.000030298110591e-12,
+          1.629205923002971e-05,
+          99.99997846285521,
+          -6.897759011278002
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "registrationTranslationMetres": [
+        -9.325671486835885e-06,
+        0.009860241655864077,
+        0.1002417891706242
+      ],
+      "registrationReviewStatus": "geometric-reference-unreviewed",
+      "translationStatus": "reviewable",
+      "taxonomyReviewStatus": "source-checked-professional-review-pending",
+      "descriptionZh": "胸腰筋膜为腰背部的结缔组织膜层；本件仅表示源模型命名的这一层及侧别。其形态和配准供解剖关系学习，不能作为疼痛点、触发点或治疗靶点。",
+      "functionZh": "参与腰背部组织包裹、肌力传递和稳定。",
+      "vertices": 184,
+      "triangles": 313,
+      "targetObj": "tools/assets/source/connective-target/ZA_390108657.obj"
+    },
+    {
+      "id": "ZA_655962380",
+      "nodeName": "ZA_655962380",
+      "nameEn": "left posterior layer of thoracolumbar fascia",
+      "nameZh": "左侧胸腰筋膜后层",
+      "system": "connective",
+      "region": "trunk",
+      "layer": 0,
+      "bounds": {
+        "min": [
+          -9.277512617700268e-06,
+          0.937201976776123,
+          0.010161802172660828
+        ],
+        "max": [
+          0.07179290056228638,
+          1.1729308366775513,
+          0.05397951230406761
+        ]
+      },
+      "tissueType": "fascia",
+      "tissueTypeZh": "筋膜",
+      "structureType": "fascia",
+      "sourceDataset": "Z-Anatomy MuscularSystem100.fbx",
+      "sourceElementId": "655962380",
+      "sourceGeometryId": "957700298",
+      "sourceLicense": "CC-BY-SA-4.0",
+      "sourceConceptNameEn": "Posterior layer of thoracolumbar fascia.l",
+      "sourceConceptNoteZh": "对应官方 FBX 命名的实际筋膜或腱膜网格；没有另造几何。",
+      "sourceWorldMatrixCentimetres": [
+        [
+          -99.99998112517915,
+          -8.74228002085861e-06,
+          6.357299318707964e-06,
+          4.490577471104916
+        ],
+        [
+          -8.742275960428032e-06,
+          99.99997647603114,
+          -1.6292065497106175e-05,
+          104.40742917478023
+        ],
+        [
+          6.357304041350112e-06,
+          1.6292060550077338e-05,
+          99.99997846285503,
+          -6.897760367393367
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "registrationTranslationMetres": [
+        -9.325671486835885e-06,
+        0.009860241655864077,
+        0.1002417891706242
+      ],
+      "registrationReviewStatus": "geometric-reference-unreviewed",
+      "translationStatus": "reviewable",
+      "taxonomyReviewStatus": "source-checked-professional-review-pending",
+      "descriptionZh": "胸腰筋膜为腰背部的结缔组织膜层；本件仅表示源模型命名的这一层及侧别。其形态和配准供解剖关系学习，不能作为疼痛点、触发点或治疗靶点。",
+      "functionZh": "参与腰背部组织包裹、肌力传递和稳定。",
+      "vertices": 184,
+      "triangles": 313,
+      "targetObj": "tools/assets/source/connective-target/ZA_655962380.obj"
+    },
+    {
+      "id": "ZA_258389767",
+      "nodeName": "ZA_258389767",
+      "nameEn": "right middle layer of thoracolumbar fascia",
+      "nameZh": "右侧胸腰筋膜中层",
+      "system": "connective",
+      "region": "trunk",
+      "layer": 0,
+      "bounds": {
+        "min": [
+          -0.06999953091144562,
+          0.9646119475364685,
+          0.02589670568704605
+        ],
+        "max": [
+          -0.024401139467954636,
+          1.1466389894485474,
+          0.05323771759867668
+        ]
+      },
+      "tissueType": "fascia",
+      "tissueTypeZh": "筋膜",
+      "structureType": "fascia",
+      "sourceDataset": "Z-Anatomy MuscularSystem100.fbx",
+      "sourceElementId": "258389767",
+      "sourceGeometryId": "531033395",
+      "sourceLicense": "CC-BY-SA-4.0",
+      "sourceConceptNameEn": "Middle layer of thoracolumbar fascia.r",
+      "sourceConceptNoteZh": "对应官方 FBX 命名的实际筋膜或腱膜网格；没有另造几何。",
+      "sourceWorldMatrixCentimetres": [
+        [
+          99.9999811251797,
+          3.204421373349668e-13,
+          -6.000033853779101e-12,
+          -4.825346924543507
+        ],
+        [
+          -3.204418020417932e-13,
+          99.99997647603152,
+          -1.629206473283181e-05,
+          103.7430995740104
+        ],
+        [
+          -6.000030298110591e-12,
+          1.629205923002971e-05,
+          99.99997846285521,
+          -6.1144098816646215
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "registrationTranslationMetres": [
+        -9.325671486835885e-06,
+        0.009860241655864077,
+        0.1002417891706242
+      ],
+      "registrationReviewStatus": "geometric-reference-unreviewed",
+      "translationStatus": "reviewable",
+      "taxonomyReviewStatus": "source-checked-professional-review-pending",
+      "descriptionZh": "胸腰筋膜为腰背部的结缔组织膜层；本件仅表示源模型命名的这一层及侧别。其形态和配准供解剖关系学习，不能作为疼痛点、触发点或治疗靶点。",
+      "functionZh": "参与腰背部组织包裹、肌力传递和稳定。",
+      "vertices": 99,
+      "triangles": 160,
+      "targetObj": "tools/assets/source/connective-target/ZA_258389767.obj"
+    },
+    {
+      "id": "ZA_286507229",
+      "nodeName": "ZA_286507229",
+      "nameEn": "left middle layer of thoracolumbar fascia",
+      "nameZh": "左侧胸腰筋膜中层",
+      "system": "connective",
+      "region": "trunk",
+      "layer": 0,
+      "bounds": {
+        "min": [
+          0.0243825763463974,
+          0.9646119475364685,
+          0.025896701961755753
+        ],
+        "max": [
+          0.06998097151517868,
+          1.1466389894485474,
+          0.05323771387338638
+        ]
+      },
+      "tissueType": "fascia",
+      "tissueTypeZh": "筋膜",
+      "structureType": "fascia",
+      "sourceDataset": "Z-Anatomy MuscularSystem100.fbx",
+      "sourceElementId": "286507229",
+      "sourceGeometryId": "531033395",
+      "sourceLicense": "CC-BY-SA-4.0",
+      "sourceConceptNameEn": "Middle layer of thoracolumbar fascia.l",
+      "sourceConceptNoteZh": "对应官方 FBX 命名的实际筋膜或腱膜网格；没有另造几何。",
+      "sourceWorldMatrixCentimetres": [
+        [
+          -99.99998112517915,
+          -8.74228002085861e-06,
+          6.357299318707964e-06,
+          4.825356496417568
+        ],
+        [
+          -8.742275960428032e-06,
+          99.99997647603114,
+          -1.6292065497106175e-05,
+          103.74309957401063
+        ],
+        [
+          6.357304041350112e-06,
+          1.6292060550077338e-05,
+          99.99997846285503,
+          -6.11441022129327
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "registrationTranslationMetres": [
+        -9.325671486835885e-06,
+        0.009860241655864077,
+        0.1002417891706242
+      ],
+      "registrationReviewStatus": "geometric-reference-unreviewed",
+      "translationStatus": "reviewable",
+      "taxonomyReviewStatus": "source-checked-professional-review-pending",
+      "descriptionZh": "胸腰筋膜为腰背部的结缔组织膜层；本件仅表示源模型命名的这一层及侧别。其形态和配准供解剖关系学习，不能作为疼痛点、触发点或治疗靶点。",
+      "functionZh": "参与腰背部组织包裹、肌力传递和稳定。",
+      "vertices": 99,
+      "triangles": 160,
+      "targetObj": "tools/assets/source/connective-target/ZA_286507229.obj"
+    },
+    {
+      "id": "ZA_351561331",
+      "nodeName": "ZA_351561331",
+      "nameEn": "right anterior layer of thoracolumbar fascia",
+      "nameZh": "右侧胸腰筋膜前层",
+      "system": "connective",
+      "region": "trunk",
+      "layer": 0,
+      "bounds": {
+        "min": [
+          -0.06999952346086502,
+          0.9635713696479797,
+          0.0409325547516346
+        ],
+        "max": [
+          -0.027572421357035637,
+          1.1378281116485596,
+          0.06126438081264496
+        ]
+      },
+      "tissueType": "fascia",
+      "tissueTypeZh": "筋膜",
+      "structureType": "fascia",
+      "sourceDataset": "Z-Anatomy MuscularSystem100.fbx",
+      "sourceElementId": "351561331",
+      "sourceGeometryId": "577628848",
+      "sourceLicense": "CC-BY-SA-4.0",
+      "sourceConceptNameEn": "Anterior layer of thoracolumbar fascia.r",
+      "sourceConceptNoteZh": "对应官方 FBX 命名的实际筋膜或腱膜网格；没有另造几何。",
+      "sourceWorldMatrixCentimetres": [
+        [
+          99.9999811251797,
+          3.204421373349668e-13,
+          -6.000033853779101e-12,
+          -4.7140998170332
+        ],
+        [
+          -3.204418020417932e-13,
+          99.99997647603152,
+          -1.629206473283181e-05,
+          103.73095789828349
+        ],
+        [
+          -6.000030298110591e-12,
+          1.629205923002971e-05,
+          99.99997846285521,
+          -4.670137798989263
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "registrationTranslationMetres": [
+        -9.325671486835885e-06,
+        0.009860241655864077,
+        0.1002417891706242
+      ],
+      "registrationReviewStatus": "geometric-reference-unreviewed",
+      "translationStatus": "reviewable",
+      "taxonomyReviewStatus": "source-checked-professional-review-pending",
+      "descriptionZh": "胸腰筋膜为腰背部的结缔组织膜层；本件仅表示源模型命名的这一层及侧别。其形态和配准供解剖关系学习，不能作为疼痛点、触发点或治疗靶点。",
+      "functionZh": "参与腰背部组织包裹、肌力传递和稳定。",
+      "vertices": 115,
+      "triangles": 176,
+      "targetObj": "tools/assets/source/connective-target/ZA_351561331.obj"
+    },
+    {
+      "id": "ZA_787452513",
+      "nodeName": "ZA_787452513",
+      "nameEn": "left anterior layer of thoracolumbar fascia",
+      "nameZh": "左侧胸腰筋膜前层",
+      "system": "connective",
+      "region": "trunk",
+      "layer": 0,
+      "bounds": {
+        "min": [
+          0.02755386382341385,
+          0.9635713696479797,
+          0.0409325510263443
+        ],
+        "max": [
+          0.06998097151517868,
+          1.1378281116485596,
+          0.06126438081264496
+        ]
+      },
+      "tissueType": "fascia",
+      "tissueTypeZh": "筋膜",
+      "structureType": "fascia",
+      "sourceDataset": "Z-Anatomy MuscularSystem100.fbx",
+      "sourceElementId": "787452513",
+      "sourceGeometryId": "577628848",
+      "sourceLicense": "CC-BY-SA-4.0",
+      "sourceConceptNameEn": "Anterior layer of thoracolumbar fascia.l",
+      "sourceConceptNoteZh": "对应官方 FBX 命名的实际筋膜或腱膜网格；没有另造几何。",
+      "sourceWorldMatrixCentimetres": [
+        [
+          -99.99998112517915,
+          -8.74228002085861e-06,
+          6.357299318707964e-06,
+          4.714109825065335
+        ],
+        [
+          -8.742275960428032e-06,
+          99.99997647603114,
+          -1.6292065497106175e-05,
+          103.73095789828372
+        ],
+        [
+          6.357304041350112e-06,
+          1.6292060550077338e-05,
+          99.99997846285503,
+          -4.670138105022287
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "registrationTranslationMetres": [
+        -9.325671486835885e-06,
+        0.009860241655864077,
+        0.1002417891706242
+      ],
+      "registrationReviewStatus": "geometric-reference-unreviewed",
+      "translationStatus": "reviewable",
+      "taxonomyReviewStatus": "source-checked-professional-review-pending",
+      "descriptionZh": "胸腰筋膜为腰背部的结缔组织膜层；本件仅表示源模型命名的这一层及侧别。其形态和配准供解剖关系学习，不能作为疼痛点、触发点或治疗靶点。",
+      "functionZh": "参与腰背部组织包裹、肌力传递和稳定。",
+      "vertices": 115,
+      "triangles": 176,
+      "targetObj": "tools/assets/source/connective-target/ZA_787452513.obj"
+    },
+    {
+      "id": "ZA_753149753",
+      "nodeName": "ZA_753149753",
+      "nameEn": "right plantar aponeurosis",
+      "nameZh": "右侧足底腱膜",
+      "system": "connective",
+      "region": "lower_limb",
+      "layer": 0,
+      "bounds": {
+        "min": [
+          -0.12681694328784943,
+          0.016525346785783768,
+          0.030898047611117363
+        ],
+        "max": [
+          -0.06309448182582855,
+          0.03582002967596054,
+          0.17368026077747345
+        ]
+      },
+      "tissueType": "aponeurosis",
+      "tissueTypeZh": "腱膜",
+      "structureType": "aponeurosis",
+      "sourceDataset": "Z-Anatomy MuscularSystem100.fbx",
+      "sourceElementId": "753149753",
+      "sourceGeometryId": "297014842",
+      "sourceLicense": "CC-BY-SA-4.0",
+      "sourceConceptNameEn": "Plantar aponeurosis.r",
+      "sourceConceptNoteZh": "对应官方 FBX 命名的实际筋膜或腱膜网格；没有另造几何。",
+      "sourceWorldMatrixCentimetres": [
+        [
+          100.0,
+          0.0,
+          0.0,
+          -8.351190686225891
+        ],
+        [
+          0.0,
+          99.9999804496761,
+          -1.629206530914247e-05,
+          1.4887627013967915
+        ],
+        [
+          0.0,
+          1.629206530914247e-05,
+          99.9999804496761,
+          0.5144205702900665
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "registrationTranslationMetres": [
+        -9.325671486835885e-06,
+        0.009860241655864077,
+        0.1002417891706242
+      ],
+      "registrationReviewStatus": "geometric-reference-unreviewed",
+      "translationStatus": "reviewable",
+      "taxonomyReviewStatus": "source-checked-professional-review-pending",
+      "descriptionZh": "足底腱膜为足底深筋膜的增厚部分；本件表示源模型对应侧别的腱膜网格。其形态和配准供解剖关系学习，不能作为疼痛点、触发点或治疗靶点。",
+      "functionZh": "支持足纵弓并在负重和蹬地过程中传递张力。",
+      "vertices": 240,
+      "triangles": 406,
+      "targetObj": "tools/assets/source/connective-target/ZA_753149753.obj"
+    },
+    {
+      "id": "ZA_375911140",
+      "nodeName": "ZA_375911140",
+      "nameEn": "left plantar aponeurosis",
+      "nameZh": "左侧足底腱膜",
+      "system": "connective",
+      "region": "lower_limb",
+      "layer": 0,
+      "bounds": {
+        "min": [
+          0.06307576596736908,
+          0.016525233164429665,
+          0.03089803457260132
+        ],
+        "max": [
+          0.12679821252822876,
+          0.03581991419196129,
+          0.17368029057979584
+        ]
+      },
+      "tissueType": "aponeurosis",
+      "tissueTypeZh": "腱膜",
+      "structureType": "aponeurosis",
+      "sourceDataset": "Z-Anatomy MuscularSystem100.fbx",
+      "sourceElementId": "375911140",
+      "sourceGeometryId": "56832064",
+      "sourceLicense": "CC-BY-SA-4.0",
+      "sourceConceptNameEn": "Plantar aponeurosis.l",
+      "sourceConceptNoteZh": "对应官方 FBX 命名的实际筋膜或腱膜网格；没有另造几何。",
+      "sourceWorldMatrixCentimetres": [
+        [
+          -100.0,
+          0.0,
+          0.0,
+          8.351184129714966
+        ],
+        [
+          0.0,
+          100.00000429153057,
+          -4.693606428474486e-06,
+          1.488750780470092
+        ],
+        [
+          0.0,
+          4.693606428474486e-06,
+          100.00000429153057,
+          0.5144211290819003
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "registrationTranslationMetres": [
+        -9.325671486835885e-06,
+        0.009860241655864077,
+        0.1002417891706242
+      ],
+      "registrationReviewStatus": "geometric-reference-unreviewed",
+      "translationStatus": "reviewable",
+      "taxonomyReviewStatus": "source-checked-professional-review-pending",
+      "descriptionZh": "足底腱膜为足底深筋膜的增厚部分；本件表示源模型对应侧别的腱膜网格。其形态和配准供解剖关系学习，不能作为疼痛点、触发点或治疗靶点。",
+      "functionZh": "支持足纵弓并在负重和蹬地过程中传递张力。",
+      "vertices": 240,
+      "triangles": 406,
+      "targetObj": "tools/assets/source/connective-target/ZA_375911140.obj"
+    }
+  ],
+  "limitsZh": [
+    "沿用已记录的共同肌肉平移配准；不是逐点医学配准。",
+    "局部引用必须使用真实三角面和重心坐标；bounds 仅用于视图参考。",
+    "当前模型和已下载源文件未包含可确认的骶结节韧带网格，不提供其虚构 ID。"
+  ]
+}

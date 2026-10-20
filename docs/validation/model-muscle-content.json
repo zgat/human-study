@@ -1,0 +1,134 @@
+{
+  "schemaVersion": 1,
+  "modelId": "bodyparts3d-male-v4",
+  "muscleSystemNodes": 499,
+  "completeOriginInsertionFunction": 499,
+  "completeSourceReferences": 499,
+  "coveragePercent": 100,
+  "countsByStructureType": {
+    "skeletal-muscle": 495,
+    "skeletal-muscle-group": 4
+  },
+  "distinctEnglishLearningFamilies": 210,
+  "reviewStatus": "editorial-unreviewed",
+  "references": [
+    {
+      "key": "upper",
+      "title": "OpenStax Anatomy and Physiology 2e 11.5",
+      "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/11-5-muscles-of-the-pectoral-girdle-and-upper-limbs"
+    },
+    {
+      "key": "lower",
+      "title": "OpenStax Anatomy and Physiology 2e 11.6",
+      "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/11-6-appendicular-muscles-of-the-pelvic-girdle-and-lower-limbs"
+    },
+    {
+      "key": "axial",
+      "title": "OpenStax Anatomy and Physiology 2e 11.3",
+      "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/11-3-axial-muscles-of-the-head-neck-and-back"
+    },
+    {
+      "key": "thorax",
+      "title": "OpenStax Anatomy and Physiology 2e 11.4",
+      "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/11-4-axial-muscles-of-the-abdominal-wall-and-thorax"
+    },
+    {
+      "key": "eye",
+      "title": "StatPearls Anatomy, Head and Neck, Eye Extraocular Muscles",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK519565/"
+    },
+    {
+      "key": "larynx",
+      "title": "StatPearls Anatomy, Head and Neck: Laryngeal Muscles",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK545265/"
+    },
+    {
+      "key": "pharynx",
+      "title": "StatPearls Anatomy, Head and Neck, Pharynx",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK544271/"
+    },
+    {
+      "key": "palate",
+      "title": "StatPearls Anatomy, Head and Neck, Palate",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK557817/"
+    },
+    {
+      "key": "pelvic",
+      "title": "StatPearls Anatomy, Abdomen and Pelvis: Levator Ani Muscle",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK556078/"
+    },
+    {
+      "key": "foot",
+      "title": "StatPearls Anatomy, Bony Pelvis and Lower Limb, Foot Muscles",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK539705/"
+    },
+    {
+      "key": "back",
+      "title": "StatPearls Anatomy, Back, Muscles",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK537074/"
+    },
+    {
+      "key": "tongue",
+      "title": "StatPearls Anatomy, Head and Neck, Tongue",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK507782/"
+    }
+  ],
+  "limitsZh": [
+    "中文文字为独立撰写的解剖事实概述；参考链接用于事实核验，不分发所引教材的图片、表格或原文。",
+    "503 是肌肉系统模型节点数，包含分头、分部、肌群、肌腱和筋膜，不等于独立肌肉条数。",
+    "左右侧和同肌分部可共享所属肌的完整概述，具体部件关系在说明中注明。",
+    "全部说明和部件对应关系仍需医学专业人员逐项审校，不能用于诊断或操作指导。"
+  ],
+  "anatomyMetadata": {
+    "path": "app/src/main/assets/anatomy.json",
+    "sha256": "bf3d37618ab832cf9ce2b828d6db14241c735dba5978ffc3cd227f593a4a044f"
+  },
+  "displayGlbUnchanged": true,
+  "displayGlbSha256": {
+    "app/src/main/assets/models/body-low.glb": "9d4b8f75a3d12fb5695039594dab82af5223af7bccf8b69f511b64815e3329e3",
+    "app/src/main/assets/models/body-standard.glb": "a1588838552e7503142a51cc5f23681bbcc3cd33098bca80739f4794fed2ceee"
+  },
+  "metadataUpdateIdempotent": true,
+  "contentInputs": [
+    {
+      "path": "tools/assets/audit_muscle_topology.py",
+      "sha256": "c02a1059bd0c9c6607faec0f357da4b36846955494037adee1fdff36c99acc9f"
+    },
+    {
+      "path": "tools/assets/chinese-names-extra.json",
+      "sha256": "9e0f607269493434ba01ffaa585e7e29e511695c87b702c8c3dd089d882c0e71"
+    },
+    {
+      "path": "tools/assets/chinese-names.json",
+      "sha256": "f579e779600406880e013ce413028dd7395029cb89ecd7af0e1fa074d9a1d23e"
+    },
+    {
+      "path": "tools/assets/muscle-descriptions.json",
+      "sha256": "602e3ba856e54635045406b044b481ecc2ee469b51f8fb7d1722acccafdd588a"
+    },
+    {
+      "path": "tools/assets/muscle-learning.tsv",
+      "sha256": "8a5a4f2b07abdd9f9eed0d54d69cbf8a3f57c51558d4665d49385d2cf320edb8"
+    },
+    {
+      "path": "tools/assets/muscle_geometry.py",
+      "sha256": "659955dce67458328032f3d466061120d70f1837240bf7b083fcc6e7389b10a4"
+    },
+    {
+      "path": "tools/assets/muscle_learning.py",
+      "sha256": "8c1185563ce711ecb324b3cbe21ff55eb8700cd39ee8ac9484bd21698ece45fb"
+    },
+    {
+      "path": "tools/assets/simplify_muscles.mjs",
+      "sha256": "28dcd122e5d1cac6312d69414e583a35f07753cd1438da4118dda7a1eae3186e"
+    },
+    {
+      "path": "tools/assets/update_muscle_content.py",
+      "sha256": "4e86de811b5dc5ab37e7072669d57b33b4c79ff70d42410cfa92cdad88523f26"
+    },
+    {
+      "path": "tools/assets/verify_muscle_fix.py",
+      "sha256": "0c6963df84024f502050bb0df926e1c15165207b2a27228d13668122fb43461f"
+    }
+  ]
+}

@@ -1,0 +1,937 @@
+{
+  "schemaVersion": 1,
+  "modelId": "bodyparts3d-male-v4",
+  "coordinateSystem": {
+    "units": "metre",
+    "up": "+Y",
+    "anterior": "+Z",
+    "anatomicalLeft": "+X",
+    "sourceUnits": "millimetre",
+    "sourceGroundZ": -78.1112,
+    "transform": "[sourceX/1000,(sourceZ-groundZ)/1000,-sourceY/1000]"
+  },
+  "landmarks": [
+    {
+      "id": "left-humerus",
+      "position": [
+        0.1904165,
+        1.2609762,
+        0.07564245
+      ],
+      "sourceStructureIds": [
+        "FJ3262"
+      ],
+      "reviewStatus": "geometry-derived-provisional"
+    },
+    {
+      "id": "left-radius",
+      "position": [
+        0.24948949999999998,
+        0.9986977000000001,
+        0.09436065
+      ],
+      "sourceStructureIds": [
+        "FJ3277"
+      ],
+      "reviewStatus": "geometry-derived-provisional"
+    },
+    {
+      "id": "left-ulna",
+      "position": [
+        0.222006,
+        1.0068542,
+        0.08391565000000001
+      ],
+      "sourceStructureIds": [
+        "FJ3286"
+      ],
+      "reviewStatus": "geometry-derived-provisional"
+    },
+    {
+      "id": "left-femur",
+      "position": [
+        0.0911016,
+        0.6792587000000001,
+        0.0808791
+      ],
+      "sourceStructureIds": [
+        "FJ3259"
+      ],
+      "reviewStatus": "geometry-derived-provisional"
+    },
+    {
+      "id": "left-tibia",
+      "position": [
+        0.07224459999999999,
+        0.26199453500000003,
+        0.08324855
+      ],
+      "sourceStructureIds": [
+        "FJ3282"
+      ],
+      "reviewStatus": "geometry-derived-provisional"
+    },
+    {
+      "id": "left-fibula",
+      "position": [
+        0.1023185,
+        0.24508139999999998,
+        0.06332650000000001
+      ],
+      "sourceStructureIds": [
+        "FJ3260"
+      ],
+      "reviewStatus": "geometry-derived-provisional"
+    },
+    {
+      "id": "left-patella",
+      "position": [
+        0.08140825,
+        0.4592412,
+        0.11182600000000001
+      ],
+      "sourceStructureIds": [
+        "FJ3275"
+      ],
+      "reviewStatus": "geometry-derived-provisional"
+    },
+    {
+      "id": "left-clavicle",
+      "position": [
+        0.07616036500000001,
+        1.4099662000000002,
+        0.10073275000000001
+      ],
+      "sourceStructureIds": [
+        "FJ3237"
+      ],
+      "reviewStatus": "geometry-derived-provisional"
+    },
+    {
+      "id": "left-scapula",
+      "position": [
+        0.11176269999999999,
+        1.3450162,
+        0.048884300000000006
+      ],
+      "sourceStructureIds": [
+        "FJ3279"
+      ],
+      "reviewStatus": "geometry-derived-provisional"
+    },
+    {
+      "id": "left-hip bone",
+      "position": [
+        0.073752155,
+        0.9331317000000001,
+        0.07020496999999999
+      ],
+      "sourceStructureIds": [
+        "FJ3288"
+      ],
+      "reviewStatus": "geometry-derived-provisional"
+    },
+    {
+      "id": "left-talus",
+      "position": [
+        0.0699069,
+        0.064007455,
+        0.07724550000000001
+      ],
+      "sourceStructureIds": [
+        "FJ3280"
+      ],
+      "reviewStatus": "geometry-derived-provisional"
+    },
+    {
+      "id": "left-elbow",
+      "position": [
+        0.20803190789473702,
+        1.1147322964912278,
+        0.0692080671052632
+      ],
+      "sourceStructureIds": [
+        "FJ3262"
+      ],
+      "reviewStatus": "geometry-derived-provisional"
+    },
+    {
+      "id": "left-wrist",
+      "position": [
+        0.2619282477876106,
+        0.8902768637168145,
+        0.11456517699115044
+      ],
+      "sourceStructureIds": [
+        "FJ3277"
+      ],
+      "reviewStatus": "geometry-derived-provisional"
+    },
+    {
+      "id": "left-ankle-medial",
+      "position": [
+        0.06492774583333336,
+        0.07970239754861108,
+        0.07562119375000001
+      ],
+      "sourceStructureIds": [
+        "FJ3282"
+      ],
+      "reviewStatus": "geometry-derived-provisional"
+    },
+    {
+      "id": "left-ankle-lateral",
+      "position": [
+        0.0966368225,
+        0.0581482525,
+        0.057395303750000015
+      ],
+      "sourceStructureIds": [
+        "FJ3260"
+      ],
+      "reviewStatus": "geometry-derived-provisional"
+    },
+    {
+      "id": "left-patella-base",
+      "position": [
+        0.08140825,
+        0.47887419999999997,
+        0.11182600000000001
+      ],
+      "sourceStructureIds": [
+        "FJ3275"
+      ],
+      "reviewStatus": "geometry-derived-provisional"
+    },
+    {
+      "id": "left-patella-tip",
+      "position": [
+        0.08140825,
+        0.4396082,
+        0.11182600000000001
+      ],
+      "sourceStructureIds": [
+        "FJ3275"
+      ],
+      "reviewStatus": "geometry-derived-provisional"
+    },
+    {
+      "id": "left-shoulder",
+      "position": [
+        0.168,
+        1.4026312,
+        0.085
+      ],
+      "sourceStructureIds": [
+        "FJ3262",
+        "FJ3237"
+      ],
+      "reviewStatus": "geometry-derived-provisional"
+    },
+    {
+      "id": "left-axilla",
+      "position": [
+        0.165,
+        1.3,
+        0.09
+      ],
+      "sourceStructureIds": [
+        "FJ3262",
+        "FJ2810"
+      ],
+      "reviewStatus": "geometry-derived-provisional"
+    },
+    {
+      "id": "left-pubic-top",
+      "position": [
+        0.005,
+        0.8845062,
+        0.138192
+      ],
+      "sourceStructureIds": [
+        "FJ3288"
+      ],
+      "reviewStatus": "geometry-derived-provisional"
+    },
+    {
+      "id": "left-groin",
+      "position": [
+        0.07,
+        0.8845062,
+        0.13
+      ],
+      "sourceStructureIds": [
+        "FJ3288"
+      ],
+      "reviewStatus": "geometry-derived-provisional"
+    },
+    {
+      "id": "right-humerus",
+      "position": [
+        -0.1904655,
+        1.2609812,
+        0.07562905
+      ],
+      "sourceStructureIds": [
+        "FJ3368"
+      ],
+      "reviewStatus": "geometry-derived-provisional"
+    },
+    {
+      "id": "right-radius",
+      "position": [
+        -0.24968400000000002,
+        0.9985537,
+        0.0940053
+      ],
+      "sourceStructureIds": [
+        "FJ3349"
+      ],
+      "reviewStatus": "geometry-derived-provisional"
+    },
+    {
+      "id": "right-ulna",
+      "position": [
+        -0.22203,
+        1.0069227,
+        0.0841466
+      ],
+      "sourceStructureIds": [
+        "FJ3391"
+      ],
+      "reviewStatus": "geometry-derived-provisional"
+    },
+    {
+      "id": "right-femur",
+      "position": [
+        -0.09101414999999999,
+        0.6793122,
+        0.0808611
+      ],
+      "sourceStructureIds": [
+        "FJ3365"
+      ],
+      "reviewStatus": "geometry-derived-provisional"
+    },
+    {
+      "id": "right-tibia",
+      "position": [
+        -0.0722845,
+        0.26205262,
+        0.08345395
+      ],
+      "sourceStructureIds": [
+        "FJ3387"
+      ],
+      "reviewStatus": "geometry-derived-provisional"
+    },
+    {
+      "id": "right-fibula",
+      "position": [
+        -0.10225475,
+        0.24504624999999997,
+        0.0633281
+      ],
+      "sourceStructureIds": [
+        "FJ3366"
+      ],
+      "reviewStatus": "geometry-derived-provisional"
+    },
+    {
+      "id": "right-patella",
+      "position": [
+        -0.08145440000000001,
+        0.4592522,
+        0.1118595
+      ],
+      "sourceStructureIds": [
+        "FJ3381"
+      ],
+      "reviewStatus": "geometry-derived-provisional"
+    },
+    {
+      "id": "right-clavicle",
+      "position": [
+        -0.07746932499999999,
+        1.4101412,
+        0.10068025000000001
+      ],
+      "sourceStructureIds": [
+        "FJ3362"
+      ],
+      "reviewStatus": "geometry-derived-provisional"
+    },
+    {
+      "id": "right-scapula",
+      "position": [
+        -0.1117589,
+        1.3450212000000001,
+        0.048886625
+      ],
+      "sourceStructureIds": [
+        "FJ3384"
+      ],
+      "reviewStatus": "geometry-derived-provisional"
+    },
+    {
+      "id": "right-hip bone",
+      "position": [
+        -0.07383115000000001,
+        0.9331222000000001,
+        0.07006889000000001
+      ],
+      "sourceStructureIds": [
+        "FJ3152"
+      ],
+      "reviewStatus": "geometry-derived-provisional"
+    },
+    {
+      "id": "right-talus",
+      "position": [
+        -0.06987045,
+        0.06408861499999999,
+        0.07716150000000001
+      ],
+      "sourceStructureIds": [
+        "FJ3385"
+      ],
+      "reviewStatus": "geometry-derived-provisional"
+    },
+    {
+      "id": "right-elbow",
+      "position": [
+        -0.2071046043478261,
+        1.1144761999999997,
+        0.06971041739130432
+      ],
+      "sourceStructureIds": [
+        "FJ3368"
+      ],
+      "reviewStatus": "geometry-derived-provisional"
+    },
+    {
+      "id": "right-wrist",
+      "position": [
+        -0.26353211940298515,
+        0.8896065955223883,
+        0.11523342537313437
+      ],
+      "sourceStructureIds": [
+        "FJ3349"
+      ],
+      "reviewStatus": "geometry-derived-provisional"
+    },
+    {
+      "id": "right-ankle-medial",
+      "position": [
+        -0.0641183935483871,
+        0.07984709158709682,
+        0.07592704064516131
+      ],
+      "sourceStructureIds": [
+        "FJ3387"
+      ],
+      "reviewStatus": "geometry-derived-provisional"
+    },
+    {
+      "id": "right-ankle-lateral",
+      "position": [
+        -0.09712132625000001,
+        0.05810321375000001,
+        0.05670176500000003
+      ],
+      "sourceStructureIds": [
+        "FJ3366"
+      ],
+      "reviewStatus": "geometry-derived-provisional"
+    },
+    {
+      "id": "right-patella-base",
+      "position": [
+        -0.08145440000000001,
+        0.4789072,
+        0.1118595
+      ],
+      "sourceStructureIds": [
+        "FJ3381"
+      ],
+      "reviewStatus": "geometry-derived-provisional"
+    },
+    {
+      "id": "right-patella-tip",
+      "position": [
+        -0.08145440000000001,
+        0.4395972,
+        0.1118595
+      ],
+      "sourceStructureIds": [
+        "FJ3381"
+      ],
+      "reviewStatus": "geometry-derived-provisional"
+    },
+    {
+      "id": "right-shoulder",
+      "position": [
+        -0.168,
+        1.4026512,
+        0.085
+      ],
+      "sourceStructureIds": [
+        "FJ3368",
+        "FJ3362"
+      ],
+      "reviewStatus": "geometry-derived-provisional"
+    },
+    {
+      "id": "right-axilla",
+      "position": [
+        -0.165,
+        1.3,
+        0.09
+      ],
+      "sourceStructureIds": [
+        "FJ3368",
+        "FJ2810"
+      ],
+      "reviewStatus": "geometry-derived-provisional"
+    },
+    {
+      "id": "right-pubic-top",
+      "position": [
+        -0.005,
+        0.8843882000000001,
+        0.138136
+      ],
+      "sourceStructureIds": [
+        "FJ3152"
+      ],
+      "reviewStatus": "geometry-derived-provisional"
+    },
+    {
+      "id": "right-groin",
+      "position": [
+        -0.07,
+        0.8843882000000001,
+        0.13
+      ],
+      "sourceStructureIds": [
+        "FJ3152"
+      ],
+      "reviewStatus": "geometry-derived-provisional"
+    },
+    {
+      "id": "navel",
+      "position": [
+        0.000109616,
+        1.0364452,
+        0.193539
+      ],
+      "sourceStructureIds": [
+        "FJ2810"
+      ],
+      "reviewStatus": "geometry-derived-provisional"
+    },
+    {
+      "id": "pubic-top",
+      "position": [
+        0.0,
+        0.8844472000000001,
+        0.138164
+      ],
+      "sourceStructureIds": [
+        "FJ3288",
+        "FJ3152"
+      ],
+      "reviewStatus": "geometry-derived-provisional"
+    },
+    {
+      "id": "xiphoid-tip",
+      "position": [
+        0.0,
+        1.2421312,
+        0.21335300000000001
+      ],
+      "sourceStructureIds": [
+        "FJ3153"
+      ],
+      "reviewStatus": "geometry-derived-provisional"
+    },
+    {
+      "id": "sternal-notch",
+      "position": [
+        0.0,
+        1.4033612,
+        0.178588
+      ],
+      "sourceStructureIds": [
+        "FJ3290"
+      ],
+      "reviewStatus": "geometry-derived-provisional"
+    },
+    {
+      "id": "crown",
+      "position": [
+        0.00134096,
+        1.7194712,
+        0.0776182
+      ],
+      "sourceStructureIds": [
+        "FJ2810"
+      ],
+      "reviewStatus": "geometry-derived-provisional"
+    },
+    {
+      "id": "left-eye",
+      "position": [
+        0.029797200000000003,
+        1.5958762000000002,
+        0.1636145
+      ],
+      "sourceStructureIds": [
+        "FJ1289"
+      ],
+      "reviewStatus": "geometry-derived-provisional"
+    },
+    {
+      "id": "left-brow",
+      "position": [
+        0.029797200000000003,
+        1.6178762000000002,
+        0.1636145
+      ],
+      "sourceStructureIds": [
+        "FJ1289",
+        "FJ2810"
+      ],
+      "reviewStatus": "geometry-derived-provisional"
+    },
+    {
+      "id": "right-eye",
+      "position": [
+        -0.003648300000000002,
+        1.5958762000000002,
+        0.163603
+      ],
+      "sourceStructureIds": [
+        "FJ1340"
+      ],
+      "reviewStatus": "geometry-derived-provisional"
+    },
+    {
+      "id": "right-brow",
+      "position": [
+        -0.003648300000000002,
+        1.6178762000000002,
+        0.163603
+      ],
+      "sourceStructureIds": [
+        "FJ1340",
+        "FJ2810"
+      ],
+      "reviewStatus": "geometry-derived-provisional"
+    },
+    {
+      "id": "nose-tip",
+      "position": [
+        0.000660704,
+        1.5670012000000002,
+        0.205245
+      ],
+      "sourceStructureIds": [
+        "FJ2810",
+        "FJ2557"
+      ],
+      "reviewStatus": "geometry-derived-provisional"
+    },
+    {
+      "id": "chin",
+      "position": [
+        -5.421010862427522e-19,
+        1.502,
+        0.1844169778127951
+      ],
+      "sourceStructureIds": [
+        "FJ3289",
+        "FJ2810"
+      ],
+      "reviewStatus": "geometry-derived-provisional"
+    },
+    {
+      "id": "upper-lip",
+      "position": [
+        1.0842021724855044e-19,
+        1.5400000000000003,
+        0.19071925278236185
+      ],
+      "sourceStructureIds": [
+        "FJ1252",
+        "FJ2810"
+      ],
+      "reviewStatus": "geometry-derived-provisional"
+    },
+    {
+      "id": "thoracic-1-spinous",
+      "position": [
+        0.000203039,
+        1.4267712000000001,
+        0.0192773
+      ],
+      "sourceStructureIds": [
+        "FJ3158"
+      ],
+      "reviewStatus": "geometry-derived-provisional"
+    },
+    {
+      "id": "thoracic-2-spinous",
+      "position": [
+        -0.00148548,
+        1.4063312000000001,
+        0.0135849
+      ],
+      "sourceStructureIds": [
+        "FJ3160"
+      ],
+      "reviewStatus": "geometry-derived-provisional"
+    },
+    {
+      "id": "thoracic-3-spinous",
+      "position": [
+        5.5768e-05,
+        1.3803412000000002,
+        0.0033902299999999997
+      ],
+      "sourceStructureIds": [
+        "FJ3163"
+      ],
+      "reviewStatus": "geometry-derived-provisional"
+    },
+    {
+      "id": "thoracic-4-spinous",
+      "position": [
+        -0.000217519,
+        1.3558512,
+        0.0028141
+      ],
+      "sourceStructureIds": [
+        "FJ3166"
+      ],
+      "reviewStatus": "geometry-derived-provisional"
+    },
+    {
+      "id": "thoracic-5-spinous",
+      "position": [
+        -0.0009403740000000001,
+        1.3178812,
+        0.00232943
+      ],
+      "sourceStructureIds": [
+        "FJ3169"
+      ],
+      "reviewStatus": "geometry-derived-provisional"
+    },
+    {
+      "id": "thoracic-6-spinous",
+      "position": [
+        -0.000915598,
+        1.2874912000000003,
+        0.00411841
+      ],
+      "sourceStructureIds": [
+        "FJ3171"
+      ],
+      "reviewStatus": "geometry-derived-provisional"
+    },
+    {
+      "id": "thoracic-7-spinous",
+      "position": [
+        7.714190000000001e-05,
+        1.2574112,
+        0.00603563
+      ],
+      "sourceStructureIds": [
+        "FJ3173"
+      ],
+      "reviewStatus": "geometry-derived-provisional"
+    },
+    {
+      "id": "thoracic-8-spinous",
+      "position": [
+        -0.000149527,
+        1.2318612,
+        0.0049424099999999995
+      ],
+      "sourceStructureIds": [
+        "FJ3174"
+      ],
+      "reviewStatus": "geometry-derived-provisional"
+    },
+    {
+      "id": "thoracic-9-spinous",
+      "position": [
+        -0.00127568,
+        1.2047412000000002,
+        0.00910273
+      ],
+      "sourceStructureIds": [
+        "FJ3175"
+      ],
+      "reviewStatus": "geometry-derived-provisional"
+    },
+    {
+      "id": "thoracic-10-spinous",
+      "position": [
+        -0.00168048,
+        1.1778812,
+        0.0108469
+      ],
+      "sourceStructureIds": [
+        "FJ3154"
+      ],
+      "reviewStatus": "geometry-derived-provisional"
+    },
+    {
+      "id": "thoracic-11-spinous",
+      "position": [
+        -0.000430159,
+        1.1538312000000002,
+        0.0156032
+      ],
+      "sourceStructureIds": [
+        "FJ3155"
+      ],
+      "reviewStatus": "geometry-derived-provisional"
+    },
+    {
+      "id": "thoracic-12-spinous",
+      "position": [
+        -0.000287867,
+        1.1280712000000002,
+        0.026482600000000002
+      ],
+      "sourceStructureIds": [
+        "FJ3156"
+      ],
+      "reviewStatus": "geometry-derived-provisional"
+    },
+    {
+      "id": "lumbar-1-spinous",
+      "position": [
+        0.000514501,
+        1.0933112,
+        0.034162500000000005
+      ],
+      "sourceStructureIds": [
+        "FJ3157"
+      ],
+      "reviewStatus": "geometry-derived-provisional"
+    },
+    {
+      "id": "lumbar-2-spinous",
+      "position": [
+        -0.0014271400000000001,
+        1.0704272000000001,
+        0.038447800000000004
+      ],
+      "sourceStructureIds": [
+        "FJ3159"
+      ],
+      "reviewStatus": "geometry-derived-provisional"
+    },
+    {
+      "id": "lumbar-3-spinous",
+      "position": [
+        -0.000905955,
+        1.0458042,
+        0.0351815
+      ],
+      "sourceStructureIds": [
+        "FJ3162"
+      ],
+      "reviewStatus": "geometry-derived-provisional"
+    },
+    {
+      "id": "lumbar-4-spinous",
+      "position": [
+        -0.000826449,
+        1.0253012000000001,
+        0.0317166
+      ],
+      "sourceStructureIds": [
+        "FJ3165"
+      ],
+      "reviewStatus": "geometry-derived-provisional"
+    },
+    {
+      "id": "lumbar-5-spinous",
+      "position": [
+        -0.0009718250000000001,
+        1.0008772,
+        0.0227003
+      ],
+      "sourceStructureIds": [
+        "FJ3168"
+      ],
+      "reviewStatus": "geometry-derived-provisional"
+    },
+    {
+      "id": "cervical-3-spinous",
+      "position": [
+        0.00173315,
+        1.4951112000000002,
+        0.039794800000000005
+      ],
+      "sourceStructureIds": [
+        "FJ3161"
+      ],
+      "reviewStatus": "geometry-derived-provisional"
+    },
+    {
+      "id": "cervical-4-spinous",
+      "position": [
+        0.0018793100000000001,
+        1.4827112,
+        0.0419947
+      ],
+      "sourceStructureIds": [
+        "FJ3164"
+      ],
+      "reviewStatus": "geometry-derived-provisional"
+    },
+    {
+      "id": "cervical-5-spinous",
+      "position": [
+        -0.00390653,
+        1.4718812000000001,
+        0.037442300000000005
+      ],
+      "sourceStructureIds": [
+        "FJ3167"
+      ],
+      "reviewStatus": "geometry-derived-provisional"
+    },
+    {
+      "id": "cervical-6-spinous",
+      "position": [
+        -0.00509583,
+        1.4597012,
+        0.0329437
+      ],
+      "sourceStructureIds": [
+        "FJ3170"
+      ],
+      "reviewStatus": "geometry-derived-provisional"
+    },
+    {
+      "id": "cervical-7-spinous",
+      "position": [
+        -0.0037511899999999997,
+        1.4428212,
+        0.0230356
+      ],
+      "sourceStructureIds": [
+        "FJ3172"
+      ],
+      "reviewStatus": "geometry-derived-provisional"
+    }
+  ]
+}

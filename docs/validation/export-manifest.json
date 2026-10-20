@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 1,
+  "targetApplicationVersion": "0.3.0",
+  "files": [
+    {
+      "path": "content-anchor-audit.json",
+      "bytes": 79822,
+      "sha256": "cc1da734aecf6635b291357006928fa18bb5428b75ca6af50777743174fe8daa"
+    },
+    {
+      "path": "content-artifacts.json",
+      "bytes": 938,
+      "sha256": "19f1fc43db168ec4a3a905e3d6991320e66920b70dca8f05bbcccc567e98a106"
+    },
+    {
+      "path": "content-functions.json",
+      "bytes": 3280,
+      "sha256": "922d487392e858f4282e42345d21ac7be1fef380ec015bc41d7c7f1b17b335f0"
+    },
+    {
+      "path": "content-sources.json",
+      "bytes": 35142,
+      "sha256": "690417de6b1e760a0615ee76fb105d158dbdf005975a99347f1c2c142fa02a2a"
+    },
+    {
+      "path": "content-validation.json",
+      "bytes": 4760,
+      "sha256": "f693e43ce48f307e634b9fa24968b0a43c614caa53a4e775f64d7e2c0327c6ad"
+    },
+    {
+      "path": "cutaway-material.json",
+      "bytes": 1452,
+      "sha256": "8941db3e91e4123db2bb4a7cb1c84165186acb8f038923da903ae678c12bf4ff"
+    },
+    {
+      "path": "fascia-content.json",
+      "bytes": 9388,
+      "sha256": "32dfc5b190f88f434e556611007705e6c294d25ead742e8ea79950c2d26d8c10"
+    },
+    {
+      "path": "meridian-palette.json",
+      "bytes": 1219,
+      "sha256": "3a95c12f83a7847142964791edfb8017d58bba8607086c7da097088dffe5e2f0"
+    },
+    {
+      "path": "model-build.json",
+      "bytes": 162864,
+      "sha256": "50c4305d95f93952ecb2ad596511e506b5f450cbfa25764d83fa5020694301cc"
+    },
+    {
+      "path": "model-connective-supplement.json",
+      "bytes": 18718,
+      "sha256": "89ba38e55c8728f42ac67d5583c98d3ac406b54976b4e651dac25639eb927a9a"
+    },
+    {
+      "path": "model-landmarks.json",
+      "bytes": 40143,
+      "sha256": "787e88542b3e3163dceba78b2ab938c1b6f55e0e7877663f1af827dd195c2606"
+    },
+    {
+      "path": "model-muscle-content.json",
+      "bytes": 5082,
+      "sha256": "fffb8dff9e4ee7cc8daeaff17b8a13e8d1c8c57d10082a8280b0dbdfd38b5eff"
+    },
+    {
+      "path": "model-muscle-fix.json",
+      "bytes": 2367507,
+      "sha256": "1909fa909c3acad8a99b847117caae1db171d0a184d23a7891698295aa729ca9"
+    },
+    {
+      "path": "model-muscle-simplification.json",
+      "bytes": 1406251,
+      "sha256": "cb5dd53ebcc84f76bb0a73c82d3b819a3f4240d0a8eab3786a30448824fabb11"
+    },
+    {
+      "path": "model-muscle-topology.json",
+      "bytes": 352235,
+      "sha256": "dad59e9cc06de0785df785988e6c2fca5ea8e7aa11530989549f8be1327b5290"
+    },
+    {
+      "path": "model-skin-occlusion.json",
+      "bytes": 3469,
+      "sha256": "8c9aaa5831034df447c703b7529dddfa88d412aa8264b4289ec53c142d07b706"
+    },
+    {
+      "path": "model-supplement.json",
+      "bytes": 255575,
+      "sha256": "c25f15f34020b3dca5b02487ea1bb8ddab63cb0f9e339c353e9744c95f36ee54"
+    },
+    {
+      "path": "model-taxonomy.json",
+      "bytes": 2991240,
+      "sha256": "cd9c17f68e9db79bf7ec8abab6122538f3c05ab475a5e6187d707edfde25dd8d"
+    },
+    {
+      "path": "model-trapezius-fix.json",
+      "bytes": 2933562,
+      "sha256": "4df7aa5cd4953aeef63ff7a40628e4ed33b9d85fb7955a804e9225fdca070ef6"
+    },
+    {
+      "path": "model-validation.json",
+      "bytes": 1573,
+      "sha256": "246b4b1d0b794f2fa04514cd79d799ad7c6587efba2c68d600e278deb87e8734"
+    },
+    {
+      "path": "route-rendering.json",
+      "bytes": 4924,
+      "sha256": "807ff53ffc34b15c95a90a11e4f534a0505f75cb0cf1b59420c2befd31430f4a"
+    },
+    {
+      "path": "test-summary.json",
+      "bytes": 5195,
+      "sha256": "24efc811796ad5b7f5121683cc6e072d1208fc43395294a39370698ddf3712cd"
+    },
+    {
+      "path": "build-evidence.json",
+      "bytes": 13290,
+      "sha256": "0dbf9898e52357dced2f230aa77f6946505be00eebb39f618b8f93dd160c73c2"
+    },
+    {
+      "path": "delivery-evidence.json",
+      "bytes": 4878,
+      "sha256": "839b045228b4ad1842a69f73ab40404ba56c526e4b434ae05fbad76d8adefbeb"
+    }
+  ],
+  "policyZh": "固定素材清单白名单；设备与历史原件不复制；构建证据须显式启用并与当前版本和APK哈希匹配。"
+}

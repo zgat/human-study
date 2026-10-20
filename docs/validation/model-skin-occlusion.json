@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "modelId": "bodyparts3d-male-v4",
+  "format": {
+    "magic": "MSO1",
+    "endianness": "little",
+    "headerBytes": 8,
+    "layout": "magic[4], uint32 triangleCount, triangleCount * 9 float32 coordinates",
+    "units": "metres",
+    "axes": {
+      "up": "+Y",
+      "anterior": "+Z",
+      "anatomicalLeft": "+X"
+    }
+  },
+  "input": {
+    "path": "app/src/main/assets/models/body-low.glb",
+    "sha256": "9d4b8f75a3d12fb5695039594dab82af5223af7bccf8b69f511b64815e3329e3",
+    "nodeName": "FJ2810",
+    "triangles": 193566,
+    "geometrySource": "Official BodyParts3D 4.0 FJ2810 skin; low-tier skin exactly reuses standard-tier 1.5 mm clustered geometry",
+    "previousContainerSha256": "1fb3d328fa599024cbcfb3fa4ffbf2322ddc5a15ef521c00e01683989d0054c1",
+    "skinGeometryPayload": {
+      "position": {
+        "count": 96755,
+        "componentType": 5126,
+        "sha256": "9f7e2c7511eab318af0ae863009c9c7748e4ce3ef19c4d07842753783427656a"
+      },
+      "normal": {
+        "count": 96755,
+        "componentType": 5126,
+        "sha256": "6a40068fbbd309d124860d9c21f90ee8e058346296866e5b3648cdf5d21b076b"
+      },
+      "indices": {
+        "count": 580698,
+        "componentType": 5125,
+        "sha256": "9163757e4c5f6f1f332539f0a54b3b68b9912a172b2571fe6c48e7528ca79fb6"
+      }
+    },
+    "skinPayloadUnchangedDuringTaxonomyAppend": true,
+    "skinPayloadUnchangedDuringTrapeziusFix": true
+  },
+  "simplifier": {
+    "name": "meshoptimizer MeshoptSimplifier",
+    "source": "https://github.com/zeux/meshoptimizer/tree/master/js",
+    "moduleUrl": "https://raw.githubusercontent.com/zeux/meshoptimizer/master/js/meshopt_simplifier.js",
+    "path": "tools/assets/vendor/meshopt_simplifier.mjs",
+    "sha256": "c3098ee4cb4fc242b84f064c88898e76e44bf58b0e1f693507f323c08cdbb5ed",
+    "license": "MIT",
+    "flags": [
+      "LockBorder",
+      "ErrorAbsolute"
+    ],
+    "targetTriangles": 50000,
+    "maxEstimatedErrorMetres": 0.005,
+    "returnedEstimatedErrorMetres": 0.00039961154107004404,
+    "vertexMovement": "No vertex movement in this second simplification; output reuses low GLB positions."
+  },
+  "output": {
+    "path": "app/src/main/assets/models/skin-occlusion.bin",
+    "bytes": 1800008,
+    "triangles": 50000,
+    "sha256": "69d81671883717189708d2609aac4eb180d6c0ab17c535d83941c7fb640f80a4",
+    "bounds": {
+      "min": [
+        -0.3339160084724426,
+        0,
+        -0.045239198952913284
+      ],
+      "max": [
+        0.33267050981521606,
+        1.7194311618804932,
+        0.24669699370861053
+      ]
+    }
+  },
+  "pipelineFiles": [
+    {
+      "path": "tools/assets/export_occlusion.mjs",
+      "sha256": "3c43fa43053194d52f880b18be9b334761b458b7523d9c7dc34502b6217a5ede"
+    },
+    {
+      "path": "tools/assets/vendor/meshopt_simplifier.mjs",
+      "sha256": "c3098ee4cb4fc242b84f064c88898e76e44bf58b0e1f693507f323c08cdbb5ed"
+    },
+    {
+      "path": "licenses/meshoptimizer-MIT.txt",
+      "sha256": "f03037ca7bad1e3eb7f4a63fa6084a8baabd5ba30d3c239a9a7f35705d873e26"
+    }
+  ],
+  "limitationsZh": [
+    "简化器返回的是相对输入皮肤的近似误差指标，不是对原始皮肤测得的严格 Hausdorff 距离。",
+    "输入皮肤与标准显示档相同，经过 1.5 mm 体素顶点聚合；原始皮肤本身存在边界孔洞，遮挡壳不保证封闭。",
+    "此网格仅供穴位遮挡计算，不用于诊断、测量或医学定位；显示模型及节点完全未改动。"
+  ]
+}

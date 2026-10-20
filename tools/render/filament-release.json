@@ -1,0 +1,49 @@
+{
+  "component": "Google Filament Android",
+  "version": "1.78.0",
+  "release": "https://github.com/google/filament/releases/tag/v1.78.0",
+  "official_asset_listing": "https://github.com/google/filament/releases/expanded_assets/v1.78.0",
+  "reason": "The pinned GitHub release is available before its Maven Central artifacts.",
+  "checksum_scope": "Local download readback SHA-256; upstream digest not independently available.",
+  "artifacts": [
+    {
+      "path": "app/libs/filament-v1.78.0-android.aar",
+      "source": "https://github.com/google/filament/releases/download/v1.78.0/filament-v1.78.0-android.aar",
+      "bytes": 5299967,
+      "sha256": "329bca0503e515bc15e433383f0dc091424d6921050da0d11a14839432e4118d",
+      "native_abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ],
+      "aar_crc_verified": true
+    },
+    {
+      "path": "app/libs/gltfio-v1.78.0-android.aar",
+      "source": "https://github.com/google/filament/releases/download/v1.78.0/gltfio-v1.78.0-android.aar",
+      "bytes": 5842184,
+      "sha256": "d63dcad6d1b3a903f521d833d8e8c7d72fe9ca5ec6349c0b9bc8a07e9ad4e124",
+      "native_abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ],
+      "aar_crc_verified": true
+    },
+    {
+      "path": "app/libs/filament-utils-v1.78.0-android.aar",
+      "source": "https://github.com/google/filament/releases/download/v1.78.0/filament-utils-v1.78.0-android.aar",
+      "bytes": 1212025,
+      "sha256": "238c02f02ad555328e3b65bed883e0e482dd0948e01e858cb72c6a27907e1aae",
+      "native_abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ],
+      "aar_crc_verified": true
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "notesInput": "tools/content/function_notes.json",
+  "notesSha256": "23459e8c3efb969e41b4f24fb81453916d4a1d925b040ad6a1a46ac6b9151ab1",
+  "checksPassed": true,
+  "describedEntries": 413,
+  "traditionalIndicationSummaries": 408,
+  "contextOnlyEntries": 4,
+  "referenceOnlyEntries": 1,
+  "professionalReviewedEntries": 0,
+  "bySourceKind": {
+    "public-domain-classic": 189,
+    "university-course": 212,
+    "anatomical-reference-only": 1,
+    "published-consensus": 1,
+    "clinician-authored-reference": 1,
+    "professional-association": 1,
+    "institutional-health-education": 2,
+    "published-primary-research": 1,
+    "clinician-reviewed-reference": 4,
+    "published-literature-analysis": 1
+  },
+  "contextOnly": [
+    {
+      "pointId": "lr12",
+      "nameZh": "急脉",
+      "reasonZh": "用穴资料：见于中风瘫痪的联合取穴方案。本条传统主治仍待与《腧穴主治》逐条核对，不能据组合方案推断单穴疗效。"
+    },
+    {
+      "pointId": "extra-xinshe",
+      "nameZh": "新设",
+      "reasonZh": "用穴资料：研究涉及项痹病（神经根型颈椎病）的穴区反应点。该资料用于认识穴位相关病证，尚未据此评价单穴治疗作用。"
+    },
+    {
+      "pointId": "ex-b6",
+      "nameZh": "腰宜",
+      "reasonZh": "用穴资料：慢性腰肌劳损研究的联合取穴中有腰宜。该资料记录用穴情况，尚未据此确认单穴的传统主治范围或疗效。"
+    },
+    {
+      "pointId": "extra-jianqian",
+      "nameZh": "肩前",
+      "reasonZh": "联合取穴学习：肩前见于“肩三针”组合，涉及肩背痛、肩痛不举等。这里所列为组合用途，未单独评价该穴效果。"
+    }
+  ],
+  "referenceOnly": [
+    "st17"
+  ],
+  "missingDescriptionIds": [],
+  "coordinatesIdsLocationAndMeridianUnchanged": true,
+  "preservedPointContentFingerprintSha256": "f6ee1503eda95d725c7b88941ad66c047db7f6e0401902ffb1ed36dd32c2b97a",
+  "counts": {
+    "meridianPoints": 362,
+    "extraPointEntries": 51,
+    "totalEntries": 413,
+    "instances": 843,
+    "mappedInstances": 843,
+    "medicallyReviewedInstances": 0
+  },
+  "acupointsSha256": "2de017d6bee27b3356969181f49ec94de04b725b95af6ddf0096700a22c1018e",
+  "boundariesZh": [
+    "408条为有来源的传统主治短摘要，不是408条现代临床疗效认证。",
+    "急脉、新设、腰宜、肩前4条仅提供联合用穴或研究背景，传统主治范围仍待权威教材/标准逐条复核。",
+    "乳中只说明定位参考用途，不编造治疗用途。",
+    "全部文字与三维标记尚未经本项目专业医学审校；没有针刺方向、深度、剂量或自疗操作指导。",
+    "GB/T 30233—2013《腧穴主治》官方状态已核验为现行，但尚未取得全文逐条比对，不将其写作已完成内容依据。"
+  ],
+  "previousPackageComparison": {
+    "packageSha256": "4e16c2940148a86e08cf1b15e3537ac3af967af3f91667c55c80c0ce90f049ca",
+    "nonFunctionPointFieldsExactlyMatch": true,
+    "checkedEntries": 413,
+    "checkedInstances": 843
+  },
+  "editorialMetadataCorrections": [
+    {
+      "pointId": "st29",
+      "sourceCode": "ST 29",
+      "adjacentListedSourceCode": "ST 30",
+      "assetTextUnchanged": true
+    }
+  ]
+}

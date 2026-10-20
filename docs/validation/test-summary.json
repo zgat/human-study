@@ -1,0 +1,164 @@
+{
+  "schemaVersion": 1,
+  "targetApplicationVersion": "0.3.0",
+  "evidenceApplicationVersion": "0.2.2",
+  "targetVersionFullSuiteExecuted": false,
+  "versionBoundaryZh": "以下历史整轮计数来自已完成的0.2.2功能回归；当前目标版本0.3.0没有因此被记作执行了整套测试。改名后的单元测试、安装与冒烟结果另列。",
+  "historicalRegression": {
+    "buildVariant": "debug",
+    "unit": {
+      "tests": 42,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": 42
+    },
+    "device": {
+      "status": "passed",
+      "testsDiscovered": 22,
+      "passed": 21,
+      "assumptionSkipped": 1,
+      "failed": 0
+    },
+    "lint": {
+      "errors": 0,
+      "warnings": 18
+    }
+  },
+  "currentAssetFacts": {
+    "modelValidation": "passed",
+    "models": [
+      {
+        "path": "app/src/main/assets/models/body-standard.glb",
+        "bytes": 59941576,
+        "sha256": "a1588838552e7503142a51cc5f23681bbcc3cd33098bca80739f4794fed2ceee"
+      },
+      {
+        "path": "app/src/main/assets/models/body-low.glb",
+        "bytes": 48115592,
+        "sha256": "9d4b8f75a3d12fb5695039594dab82af5223af7bccf8b69f511b64815e3329e3"
+      }
+    ],
+    "anatomy": {
+      "path": "app/src/main/assets/anatomy.json",
+      "bytes": 2002808,
+      "sha256": "bf3d37618ab832cf9ce2b828d6db14241c735dba5978ffc3cd227f593a4a044f"
+    },
+    "structuresBySystem": {
+      "organ": 382,
+      "bone": 285,
+      "space": 13,
+      "connective": 59,
+      "muscle": 499,
+      "skin": 1
+    },
+    "acupoints": {
+      "entries": 413,
+      "meridianEntries": 362,
+      "extraEntries": 51,
+      "instances": 843,
+      "routes": 20
+    },
+    "fascialConnections": 3,
+    "fascialInstances": 6,
+    "fascialReferenceRegions": 20,
+    "addedFasciaAndAponeurosisMeshes": 8
+  },
+  "professionalReview": {
+    "acupointInstancesCompleted": 0,
+    "traditionalUseEntriesCompleted": 0,
+    "fascialReferenceRegionsCompleted": 0,
+    "clinicalTargets": 0,
+    "statusZh": "三维定位、筋膜配准和学习内容仍为教学参考；几何验证不等同专业医学审校。"
+  },
+  "publicationScopeZh": "仅含匿名统计及当前素材事实；完整设备运行证据保留本地，未复制设备标识、安装路径、截图或原始性能记录。",
+  "historicalPerformanceSummary": {
+    "evidenceApplicationVersion": "0.2.2",
+    "buildVariant": "debug",
+    "mode": "muscles",
+    "quality": "standard",
+    "requestedMinutes": 1,
+    "snapshotWindowSeconds": 65.033027917,
+    "presentedIntervals": 3852,
+    "presentedIntervalsPerWallSecond": 59.23144167477808,
+    "deviceModel": "OPD2404",
+    "androidApi": "36",
+    "limitsZh": "这是所标版本的Debug短时统计；不作为目标版本、十分钟稳定性或Release性能证明。"
+  },
+  "currentUnitTests": {
+    "applicationVersion": "0.3.0",
+    "buildVariant": "debug",
+    "tests": 42,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "passed": 42,
+    "suites": [
+      {
+        "name": "com.zga.meridianatlas.SearchIndexTest",
+        "tests": 3,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "reportSha256": "e90be71c2bef8660231e8350e7ecb62b3cafb88304595069b6d0039344a6e803"
+      },
+      {
+        "name": "com.zga.meridianatlas.VisibilityPolicyTest",
+        "tests": 11,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "reportSha256": "473916abaf3b5a3763495599614e598a1459db2dcfd0b05841b1b141637537d8"
+      },
+      {
+        "name": "com.zga.meridianatlas.ui.FasciaOverlayTest",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "reportSha256": "55873ffff32deab92c258ecd8f2282ce8e1537dbcd06b80a74bd36e475db65ab"
+      },
+      {
+        "name": "com.zga.meridianatlas.ui.OverlayPolicyTest",
+        "tests": 9,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "reportSha256": "070fa8ea5155f3c8b5f21eee8253bef10cf0927f631e5cdd4b8563c1bda67c7a"
+      },
+      {
+        "name": "com.zga.meridianatlas.viewer.SkinOccluderTest",
+        "tests": 10,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "reportSha256": "228e357851f984b7f591e6a00c54e4191fc01866b62869e6d82b5f1b659f1b40"
+      },
+      {
+        "name": "com.zga.meridianatlas.viewer.SurfaceRouteAssetTest",
+        "tests": 1,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "reportSha256": "569ff72f4b7733c21162b8b5ce0f898f33a4bb6ddbf353c3eae741b74fee9872"
+      },
+      {
+        "name": "com.zga.meridianatlas.viewer.SurfaceRoutesTest",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "reportSha256": "3f5da3f2bcaef2c32e88bda4eb30efcfee6990244249690b6bb89f283def49d8"
+      },
+      {
+        "name": "com.zga.meridianatlas.viewer.ViewerMathTest",
+        "tests": 4,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "reportSha256": "20ea79cddb15937d1ed16eb17130409e67bc7582802fdb6edd069ff5d100886c"
+      }
+    ],
+    "scopeZh": "本轮JUnit XML计数与摘要；不替代该版本的设备功能回归、安装或性能测试。"
+  }
+}

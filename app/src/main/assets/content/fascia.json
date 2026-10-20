@@ -1,0 +1,1203 @@
+{
+  "schemaVersion": 1,
+  "modelId": "bodyparts3d-male-v4",
+  "sex": "male",
+  "displayPolicy": {
+    "lineKind": "unoriented_connection_schematic",
+    "forceVectors": false,
+    "forceMagnitudes": false,
+    "targetMeaningZh": "连接参考区：真实模型局部表面上的教学参照，不是触发点、治疗点或个体病灶。",
+    "professionalAnatomicalReviewedTargets": 0
+  },
+  "geometryLicenseNoteZh": "参考区坐标来自BodyParts3D与Z-Anatomy的派生模型，沿用随包提供的模型署名与CC BY-SA 4.0许可；研究说明为自行概述，未复制文献图版或长段原文。",
+  "terminologyZh": "单个筋膜与更广义的筋膜系统分别标识。腱、腱膜和韧带保留其解剖名称；关系示意不构成国际或国家筋膜链点位标准。",
+  "terminologySources": [
+    {
+      "title": "FIPAT Terminologia Anatomica 2, 2019; IFAA adopted 2020",
+      "url": "https://cdn.dal.ca/content/dam/dalhousie/pdf/library/FIPAT/TA2/FIPAT-TA2-Front-Matter.pdf",
+      "licenseNoteZh": "术语本身为公有领域；完整出版物为CC BY-ND 4.0。此数据未复制标准全文或完整表格。"
+    },
+    {
+      "title": "Fascial nomenclature: Update on related consensus process, 2019",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31183880/"
+    },
+    {
+      "title": "全国科学技术名词审定委员会：人体解剖学名词第二版（2014）",
+      "url": "https://www.cnterm.cn/jggk/sdfwyh/rtjpxmcsdwyh/",
+      "noteZh": "作为中文核名基准；当前译名未逐条完成专业审定。"
+    }
+  ],
+  "connections": [
+    {
+      "id": "latissimus-thoracolumbar-contralateral-gluteus",
+      "nameZh": "背阔肌—胸腰筋膜—对侧臀大肌",
+      "descriptionZh": "通过胸腰筋膜后层联系的跨侧结构关系。无箭头连线用于说明研究报道的结构关系，不表示实际力矢量、力值、疼痛来源或治疗靶点。",
+      "evidenceZh": "尸解牵拉研究报告胸腰筋膜后层的位移和跨侧传递；活体研究报告背阔肌张力改变对侧髋被动变量。证据支持局部力学耦合的可能，不能确定此模型每点的受力方向。",
+      "color": 4286173629,
+      "structureIds": [
+        "ZA_172472462",
+        "ZA_390108657",
+        "ZA_655962380",
+        "FJ1418M",
+        "ZA_817053160",
+        "FJ1418"
+      ],
+      "paths": [
+        {
+          "id": "ld-tlf-right",
+          "side": "right",
+          "points": [
+            [
+              -0.0330730677,
+              1.0276284218,
+              0.0264005996
+            ],
+            [
+              -0.0352385466,
+              1.0281520685,
+              0.028148612
+            ],
+            [
+              0.0353510032,
+              0.970635434,
+              0.0218741217
+            ],
+            [
+              0.0384280334,
+              0.9765098691,
+              0.0191255004
+            ]
+          ],
+          "targetIds": [
+            "ld-tlf-right-ld",
+            "ld-tlf-right-tlf-ipsi",
+            "ld-tlf-right-tlf-contra",
+            "ld-tlf-right-gm"
+          ],
+          "kind": "unoriented_connection_schematic",
+          "reviewStatus": "provisional",
+          "notAForceVector": true,
+          "direction": null,
+          "forceMagnitude": null,
+          "descriptionZh": "连接参考区之间的无方向关系示意；折线不表示完整组织走向、纤维方向或实际受力路径。"
+        },
+        {
+          "id": "ld-tlf-left",
+          "side": "left",
+          "points": [
+            [
+              0.0279123175,
+              1.0226573547,
+              0.0255352743
+            ],
+            [
+              0.0297320411,
+              1.0288977623,
+              0.0286764267
+            ],
+            [
+              -0.0398958102,
+              0.9803902109,
+              0.0262753628
+            ],
+            [
+              -0.0385999667,
+              0.9789718588,
+              0.0199085666
+            ]
+          ],
+          "targetIds": [
+            "ld-tlf-left-ld",
+            "ld-tlf-left-tlf-ipsi",
+            "ld-tlf-left-tlf-contra",
+            "ld-tlf-left-gm"
+          ],
+          "kind": "unoriented_connection_schematic",
+          "reviewStatus": "provisional",
+          "notAForceVector": true,
+          "direction": null,
+          "forceMagnitude": null,
+          "descriptionZh": "连接参考区之间的无方向关系示意；折线不表示完整组织走向、纤维方向或实际受力路径。"
+        }
+      ],
+      "targets": [
+        {
+          "id": "ld-tlf-right-ld",
+          "nameZh": "右侧背阔肌下内侧连接参考区",
+          "position": [
+            -0.0330730677,
+            1.0276284218,
+            0.0264005996
+          ],
+          "normal": [
+            0.1314119954,
+            -0.0780215224,
+            0.988252766
+          ],
+          "structureIds": [
+            "ZA_172472462"
+          ],
+          "descriptionZh": "背阔肌下内侧腱膜邻区；本模型未把背阔肌腱膜另分成独立网格。位置取自该模型真实三角面内的代表点，仅表示邻近参考区，尚未完成专业解剖定位审校。",
+          "side": "right",
+          "viewId": "body",
+          "reviewStatus": "provisional",
+          "regionRadiusM": 0.012,
+          "sourceGeometry": {
+            "sourceModel": "models/body-standard.glb",
+            "modelSha256": "a1588838552e7503142a51cc5f23681bbcc3cd33098bca80739f4794fed2ceee",
+            "meshGeometrySha256": "0c64d4a14d6c3a0e9dbecdb7be399fa6b9e6f877df962ff489fd5e1818e2c80a",
+            "nodeName": "ZA_172472462",
+            "primitiveIndex": 0,
+            "triangleIndex": 384,
+            "vertexIndices": [
+              199,
+              153,
+              196
+            ],
+            "indexBase": 0,
+            "barycentric": [
+              0.3333333333333333,
+              0.3333333333333333,
+              0.3333333333333333
+            ],
+            "selectionRuleZh": "在背阔肌下38%且距正中线75毫米以内的真实面中，选择近下内侧参考位置。"
+          }
+        },
+        {
+          "id": "ld-tlf-right-tlf-ipsi",
+          "nameZh": "右侧胸腰筋膜后层连接参考区",
+          "position": [
+            -0.0352385466,
+            1.0281520685,
+            0.028148612
+          ],
+          "normal": [
+            -0.0380827773,
+            0.0349066293,
+            -0.9986647232
+          ],
+          "structureIds": [
+            "ZA_390108657"
+          ],
+          "descriptionZh": "源模型标注的胸腰筋膜后层，邻近同侧背阔肌下内侧参考区。位置取自该模型真实三角面内的代表点，仅表示邻近参考区，尚未完成专业解剖定位审校。",
+          "side": "right",
+          "viewId": "body",
+          "reviewStatus": "provisional",
+          "regionRadiusM": 0.012,
+          "sourceGeometry": {
+            "sourceModel": "models/body-standard.glb",
+            "modelSha256": "a1588838552e7503142a51cc5f23681bbcc3cd33098bca80739f4794fed2ceee",
+            "meshGeometrySha256": "55797b714db4aafb77c427806b40462427213992b6afbd0ea81e72f46af28897",
+            "nodeName": "ZA_390108657",
+            "primitiveIndex": 0,
+            "triangleIndex": 187,
+            "vertexIndices": [
+              62,
+              53,
+              54
+            ],
+            "indexBase": 0,
+            "barycentric": [
+              0.3333333333333333,
+              0.3333333333333333,
+              0.3333333333333333
+            ],
+            "selectionRuleZh": "在同侧胸腰筋膜后层真实面中选择最接近背阔肌参考位置的面。"
+          }
+        },
+        {
+          "id": "ld-tlf-right-tlf-contra",
+          "nameZh": "左侧胸腰筋膜后层下部连接参考区",
+          "position": [
+            0.0353510032,
+            0.970635434,
+            0.0218741217
+          ],
+          "normal": [
+            0.3732928057,
+            0.1946319223,
+            -0.9070671949
+          ],
+          "structureIds": [
+            "ZA_655962380"
+          ],
+          "descriptionZh": "源模型胸腰筋膜后层下部，邻近对侧臀大肌上内侧参考区。位置取自该模型真实三角面内的代表点，仅表示邻近参考区，尚未完成专业解剖定位审校。",
+          "side": "left",
+          "viewId": "body",
+          "reviewStatus": "provisional",
+          "regionRadiusM": 0.012,
+          "sourceGeometry": {
+            "sourceModel": "models/body-standard.glb",
+            "modelSha256": "a1588838552e7503142a51cc5f23681bbcc3cd33098bca80739f4794fed2ceee",
+            "meshGeometrySha256": "d6188fe1723cf79644b53d524292506896911fd6b1f0d37e0d83d4bb56073964",
+            "nodeName": "ZA_655962380",
+            "primitiveIndex": 0,
+            "triangleIndex": 27,
+            "vertexIndices": [
+              5,
+              51,
+              134
+            ],
+            "indexBase": 0,
+            "barycentric": [
+              0.3333333333333333,
+              0.3333333333333333,
+              0.3333333333333333
+            ],
+            "selectionRuleZh": "在对侧胸腰筋膜后层真实面中选择最接近臀大肌上内侧参考位置的面。"
+          }
+        },
+        {
+          "id": "ld-tlf-right-gm",
+          "nameZh": "左侧臀大肌上内侧连接参考区",
+          "position": [
+            0.0384280334,
+            0.9765098691,
+            0.0191255004
+          ],
+          "normal": [
+            -0.7390134421,
+            0.6693655449,
+            -0.0762161383
+          ],
+          "structureIds": [
+            "FJ1418M"
+          ],
+          "descriptionZh": "对侧臀大肌上内侧的邻接参考区，非整块肌肉的几何中心。位置取自该模型真实三角面内的代表点，仅表示邻近参考区，尚未完成专业解剖定位审校。",
+          "side": "left",
+          "viewId": "body",
+          "reviewStatus": "provisional",
+          "regionRadiusM": 0.012,
+          "sourceGeometry": {
+            "sourceModel": "models/body-standard.glb",
+            "modelSha256": "a1588838552e7503142a51cc5f23681bbcc3cd33098bca80739f4794fed2ceee",
+            "meshGeometrySha256": "4e69ef0a6558960186abe98e52c13a6320445f408f97eb8e2451ce98af5c2388",
+            "nodeName": "FJ1418M",
+            "primitiveIndex": 0,
+            "triangleIndex": 228,
+            "vertexIndices": [
+              114,
+              117,
+              121
+            ],
+            "indexBase": 0,
+            "barycentric": [
+              0.3333333333333333,
+              0.3333333333333333,
+              0.3333333333333333
+            ],
+            "selectionRuleZh": "在对侧臀大肌上90毫米且距正中线65毫米以内的真实面中选择上内侧面。"
+          }
+        },
+        {
+          "id": "ld-tlf-left-ld",
+          "nameZh": "左侧背阔肌下内侧连接参考区",
+          "position": [
+            0.0279123175,
+            1.0226573547,
+            0.0255352743
+          ],
+          "normal": [
+            -0.0894549072,
+            -0.0757705029,
+            0.9931045516
+          ],
+          "structureIds": [
+            "ZA_817053160"
+          ],
+          "descriptionZh": "背阔肌下内侧腱膜邻区；本模型未把背阔肌腱膜另分成独立网格。位置取自该模型真实三角面内的代表点，仅表示邻近参考区，尚未完成专业解剖定位审校。",
+          "side": "left",
+          "viewId": "body",
+          "reviewStatus": "provisional",
+          "regionRadiusM": 0.012,
+          "sourceGeometry": {
+            "sourceModel": "models/body-standard.glb",
+            "modelSha256": "a1588838552e7503142a51cc5f23681bbcc3cd33098bca80739f4794fed2ceee",
+            "meshGeometrySha256": "60b2f6c046ff80392942ef74601e58457973f80ecc5880bf34dcb47a7aa577fb",
+            "nodeName": "ZA_817053160",
+            "primitiveIndex": 0,
+            "triangleIndex": 4566,
+            "vertexIndices": [
+              2379,
+              2324,
+              2378
+            ],
+            "indexBase": 0,
+            "barycentric": [
+              0.3333333333333333,
+              0.3333333333333333,
+              0.3333333333333333
+            ],
+            "selectionRuleZh": "在背阔肌下38%且距正中线75毫米以内的真实面中，选择近下内侧参考位置。"
+          }
+        },
+        {
+          "id": "ld-tlf-left-tlf-ipsi",
+          "nameZh": "左侧胸腰筋膜后层连接参考区",
+          "position": [
+            0.0297320411,
+            1.0288977623,
+            0.0286764267
+          ],
+          "normal": [
+            -0.2480486235,
+            0.0764387414,
+            -0.9657271867
+          ],
+          "structureIds": [
+            "ZA_655962380"
+          ],
+          "descriptionZh": "源模型标注的胸腰筋膜后层，邻近同侧背阔肌下内侧参考区。位置取自该模型真实三角面内的代表点，仅表示邻近参考区，尚未完成专业解剖定位审校。",
+          "side": "left",
+          "viewId": "body",
+          "reviewStatus": "provisional",
+          "regionRadiusM": 0.012,
+          "sourceGeometry": {
+            "sourceModel": "models/body-standard.glb",
+            "modelSha256": "a1588838552e7503142a51cc5f23681bbcc3cd33098bca80739f4794fed2ceee",
+            "meshGeometrySha256": "d6188fe1723cf79644b53d524292506896911fd6b1f0d37e0d83d4bb56073964",
+            "nodeName": "ZA_655962380",
+            "primitiveIndex": 0,
+            "triangleIndex": 173,
+            "vertexIndices": [
+              69,
+              61,
+              62
+            ],
+            "indexBase": 0,
+            "barycentric": [
+              0.3333333333333333,
+              0.3333333333333333,
+              0.3333333333333333
+            ],
+            "selectionRuleZh": "在同侧胸腰筋膜后层真实面中选择最接近背阔肌参考位置的面。"
+          }
+        },
+        {
+          "id": "ld-tlf-left-tlf-contra",
+          "nameZh": "右侧胸腰筋膜后层下部连接参考区",
+          "position": [
+            -0.0398958102,
+            0.9803902109,
+            0.0262753628
+          ],
+          "normal": [
+            -0.3591335267,
+            0.1683176827,
+            -0.9179827164
+          ],
+          "structureIds": [
+            "ZA_390108657"
+          ],
+          "descriptionZh": "源模型胸腰筋膜后层下部，邻近对侧臀大肌上内侧参考区。位置取自该模型真实三角面内的代表点，仅表示邻近参考区，尚未完成专业解剖定位审校。",
+          "side": "right",
+          "viewId": "body",
+          "reviewStatus": "provisional",
+          "regionRadiusM": 0.012,
+          "sourceGeometry": {
+            "sourceModel": "models/body-standard.glb",
+            "modelSha256": "a1588838552e7503142a51cc5f23681bbcc3cd33098bca80739f4794fed2ceee",
+            "meshGeometrySha256": "55797b714db4aafb77c427806b40462427213992b6afbd0ea81e72f46af28897",
+            "nodeName": "ZA_390108657",
+            "primitiveIndex": 0,
+            "triangleIndex": 76,
+            "vertexIndices": [
+              15,
+              113,
+              134
+            ],
+            "indexBase": 0,
+            "barycentric": [
+              0.3333333333333333,
+              0.3333333333333333,
+              0.3333333333333333
+            ],
+            "selectionRuleZh": "在对侧胸腰筋膜后层真实面中选择最接近臀大肌上内侧参考位置的面。"
+          }
+        },
+        {
+          "id": "ld-tlf-left-gm",
+          "nameZh": "右侧臀大肌上内侧连接参考区",
+          "position": [
+            -0.0385999667,
+            0.9789718588,
+            0.0199085666
+          ],
+          "normal": [
+            0.7932433098,
+            0.5243428722,
+            -0.3095635699
+          ],
+          "structureIds": [
+            "FJ1418"
+          ],
+          "descriptionZh": "对侧臀大肌上内侧的邻接参考区，非整块肌肉的几何中心。位置取自该模型真实三角面内的代表点，仅表示邻近参考区，尚未完成专业解剖定位审校。",
+          "side": "right",
+          "viewId": "body",
+          "reviewStatus": "provisional",
+          "regionRadiusM": 0.012,
+          "sourceGeometry": {
+            "sourceModel": "models/body-standard.glb",
+            "modelSha256": "a1588838552e7503142a51cc5f23681bbcc3cd33098bca80739f4794fed2ceee",
+            "meshGeometrySha256": "50b1b123aff20872de82d6cafe56ed5e7cef1af61007505b3429277c5b111ee1",
+            "nodeName": "FJ1418",
+            "primitiveIndex": 0,
+            "triangleIndex": 1747,
+            "vertexIndices": [
+              860,
+              1938,
+              1889
+            ],
+            "indexBase": 0,
+            "barycentric": [
+              0.3333333333333333,
+              0.3333333333333333,
+              0.3333333333333333
+            ],
+            "selectionRuleZh": "在对侧臀大肌上90毫米且距正中线65毫米以内的真实面中选择上内侧面。"
+          }
+        }
+      ],
+      "sourceRefs": [
+        {
+          "id": "vleeming1995",
+          "title": "The posterior layer of the thoracolumbar fascia. Its function in load transfer from spine to legs",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/7701385/",
+          "year": 1995,
+          "evidenceType": "cadaver_anatomy_and_loading",
+          "noteZh": "10具人体标本的尸解与牵拉观察，报告后层位移及部分跨侧张力传递；不是活体个体的完整力场。"
+        },
+        {
+          "id": "carvalhais2013",
+          "title": "Myofascial force transmission between the latissimus dorsi and gluteus maximus muscles: an in vivo experiment",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/23394717/",
+          "year": 2013,
+          "evidenceType": "human_in_vivo_indirect_mechanics",
+          "noteZh": "37名受试者；改变背阔肌张力后，对侧髋被动角度或刚度发生变化。髋变量是间接指标，未逐点测量筋膜内力矢量。"
+        }
+      ],
+      "geometryCoverageZh": "背阔肌、双侧胸腰筋膜后层和对侧臀大肌均有真实网格；连接处的细纤维与个体附着范围未被逐层建模。",
+      "unmappedStructures": [
+        "背阔肌腱膜的独立分区",
+        "连接处显微纤维"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "achilles-calcaneal-region-plantar-aponeurosis",
+      "nameZh": "跟腱—跟骨邻区—足底腱膜",
+      "descriptionZh": "跟腱腱周膜、跟骨周围组织与足底腱膜的局部关系。无箭头连线用于说明研究报道的结构关系，不表示实际力矢量、力值、疼痛来源或治疗靶点。",
+      "evidenceZh": "尸解和组织学研究报道经跟骨骨膜的腱周膜连接；尸体足步态模拟显示跟腱负荷与足底腱膜张力相关。不能据此把成人跟腱主体画成直接连续的一根腱膜。",
+      "color": 4292328827,
+      "structureIds": [
+        "FJ1405",
+        "FJ3360",
+        "ZA_753149753",
+        "FJ1405M",
+        "FJ3256",
+        "ZA_375911140"
+      ],
+      "paths": [
+        {
+          "id": "heel-right",
+          "side": "right",
+          "points": [
+            [
+              -0.0627580658,
+              0.0315886339,
+              0.0247109334
+            ],
+            [
+              -0.0621484319,
+              0.031255167,
+              0.0253137331
+            ],
+            [
+              -0.0773228705,
+              0.0246312898,
+              0.0413208281
+            ],
+            [
+              -0.0853530491,
+              0.022500374,
+              0.0367433541
+            ]
+          ],
+          "targetIds": [
+            "heel-right-at",
+            "heel-right-posterior",
+            "heel-right-plantar",
+            "heel-right-pa"
+          ],
+          "kind": "unoriented_connection_schematic",
+          "reviewStatus": "provisional",
+          "notAForceVector": true,
+          "direction": null,
+          "forceMagnitude": null,
+          "descriptionZh": "连接参考区之间的无方向关系示意；折线不表示完整组织走向、纤维方向或实际受力路径。"
+        },
+        {
+          "id": "heel-left",
+          "side": "left",
+          "points": [
+            [
+              0.0627580658,
+              0.0315886339,
+              0.0247109334
+            ],
+            [
+              0.0612270012,
+              0.0320348994,
+              0.0256775667
+            ],
+            [
+              0.0775137618,
+              0.0236789839,
+              0.04191455
+            ],
+            [
+              0.0853343333,
+              0.0225002468,
+              0.0367433429
+            ]
+          ],
+          "targetIds": [
+            "heel-left-at",
+            "heel-left-posterior",
+            "heel-left-plantar",
+            "heel-left-pa"
+          ],
+          "kind": "unoriented_connection_schematic",
+          "reviewStatus": "provisional",
+          "notAForceVector": true,
+          "direction": null,
+          "forceMagnitude": null,
+          "descriptionZh": "连接参考区之间的无方向关系示意；折线不表示完整组织走向、纤维方向或实际受力路径。"
+        }
+      ],
+      "targets": [
+        {
+          "id": "heel-right-at",
+          "nameZh": "右侧跟腱远端连接参考区",
+          "position": [
+            -0.0627580658,
+            0.0315886339,
+            0.0247109334
+          ],
+          "normal": [
+            -0.4819281871,
+            0.857764818,
+            -0.1788427784
+          ],
+          "structureIds": [
+            "FJ1405"
+          ],
+          "descriptionZh": "跟腱远端在跟骨后方的附着邻区。位置取自该模型真实三角面内的代表点，仅表示邻近参考区，尚未完成专业解剖定位审校。",
+          "side": "right",
+          "viewId": "body",
+          "reviewStatus": "provisional",
+          "regionRadiusM": 0.012,
+          "sourceGeometry": {
+            "sourceModel": "models/body-standard.glb",
+            "modelSha256": "a1588838552e7503142a51cc5f23681bbcc3cd33098bca80739f4794fed2ceee",
+            "meshGeometrySha256": "ba96ec80f84a00cd7c6b6332055ec92234c8b442dfc4fa51f2f64d0ef548c469",
+            "nodeName": "FJ1405",
+            "primitiveIndex": 0,
+            "triangleIndex": 200,
+            "vertexIndices": [
+              2179,
+              2180,
+              2183
+            ],
+            "indexBase": 0,
+            "barycentric": [
+              0.3333333333333333,
+              0.3333333333333333,
+              0.3333333333333333
+            ],
+            "selectionRuleZh": "仅在跟腱远端25%的真实面中选择最接近跟骨后部的面。"
+          }
+        },
+        {
+          "id": "heel-right-posterior",
+          "nameZh": "右侧跟骨后部骨膜邻区连接参考区",
+          "position": [
+            -0.0621484319,
+            0.031255167,
+            0.0253137331
+          ],
+          "normal": [
+            0.388545337,
+            -0.0402608254,
+            -0.9205496114
+          ],
+          "structureIds": [
+            "FJ3360"
+          ],
+          "descriptionZh": "本点锚于跟骨后部骨表面，作为骨膜邻区参照；没有独立的跟骨骨膜网格。位置取自该模型真实三角面内的代表点，仅表示邻近参考区，尚未完成专业解剖定位审校。",
+          "side": "right",
+          "viewId": "body",
+          "reviewStatus": "provisional",
+          "regionRadiusM": 0.012,
+          "sourceGeometry": {
+            "sourceModel": "models/body-standard.glb",
+            "modelSha256": "a1588838552e7503142a51cc5f23681bbcc3cd33098bca80739f4794fed2ceee",
+            "meshGeometrySha256": "615d09626c73d154c12f2ec24623d99d6b837061a54fe5c6920e377121799475",
+            "nodeName": "FJ3360",
+            "primitiveIndex": 0,
+            "triangleIndex": 223,
+            "vertexIndices": [
+              59,
+              163,
+              110
+            ],
+            "indexBase": 0,
+            "barycentric": [
+              0.3333333333333333,
+              0.3333333333333333,
+              0.3333333333333333
+            ],
+            "selectionRuleZh": "在跟骨后45%的真实骨面中选择最接近跟腱远端参考点的面。"
+          }
+        },
+        {
+          "id": "heel-right-plantar",
+          "nameZh": "右侧跟骨足底侧骨膜邻区连接参考区",
+          "position": [
+            -0.0773228705,
+            0.0246312898,
+            0.0413208281
+          ],
+          "normal": [
+            -0.8358530386,
+            -0.1583260341,
+            -0.5256258792
+          ],
+          "structureIds": [
+            "FJ3360"
+          ],
+          "descriptionZh": "本点锚于跟骨足底侧真实骨表面，作为足底腱膜近端与骨膜邻区参照；没有独立骨膜网格。位置取自该模型真实三角面内的代表点，仅表示邻近参考区，尚未完成专业解剖定位审校。",
+          "side": "right",
+          "viewId": "sole",
+          "reviewStatus": "provisional",
+          "regionRadiusM": 0.012,
+          "sourceGeometry": {
+            "sourceModel": "models/body-standard.glb",
+            "modelSha256": "a1588838552e7503142a51cc5f23681bbcc3cd33098bca80739f4794fed2ceee",
+            "meshGeometrySha256": "615d09626c73d154c12f2ec24623d99d6b837061a54fe5c6920e377121799475",
+            "nodeName": "FJ3360",
+            "primitiveIndex": 0,
+            "triangleIndex": 58,
+            "vertexIndices": [
+              26,
+              18,
+              27
+            ],
+            "indexBase": 0,
+            "barycentric": [
+              0.3333333333333333,
+              0.3333333333333333,
+              0.3333333333333333
+            ],
+            "selectionRuleZh": "在跟骨下62%及后60%的真实骨面中选择最接近足底腱膜近端的面。"
+          }
+        },
+        {
+          "id": "heel-right-pa",
+          "nameZh": "右侧足底腱膜近端连接参考区",
+          "position": [
+            -0.0853530491,
+            0.022500374,
+            0.0367433541
+          ],
+          "normal": [
+            -0.3722888497,
+            -0.9280397659,
+            0.0119668401
+          ],
+          "structureIds": [
+            "ZA_753149753"
+          ],
+          "descriptionZh": "足底腱膜靠近跟骨的近端参考区；不代表全部纤维的精确起点。位置取自该模型真实三角面内的代表点，仅表示邻近参考区，尚未完成专业解剖定位审校。",
+          "side": "right",
+          "viewId": "sole",
+          "reviewStatus": "provisional",
+          "regionRadiusM": 0.012,
+          "sourceGeometry": {
+            "sourceModel": "models/body-standard.glb",
+            "modelSha256": "a1588838552e7503142a51cc5f23681bbcc3cd33098bca80739f4794fed2ceee",
+            "meshGeometrySha256": "ab27389e4b9a8b94b1c06f007b5da14a0e57827d88b28cde10052fadcebca1aa",
+            "nodeName": "ZA_753149753",
+            "primitiveIndex": 0,
+            "triangleIndex": 200,
+            "vertexIndices": [
+              92,
+              222,
+              94
+            ],
+            "indexBase": 0,
+            "barycentric": [
+              0.3333333333333333,
+              0.3333333333333333,
+              0.3333333333333333
+            ],
+            "selectionRuleZh": "在真实足底腱膜靠后16%的面中选择近跟骨参考位置。"
+          }
+        },
+        {
+          "id": "heel-left-at",
+          "nameZh": "左侧跟腱远端连接参考区",
+          "position": [
+            0.0627580658,
+            0.0315886339,
+            0.0247109334
+          ],
+          "normal": [
+            0.4819281871,
+            0.857764818,
+            -0.1788427784
+          ],
+          "structureIds": [
+            "FJ1405M"
+          ],
+          "descriptionZh": "跟腱远端在跟骨后方的附着邻区。位置取自该模型真实三角面内的代表点，仅表示邻近参考区，尚未完成专业解剖定位审校。",
+          "side": "left",
+          "viewId": "body",
+          "reviewStatus": "provisional",
+          "regionRadiusM": 0.012,
+          "sourceGeometry": {
+            "sourceModel": "models/body-standard.glb",
+            "modelSha256": "a1588838552e7503142a51cc5f23681bbcc3cd33098bca80739f4794fed2ceee",
+            "meshGeometrySha256": "7c2721667d1531f0c43a8ca28b701d78cc8f46b79b5d0573ffeca437ef73adee",
+            "nodeName": "FJ1405M",
+            "primitiveIndex": 0,
+            "triangleIndex": 200,
+            "vertexIndices": [
+              2194,
+              2197,
+              2195
+            ],
+            "indexBase": 0,
+            "barycentric": [
+              0.3333333333333333,
+              0.3333333333333333,
+              0.3333333333333333
+            ],
+            "selectionRuleZh": "仅在跟腱远端25%的真实面中选择最接近跟骨后部的面。"
+          }
+        },
+        {
+          "id": "heel-left-posterior",
+          "nameZh": "左侧跟骨后部骨膜邻区连接参考区",
+          "position": [
+            0.0612270012,
+            0.0320348994,
+            0.0256775667
+          ],
+          "normal": [
+            -0.4054855182,
+            0.0551252914,
+            -0.9124377769
+          ],
+          "structureIds": [
+            "FJ3256"
+          ],
+          "descriptionZh": "本点锚于跟骨后部骨表面，作为骨膜邻区参照；没有独立的跟骨骨膜网格。位置取自该模型真实三角面内的代表点，仅表示邻近参考区，尚未完成专业解剖定位审校。",
+          "side": "left",
+          "viewId": "body",
+          "reviewStatus": "provisional",
+          "regionRadiusM": 0.012,
+          "sourceGeometry": {
+            "sourceModel": "models/body-standard.glb",
+            "modelSha256": "a1588838552e7503142a51cc5f23681bbcc3cd33098bca80739f4794fed2ceee",
+            "meshGeometrySha256": "2d42950f2a882b968d9b3ff27c99525164fcfcd7c3dbb3b828230c56aa848f39",
+            "nodeName": "FJ3256",
+            "primitiveIndex": 0,
+            "triangleIndex": 107,
+            "vertexIndices": [
+              56,
+              36,
+              52
+            ],
+            "indexBase": 0,
+            "barycentric": [
+              0.3333333333333333,
+              0.3333333333333333,
+              0.3333333333333333
+            ],
+            "selectionRuleZh": "在跟骨后45%的真实骨面中选择最接近跟腱远端参考点的面。"
+          }
+        },
+        {
+          "id": "heel-left-plantar",
+          "nameZh": "左侧跟骨足底侧骨膜邻区连接参考区",
+          "position": [
+            0.0775137618,
+            0.0236789839,
+            0.04191455
+          ],
+          "normal": [
+            0.8654560274,
+            -0.0762632902,
+            -0.495146216
+          ],
+          "structureIds": [
+            "FJ3256"
+          ],
+          "descriptionZh": "本点锚于跟骨足底侧真实骨表面，作为足底腱膜近端与骨膜邻区参照；没有独立骨膜网格。位置取自该模型真实三角面内的代表点，仅表示邻近参考区，尚未完成专业解剖定位审校。",
+          "side": "left",
+          "viewId": "sole",
+          "reviewStatus": "provisional",
+          "regionRadiusM": 0.012,
+          "sourceGeometry": {
+            "sourceModel": "models/body-standard.glb",
+            "modelSha256": "a1588838552e7503142a51cc5f23681bbcc3cd33098bca80739f4794fed2ceee",
+            "meshGeometrySha256": "2d42950f2a882b968d9b3ff27c99525164fcfcd7c3dbb3b828230c56aa848f39",
+            "nodeName": "FJ3256",
+            "primitiveIndex": 0,
+            "triangleIndex": 267,
+            "vertexIndices": [
+              152,
+              133,
+              157
+            ],
+            "indexBase": 0,
+            "barycentric": [
+              0.3333333333333333,
+              0.3333333333333333,
+              0.3333333333333333
+            ],
+            "selectionRuleZh": "在跟骨下62%及后60%的真实骨面中选择最接近足底腱膜近端的面。"
+          }
+        },
+        {
+          "id": "heel-left-pa",
+          "nameZh": "左侧足底腱膜近端连接参考区",
+          "position": [
+            0.0853343333,
+            0.0225002468,
+            0.0367433429
+          ],
+          "normal": [
+            0.3722889243,
+            -0.9280397336,
+            0.0119670259
+          ],
+          "structureIds": [
+            "ZA_375911140"
+          ],
+          "descriptionZh": "足底腱膜靠近跟骨的近端参考区；不代表全部纤维的精确起点。位置取自该模型真实三角面内的代表点，仅表示邻近参考区，尚未完成专业解剖定位审校。",
+          "side": "left",
+          "viewId": "sole",
+          "reviewStatus": "provisional",
+          "regionRadiusM": 0.012,
+          "sourceGeometry": {
+            "sourceModel": "models/body-standard.glb",
+            "modelSha256": "a1588838552e7503142a51cc5f23681bbcc3cd33098bca80739f4794fed2ceee",
+            "meshGeometrySha256": "46b4f290d6fd2a048bec417c0e3a8e4e1419afe2b8f60e7e02b64aed2b4e8fd0",
+            "nodeName": "ZA_375911140",
+            "primitiveIndex": 0,
+            "triangleIndex": 200,
+            "vertexIndices": [
+              92,
+              94,
+              222
+            ],
+            "indexBase": 0,
+            "barycentric": [
+              0.3333333333333333,
+              0.3333333333333333,
+              0.3333333333333333
+            ],
+            "selectionRuleZh": "在真实足底腱膜靠后16%的面中选择近跟骨参考位置。"
+          }
+        }
+      ],
+      "sourceRefs": [
+        {
+          "id": "stecco2013",
+          "title": "Plantar fascia anatomy and its relationship with Achilles tendon and paratenon",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/24028383/",
+          "year": 2013,
+          "evidenceType": "cadaver_histology_and_imaging",
+          "noteZh": "尸解、组织学及影像研究支持跟骨周围腱周膜、骨膜与足底腱膜的关系；不能概括为所有成人跟腱主体直接连续成足底腱膜。"
+        },
+        {
+          "id": "erdemir2004",
+          "title": "Dynamic loading of the plantar aponeurosis in walking",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/14996881/",
+          "year": 2004,
+          "evidenceType": "cadaver_dynamic_gait_simulation",
+          "noteZh": "7只尸体足的步态模拟测到足底腱膜张力与跟腱力相关。动态负荷结果不能作为本静态模型的真实力值或方向。"
+        }
+      ],
+      "geometryCoverageZh": "跟腱、跟骨与足底腱膜具有真实网格。骨膜邻区只锚在骨表面作参照；骨膜及跟腱腱周膜没有独立网格。",
+      "unmappedStructures": [
+        "跟骨骨膜",
+        "跟腱腱周膜"
+      ],
+      "reviewStatus": "provisional"
+    },
+    {
+      "id": "biceps-long-head-ischial-sacrotuberous-region",
+      "nameZh": "股二头肌长头—坐骨结节邻区",
+      "descriptionZh": "用于理解股二头肌长头与骶结节韧带在近端的研究关系。当前仅展示长头和坐骨结节参考区，不描画缺失韧带。无箭头连线用于说明研究报道的结构关系，不表示实际力矢量、力值、疼痛来源或治疗靶点。",
+      "evidenceZh": "原始尸解施力实验报道股二头肌腱牵拉影响骶结节韧带张力；后续超声、尸解与组织学描述长头近端及韧带分层关系。连接存在变异，研究不能给出统一治疗点。",
+      "color": 4290291166,
+      "structureIds": [
+        "FJ1395",
+        "FJ3152",
+        "FJ1395M",
+        "FJ3288"
+      ],
+      "paths": [
+        {
+          "id": "hamstring-right",
+          "side": "right",
+          "points": [
+            [
+              -0.0661616027,
+              0.8278441827,
+              0.0406369666
+            ],
+            [
+              -0.0605760353,
+              0.8344191909,
+              0.0434900994
+            ]
+          ],
+          "targetIds": [
+            "hamstring-right-bf",
+            "hamstring-right-ischium"
+          ],
+          "kind": "unoriented_connection_schematic",
+          "reviewStatus": "provisional",
+          "notAForceVector": true,
+          "direction": null,
+          "forceMagnitude": null,
+          "descriptionZh": "连接参考区之间的无方向关系示意；折线不表示完整组织走向、纤维方向或实际受力路径。"
+        },
+        {
+          "id": "hamstring-left",
+          "side": "left",
+          "points": [
+            [
+              0.065428103,
+              0.8296615283,
+              0.0409018335
+            ],
+            [
+              0.0614771321,
+              0.8355535467,
+              0.0428530338
+            ]
+          ],
+          "targetIds": [
+            "hamstring-left-bf",
+            "hamstring-left-ischium"
+          ],
+          "kind": "unoriented_connection_schematic",
+          "reviewStatus": "provisional",
+          "notAForceVector": true,
+          "direction": null,
+          "forceMagnitude": null,
+          "descriptionZh": "连接参考区之间的无方向关系示意；折线不表示完整组织走向、纤维方向或实际受力路径。"
+        }
+      ],
+      "targets": [
+        {
+          "id": "hamstring-right-bf",
+          "nameZh": "右侧股二头肌长头近端连接参考区",
+          "position": [
+            -0.0661616027,
+            0.8278441827,
+            0.0406369666
+          ],
+          "normal": [
+            -0.8036121646,
+            0.4663103742,
+            0.369813634
+          ],
+          "structureIds": [
+            "FJ1395"
+          ],
+          "descriptionZh": "股二头肌长头近端腱的模型邻区；短头不纳入此连接。位置取自该模型真实三角面内的代表点，仅表示邻近参考区，尚未完成专业解剖定位审校。",
+          "side": "right",
+          "viewId": "body",
+          "reviewStatus": "provisional",
+          "regionRadiusM": 0.012,
+          "sourceGeometry": {
+            "sourceModel": "models/body-standard.glb",
+            "modelSha256": "a1588838552e7503142a51cc5f23681bbcc3cd33098bca80739f4794fed2ceee",
+            "meshGeometrySha256": "d88faa04622b6066b1d59f913ef37a192906c3ab0811190c48c828bc31f5c5c1",
+            "nodeName": "FJ1395",
+            "primitiveIndex": 0,
+            "triangleIndex": 436,
+            "vertexIndices": [
+              195,
+              227,
+              240
+            ],
+            "indexBase": 0,
+            "barycentric": [
+              0.3333333333333333,
+              0.3333333333333333,
+              0.3333333333333333
+            ],
+            "selectionRuleZh": "仅在长头近端28毫米内的真实三角面中选取代表位置。"
+          }
+        },
+        {
+          "id": "hamstring-right-ischium",
+          "nameZh": "右侧坐骨结节邻区连接参考区",
+          "position": [
+            -0.0605760353,
+            0.8344191909,
+            0.0434900994
+          ],
+          "normal": [
+            -0.4687447298,
+            -0.8605008668,
+            -0.1995410648
+          ],
+          "structureIds": [
+            "FJ3152"
+          ],
+          "descriptionZh": "真实髋骨的下部、后侧坐骨结节邻区参照。骶结节韧带当前未提供网格，本点不是韧带实体或韧带附着边界。位置取自该模型真实三角面内的代表点，仅表示邻近参考区，尚未完成专业解剖定位审校。",
+          "side": "right",
+          "viewId": "body",
+          "reviewStatus": "provisional",
+          "regionRadiusM": 0.015,
+          "sourceGeometry": {
+            "sourceModel": "models/body-standard.glb",
+            "modelSha256": "a1588838552e7503142a51cc5f23681bbcc3cd33098bca80739f4794fed2ceee",
+            "meshGeometrySha256": "7bf907a87728898682ef72336f3d91be4cb13eaedafcb2aec6ee213e01c8299c",
+            "nodeName": "FJ3152",
+            "primitiveIndex": 0,
+            "triangleIndex": 35,
+            "vertexIndices": [
+              17,
+              19,
+              2
+            ],
+            "indexBase": 0,
+            "barycentric": [
+              0.3333333333333333,
+              0.3333333333333333,
+              0.3333333333333333
+            ],
+            "selectionRuleZh": "限制在真实髋骨最下55毫米及后60%的面中，选择最接近长头近端的骨面；禁止使用全髋骨中心。"
+          }
+        },
+        {
+          "id": "hamstring-left-bf",
+          "nameZh": "左侧股二头肌长头近端连接参考区",
+          "position": [
+            0.065428103,
+            0.8296615283,
+            0.0409018335
+          ],
+          "normal": [
+            0.8539765444,
+            0.417661799,
+            0.3102945107
+          ],
+          "structureIds": [
+            "FJ1395M"
+          ],
+          "descriptionZh": "股二头肌长头近端腱的模型邻区；短头不纳入此连接。位置取自该模型真实三角面内的代表点，仅表示邻近参考区，尚未完成专业解剖定位审校。",
+          "side": "left",
+          "viewId": "body",
+          "reviewStatus": "provisional",
+          "regionRadiusM": 0.012,
+          "sourceGeometry": {
+            "sourceModel": "models/body-standard.glb",
+            "modelSha256": "a1588838552e7503142a51cc5f23681bbcc3cd33098bca80739f4794fed2ceee",
+            "meshGeometrySha256": "d8ecad807ced8658ce8804f5eaa3bd6a5f5b680f05a4d1aa80cb5239cfc75d3e",
+            "nodeName": "FJ1395M",
+            "primitiveIndex": 0,
+            "triangleIndex": 436,
+            "vertexIndices": [
+              199,
+              228,
+              226
+            ],
+            "indexBase": 0,
+            "barycentric": [
+              0.3333333333333333,
+              0.3333333333333333,
+              0.3333333333333333
+            ],
+            "selectionRuleZh": "仅在长头近端28毫米内的真实三角面中选取代表位置。"
+          }
+        },
+        {
+          "id": "hamstring-left-ischium",
+          "nameZh": "左侧坐骨结节邻区连接参考区",
+          "position": [
+            0.0614771321,
+            0.8355535467,
+            0.0428530338
+          ],
+          "normal": [
+            0.4740489311,
+            -0.8403720074,
+            -0.2627784239
+          ],
+          "structureIds": [
+            "FJ3288"
+          ],
+          "descriptionZh": "真实髋骨的下部、后侧坐骨结节邻区参照。骶结节韧带当前未提供网格，本点不是韧带实体或韧带附着边界。位置取自该模型真实三角面内的代表点，仅表示邻近参考区，尚未完成专业解剖定位审校。",
+          "side": "left",
+          "viewId": "body",
+          "reviewStatus": "provisional",
+          "regionRadiusM": 0.015,
+          "sourceGeometry": {
+            "sourceModel": "models/body-standard.glb",
+            "modelSha256": "a1588838552e7503142a51cc5f23681bbcc3cd33098bca80739f4794fed2ceee",
+            "meshGeometrySha256": "287a01fce4638a2f1805623beca59312394cabfe2577e404d36eb6a823f59057",
+            "nodeName": "FJ3288",
+            "primitiveIndex": 0,
+            "triangleIndex": 37,
+            "vertexIndices": [
+              57,
+              21,
+              51
+            ],
+            "indexBase": 0,
+            "barycentric": [
+              0.3333333333333333,
+              0.3333333333333333,
+              0.3333333333333333
+            ],
+            "selectionRuleZh": "限制在真实髋骨最下55毫米及后60%的面中，选择最接近长头近端的骨面；禁止使用全髋骨中心。"
+          }
+        }
+      ],
+      "sourceRefs": [
+        {
+          "id": "wingerden1993",
+          "title": "A functional-anatomical approach to the spine-pelvis mechanism: interaction between the biceps femoris muscle and the sacrotuberous ligament",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/20058466/",
+          "year": 1993,
+          "evidenceType": "cadaver_anatomy_and_loading",
+          "noteZh": "对股二头肌腱施力会影响骶结节韧带张力；研究不提供适用于所有人的固定临床靶点。"
+        },
+        {
+          "id": "miguelperez2024",
+          "title": "Anatomical Relationships of the Proximal Attachment of the Hamstring Muscles with Neighboring Structures",
+          "url": "https://doi.org/10.3390/diagnostics14161725",
+          "year": 2024,
+          "evidenceType": "cadaver_ultrasound_and_histology",
+          "noteZh": "66具冷冻标本的97侧半骨盆，经超声、尸解与组织学研究辨认近端腘绳肌邻接组织。骶结节韧带浅层与股二头肌长头的连续关系不等于个体治疗点。"
+        }
+      ],
+      "geometryCoverageZh": "股二头肌长头与髋骨为真实网格。坐骨结节邻区在局部骨面上选点；骶结节韧带缺失，未构造其假网格或跨骨盆假连线。",
+      "unmappedStructures": [
+        "骶结节韧带",
+        "长头近端与韧带的个体纤维连接"
+      ],
+      "reviewStatus": "provisional"
+    }
+  ]
+}

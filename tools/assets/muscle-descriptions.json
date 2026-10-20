@@ -1,0 +1,231 @@
+{
+  "schemaVersion": 1,
+  "reviewStatus": "editorial-unreviewed",
+  "muscles": {
+    "pectoralis major": {
+      "descriptionZh": "胸大肌位于胸前壁，呈扇形，是上肢运动和前腋襞的主要肌肉。",
+      "originZh": "锁骨内侧半、胸骨及上位肋软骨；腹部纤维与腹外斜肌腱膜相连。",
+      "insertionZh": "肱骨结节间沟外侧唇。",
+      "functionZh": "使肩关节内收、内旋；锁骨部参与屈肩，胸肋部可使已屈曲的上臂后伸。",
+      "sources": [
+        "https://openstax.org/books/anatomy-and-physiology-2e/pages/11-5-muscles-of-the-pectoral-girdle-and-upper-limbs"
+      ]
+    },
+    "deltoid": {
+      "descriptionZh": "三角肌覆盖肩关节，分为锁骨部、肩峰部和肩胛冈部。",
+      "originZh": "锁骨外侧段、肩峰和肩胛冈。",
+      "insertionZh": "肱骨三角肌粗隆。",
+      "functionZh": "中部纤维主要外展上臂；前部纤维屈肩、内旋；后部纤维伸肩、外旋。",
+      "sources": [
+        "https://openstax.org/books/anatomy-and-physiology-2e/pages/11-5-muscles-of-the-pectoral-girdle-and-upper-limbs"
+      ]
+    },
+    "trapezius": {
+      "descriptionZh": "斜方肌为颈背部浅层的大肌，联系头颈、脊柱与肩带。",
+      "originZh": "枕骨、项韧带及第7颈椎至第12胸椎棘突。",
+      "insertionZh": "锁骨外侧段、肩峰和肩胛冈。",
+      "functionZh": "上部纤维提肩胛骨，中部纤维后缩肩胛骨，下部纤维下拉肩胛骨；共同参与肩胛骨上回旋。",
+      "sources": [
+        "https://openstax.org/books/anatomy-and-physiology-2e/pages/11-5-muscles-of-the-pectoral-girdle-and-upper-limbs"
+      ]
+    },
+    "biceps brachii": {
+      "descriptionZh": "肱二头肌位于上臂前侧，包含长头和短头。",
+      "originZh": "长头起于肩胛骨盂上结节，短头起于喙突。",
+      "insertionZh": "桡骨粗隆及肱二头肌腱膜。",
+      "functionZh": "屈肘和使前臂旋后，并辅助屈肩。",
+      "sources": [
+        "https://openstax.org/books/anatomy-and-physiology-2e/pages/11-5-muscles-of-the-pectoral-girdle-and-upper-limbs"
+      ]
+    },
+    "triceps brachii": {
+      "descriptionZh": "肱三头肌位于上臂后侧，包括长头、外侧头和内侧头。",
+      "originZh": "长头起于肩胛骨盂下结节，外侧头与内侧头起于肱骨后面。",
+      "insertionZh": "尺骨鹰嘴。",
+      "functionZh": "伸肘；长头还参与伸肩和内收上臂。",
+      "sources": [
+        "https://openstax.org/books/anatomy-and-physiology-2e/pages/11-5-muscles-of-the-pectoral-girdle-and-upper-limbs"
+      ]
+    },
+    "brachialis": {
+      "descriptionZh": "肱肌位于肱二头肌深面，是屈肘的重要肌肉。",
+      "originZh": "肱骨前面远侧半。",
+      "insertionZh": "尺骨粗隆及冠突。",
+      "functionZh": "屈肘。",
+      "sources": [
+        "https://openstax.org/books/anatomy-and-physiology-2e/pages/11-5-muscles-of-the-pectoral-girdle-and-upper-limbs"
+      ]
+    },
+    "supraspinatus": {
+      "descriptionZh": "冈上肌位于肩胛骨冈上窝，为肩袖组成肌之一。",
+      "originZh": "肩胛骨冈上窝。",
+      "insertionZh": "肱骨大结节上部。",
+      "functionZh": "辅助启动上臂外展，并稳定肩关节。",
+      "sources": [
+        "https://openstax.org/books/anatomy-and-physiology-2e/pages/11-5-muscles-of-the-pectoral-girdle-and-upper-limbs"
+      ]
+    },
+    "infraspinatus": {
+      "descriptionZh": "冈下肌位于肩胛骨冈下窝，为肩袖组成肌之一。",
+      "originZh": "肩胛骨冈下窝。",
+      "insertionZh": "肱骨大结节中部。",
+      "functionZh": "使上臂外旋并稳定肩关节。",
+      "sources": [
+        "https://openstax.org/books/anatomy-and-physiology-2e/pages/11-5-muscles-of-the-pectoral-girdle-and-upper-limbs"
+      ]
+    },
+    "gluteus maximus": {
+      "descriptionZh": "臀大肌位于臀部浅层，是髋关节主要伸肌之一。",
+      "originZh": "髂骨后部、骶骨及尾骨等。",
+      "insertionZh": "髂胫束及股骨臀肌粗隆。",
+      "functionZh": "伸髋、外旋髋关节，参与起立、上楼及躯干稳定。",
+      "sources": [
+        "https://openstax.org/books/anatomy-and-physiology-2e/pages/11-6-appendicular-muscles-of-the-pelvic-girdle-and-lower-limbs"
+      ]
+    },
+    "gluteus medius": {
+      "descriptionZh": "臀中肌位于臀外侧，部分被臀大肌覆盖。",
+      "originZh": "髂骨外面。",
+      "insertionZh": "股骨大转子。",
+      "functionZh": "外展髋关节，并在单腿支撑时稳定骨盆。",
+      "sources": [
+        "https://openstax.org/books/anatomy-and-physiology-2e/pages/11-6-appendicular-muscles-of-the-pelvic-girdle-and-lower-limbs"
+      ]
+    },
+    "gluteus minimus": {
+      "descriptionZh": "臀小肌位于臀中肌深面。",
+      "originZh": "髂骨外面。",
+      "insertionZh": "股骨大转子前部。",
+      "functionZh": "外展并辅助内旋髋关节，稳定骨盆。",
+      "sources": [
+        "https://openstax.org/books/anatomy-and-physiology-2e/pages/11-6-appendicular-muscles-of-the-pelvic-girdle-and-lower-limbs"
+      ]
+    },
+    "rectus femoris": {
+      "descriptionZh": "股直肌为股四头肌之一，跨过髋、膝两个关节。",
+      "originZh": "髂前下棘及髋臼上缘附近。",
+      "insertionZh": "经股四头肌腱连于髌骨，再经髌韧带连于胫骨粗隆。",
+      "functionZh": "伸膝并辅助屈髋。",
+      "sources": [
+        "https://openstax.org/books/anatomy-and-physiology-2e/pages/11-6-appendicular-muscles-of-the-pelvic-girdle-and-lower-limbs"
+      ]
+    },
+    "vastus": {
+      "descriptionZh": "股内侧肌、股外侧肌和股中间肌属于股四头肌群。",
+      "originZh": "股骨前面、外侧面及粗线等区域，各肌起点不同。",
+      "insertionZh": "经股四头肌腱连于髌骨，再经髌韧带连于胫骨粗隆。",
+      "functionZh": "伸膝，参与膝关节和髌骨稳定。",
+      "sources": [
+        "https://openstax.org/books/anatomy-and-physiology-2e/pages/11-6-appendicular-muscles-of-the-pelvic-girdle-and-lower-limbs"
+      ]
+    },
+    "biceps femoris": {
+      "descriptionZh": "股二头肌位于大腿后外侧，包含长头和短头。",
+      "originZh": "长头起于坐骨结节；短头起于股骨粗线及外侧髁上线。",
+      "insertionZh": "主要止于腓骨头。",
+      "functionZh": "屈膝、屈膝时使小腿外旋；长头还参与伸髋。",
+      "sources": [
+        "https://openstax.org/books/anatomy-and-physiology-2e/pages/11-6-appendicular-muscles-of-the-pelvic-girdle-and-lower-limbs"
+      ]
+    },
+    "gastrocnemius": {
+      "descriptionZh": "腓肠肌位于小腿后群浅层，有内侧头和外侧头。",
+      "originZh": "股骨内侧髁与外侧髁附近。",
+      "insertionZh": "经跟腱止于跟骨结节。",
+      "functionZh": "使踝关节跖屈，并辅助屈膝。",
+      "sources": [
+        "https://openstax.org/books/anatomy-and-physiology-2e/pages/11-6-appendicular-muscles-of-the-pelvic-girdle-and-lower-limbs"
+      ]
+    },
+    "soleus": {
+      "descriptionZh": "比目鱼肌位于腓肠肌深面，属于小腿后群。",
+      "originZh": "胫骨比目鱼肌线、腓骨头及腓骨后面近端。",
+      "insertionZh": "经跟腱止于跟骨结节。",
+      "functionZh": "使踝关节跖屈，参与站立时的姿势维持。",
+      "sources": [
+        "https://openstax.org/books/anatomy-and-physiology-2e/pages/11-6-appendicular-muscles-of-the-pelvic-girdle-and-lower-limbs"
+      ]
+    },
+    "tibialis anterior": {
+      "descriptionZh": "胫骨前肌位于小腿前外侧。",
+      "originZh": "胫骨外侧面及骨间膜。",
+      "insertionZh": "内侧楔骨和第1跖骨底。",
+      "functionZh": "使踝关节背屈，并使足内翻。",
+      "sources": [
+        "https://openstax.org/books/anatomy-and-physiology-2e/pages/11-6-appendicular-muscles-of-the-pelvic-girdle-and-lower-limbs"
+      ]
+    },
+    "sternocleidomastoid": {
+      "descriptionZh": "胸锁乳突肌位于颈前外侧，是颈部显著的浅层肌。",
+      "originZh": "胸骨柄和锁骨内侧段。",
+      "insertionZh": "颞骨乳突及枕骨上项线外侧部。",
+      "functionZh": "单侧收缩使头向同侧侧屈、转向对侧；双侧共同参与颈部屈曲。",
+      "sources": [
+        "https://openstax.org/books/anatomy-and-physiology-2e/pages/11-3-axial-muscles-of-the-head-neck-and-back"
+      ]
+    },
+    "diaphragm": {
+      "descriptionZh": "膈肌分隔胸腔与腹腔，是主要吸气肌。",
+      "originZh": "剑突、下部肋及肋软骨、腰椎膈脚等。",
+      "insertionZh": "膈中央腱。",
+      "functionZh": "收缩时下降，增大胸腔容积以促进吸气；也参与腹压调节。",
+      "sources": [
+        "https://openstax.org/books/anatomy-and-physiology-2e/pages/11-4-axial-muscles-of-the-abdominal-wall-and-thorax"
+      ]
+    },
+    "latissimus dorsi": {
+      "descriptionZh": "背阔肌位于下胸部和腰背部浅层，形成后腋襞的一部分。",
+      "originZh": "下位胸椎棘突、胸腰筋膜、髂嵴及下位肋等。",
+      "insertionZh": "肱骨结节间沟底。",
+      "functionZh": "伸肩、内收及内旋上臂。",
+      "sources": [
+        "https://openstax.org/books/anatomy-and-physiology-2e/pages/11-5-muscles-of-the-pectoral-girdle-and-upper-limbs"
+      ]
+    },
+    "rectus abdominis": {
+      "descriptionZh": "腹直肌位于前腹壁正中线两侧，包于腹直肌鞘内。",
+      "originZh": "耻骨嵴及耻骨联合附近。",
+      "insertionZh": "剑突及第5至第7肋软骨。",
+      "functionZh": "屈躯干、压迫腹腔内容物，并辅助维持骨盆姿势。",
+      "sources": [
+        "https://openstax.org/books/anatomy-and-physiology-2e/pages/11-4-axial-muscles-of-the-abdominal-wall-and-thorax"
+      ]
+    },
+    "internal abdominal oblique": {
+      "descriptionZh": "腹内斜肌位于腹外斜肌深面和腹横肌浅面。",
+      "originZh": "胸腰筋膜、髂嵴和腹股沟韧带外侧部。",
+      "insertionZh": "下位肋、腹白线及耻骨附近。",
+      "functionZh": "压迫腹腔；双侧收缩屈躯干，单侧收缩参与同侧旋转与侧屈。",
+      "sources": [
+        "https://openstax.org/books/anatomy-and-physiology-2e/pages/11-4-axial-muscles-of-the-abdominal-wall-and-thorax"
+      ]
+    },
+    "transversus abdominis": {
+      "descriptionZh": "腹横肌为侧腹壁最深的扁肌，纤维大致横向走行。",
+      "originZh": "下位肋软骨内面、胸腰筋膜、髂嵴及腹股沟韧带。",
+      "insertionZh": "腹白线及耻骨附近。",
+      "functionZh": "压迫和支持腹腔内容物，参与腹压和躯干稳定。",
+      "sources": [
+        "https://openstax.org/books/anatomy-and-physiology-2e/pages/11-4-axial-muscles-of-the-abdominal-wall-and-thorax"
+      ]
+    },
+    "masseter": {
+      "descriptionZh": "咬肌位于下颌支外侧，可分浅部和深部。",
+      "originZh": "颧弓。",
+      "insertionZh": "下颌角及下颌支外侧面。",
+      "functionZh": "主要上提下颌，参与闭口和咀嚼。",
+      "sources": [
+        "https://openstax.org/books/anatomy-and-physiology-2e/pages/11-3-axial-muscles-of-the-head-neck-and-back"
+      ]
+    },
+    "temporalis": {
+      "descriptionZh": "颞肌位于颞窝，肌纤维汇聚为通过颧弓深面的肌腱。",
+      "originZh": "颞窝及颞筋膜。",
+      "insertionZh": "下颌骨冠突及下颌支前缘。",
+      "functionZh": "上提下颌；后部纤维可使下颌后退。",
+      "sources": [
+        "https://openstax.org/books/anatomy-and-physiology-2e/pages/11-3-axial-muscles-of-the-head-neck-and-back"
+      ]
+    }
+  }
+}

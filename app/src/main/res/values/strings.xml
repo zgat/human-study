@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">人体研究</string>
+    <string name="app_subtitle">解剖 · 经络 · 筋膜</string>
+    <string name="about_app_title">关于%1$s</string>
+    <string name="about_app_summary">成人男性 · 完全离线 · v%1$s</string>
+</resources>

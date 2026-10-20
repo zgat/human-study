@@ -1,0 +1,20 @@
+{
+  "applicationVersion": "0.3.0",
+  "versionCode": 5,
+  "applicationLabel": "人体研究",
+  "package": "com.zga.meridianatlas",
+  "apkStaticLabelCheck": "passed",
+  "debugBuild": "passed",
+  "releaseBuild": "passed",
+  "currentJvmTests": {
+    "passed": 42,
+    "failed": 0
+  },
+  "lint": {
+    "errors": 0,
+    "warnings": 18
+  },
+  "currentDeviceInstall": "not-executed",
+  "reasonZh": "已配对测试设备当前不可发现，未把旧版本安装结果计作本版运行验证。",
+  "sourceCompatibilityZh": "保留应用包名与本机测试签名，不在源码中发布私钥。"
+}
