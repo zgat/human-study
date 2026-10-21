@@ -49,13 +49,13 @@
     },
     {
       "path": "cun-constraints.csv",
-      "bytes": 1448725,
-      "sha256": "052f61be3960d5dd8cbea4e285d07fe14bca7e0fb5a5d7adb11853bf72e0ab2e"
+      "bytes": 1448172,
+      "sha256": "c15af50b9626b3120f6120017f921d292e5cb1c63923e5120ca41686220615b7"
     },
     {
       "path": "cun-review.csv",
-      "bytes": 422190,
-      "sha256": "d6644f8f2c6de0bb102fe1fbac75f2bd6e2e075014b6c8dd967d38e924ea00c7"
+      "bytes": 421963,
+      "sha256": "abb82d6c5d48d838c9a854618ad99946ddc4057f9892dff66750d9e3e4d662be"
     },
     {
       "path": "cutaway-material.json",
@@ -199,8 +199,8 @@
     },
     {
       "path": "workspace-restore.json",
-      "bytes": 9385,
-      "sha256": "b8ec24b79eda177f2a1fc1c118abba576bf2416930416f97fa17b003e5f48215"
+      "bytes": 9522,
+      "sha256": "8482981e463c50f58ddb215bb6de8b6c94da44f990dd86640825cb8737e7ac80"
     }
   ],
   "policyZh": "本索引核对公开目录内全部JSON及CSV的实际字节；历史报告保持其原版本/资产哈希，当前构建和设备未执行边界见workspace-restore.json，不把索引目标版本当作所有报告的重跑版本。"

@@ -220,16 +220,17 @@
     "exports": [
       {
         "path": "docs/validation/cun-review.csv",
-        "bytes": 422190,
-        "sha256": "d6644f8f2c6de0bb102fe1fbac75f2bd6e2e075014b6c8dd967d38e924ea00c7"
+        "bytes": 421963,
+        "sha256": "abb82d6c5d48d838c9a854618ad99946ddc4057f9892dff66750d9e3e4d662be"
       },
       {
         "path": "docs/validation/cun-constraints.csv",
-        "bytes": 1448725,
-        "sha256": "052f61be3960d5dd8cbea4e285d07fe14bca7e0fb5a5d7adb11853bf72e0ab2e"
+        "bytes": 1448172,
+        "sha256": "c15af50b9626b3120f6120017f921d292e5cb1c63923e5120ca41686220615b7"
       }
     ],
-    "scopeZh": "两份CSV根据LR11修复后的实际资产重新审计；appearance-cun.json保留0.5.5原资产与原设备检查，不能替换其旧哈希。"
+    "scopeZh": "两份CSV根据LR11修复后的实际资产重新审计；appearance-cun.json保留0.5.5原资产与原设备检查，不能替换其旧哈希。",
+    "serializationZh": "CSV采用UTF-8 BOM与LF行尾；行尾规范化前后全部字段逐行一致，完整审计已重新生成。"
   },
   "releaseArtifact": {
     "path": "outputs/human-study-0.5.7-arm64.apk",

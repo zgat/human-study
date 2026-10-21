@@ -728,7 +728,7 @@ def write_csv(path, records):
         raise ValueError('Refusing to write an empty cun audit CSV')
     path = path.resolve(); path.parent.mkdir(parents=True, exist_ok=True)
     with path.open('w', encoding='utf-8-sig', newline='') as handle:
-        writer = csv.DictWriter(handle, fieldnames=list(records[0]))
+        writer = csv.DictWriter(handle, fieldnames=list(records[0]), lineterminator="\n")
         writer.writeheader(); writer.writerows(records)
 
 
