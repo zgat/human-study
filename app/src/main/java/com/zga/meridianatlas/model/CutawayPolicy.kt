@@ -22,4 +22,16 @@ object CutawayPolicy {
             (it.system == "bone" && toothName.containsMatchIn(it.nameEn.lowercase())) ||
             (it.system == "space" && ocularChamberName.matches(it.nameEn.trim().lowercase()))
     }.map { it.id }.toSet()
+
+    /**
+     * A visible skin shell covers underlying tissue even when separately registered meshes
+     * protrude through it. In a half view the surface cut already removes exposed-side
+     * muscles; their remaining, skin-covered half must not leak through the intact shell.
+     * Deep organs and bones stay whole and visible through the opening. This display rule
+     * changes neither source geometry nor enabled layers or anatomical registration.
+     */
+    fun isOccludedBySkin(id: String, opaqueSkinVisible: Boolean, halfBody: Boolean,
+        skinIds: Set<String>, exteriorIds: Set<String>, cutSurfaceIds: Set<String>): Boolean =
+        opaqueSkinVisible && id !in skinIds && id !in exteriorIds &&
+            (!halfBody || id in cutSurfaceIds)
 }

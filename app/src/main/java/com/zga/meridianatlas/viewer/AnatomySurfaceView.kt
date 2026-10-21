@@ -26,6 +26,7 @@ import com.google.android.filament.gltfio.Gltfio
 import com.google.android.filament.gltfio.ResourceLoader
 import com.google.android.filament.gltfio.UbershaderProvider
 import com.zga.meridianatlas.model.CameraPreset
+import com.zga.meridianatlas.model.CutawayPolicy
 import com.zga.meridianatlas.model.FrameStats
 import com.zga.meridianatlas.model.ModelQuality
 import com.zga.meridianatlas.model.ProjectedAnchor
@@ -285,9 +286,10 @@ class AnatomySurfaceView(context: Context) : SurfaceView(context), AutoCloseable
     }
 
     /**
-     * A fully opaque skin shell hides internal geometry without changing the catalog's enabled
-     * layers. Besides avoiding needless draws, this prevents separately sourced meshes protruding
-     * through the outer skin. With the skin hidden / faint, all enabled anatomy is restored.
+     * An opaque skin shell covers internal geometry without changing the catalog's enabled
+     * layers. In a half view the clipped muscles' remaining half is still skin-covered, so
+     * suppress its draws to prevent registered muscle meshes protruding through the face.
+     * The opening retains whole deep organs and bones. Hiding skin restores the muscle draws.
      */
     fun setOpaqueSkinOcclusion(enabled: Boolean, exteriorIds: Set<String>) {
         requireMainThread()
@@ -675,10 +677,10 @@ class AnatomySurfaceView(context: Context) : SurfaceView(context), AutoCloseable
         referenceSkinEnabled && id in referenceSkinIds && !isNormallyVisible(id)
 
     private fun isRendered(id: String): Boolean {
-        val opaqueSkin = cutawaySide == 0 && opaqueSkinOcclusionEnabled && referenceSkinIds.any(::isNormallyVisible)
-        return if (opaqueSkin) isNormallyVisible(id) &&
-            (id in referenceSkinIds || id in exteriorStructureIds)
-        else isNormallyVisible(id) || isReferenceSkin(id)
+        val opaqueSkin = opaqueSkinOcclusionEnabled && referenceSkinIds.any(::isNormallyVisible)
+        val covered = CutawayPolicy.isOccludedBySkin(id, opaqueSkin, cutawaySide != 0,
+            referenceSkinIds, exteriorStructureIds, cutawayStructureIds)
+        return (isNormallyVisible(id) && !covered) || isReferenceSkin(id)
     }
 
     private fun clearHighlight() {

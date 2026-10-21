@@ -1,0 +1,581 @@
+{
+  "schemaVersion": 1,
+  "applicationVersion": "0.5.1",
+  "collectedAtUtc": "2026-10-21T01:55:56.385922+00:00",
+  "scopeZh": "修复半身透视保留侧的补充面肌穿出皮肤；不移动网格或穴位，不把显示遮挡当医学配准。",
+  "diagnosis": {
+    "causeZh": "共同平移配准的额肌、眼轮匝肌等部分几何位于原皮肤之前；完整体表隐藏深层时未显现，半身时两侧肌肉参加绘制而穿出。",
+    "planeAndCoordinatesVerified": true,
+    "fixedFaceProtrusionsMm": [
+      9.471,
+      5.67,
+      5.835
+    ],
+    "probe": {
+      "path": "outputs/qa/halfbody-diagnosis/probe.py",
+      "bytes": 13903,
+      "sha256": "c1297621ad1b5771209681518a2d550afcf74d56a95ca3f9bba84fb4b8b8afb8"
+    },
+    "report": {
+      "path": "manifests/halfbody-face-geometry.json",
+      "bytes": 97477,
+      "sha256": "9feb64f7f5caec65a18d3779ce1533381f073d6dbbf27923f0fb14b40be36369"
+    }
+  },
+  "build": {
+    "status": "passed",
+    "variants": [
+      "debug",
+      "release",
+      "debugAndroidTest"
+    ],
+    "applicationLog": {
+      "path": "logs/build-halfbody-fix-final.txt",
+      "bytes": 9630,
+      "sha256": "854af094374bf861b91166da6c8d46965137bd8907d0bf21565e06ee0cf4ef8a"
+    },
+    "qualityTestOnlyLog": {
+      "path": "logs/build-halfbody-quality-test.txt",
+      "bytes": 4118,
+      "sha256": "c15357f161123b0c849d537d064cec6e004bf28c5e3346eae364253527a69a91"
+    }
+  },
+  "jvm": {
+    "tests": 82,
+    "failures": 0,
+    "errors": 0,
+    "suites": [
+      {
+        "name": "com.zga.meridianatlas.CutawayPolicyTest",
+        "tests": 7,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "reportSha256": "0baaf66266d852de0a06908da58adca64716ed0ebb1a19e3d4f495b0a7ea3c0e"
+      },
+      {
+        "name": "com.zga.meridianatlas.MeridianCatalogueContentTest",
+        "tests": 5,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "reportSha256": "d296e783b9af94ae195774f5255b18460b375a53630c31e812774496d616faac"
+      },
+      {
+        "name": "com.zga.meridianatlas.MeridianSelectionPolicyTest",
+        "tests": 5,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "reportSha256": "cd03db4664cb9a90b420dd43e1ec382852587782d66f32ed6f0b0fdef7b79de2"
+      },
+      {
+        "name": "com.zga.meridianatlas.SearchIndexTest",
+        "tests": 3,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "reportSha256": "fd61c66d6d7b5be4bbc569a8a9a5637e6323b600f2fc791a5f34d89a63dd24d3"
+      },
+      {
+        "name": "com.zga.meridianatlas.StructureGroupsTest",
+        "tests": 8,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "reportSha256": "076de726b6e2527a049bd2d4b8a52304359dc26b4e181055b7ccb1f85b80dd1c"
+      },
+      {
+        "name": "com.zga.meridianatlas.VisibilityPolicyTest",
+        "tests": 16,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "reportSha256": "14bea193d58848b04b3591a6d020ec83e31a6459fe446751e5bc26fd1d0bcb8a"
+      },
+      {
+        "name": "com.zga.meridianatlas.ui.FasciaOverlayTest",
+        "tests": 10,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "reportSha256": "c7cd8f36aaa5ded94d253118fe587261f69e6cc041b71f48d3e485da27dfcb02"
+      },
+      {
+        "name": "com.zga.meridianatlas.ui.OverlayPolicyTest",
+        "tests": 9,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "reportSha256": "3ed5d58f454ab054f53d6ea0c13e54fcd87d6c9be256013ca1cb6cc9a78a78a5"
+      },
+      {
+        "name": "com.zga.meridianatlas.viewer.SkinOccluderTest",
+        "tests": 10,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "reportSha256": "c4a3b94bd920c14bb698fc753cbfd2a6942e6d44ed4ee5688ca5c3f84da288c1"
+      },
+      {
+        "name": "com.zga.meridianatlas.viewer.SurfaceRouteAssetTest",
+        "tests": 1,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "reportSha256": "8f3e67a0a5ce629ca230368cf2644623576d0ff6d1b9404162eaf18770d66936"
+      },
+      {
+        "name": "com.zga.meridianatlas.viewer.SurfaceRoutesTest",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "reportSha256": "19be6a13b32ec77fed94869e0853ab43845cc08e05274bfb0f31794f49bf3f79"
+      },
+      {
+        "name": "com.zga.meridianatlas.viewer.ViewerMathTest",
+        "tests": 6,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "reportSha256": "8b42b867ff98347a6b679bd3a7efa417e5306b51d5c1ce9b9711024a0333c3a0"
+      }
+    ]
+  },
+  "lint": {
+    "errors": 0,
+    "warnings": 18
+  },
+  "device": {
+    "model": "OPD2404",
+    "sdk": "36",
+    "abi": "arm64-v8a",
+    "displaySize": "Physical size: 2120x3000",
+    "memoryPageBytes": "4096",
+    "memTotalKiB": 11808620
+  },
+  "deviceTests": {
+    "uniqueMethods": 5,
+    "executions": 6,
+    "passedExecutions": 6,
+    "failedExecutions": 0,
+    "scopeZh": "Debug半身5项用例通过，另在STANDARD重复像素用例；不是6个不同用例。"
+  },
+  "pixelRuns": [
+    {
+      "label": "before-v050",
+      "quality": "LOW",
+      "expectedOldFailure": true,
+      "status": "regression_reproduced",
+      "metrics": {
+        "path": "outputs/qa/halfbody-fix/halfbody-before-v050-metrics.json",
+        "bytes": 3230,
+        "sha256": "31b10b08cd7ec7a1f2dbcbe373ceea56a9430f65c3672c84fc8941a7922c6f20"
+      },
+      "log": {
+        "path": "logs/qa/halfbody-fix/before-pixels-instrumentation.txt",
+        "bytes": 2874,
+        "sha256": "ee6aad7ef277fc98b347a53e073e47a439ddb66d3874d24c3b30a910197cb25c"
+      },
+      "frames": {
+        "surface-baseline": {
+          "image": {
+            "path": "outputs/qa/halfbody-fix/halfbody-before-v050-surface-baseline.png",
+            "bytes": 1654113,
+            "sha256": "53ad859c9aa8c6b1225c559fe30ca98c77dddb48bc83a9e4e3ea3f885876e133"
+          },
+          "probes": {
+            "anatomical-right": {
+              "xPx": 996,
+              "yPx": 425,
+              "radiusPx": 11,
+              "samples": 529,
+              "meanRed": 227.2381852551985,
+              "meanGreen": 211.1304347826087,
+              "meanBlue": 193.35160680529302,
+              "medianRed": 227,
+              "medianGreen": 211,
+              "medianBlue": 193,
+              "redFraction": 0
+            },
+            "anatomical-left": {
+              "xPx": 1108,
+              "yPx": 426,
+              "radiusPx": 11,
+              "samples": 529,
+              "meanRed": 231.16068052930058,
+              "meanGreen": 216.1398865784499,
+              "meanBlue": 199.24385633270322,
+              "medianRed": 231,
+              "medianGreen": 216,
+              "medianBlue": 199,
+              "redFraction": 0
+            }
+          }
+        },
+        "left": {
+          "image": {
+            "path": "outputs/qa/halfbody-fix/halfbody-before-v050-left.png",
+            "bytes": 1775273,
+            "sha256": "35c188712bb4c8bac4e50d7389cc98e93128344cbcc8f6d502f8ddea5c35e734"
+          },
+          "probes": {
+            "anatomical-right": {
+              "xPx": 996,
+              "yPx": 425,
+              "radiusPx": 11,
+              "samples": 529,
+              "meanRed": 226.55387523629489,
+              "meanGreen": 149.82230623818526,
+              "meanBlue": 149.48015122873346,
+              "medianRed": 227,
+              "medianGreen": 150,
+              "medianBlue": 149,
+              "redFraction": 1
+            },
+            "anatomical-left": {
+              "xPx": 1108,
+              "yPx": 426,
+              "radiusPx": 11,
+              "samples": 529,
+              "meanRed": 235.10586011342156,
+              "meanGreen": 229.58412098298678,
+              "meanBlue": 218.81852551984878,
+              "medianRed": 235,
+              "medianGreen": 230,
+              "medianBlue": 219,
+              "redFraction": 0
+            }
+          }
+        },
+        "right": {
+          "image": {
+            "path": "outputs/qa/halfbody-fix/halfbody-before-v050-right.png",
+            "bytes": 1773506,
+            "sha256": "de6d4f2719c8790a6fe0072aae7686f567cb08913282721dda6460d9082268f3"
+          },
+          "probes": {
+            "anatomical-right": {
+              "xPx": 996,
+              "yPx": 425,
+              "radiusPx": 11,
+              "samples": 529,
+              "meanRed": 233.28733459357278,
+              "meanGreen": 227.80529300567107,
+              "meanBlue": 216.87145557655955,
+              "medianRed": 234,
+              "medianGreen": 228,
+              "medianBlue": 217,
+              "redFraction": 0
+            },
+            "anatomical-left": {
+              "xPx": 1108,
+              "yPx": 426,
+              "radiusPx": 11,
+              "samples": 529,
+              "meanRed": 229.9054820415879,
+              "meanGreen": 158.53875236294897,
+              "meanBlue": 157.0170132325142,
+              "medianRed": 230,
+              "medianGreen": 159,
+              "medianBlue": 157,
+              "redFraction": 0.4064272211720227
+            }
+          }
+        }
+      }
+    },
+    {
+      "label": "after-v051-low",
+      "quality": "LOW",
+      "expectedOldFailure": false,
+      "status": "passed",
+      "metrics": {
+        "path": "outputs/qa/halfbody-fix/halfbody-after-v051-low-metrics.json",
+        "bytes": 3223,
+        "sha256": "03df75923b03288d458dd913cc235663b4fd3ed6dff75b18a587fe3726895a60"
+      },
+      "log": {
+        "path": "logs/qa/halfbody-fix/after-v051-low-instrumentation.txt",
+        "bytes": 3606,
+        "sha256": "110cc02a7cb13bfd9640e949f0ea4f19f9504061a364b760192c7ac5f4d18e6c"
+      },
+      "frames": {
+        "surface-baseline": {
+          "image": {
+            "path": "outputs/qa/halfbody-fix/halfbody-after-v051-low-surface-baseline.png",
+            "bytes": 1652135,
+            "sha256": "be83965f54312e94c68e43cf975c373a2a7c3d3ddcb778d86f4392ad2ad51d7f"
+          },
+          "probes": {
+            "anatomical-right": {
+              "xPx": 996,
+              "yPx": 425,
+              "radiusPx": 11,
+              "samples": 529,
+              "meanRed": 227.2514177693762,
+              "meanGreen": 211.13421550094517,
+              "meanBlue": 193.37240075614366,
+              "medianRed": 227,
+              "medianGreen": 211,
+              "medianBlue": 193,
+              "redFraction": 0
+            },
+            "anatomical-left": {
+              "xPx": 1108,
+              "yPx": 426,
+              "radiusPx": 11,
+              "samples": 529,
+              "meanRed": 231.11531190926277,
+              "meanGreen": 216.08506616257088,
+              "meanBlue": 199.20793950850663,
+              "medianRed": 231,
+              "medianGreen": 216,
+              "medianBlue": 199,
+              "redFraction": 0
+            }
+          }
+        },
+        "left": {
+          "image": {
+            "path": "outputs/qa/halfbody-fix/halfbody-after-v051-low-left.png",
+            "bytes": 1746936,
+            "sha256": "e5fd13f8a2a0395f534e11a7e71ff8cfc824fd25c86d54fc1cdbeaa09c43fef1"
+          },
+          "probes": {
+            "anatomical-right": {
+              "xPx": 996,
+              "yPx": 425,
+              "radiusPx": 11,
+              "samples": 529,
+              "meanRed": 227.29489603024575,
+              "meanGreen": 211.18147448015122,
+              "meanBlue": 193.40264650283555,
+              "medianRed": 227,
+              "medianGreen": 211,
+              "medianBlue": 193,
+              "redFraction": 0
+            },
+            "anatomical-left": {
+              "xPx": 1108,
+              "yPx": 426,
+              "radiusPx": 11,
+              "samples": 529,
+              "meanRed": 235.0775047258979,
+              "meanGreen": 229.4820415879017,
+              "meanBlue": 218.765595463138,
+              "medianRed": 235,
+              "medianGreen": 229,
+              "medianBlue": 219,
+              "redFraction": 0
+            }
+          }
+        },
+        "right": {
+          "image": {
+            "path": "outputs/qa/halfbody-fix/halfbody-after-v051-low-right.png",
+            "bytes": 1742792,
+            "sha256": "2bebe92c5e890071f95654c65255a21249112c3cf2695b32edbbe78a78ed87bc"
+          },
+          "probes": {
+            "anatomical-right": {
+              "xPx": 996,
+              "yPx": 425,
+              "radiusPx": 11,
+              "samples": 529,
+              "meanRed": 233.26465028355386,
+              "meanGreen": 227.7750472589792,
+              "meanBlue": 216.85822306238185,
+              "medianRed": 234,
+              "medianGreen": 228,
+              "medianBlue": 217,
+              "redFraction": 0
+            },
+            "anatomical-left": {
+              "xPx": 1108,
+              "yPx": 426,
+              "radiusPx": 11,
+              "samples": 529,
+              "meanRed": 231.1568998109641,
+              "meanGreen": 216.11720226843101,
+              "meanBlue": 199.21928166351606,
+              "medianRed": 231,
+              "medianGreen": 216,
+              "medianBlue": 199,
+              "redFraction": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "label": "after-v051-standard",
+      "quality": "STANDARD",
+      "expectedOldFailure": false,
+      "status": "passed",
+      "metrics": {
+        "path": "outputs/qa/halfbody-fix/halfbody-after-v051-standard-metrics.json",
+        "bytes": 3249,
+        "sha256": "ccfa2228dfb7e7b8271d883fb2726051954efdcb08216cc1419f6ddc96b843fc"
+      },
+      "log": {
+        "path": "logs/qa/halfbody-fix/after-v051-standard-instrumentation.txt",
+        "bytes": 823,
+        "sha256": "8e2285c1e7baa36f74ce16f13cf287f88a49cf46bcd74ad278b47f09a339af3d"
+      },
+      "frames": {
+        "surface-baseline": {
+          "image": {
+            "path": "outputs/qa/halfbody-fix/halfbody-after-v051-standard-surface-baseline.png",
+            "bytes": 1651380,
+            "sha256": "b09cdc0e7574567c1720d1eb084124fc8ad2b69ae9ff00cc280b5cf1f6477228"
+          },
+          "probes": {
+            "anatomical-right": {
+              "xPx": 996,
+              "yPx": 425,
+              "radiusPx": 11,
+              "samples": 529,
+              "meanRed": 227.29867674858224,
+              "meanGreen": 211.17391304347825,
+              "meanBlue": 193.4196597353497,
+              "medianRed": 227,
+              "medianGreen": 211,
+              "medianBlue": 193,
+              "redFraction": 0
+            },
+            "anatomical-left": {
+              "xPx": 1108,
+              "yPx": 426,
+              "radiusPx": 11,
+              "samples": 529,
+              "meanRed": 231.17391304347825,
+              "meanGreen": 216.1568998109641,
+              "meanBlue": 199.26465028355386,
+              "medianRed": 231,
+              "medianGreen": 216,
+              "medianBlue": 199,
+              "redFraction": 0
+            }
+          }
+        },
+        "left": {
+          "image": {
+            "path": "outputs/qa/halfbody-fix/halfbody-after-v051-standard-left.png",
+            "bytes": 1729513,
+            "sha256": "94c3b650fd7dc86166d322514e5bfc527081af46d8a8222b0d55afe9d66efe8a"
+          },
+          "probes": {
+            "anatomical-right": {
+              "xPx": 996,
+              "yPx": 425,
+              "radiusPx": 11,
+              "samples": 529,
+              "meanRed": 227.2514177693762,
+              "meanGreen": 211.12098298676747,
+              "meanBlue": 193.3459357277883,
+              "medianRed": 227,
+              "medianGreen": 211,
+              "medianBlue": 193,
+              "redFraction": 0
+            },
+            "anatomical-left": {
+              "xPx": 1108,
+              "yPx": 426,
+              "radiusPx": 11,
+              "samples": 529,
+              "meanRed": 235.24007561436673,
+              "meanGreen": 229.61436672967864,
+              "meanBlue": 218.92060491493385,
+              "medianRed": 235,
+              "medianGreen": 230,
+              "medianBlue": 219,
+              "redFraction": 0
+            }
+          }
+        },
+        "right": {
+          "image": {
+            "path": "outputs/qa/halfbody-fix/halfbody-after-v051-standard-right.png",
+            "bytes": 1734096,
+            "sha256": "0f9ea345c16f75aebf9fd087c340b9f1608a74a6ac0965d802b8cd01c3758ad3"
+          },
+          "probes": {
+            "anatomical-right": {
+              "xPx": 996,
+              "yPx": 425,
+              "radiusPx": 11,
+              "samples": 529,
+              "meanRed": 233.70132325141776,
+              "meanGreen": 228.25897920604916,
+              "meanBlue": 217.27788279773156,
+              "medianRed": 234,
+              "medianGreen": 228,
+              "medianBlue": 217,
+              "redFraction": 0
+            },
+            "anatomical-left": {
+              "xPx": 1108,
+              "yPx": 426,
+              "radiusPx": 11,
+              "samples": 529,
+              "meanRed": 231.13610586011342,
+              "meanGreen": 216.1077504725898,
+              "meanBlue": 199.2022684310019,
+              "medianRed": 231,
+              "medianGreen": 216,
+              "medianBlue": 199,
+              "redFraction": 0
+            }
+          }
+        }
+      }
+    }
+  ],
+  "pixelScopeZh": "同一固定前视相机，真实SurfaceView PixelCopy，两处前额约4mm半径ROI。红色判定阈值不变；旧版失败复现、修复版两档通过。未覆盖全脸逐像素或全部机型。",
+  "apk": {
+    "path": "outputs/human-study-0.5.1-arm64.apk",
+    "bytes": 125111754,
+    "sha256": "20eeeda7150bf5c89f4fc9f4651bbf30b9eb6325ff50c7690ad43cdc3934dc19"
+  },
+  "releaseInstallation": {
+    "status": "passed",
+    "installedApkSha256": "20eeeda7150bf5c89f4fc9f4651bbf30b9eb6325ff50c7690ad43cdc3934dc19",
+    "localUiReady": true,
+    "backgroundResumeSameProcess": true,
+    "actualReleaseHeadUi": {
+      "variant": "release",
+      "status": "captured",
+      "screenshots": [
+        {
+          "saved": true,
+          "path": "outputs/qa/halfbody-fix/release-v051-right-head.png",
+          "sha256": "5658587c2afce1a489b16054ca1e5e2d269cfd8d966dc856435ab936c6273153"
+        },
+        {
+          "saved": true,
+          "path": "outputs/qa/halfbody-fix/release-v051-left-head.png",
+          "sha256": "dd102d8ea85d8d80ccd551226595ec243c3eab93e138d46829190a9a18eeab8f"
+        }
+      ],
+      "originalCutawaySide": "NONE",
+      "originalSideRestored": true
+    }
+  },
+  "userPreferenceRestore": {
+    "status": "passed",
+    "byteHashesVerifiedBeforeReleaseInstall": true,
+    "releaseUiRestoredOriginalSide": true
+  },
+  "assetsUnchanged": true,
+  "publication": {
+    "githubPushed": false,
+    "githubReleaseCreated": false
+  },
+  "limitsZh": [
+    "实际像素断言为前额指定区域；左右头部整体画面另行人工检查。",
+    "源网格配准误差仍存在，本次仅修显示遮挡。",
+    "未做断网首次启动、十分钟性能、其他设备或专业医学审校。"
+  ]
+}

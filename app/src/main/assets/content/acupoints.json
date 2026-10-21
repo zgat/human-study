@@ -4711,39 +4711,72 @@
           "anchor": {
             "modelId": "bodyparts3d-male-v4",
             "position": [
-              0.035,
-              1.46,
-              0.1202929
+              0.104,
+              1.4336252,
+              0.0951314
             ],
             "landmarkRefs": [
-              "FJ2772",
-              "FJ3176",
-              "FJ3172",
+              "FJ3237",
+              "FJ3228",
+              "FJ3239",
+              "FJ3229",
+              "FJ3242",
               "FJ2810"
             ],
-            "method": "cervical-surface-landmark-provisional",
+            "method": "upper-chest-local-geometry-reference-provisional",
             "status": "provisional",
             "sourceSurface": "FJ2810",
             "reviewNotesZh": "真实模型几何与标准定位摘要形成的教学位置，尚未专业医学审校。",
+            "placementEvidence": {
+              "construction": "local-upper-chest-geometry-reference",
+              "reviewStatus": "provisional-pending-professional-localization-review",
+              "columnMetres": 0.104,
+              "columnBasis": "Existing ST13-ST18 chest teaching column; 4 x 0.026 m retained, not a newly measured B-cun calibration.",
+              "clavicleInferiorSectionPoint": [
+                0.104,
+                1.4151120258928571,
+                0.06142780647321428
+              ],
+              "clavicleSuperiorSectionPoint": [
+                0.104,
+                1.430539680374505,
+                0.07401783318329132
+              ],
+              "clavicleReferenceClearanceMetres": 0.003085530896329569,
+              "firstRibLowerRadialProjectionY": 1.3971937366210885,
+              "secondRibUpperRadialProjectionY": 1.3765643420898408,
+              "firstInterspaceProjectionWidthMetres": 0.02062939453124768,
+              "ribReferenceProjection": "Outward ray from midpoint of anterior/posterior midline skin to shared chest column at the same Y.",
+              "boundarySearchStepMetres": 0.0005,
+              "boundaryRefinementSteps": 12,
+              "sourceStructureIds": [
+                "FJ3237",
+                "FJ3228",
+                "FJ3239",
+                "FJ3229",
+                "FJ3242"
+              ],
+              "limitationZh": "本模型局部几何教学参考；沿用既有胸部旁开列，肋间区采用径向体表投影；并非逐穴医学审校或个体取穴坐标。"
+            },
             "sourceTriangle": [
-              61642,
-              60472,
-              60471
+              78015,
+              75806,
+              73042
             ],
             "barycentric": [
-              0.155610143210385,
-              0.20564822072109779,
-              0.6387416360685172
+              0.29437442731312846,
+              0.16584306962367648,
+              0.5397825030631951
             ],
             "normal": [
-              0.4388878,
-              0.2611479,
-              0.8597554
+              0.3205423,
+              0.7242718,
+              0.6104776
             ],
             "viewId": "body",
             "normalStatus": "geometry-derived-provisional",
             "normalOrientationMethod": "OBJ normals transformed; outer shell orientation resolved by ray direction or regional anatomy",
-            "sourceVertex": 60471,
+            "sourceVertex": 73826,
             "sourceMeshDistanceMetres": 0.0
           }
         },
@@ -4754,39 +4787,72 @@
           "anchor": {
             "modelId": "bodyparts3d-male-v4",
             "position": [
-              -0.035,
-              1.46,
-              0.1209002
+              -0.104,
+              1.4332358,
+              0.0961326
             ],
             "landmarkRefs": [
-              "FJ2772",
-              "FJ3176",
-              "FJ3172",
+              "FJ3362",
+              "FJ3334",
+              "FJ3333",
+              "FJ3336",
+              "FJ3335",
               "FJ2810"
             ],
-            "method": "cervical-surface-landmark-provisional",
+            "method": "upper-chest-local-geometry-reference-provisional",
             "status": "provisional",
             "sourceSurface": "FJ2810",
             "reviewNotesZh": "真实模型几何与标准定位摘要形成的教学位置，尚未专业医学审校。",
+            "placementEvidence": {
+              "construction": "local-upper-chest-geometry-reference",
+              "reviewStatus": "provisional-pending-professional-localization-review",
+              "columnMetres": -0.104,
+              "columnBasis": "Existing ST13-ST18 chest teaching column; 4 x 0.026 m retained, not a newly measured B-cun calibration.",
+              "clavicleInferiorSectionPoint": [
+                -0.104,
+                1.41509745,
+                0.061482274999999996
+              ],
+              "clavicleSuperiorSectionPoint": [
+                -0.104,
+                1.4302127078583446,
+                0.07528029272231114
+              ],
+              "clavicleReferenceClearanceMetres": 0.0030230515716689332,
+              "firstRibLowerRadialProjectionY": 1.3963141467773386,
+              "secondRibUpperRadialProjectionY": 1.3758532092773406,
+              "firstInterspaceProjectionWidthMetres": 0.020460937499998,
+              "ribReferenceProjection": "Outward ray from midpoint of anterior/posterior midline skin to shared chest column at the same Y.",
+              "boundarySearchStepMetres": 0.0005,
+              "boundaryRefinementSteps": 12,
+              "sourceStructureIds": [
+                "FJ3362",
+                "FJ3334",
+                "FJ3333",
+                "FJ3336",
+                "FJ3335"
+              ],
+              "limitationZh": "本模型局部几何教学参考；沿用既有胸部旁开列，肋间区采用径向体表投影；并非逐穴医学审校或个体取穴坐标。"
+            },
             "sourceTriangle": [
-              39980,
-              41630,
-              41631
+              25320,
+              28237,
+              29866
             ],
             "barycentric": [
-              0.3310482880187133,
-              0.05051765005744214,
-              0.6184340619238445
+              0.3675699485096929,
+              0.1693233602308215,
+              0.46310669125948567
             ],
             "normal": [
-              -0.4199133,
-              0.2524025,
-              0.8717602
+              -0.3249732,
+              0.7186944,
+              0.6147119
             ],
             "viewId": "body",
             "normalStatus": "geometry-derived-provisional",
             "normalOrientationMethod": "OBJ normals transformed; outer shell orientation resolved by ray direction or regional anatomy",
-            "sourceVertex": 41631,
+            "sourceVertex": 27234,
             "sourceMeshDistanceMetres": 0.0
           }
         }
@@ -4844,38 +4910,71 @@
             "modelId": "bodyparts3d-male-v4",
             "position": [
               0.104,
-              1.388,
-              0.1554497
+              1.4120265,
+              0.1271756
             ],
             "landmarkRefs": [
-              "navel",
-              "pubic-top",
-              "sternal-notch",
-              "xiphoid-tip"
+              "FJ3237",
+              "FJ3228",
+              "FJ3239",
+              "FJ3229",
+              "FJ3242",
+              "FJ2810"
             ],
-            "method": "regional-cun-and-rib-landmark-surface-projection",
+            "method": "upper-chest-local-geometry-reference-provisional",
             "status": "provisional",
             "sourceSurface": "FJ2810",
             "reviewNotesZh": "真实模型几何与标准定位摘要形成的教学位置，尚未专业医学审校。",
+            "placementEvidence": {
+              "construction": "local-upper-chest-geometry-reference",
+              "reviewStatus": "provisional-pending-professional-localization-review",
+              "columnMetres": 0.104,
+              "columnBasis": "Existing ST13-ST18 chest teaching column; 4 x 0.026 m retained, not a newly measured B-cun calibration.",
+              "clavicleInferiorSectionPoint": [
+                0.104,
+                1.4151120258928571,
+                0.06142780647321428
+              ],
+              "clavicleSuperiorSectionPoint": [
+                0.104,
+                1.430539680374505,
+                0.07401783318329132
+              ],
+              "clavicleReferenceClearanceMetres": 0.003085530896329569,
+              "firstRibLowerRadialProjectionY": 1.3971937366210885,
+              "secondRibUpperRadialProjectionY": 1.3765643420898408,
+              "firstInterspaceProjectionWidthMetres": 0.02062939453124768,
+              "ribReferenceProjection": "Outward ray from midpoint of anterior/posterior midline skin to shared chest column at the same Y.",
+              "boundarySearchStepMetres": 0.0005,
+              "boundaryRefinementSteps": 12,
+              "sourceStructureIds": [
+                "FJ3237",
+                "FJ3228",
+                "FJ3239",
+                "FJ3229",
+                "FJ3242"
+              ],
+              "limitationZh": "本模型局部几何教学参考；沿用既有胸部旁开列，肋间区采用径向体表投影；并非逐穴医学审校或个体取穴坐标。"
+            },
             "sourceTriangle": [
-              73658,
-              74571,
-              76751
+              73740,
+              76797,
+              73749
             ],
             "barycentric": [
-              0.7042497212227952,
-              0.15626839744431903,
-              0.1394818813328858
+              0.23287521119597498,
+              0.16545939534672563,
+              0.6016653934572994
             ],
             "normal": [
-              0.3026328,
-              0.6497047,
-              0.6973501
+              0.2190447,
+              0.836095,
+              0.5029559
             ],
             "viewId": "body",
             "normalStatus": "geometry-derived-provisional",
             "normalOrientationMethod": "OBJ normals transformed; outer shell orientation resolved by ray direction or regional anatomy",
-            "sourceVertex": 73665,
+            "sourceVertex": 73750,
             "sourceMeshDistanceMetres": 0.0
           }
         },
@@ -4887,38 +4986,71 @@
             "modelId": "bodyparts3d-male-v4",
             "position": [
               -0.104,
-              1.388,
-              0.1559972
+              1.4120744,
+              0.1276801
             ],
             "landmarkRefs": [
-              "navel",
-              "pubic-top",
-              "sternal-notch",
-              "xiphoid-tip"
+              "FJ3362",
+              "FJ3334",
+              "FJ3333",
+              "FJ3336",
+              "FJ3335",
+              "FJ2810"
             ],
-            "method": "regional-cun-and-rib-landmark-surface-projection",
+            "method": "upper-chest-local-geometry-reference-provisional",
             "status": "provisional",
             "sourceSurface": "FJ2810",
             "reviewNotesZh": "真实模型几何与标准定位摘要形成的教学位置，尚未专业医学审校。",
+            "placementEvidence": {
+              "construction": "local-upper-chest-geometry-reference",
+              "reviewStatus": "provisional-pending-professional-localization-review",
+              "columnMetres": -0.104,
+              "columnBasis": "Existing ST13-ST18 chest teaching column; 4 x 0.026 m retained, not a newly measured B-cun calibration.",
+              "clavicleInferiorSectionPoint": [
+                -0.104,
+                1.41509745,
+                0.061482274999999996
+              ],
+              "clavicleSuperiorSectionPoint": [
+                -0.104,
+                1.4302127078583446,
+                0.07528029272231114
+              ],
+              "clavicleReferenceClearanceMetres": 0.0030230515716689332,
+              "firstRibLowerRadialProjectionY": 1.3963141467773386,
+              "secondRibUpperRadialProjectionY": 1.3758532092773406,
+              "firstInterspaceProjectionWidthMetres": 0.020460937499998,
+              "ribReferenceProjection": "Outward ray from midpoint of anterior/posterior midline skin to shared chest column at the same Y.",
+              "boundarySearchStepMetres": 0.0005,
+              "boundaryRefinementSteps": 12,
+              "sourceStructureIds": [
+                "FJ3362",
+                "FJ3334",
+                "FJ3333",
+                "FJ3336",
+                "FJ3335"
+              ],
+              "limitationZh": "本模型局部几何教学参考；沿用既有胸部旁开列，肋间区采用径向体表投影；并非逐穴医学审校或个体取穴坐标。"
+            },
             "sourceTriangle": [
-              31288,
-              26092,
-              27081
+              27156,
+              29018,
+              28215
             ],
             "barycentric": [
-              0.058714527380109065,
-              0.058210712090198964,
-              0.8830747605296919
+              0.8162963711823867,
+              0.14556234722003444,
+              0.03814128159757882
             ],
             "normal": [
-              -0.2994584,
-              0.6524058,
-              0.6961978
+              -0.2168243,
+              0.8381787,
+              0.5004435
             ],
             "viewId": "body",
             "normalStatus": "geometry-derived-provisional",
             "normalOrientationMethod": "OBJ normals transformed; outer shell orientation resolved by ray direction or regional anatomy",
-            "sourceVertex": 27081,
+            "sourceVertex": 27156,
             "sourceMeshDistanceMetres": 0.0
           }
         }
@@ -4976,34 +5108,66 @@
             "modelId": "bodyparts3d-male-v4",
             "position": [
               0.104,
-              1.3848162,
-              0.1584085
+              1.386879,
+              0.1564999
             ],
             "landmarkRefs": [
-              "navel",
-              "pubic-top",
-              "sternal-notch",
-              "xiphoid-tip",
-              "FJ3228"
+              "FJ3237",
+              "FJ3228",
+              "FJ3239",
+              "FJ3229",
+              "FJ3242",
+              "FJ2810"
             ],
-            "method": "regional-cun-and-rib-landmark-surface-projection",
+            "method": "upper-chest-local-geometry-reference-provisional",
             "status": "provisional",
             "sourceSurface": "FJ2810",
             "reviewNotesZh": "真实模型几何与标准定位摘要形成的教学位置，尚未专业医学审校。",
+            "placementEvidence": {
+              "construction": "local-upper-chest-geometry-reference",
+              "reviewStatus": "provisional-pending-professional-localization-review",
+              "columnMetres": 0.104,
+              "columnBasis": "Existing ST13-ST18 chest teaching column; 4 x 0.026 m retained, not a newly measured B-cun calibration.",
+              "clavicleInferiorSectionPoint": [
+                0.104,
+                1.4151120258928571,
+                0.06142780647321428
+              ],
+              "clavicleSuperiorSectionPoint": [
+                0.104,
+                1.430539680374505,
+                0.07401783318329132
+              ],
+              "clavicleReferenceClearanceMetres": 0.003085530896329569,
+              "firstRibLowerRadialProjectionY": 1.3971937366210885,
+              "secondRibUpperRadialProjectionY": 1.3765643420898408,
+              "firstInterspaceProjectionWidthMetres": 0.02062939453124768,
+              "ribReferenceProjection": "Outward ray from midpoint of anterior/posterior midline skin to shared chest column at the same Y.",
+              "boundarySearchStepMetres": 0.0005,
+              "boundaryRefinementSteps": 12,
+              "sourceStructureIds": [
+                "FJ3237",
+                "FJ3228",
+                "FJ3239",
+                "FJ3229",
+                "FJ3242"
+              ],
+              "limitationZh": "本模型局部几何教学参考；沿用既有胸部旁开列，肋间区采用径向体表投影；并非逐穴医学审校或个体取穴坐标。"
+            },
             "sourceTriangle": [
-              74571,
               73658,
-              72126
+              74571,
+              76751
             ],
             "barycentric": [
-              0.6609947239635899,
-              0.26430079424276465,
-              0.07470448179364542
+              0.5767515429076294,
+              0.36017039261472655,
+              0.06307806447764402
             ],
             "normal": [
-              0.3175603,
-              0.6372499,
-              0.702188
+              0.3082019,
+              0.6460148,
+              0.6983384
             ],
             "viewId": "body",
             "normalStatus": "geometry-derived-provisional",
@@ -5020,34 +5184,66 @@
             "modelId": "bodyparts3d-male-v4",
             "position": [
               -0.104,
-              1.3851712,
-              0.1586456
+              1.3860837,
+              0.1578302
             ],
             "landmarkRefs": [
-              "navel",
-              "pubic-top",
-              "sternal-notch",
-              "xiphoid-tip",
-              "FJ3334"
+              "FJ3362",
+              "FJ3334",
+              "FJ3333",
+              "FJ3336",
+              "FJ3335",
+              "FJ2810"
             ],
-            "method": "regional-cun-and-rib-landmark-surface-projection",
+            "method": "upper-chest-local-geometry-reference-provisional",
             "status": "provisional",
             "sourceSurface": "FJ2810",
             "reviewNotesZh": "真实模型几何与标准定位摘要形成的教学位置，尚未专业医学审校。",
+            "placementEvidence": {
+              "construction": "local-upper-chest-geometry-reference",
+              "reviewStatus": "provisional-pending-professional-localization-review",
+              "columnMetres": -0.104,
+              "columnBasis": "Existing ST13-ST18 chest teaching column; 4 x 0.026 m retained, not a newly measured B-cun calibration.",
+              "clavicleInferiorSectionPoint": [
+                -0.104,
+                1.41509745,
+                0.061482274999999996
+              ],
+              "clavicleSuperiorSectionPoint": [
+                -0.104,
+                1.4302127078583446,
+                0.07528029272231114
+              ],
+              "clavicleReferenceClearanceMetres": 0.0030230515716689332,
+              "firstRibLowerRadialProjectionY": 1.3963141467773386,
+              "secondRibUpperRadialProjectionY": 1.3758532092773406,
+              "firstInterspaceProjectionWidthMetres": 0.020460937499998,
+              "ribReferenceProjection": "Outward ray from midpoint of anterior/posterior midline skin to shared chest column at the same Y.",
+              "boundarySearchStepMetres": 0.0005,
+              "boundaryRefinementSteps": 12,
+              "sourceStructureIds": [
+                "FJ3362",
+                "FJ3334",
+                "FJ3333",
+                "FJ3336",
+                "FJ3335"
+              ],
+              "limitationZh": "本模型局部几何教学参考；沿用既有胸部旁开列，肋间区采用径向体表投影；并非逐穴医学审校或个体取穴坐标。"
+            },
             "sourceTriangle": [
               27081,
               26063,
               29682
             ],
             "barycentric": [
-              0.7748601908139717,
-              0.12158690648334965,
-              0.10355290270267863
+              0.914613946492559,
+              0.01749474848836067,
+              0.06789130501908033
             ],
             "normal": [
-              -0.3064706,
-              0.6437753,
-              0.7011627
+              -0.3025104,
+              0.6482924,
+              0.6987163
             ],
             "viewId": "body",
             "normalStatus": "geometry-derived-provisional",

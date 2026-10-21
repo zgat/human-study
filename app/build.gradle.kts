@@ -11,8 +11,8 @@ android {
         applicationId = "com.zga.meridianatlas"
         minSdk = 29
         targetSdk = 36
-        versionCode = 10
-        versionName = "0.5.0"
+        versionCode = 12
+        versionName = "0.5.2"
         ndk { abiFilters += "arm64-v8a" }
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }

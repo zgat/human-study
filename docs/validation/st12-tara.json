@@ -1,0 +1,515 @@
+{
+  "schemaVersion": 1,
+  "applicationVersion": "0.5.2",
+  "collectedAtUtc": "2026-10-21T03:24:46.876792+00:00",
+  "baseCommit": "f215b09930d702e6db6b9f64a86ebb0bfc8de9f6",
+  "publication": {
+    "githubLatest": "0.5.0",
+    "thisVersionPushed": false,
+    "thisVersionReleased": false,
+    "snapshotPhase": "build-and-device-validation-before-source-push"
+  },
+  "scope": {
+    "pointIds": [
+      "st12",
+      "st13",
+      "st14"
+    ],
+    "changedDisplayInstances": 6,
+    "otherPointEntriesUnchanged": 410,
+    "changedMeridians": [
+      "ST"
+    ],
+    "otherMeridiansUnchanged": 19,
+    "ChineseDescriptionsUnchanged": true,
+    "GLBAndOtherContentUnchanged": true,
+    "inheritsPriorHalfbodyFaceFix": true
+  },
+  "standards": [
+    {
+      "title": "GB/T 12346—2021 5.3.12–5.3.14",
+      "url": "https://www.ntcamsac.ac.cn/upload/std_info/202306192125376309.pdf#page=18"
+    },
+    {
+      "title": "WHO Standard Acupuncture Point Locations in the Western Pacific Region, ST12–ST14",
+      "url": "https://iris.who.int/bitstream/handle/10665/353407/9789290613831-eng.pdf"
+    }
+  ],
+  "chest": {
+    "causeZh": "ST12颈前部分类未进入胸部分支，落到颈部X=±0.035m的回退；ST13固定高度与ST14全肋骨回退高度过于接近。",
+    "constructionZh": "三点先按上胸特殊规则分派；沿用既有胸部±0.104m教学列，锁骨真实截面上下缘各留明确小间距，第一肋间以肋骨和肋软骨径向体表投影界定，保存几何来源。",
+    "instances": [
+      {
+        "id": "st12-left-1",
+        "side": "left",
+        "beforeMetres": [
+          0.035,
+          1.46,
+          0.1202929
+        ],
+        "afterMetres": [
+          0.104,
+          1.4336252,
+          0.0951314
+        ],
+        "placementEvidence": {
+          "construction": "local-upper-chest-geometry-reference",
+          "reviewStatus": "provisional-pending-professional-localization-review",
+          "columnMetres": 0.104,
+          "columnBasis": "Existing ST13-ST18 chest teaching column; 4 x 0.026 m retained, not a newly measured B-cun calibration.",
+          "clavicleInferiorSectionPoint": [
+            0.104,
+            1.4151120258928571,
+            0.06142780647321428
+          ],
+          "clavicleSuperiorSectionPoint": [
+            0.104,
+            1.430539680374505,
+            0.07401783318329132
+          ],
+          "clavicleReferenceClearanceMetres": 0.003085530896329569,
+          "firstRibLowerRadialProjectionY": 1.3971937366210885,
+          "secondRibUpperRadialProjectionY": 1.3765643420898408,
+          "firstInterspaceProjectionWidthMetres": 0.02062939453124768,
+          "ribReferenceProjection": "Outward ray from midpoint of anterior/posterior midline skin to shared chest column at the same Y.",
+          "boundarySearchStepMetres": 0.0005,
+          "boundaryRefinementSteps": 12,
+          "sourceStructureIds": [
+            "FJ3237",
+            "FJ3228",
+            "FJ3239",
+            "FJ3229",
+            "FJ3242"
+          ],
+          "limitationZh": "本模型局部几何教学参考；沿用既有胸部旁开列，肋间区采用径向体表投影；并非逐穴医学审校或个体取穴坐标。"
+        },
+        "sourceTriangle": [
+          78015,
+          75806,
+          73042
+        ],
+        "barycentric": [
+          0.29437442731312846,
+          0.16584306962367648,
+          0.5397825030631951
+        ]
+      },
+      {
+        "id": "st12-right-1",
+        "side": "right",
+        "beforeMetres": [
+          -0.035,
+          1.46,
+          0.1209002
+        ],
+        "afterMetres": [
+          -0.104,
+          1.4332358,
+          0.0961326
+        ],
+        "placementEvidence": {
+          "construction": "local-upper-chest-geometry-reference",
+          "reviewStatus": "provisional-pending-professional-localization-review",
+          "columnMetres": -0.104,
+          "columnBasis": "Existing ST13-ST18 chest teaching column; 4 x 0.026 m retained, not a newly measured B-cun calibration.",
+          "clavicleInferiorSectionPoint": [
+            -0.104,
+            1.41509745,
+            0.061482274999999996
+          ],
+          "clavicleSuperiorSectionPoint": [
+            -0.104,
+            1.4302127078583446,
+            0.07528029272231114
+          ],
+          "clavicleReferenceClearanceMetres": 0.0030230515716689332,
+          "firstRibLowerRadialProjectionY": 1.3963141467773386,
+          "secondRibUpperRadialProjectionY": 1.3758532092773406,
+          "firstInterspaceProjectionWidthMetres": 0.020460937499998,
+          "ribReferenceProjection": "Outward ray from midpoint of anterior/posterior midline skin to shared chest column at the same Y.",
+          "boundarySearchStepMetres": 0.0005,
+          "boundaryRefinementSteps": 12,
+          "sourceStructureIds": [
+            "FJ3362",
+            "FJ3334",
+            "FJ3333",
+            "FJ3336",
+            "FJ3335"
+          ],
+          "limitationZh": "本模型局部几何教学参考；沿用既有胸部旁开列，肋间区采用径向体表投影；并非逐穴医学审校或个体取穴坐标。"
+        },
+        "sourceTriangle": [
+          25320,
+          28237,
+          29866
+        ],
+        "barycentric": [
+          0.3675699485096929,
+          0.1693233602308215,
+          0.46310669125948567
+        ]
+      },
+      {
+        "id": "st13-left-1",
+        "side": "left",
+        "beforeMetres": [
+          0.104,
+          1.388,
+          0.1554497
+        ],
+        "afterMetres": [
+          0.104,
+          1.4120265,
+          0.1271756
+        ],
+        "placementEvidence": {
+          "construction": "local-upper-chest-geometry-reference",
+          "reviewStatus": "provisional-pending-professional-localization-review",
+          "columnMetres": 0.104,
+          "columnBasis": "Existing ST13-ST18 chest teaching column; 4 x 0.026 m retained, not a newly measured B-cun calibration.",
+          "clavicleInferiorSectionPoint": [
+            0.104,
+            1.4151120258928571,
+            0.06142780647321428
+          ],
+          "clavicleSuperiorSectionPoint": [
+            0.104,
+            1.430539680374505,
+            0.07401783318329132
+          ],
+          "clavicleReferenceClearanceMetres": 0.003085530896329569,
+          "firstRibLowerRadialProjectionY": 1.3971937366210885,
+          "secondRibUpperRadialProjectionY": 1.3765643420898408,
+          "firstInterspaceProjectionWidthMetres": 0.02062939453124768,
+          "ribReferenceProjection": "Outward ray from midpoint of anterior/posterior midline skin to shared chest column at the same Y.",
+          "boundarySearchStepMetres": 0.0005,
+          "boundaryRefinementSteps": 12,
+          "sourceStructureIds": [
+            "FJ3237",
+            "FJ3228",
+            "FJ3239",
+            "FJ3229",
+            "FJ3242"
+          ],
+          "limitationZh": "本模型局部几何教学参考；沿用既有胸部旁开列，肋间区采用径向体表投影；并非逐穴医学审校或个体取穴坐标。"
+        },
+        "sourceTriangle": [
+          73740,
+          76797,
+          73749
+        ],
+        "barycentric": [
+          0.23287521119597498,
+          0.16545939534672563,
+          0.6016653934572994
+        ]
+      },
+      {
+        "id": "st13-right-1",
+        "side": "right",
+        "beforeMetres": [
+          -0.104,
+          1.388,
+          0.1559972
+        ],
+        "afterMetres": [
+          -0.104,
+          1.4120744,
+          0.1276801
+        ],
+        "placementEvidence": {
+          "construction": "local-upper-chest-geometry-reference",
+          "reviewStatus": "provisional-pending-professional-localization-review",
+          "columnMetres": -0.104,
+          "columnBasis": "Existing ST13-ST18 chest teaching column; 4 x 0.026 m retained, not a newly measured B-cun calibration.",
+          "clavicleInferiorSectionPoint": [
+            -0.104,
+            1.41509745,
+            0.061482274999999996
+          ],
+          "clavicleSuperiorSectionPoint": [
+            -0.104,
+            1.4302127078583446,
+            0.07528029272231114
+          ],
+          "clavicleReferenceClearanceMetres": 0.0030230515716689332,
+          "firstRibLowerRadialProjectionY": 1.3963141467773386,
+          "secondRibUpperRadialProjectionY": 1.3758532092773406,
+          "firstInterspaceProjectionWidthMetres": 0.020460937499998,
+          "ribReferenceProjection": "Outward ray from midpoint of anterior/posterior midline skin to shared chest column at the same Y.",
+          "boundarySearchStepMetres": 0.0005,
+          "boundaryRefinementSteps": 12,
+          "sourceStructureIds": [
+            "FJ3362",
+            "FJ3334",
+            "FJ3333",
+            "FJ3336",
+            "FJ3335"
+          ],
+          "limitationZh": "本模型局部几何教学参考；沿用既有胸部旁开列，肋间区采用径向体表投影；并非逐穴医学审校或个体取穴坐标。"
+        },
+        "sourceTriangle": [
+          27156,
+          29018,
+          28215
+        ],
+        "barycentric": [
+          0.8162963711823867,
+          0.14556234722003444,
+          0.03814128159757882
+        ]
+      },
+      {
+        "id": "st14-left-1",
+        "side": "left",
+        "beforeMetres": [
+          0.104,
+          1.3848162,
+          0.1584085
+        ],
+        "afterMetres": [
+          0.104,
+          1.386879,
+          0.1564999
+        ],
+        "placementEvidence": {
+          "construction": "local-upper-chest-geometry-reference",
+          "reviewStatus": "provisional-pending-professional-localization-review",
+          "columnMetres": 0.104,
+          "columnBasis": "Existing ST13-ST18 chest teaching column; 4 x 0.026 m retained, not a newly measured B-cun calibration.",
+          "clavicleInferiorSectionPoint": [
+            0.104,
+            1.4151120258928571,
+            0.06142780647321428
+          ],
+          "clavicleSuperiorSectionPoint": [
+            0.104,
+            1.430539680374505,
+            0.07401783318329132
+          ],
+          "clavicleReferenceClearanceMetres": 0.003085530896329569,
+          "firstRibLowerRadialProjectionY": 1.3971937366210885,
+          "secondRibUpperRadialProjectionY": 1.3765643420898408,
+          "firstInterspaceProjectionWidthMetres": 0.02062939453124768,
+          "ribReferenceProjection": "Outward ray from midpoint of anterior/posterior midline skin to shared chest column at the same Y.",
+          "boundarySearchStepMetres": 0.0005,
+          "boundaryRefinementSteps": 12,
+          "sourceStructureIds": [
+            "FJ3237",
+            "FJ3228",
+            "FJ3239",
+            "FJ3229",
+            "FJ3242"
+          ],
+          "limitationZh": "本模型局部几何教学参考；沿用既有胸部旁开列，肋间区采用径向体表投影；并非逐穴医学审校或个体取穴坐标。"
+        },
+        "sourceTriangle": [
+          73658,
+          74571,
+          76751
+        ],
+        "barycentric": [
+          0.5767515429076294,
+          0.36017039261472655,
+          0.06307806447764402
+        ]
+      },
+      {
+        "id": "st14-right-1",
+        "side": "right",
+        "beforeMetres": [
+          -0.104,
+          1.3851712,
+          0.1586456
+        ],
+        "afterMetres": [
+          -0.104,
+          1.3860837,
+          0.1578302
+        ],
+        "placementEvidence": {
+          "construction": "local-upper-chest-geometry-reference",
+          "reviewStatus": "provisional-pending-professional-localization-review",
+          "columnMetres": -0.104,
+          "columnBasis": "Existing ST13-ST18 chest teaching column; 4 x 0.026 m retained, not a newly measured B-cun calibration.",
+          "clavicleInferiorSectionPoint": [
+            -0.104,
+            1.41509745,
+            0.061482274999999996
+          ],
+          "clavicleSuperiorSectionPoint": [
+            -0.104,
+            1.4302127078583446,
+            0.07528029272231114
+          ],
+          "clavicleReferenceClearanceMetres": 0.0030230515716689332,
+          "firstRibLowerRadialProjectionY": 1.3963141467773386,
+          "secondRibUpperRadialProjectionY": 1.3758532092773406,
+          "firstInterspaceProjectionWidthMetres": 0.020460937499998,
+          "ribReferenceProjection": "Outward ray from midpoint of anterior/posterior midline skin to shared chest column at the same Y.",
+          "boundarySearchStepMetres": 0.0005,
+          "boundaryRefinementSteps": 12,
+          "sourceStructureIds": [
+            "FJ3362",
+            "FJ3334",
+            "FJ3333",
+            "FJ3336",
+            "FJ3335"
+          ],
+          "limitationZh": "本模型局部几何教学参考；沿用既有胸部旁开列，肋间区采用径向体表投影；并非逐穴医学审校或个体取穴坐标。"
+        },
+        "sourceTriangle": [
+          27081,
+          26063,
+          29682
+        ],
+        "barycentric": [
+          0.914613946492559,
+          0.01749474848836067,
+          0.06789130501908033
+        ]
+      }
+    ],
+    "newMeasuredBcunCalibration": false,
+    "professionalReviewCompleted": false
+  },
+  "tara": {
+    "version": "1.7.2 - Asserted Ontology",
+    "upstreamCommit": "7c05c8407f6e529bc839d34109e67ab00c642c73",
+    "original": {
+      "path": "app/src/main/assets/third_party/tara/acupoints-1.7.2.ttl",
+      "bytes": 2594678,
+      "sha256": "c4967c2bb7f4936200f77fac5da19219e6ca5850e7f46dfc8a87bd28b7c68296"
+    },
+    "license": "CC-BY-NC-ND-4.0",
+    "readOnlyOriginal": true,
+    "translatedOrEdited": false,
+    "mergedIntoRoom": false,
+    "displayedProcedures": false,
+    "matchedCatalogueEntries": 395,
+    "uniqueOriginalRecords": 396,
+    "unmatchedCatalogueEntries": 18,
+    "fieldsPresentInOriginalRecords": {
+      "location": 396,
+      "indications": 383,
+      "vasculature": 337,
+      "innervation": 326
+    },
+    "specialMappings": [
+      "GV24+ ↔ Yintang / EX-HN3",
+      "金津玉液 ↔ Jinjing + Yuye as two independent original records",
+      "Group points retain one original record per source group; not per displayed instance"
+    ],
+    "missingPointIds": [
+      "ex-hn2",
+      "ex-hn9",
+      "ex-hn10",
+      "ex-hn11",
+      "extra-xinshe",
+      "extra-xueyadian",
+      "extra-tituo",
+      "extra-jieji",
+      "ex-b6",
+      "ex-ue5",
+      "ex-ue6",
+      "ex-ue8",
+      "ex-le1",
+      "ex-le8",
+      "ex-le9",
+      "extra-lineiting",
+      "ex-le11",
+      "ex-le12"
+    ],
+    "readingOrder": [
+      "Chinese Label",
+      "Pinyin Label",
+      "Synonym",
+      "Location",
+      "Indications",
+      "Vasculature",
+      "Innervation",
+      "Reference"
+    ]
+  },
+  "traditionalIndications": {
+    "policyZh": "大学当前课件优先，古籍补缺；每穴目前只保存一个中文主来源。",
+    "sourceEntries": {
+      "ShanghaiUniversityTCMCourseware": 212,
+      "ZhenJiuDaCheng": 185,
+      "JingXueHuiJie": 4,
+      "otherNamedInstitutionOrPractitionerOrResearch": 11,
+      "ST17LocationReference": 1
+    },
+    "ST12Source": "ShanghaiUniversityTCMCourseware",
+    "ST13AndST14Source": "ZhenJiuDaCheng",
+    "changedThisVersion": false,
+    "limitZh": "未使用《大成》不表示原典无记载；电子古籍有缺字、古今异名及合并段落，不能未经核对直接替换全部条目。"
+  },
+  "validation": {
+    "jvm": {
+      "tests": 88,
+      "failures": 0,
+      "errors": 0,
+      "newTaraTests": 6
+    },
+    "chestPython": {
+      "tests": 5,
+      "passed": true
+    },
+    "androidBuild": {
+      "debug": true,
+      "release": true,
+      "androidTest": true
+    },
+    "lint": {
+      "errors": 0,
+      "existingWarnings": 18
+    },
+    "device": {
+      "model": "OPD2404",
+      "api": 36,
+      "targetedTestCount": 3,
+      "targetedTestsPassed": true,
+      "durationSeconds": 8.575,
+      "compactLayoutDp": [
+        420,
+        760
+      ],
+      "assertions": [
+        "Actual assets, Room and source collection separation",
+        "Chest source-bone relationships, exact shared X and route-node consistency",
+        "Selected point, actual SurfaceView bounds and camera unchanged after original reader and license opened"
+      ],
+      "preferencesRestoredByFileHash": true,
+      "releaseInstalledBytesVerified": true,
+      "releaseNonDebuggable": true,
+      "releaseLocalLoadAndSameProcessResume": true
+    },
+    "apk": {
+      "path": "outputs/human-study-0.5.2-arm64.apk",
+      "bytes": 125514348,
+      "sha256": "8efa3445f52e184a4e7c1fa7b4be3ddaef67a31b4c4210289d40d5b3ff509ae0",
+      "package": "com.zga.meridianatlas",
+      "versionName": "0.5.2",
+      "versionCode": 12,
+      "minSdk": 29,
+      "targetSdk": 36,
+      "signingPurpose": "local-testing"
+    },
+    "checks": {
+      "zipCrc": true,
+      "bundledSourceHashes": true,
+      "offlinePermission": true,
+      "arm64Only": true,
+      "elf16KiBAlignment": true,
+      "signature": true,
+      "zip16KiBAlignment": true,
+      "applicationLabel": true
+    }
+  },
+  "boundariesZh": [
+    "全部三维锚点和路线仍为教学示意，专业医学审校完成数为0；本次几何修复不构成个体骨度测量。",
+    "TARA文字不提供本模型三维坐标校准；18个未匹配条目和缺失字段不补造。",
+    "仅执行本次相关设备测试，没有把历史整套结果计为重跑；未执行断网首次安装、十分钟性能、其他机型或16KiB页设备验证。"
+  ]
+}

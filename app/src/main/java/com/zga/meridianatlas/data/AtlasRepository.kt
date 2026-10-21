@@ -36,6 +36,10 @@ class AtlasRepository(private val context: Context) {
         val points = context.assets.open("content/acupoints.json").bufferedReader().use { it.readText() }
         val routes = context.assets.open("content/meridians.json").bufferedReader().use { it.readText() }
         val fascia = context.assets.open("content/fascia.json").bufferedReader().use { it.readText() }
+        // TARA remains a separate, unmodified third-party collection. Its text is read
+        // on load and attached only in memory; it is never merged into the Room seed.
+        val tara = TaraContent.fromTurtle(
+            context.assets.open("third_party/tara/acupoints-1.7.2.ttl").bufferedReader().use { it.readText() })
         val hash = MessageDigest.getInstance("SHA-256").digest((anatomy + points + routes + fascia).toByteArray())
             .joinToString("") { "%02x".format(it) }
         val dao = database.atlas()
@@ -59,7 +63,10 @@ class AtlasRepository(private val context: Context) {
             database.withTransaction { dao.clear(); dao.insert(rows); dao.meta(ContentMeta(sha256 = hash)) }
         }
         AtlasData(dao.entries("structure").map { decodeStructure(JSONObject(it.body)) },
-            dao.entries("point").map { decodePoint(JSONObject(it.body)) },
+            dao.entries("point").map { row ->
+                val point = decodePoint(JSONObject(row.body))
+                point.copy(taraReferences = tara.lookup(point))
+            },
             dao.entries("meridian").map { decodeMeridian(JSONObject(it.body)) },
             fascialConnections = dao.entries("fascial").map { decodeFascialConnection(JSONObject(it.body)) })
     }

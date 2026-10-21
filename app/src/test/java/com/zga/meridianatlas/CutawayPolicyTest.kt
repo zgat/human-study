@@ -53,4 +53,39 @@ class CutawayPolicyTest {
         assertEquals(parts.map { it.id }.toSet(), CutawayPolicy.outerIds(parts))
         assertEquals(parts.map { it.id }.toSet(), CutawayPolicy.exteriorIds(parts))
     }
+
+    @Test fun halfSkinCoversProtrudingMusclesWithoutDisablingTheirLayerOrCuttingDeepOrgans() {
+        val parts = listOf(skin, muscle, tooth) + facial + internal
+        val skins = setOf(skin.id)
+        val exterior = CutawayPolicy.exteriorIds(parts)
+        val surfaces = CutawayPolicy.outerIds(parts)
+        for (side in listOf(CutawaySide.LEFT, CutawaySide.RIGHT)) {
+            val state = LayerState(cutawaySide = side)
+            val enabled = VisibilityPolicy.visibleIds(parts, state)
+            assertTrue(muscle.id in enabled)
+            assertTrue(state.muscle)
+            assertTrue(CutawayPolicy.isOccludedBySkin(muscle.id, true, true, skins, exterior, surfaces))
+            (facial + internal + skin + tooth).forEach { part ->
+                assertFalse("${part.id} must remain available through the half-body opening",
+                    CutawayPolicy.isOccludedBySkin(part.id, true, true, skins, exterior, surfaces))
+            }
+        }
+    }
+
+    @Test fun hiddenOrFaintSkinRestoresAllEnabledAnatomyInFullAndHalfViews() {
+        val parts = listOf(skin, muscle, tooth) + facial + internal
+        for (half in listOf(false, true)) parts.forEach { part ->
+            assertFalse(CutawayPolicy.isOccludedBySkin(part.id, false, half,
+                setOf(skin.id), CutawayPolicy.exteriorIds(parts), CutawayPolicy.outerIds(parts)))
+        }
+    }
+
+    @Test fun fullyOpaqueSkinKeepsTheExistingExteriorOnlyDisplay() {
+        val parts = listOf(skin, muscle, tooth) + facial + internal
+        val exterior = CutawayPolicy.exteriorIds(parts)
+        parts.forEach { part ->
+            assertEquals(part.id !in exterior, CutawayPolicy.isOccludedBySkin(part.id, true, false,
+                setOf(skin.id), exterior, CutawayPolicy.outerIds(parts)))
+        }
+    }
 }

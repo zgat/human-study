@@ -89,6 +89,7 @@ private fun AtlasWorkspace(state: AtlasUiState, model: AtlasViewModel) {
     var loadingModel by remember { mutableStateOf(true) }
     var modelError by remember { mutableStateOf<String?>(null) }
     var panel by remember { mutableStateOf<Panel?>(null) }
+    var licenseDocument by remember { mutableStateOf<String?>(null) }
     var queries by remember { mutableStateOf(AtlasMode.entries.associateWith { "" }) }
     val query = queries.getValue(state.mode)
     var searchRequest by remember { mutableIntStateOf(0) }
@@ -251,7 +252,7 @@ private fun AtlasWorkspace(state: AtlasUiState, model: AtlasViewModel) {
     LaunchedEffect(visibleIds) { viewer.setVisibleStructureIds(visibleIds) }
     LaunchedEffect(state.layer.skin, state.layer.cutawaySide) {
         val exterior = CutawayPolicy.exteriorIds(data.structures)
-        viewer.setOpaqueSkinOcclusion(state.layer.skin && state.layer.cutawaySide == CutawaySide.NONE, exterior)
+        viewer.setOpaqueSkinOcclusion(state.layer.skin, exterior)
     }
     LaunchedEffect(state.layer.cutawaySide, data.structures) {
         viewer.setCutawaySide(state.layer.cutawaySide.sign, CutawayPolicy.outerIds(data.structures))
@@ -363,9 +364,10 @@ private fun AtlasWorkspace(state: AtlasUiState, model: AtlasViewModel) {
                         Panel.DETAILS -> DetailPanel(point, structure, selectedInstance, onSide = { index -> point?.let { focusPoint(it, index) } },
                             onHide = { model.hideSelectedStructure(); panel = null },
                             onIsolate = { structure?.let { focusStructure(it, isolate = true); panel = null } },
-                            memberIds = structureGroup?.members?.map { it.id }.orEmpty())
-                        Panel.ABOUT -> AboutPanel(data) { panel = Panel.LICENSES }
-                        Panel.LICENSES -> LicensePanel()
+                            memberIds = structureGroup?.members?.map { it.id }.orEmpty(),
+                            onTaraLicense = { licenseDocument = "TARA-NOTICE.md"; panel = Panel.LICENSES })
+                        Panel.ABOUT -> AboutPanel(data) { licenseDocument = null; panel = Panel.LICENSES }
+                        Panel.LICENSES -> LicensePanel(licenseDocument)
                         Panel.FASCIA -> FasciaPanel(data.fascialConnections, state.layer,
                             onMaster = { model.layer { it.copy(fasciaChains = !it.fasciaChains) } },
                             onTargets = { model.layer { it.copy(fasciaTargets = !it.fasciaTargets) } },
@@ -570,7 +572,8 @@ private fun toggleInternalRelations(layer: LayerState): LayerState =
 }
 
 @Composable private fun DetailPanel(point: Acupoint?, structure: AnatomyStructure?, instance: PointInstance?,
-    onSide: (Int) -> Unit, onHide: () -> Unit, onIsolate: () -> Unit, memberIds: List<String> = emptyList()) {
+    onSide: (Int) -> Unit, onHide: () -> Unit, onIsolate: () -> Unit, memberIds: List<String> = emptyList(),
+    onTaraLicense: () -> Unit = {}) {
     Column(Modifier.fillMaxWidth().verticalScroll(rememberScrollState()).padding(horizontal = 24.dp, vertical = 12.dp), verticalArrangement = Arrangement.spacedBy(16.dp)) {
         Text(point?.nameZh ?: structure?.nameZh ?: "未选择对象", fontSize = 28.sp, fontWeight = FontWeight.SemiBold)
         if (point != null) {
@@ -580,6 +583,7 @@ private fun toggleInternalRelations(layer: LayerState): LayerState =
             if (point.anatomyZh.isNotBlank()) DetailText("解剖关系", point.anatomyZh)
             DetailText("功能与传统用途（学习）", point.traditionalIndicationsZh.ifBlank { "该穴位的传统用途资料尚待补充。" })
             if (point.functionSourceRefs.isNotEmpty()) DetailText("用途资料来源", point.functionSourceRefs.joinToString("\n"))
+            TaraReferencePanel(point.id, point.taraReferences, onTaraLicense)
             if (point.aliases.isNotEmpty()) DetailText("别名", point.aliases.joinToString("、"))
             if (point.instances.size > 1) {
                 SectionLabel("显示位置")
@@ -623,13 +627,15 @@ private fun toggleInternalRelations(layer: LayerState): LayerState =
         OutlinedButton(onClick = onLicenses) { Text("查看离线来源与许可") }
         DetailText("使用边界", "三维标记和经络线是学习用定位示意，定位校对状态逐条记录。口腔等局部结构以实际提供的网格为限。本版本不提供针刺操作指导。")
         DetailText("传统主治资料", "传统主治用于理解中医文献中的穴位用途，不等同于现代临床疗效证据。各条目保留资料来源，内容仍待专业审校。")
+        DetailText("TARA 英文原文", "TARA 穴位知识资料独立收录，保留原文、出处及 CC BY-NC-ND 4.0 许可；不提供本模型的坐标校准，也不替换国标中文定位。原始资料、版本及使用条件见离线来源与许可。")
         DetailText("交互", "单指旋转，双指缩放和平移。点选结构查看说明，使用图层面板逐层隐藏，使用目录搜索并定位穴位。")
     }
 }
-@Composable private fun LicensePanel() {
+@Composable private fun LicensePanel(initialDocument: String? = null) {
     val context = LocalContext.current
     val files = remember { context.assets.list("licenses")?.toList().orEmpty() }
-    var selected by remember { mutableStateOf(files.firstOrNull { it.contains("NOTICE") } ?: files.firstOrNull()) }
+    var selected by remember(initialDocument) { mutableStateOf(initialDocument?.takeIf { it in files }
+        ?: files.firstOrNull { it.contains("NOTICE") } ?: files.firstOrNull()) }
     val text = remember(selected) { selected?.let { name -> runCatching { context.assets.open("licenses/$name").bufferedReader().use { it.readText() } }.getOrDefault("读取失败") }.orEmpty() }
     Column(Modifier.fillMaxWidth().padding(horizontal = 22.dp, vertical = 12.dp)) {
         Text("来源与许可", fontSize = 23.sp, fontWeight = FontWeight.SemiBold)

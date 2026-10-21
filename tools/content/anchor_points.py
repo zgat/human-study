@@ -5,10 +5,12 @@ No anchor is marked medically reviewed. Source text remains authoritative.
 from pathlib import Path
 import json,re,math,hashlib,zipfile,collections,csv
 import numpy as np
+from chest_anchors import POINT_IDS as CHEST_POINT_IDS, locate as locate_chest
 ROOT=Path(__file__).resolve().parents[2];OUT=ROOT/'app/src/main/assets/content';AS=ROOT/'tools/assets/source'
 MODEL='bodyparts3d-male-v4';GROUND=-78.1112
 meta=json.loads((ROOT/'app/src/main/assets/anatomy.json').read_text()); parts={s['id']:s for s in meta['structures']}
 CACHE={}; RAW={}; NORMALS={}; TRIANGLES={}; PROJECTIONS={}; ZIP=None; ZMAP={}
+CHEST_REFERENCES={}
 def vertices(fid):
  global ZIP,ZMAP
  if fid in CACHE:return CACHE[fid]
@@ -126,6 +128,15 @@ def rib_y(n,side='left',x=.09):
  if len(q)<3:q=v[v[:,2]>np.quantile(v[:,2],.8)]
  return float(np.median(q[:,1]))-.010,[fid]
 
+def chest_reference(side):
+ if side not in CHEST_REFERENCES:
+  def source_triangles(name):
+   fid=find(name);v=vertices(fid)
+   fs=np.array([[int(t.split('/')[0])-1 for t in l.split()[1:4]] for l in RAW[fid].splitlines() if l.startswith('f ')],dtype=np.int32)
+   return fid,v[fs]
+  CHEST_REFERENCES[side]=locate_chest(side,source_triangles,project)
+ return CHEST_REFERENCES[side]
+
 def finger(s,digit,segment='distal',foot=False):
  words=['big toe','second toe','third toe','fourth toe','little toe'] if foot else ['thumb','index finger','middle finger','ring finger','little finger']
  return find(f'{segment} phalanx of {s} {words[digit-1]}')
@@ -228,6 +239,12 @@ def map_point(p,inst,mapped):
  def surface(x,y,f='front'):return project(sgn*x,y,f)
  def pick(q):return mapped[q][s] if s in mapped[q] else next(iter(mapped[q].values()))
  def result(v,rs,method):return np.asarray(v),rs,method
+ # ST12 belongs to the neck in the standard text, but shares the upper-chest
+ # geometry references with ST13/14. Handle it before region-based fallbacks.
+ if pid in CHEST_POINT_IDS:
+  positions,evidence=chest_reference(s)
+  return result(positions[pid],evidence['sourceStructureIds']+['FJ2810'],
+                'upper-chest-local-geometry-reference-provisional')
  if pid in HEADFACE:
   x,y=HEADFACE[pid]
   if pid in ['te17','te18','te19','te20','gb10','gb11','gb12']:
@@ -293,7 +310,6 @@ def map_point(p,inst,mapped):
   if '锁骨下窝' in loc:y=1.370 if pid=='lu2' else 1.344
   if name=='乳中':x=4*CHESTCUN;y=rib_y(4,s)[0]
   if pid=='ki27':y=1.385;x=2*CHESTCUN
-  if pid=='st12':y=1.406;x=4*CHESTCUN
   if ch=='KI' and 11<=n<=21:x=.5*CHESTCUN
   if ch=='KI' and 22<=n<=26:x=2*CHESTCUN
   if pid=='pc1':x=5*CHESTCUN;y=rib_y(4,s)[0]
@@ -429,17 +445,20 @@ def anatomy_structure_map():
   result[zh]=sorted(ids)
  return result
 
-def main():
+def main(point_ids=None):
  anatomy_map=anatomy_structure_map()
  data=json.loads((OUT/'acupoints.json').read_text());mapped={};audit=[]
  # Shared references must be mapped before regional extra points use them.
  for p in data['points']:
+  if point_ids is not None and p['id'] not in point_ids:continue
   mapped[p['id']]={};methods=[]
   p['anatomyStructureIds']=sorted({i for term in p.get('anatomyTermsZh',[]) for i in anatomy_map.get(term,[])})
   for inst in p['instances']:
    v,rs,method=map_point(p,inst,mapped)
    if not np.isfinite(v).all():raise ValueError(p['id'])
    inst['anchor']={'modelId':MODEL,'position':[round(float(c),7) for c in v],'landmarkRefs':rs,'method':method,'status':'provisional','sourceSurface': 'FJ2761' if p['viewPreset']=='oral' and p['nameZh']!='龈交' else 'FJ1252' if p['nameZh']=='龈交' else ('FJ3263' if inst['side']=='left' else 'FJ3369') if p['viewPreset']=='nasal' else 'FJ2810','reviewNotesZh':'真实模型几何与标准定位摘要形成的教学位置，尚未专业医学审校。'}
+   if p['id'] in CHEST_POINT_IDS:
+    inst['anchor']['placementEvidence']=chest_reference(inst['side'])[1]
    fid=inst['anchor']['sourceSurface'];normal,vi,distance=normal_at(fid,v)
    projection=PROJECTIONS.get(tuple(v))
    if projection:
@@ -466,12 +485,25 @@ def main():
     elif fid=='FJ1252' and normal[2]<0:normal=-normal
    inst['anchor'].update({'normal':[round(float(c),7) for c in normal],'viewId':p['viewPreset'],'normalStatus':'geometry-derived-provisional','normalOrientationMethod':'OBJ normals transformed; outer shell orientation resolved by ray direction or regional anatomy','sourceVertex':vi,'sourceMeshDistanceMetres':round(distance,10)})
    mapped[p['id']][inst['side']]=v;methods.append(method)
-  p['coordinateReviewStatus']='provisional';audit.append({'id':p['id'],'nameZh':p['nameZh'],'instances':len(p['instances']),'methods':sorted(set(methods)),'reviewStatus':'provisional'})
+  p['coordinateReviewStatus']='provisional'
+ # Derive the audit from the final data so a local repair does not drop the
+ # unmodified entries or regenerate their coordinates.
+ for p in data['points']:
+  audit.append({'id':p['id'],'nameZh':p['nameZh'],'instances':len(p['instances']),
+                'methods':sorted({i['anchor']['method'] for i in p['instances']}),
+                'reviewStatus':p.get('coordinateReviewStatus','provisional')})
  data['counts']['mappedInstances']=sum(len(p['instances']) for p in data['points']);data['counts']['medicallyReviewedInstances']=0
  data['coordinateStatusZh']='全部实例已有真实模型上的初步教学锚点；定位待专业医学审校，不能作为操作指导。'
  (OUT/'acupoints.json').write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n')
  landmarks={'schemaVersion':1,'modelId':MODEL,'coordinateSystem':meta['coordinateSystem'],'landmarks':[{ 'id':k,'position':list(map(float,v)),'sourceStructureIds':refs[k],'reviewStatus':'geometry-derived-provisional'} for k,v in L.items()]}
- (OUT/'landmarks.json').write_text(json.dumps(landmarks,ensure_ascii=False,indent=2)+'\n')
+ if point_ids is None:
+  (OUT/'landmarks.json').write_text(json.dumps(landmarks,ensure_ascii=False,indent=2)+'\n')
  (ROOT/'manifests/content-anchor-audit.json').write_text(json.dumps({'modelId':MODEL,'entryCount':413,'instanceCount':sum(len(p['instances']) for p in data['points']),'medicalReviewCompleted':False,'medicalReviewedInstances':0,'mappedInstances':843,'entries':audit},ensure_ascii=False,indent=2)+'\n')
  print('mapped',data['counts']['mappedInstances'],'instances; medical-reviewed 0; methods',dict(collections.Counter(a['method'] for p in data['points'] for a in [i['anchor'] for i in p['instances']])))
-if __name__=='__main__':main()
+if __name__=='__main__':
+ import argparse
+ parser=argparse.ArgumentParser(description=__doc__)
+ parser.add_argument('--point-ids',nargs='+',choices=sorted(CHEST_POINT_IDS),
+                     help='Update only the selected upper-chest entries; preserve every other anchor and landmarks.json.')
+ args=parser.parse_args()
+ main(set(args.point_ids) if args.point_ids else None)
