@@ -232,10 +232,13 @@ private fun FasciaScopeNote() {
 
 @Composable
 internal fun FascialSelectionCard(connection: FascialConnection, target: FascialTarget,
-    onExpand: () -> Unit, onClose: () -> Unit, modifier: Modifier = Modifier) {
+    onExpand: () -> Unit, onClose: () -> Unit, modifier: Modifier = Modifier,
+    summary: SelectionCardSummary = SelectionCardSummary.FULL) {
     Surface(onClick = onExpand, modifier = modifier, shape = MaterialTheme.shapes.large,
         color = MaterialTheme.colorScheme.surface.copy(alpha = .97f), tonalElevation = 5.dp) {
-        Column(Modifier.padding(14.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
+        if (summary != SelectionCardSummary.FULL) CompactSelectionSummary(target.nameZh, connection.nameZh,
+            target.descriptionZh, false, summary == SelectionCardSummary.MINIMAL, onExpand, onClose)
+        else Column(Modifier.padding(14.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Text(target.nameZh, Modifier.weight(1f), fontSize = 14.sp, fontWeight = FontWeight.SemiBold)
                 TextButton(onClick = onClose, contentPadding = PaddingValues(4.dp)) { Text("关闭") }

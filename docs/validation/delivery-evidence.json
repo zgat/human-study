@@ -1,9 +1,9 @@
 {
-  "applicationVersion": "0.5.0",
+  "applicationVersion": "0.5.7",
   "apk": {
-    "path": "outputs/human-study-0.5.0-arm64.apk",
-    "bytes": 125111754,
-    "sha256": "f318710f0d611a52cfe9fa9bb9a779f9c0d95205c2e347c9a6c29a2437f24d8c"
+    "path": "outputs/human-study-0.5.7-arm64.apk",
+    "bytes": 125642904,
+    "sha256": "d2d27a3c87b1ee89d9bd5d2eb2300105f492b35076887de73472eda7d6f1c69d"
   },
   "package": "com.zga.meridianatlas",
   "checks": {
@@ -32,8 +32,8 @@
     },
     {
       "path": "content/acupoints.json",
-      "bytes": 1622631,
-      "sha256": "2de017d6bee27b3356969181f49ec94de04b725b95af6ddf0096700a22c1018e"
+      "bytes": 1966476,
+      "sha256": "ce6b3a9d157fbb40d826b74eedc8c6f5d6eae88f121c85ec3c1189829ece576d"
     },
     {
       "path": "content/fascia.json",
@@ -47,8 +47,8 @@
     },
     {
       "path": "content/meridians.json",
-      "bytes": 183807,
-      "sha256": "382ce05df71c208fa490f216981523ccf8c3743214493d093c4f15568d3fc382"
+      "bytes": 183811,
+      "sha256": "9e1a589bda74113cfc0c0c875a9446eae7155f3509b388cb0d9cd6523010df3d"
     },
     {
       "path": "content/organ-landmarks.json",
@@ -64,6 +64,11 @@
       "path": "licenses/CC-BY-4.0.txt",
       "bytes": 17023,
       "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744"
+    },
+    {
+      "path": "licenses/CC-BY-NC-ND-4.0.txt",
+      "bytes": 19127,
+      "sha256": "38762e3777f4ec00a6f769062a7c3f704fb78ce08303ecff88558da4c49cf9ea"
     },
     {
       "path": "licenses/CC-BY-SA-4.0.txt",
@@ -92,8 +97,13 @@
     },
     {
       "path": "licenses/PROJECT-NOTICE.md",
-      "bytes": 1492,
-      "sha256": "b97aadf9772a7a29386432da54ee0ca67629ffa79a8e236d55e1780d0995b5b1"
+      "bytes": 2156,
+      "sha256": "06c4571d6dc20fd3e83852377da800d9191bef6be3c89b26516ddbadb89da451"
+    },
+    {
+      "path": "licenses/TARA-NOTICE.md",
+      "bytes": 7915,
+      "sha256": "ec87ef063bd1fe74915634720b8c12a7e542161f09e60359c84d5aafb818b963"
     },
     {
       "path": "licenses/Z-Anatomy-upstream.txt",
@@ -107,8 +117,8 @@
     },
     {
       "path": "materials/cutaway.filamat",
-      "bytes": 39805,
-      "sha256": "62daacb1b8e6a7360ae318bf2974f5c002b53d8e06da72bd33908c621f9aa8d9"
+      "bytes": 53092,
+      "sha256": "5b5bed871f55c1256e6a556cabc9ac05181bcc29aebfdee830f54b3a8a582543"
     },
     {
       "path": "models/body-low.glb",
@@ -124,6 +134,11 @@
       "path": "models/skin-occlusion.bin",
       "bytes": 1800008,
       "sha256": "69d81671883717189708d2609aac4eb180d6c0ab17c535d83941c7fb640f80a4"
+    },
+    {
+      "path": "third_party/tara/acupoints-1.7.2.ttl",
+      "bytes": 2594678,
+      "sha256": "c4967c2bb7f4936200f77fac5da19219e6ca5850e7f46dfc8a87bd28b7c68296"
     }
   ],
   "nativeLibraries": [

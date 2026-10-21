@@ -37,7 +37,8 @@ def main():
         'source':{'path':str(source.relative_to(ROOT)), 'sha256':sha(source)},
         'output':{'path':str(output.relative_to(ROOT)), 'bytes':output.stat().st_size, 'sha256':sha(output)},
         'coordinates':{'units':'metres','plane':'x=0 sagittal','left':'+X','right':'-X'},
-        'behaviorZh':'裁切调用方指定外表面的半侧片元，当前含皮肤、肌肉和眼口表层；采用masked材质同步作用于颜色、深度和点选pass，深部内脏、牙齿、骨骼及锚点坐标不变。',
+        'materialParameters':['baseColorFactor','roughnessFactor','metallicFactor','cutSign'],
+        'behaviorZh':'cutSign为±1时裁切指定外表面的半侧片元，含皮肤、肌肉和眼口表层；为0时供正常不透明皮肤使用。masked材质同步作用于颜色、深度、阴影和点选pass，保留shadowReceiver变体；PBR颜色、粗糙度及金属度由运行时指定，深部内脏、牙齿、骨骼及锚点坐标不变。',
         'limitationsZh':['没有生成切面填充或新增解剖组织；这是观察用半身剖露。',
                          '材质适用于当前无纹理、统一系统色的模型；纹理模型需另接材质属性。']}
     (ROOT/'manifests/cutaway-material.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')

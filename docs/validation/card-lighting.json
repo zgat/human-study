@@ -1,0 +1,689 @@
+{
+  "schemaVersion": 1,
+  "applicationVersion": "0.5.6",
+  "versionCode": 16,
+  "status": "passed-with-scoped-validation",
+  "collectedAt": "2026-10-21T16:45:52.607605+08:00",
+  "scopeZh": "说明卡避让当前选中穴位及同类卡片、柔和主光与补光随观察方向同步。",
+  "selectionCards": {
+    "primaryProtectedRadiusDp": 20,
+    "testedCircleRadiusDp": 12,
+    "testedExtraGapDp": 4,
+    "coordinateSpace": "same model viewport local pixels in production; unified screen pixels for device assertions",
+    "behaviorZh": [
+      "按卡片真实宽高避让当前选中实例，不用避让后的穴名框替代原始点。",
+      "右侧视角和底部操作区为硬障碍；同条目其他实例及附近可见穴位为软偏好，不保证所有点同时露出。",
+      "安全位置优先保留；空间不足降为紧凑/最小摘要，同一选点保留该摘要档，选点或视口尺寸改变后重评。",
+      "极小视口若没有安全位置则不放置卡片，顶部所选项目说明仍可访问完整正文。",
+      "解剖结构和筋膜卡复用，分别保护结构中心和选中参考区；不保护整个结构轮廓。",
+      "选点时收起模式说明文字；保持真实SurfaceView、相机和解剖锚点不因避让改变。"
+    ],
+    "deviceObservations": 128,
+    "cases": [
+      {
+        "case": "nativeTabletAdjacentChestPointsAndBothDisplayPositionsKeepMarkersClear",
+        "observations": 48,
+        "selectedAnchorIds": [
+          "point:gb22|0",
+          "point:gb22|1",
+          "point:gb23|0",
+          "point:gb23|1"
+        ],
+        "stages": [
+          "native-gb22-initial",
+          "native-gb22-left",
+          "native-gb22-right",
+          "native-gb23-initial",
+          "native-gb23-left",
+          "native-gb23-right"
+        ],
+        "minimumClearanceDp": 26.476190476190474,
+        "evidence": {
+          "path": "outputs/qa/card-lighting/device/nativeTabletAdjacentChestPointsAndBothDisplayPositionsKeepMarkersClear.json",
+          "bytes": 31278,
+          "sha256": "620cf3fcbc2efb10411ff36a47baca4dc5322af0d91da76dc683b875b480337e"
+        }
+      },
+      {
+        "case": "compactAndNarrowLongNoticeKeepGb23MarkerClear",
+        "observations": 32,
+        "selectedAnchorIds": [
+          "point:gb23|0"
+        ],
+        "stages": [
+          "320x568-after-notice",
+          "320x568-gb23",
+          "420x760-after-notice",
+          "420x760-gb23"
+        ],
+        "minimumClearanceDp": 20.19047619047619,
+        "evidence": {
+          "path": "outputs/qa/card-lighting/device/compactAndNarrowLongNoticeKeepGb23MarkerClear.json",
+          "bytes": 20661,
+          "sha256": "027d24e15fac27bf7de079630680359ecd601097ad910108411c55ce8102092b"
+        }
+      },
+      {
+        "case": "multiPointLastDisplayPositionsAvoidCard",
+        "observations": 16,
+        "selectedAnchorIds": [
+          "point:ex-b2|33",
+          "point:ex-hn1|3"
+        ],
+        "stages": [
+          "ex-b2-last-instance-33",
+          "ex-hn1-last-instance-3"
+        ],
+        "minimumClearanceDp": 34.666666666666664,
+        "evidence": {
+          "path": "outputs/qa/card-lighting/device/multiPointLastDisplayPositionsAvoidCard.json",
+          "bytes": 10783,
+          "sha256": "15d2d6fd748ea4e6efd02e4a1df7cf96e6b86629787f893bb3b2a084e60000c2"
+        }
+      },
+      {
+        "case": "rotatedZoomedGb23AndDescriptionControlsKeepViewportAndPose",
+        "observations": 32,
+        "selectedAnchorIds": [
+          "point:gb23|1"
+        ],
+        "stages": [
+          "description-restored",
+          "gesture-before",
+          "gesture-rotated",
+          "gesture-zoomed"
+        ],
+        "minimumClearanceDp": 34.666666666666664,
+        "evidence": {
+          "path": "outputs/qa/card-lighting/device/rotatedZoomedGb23AndDescriptionControlsKeepViewportAndPose.json",
+          "bytes": 20752,
+          "sha256": "9ca218d8c02bf3c30c1a1af636fffb3e66e46b2268a23b8d9eb84363c57b9f5b"
+        }
+      }
+    ],
+    "nonPointCardDeviceBoundary": "Shared policy and mathematical checks; no new end-to-end device case for structure/fascia cards this version.",
+    "responsiveBoundary": "420x760dp and 320x568dp fixtures on the same actual tablet, not another physical phone."
+  },
+  "lighting": {
+    "space": "camera-relative world directions updated with actual orbit pose before drawing",
+    "color": [
+      1,
+      1,
+      1
+    ],
+    "intensities": [
+      55000,
+      28000,
+      12000
+    ],
+    "ambientIntensity": 16000,
+    "ambientIrradiance": [
+      0.58,
+      0.58,
+      0.58
+    ],
+    "shadowCasters": 1,
+    "shadowMapLow": 1024,
+    "shadowMapStandard": 2048,
+    "ssao": "unchanged from 0.5.5",
+    "nativeReadback": "actual Filament LightManager direction, color and intensity at front/back/sides/tilt/poles",
+    "displayLumaComparisons": [
+      {
+        "pixelComparison": "front/back upper-torso left",
+        "frontMedianLuma": 162.84339999999997,
+        "backMedianLuma": 154.62159999999997,
+        "ratio": 1.0531736833663603,
+        "absoluteDifference": 8.221800000000002,
+        "maximumRatio": 1.35,
+        "maximumAbsoluteDifference": 30,
+        "boundary": "bounded image regression for large brightness imbalance; not identical shading or clinical color accuracy"
+      },
+      {
+        "pixelComparison": "front/back upper-torso right",
+        "frontMedianLuma": 162.05599999999998,
+        "backMedianLuma": 152.6216,
+        "ratio": 1.061815627670002,
+        "absoluteDifference": 9.434399999999982,
+        "maximumRatio": 1.35,
+        "maximumAbsoluteDifference": 30,
+        "boundary": "bounded image regression for large brightness imbalance; not identical shading or clinical color accuracy"
+      }
+    ],
+    "pixelBoundary": "Fixed symmetric upper-torso image regions in LOW; not vertex registration, all-body brightness uniformity or clinical color accuracy.",
+    "sourceGeometryMaterialAndTextures": "unchanged assets; no material recompilation this version"
+  },
+  "verification": {
+    "jvm": {
+      "tests": 130,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "newJvmCases": {
+      "cardPlacement": 14,
+      "orbitLighting": 7
+    },
+    "lint": {
+      "errors": 0,
+      "warnings": 19
+    },
+    "build": {
+      "debug": "passed",
+      "androidTest": "passed",
+      "release": "passed",
+      "releaseLog": {
+        "path": "logs/build-card-lighting-final-release.txt",
+        "bytes": 5122,
+        "sha256": "511362e8cc0d4fc8d588b93c8d0f6c2c5047f82760528edd6469ae3c8efdc017"
+      },
+      "debugLog": {
+        "path": "logs/build-card-lighting-single-card.txt",
+        "bytes": 5049,
+        "sha256": "5dbe64a9c1c163813bfb524ea68fdc9217ba8ed4b7c7c72b037d204ed009ebd0"
+      },
+      "lintLog": {
+        "path": "logs/lint-card-lighting-final.txt",
+        "bytes": 2455,
+        "sha256": "7881e6c8522b9abc4be439d48e2808d473cb49ef0c796af8dfd6021fe8540d76"
+      }
+    },
+    "device": {
+      "model": "OPD2404",
+      "api": "36",
+      "tests": 13,
+      "passed": 13,
+      "failed": 0,
+      "skipped": 0,
+      "durationSeconds": 87.161,
+      "groups": {
+        "AppearanceDeviceTest": 4,
+        "SelectionCardOcclusionDeviceTest": 4,
+        "LabelContinuityDeviceTest": 5
+      },
+      "debugApkSha256": "f360ab77af4956285d8f813dde3c373f57d609f43701ff215b51f49651eb177c",
+      "testApkSha256": "8bf40e3a4c6301fbbc81e438d928cced20c1de3903c94be97bac72f9558da7b6",
+      "preferencesRestoredWithFileHashReadback": true,
+      "instrumentation": {
+        "path": "logs/qa/card-lighting/device/instrumentation.txt",
+        "bytes": 9272,
+        "sha256": "971f4fd1b07427f09590e5b7521f311b34e6f011c4dd820cfd8558b16c52fd43"
+      }
+    },
+    "labelContinuity": {
+      "checks": [
+        {
+          "case": "acceptance-st12-st13",
+          "evidenceBoundary": "raw instance visibility and actual SelectionCard semantics; Canvas drawn label continuity is not asserted",
+          "selectedAnchorId": "point:st13|0",
+          "allowedInitialCommitDelayFrames": 1,
+          "targetFrames": 96,
+          "missingInstanceFramesAfterCommit": 0,
+          "targetVisibleAtStart": true,
+          "targetVisibleAtStableEndpoint": true,
+          "lateWindowFrames": 69,
+          "lateWindowVisibilityChanges": 0,
+          "stableTailFrames": 39,
+          "cardCommitProbe": 0,
+          "committedCardProbes": 8,
+          "badCommittedCardProbes": 0,
+          "visibilityComparable": true
+        },
+        {
+          "case": "acceptance-lu1-st12",
+          "evidenceBoundary": "raw instance visibility and actual SelectionCard semantics; Canvas drawn label continuity is not asserted",
+          "selectedAnchorId": "point:st12|0",
+          "allowedInitialCommitDelayFrames": 1,
+          "targetFrames": 97,
+          "missingInstanceFramesAfterCommit": 0,
+          "targetVisibleAtStart": true,
+          "targetVisibleAtStableEndpoint": true,
+          "lateWindowFrames": 79,
+          "lateWindowVisibilityChanges": 0,
+          "stableTailFrames": 41,
+          "cardCommitProbe": 0,
+          "committedCardProbes": 9,
+          "badCommittedCardProbes": 0,
+          "visibilityComparable": true
+        },
+        {
+          "case": "acceptance-gb22-gb23",
+          "evidenceBoundary": "raw instance visibility and actual SelectionCard semantics; Canvas drawn label continuity is not asserted",
+          "selectedAnchorId": "point:gb23|0",
+          "allowedInitialCommitDelayFrames": 1,
+          "targetFrames": 97,
+          "missingInstanceFramesAfterCommit": 0,
+          "targetVisibleAtStart": true,
+          "targetVisibleAtStableEndpoint": true,
+          "lateWindowFrames": 70,
+          "lateWindowVisibilityChanges": 0,
+          "stableTailFrames": 41,
+          "cardCommitProbe": 0,
+          "committedCardProbes": 9,
+          "badCommittedCardProbes": 0,
+          "visibilityComparable": true
+        }
+      ],
+      "canvasTextPixelContinuity": "not-asserted"
+    },
+    "releaseDevice": {
+      "status": "passed",
+      "installedApkSha256": "6aeea1dd6726360ce7e976ca7ee3cb14a03c03bf873970395546237aabbc6e4a",
+      "nonDebuggable": true,
+      "localUiReady": true,
+      "sameProcessBackgroundResume": true,
+      "captures": [
+        {
+          "path": "outputs/qa/card-lighting/release-smoke/release-loaded.png",
+          "bytes": 2214004,
+          "sha256": "12f1422ef2b130877408871a6b22e54fa167a09ded9316a905e229c7f7125af8"
+        },
+        {
+          "path": "outputs/qa/card-lighting/release-smoke/release-resumed.png",
+          "bytes": 2214486,
+          "sha256": "3e77d12e0b246d791fb919eb5ead390bd5647d7036cb23f83bd032b6cca96bee"
+        }
+      ]
+    },
+    "pythonContentChecks": "not rerun; unchanged content/assets compared byte-for-byte to 0.5.5",
+    "firstAttemptZh": "首次无线中断前6项已完成，第7项只有开始记录；整轮不计完整通过。自动重发现后先恢复偏好，再安装最终候选重跑13项全部通过。",
+    "implementationReviewZh": "窄屏降档只保留一个真实卡片与一组语义操作，避免测量多个隐藏卡片分支造成潜在重复语义；此项是源码审查修正，不称为已复现设备失败。"
+  },
+  "assets": [
+    {
+      "path": "app/src/main/assets/anatomy.json",
+      "bytes": 2136568,
+      "sha256": "9cf2b598b0e4cd61ed3f2f8092bcc65f7cd471d02f37b9f50307e45ba52ab93b",
+      "unchangedFrom": "0.5.5"
+    },
+    {
+      "path": "app/src/main/assets/content/acupoints.json",
+      "bytes": 1964670,
+      "sha256": "1599476362af4097f33cecfd3b862c53930c5d2f8c9570d78b810995e03dd7ae",
+      "unchangedFrom": "0.5.5"
+    },
+    {
+      "path": "app/src/main/assets/content/fascia.json",
+      "bytes": 1970286,
+      "sha256": "fad1312eae8ddb0cf0f7ecb0a53248703510b7f17cc34ede9ed966fefd88328e",
+      "unchangedFrom": "0.5.5"
+    },
+    {
+      "path": "app/src/main/assets/content/landmarks.json",
+      "bytes": 19457,
+      "sha256": "79570bc4dbb3cd759a981441677b4ce4fa254c249e789f5af331a8a624d9a418",
+      "unchangedFrom": "0.5.5"
+    },
+    {
+      "path": "app/src/main/assets/content/meridians.json",
+      "bytes": 183819,
+      "sha256": "0751a0c80ab578720f6fe04194fa28fd6af0174a134b9d13bbb479b1b6425386",
+      "unchangedFrom": "0.5.5"
+    },
+    {
+      "path": "app/src/main/assets/content/organ-landmarks.json",
+      "bytes": 7676,
+      "sha256": "3fa4a9a614b3a4ff61d03897474a3da76a92883b6cc4a572aab58b3a4748618d",
+      "unchangedFrom": "0.5.5"
+    },
+    {
+      "path": "app/src/main/assets/content/sources.json",
+      "bytes": 35142,
+      "sha256": "690417de6b1e760a0615ee76fb105d158dbdf005975a99347f1c2c142fa02a2a",
+      "unchangedFrom": "0.5.5"
+    },
+    {
+      "path": "app/src/main/assets/licenses/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744",
+      "unchangedFrom": "0.5.5"
+    },
+    {
+      "path": "app/src/main/assets/licenses/CC-BY-NC-ND-4.0.txt",
+      "bytes": 19127,
+      "sha256": "38762e3777f4ec00a6f769062a7c3f704fb78ce08303ecff88558da4c49cf9ea",
+      "unchangedFrom": "0.5.5"
+    },
+    {
+      "path": "app/src/main/assets/licenses/CC-BY-SA-4.0.txt",
+      "bytes": 18375,
+      "sha256": "cde7883b9050a1104f4ac19a1572aafd6e5d7323b68351aaf51fbf4beba54966",
+      "unchangedFrom": "0.5.5"
+    },
+    {
+      "path": "app/src/main/assets/licenses/DEPENDENCY-NOTICES.md",
+      "bytes": 83442,
+      "sha256": "16691f8e811a6fec28767981fbd381f83e003eb4d91b67b1c635643a70b11328",
+      "unchangedFrom": "0.5.5"
+    },
+    {
+      "path": "app/src/main/assets/licenses/FILAMENT-Apache-2.0.txt",
+      "bytes": 11362,
+      "sha256": "02d70b593dd8e9355dd8e1ca8d13c303bee5bcaf3065b66ff6e4f534e1e6a2c1",
+      "unchangedFrom": "0.5.5"
+    },
+    {
+      "path": "app/src/main/assets/licenses/MODEL-NOTICE.md",
+      "bytes": 3556,
+      "sha256": "e4ba37f2e99e55591bd621bc84660c8e09220c3d3a632605ac412f9448e4ecfd",
+      "unchangedFrom": "0.5.5"
+    },
+    {
+      "path": "app/src/main/assets/licenses/PROJECT-Apache-2.0.txt",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "unchangedFrom": "0.5.5"
+    },
+    {
+      "path": "app/src/main/assets/licenses/PROJECT-NOTICE.md",
+      "bytes": 2156,
+      "sha256": "06c4571d6dc20fd3e83852377da800d9191bef6be3c89b26516ddbadb89da451",
+      "unchangedFrom": "0.5.5"
+    },
+    {
+      "path": "app/src/main/assets/licenses/TARA-NOTICE.md",
+      "bytes": 7915,
+      "sha256": "ec87ef063bd1fe74915634720b8c12a7e542161f09e60359c84d5aafb818b963",
+      "unchangedFrom": "0.5.5"
+    },
+    {
+      "path": "app/src/main/assets/licenses/Z-Anatomy-upstream.txt",
+      "bytes": 2754,
+      "sha256": "196b66b56551a862e59872f7cdb70e6d9a6ad84e9105962fca8ec28c14e97520",
+      "unchangedFrom": "0.5.5"
+    },
+    {
+      "path": "app/src/main/assets/licenses/meshoptimizer-MIT.txt",
+      "bytes": 1079,
+      "sha256": "f03037ca7bad1e3eb7f4a63fa6084a8baabd5ba30d3c239a9a7f35705d873e26",
+      "unchangedFrom": "0.5.5"
+    },
+    {
+      "path": "app/src/main/assets/materials/cutaway.filamat",
+      "bytes": 53092,
+      "sha256": "5b5bed871f55c1256e6a556cabc9ac05181bcc29aebfdee830f54b3a8a582543",
+      "unchangedFrom": "0.5.5"
+    },
+    {
+      "path": "app/src/main/assets/models/body-low.glb",
+      "bytes": 51370856,
+      "sha256": "732db523e4fc217f575c944b7ca1dcfd169231d01aa4b128f7c992428bea1042",
+      "unchangedFrom": "0.5.5"
+    },
+    {
+      "path": "app/src/main/assets/models/body-standard.glb",
+      "bytes": 63196840,
+      "sha256": "a9db567003aefceae40bab4930dfc709b95031025fad59a8018465b2dbb8b0ba",
+      "unchangedFrom": "0.5.5"
+    },
+    {
+      "path": "app/src/main/assets/models/skin-occlusion.bin",
+      "bytes": 1800008,
+      "sha256": "69d81671883717189708d2609aac4eb180d6c0ab17c535d83941c7fb640f80a4",
+      "unchangedFrom": "0.5.5"
+    },
+    {
+      "path": "app/src/main/assets/third_party/tara/acupoints-1.7.2.ttl",
+      "bytes": 2594678,
+      "sha256": "c4967c2bb7f4936200f77fac5da19219e6ca5850e7f46dfc8a87bd28b7c68296",
+      "unchangedFrom": "0.5.5"
+    }
+  ],
+  "delivery": {
+    "collectedAtUtc": "2026-10-21T08:36:11.748493+00:00",
+    "apk": {
+      "path": "outputs/human-study-0.5.6-arm64.apk",
+      "bytes": 125625932,
+      "sha256": "6aeea1dd6726360ce7e976ca7ee3cb14a03c03bf873970395546237aabbc6e4a",
+      "package": "com.zga.meridianatlas",
+      "versionName": "0.5.6",
+      "versionCode": 16,
+      "minSdk": 29,
+      "targetSdk": 36,
+      "signingPurpose": "local-testing"
+    },
+    "checks": {
+      "zipCrc": true,
+      "bundledSourceHashes": true,
+      "offlinePermission": true,
+      "arm64Only": true,
+      "elf16KiBAlignment": true,
+      "signature": true,
+      "zip16KiBAlignment": true,
+      "applicationLabel": true
+    },
+    "assets": [
+      {
+        "path": "anatomy.json",
+        "bytes": 2136568,
+        "sha256": "9cf2b598b0e4cd61ed3f2f8092bcc65f7cd471d02f37b9f50307e45ba52ab93b"
+      },
+      {
+        "path": "content/acupoints.json",
+        "bytes": 1964670,
+        "sha256": "1599476362af4097f33cecfd3b862c53930c5d2f8c9570d78b810995e03dd7ae"
+      },
+      {
+        "path": "content/fascia.json",
+        "bytes": 1970286,
+        "sha256": "fad1312eae8ddb0cf0f7ecb0a53248703510b7f17cc34ede9ed966fefd88328e"
+      },
+      {
+        "path": "content/landmarks.json",
+        "bytes": 19457,
+        "sha256": "79570bc4dbb3cd759a981441677b4ce4fa254c249e789f5af331a8a624d9a418"
+      },
+      {
+        "path": "content/meridians.json",
+        "bytes": 183819,
+        "sha256": "0751a0c80ab578720f6fe04194fa28fd6af0174a134b9d13bbb479b1b6425386"
+      },
+      {
+        "path": "content/organ-landmarks.json",
+        "bytes": 7676,
+        "sha256": "3fa4a9a614b3a4ff61d03897474a3da76a92883b6cc4a572aab58b3a4748618d"
+      },
+      {
+        "path": "content/sources.json",
+        "bytes": 35142,
+        "sha256": "690417de6b1e760a0615ee76fb105d158dbdf005975a99347f1c2c142fa02a2a"
+      },
+      {
+        "path": "licenses/CC-BY-4.0.txt",
+        "bytes": 17023,
+        "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744"
+      },
+      {
+        "path": "licenses/CC-BY-NC-ND-4.0.txt",
+        "bytes": 19127,
+        "sha256": "38762e3777f4ec00a6f769062a7c3f704fb78ce08303ecff88558da4c49cf9ea"
+      },
+      {
+        "path": "licenses/CC-BY-SA-4.0.txt",
+        "bytes": 18375,
+        "sha256": "cde7883b9050a1104f4ac19a1572aafd6e5d7323b68351aaf51fbf4beba54966"
+      },
+      {
+        "path": "licenses/DEPENDENCY-NOTICES.md",
+        "bytes": 83442,
+        "sha256": "16691f8e811a6fec28767981fbd381f83e003eb4d91b67b1c635643a70b11328"
+      },
+      {
+        "path": "licenses/FILAMENT-Apache-2.0.txt",
+        "bytes": 11362,
+        "sha256": "02d70b593dd8e9355dd8e1ca8d13c303bee5bcaf3065b66ff6e4f534e1e6a2c1"
+      },
+      {
+        "path": "licenses/MODEL-NOTICE.md",
+        "bytes": 3556,
+        "sha256": "e4ba37f2e99e55591bd621bc84660c8e09220c3d3a632605ac412f9448e4ecfd"
+      },
+      {
+        "path": "licenses/PROJECT-Apache-2.0.txt",
+        "bytes": 11358,
+        "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+      },
+      {
+        "path": "licenses/PROJECT-NOTICE.md",
+        "bytes": 2156,
+        "sha256": "06c4571d6dc20fd3e83852377da800d9191bef6be3c89b26516ddbadb89da451"
+      },
+      {
+        "path": "licenses/TARA-NOTICE.md",
+        "bytes": 7915,
+        "sha256": "ec87ef063bd1fe74915634720b8c12a7e542161f09e60359c84d5aafb818b963"
+      },
+      {
+        "path": "licenses/Z-Anatomy-upstream.txt",
+        "bytes": 2754,
+        "sha256": "196b66b56551a862e59872f7cdb70e6d9a6ad84e9105962fca8ec28c14e97520"
+      },
+      {
+        "path": "licenses/meshoptimizer-MIT.txt",
+        "bytes": 1079,
+        "sha256": "f03037ca7bad1e3eb7f4a63fa6084a8baabd5ba30d3c239a9a7f35705d873e26"
+      },
+      {
+        "path": "materials/cutaway.filamat",
+        "bytes": 53092,
+        "sha256": "5b5bed871f55c1256e6a556cabc9ac05181bcc29aebfdee830f54b3a8a582543"
+      },
+      {
+        "path": "models/body-low.glb",
+        "bytes": 51370856,
+        "sha256": "732db523e4fc217f575c944b7ca1dcfd169231d01aa4b128f7c992428bea1042"
+      },
+      {
+        "path": "models/body-standard.glb",
+        "bytes": 63196840,
+        "sha256": "a9db567003aefceae40bab4930dfc709b95031025fad59a8018465b2dbb8b0ba"
+      },
+      {
+        "path": "models/skin-occlusion.bin",
+        "bytes": 1800008,
+        "sha256": "69d81671883717189708d2609aac4eb180d6c0ab17c535d83941c7fb640f80a4"
+      },
+      {
+        "path": "third_party/tara/acupoints-1.7.2.ttl",
+        "bytes": 2594678,
+        "sha256": "c4967c2bb7f4936200f77fac5da19219e6ca5850e7f46dfc8a87bd28b7c68296"
+      }
+    ],
+    "nativeLibraries": [
+      {
+        "path": "lib/arm64-v8a/libandroidx.graphics.path.so",
+        "sha256": "41e9a793c43a0f4fddb19e33f346bace464f30f888ba7b9eaf96294ea115bfb6",
+        "loadAlignments": [
+          16384,
+          16384,
+          16384
+        ]
+      },
+      {
+        "path": "lib/arm64-v8a/libdatastore_shared_counter.so",
+        "sha256": "d3e48717c9aa147e0ab21063ba0e8e0211cabf8bf40b222640829519edbf58e1",
+        "loadAlignments": [
+          16384,
+          16384,
+          16384
+        ]
+      },
+      {
+        "path": "lib/arm64-v8a/libfilament-jni.so",
+        "sha256": "dd0b60f022f75c8e057f7380ee085775d270e0c87165296463b532e437c3a640",
+        "loadAlignments": [
+          16384,
+          16384,
+          16384
+        ]
+      },
+      {
+        "path": "lib/arm64-v8a/libgltfio-jni.so",
+        "sha256": "12695105867b287539a7cd1763ecfe2bc8aee1e11fac4208ad0b7088fc5bc030",
+        "loadAlignments": [
+          16384,
+          16384,
+          16384
+        ]
+      }
+    ],
+    "counts": {
+      "acupoints": 413,
+      "instances": 843,
+      "meridians": 20,
+      "structures": 1291,
+      "fascialConnections": 7,
+      "connectionReferenceRegions": 38
+    },
+    "clinicalReviewCompleted": false
+  },
+  "visualReview": {
+    "status": "reviewed-fixed-captures",
+    "findingsZh": [
+      "固定正背皮肤图的整体亮度更接近，仍有轮廓起伏。",
+      "GB22和GB23端点原图中选中点及名称位于卡片上方且可见。",
+      "骨骼、结缔组织与半身图保留材质区分及保留侧体表。"
+    ],
+    "captures": [
+      {
+        "path": "outputs/qa/card-lighting/device/skin-low-front.png",
+        "bytes": 1953597,
+        "sha256": "460196f537e72005d0daa079696d9922a74fe29b0c5d3e29026ff11ee9f91ca8"
+      },
+      {
+        "path": "outputs/qa/card-lighting/device/skin-low-back.png",
+        "bytes": 1925457,
+        "sha256": "f85be5cbe5bd7fff3f24e98eb348cada3329638154429da0af11d23806374d8f"
+      },
+      {
+        "path": "outputs/qa/card-lighting/device/bone-low-oblique.png",
+        "bytes": 2280505,
+        "sha256": "e26ca8a2e059e86dca244bfdebf614a616074a6d28b6d84b161aa3470fa0197e"
+      },
+      {
+        "path": "outputs/qa/card-lighting/device/connective-low-oblique.png",
+        "bytes": 2032746,
+        "sha256": "9c7c5beca1835ec58e5a518ed0d99b8886836b57b4e25762e03d6dde1576d196"
+      },
+      {
+        "path": "outputs/qa/card-lighting/device/half-left-low-front.png",
+        "bytes": 2186028,
+        "sha256": "9282d35f474f91a74db2e8e5b084dad2e5aaf3bad254eec74acb3c40639ecce1"
+      },
+      {
+        "path": "outputs/qa/card-lighting/device/half-right-low-front.png",
+        "bytes": 2186191,
+        "sha256": "9596e9aba43e02c21ec869cf09f4470ee3c9c4951c8e999d22bc61a0ad1fdde3"
+      },
+      {
+        "path": "outputs/qa/card-lighting/device/acceptance-gb22-gb23-start.png",
+        "bytes": 1564152,
+        "sha256": "5fe0a5ef39226844f1148b39df11326013352fa4a50a7010d2c6ad2b8ca4e743"
+      },
+      {
+        "path": "outputs/qa/card-lighting/device/acceptance-gb22-gb23-end.png",
+        "bytes": 1574007,
+        "sha256": "18e4bfc9dedf261a6f42650040503f626e60f42e4a187c80e392abfd48218c44"
+      }
+    ]
+  },
+  "publication": {
+    "atValidation": {
+      "committed": false,
+      "pushed": false,
+      "githubReleaseCreated": false
+    },
+    "includedInReleaseTag": "v0.5.7",
+    "releaseUrl": "https://github.com/zgat/human-study/releases/tag/v0.5.7",
+    "scopeZh": "这是0.5.6原APK的历史设备与照明验证。相关实现随0.5.7发布，不能替代0.5.7设备验收。"
+  },
+  "notValidated": [
+    "another physical phone or Android 10 device",
+    "10-minute performance",
+    "offline first install",
+    "clinical color accuracy",
+    "all-point medical localization",
+    "all-frame Canvas label pixels",
+    "all-body or all-angle visual acceptance",
+    "new structure/fascia card end-to-end device cases"
+  ]
+}

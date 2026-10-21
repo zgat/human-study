@@ -1,0 +1,760 @@
+{
+  "schemaVersion": 1,
+  "applicationVersion": "0.5.5",
+  "versionCode": 15,
+  "collectedAt": "2026-10-21T15:49:04.885673+08:00",
+  "status": "implemented-targeted-debug-validated-and-release-installed; professional-calibration-outstanding",
+  "scopeZh": "材质与立体感、全部带寸定位复核；保留镜头过渡和连续选点修复。",
+  "anatomyAppearance": {
+    "policy": {
+      "skin": {
+        "srgb": "#CB947C",
+        "roughness": 0.56
+      },
+      "bone": {
+        "srgb": "#E9E4D9",
+        "roughness": 0.58
+      },
+      "connective": {
+        "srgb": "#C3CCD0",
+        "roughness": 0.42
+      },
+      "metallic": 0
+    },
+    "lighting": {
+      "ambientIntensity": 9000,
+      "keyIntensity": 85000,
+      "fillIntensity": 18000,
+      "backIntensity": 35000,
+      "multipleDirectionalLights": true,
+      "shadowMapLow": 1024,
+      "shadowMapStandard": 2048,
+      "ssaoResolution": 0.5,
+      "ssaoRadiusMetres": 0.05
+    },
+    "shaderCompilation": {
+      "schemaVersion": 1,
+      "filamentVersion": "1.78.0",
+      "compiler": {
+        "name": "matc",
+        "reportedMaterialVersion": "78",
+        "sha256": "fcbaebc71f9945bad3e45b024afde9b4456d62e4e9372eeedb96b9743717ee44",
+        "host": "Darwin/arm64",
+        "officialMacArchive": {
+          "url": "https://github.com/google/filament/releases/download/v1.78.0/filament-v1.78.0-mac.tgz",
+          "sha256": "dc2fbc7681998842e85ccc211ed1292b15631a97731fa49ef07c2698870ce9c5",
+          "digestSource": "https://github.com/google/filament/releases/expanded_assets/v1.78.0"
+        }
+      },
+      "parameters": [
+        "-a",
+        "opengl",
+        "-p",
+        "mobile",
+        "-S"
+      ],
+      "source": {
+        "path": "tools/assets/cutaway.mat",
+        "sha256": "c24901a2a1f5f7621ad548de44bef381ef19e0357a772bb3481fd77e0c9da72e"
+      },
+      "output": {
+        "path": "app/src/main/assets/materials/cutaway.filamat",
+        "bytes": 53092,
+        "sha256": "5b5bed871f55c1256e6a556cabc9ac05181bcc29aebfdee830f54b3a8a582543"
+      },
+      "coordinates": {
+        "units": "metres",
+        "plane": "x=0 sagittal",
+        "left": "+X",
+        "right": "-X"
+      },
+      "materialParameters": [
+        "baseColorFactor",
+        "roughnessFactor",
+        "metallicFactor",
+        "cutSign"
+      ],
+      "behaviorZh": "cutSign为±1时裁切指定外表面的半侧片元，含皮肤、肌肉和眼口表层；为0时供正常不透明皮肤使用。masked材质同步作用于颜色、深度、阴影和点选pass，保留shadowReceiver变体；PBR颜色、粗糙度及金属度由运行时指定，深部内脏、牙齿、骨骼及锚点坐标不变。",
+      "limitationsZh": [
+        "没有生成切面填充或新增解剖组织；这是观察用半身剖露。",
+        "材质适用于当前无纹理、统一系统色的模型；纹理模型需另接材质属性。"
+      ]
+    },
+    "noNewTexturesOrGeometry": true,
+    "materialValueBoundaryZh": "数值颜色与粗糙度由策略测试核验；Filament 1.78 Java无法读回GPU uniform。实际实例、深度、阴影和AO设置在设备检查，图像另作人工查看。",
+    "visualReview": {
+      "status": "reviewed",
+      "captureMethod": "PixelCopy of actual Filament SurfaceView in the tested Debug APK",
+      "captures": [
+        {
+          "path": "outputs/qa/appearance/wireless-accepted/bone-low-oblique.png",
+          "bytes": 2311890,
+          "sha256": "9bf7c6f7a876b7fce13d8b1c496fef9f9add1a9beb877839aea267189604d7f6"
+        },
+        {
+          "path": "outputs/qa/appearance/wireless-accepted/connective-low-back.png",
+          "bytes": 2036936,
+          "sha256": "8870c66fa25e62a4fcd94bfcb22e957b1b5aef0fedaef3465a90e9780f685b61"
+        },
+        {
+          "path": "outputs/qa/appearance/wireless-accepted/connective-low-oblique.png",
+          "bytes": 2048258,
+          "sha256": "ff1f09c9ab488391b5403d4fde502b7ebe13beb41ff95ef0ce85d4783996c9d8"
+        },
+        {
+          "path": "outputs/qa/appearance/wireless-accepted/half-left-low-front.png",
+          "bytes": 2220424,
+          "sha256": "e6a285be5227dae6ee7c1d0a7dd2073ab27a4c7854527d3fabf2059a58cbf8d7"
+        },
+        {
+          "path": "outputs/qa/appearance/wireless-accepted/half-right-low-front.png",
+          "bytes": 2229113,
+          "sha256": "0831d310ae40267fc6fef4972c0085d0df503bd1785b5b500c351bd03c691dca"
+        },
+        {
+          "path": "outputs/qa/appearance/wireless-accepted/skin-low-back.png",
+          "bytes": 1936582,
+          "sha256": "9ac07c03508b06e4f04c9210090fde9857b7bf01e5f4d8db2b8b89164cf32603"
+        },
+        {
+          "path": "outputs/qa/appearance/wireless-accepted/skin-low-front.png",
+          "bytes": 1977111,
+          "sha256": "7e93098a2afaa285319e911e6b7ae42d7f184fcce10ea7f5b8ad9ef9836a9545"
+        },
+        {
+          "path": "outputs/qa/appearance/wireless-accepted/skin-low-oblique.png",
+          "bytes": 1973778,
+          "sha256": "eedf34ed1390bb2f06abf235c4fcd3436a2af84f7bf6eafde429d79c526dcdac"
+        }
+      ],
+      "findingsZh": [
+        "皮肤正背斜视可见明暗与胸腹起伏，骨骼呈暖白，结缔组织呈偏冷灰白。",
+        "左右半身开口侧互换，保留侧未见红色肌肉穿出皮肤。",
+        "检查限固定视角截图；源网格的眼口形态、薄片开边和配准限制仍存在。"
+      ],
+      "qualityBoundary": "Screenshots use LOW. STANDARD bindings and quality settings were tested, but the full screenshot matrix was not repeated in STANDARD."
+    }
+  },
+  "cunReview": {
+    "inputs": {
+      "tools/qa/audit_cun_coordinates.py": "ac69a8d692aa0e71a04f1047580ce483bcf21a211d7a707ba3f1c2607db54593",
+      "app/src/main/assets/content/acupoints.json": "1599476362af4097f33cecfd3b862c53930c5d2f8c9570d78b810995e03dd7ae",
+      "app/src/main/assets/content/landmarks.json": "79570bc4dbb3cd759a981441677b4ce4fa254c249e789f5af331a8a624d9a418",
+      "app/src/main/assets/anatomy.json": "9cf2b598b0e4cd61ed3f2f8092bcc65f7cd471d02f37b9f50307e45ba52ab93b",
+      "tools/content/anchor_points.py": "ac74c0c578ae747ba214852d9e4b255bae5791b106780aa280d620e3a0005a60",
+      "tools/content/chest_anchors.py": "62516e98f5979166316727c4f5b66cbcca8a031107a18bec709a29ea77e1dd29",
+      "tools/content/side_chest_anchors.py": "da289ecb049b4a76a75702aac15c4a0082338a7959200be75deab64f45fb683f",
+      "tools/assets/source/FJ2810.obj": "682f402206f15592acdeaae8ffb6b34c3e5c3267fa4685e63d2e4920ef2a80e0",
+      "tools/assets/source/isa_BP3D_4.0_obj_99.zip": "40665852c49f218326590e204db91064a1ecfc3c6f8cbd7bbbcaac62c7cd409e",
+      "tools/content/cun_units.py": "ea0da41049b7c3e53dfaffd92ac5170d688550cf11ee7699e8532fc62e83bea0",
+      "tools/content/cun_surface.py": "a65193f68e0d867b1225b9f2af1b00f4ffa923701892a104efdb1aa05bf42776",
+      "tools/content/limb_cun.py": "0911be9df29bb87a48e76096b08e0d92559fb3ca053ff21d4501ef6a0a473a62",
+      "tools/content/sources/gb12346-canonical-web.txt": "0e8928b8ffc8de14297feb98aeffcdcebfbdf2a50f597224f419574fa0737d7a",
+      "tools/content/sources/gb12346-canonical-web.json": "ec93200e7174bcdc2132882bd5604141fb3924f251a6048164f294c84d80e5a8",
+      "manifests/cun-regional-audit.json": "38b7a3fcd8084224ab3b5ea4f45c45d53a85348b9458662fb9de8627869b9bb1"
+    },
+    "summary": {
+      "allEntries": 413,
+      "locationCunEntries": 226,
+      "anatomyCunEntries": 0,
+      "auditedEntries": 226,
+      "auditedInstances": 486,
+      "textMeasurementConstraints": 259,
+      "constraintInstanceReviews": 552,
+      "byGroupEntries": {
+        "胸腹与腹股沟": 66,
+        "上肢与肩带": 39,
+        "头面颈项": 32,
+        "下肢与臀": 49,
+        "背腰骶": 40
+      },
+      "constraintInstanceStatuses": {
+        "numeric-consistent-with-unvalidated-reference": 287,
+        "standard-reference-not-calibrated": 141,
+        "arithmetic-only-reference-unvalidated": 118,
+        "relative-surface-spacing-only-base-not-localized": 2,
+        "named-landmark-not-established": 2,
+        "numeric-deviation": 2
+      },
+      "standardTextStatuses": {
+        "format-equivalent": 202,
+        "encoding-only-one-cun-supported-by-canonical-note": 1,
+        "official-extra-point-text-not-provided": 23
+      },
+      "independentRegionalReviewsIncluded": 160,
+      "medicallyCalibratedEntries": 0,
+      "formalMeridianLocationClausesChecked": 203,
+      "formalLocationContentDifferences": 0,
+      "historicalRegionalSourceReviews": 160,
+      "freshIndependentConstraintInstanceReviews": 552,
+      "constraintInstancesWithNumericExpectedAndActual": 409,
+      "numericDeviationPointIds": [
+        "extra-jianqian"
+      ],
+      "unestablishedStandardReferencePointIds": [
+        "lu11",
+        "li1",
+        "st4",
+        "st8",
+        "st45",
+        "sp1",
+        "ht9",
+        "si1",
+        "si9",
+        "bl3",
+        "bl4",
+        "bl5",
+        "bl6",
+        "bl7",
+        "bl8",
+        "bl9",
+        "bl67",
+        "ki5",
+        "ki6",
+        "te1",
+        "te10",
+        "te11",
+        "te12",
+        "gb1",
+        "gb8",
+        "gb9",
+        "gb13",
+        "gb14",
+        "gb15",
+        "gb16",
+        "gb17",
+        "gb18",
+        "gb28",
+        "gb31",
+        "gb32",
+        "gb44",
+        "lr1",
+        "lr7",
+        "gv18",
+        "gv19",
+        "gv20",
+        "gv21",
+        "gv22",
+        "gv23",
+        "gv24",
+        "ex-hn1",
+        "ex-hn2",
+        "ex-hn14",
+        "extra-qianzheng",
+        "ex-hn15",
+        "extra-xueyadian",
+        "ex-ue8",
+        "ex-ue11",
+        "ex-le1",
+        "ex-le6",
+        "ex-le7",
+        "ex-le12"
+      ]
+    },
+    "modelScaleReferencesMm": {
+      "chestTransverseUncalibratedConstant": 26.0,
+      "lowerAbdominalVertical5": 30.39959999999997,
+      "upperAbdominalVertical8": 25.710750000000004,
+      "chestVertical9": 17.91444444444444
+    },
+    "referenceLimitations": {
+      "chestTransverse": "未独立标注并专业确认两乳头/其他横向标志；ST17本身也由同一26mm常量生成，不能循环论证该常量已测得8横寸。",
+      "abdominalVertical": "脐为源皮肤特征代理，耻骨/剑突为骨网格极值；Y轴长度折量不自动等于标准体位下的体表量取。",
+      "backTransverse": "未独立标注肩胛骨内侧缘到后正中线3横寸；胸部常量不得自动视为背腰实测。",
+      "head": "缺少经专业确认的前后发际、眉/口角/耳垂标志和表面测量路径。",
+      "limbs": "实际骨极值、髌底与髌尖、软组织横纹、内外踝和前后股段必须分别标定。"
+    },
+    "textSourceRecords": [
+      {
+        "sourceId": "gb12346-2021",
+        "textPath": "tools/content/sources/gb12346-canonical-web.txt",
+        "textSha256": "0e8928b8ffc8de14297feb98aeffcdcebfbdf2a50f597224f419574fa0737d7a",
+        "captureMethod": "web.run.open indexed text, collected in overlapping line windows",
+        "sourceUrl": "https://www.ntcamsac.ac.cn/upload/std_info/202306192125376309.pdf",
+        "originalPdfDownloaded": false,
+        "originalPdfSha256": null,
+        "textHashIsNotPdfHash": true,
+        "captureEvidencePath": "tools/content/sources/gb12346-canonical-web.json",
+        "captureEvidenceSha256": "ec93200e7174bcdc2132882bd5604141fb3924f251a6048164f294c84d80e5a8"
+      }
+    ],
+    "extraFormalStandardFullText": "not-compared-for-23-extra-entries",
+    "regeneratedEntries": 75,
+    "regeneratedInstances": 153,
+    "actualChangedEntries": 74,
+    "actualChangedInstances": 148,
+    "actualChangedRouteNodes": 145,
+    "changedPointIds": [
+      "lu3",
+      "lu4",
+      "lu6",
+      "lu7",
+      "lu8",
+      "li6",
+      "li7",
+      "li8",
+      "li9",
+      "li10",
+      "li13",
+      "st26",
+      "st27",
+      "st28",
+      "st29",
+      "st30",
+      "st32",
+      "st33",
+      "st34",
+      "st36",
+      "st37",
+      "st38",
+      "st39",
+      "st40",
+      "sp6",
+      "sp7",
+      "sp8",
+      "sp10",
+      "sp13",
+      "sp14",
+      "ht2",
+      "ht4",
+      "ht5",
+      "ht6",
+      "si6",
+      "si7",
+      "bl37",
+      "bl38",
+      "bl55",
+      "bl56",
+      "bl58",
+      "bl59",
+      "ki7",
+      "ki8",
+      "ki9",
+      "pc2",
+      "pc4",
+      "pc5",
+      "pc6",
+      "te5",
+      "te6",
+      "te7",
+      "te8",
+      "te9",
+      "te11",
+      "te12",
+      "gb35",
+      "gb36",
+      "gb37",
+      "gb38",
+      "gb39",
+      "lr5",
+      "lr6",
+      "lr9",
+      "lr10",
+      "lr11",
+      "lr12",
+      "cv21",
+      "extra-tituo",
+      "ex-ca1",
+      "ex-ue2",
+      "ex-le1",
+      "ex-le3",
+      "ex-le7"
+    ],
+    "modelReferenceOrArithmeticConsistencyIsNotMedicalCalibration": true,
+    "appReviewField": "cunReviewZh",
+    "appEntry": "完整说明 → 寸距复核（教学模型）",
+    "reports": [
+      {
+        "path": "docs/validation/cun-review.csv",
+        "bytes": 422188,
+        "sha256": "198d78fd48a440474785aef597c10e7f045417f795ae80f25866fbd172bfa4a7"
+      },
+      {
+        "path": "docs/validation/cun-constraints.csv",
+        "bytes": 1447755,
+        "sha256": "f491722334ac274318bc5ed1b736477a05c517cd1fd7ffe94bc38212da3e6dae"
+      }
+    ],
+    "specificLimitsZh": [
+      "GB22基点、第四肋间及腋中线尚未校准；GB23仅为既有基点前26毫米的教学皮肤路径。",
+      "发际、甲角、背部肩胛横向标志、髋大转子及软组织横纹等参考仍待标注。",
+      "GB31/32、LR7、肩前未因本轮数值检查而被宣称完成医学定位。",
+      "肩前左右两实例相对临时上肢代理仍有数值偏差；保留限制而不借未经确认的参考强行移动。"
+    ]
+  },
+  "verification": {
+    "jvm": {
+      "tests": 109,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "python": {
+      "tests": 39,
+      "failures": 0
+    },
+    "lint": {
+      "errors": 0,
+      "warnings": 19
+    },
+    "build": {
+      "debug": "passed",
+      "release": "passed",
+      "androidTest": "passed",
+      "initialCombinedTasks": "lint failed reading transient release kapt stub; recovered by separate Release assembly and standalone lint"
+    },
+    "targetedDevice": {
+      "device": {
+        "model": "OPD2404",
+        "api": "36"
+      },
+      "tests": 10,
+      "passed": 10,
+      "failed": 0,
+      "skipped": 0,
+      "durationSeconds": 49.424,
+      "groups": {
+        "AppearanceDeviceTest": 3,
+        "LabelContinuityDeviceTest": 5,
+        "AcupointDecodeDeviceTest": 2
+      },
+      "preferencesRestoredWithFileHashReadback": true,
+      "installedDebug": {
+        "sha256": "5c9a688019a017215058ea10b0cd9dd346c01462224b6d24624cfbc962796b05"
+      },
+      "installedTest": {
+        "sha256": "514e49f97124fa91e5a4b92fe83d0a2a6a582f6681df2c260891651513f1e7f3"
+      },
+      "instrumentation": {
+        "path": "logs/qa/appearance/wireless-accepted/instrumentation.txt",
+        "bytes": 7155,
+        "sha256": "1c0253ebc913f2df43213bfeda9f52adfb04545360f3000bf6cc05a45c6861cb"
+      }
+    },
+    "labelContinuity": {
+      "checks": [
+        {
+          "case": "acceptance-st12-st13",
+          "evidenceBoundary": "raw instance visibility and actual SelectionCard semantics; Canvas drawn label continuity is not asserted",
+          "selectedAnchorId": "point:st13|0",
+          "allowedInitialCommitDelayFrames": 1,
+          "targetFrames": 95,
+          "missingInstanceFramesAfterCommit": 0,
+          "targetVisibleAtStart": true,
+          "targetVisibleAtStableEndpoint": true,
+          "lateWindowFrames": 68,
+          "lateWindowVisibilityChanges": 0,
+          "stableTailFrames": 38,
+          "cardCommitProbe": 0,
+          "committedCardProbes": 8,
+          "badCommittedCardProbes": 0,
+          "visibilityComparable": true
+        },
+        {
+          "case": "acceptance-lu1-st12",
+          "evidenceBoundary": "raw instance visibility and actual SelectionCard semantics; Canvas drawn label continuity is not asserted",
+          "selectedAnchorId": "point:st12|0",
+          "allowedInitialCommitDelayFrames": 1,
+          "targetFrames": 94,
+          "missingInstanceFramesAfterCommit": 0,
+          "targetVisibleAtStart": true,
+          "targetVisibleAtStableEndpoint": true,
+          "lateWindowFrames": 77,
+          "lateWindowVisibilityChanges": 0,
+          "stableTailFrames": 38,
+          "cardCommitProbe": 0,
+          "committedCardProbes": 7,
+          "badCommittedCardProbes": 0,
+          "visibilityComparable": true
+        },
+        {
+          "case": "acceptance-gb22-gb23",
+          "evidenceBoundary": "raw instance visibility and actual SelectionCard semantics; Canvas drawn label continuity is not asserted",
+          "selectedAnchorId": "point:gb23|0",
+          "allowedInitialCommitDelayFrames": 1,
+          "targetFrames": 97,
+          "missingInstanceFramesAfterCommit": 0,
+          "targetVisibleAtStart": true,
+          "targetVisibleAtStableEndpoint": true,
+          "lateWindowFrames": 70,
+          "lateWindowVisibilityChanges": 0,
+          "stableTailFrames": 40,
+          "cardCommitProbe": 0,
+          "committedCardProbes": 8,
+          "badCommittedCardProbes": 0,
+          "visibilityComparable": true
+        }
+      ],
+      "stableEndpointCaptures": [
+        {
+          "path": "outputs/qa/appearance/wireless-accepted/st12-st13-start.png",
+          "bytes": 1735596,
+          "sha256": "e4aae5d3a8044de4dd140e6823af559af01a41387424928e0a4f76fb73aeb253"
+        },
+        {
+          "path": "outputs/qa/appearance/wireless-accepted/st12-st13-end.png",
+          "bytes": 1735527,
+          "sha256": "c546c46579c1aa0212638f46966b73e95c5ecec2fcbdcd23ad72aaec34bf3600"
+        },
+        {
+          "path": "outputs/qa/appearance/wireless-accepted/lu1-st12-start.png",
+          "bytes": 1729502,
+          "sha256": "6c5581c4ef21a6988ea603be33571303987aebe98c348c587773f132e8af9769"
+        },
+        {
+          "path": "outputs/qa/appearance/wireless-accepted/lu1-st12-end.png",
+          "bytes": 1744378,
+          "sha256": "ca6f41e2f9d0fb7897f39822cac43ccf2f2be8c3ca5b50a5b9d3842972ded186"
+        },
+        {
+          "path": "outputs/qa/appearance/wireless-accepted/acceptance-gb22-gb23-start.png",
+          "bytes": 1583948,
+          "sha256": "69cc809d5ba753d996231c49a90ff208eb33b20875a48ba4b552e9db09c7f926"
+        },
+        {
+          "path": "outputs/qa/appearance/wireless-accepted/acceptance-gb22-gb23-end.png",
+          "bytes": 1608484,
+          "sha256": "1adb1f121675990f20b0f8540dc9d69eb34f51e0c8a857563660c52ee01e2fc4"
+        }
+      ],
+      "canvasTextPixelContinuity": "not-asserted",
+      "boundaryZh": "逐帧检查原始点投影与实际卡片语义；端点截图可见选中名称。没有逐帧像素识别Canvas文字。"
+    },
+    "priorAttemptsZh": "首次材质检查发现JNI包装实例缺少Java Material回指，已修复并重新构建。后续10项首次执行8通过2测试同步失败，推进Compose状态后最终10项全过，未通过加长超时或跳过断言处理。",
+    "additional12InteractionRegression": {
+      "status": "not-started",
+      "reasonZh": "测试后无线服务不再可发现；没有执行，不计为通过。"
+    },
+    "releaseDevice": {
+      "status": "passed",
+      "device": {
+        "model": "OPD2404",
+        "sdk": "36",
+        "abi": "arm64-v8a",
+        "displaySize": "Physical size: 2120x3000",
+        "memoryPageBytes": "4096",
+        "memTotalKiB": 11808620
+      },
+      "installedApkSha256": "eac5b9ed3b9b29716912382d1461d0b2135949c62ee07652a3348beaff184832",
+      "nonDebuggable": true,
+      "localUiReady": true,
+      "backgroundResumeSameProcess": true,
+      "captures": [
+        {
+          "path": "outputs/release-smoke/release-loaded.png",
+          "bytes": 2225570,
+          "sha256": "f68f67a36d22035fb65172badb033d7dc0bd487a25eb44b8347e993ee15a61cb"
+        },
+        {
+          "path": "outputs/release-smoke/release-resumed.png",
+          "bytes": 2225098,
+          "sha256": "5431dc7404b429d22d16edd33333fd3fb2d04b1e6e69d08b21de6aa59fee41e8"
+        }
+      ],
+      "boundaryZh": "无线服务恢复后自动按身份连接并安装最终Release；Debug阶段已恢复偏好，Release阶段只检查启动与前后台，没有重新读取私有偏好。"
+    }
+  },
+  "delivery": {
+    "collectedAtUtc": "2026-10-21T07:19:06.240475+00:00",
+    "apk": {
+      "path": "outputs/human-study-0.5.5-arm64.apk",
+      "bytes": 125593164,
+      "sha256": "eac5b9ed3b9b29716912382d1461d0b2135949c62ee07652a3348beaff184832",
+      "package": "com.zga.meridianatlas",
+      "versionName": "0.5.5",
+      "versionCode": 15,
+      "minSdk": 29,
+      "targetSdk": 36,
+      "signingPurpose": "local-testing"
+    },
+    "checks": {
+      "zipCrc": true,
+      "bundledSourceHashes": true,
+      "offlinePermission": true,
+      "arm64Only": true,
+      "elf16KiBAlignment": true,
+      "signature": true,
+      "zip16KiBAlignment": true,
+      "applicationLabel": true
+    },
+    "assets": [
+      {
+        "path": "anatomy.json",
+        "bytes": 2136568,
+        "sha256": "9cf2b598b0e4cd61ed3f2f8092bcc65f7cd471d02f37b9f50307e45ba52ab93b"
+      },
+      {
+        "path": "content/acupoints.json",
+        "bytes": 1964670,
+        "sha256": "1599476362af4097f33cecfd3b862c53930c5d2f8c9570d78b810995e03dd7ae"
+      },
+      {
+        "path": "content/fascia.json",
+        "bytes": 1970286,
+        "sha256": "fad1312eae8ddb0cf0f7ecb0a53248703510b7f17cc34ede9ed966fefd88328e"
+      },
+      {
+        "path": "content/landmarks.json",
+        "bytes": 19457,
+        "sha256": "79570bc4dbb3cd759a981441677b4ce4fa254c249e789f5af331a8a624d9a418"
+      },
+      {
+        "path": "content/meridians.json",
+        "bytes": 183819,
+        "sha256": "0751a0c80ab578720f6fe04194fa28fd6af0174a134b9d13bbb479b1b6425386"
+      },
+      {
+        "path": "content/organ-landmarks.json",
+        "bytes": 7676,
+        "sha256": "3fa4a9a614b3a4ff61d03897474a3da76a92883b6cc4a572aab58b3a4748618d"
+      },
+      {
+        "path": "content/sources.json",
+        "bytes": 35142,
+        "sha256": "690417de6b1e760a0615ee76fb105d158dbdf005975a99347f1c2c142fa02a2a"
+      },
+      {
+        "path": "licenses/CC-BY-4.0.txt",
+        "bytes": 17023,
+        "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744"
+      },
+      {
+        "path": "licenses/CC-BY-NC-ND-4.0.txt",
+        "bytes": 19127,
+        "sha256": "38762e3777f4ec00a6f769062a7c3f704fb78ce08303ecff88558da4c49cf9ea"
+      },
+      {
+        "path": "licenses/CC-BY-SA-4.0.txt",
+        "bytes": 18375,
+        "sha256": "cde7883b9050a1104f4ac19a1572aafd6e5d7323b68351aaf51fbf4beba54966"
+      },
+      {
+        "path": "licenses/DEPENDENCY-NOTICES.md",
+        "bytes": 83442,
+        "sha256": "16691f8e811a6fec28767981fbd381f83e003eb4d91b67b1c635643a70b11328"
+      },
+      {
+        "path": "licenses/FILAMENT-Apache-2.0.txt",
+        "bytes": 11362,
+        "sha256": "02d70b593dd8e9355dd8e1ca8d13c303bee5bcaf3065b66ff6e4f534e1e6a2c1"
+      },
+      {
+        "path": "licenses/MODEL-NOTICE.md",
+        "bytes": 3556,
+        "sha256": "e4ba37f2e99e55591bd621bc84660c8e09220c3d3a632605ac412f9448e4ecfd"
+      },
+      {
+        "path": "licenses/PROJECT-Apache-2.0.txt",
+        "bytes": 11358,
+        "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+      },
+      {
+        "path": "licenses/PROJECT-NOTICE.md",
+        "bytes": 2156,
+        "sha256": "06c4571d6dc20fd3e83852377da800d9191bef6be3c89b26516ddbadb89da451"
+      },
+      {
+        "path": "licenses/TARA-NOTICE.md",
+        "bytes": 7915,
+        "sha256": "ec87ef063bd1fe74915634720b8c12a7e542161f09e60359c84d5aafb818b963"
+      },
+      {
+        "path": "licenses/Z-Anatomy-upstream.txt",
+        "bytes": 2754,
+        "sha256": "196b66b56551a862e59872f7cdb70e6d9a6ad84e9105962fca8ec28c14e97520"
+      },
+      {
+        "path": "licenses/meshoptimizer-MIT.txt",
+        "bytes": 1079,
+        "sha256": "f03037ca7bad1e3eb7f4a63fa6084a8baabd5ba30d3c239a9a7f35705d873e26"
+      },
+      {
+        "path": "materials/cutaway.filamat",
+        "bytes": 53092,
+        "sha256": "5b5bed871f55c1256e6a556cabc9ac05181bcc29aebfdee830f54b3a8a582543"
+      },
+      {
+        "path": "models/body-low.glb",
+        "bytes": 51370856,
+        "sha256": "732db523e4fc217f575c944b7ca1dcfd169231d01aa4b128f7c992428bea1042"
+      },
+      {
+        "path": "models/body-standard.glb",
+        "bytes": 63196840,
+        "sha256": "a9db567003aefceae40bab4930dfc709b95031025fad59a8018465b2dbb8b0ba"
+      },
+      {
+        "path": "models/skin-occlusion.bin",
+        "bytes": 1800008,
+        "sha256": "69d81671883717189708d2609aac4eb180d6c0ab17c535d83941c7fb640f80a4"
+      },
+      {
+        "path": "third_party/tara/acupoints-1.7.2.ttl",
+        "bytes": 2594678,
+        "sha256": "c4967c2bb7f4936200f77fac5da19219e6ca5850e7f46dfc8a87bd28b7c68296"
+      }
+    ],
+    "nativeLibraries": [
+      {
+        "path": "lib/arm64-v8a/libandroidx.graphics.path.so",
+        "sha256": "41e9a793c43a0f4fddb19e33f346bace464f30f888ba7b9eaf96294ea115bfb6",
+        "loadAlignments": [
+          16384,
+          16384,
+          16384
+        ]
+      },
+      {
+        "path": "lib/arm64-v8a/libdatastore_shared_counter.so",
+        "sha256": "d3e48717c9aa147e0ab21063ba0e8e0211cabf8bf40b222640829519edbf58e1",
+        "loadAlignments": [
+          16384,
+          16384,
+          16384
+        ]
+      },
+      {
+        "path": "lib/arm64-v8a/libfilament-jni.so",
+        "sha256": "dd0b60f022f75c8e057f7380ee085775d270e0c87165296463b532e437c3a640",
+        "loadAlignments": [
+          16384,
+          16384,
+          16384
+        ]
+      },
+      {
+        "path": "lib/arm64-v8a/libgltfio-jni.so",
+        "sha256": "12695105867b287539a7cd1763ecfe2bc8aee1e11fac4208ad0b7088fc5bc030",
+        "loadAlignments": [
+          16384,
+          16384,
+          16384
+        ]
+      }
+    ],
+    "counts": {
+      "acupoints": 413,
+      "instances": 843,
+      "meridians": 20,
+      "structures": 1291,
+      "fascialConnections": 7,
+      "connectionReferenceRegions": 38
+    },
+    "clinicalReviewCompleted": false
+  },
+  "publication": {
+    "committed": false,
+    "pushed": false,
+    "githubReleaseCreated": false
+  },
+  "notValidated": [
+    "professional acupuncture localization",
+    "all-reference anatomical calibration",
+    "formal extra-point text for 23 cun-bearing entries",
+    "all-pixel label continuity",
+    "10-minute performance",
+    "offline first-install device run",
+    "Android 10 physical device",
+    "another phone or tablet"
+  ]
+}

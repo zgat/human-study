@@ -115,7 +115,9 @@ internal fun decodePoint(item: JSONObject): Acupoint = Acupoint(
     }, item.optString("reviewStatus", item.optString("coordinateReviewStatus", "unreviewed")),
     traditionalIndicationsZh = item.optString("traditionalIndicationsZh"),
     functionSourceRefs = item.optJSONArray("functionSourceRefs").strings(),
-    functionReviewStatus = item.optString("functionReviewStatus", "pending-source-verification"))
+    functionReviewStatus = item.optString("functionReviewStatus", "pending-source-verification"),
+    coordinateNoticeZh = item.optString("coordinateNoticeZh").takeUnless { it == "null" }.orEmpty(),
+    cunReviewZh = item.optString("cunReviewZh").takeUnless { it == "null" }.orEmpty())
 internal fun decodeMeridian(item: JSONObject): Meridian {
     val colorText = item.optString("color", "#58D8C5")
     val color = try { android.graphics.Color.parseColor(colorText).toLong() and 0xffffffffL } catch (_: Exception) { 0xff58d8c5L }

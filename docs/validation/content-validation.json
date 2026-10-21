@@ -56,7 +56,7 @@
   ],
   "medicalReviewedInstances": 0,
   "geometry": {
-    "sourceSurfaceReconstructionMaxDistanceMetres": 7.063004241059812e-08,
+    "sourceSurfaceReconstructionMaxDistanceMetres": 7.59186760086495e-08,
     "normalUnitLengthMaxError": 7.032649751437248e-08,
     "pairedInstances": 392,
     "maxMirrorDifferenceMetres": 0.01664710950916096,
@@ -64,18 +64,6 @@
     "normalAndViewIdPresent": true
   },
   "coincidentCoordinateGroups": [
-    {
-      "position": [
-        0.101744,
-        0.2380152,
-        0.0979092
-      ],
-      "instanceIds": [
-        "st40-left-1",
-        "gb36-left-1"
-      ],
-      "reviewStatus": "pending-coincidence-review"
-    },
     {
       "position": [
         0.0904797,

@@ -137,7 +137,7 @@ class St12TaraDeviceTest {
         compose.runOnUiThread {
             model.selectPoint("st12", reveal = false)
             model.layer { it.copy(details = true, skin = true, points = true, lines = true, cutawaySide = CutawaySide.NONE) }
-            viewer.focusOn(Vec3(0f, 1.410f, .140f), .65f, Vec3(0f, 0f, 1f))
+            viewer.focusOn(Vec3(0f, 1.410f, .140f), .65f, Vec3(0f, 0f, 1f), animated = false)
         }
         compose.waitForIdle()
         val frame = field<Long>(viewer, "totalFrames")

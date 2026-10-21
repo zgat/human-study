@@ -6,11 +6,18 @@ from pathlib import Path
 import json,re,math,hashlib,zipfile,collections,csv
 import numpy as np
 from chest_anchors import POINT_IDS as CHEST_POINT_IDS, locate as locate_chest
+from side_chest_anchors import POINT_IDS as SIDE_CHEST_POINT_IDS, locate as locate_side_chest
+from cun_units import normalized_location, torso_scales
+from limb_cun import scale as limb_scale, point_target as explicit_limb_target, POINT_IDS as EXPLICIT_LIMB_IDS
+from cun_surface import project_horizontal
 ROOT=Path(__file__).resolve().parents[2];OUT=ROOT/'app/src/main/assets/content';AS=ROOT/'tools/assets/source'
 MODEL='bodyparts3d-male-v4';GROUND=-78.1112
 meta=json.loads((ROOT/'app/src/main/assets/anatomy.json').read_text()); parts={s['id']:s for s in meta['structures']}
 CACHE={}; RAW={}; NORMALS={}; TRIANGLES={}; PROJECTIONS={}; ZIP=None; ZMAP={}
 CHEST_REFERENCES={}
+SIDE_CHEST_REFERENCES={}
+MEASUREMENT_EVIDENCE={}
+SKIN_FACES=None
 def vertices(fid):
  global ZIP,ZMAP
  if fid in CACHE:return CACHE[fid]
@@ -37,7 +44,7 @@ def center(fid):a,b=bounds(fid);return (a+b)/2
 SKIN=vertices('FJ2810')
 def nearest(target,fid='FJ2810'):
  v=vertices(fid);t=np.asarray(target);i=np.argmin(np.sum((v-t)**2,axis=1));return v[i]
-def project(x,y,face='front',z=None):
+def project(x,y,face='front',z=None,*,require_intersection=False):
  # Intersect a Z-directed ray with real skin triangles. Source skin is a shell,
  # so vertex-normal sign alone cannot distinguish the outer front/back layers.
  fid='FJ2810'
@@ -52,7 +59,9 @@ def project(x,y,face='front',z=None):
  w1=((b[:,1]-c[:,1])*(x-c[:,0])+(c[:,0]-b[:,0])*(y-c[:,1]))/den
  w2=((c[:,1]-a[:,1])*(x-c[:,0])+(a[:,0]-c[:,0])*(y-c[:,1]))/den;w3=1-w1-w2
  inside=(w1>=-1e-7)&(w2>=-1e-7)&(w3>=-1e-7);ix=ix[inside];weights=np.c_[w1[inside],w2[inside],w3[inside]]
- if not len(ix):return nearest([x,y,.25 if face=='front' else -.05])
+ if not len(ix):
+  if require_intersection:raise ValueError(f'No source-skin triangle at exact X={x}, Y={y}; nearest-vertex fallback is forbidden.')
+  return nearest([x,y,.25 if face=='front' else -.05])
  hit=np.sum(tv[ix]*weights[:,:,None],axis=1)
  choice=int(np.argmax(hit[:,2]) if face=='front' else np.argmin(hit[:,2]) if face=='back' else np.argmin(abs(hit[:,2]-(z or .08))))
  v=hit[choice];normal_at(fid,v);normal=np.sum(NORMALS[fid][fs[ix[choice]]]*weights[choice,:,None],axis=0)
@@ -72,6 +81,31 @@ def sideproject(target,direction):
  if not np.any(good):return nearest(t+d*.025)
  ids=np.flatnonzero(good);cost=perp[good]+.04*(dot[good]-.025)**2
  return q[ids[np.argmin(cost)]]
+
+def exact_sideproject(target,direction):
+ global SKIN_FACES
+ if SKIN_FACES is None:
+  SKIN_FACES=np.array([[int(t.split('/')[0])-1 for t in line.split()[1:4]] for line in RAW['FJ2810'].splitlines() if line.startswith('f ')],dtype=np.int32)
+ hit=project_horizontal(SKIN,SKIN_FACES,target,direction)
+ v=np.asarray(hit['position'])
+ PROJECTIONS[tuple(v)]={key:hit[key] for key in ('sourceTriangle','barycentric','normal')}
+ return v
+
+def limb_references(side,mapped):
+ def reference(name,position,ids,limitation):
+  return {'position':list(map(float,position)), 'source':{'anatomicalReference':name,'structureIds':ids},
+          'proxyLimitations':[limitation] if limitation else []}
+ result={}
+ for name,key in [('patella_apex','patella-tip'),('patella_base','patella-base'),('medial_malleolus','ankle-medial'),('lateral_malleolus','ankle-lateral'),('elbow_crease','elbow'),('wrist_crease','wrist')]:
+  key=side+'-'+key
+  result[name]=reference(name,L[key],refs.get(key,[]),'Source-mesh bone bound is an unreviewed proxy; soft-tissue crease/tip localization is not medically calibrated.')
+ result['pubic_upper_margin']=reference('pubic_upper_margin',L['pubic-top'],refs['pubic-top'],'Pubic source-mesh upper-margin proxy; not professionally reviewed.')
+ ulna=find(side+' ulna');v=vertices(ulna);tip=v[np.argmax(v[:,1])]
+ result['olecranon_tip']=reference('olecranon_tip',tip,[ulna],'Proximal ulna superior extremum is used as an unreviewed olecranon-tip geometry proxy.')
+ for pid in ('sp9','ki3','st35'):
+  if pid in mapped and side in mapped[pid]:
+   result[pid]=reference(pid,mapped[pid][side],[pid],'Retained teaching point is itself unreviewed; relative agreement does not calibrate the base.')
+ return result
 
 L={};refs={}
 def landmark(k,p,source):L[k]=np.array(p,float);refs[k]=source
@@ -108,7 +142,8 @@ for group,top in [('thoracic',12),('lumbar',5),('cervical',7)]:
   v=vertices(fid);q=v[v[:,2]<np.quantile(v[:,2],.06)]
   landmark(f'{group}-{i}-spinous',q[np.argmin(q[:,1])],[fid])
 # Proportional cun values are specific to this model and body segment.
-ABDCUN=(L['navel'][1]-L['pubic-top'][1])/5;UPPERCUN=(L['xiphoid-tip'][1]-L['navel'][1])/8;CHESTCUN=.026
+TORSO_SCALES=torso_scales(L)
+ABDCUN=TORSO_SCALES['lower_abdomen_vertical'];UPPERCUN=TORSO_SCALES['upper_abdomen_vertical'];CHESTCUN=TORSO_SCALES['transverse'];CHESTVERTCUN=TORSO_SCALES['chest_vertical']
 
 HEADFACE={'st1':(.030,1.586),'st2':(.032,1.573),'st3':(.032,1.558),'st4':(.025,1.538),'st5':(.057,1.522),'st6':(.063,1.544),'st7':(.071,1.570),'li19':(.012,1.554),'li20':(.018,1.562),'si18':(.053,1.567),'si19':(.078,1.578),'te17':(.076,1.555),'te18':(.079,1.582),'te19':(.078,1.599),'te20':(.078,1.617),'te21':(.077,1.585),'te22':(.073,1.605),'te23':(.054,1.616),'gb1':(.049,1.594),'gb2':(.078,1.571),'gb3':(.072,1.592),'gb4':(.065,1.636),'gb5':(.069,1.646),'gb6':(.073,1.633),'gb7':(.078,1.619),'gb8':(.077,1.647),'gb9':(.077,1.650),'gb10':(.078,1.631),'gb11':(.079,1.612),'gb12':(.070,1.552),'gb14':(.030,1.639),'bl1':(.016,1.594),'bl2':(.020,1.616)}
 HEADSCALP={'bl3':(.016,.5),'bl4':(.035,.5),'bl5':(.035,1),'bl6':(.035,2.5),'bl7':(.035,4),'bl8':(.035,5.5),'bl9':(.030,10),'gb13':(.065,.5),'gb15':(.050,.5),'gb16':(.050,1.5),'gb17':(.050,2.5),'gb18':(.050,4),'gb19':(.050,9.5),'st8':(.075,.5)}
@@ -137,26 +172,75 @@ def chest_reference(side):
   CHEST_REFERENCES[side]=locate_chest(side,source_triangles,project)
  return CHEST_REFERENCES[side]
 
+def side_chest_reference(side):
+ # Read the retained GB22 source binding, including during a narrow GB23-only
+ # update. This is explicitly a spacing repair, not a new axillary localization.
+ data=json.loads((OUT/'acupoints.json').read_text())
+ base=next(i['anchor'] for p in data['points'] if p['id']=='gb22' for i in p['instances'] if i['side']==side)
+ key=(side,tuple(base['position']),base['sourceVertex'])
+ if key not in SIDE_CHEST_REFERENCES:
+  def source_mesh(name):
+   fid=find(name);v=vertices(fid)
+   fs=np.array([[int(t.split('/')[0])-1 for t in l.split()[1:4]] for l in RAW[fid].splitlines() if l.startswith('f ')],dtype=np.int32)
+   return fid,v,fs
+  placement,evidence=locate_side_chest(side,base,source_mesh)
+  v=placement['position'];normal_at('FJ2810',v)
+  indices=np.asarray(placement['sourceTriangle'])-1;weights=np.asarray(placement['barycentric'])
+  normal=np.sum(NORMALS['FJ2810'][indices]*weights[:,None],axis=0)
+  if np.dot(normal,placement['normal'])<0:normal=-normal
+  normal/=max(np.linalg.norm(normal),1e-12)
+  PROJECTIONS[tuple(v)]={k:placement[k] for k in ['sourceTriangle','barycentric']}
+  PROJECTIONS[tuple(v)]['normal']=normal
+  SIDE_CHEST_REFERENCES[key]=(v,evidence)
+ return SIDE_CHEST_REFERENCES[key]
+
 def finger(s,digit,segment='distal',foot=False):
  words=['big toe','second toe','third toe','fourth toe','little toe'] if foot else ['thumb','index finger','middle finger','ring finger','little finger']
  return find(f'{segment} phalanx of {s} {words[digit-1]}')
 
-def limb(p,s):
- sign=1 if s=='left' else -1;loc=p['locationZh'];reg=p['region'];code=p['codes'][0] if p['codes'] else '';pid=p['id'];use=[]
+def limb(p,s,mapped=None):
+ sign=1 if s=='left' else -1;loc=normalized_location(p['locationZh']);reg=p['region'];code=p['codes'][0] if p['codes'] else '';pid=p['id'];use=[]
+ mapped=mapped or {}; model_refs=limb_references(s,mapped); measure=None
  isleg=any(w in reg for w in ['股','膝','小腿','踝']);isarm=not isleg
  if isleg:
-  kne=L[s+'-patella-base'];ank=L[s+'-ankle-medial'];hip=L[s+'-groin'];c=(kne[1]-ank[1])/15;thigh=(hip[1]-kne[1])/18
+  kne=L[s+'-patella-base'];ank=L[s+'-ankle-medial'];hip=L[s+'-groin']
+  segment='medial_lower_leg_15' if '内' in reg else 'lateral_lower_leg_16'
+  c,measure=limb_scale(segment,model_refs,allow_popliteal_proxy=True)
+  thigh,thigh_measure=limb_scale('anterior_thigh_18',model_refs)
+  if pid=='lr11':
+   # The standard specifies directly inferior to ipsilateral ST30. An oblique
+   # medial ray from a generic thigh centre can hit the opposite thigh first.
+   # Keep ST30 X and the exact 18-cun longitudinal target, then choose the
+   # anterior outer source-skin intersection; never exchange bilateral anchors.
+   base=np.asarray(mapped.get('st30',{}).get(s,[]),dtype=float)
+   if base.shape!=(3,) or not np.isfinite(base).all() or sign*base[0]<=0:
+    raise ValueError('LR11 requires an existing finite ipsilateral ST30 anchor.')
+   y=float(base[1]-2*thigh)
+   v=project(float(base[0]),y,'front',require_intersection=True)
+   if sign*v[0]<=0 or abs(v[0]-base[0])>1e-10 or abs(v[1]-y)>1e-10:
+    raise ValueError('LR11 projection failed its same-side, fixed-X/exact-Y constraints.')
+   evidence=dict(thigh_measure,targetY=y,referenceY=float(base[1]),
+                 referencePointId='st30',referencePosition=base.tolist(),
+                 requestedCun=2,direction='inferior',expectedOffsetMetres=-2*thigh,
+                 targetX=float(base[0]),sameSideRequired=s,
+                 sourceSkinProjection='maximum-anterior-Z source-triangle intersection at fixed ipsilateral ST30 X and exact target Y',
+                 nearestVertexFallback=False,medicallyReviewed=False)
+   evidence['proxyLimitations']=[*evidence['proxyLimitations'],
+     'Retained ST30 and the anterior-thigh bone endpoints are unreviewed teaching references; same-side geometry and numerical agreement are not medical localization.']
+   MEASUREMENT_EVIDENCE[(pid,s)]=evidence
+   return v,[*refs['pubic-top'],*refs[s+'-patella-base'],'st30','FJ2810'],'same-side-st30-inferior-anterior-thigh-cun-skin-projection'
+  pop_y=L[s+'-patella-tip'][1]
   if '股' in reg:y=kne[1]+thigh*7
   elif '膝' in reg:y=kne[1]-.025
   elif '踝' in reg:y=ank[1]
   else:y=ank[1]+c*7
   m=re.search(r'髌底(?:内侧端|外侧端)?上([\d.]+)寸',loc)
   if m:y=kne[1]+float(m[1])*thigh
-  for pattern,base,mult in [(r'(?:腘横纹|膝中)上([\d.]+)寸',kne[1]-.02,thigh),(r'(?:腘横纹|髌韧带外侧凹陷)下([\d.]+)寸',kne[1]-.02,-c),(r'内踝尖上([\d.]+)寸',ank[1],c),(r'外踝尖上([\d.]+)寸',L[s+'-ankle-lateral'][1],c)]:
+  for pattern,base,mult in [(r'(?:腘横纹|膝中)上([\d.]+)寸',pop_y,thigh),(r'(?:腘横纹|髌韧带外侧凹陷)下([\d.]+)寸',pop_y,-c),(r'内踝尖上([\d.]+)寸',ank[1],c),(r'外踝尖上([\d.]+)寸',L[s+'-ankle-lateral'][1],c)]:
    m=re.search(pattern,loc)
    if m:y=base+float(m[1])*mult
-  if p['meridianId']=='ST' and 36<=int(code[2:])<=40:
-   dist={36:3,37:6,38:8,39:9,40:8}[int(code[2:])];y=kne[1]-.025-dist*c
+  if p['meridianId']=='ST' and 36<=int(code[2:])<=39:
+   dist={36:3,37:6,38:8,39:9}[int(code[2:])];y=kne[1]-.025-dist*c
   if pid=='gb34':y=L[s+'-fibula'][1]+.17
   if pid=='gb31':y=kne[1]+7*thigh
   if pid=='gb32':y=kne[1]+5*thigh
@@ -165,16 +249,25 @@ def limb(p,s):
   if pid=='lr8':y=kne[1]-.015
   if pid=='ki10':y=kne[1]-.02
   if pid=='bl36':y=.79
-  if pid=='bl37':y=.79-6*thigh
-  if pid in ['lr10','lr11']:y=hip[1]-(3 if pid=='lr10' else 2)*thigh
+  if pid in ['bl37','bl38']:
+   base=mapped['bl36'][s];posterior_unit=(base[1]-pop_y)/14
+   y=base[1]-6*posterior_unit if pid=='bl37' else pop_y+posterior_unit
+   measure={'segment':'posterior_thigh_14','denominatorCun':14,'unitMetres':float(posterior_unit),'referenceY':float(base[1] if pid=='bl37' else pop_y),'targetY':float(y),'requestedCun':6 if pid=='bl37' else 1,'referencePointId':'bl36' if pid=='bl37' else 'patella-apex-plane','medicallyReviewed':False,'proxyLimitations':['Retained BL36 is an unreviewed gluteal-fold proxy; the popliteal plane uses the source patellar apex.']}
+  if pid=='lr10':y=hip[1]-3*thigh
   if pid=='lr9':y=kne[1]+4*thigh
   if pid=='st31':y=hip[1]-.035
   if pid=='gb33':y=kne[1]+.010
-  if pid=='bl58':y=L[s+'-ankle-lateral'][1]+7*c
-  if pid=='bl59':y=L[s+'-ankle-lateral'][1]+3*c
-  if pid=='bl55':y=kne[1]-.025-2*c
-  if pid=='bl56':y=kne[1]-.025-5*c
-  if pid=='bl57':y=kne[1]-.025-8*c
+  if pid=='bl58':y=mapped['bl60'][s][1]+7*c
+  if pid=='bl59':y=mapped['bl60'][s][1]+3*c
+  if pid=='bl55':y=pop_y-2*c
+  if pid=='bl56':y=pop_y-5*c
+  if pid=='bl57':y=pop_y-8*c
+  if pid in EXPLICIT_LIMB_IDS:
+   exact_y,explicit=explicit_limb_target(pid,model_refs,allow_popliteal_proxy=True)
+   if exact_y is None:raise ValueError(pid+': '+explicit['reason'])
+   y=exact_y;measure=explicit
+  measure=dict(measure,targetY=float(y))
+  MEASUREMENT_EVIDENCE[(pid,s)]=measure
   t=(y-ank[1])/(kne[1]-ank[1]);cx=ank[0]*(1-t)+kne[0]*t;cz=.08
   if y>kne[1]:cx=kne[0]+(hip[0]-kne[0])*min((y-kne[1])/(hip[1]-kne[1]),1)
   direction=[0,0,1]
@@ -195,7 +288,7 @@ def limb(p,s):
   if pid=='gb36':direction=[sign,0,.6]
   if pid=='sp10':cx-=sign*.020
   use=[find(f'{s} tibia'),find(f'{s} femur'),find(f'{s} patella')]
-  return sideproject([cx,y,cz],direction),use,'segment-bone-proportional-cun'
+  return (exact_sideproject([cx,y,cz],direction) if '寸' in loc else sideproject([cx,y,cz],direction)),use,'segment-bone-proportional-cun'
  # Arm centerline is derived from humerus/radius/ulna landmarks.
  el=L[s+'-elbow'];wr=L[s+'-wrist'];ax=L[s+'-axilla'];armcun=(ax[1]-el[1])/9;fc=(el[1]-wr[1])/12
  if '前臂' in reg:y=(wr[1]+el[1])/2
@@ -216,6 +309,11 @@ def limb(p,s):
  if pid=='ht2':y=el[1]+3*armcun
  if pid=='pc2':y=ax[1]-2*armcun
  if pid=='te13':y=el[1]+7*armcun
+ if pid in EXPLICIT_LIMB_IDS:
+  exact_y,measure=explicit_limb_target(pid,model_refs,allow_popliteal_proxy=True)
+  if exact_y is None:raise ValueError(pid+': '+measure['reason'])
+  y=exact_y
+ if measure is not None:MEASUREMENT_EVIDENCE[(pid,s)]=measure
  if y>=el[1]:t=(y-el[1])/(ax[1]-el[1]);ct=el*(1-t)+ax*t
  else:t=(y-wr[1])/(el[1]-wr[1]);ct=wr*(1-t)+el*t
  ct[1]=y
@@ -229,13 +327,13 @@ def limb(p,s):
  if p['meridianId']=='HT':direction=[-sign*.8,0,1]
  if p['meridianId']=='SI':direction=[-sign*.8,0,-1]
  if p['meridianId']=='TE':direction=[0,0,-1]
- return sideproject(ct,direction),[find(f'{s} humerus'),find(f'{s} radius'),find(f'{s} ulna')],'segment-bone-proportional-cun'
+ return (exact_sideproject(ct,direction) if '寸' in loc else sideproject(ct,direction)),[find(f'{s} humerus'),find(f'{s} radius'),find(f'{s} ulna')],'segment-bone-proportional-cun'
 
 BACK_LEVELS={11:('thoracic',1),12:('thoracic',2),13:('thoracic',3),14:('thoracic',4),15:('thoracic',5),16:('thoracic',6),17:('thoracic',7),18:('thoracic',9),19:('thoracic',10),20:('thoracic',11),21:('thoracic',12),22:('lumbar',1),23:('lumbar',2),24:('lumbar',3),25:('lumbar',4),26:('lumbar',5),41:('thoracic',2),42:('thoracic',3),43:('thoracic',4),44:('thoracic',5),45:('thoracic',6),46:('thoracic',7),47:('thoracic',9),48:('thoracic',10),49:('thoracic',11),50:('thoracic',12),51:('lumbar',1),52:('lumbar',2)}
 GV_LEVELS={3:('lumbar',4),4:('lumbar',2),5:('lumbar',1),6:('thoracic',11),7:('thoracic',10),8:('thoracic',9),9:('thoracic',7),10:('thoracic',6),11:('thoracic',5),12:('thoracic',3),13:('thoracic',1),14:('cervical',7)}
 
 def map_point(p,inst,mapped):
- s=inst['side'];sgn=-1 if s=='right' else 1;loc=p['locationZh'];reg=p['region'];pid=p['id'];name=p['nameZh'];ch=p['meridianId'];n=int(re.search(r'\d+',pid).group()) if re.search(r'\d+',pid) else 0
+ s=inst['side'];sgn=-1 if s=='right' else 1;loc=normalized_location(p['locationZh']);reg=p['region'];pid=p['id'];name=p['nameZh'];ch=p['meridianId'];n=int(re.search(r'\d+',pid).group()) if re.search(r'\d+',pid) else 0
  def surface(x,y,f='front'):return project(sgn*x,y,f)
  def pick(q):return mapped[q][s] if s in mapped[q] else next(iter(mapped[q].values()))
  def result(v,rs,method):return np.asarray(v),rs,method
@@ -245,6 +343,10 @@ def map_point(p,inst,mapped):
   positions,evidence=chest_reference(s)
   return result(positions[pid],evidence['sourceStructureIds']+['FJ2810'],
                 'upper-chest-local-geometry-reference-provisional')
+ if pid in SIDE_CHEST_POINT_IDS:
+  position,evidence=side_chest_reference(s)
+  return result(position,evidence['sourceStructureIds'],
+                'side-chest-relative-surface-spacing-only-provisional')
  if pid in HEADFACE:
   x,y=HEADFACE[pid]
   if pid in ['te17','te18','te19','te20','gb10','gb11','gb12']:
@@ -276,7 +378,7 @@ def map_point(p,inst,mapped):
   elif 9<=n<=15:y=L['navel'][1]+{9:1,10:2,11:3,12:4,13:5,14:6,15:7}[n]*UPPERCUN
   elif n==16:y=L['xiphoid-tip'][1]
   elif 17<=n<=20:y=rib_y(21-n)[0]
-  elif n==21:y=L['sternal-notch'][1]-CHESTCUN
+  elif n==21:y=L['sternal-notch'][1]-CHESTVERTCUN
   elif n==22:y=L['sternal-notch'][1]
   elif n==23:y=center('FJ2772')[1]+.014;rs=['FJ2772']
   else:y=1.518;rs=['FJ3289','FJ2810']
@@ -299,7 +401,7 @@ def map_point(p,inst,mapped):
  if reg in ['前胸部','上腹部','下腹部','腹股沟','侧胸部','侧腹部']:
   rs=['navel','pubic-top','sternal-notch','xiphoid-tip'];x=.11 if reg=='腹股沟' else 0;y=L['pubic-top'][1]+.010 if reg=='腹股沟' else L['navel'][1];face='front'
   m=re.search(r'(?:前正中线|脐中)旁开([\d.]+)寸',loc)
-  if m:x=float(m[1])*(ABDCUN if reg in ['下腹部','腹股沟'] else CHESTCUN)
+  if m:x=float(m[1])*CHESTCUN
   m=re.search(r'第([\d]+)肋间隙',loc)
   if m:y,rr=rib_y(int(m[1]),s if s!='midline' else 'left',max(x,.03));rs+=rr
   m=re.search(r'脐中([上下])([\d.]+)寸',loc)
@@ -313,7 +415,9 @@ def map_point(p,inst,mapped):
   if ch=='KI' and 11<=n<=21:x=.5*CHESTCUN
   if ch=='KI' and 22<=n<=26:x=2*CHESTCUN
   if pid=='pc1':x=5*CHESTCUN;y=rib_y(4,s)[0]
-  if pid in ['gb22','gb23','sp21']:x=.16 if pid!='gb23' else .14;y=rib_y(4 if pid!='sp21' else 6,s,.14)[0];face='side'
+  # Retained, unreviewed GB22/SP21 bases; GB23 spacing is handled above without
+  # reinterpreting a medial X offset as the standard's anterior direction.
+  if pid in ['gb22','sp21']:x=.16;y=rib_y(4 if pid!='sp21' else 6,s,.14)[0];face='side'
   if pid in ['gb25','lr13']:x=.137;y=1.160 if pid=='gb25' else 1.185;face='side'
   if pid=='gb26':x=.15;y=L['navel'][1];face='side'
   if pid=='gb27':x=.125;y=L['navel'][1]-3*ABDCUN
@@ -423,15 +527,15 @@ def map_point(p,inst,mapped):
  if name=='髋骨':
   ref=pick('st34').copy();ref[0]+=sgn*(-1 if inst['ordinal']==1 else 1)*CHESTCUN*1.5;return result(nearest(ref),['st34','FJ2810'],'paired-parapatellar-proportional-cun')
  if name=='鹤顶':return result(nearest(L[s+'-patella-base']+[0,.008,.015]),[find(s+' patella')],'patella-superior-midpoint-projection')
- if name=='百虫窝':return result(limb(p,s)[0],[find(s+' patella'),find(s+' femur')],'patella-medial-superior-proportional-cun')
+ if name=='百虫窝':return result(limb(p,s,mapped)[0],[find(s+' patella'),find(s+' femur')],'patella-medial-superior-proportional-cun')
  if name=='内膝眼':t=L[s+'-patella-tip']+[-sgn*.016,-.01,.012];return result(nearest(t),[find(s+' patella')],'medial-patellar-ligament-region-projection')
  if name=='胆囊':t=L[s+'-fibula'].copy();t[1]=bounds(find(s+' fibula'))[1][1]-.05;return result(sideproject(t,[sgn,0,.3]),[find(s+' fibula')],'fibular-head-distal-proportional-cun')
  if name=='阑尾':t=pick('st36').copy();t[1]-=.052;return result(nearest(t),['st36',find(s+' tibia')],'tibial-anterior-distal-proportional-cun')
  if name=='肘尖':t=L[s+'-elbow'].copy();return result(sideproject(t,[0,0,-1]),[find(s+' ulna')],'olecranon-region-projection')
  if name=='二白':
-  t=L[s+'-wrist']*.667+L[s+'-elbow']*.333;t[0]+=sgn*(.007 if inst['ordinal']==1 else -.007);return result(sideproject(t,[0,0,1]),[find(s+' radius'),find(s+' ulna')],'paired-forearm-proportional-cun')
+  t=L[s+'-wrist']*(2/3)+L[s+'-elbow']*(1/3);t[0]+=sgn*(.007 if inst['ordinal']==1 else -.007);return result(exact_sideproject(t,[0,0,1]),[find(s+' radius'),find(s+' ulna')],'paired-forearm-proportional-cun')
  if name=='中泉':t=L[s+'-wrist'].copy();return result(sideproject(t,[0,0,-1]),refs[s+'-wrist'],'dorsal-wrist-surface-projection')
- return result(*limb(p,s))
+ return result(*limb(p,s,mapped))
 
 def anatomy_structure_map():
  terms={'胸锁乳突肌':'sternocleidomastoid','胸大肌':'pectoralis major','胸小肌':'pectoralis minor','斜方肌':'trapezius','三角肌':'deltoid','冈上肌':'supraspinatus','冈下肌':'infraspinatus','肱二头肌':'biceps brachii','肱三头肌':'triceps brachii','肱桡肌':'brachioradialis','桡侧腕屈肌':'flexor carpi radialis','尺侧腕屈肌':'flexor carpi ulnaris','掌长肌':'palmaris longus','指总伸肌':'extensor digitorum','拇长伸肌':'extensor pollicis longus','拇短伸肌':'extensor pollicis brevis','拇长展肌':'abductor pollicis longus','股直肌':'rectus femoris','股外侧肌':'vastus lateralis','股内侧肌':'vastus medialis','缝匠肌':'sartorius','阔筋膜张肌':'tensor fasciae latae','股二头肌':'biceps femoris','半腱肌':'semitendinosus','半膜肌':'semimembranosus','长收肌':'adductor longus','大收肌':'adductor magnus','胫骨前肌':'tibialis anterior','胫骨后肌':'tibialis posterior','腓肠肌':'gastrocnemius','比目鱼肌':'soleus','腓骨长肌':'fibularis longus','腓骨短肌':'fibularis brevis','趾长伸肌':'extensor digitorum longus','跟腱':'calcaneal tendon','髌韧带':'patellar ligament','锁骨':'clavicle','胸骨':'sternum','肩胛骨':'scapula','尺骨':'ulna','桡骨':'radius','肱骨':'humerus','股骨':'femur','髌骨':'patella','胫骨':'tibia','腓骨':'fibula','骶骨':'sacrum','尾骨':'coccyx'}
@@ -447,7 +551,7 @@ def anatomy_structure_map():
 
 def main(point_ids=None):
  anatomy_map=anatomy_structure_map()
- data=json.loads((OUT/'acupoints.json').read_text());mapped={};audit=[]
+ data=json.loads((OUT/'acupoints.json').read_text());mapped={p['id']:{i['side']:np.asarray(i['anchor']['position']) for i in p['instances'] if i['anchor'].get('position') is not None} for p in data['points']};audit=[]
  # Shared references must be mapped before regional extra points use them.
  for p in data['points']:
   if point_ids is not None and p['id'] not in point_ids:continue
@@ -457,8 +561,13 @@ def main(point_ids=None):
    v,rs,method=map_point(p,inst,mapped)
    if not np.isfinite(v).all():raise ValueError(p['id'])
    inst['anchor']={'modelId':MODEL,'position':[round(float(c),7) for c in v],'landmarkRefs':rs,'method':method,'status':'provisional','sourceSurface': 'FJ2761' if p['viewPreset']=='oral' and p['nameZh']!='龈交' else 'FJ1252' if p['nameZh']=='龈交' else ('FJ3263' if inst['side']=='left' else 'FJ3369') if p['viewPreset']=='nasal' else 'FJ2810','reviewNotesZh':'真实模型几何与标准定位摘要形成的教学位置，尚未专业医学审校。'}
+   if (p['id'],inst['side']) in MEASUREMENT_EVIDENCE:
+    inst['anchor']['measurementEvidence']=MEASUREMENT_EVIDENCE[(p['id'],inst['side'])]
    if p['id'] in CHEST_POINT_IDS:
     inst['anchor']['placementEvidence']=chest_reference(inst['side'])[1]
+   if p['id'] in SIDE_CHEST_POINT_IDS:
+    inst['anchor']['placementEvidence']=side_chest_reference(inst['side'])[1]
+    inst['anchor']['reviewNotesZh']=inst['anchor']['placementEvidence']['limitationZh']
    fid=inst['anchor']['sourceSurface'];normal,vi,distance=normal_at(fid,v)
    projection=PROJECTIONS.get(tuple(v))
    if projection:
@@ -503,7 +612,11 @@ def main(point_ids=None):
 if __name__=='__main__':
  import argparse
  parser=argparse.ArgumentParser(description=__doc__)
- parser.add_argument('--point-ids',nargs='+',choices=sorted(CHEST_POINT_IDS),
-                     help='Update only the selected upper-chest entries; preserve every other anchor and landmarks.json.')
+ parser.add_argument('--point-ids',nargs='+',
+                     help='Update only known selected entries; preserve every other anchor and landmarks.json.')
  args=parser.parse_args()
+ if args.point_ids:
+  known={p['id'] for p in json.loads((OUT/'acupoints.json').read_text())['points']}
+  unknown=set(args.point_ids)-known
+  if unknown:parser.error('Unknown point IDs: '+', '.join(sorted(unknown)))
  main(set(args.point_ids) if args.point_ids else None)

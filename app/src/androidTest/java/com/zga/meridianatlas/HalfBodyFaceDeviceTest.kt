@@ -245,7 +245,7 @@ class HalfBodyFaceDeviceTest {
         fun capture(name: String) {
             compose.runOnUiThread {
                 model.layer { it.copy(points = false, lines = false, labels = false, details = false, internalRelations = false) }
-                viewer.focusOn(Vec3(0f, 1.62f, .135f), .5f, Vec3(0f, 0f, 1f))
+                viewer.focusOn(Vec3(0f, 1.62f, .135f), .5f, Vec3(0f, 0f, 1f), animated = false)
             }
             val bitmap = copyModelPixels(viewer)
             try {

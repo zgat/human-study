@@ -487,7 +487,7 @@ class ResponsiveUiDeviceTest {
                 model.clearSelection()
                 model.layer { it.copy(points = false, lines = false, skin = true, muscle = false,
                     organ = false, bone = false, isolateId = null, focusIds = emptySet(), cutawaySide = CutawaySide.NONE) }
-                surface.applyCameraPreset(CameraPreset.FRONT)
+                surface.applyCameraPreset(CameraPreset.FRONT, animated = false)
             }
             compose.waitUntil(30_000) {
                 val anchors = latest.get()

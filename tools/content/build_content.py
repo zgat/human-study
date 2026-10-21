@@ -8,6 +8,7 @@ ROOT=Path(__file__).resolve().parents[2]
 SRC=Path(__file__).resolve().parent/'sources'
 OUT=ROOT/'app/src/main/assets/content'
 OUT.mkdir(parents=True,exist_ok=True)
+LOCATION_CORRECTIONS=json.loads((Path(__file__).with_name('standard_location_corrections.json')).read_text())['corrections']
 CHANNELS=[('LU','手太阴肺经','Shǒu Tàiyīn Fèijīng',11),('LI','手阳明大肠经','Shǒu Yángmíng Dàchángjīng',20),('ST','足阳明胃经','Zú Yángmíng Wèijīng',45),('SP','足太阴脾经','Zú Tàiyīn Píjīng',21),('HT','手少阴心经','Shǒu Shàoyīn Xīnjīng',9),('SI','手太阳小肠经','Shǒu Tàiyáng Xiǎochángjīng',19),('BL','足太阳膀胱经','Zú Tàiyáng Pángguāngjīng',67),('KI','足少阴肾经','Zú Shàoyīn Shènjīng',27),('PC','手厥阴心包经','Shǒu Juéyīn Xīnbāojīng',9),('TE','手少阳三焦经','Shǒu Shàoyáng Sānjiāojīng',23),('GB','足少阳胆经','Zú Shàoyáng Dǎnjīng',44),('LR','足厥阴肝经','Zú Juéyīn Gānjīng',14),('GV','督脉','Dūmài',29),('CV','任脉','Rènmài',24)]
 ALIASES={'上迎香':['鼻通','鼻穿'],'内迎香':['迎香'],'金津玉液':['金津','玉液','廉泉'],'新设':['新识'],'颈百劳':['百劳'],'提托':['归髎'],'定喘':['喘息'],'夹脊':['华佗夹脊','佗脊'],'胃脘下俞':['胃管下俞','胃下俞'],'腰眼':['腰目'],'十七椎':['十七椎下'],'肩前':['前腋','腋缝','前腋缝','肩内陵'],'十宣':['鬼城'],'鹤顶':['膝顶'],'百虫窝':['血郄'],'内膝眼':['膝目','虎眼'],'八风':['八冲'],'独阴':['独会']}
 ANATOMY_TERMS=['胸锁乳突肌','胸大肌','胸小肌','斜方肌','三角肌','冈上肌','冈下肌','肱二头肌','肱三头肌','肱桡肌','桡侧腕屈肌','尺侧腕屈肌','掌长肌','指总伸肌','拇长伸肌','拇短伸肌','拇长展肌','股直肌','股外侧肌','股内侧肌','缝匠肌','阔筋膜张肌','股二头肌','半腱肌','半膜肌','长收肌','大收肌','胫骨前肌','胫骨后肌','腓肠肌','比目鱼肌','腓骨长肌','腓骨短肌','趾长伸肌','拇长伸肌腱','跟腱','髌韧带','锁骨','胸骨','肩胛骨','尺骨','桡骨','肱骨','股骨','髌骨','胫骨','腓骨','骶骨','尾骨','舌下系带']
@@ -84,6 +85,7 @@ def parse(cfg,kind):
   if kind=='meridian':pid=slug(codes[0])
   elif codes:pid=slug('-'.join(codes))
   else:pid='extra-'+ascii_pinyin(py)
+  if pid in LOCATION_CORRECTIONS:loc=LOCATION_CORRECTIONS[pid]['locationZh']
   region=loc.split('；')[0]
   point={'id':pid,'kind':kind,'nameZh':name,'pinyin':py,'pinyinSearch':ascii_pinyin(py),'aliases':ALIASES.get(name,[]),'codes':codes,'meridianId':channel,'region':region,'bodyRegionGroup':REGIONS[int(m['section'].split('.')[1])] if kind=='extra' else region,'order':int(m['section'].split('.')[-1]),'locationZh':loc,'locationLabelZh':'体表定位摘要','sourceRefs':[source_ref(cfg,m['section'])],'contentReviewStatus':'source-transcribed-pending-medical-review','coordinateReviewStatus':'unmapped','viewPreset':'body','descriptionZh':'依据标准定位资料整理的学习条目。','instances':[]}
   if name=='金津玉液':point['pinyin']='Jīnjīn Yùyè';point['pinyinSearch']='jinjinyuye';point['aliases']=ALIASES[name];point['id']='ex-hn12-hn13'

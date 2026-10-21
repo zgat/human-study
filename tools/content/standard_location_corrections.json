@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "sourceUrl": "https://www.ntcamsac.ac.cn/upload/std_info/202306192125376309.pdf",
+  "comparison": "Official indexed text; original PDF bytes unavailable locally. Factual corrections retain the original standard identity; no medical coordinate review is claimed.",
+  "corrections": {
+    "st26": {"clause": "5.3.26", "locationZh": "下腹部；脐中下1寸；前正中线旁开2寸。", "reasonZh": "提取字形l按同条注释与KI15、CV7同高关系核为数字1。"},
+    "cv15": {"clause": "5.14.15", "locationZh": "上腹部；剑突尖下1寸；前正中线上。", "reasonZh": "正式2021版使用剑突尖；旧公开副本使用剑胸结合。"},
+    "cv16": {"clause": "5.14.16", "locationZh": "前胸部；剑突尖所在处；前正中线上。", "reasonZh": "正式2021版使用剑突尖；旧公开副本使用剑胸结合中点。"}
+  }
+}

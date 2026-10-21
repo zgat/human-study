@@ -82,8 +82,13 @@ class SelectionStateDeviceTest {
                 return null
             }
             surface = checkNotNull(find(compose.activity.window.decorView))
-            before = pose.get(surface)
         }
+        compose.waitUntil(30_000) {
+            var moving = true
+            compose.runOnUiThread { moving = surface.isCameraMoving }
+            !moving
+        }
+        compose.runOnUiThread { before = pose.get(surface) }
         compose.onAllNodes(hasText("内脏透视") and hasClickAction()).onFirst().performScrollTo().performClick()
         compose.runOnUiThread {
             assertEquals("Observing organs must keep the selected posterior point in view", before, pose.get(surface))

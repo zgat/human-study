@@ -4,6 +4,7 @@ import android.graphics.Paint
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Rect
@@ -15,6 +16,7 @@ import androidx.compose.ui.graphics.nativeCanvas
 import com.zga.meridianatlas.model.*
 import com.zga.meridianatlas.viewer.RouteCurveSampler
 import kotlin.math.max
+import kotlin.math.sqrt
 
 data class OverlayPoint(val anchorId: String, val pointId: String, val name: String, val color: Long,
     val meridianId: String? = null)
@@ -83,9 +85,21 @@ internal fun acupointLabelIds(points: List<OverlayPoint>, selectedPoint: String?
     }.map { it.pointId }.toSet()
 }
 
+/** A label follows the chosen anatomical instance; another side must not take over its name. */
+internal fun selectedNameAnchorId(points: List<OverlayPoint>, selectedPoint: String?, requestedAnchorId: String?): String? {
+    val selected = points.filter { selectedPoint != null && it.pointId == selectedPoint }
+    return if (requestedAnchorId == null) selected.firstOrNull()?.anchorId
+        else requestedAnchorId.takeIf { id -> selected.any { it.anchorId == id } }
+}
+
+private class SelectedLabelSlotMemory(var slot: LabelSlot? = null)
+
 @Composable
 fun AtlasOverlay(projected: List<ProjectedAnchor>, data: OverlayData, showLabels: Boolean,
-    selectedPoint: String?, referenceSkin: Boolean, density: Float, labelExclusion: Rect? = null) {
+    selectedPoint: String?, referenceSkin: Boolean, density: Float, labelExclusion: Rect? = null,
+    selectedAnchorId: String? = null) {
+    val nameAnchorId = selectedNameAnchorId(data.points, selectedPoint, selectedAnchorId)
+    val selectedLabelSlot = remember(nameAnchorId) { SelectedLabelSlotMemory() }
     Canvas(Modifier.fillMaxSize()) {
         val positions = projected.associateBy { it.id }
         // Paint the active route last so its finer contrasting stroke survives crossings.
@@ -128,12 +142,38 @@ fun AtlasOverlay(projected: List<ProjectedAnchor>, data: OverlayData, showLabels
             fun excluded(box: android.graphics.RectF): Boolean = labelExclusion?.let {
                 box.left < it.right && box.right > it.left && box.top < it.bottom && box.bottom > it.top
             } == true
+            // Reserve a single selected name before laying out the rest of the meridian.
+            visible.firstOrNull { it.first.anchorId == nameAnchorId }?.let { (point, anchor) ->
+                if (size.width > 0f && size.height > 0f) {
+                    val placement = placeSelectedLabel(anchor.xPx, anchor.yPx,
+                        textPaint.measureText(point.name) + 12*density, 21*density,
+                        size.width, size.height, 9*density, 4*density,
+                        labelExclusion?.let { LabelRect(it.left, it.top, it.right, it.bottom) }, selectedLabelSlot.slot)
+                    selectedLabelSlot.slot = placement.slot
+                    val bounds = placement.box
+                    val box = android.graphics.RectF(bounds.left, bounds.top, bounds.right, bounds.bottom)
+                    val dx = placement.leaderX - anchor.xPx
+                    val dy = placement.leaderY - anchor.yPx
+                    val length = sqrt(dx*dx + dy*dy)
+                    if (length > 9*density) drawLine(Color(point.color).copy(alpha = .8f),
+                        Offset(anchor.xPx + dx/length*8*density, anchor.yPx + dy/length*8*density),
+                        Offset(placement.leaderX, placement.leaderY), strokeWidth = density)
+                    val canvas = drawContext.canvas.nativeCanvas
+                    canvas.drawRoundRect(box, 5*density, 5*density, backgroundPaint)
+                    textPaint.color = point.color.toInt()
+                    val saveCount = canvas.save()
+                    canvas.clipRect(box)
+                    canvas.drawText(point.name, box.left+6*density, box.top+14.5f*density, textPaint)
+                    canvas.restoreToCount(saveCount)
+                    occupied += box
+                }
+            }
             data.structureLabel?.let { label -> positions[label.anchorId]?.takeIf { it.visible }?.let { anchor ->
                 val width = textPaint.measureText(label.name) + 16*density
                 val x = (anchor.xPx+10*density).coerceIn(4*density, max(4*density, size.width-width-4*density))
                 val y = (anchor.yPx-24*density).coerceIn(4*density, max(4*density, size.height-25*density))
                 val box = android.graphics.RectF(x, y, x+width, y+23*density)
-                if (!excluded(box)) {
+                if (!excluded(box) && occupied.none { android.graphics.RectF.intersects(it, box) }) {
                     drawContext.canvas.nativeCanvas.drawRoundRect(box, 5*density, 5*density, backgroundPaint)
                     textPaint.color = 0xff63dbc1.toInt()
                     drawContext.canvas.nativeCanvas.drawText(label.name, x+8*density, y+16*density, textPaint)
@@ -141,19 +181,17 @@ fun AtlasOverlay(projected: List<ProjectedAnchor>, data: OverlayData, showLabels
                 }
             } }
             val labelIds = acupointLabelIds(data.points, selectedPoint)
-            var selectedNameDrawn = false
-            visible.asSequence().filter { it.first.pointId in labelIds }.take(100).forEach { (point, anchor) ->
-                val selected = point.pointId == selectedPoint
+            visible.asSequence().filter { it.first.pointId in labelIds && it.first.pointId != selectedPoint }
+                .take(100).forEach { (point, anchor) ->
                 val width = textPaint.measureText(point.name) + 12*density
                 val x = (anchor.xPx+9*density).coerceIn(4*density, max(4*density, size.width-width-4*density))
                 val y = (anchor.yPx-19*density).coerceIn(4*density, max(4*density, size.height-25*density))
                 val box = android.graphics.RectF(x, y, x+width, y+21*density)
-                if (!excluded(box) && ((selected && !selectedNameDrawn) || occupied.none { android.graphics.RectF.intersects(it, box) }) && occupied.size < 28) {
+                if (!excluded(box) && occupied.none { android.graphics.RectF.intersects(it, box) } && occupied.size < 28) {
                     drawContext.canvas.nativeCanvas.drawRoundRect(box, 5*density, 5*density, backgroundPaint)
-                    textPaint.color = if (selected) point.color.toInt() else 0xffd9ede8.toInt()
+                    textPaint.color = 0xffd9ede8.toInt()
                     drawContext.canvas.nativeCanvas.drawText(point.name, x+6*density, y+14.5f*density, textPaint)
                     occupied += box
-                    if (selected) selectedNameDrawn = true
                 }
             }
         }

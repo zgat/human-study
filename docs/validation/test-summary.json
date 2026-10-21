@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "targetApplicationVersion": "0.5.0",
+  "targetApplicationVersion": "0.5.7",
   "evidenceApplicationVersion": "0.2.2",
   "targetVersionFullSuiteExecuted": false,
-  "versionBoundaryZh": "以下历史整轮计数来自已完成的0.2.2功能回归；当前目标版本0.5.0没有因此被记作执行了整套测试。改名后的单元测试、安装与冒烟结果另列。",
+  "versionBoundaryZh": "历史整轮计数按evidenceApplicationVersion标记；0.5.7本轮149项主机单元与79项Python检查另列，未连接设备，不能继承历史安装、设备或性能通过。",
   "historicalRegression": {
     "buildVariant": "debug",
     "unit": {
@@ -87,21 +87,21 @@
     "limitsZh": "这是所标版本的Debug短时统计；不作为目标版本、十分钟稳定性或Release性能证明。"
   },
   "currentUnitTests": {
-    "applicationVersion": "0.5.0",
+    "applicationVersion": "0.5.7",
     "buildVariant": "debug",
-    "tests": 79,
+    "tests": 149,
     "failures": 0,
     "errors": 0,
     "skipped": 0,
-    "passed": 79,
+    "passed": 149,
     "suites": [
       {
         "name": "com.zga.meridianatlas.CutawayPolicyTest",
-        "tests": 4,
+        "tests": 7,
         "failures": 0,
         "errors": 0,
         "skipped": 0,
-        "reportSha256": "68763bef6581a3962647e12be30700162794992679da8bf0312690e4d5823211"
+        "reportSha256": "b859e43d7fc76bfa16f74b04f6619c93271b0033a434e69a458b8a4ffdda2028"
       },
       {
         "name": "com.zga.meridianatlas.MeridianCatalogueContentTest",
@@ -109,7 +109,7 @@
         "failures": 0,
         "errors": 0,
         "skipped": 0,
-        "reportSha256": "72a409deaef28a078b8681b631aed3c7fc4a7f982fda76b7de0e1a85d6417d1e"
+        "reportSha256": "bb68ea3d77702159e8db38600e4486262f0eb585b4e20cc3765e9ee517de5682"
       },
       {
         "name": "com.zga.meridianatlas.MeridianSelectionPolicyTest",
@@ -117,7 +117,7 @@
         "failures": 0,
         "errors": 0,
         "skipped": 0,
-        "reportSha256": "8c730e12b0ee5fae91ee5645fd76eb4d3ffad44585579359bbfba112c69d85da"
+        "reportSha256": "4b43cb42fbaa9401f67ad349f356e9b6fa0b0bcfb9426842f7fc820ecdb8115b"
       },
       {
         "name": "com.zga.meridianatlas.SearchIndexTest",
@@ -125,7 +125,7 @@
         "failures": 0,
         "errors": 0,
         "skipped": 0,
-        "reportSha256": "4f2a9dd90047e48cc18029862e7b74fda1caac16062066ae2400f23c25b7091a"
+        "reportSha256": "ee7fbf0bc10a981a7f7ad55f52768ba50c0a87b828a650a170b5ea9d679d065e"
       },
       {
         "name": "com.zga.meridianatlas.StructureGroupsTest",
@@ -133,7 +133,23 @@
         "failures": 0,
         "errors": 0,
         "skipped": 0,
-        "reportSha256": "dae72db74ac6af55ecd3cd81f3137239b44099895eb5d19edfd20eb7d509c89b"
+        "reportSha256": "ed6af3b3cd89c7b2cb4d02ff16232f40c5015635abafafd1a33753ac400b1dbf"
+      },
+      {
+        "name": "com.zga.meridianatlas.TaraContentTest",
+        "tests": 6,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "reportSha256": "8a267c3fd90a535def8c27ecbbe4ab8bc6743e59eb125ef83f3ebd5a2b6cbe91"
+      },
+      {
+        "name": "com.zga.meridianatlas.VisibilityHistoryTest",
+        "tests": 19,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "reportSha256": "ff2aa9873f5e945f7efc23b48e8ab5418f72fbde182b2f9e0424da997a240a4a"
       },
       {
         "name": "com.zga.meridianatlas.VisibilityPolicyTest",
@@ -141,7 +157,7 @@
         "failures": 0,
         "errors": 0,
         "skipped": 0,
-        "reportSha256": "243e3b9b1a3289b44cbba008175d5031364b7ba21cd400b0056effec71895119"
+        "reportSha256": "3e9ca81c753f6c94024edcd892b92f8749b5890a8571f3c47f06e950ec01e605"
       },
       {
         "name": "com.zga.meridianatlas.ui.FasciaOverlayTest",
@@ -149,7 +165,15 @@
         "failures": 0,
         "errors": 0,
         "skipped": 0,
-        "reportSha256": "55be3294dba95256f273145a8c09fd5c7f4be1e75e501f5d6a36895f672546e8"
+        "reportSha256": "8497f57cade8e2254a4c214104ba47dad62488ad63c0ba5d1e5b57271f000f0a"
+      },
+      {
+        "name": "com.zga.meridianatlas.ui.LabelLayoutTest",
+        "tests": 11,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "reportSha256": "d03db5b86b66375a7082ea48daedf51d01188930928a9ff355fdba639897c5cf"
       },
       {
         "name": "com.zga.meridianatlas.ui.OverlayPolicyTest",
@@ -157,7 +181,39 @@
         "failures": 0,
         "errors": 0,
         "skipped": 0,
-        "reportSha256": "9fa6b433755e3b31481e2ba97b55401ba8ffc6d415e8fa85b9b535291a5be082"
+        "reportSha256": "c8b2d032ba8b664808a958a4d79dd8f9145e92d113ae2c766d8682cddaa955c6"
+      },
+      {
+        "name": "com.zga.meridianatlas.ui.SelectionCardPlacementTest",
+        "tests": 14,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "reportSha256": "f532282863f723ec434653df3b4e7346b8159b688f1f75b9883f3e41a64a68c6"
+      },
+      {
+        "name": "com.zga.meridianatlas.viewer.AnatomyAppearanceTest",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "reportSha256": "e7acf50456f1f79ef0dcfa232d3e2d964cd7a2876bbce7487617e4f6207bf2d0"
+      },
+      {
+        "name": "com.zga.meridianatlas.viewer.CameraMotionTest",
+        "tests": 8,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "reportSha256": "1ecfa3bfa09764f7c73d2c0b4757e81f4492f8fc3f8f95e55455bf4f3024825f"
+      },
+      {
+        "name": "com.zga.meridianatlas.viewer.OrbitLightingTest",
+        "tests": 7,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "reportSha256": "886ada510498e4f735f402188fc93c439fe153555af24c1dfb1b7454903a9af7"
       },
       {
         "name": "com.zga.meridianatlas.viewer.SkinOccluderTest",
@@ -165,7 +221,7 @@
         "failures": 0,
         "errors": 0,
         "skipped": 0,
-        "reportSha256": "2ef66ca3db3aa2285f2f87b119a0fbd009665225da1acdd6c519b23762927e8e"
+        "reportSha256": "977f2d8edb15d2c9ac65a47f25481b3298290fc77b64e8be3d09b6588cb83700"
       },
       {
         "name": "com.zga.meridianatlas.viewer.SurfaceRouteAssetTest",
@@ -173,7 +229,7 @@
         "failures": 0,
         "errors": 0,
         "skipped": 0,
-        "reportSha256": "b3d019009039492e1a87798ca6360ebd0168ef7e83d5a4c5d62adabc5c9bd248"
+        "reportSha256": "1a800c695f06f3160a76e3bd69a7775e02900389d13c09ad280ac82c97f66974"
       },
       {
         "name": "com.zga.meridianatlas.viewer.SurfaceRoutesTest",
@@ -181,7 +237,7 @@
         "failures": 0,
         "errors": 0,
         "skipped": 0,
-        "reportSha256": "768d9698d947ce577ace2ce1935fb56d4a34df572839fdd0c905209ebaea97e2"
+        "reportSha256": "7efb3dd6b61eb08947f6ddd6e4c5919e620c11113695e52744c9a83188e632d8"
       },
       {
         "name": "com.zga.meridianatlas.viewer.ViewerMathTest",
@@ -189,7 +245,7 @@
         "failures": 0,
         "errors": 0,
         "skipped": 0,
-        "reportSha256": "8203743f6a952c547ae5a6709c7b2e1ed6e2463adaa861216e3e06f97f8518e5"
+        "reportSha256": "622951654c7784cfbd22a0299a9c541958a54181121539d4e965df5de24f538f"
       }
     ],
     "scopeZh": "本轮JUnit XML计数与摘要；不替代该版本的设备功能回归、安装或性能测试。"

@@ -1,5 +1,5 @@
 {
-  "applicationVersion": "0.5.0",
+  "applicationVersion": "0.5.7",
   "versions": {
     "gradle": "8.14.3",
     "agp": "8.13.2",
@@ -12,7 +12,10 @@
     "buildTools": "35.0.0"
   },
   "commands": [
-    "./tools/build.sh :app:testDebugUnitTest :app:assembleDebug :app:assembleRelease :app:assembleDebugAndroidTest :app:lintDebug"
+    "./tools/build.sh :app:testDebugUnitTest :app:assembleDebug :app:assembleDebugAndroidTest",
+    "./tools/build.sh :app:assembleRelease",
+    "./tools/build.sh :app:lintDebug",
+    "python3 tools/verify_delivery.py outputs/human-study-0.5.7-arm64.apk"
   ],
   "releaseParameters": {
     "variant": "release",
@@ -27,7 +30,7 @@
     {
       "path": "app/build.gradle.kts",
       "bytes": 2648,
-      "sha256": "f47852101529c0c8141fcd4daf1b1f4f967f543aeb71eac6a287c167180624ef"
+      "sha256": "4728cfe9aa04f0a4b106a8e6bf7f2813a4c4cdde771ca751c35e0ccb33bf8da3"
     },
     {
       "path": "app/libs/filament-v1.78.0-android.aar",
@@ -45,6 +48,16 @@
       "sha256": "c17bd6e4f224a2e59f928bdd8a8e2f930bad996ba017452173bedefc3095147f"
     },
     {
+      "path": "app/src/androidTest/java/com/zga/meridianatlas/AcupointDecodeDeviceTest.kt",
+      "bytes": 1483,
+      "sha256": "2cce810fd82d6a52fcc6bb2b6b0710c48421db67b2e07c66028eb7f7e431a73e"
+    },
+    {
+      "path": "app/src/androidTest/java/com/zga/meridianatlas/AppearanceDeviceTest.kt",
+      "bytes": 24335,
+      "sha256": "71d1d4e1a64e387dc9f4544f385bbd9a746616af035c54d88770fafa7f4a6799"
+    },
+    {
       "path": "app/src/androidTest/java/com/zga/meridianatlas/AtlasControlsDeviceTest.kt",
       "bytes": 10292,
       "sha256": "1c1d9337955416a04017b182b1411c18ba75ec439c77651818edafc94b36a05d"
@@ -55,9 +68,14 @@
       "sha256": "64278092fda6705e033906324bf573cdd4152c59fac0fafa20d37a7a666c53d0"
     },
     {
+      "path": "app/src/androidTest/java/com/zga/meridianatlas/CameraMotionDeviceTest.kt",
+      "bytes": 21735,
+      "sha256": "16f144cbd27bcd49abae1263d8e1631c48fd20ffaac07fe72a06c04fe3e42e0c"
+    },
+    {
       "path": "app/src/androidTest/java/com/zga/meridianatlas/FasciaDeviceTest.kt",
-      "bytes": 12744,
-      "sha256": "1df471102f68c3ba64661affe8b1b2476aeff5c4c6deb30a70cfcf389df66e60"
+      "bytes": 12762,
+      "sha256": "7dffae7f8419803ad0a008d9a2226d68e72e3d6f157702bbfb36db6205a1c0b3"
     },
     {
       "path": "app/src/androidTest/java/com/zga/meridianatlas/FasciaEvidenceDeviceTest.kt",
@@ -71,23 +89,48 @@
     },
     {
       "path": "app/src/androidTest/java/com/zga/meridianatlas/HalfBodyFaceDeviceTest.kt",
-      "bytes": 10667,
-      "sha256": "95f06824c39bf510bdba2759006d141d42a02c64f078dac8b5d30c827b89445c"
+      "bytes": 20282,
+      "sha256": "a52e8372afd8a692bb4e4198d41ad19741fff074c4572e14506355147c60d75e"
+    },
+    {
+      "path": "app/src/androidTest/java/com/zga/meridianatlas/LabelContinuityDeviceTest.kt",
+      "bytes": 31213,
+      "sha256": "e1a685ac1fa8279b7586302404cc1393933b878cf620b4aebb0f3563163e7e12"
+    },
+    {
+      "path": "app/src/androidTest/java/com/zga/meridianatlas/QaFailureRule.kt",
+      "bytes": 778,
+      "sha256": "1aa2cd8980d2eeba33b4811b840f4ae2e8650a39c9313ea2735d75694e6495ab"
     },
     {
       "path": "app/src/androidTest/java/com/zga/meridianatlas/ResponsiveUiDeviceTest.kt",
-      "bytes": 41770,
-      "sha256": "f969a3fba10aecee4de8a74d1561d5c9640f6379d91892b5dc50a2e3d65caf63"
+      "bytes": 41788,
+      "sha256": "cab3d9f5a9559378b4c5f4ee1f3715a52888cbb2835f13b48f51a9d5e8d2d6b6"
+    },
+    {
+      "path": "app/src/androidTest/java/com/zga/meridianatlas/SelectionCardOcclusionDeviceTest.kt",
+      "bytes": 25788,
+      "sha256": "b519af9d4b2624278107d304ade22b76e3d12c471cee807ceae08dab218dc7f0"
     },
     {
       "path": "app/src/androidTest/java/com/zga/meridianatlas/SelectionStateDeviceTest.kt",
-      "bytes": 7331,
-      "sha256": "5419959f74ef917382ac7edc5d14d3689a10471662bad955515a2ce380263796"
+      "bytes": 7519,
+      "sha256": "3748e22d344d7be7f836a696054843da1c4917c29e6e4a10a1e8c2de23e1f69c"
+    },
+    {
+      "path": "app/src/androidTest/java/com/zga/meridianatlas/St12TaraDeviceTest.kt",
+      "bytes": 14061,
+      "sha256": "a20b62c74ffa18c091d4af282c77fc80e9c37391977d87d3487f8cde9139b1bc"
     },
     {
       "path": "app/src/androidTest/java/com/zga/meridianatlas/StructureGroupDeviceTest.kt",
       "bytes": 10703,
       "sha256": "699f2a404c66d78369cf8d869d92aadaf4f02843ed491257f048fb967c9f3d4a"
+    },
+    {
+      "path": "app/src/androidTest/java/com/zga/meridianatlas/WorkspaceToolbarDeviceTest.kt",
+      "bytes": 2404,
+      "sha256": "56e3af2380586d8681c12c4c76d6a83c2d9445765c04d6d741454d3965e038d8"
     },
     {
       "path": "app/src/main/AndroidManifest.xml",
@@ -101,8 +144,8 @@
     },
     {
       "path": "app/src/main/assets/content/acupoints.json",
-      "bytes": 1622631,
-      "sha256": "2de017d6bee27b3356969181f49ec94de04b725b95af6ddf0096700a22c1018e"
+      "bytes": 1966476,
+      "sha256": "ce6b3a9d157fbb40d826b74eedc8c6f5d6eae88f121c85ec3c1189829ece576d"
     },
     {
       "path": "app/src/main/assets/content/fascia.json",
@@ -116,8 +159,8 @@
     },
     {
       "path": "app/src/main/assets/content/meridians.json",
-      "bytes": 183807,
-      "sha256": "382ce05df71c208fa490f216981523ccf8c3743214493d093c4f15568d3fc382"
+      "bytes": 183811,
+      "sha256": "9e1a589bda74113cfc0c0c875a9446eae7155f3509b388cb0d9cd6523010df3d"
     },
     {
       "path": "app/src/main/assets/content/organ-landmarks.json",
@@ -133,6 +176,11 @@
       "path": "app/src/main/assets/licenses/CC-BY-4.0.txt",
       "bytes": 17023,
       "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744"
+    },
+    {
+      "path": "app/src/main/assets/licenses/CC-BY-NC-ND-4.0.txt",
+      "bytes": 19127,
+      "sha256": "38762e3777f4ec00a6f769062a7c3f704fb78ce08303ecff88558da4c49cf9ea"
     },
     {
       "path": "app/src/main/assets/licenses/CC-BY-SA-4.0.txt",
@@ -161,8 +209,13 @@
     },
     {
       "path": "app/src/main/assets/licenses/PROJECT-NOTICE.md",
-      "bytes": 1492,
-      "sha256": "b97aadf9772a7a29386432da54ee0ca67629ffa79a8e236d55e1780d0995b5b1"
+      "bytes": 2156,
+      "sha256": "06c4571d6dc20fd3e83852377da800d9191bef6be3c89b26516ddbadb89da451"
+    },
+    {
+      "path": "app/src/main/assets/licenses/TARA-NOTICE.md",
+      "bytes": 7915,
+      "sha256": "ec87ef063bd1fe74915634720b8c12a7e542161f09e60359c84d5aafb818b963"
     },
     {
       "path": "app/src/main/assets/licenses/Z-Anatomy-upstream.txt",
@@ -176,8 +229,8 @@
     },
     {
       "path": "app/src/main/assets/materials/cutaway.filamat",
-      "bytes": 39805,
-      "sha256": "62daacb1b8e6a7360ae318bf2974f5c002b53d8e06da72bd33908c621f9aa8d9"
+      "bytes": 53092,
+      "sha256": "5b5bed871f55c1256e6a556cabc9ac05181bcc29aebfdee830f54b3a8a582543"
     },
     {
       "path": "app/src/main/assets/models/body-low.glb",
@@ -195,6 +248,11 @@
       "sha256": "69d81671883717189708d2609aac4eb180d6c0ab17c535d83941c7fb640f80a4"
     },
     {
+      "path": "app/src/main/assets/third_party/tara/acupoints-1.7.2.ttl",
+      "bytes": 2594678,
+      "sha256": "c4967c2bb7f4936200f77fac5da19219e6ca5850e7f46dfc8a87bd28b7c68296"
+    },
+    {
       "path": "app/src/main/java/com/zga/meridianatlas/MainActivity.kt",
       "bytes": 657,
       "sha256": "cd12512bfb804551c0c3cf9021c81a343362ff181612dda1a9b5e8ce0de4ca0e"
@@ -206,8 +264,8 @@
     },
     {
       "path": "app/src/main/java/com/zga/meridianatlas/data/AtlasRepository.kt",
-      "bytes": 8567,
-      "sha256": "29990f00266d1ed50fa9896aa3a99021bfe09641aca448fcc2d571646a1018a1"
+      "bytes": 9197,
+      "sha256": "17bf442637793c36aac4e0ac076de77c34521587c275a9ceef84ef6349d2d901"
     },
     {
       "path": "app/src/main/java/com/zga/meridianatlas/data/FascialContent.kt",
@@ -215,14 +273,19 @@
       "sha256": "38739d2950fe28600168c0bbf99742bdf010b3e3e8e27c1bbf73067a460d3b28"
     },
     {
+      "path": "app/src/main/java/com/zga/meridianatlas/data/TaraContent.kt",
+      "bytes": 14796,
+      "sha256": "1ea9516da0137775a837c95e12f62777d8e254ac7ce7132412e086f341f9ba09"
+    },
+    {
       "path": "app/src/main/java/com/zga/meridianatlas/model/AtlasModels.kt",
-      "bytes": 3821,
-      "sha256": "68b8580df45cba3020bf185ca16824b3b0905f57fd37f53805e39b5575f44f13"
+      "bytes": 3955,
+      "sha256": "3f37e77282fe19e913f766a2c6759400819ea6ebce8610c80d9500d4c42d762c"
     },
     {
       "path": "app/src/main/java/com/zga/meridianatlas/model/CutawayPolicy.kt",
-      "bytes": 1338,
-      "sha256": "ffea6d7840f06ec52c884343bc8f54c5d31efa6fcf5235037993c590e719b223"
+      "bytes": 2098,
+      "sha256": "a2189e95b9c5236427cbdd789805ccd9f494fdf79f361630ccc55a9289557dd6"
     },
     {
       "path": "app/src/main/java/com/zga/meridianatlas/model/FascialModels.kt",
@@ -245,14 +308,24 @@
       "sha256": "9eeb123e8f80ae920a406f29e1e85e5f6ab9331d5b454c863392bdaa78d57f9a"
     },
     {
+      "path": "app/src/main/java/com/zga/meridianatlas/model/TaraReference.kt",
+      "bytes": 845,
+      "sha256": "2880eeda6c415f31bf1a051713fa0fb9c1c71a4a2e2848b406840633b9505402"
+    },
+    {
+      "path": "app/src/main/java/com/zga/meridianatlas/model/VisibilityHistory.kt",
+      "bytes": 4318,
+      "sha256": "6e32d756742237d638b3dd1588859bee55b8506827e091dea1282039af96d778"
+    },
+    {
       "path": "app/src/main/java/com/zga/meridianatlas/model/VisibilityPolicy.kt",
       "bytes": 4631,
       "sha256": "b4e42f2d1f20dcb6758fe099294591356c7802d877ff46bcf44d7ff89d77c20a"
     },
     {
       "path": "app/src/main/java/com/zga/meridianatlas/ui/AtlasApp.kt",
-      "bytes": 51066,
-      "sha256": "a9c7fc43aedea77b8a2439b67211669fb9f0d6b1e51979f8d6fbd8d4c4a66ef1"
+      "bytes": 55189,
+      "sha256": "ba3cf91c0461b9b6b4e2d0d3e47ea25ab03e6cb1700db9883b4bec76dde75717"
     },
     {
       "path": "app/src/main/java/com/zga/meridianatlas/ui/AtlasCatalogue.kt",
@@ -261,13 +334,13 @@
     },
     {
       "path": "app/src/main/java/com/zga/meridianatlas/ui/AtlasOverlay.kt",
-      "bytes": 10903,
-      "sha256": "41b38b57e94f0ae340ff319b38d161752c9825d9ad2bacc38b09e31a5b8b1bba"
+      "bytes": 13389,
+      "sha256": "3ee913ef53fda6352257c537907437f38505f488dedf7d7e33b51ba9d9463a85"
     },
     {
       "path": "app/src/main/java/com/zga/meridianatlas/ui/AtlasViewModel.kt",
-      "bytes": 12703,
-      "sha256": "fc0b6fbe93e66289cc4e73b09a4f7a353b47b6aa31e7036b24e88e9e44665de9"
+      "bytes": 15238,
+      "sha256": "060d0c424496c0a9c4b5b088a7879c268b37228c6cf24d254aa8980bdb34ffe9"
     },
     {
       "path": "app/src/main/java/com/zga/meridianatlas/ui/FasciaOverlay.kt",
@@ -276,8 +349,18 @@
     },
     {
       "path": "app/src/main/java/com/zga/meridianatlas/ui/FasciaPanel.kt",
-      "bytes": 18950,
-      "sha256": "d14c6a7b5aa559749347b8c2a8f33f4157cd15f5d824079959b82e7ac0f64c04"
+      "bytes": 19227,
+      "sha256": "6703c4548a493ad9d755f3238677b10cefbf21bb82d28650fc9f8a2025f2819a"
+    },
+    {
+      "path": "app/src/main/java/com/zga/meridianatlas/ui/FloatingSelectionCard.kt",
+      "bytes": 5165,
+      "sha256": "e0773d4c22b246315e7455fdaf7194c741801422ad069aa2bc2d20a09e8155dc"
+    },
+    {
+      "path": "app/src/main/java/com/zga/meridianatlas/ui/LabelLayout.kt",
+      "bytes": 5200,
+      "sha256": "a9591a2ff00a63d7abf765e7b07fc5618afc4b1978ee6d42f7e92fa339c11617"
     },
     {
       "path": "app/src/main/java/com/zga/meridianatlas/ui/MeridianCatalogueContent.kt",
@@ -285,14 +368,44 @@
       "sha256": "0a09790903b97f2eb112471940a0e4a49194d37549fa907f626673cd99176800"
     },
     {
+      "path": "app/src/main/java/com/zga/meridianatlas/ui/SelectionCardPlacement.kt",
+      "bytes": 7109,
+      "sha256": "1cfe29f93fefdfb4a92aba77008984f7b4d3f31c7459cfab2c951c6409a4ba9f"
+    },
+    {
+      "path": "app/src/main/java/com/zga/meridianatlas/ui/TaraReferencePanel.kt",
+      "bytes": 5222,
+      "sha256": "15938d94d02cf30783ab650ae8a13919ef0abad8a429d53ab511e8533874d0b2"
+    },
+    {
+      "path": "app/src/main/java/com/zga/meridianatlas/ui/WorkspaceToolbar.kt",
+      "bytes": 2784,
+      "sha256": "9dcc1d3ae962fdfc5fbc6daf65589f6973ae2eb09199e5be2f0e0110de54246e"
+    },
+    {
+      "path": "app/src/main/java/com/zga/meridianatlas/viewer/AnatomyAppearance.kt",
+      "bytes": 1816,
+      "sha256": "795fa0814a951018e2c85b636fd3c196356a95dbea793a5eadb2222dcb107eb7"
+    },
+    {
       "path": "app/src/main/java/com/zga/meridianatlas/viewer/AnatomySurfaceView.kt",
-      "bytes": 37079,
-      "sha256": "895b975993f263e8b911458c10c3fc9cf0c6191f8b30fc3b13002c123fc004a9"
+      "bytes": 47548,
+      "sha256": "714987d824d44fc4484cd7627c38620a219a0a38638d47eb0b078e17e93a8bf2"
+    },
+    {
+      "path": "app/src/main/java/com/zga/meridianatlas/viewer/CameraMotion.kt",
+      "bytes": 2448,
+      "sha256": "a10853abcd93827f04c48ad24e1346ecbe368b0417efa9e0d404db47481e474e"
     },
     {
       "path": "app/src/main/java/com/zga/meridianatlas/viewer/GlbBaseColors.kt",
       "bytes": 2380,
       "sha256": "80bf015c2b931335f0cb2010dc372f81da56cbf8c53258282dd0c366b7e0065b"
+    },
+    {
+      "path": "app/src/main/java/com/zga/meridianatlas/viewer/OrbitLighting.kt",
+      "bytes": 2463,
+      "sha256": "b2817de55e4c31104e0c7954acbc29afd63b0499c699deb7309e23838efd906b"
     },
     {
       "path": "app/src/main/java/com/zga/meridianatlas/viewer/SkinOccluder.kt",
@@ -336,8 +449,8 @@
     },
     {
       "path": "app/src/test/java/com/zga/meridianatlas/CutawayPolicyTest.kt",
-      "bytes": 3455,
-      "sha256": "a279e9236ae71629739595b85b36a1e8d38bed32c9452cf413850295d602d97c"
+      "bytes": 5251,
+      "sha256": "ca826f31130d839c59f3448abc3b349be368f67dc9c3273e781f7f3a828c3384"
     },
     {
       "path": "app/src/test/java/com/zga/meridianatlas/MeridianCatalogueContentTest.kt",
@@ -360,6 +473,16 @@
       "sha256": "6c9de7ffbfe751343ae59de1d1859144ab6a0397565de4c5755432c194c6ad7d"
     },
     {
+      "path": "app/src/test/java/com/zga/meridianatlas/TaraContentTest.kt",
+      "bytes": 9799,
+      "sha256": "ba504f20f429a16300098640c67ce814a9977b12059ad1ba2ff4036cfdc659f8"
+    },
+    {
+      "path": "app/src/test/java/com/zga/meridianatlas/VisibilityHistoryTest.kt",
+      "bytes": 13755,
+      "sha256": "0eb669d44f9355908f16fa544f5a05ae1c7cdd0081400a33fc4f1d1b903ca230"
+    },
+    {
       "path": "app/src/test/java/com/zga/meridianatlas/VisibilityPolicyTest.kt",
       "bytes": 11780,
       "sha256": "66b46edf3b9543b6937595aff1d9fb4f150bfb120fbe2c0efffbc28b354e8669"
@@ -370,9 +493,34 @@
       "sha256": "00f53f30d9ffb35bec0af7c65458379a3c1bedb6c04cf33ac41d6d2acaf07714"
     },
     {
+      "path": "app/src/test/java/com/zga/meridianatlas/ui/LabelLayoutTest.kt",
+      "bytes": 5972,
+      "sha256": "ed3733855e57dad01f9d0f43658f3390d314d536d3bd59556473909ce9ce69b2"
+    },
+    {
       "path": "app/src/test/java/com/zga/meridianatlas/ui/OverlayPolicyTest.kt",
       "bytes": 7340,
       "sha256": "1923c37b1646636a01a01ae23269b74a7229c3cdd446dbbed0669ff41307695f"
+    },
+    {
+      "path": "app/src/test/java/com/zga/meridianatlas/ui/SelectionCardPlacementTest.kt",
+      "bytes": 13824,
+      "sha256": "28f9087b8b9d85a9ebe7171f2219891e054248113e1735dd54b647756a8303ca"
+    },
+    {
+      "path": "app/src/test/java/com/zga/meridianatlas/viewer/AnatomyAppearanceTest.kt",
+      "bytes": 1782,
+      "sha256": "f87cca2166499483e7254f0e59d354edb2237b875339efd76ff961671e42826a"
+    },
+    {
+      "path": "app/src/test/java/com/zga/meridianatlas/viewer/CameraMotionTest.kt",
+      "bytes": 6561,
+      "sha256": "2866e24360ebd41f33b70c49c5450601567bcdf0538bb924bf5148f32cc740f0"
+    },
+    {
+      "path": "app/src/test/java/com/zga/meridianatlas/viewer/OrbitLightingTest.kt",
+      "bytes": 6977,
+      "sha256": "9eff88ff8b6bcfece4b66d1d1ccca74b1b31d3ad5f880e896e4093ccd8d0a659"
     },
     {
       "path": "app/src/test/java/com/zga/meridianatlas/viewer/SkinOccluderTest.kt",
@@ -420,365 +568,20 @@
       "sha256": "fb49f8cb2e5b1d83fba3dcc2c0dd0934c5655cbaf8bd1510ada7cc02692095ca"
     },
     {
-      "path": "licenses/CC-BY-4.0.txt",
-      "bytes": 17023,
-      "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744"
-    },
-    {
-      "path": "licenses/CC-BY-SA-4.0.txt",
-      "bytes": 18375,
-      "sha256": "cde7883b9050a1104f4ac19a1572aafd6e5d7323b68351aaf51fbf4beba54966"
-    },
-    {
-      "path": "licenses/DEPENDENCY-NOTICES.md",
-      "bytes": 83442,
-      "sha256": "16691f8e811a6fec28767981fbd381f83e003eb4d91b67b1c635643a70b11328"
-    },
-    {
-      "path": "licenses/FILAMENT-Apache-2.0.txt",
-      "bytes": 11362,
-      "sha256": "02d70b593dd8e9355dd8e1ca8d13c303bee5bcaf3065b66ff6e4f534e1e6a2c1"
-    },
-    {
-      "path": "licenses/MODEL-NOTICE.md",
-      "bytes": 3556,
-      "sha256": "e4ba37f2e99e55591bd621bc84660c8e09220c3d3a632605ac412f9448e4ecfd"
-    },
-    {
-      "path": "licenses/Z-Anatomy-upstream.txt",
-      "bytes": 2754,
-      "sha256": "196b66b56551a862e59872f7cdb70e6d9a6ad84e9105962fca8ec28c14e97520"
-    },
-    {
-      "path": "licenses/meshoptimizer-MIT.txt",
-      "bytes": 1079,
-      "sha256": "f03037ca7bad1e3eb7f4a63fa6084a8baabd5ba30d3c239a9a7f35705d873e26"
-    },
-    {
       "path": "settings.gradle.kts",
       "bytes": 279,
       "sha256": "3883e45745b9d40a1f068aa3c19caa6dfce1de6af3fbc59cf1ad9ba5a7797bea"
     },
     {
-      "path": "tools/assets/README.md",
-      "bytes": 6152,
-      "sha256": "d685ca65928f54cbce0bcca1a76029675befd15881e75313d71efc8b1dfd3edb"
-    },
-    {
-      "path": "tools/assets/append_fascia_assets.py",
-      "bytes": 13063,
-      "sha256": "9b468aad9e0728a86a730cdbdcc5447760be6b07e2ce2291ca4d309525d584b2"
-    },
-    {
-      "path": "tools/assets/audit_muscle_topology.py",
-      "bytes": 4902,
-      "sha256": "c02a1059bd0c9c6607faec0f357da4b36846955494037adee1fdff36c99acc9f"
-    },
-    {
-      "path": "tools/assets/audit_taxonomy.py",
-      "bytes": 10411,
-      "sha256": "df4c89e818422383c65db75eb9e647c958da99b14e0516f6b52c1367d723a325"
-    },
-    {
-      "path": "tools/assets/build_cutaway_material.py",
-      "bytes": 2644,
-      "sha256": "6368172cb8d8cd5cc094a2ffc0a2ba4ef74fe49111d7b29a082b8030e8ea3bb8"
-    },
-    {
-      "path": "tools/assets/build_models.py",
-      "bytes": 33655,
-      "sha256": "afa4cea82d0f0e1f0fdcfcc45ce814b18b22a0ec6c0c5b6d68bd1a63923c8a9b"
-    },
-    {
-      "path": "tools/assets/chinese-names-extra.json",
-      "bytes": 11053,
-      "sha256": "9e0f607269493434ba01ffaa585e7e29e511695c87b702c8c3dd089d882c0e71"
-    },
-    {
-      "path": "tools/assets/chinese-names.json",
-      "bytes": 11264,
-      "sha256": "f579e779600406880e013ce413028dd7395029cb89ecd7af0e1fa074d9a1d23e"
-    },
-    {
-      "path": "tools/assets/connective_supplement.py",
-      "bytes": 12204,
-      "sha256": "07575b20cd9678f040e86853e955bf447a380d5da7443efe1d6d35812c844026"
-    },
-    {
-      "path": "tools/assets/cutaway.mat",
-      "bytes": 822,
-      "sha256": "d7f698c2d557fb679ccc747e78edad6a4fe36860610213f90957ded987e21ab9"
-    },
-    {
-      "path": "tools/assets/download_sources.py",
-      "bytes": 2122,
-      "sha256": "a5070f84dd94067a0de4368ae1fc6cd37c44111d7ebc98cbd116e80f2c0de3a7"
-    },
-    {
-      "path": "tools/assets/export_occlusion.mjs",
-      "bytes": 4705,
-      "sha256": "3c43fa43053194d52f880b18be9b334761b458b7523d9c7dc34502b6217a5ede"
-    },
-    {
-      "path": "tools/assets/fbx_extract.py",
-      "bytes": 7258,
-      "sha256": "10f50bff925f9dbc790928cc3177bed3615d58be198a6984d5cc6a7882d82359"
-    },
-    {
-      "path": "tools/assets/fetch_member.py",
-      "bytes": 1951,
-      "sha256": "4e5c02f4c9c6b99d18590e8dd02006a507377ca363d49bb1a558e2e914589f7f"
-    },
-    {
-      "path": "tools/assets/fix_trapezius.py",
-      "bytes": 7266,
-      "sha256": "aa803aff936f5aba8a4e93b7136cb4a8e2ac492e3ba03369b9389b6695473516"
-    },
-    {
-      "path": "tools/assets/inspect_skin_fix.py",
-      "bytes": 4856,
-      "sha256": "a61cf83706d6083fb658568851c9c7a3545ea7a21f92f56bd2a4a9e4c5286c63"
-    },
-    {
-      "path": "tools/assets/muscle-descriptions.json",
-      "bytes": 11893,
-      "sha256": "602e3ba856e54635045406b044b481ecc2ee469b51f8fb7d1722acccafdd588a"
-    },
-    {
-      "path": "tools/assets/muscle-learning.tsv",
-      "bytes": 34613,
-      "sha256": "8a5a4f2b07abdd9f9eed0d54d69cbf8a3f57c51558d4665d49385d2cf320edb8"
-    },
-    {
-      "path": "tools/assets/muscle_geometry.py",
-      "bytes": 4950,
-      "sha256": "659955dce67458328032f3d466061120d70f1837240bf7b083fcc6e7389b10a4"
-    },
-    {
-      "path": "tools/assets/muscle_learning.py",
-      "bytes": 6538,
-      "sha256": "8c1185563ce711ecb324b3cbe21ff55eb8700cd39ee8ac9484bd21698ece45fb"
-    },
-    {
-      "path": "tools/assets/simplify_muscles.mjs",
-      "bytes": 4230,
-      "sha256": "28dcd122e5d1cac6312d69414e583a35f07753cd1438da4118dda7a1eae3186e"
-    },
-    {
-      "path": "tools/assets/taxonomy.json",
-      "bytes": 868220,
-      "sha256": "3ad25da20964db2eec327f3a0737337cea59d8b734cc0414f4f577d889aa73d3"
-    },
-    {
-      "path": "tools/assets/taxonomy.py",
-      "bytes": 2738,
-      "sha256": "9b59ad2be46a6ac3a25220c766d1051de1db2f7f7f191eb21783dd50f29afa00"
-    },
-    {
-      "path": "tools/assets/update_muscle_content.py",
-      "bytes": 3016,
-      "sha256": "4e86de811b5dc5ab37e7072669d57b33b4c79ff70d42410cfa92cdad88523f26"
-    },
-    {
-      "path": "tools/assets/update_taxonomy_assets.py",
-      "bytes": 9071,
-      "sha256": "da26ed90a2094963c41899933aaad7bf8e64437590ad4d991cd2055bc8ae7ad9"
-    },
-    {
-      "path": "tools/assets/vendor/meshopt_simplifier.mjs",
-      "bytes": 67671,
-      "sha256": "c3098ee4cb4fc242b84f064c88898e76e44bf58b0e1f693507f323c08cdbb5ed"
-    },
-    {
-      "path": "tools/assets/verify_models.py",
-      "bytes": 11807,
-      "sha256": "f73ff1af671a1a8632749349889ac17a7cfbb5861e65f9e77b1ebf07586f8088"
-    },
-    {
-      "path": "tools/assets/verify_muscle_fix.py",
-      "bytes": 3543,
-      "sha256": "0c6963df84024f502050bb0df926e1c15165207b2a27228d13668122fb43461f"
-    },
-    {
       "path": "tools/build.sh",
       "bytes": 653,
       "sha256": "c47c70aa304b6701caa5f6666247b9ed1f046ed6e740ec48a2dbe21d1f9ea41e"
-    },
-    {
-      "path": "tools/content/README.md",
-      "bytes": 5270,
-      "sha256": "f5c49f86db77e3d038e106634d77d6a056d683850960db9c7c85ef8cd0909517"
-    },
-    {
-      "path": "tools/content/anchor_points.py",
-      "bytes": 34177,
-      "sha256": "d26e83c73c7532a8675b94358c62449f0f06c9208989fffdb93e51f89efe084c"
-    },
-    {
-      "path": "tools/content/build_all.py",
-      "bytes": 409,
-      "sha256": "7028270e78f26108b4150834e672e70ad239afe5073728dd52c3f4e86215ebbc"
-    },
-    {
-      "path": "tools/content/build_content.py",
-      "bytes": 11487,
-      "sha256": "891cc31425180a8c40a026f942c5e14aa6fbf6e3a03f1e2a4f0722f69a05dcb9"
-    },
-    {
-      "path": "tools/content/build_fascia.py",
-      "bytes": 66757,
-      "sha256": "c5fac0bcdce16ae58672a72b4aeeac1f5f8bcfd9cb23ec9002104d713567e438"
-    },
-    {
-      "path": "tools/content/build_meridians.py",
-      "bytes": 6653,
-      "sha256": "900220537c616ba4917d7b41934c8bc004fa192bf9e36513a75abf42da0def94"
-    },
-    {
-      "path": "tools/content/fetch_sources.py",
-      "bytes": 1012,
-      "sha256": "89d39c332135302f75442f4995fd8f99aa573aec5764ef1d94bea79b02c49440"
-    },
-    {
-      "path": "tools/content/function_notes.json",
-      "bytes": 378697,
-      "sha256": "23459e8c3efb969e41b4f24fb81453916d4a1d925b040ad6a1a46ac6b9151ab1"
-    },
-    {
-      "path": "tools/content/meridian_definitions.py",
-      "bytes": 3943,
-      "sha256": "f6e21ff79a9aa472d58e3fb1b44fdabdbd96b0e0977a5d10f9d01422aa43cdfc"
-    },
-    {
-      "path": "tools/content/requirements.txt",
-      "bytes": 28,
-      "sha256": "9d1f5b12e578a6351920f706f24a0c799afe208c9bebe6b6810409645a8c8a34"
-    },
-    {
-      "path": "tools/content/update_functions.py",
-      "bytes": 8807,
-      "sha256": "c0050e14152b9c650b42f970d608e8a8b7083597aa4365428ebb42d25db7540a"
-    },
-    {
-      "path": "tools/content/update_palette.py",
-      "bytes": 3616,
-      "sha256": "e4979a7a88ebaf20502bc1b3bf9661c84645a46ca2be4c70f765a51d7342a579"
-    },
-    {
-      "path": "tools/content/validate_content.py",
-      "bytes": 6695,
-      "sha256": "07c33c2c7d46e188e9a957f74d3c13b4fe1db207acffa111d7096fcfc2826edf"
-    },
-    {
-      "path": "tools/device.py",
-      "bytes": 6069,
-      "sha256": "19f02a795a547e52db929b33a56e319b1b9642160da83d5a9de02abcb6866d2b"
-    },
-    {
-      "path": "tools/export_public_evidence.py",
-      "bytes": 18097,
-      "sha256": "d7b0dd4f6f44f9c2679d0d5dd2ecd6d5f5479b02e5659031dfa60d4079c9381f"
-    },
-    {
-      "path": "tools/package_source.py",
-      "bytes": 2896,
-      "sha256": "9b432c607c4622ca6327ec57989e9a0a084093f5f088ab0d4e388416879f7e43"
-    },
-    {
-      "path": "tools/qa/README.md",
-      "bytes": 7679,
-      "sha256": "d894c3cfdefea15d46df214f641ee59fc991b95b84adf430b81ea415c8f58163"
-    },
-    {
-      "path": "tools/qa/bootstrap_perfetto.py",
-      "bytes": 2095,
-      "sha256": "22b69330ee181debd64bf6591197e19af8664b0811915200df6785498eb396ea"
-    },
-    {
-      "path": "tools/qa/device_soak.py",
-      "bytes": 23841,
-      "sha256": "623bb9adad823abe3dac08c84954147e10bb3b16f542f37ae9d7fe7f99afcc12"
-    },
-    {
-      "path": "tools/qa/frametimeline.pbtxt",
-      "bytes": 201,
-      "sha256": "5da77241bcc278bcded08527788425f1cf47d7de0a808409769cf992a3a61f59"
-    },
-    {
-      "path": "tools/qa/frametimeline.py",
-      "bytes": 10622,
-      "sha256": "2ee46c38c87198e5205c355b7856924ec03c30bb5edab0d08ed52e81f919c8e1"
-    },
-    {
-      "path": "tools/qa/preview_fascia_assets.py",
-      "bytes": 5261,
-      "sha256": "92d8b19ab62ffa8c6440ef34454c906d6604cb14ac2fccc8ff78afa23b805dc2"
-    },
-    {
-      "path": "tools/qa/release_smoke.py",
-      "bytes": 4436,
-      "sha256": "29014f52acfaa795df9433f25c02128718cf2100b2e0bb8c5aa31398a4c4c441"
-    },
-    {
-      "path": "tools/qa/test_device_soak.py",
-      "bytes": 2401,
-      "sha256": "8364aae85138f351f435609d04b8e409e18edcbb3f812e0766487be31b5de211"
-    },
-    {
-      "path": "tools/qa/test_fascia_evidence.py",
-      "bytes": 4412,
-      "sha256": "d07aff9925b31cde8c357d13c348696961560e036ccc3d0b08336166f9fa11c9"
-    },
-    {
-      "path": "tools/qa/test_fascia_geometry.py",
-      "bytes": 8768,
-      "sha256": "afa7a39659034705c85c76da5bccf24a505017168c58a47fb7a1b40eeeb4b07c"
-    },
-    {
-      "path": "tools/qa/test_frametimeline.py",
-      "bytes": 2485,
-      "sha256": "a635db64f343d0aa81ddec592888703923cfa01d0810d40ee4abccfcdc9a4f84"
-    },
-    {
-      "path": "tools/qa/test_public_evidence.py",
-      "bytes": 9634,
-      "sha256": "a65d549af8cc8074e2c7e1c7fef4c35a2b6310bec220a21bc71b3be0d7a9d3a9"
-    },
-    {
-      "path": "tools/qa/test_timestats.py",
-      "bytes": 7073,
-      "sha256": "2b62d1d2060b09505c7d48c7536f66dfee87f4862ca00134f53f2dcb8174e6e7"
-    },
-    {
-      "path": "tools/qa/timestats.py",
-      "bytes": 15117,
-      "sha256": "84efabc0488464374b8431b5c3f99e834b809cbcc675ff818cdc0eee68728582"
-    },
-    {
-      "path": "tools/render/android-platform.json",
-      "bytes": 1128,
-      "sha256": "c567960c7e76ec31fcd9e19d9f48520d98af00c63efdcfc451ea755217ad0f39"
-    },
-    {
-      "path": "tools/render/fetch_filament_release.py",
-      "bytes": 3814,
-      "sha256": "52a6b15a14599431dea1950afb80853792a2649799c93cdef194022b210c3210"
-    },
-    {
-      "path": "tools/render/filament-release.json",
-      "bytes": 1731,
-      "sha256": "5d2e188a92c88fc36a5c054e319fe5079aa4894937269cb88f999f69f2816305"
-    },
-    {
-      "path": "tools/verify_delivery.py",
-      "bytes": 6121,
-      "sha256": "a75544dbd7abb9aad2041c0876e1d22565646f6218b6438dee7d53487d9fdb8b"
     }
   ],
   "releaseArtifact": {
-    "path": "outputs/human-study-0.5.0-arm64.apk",
-    "bytes": 125111754,
-    "sha256": "f318710f0d611a52cfe9fa9bb9a779f9c0d95205c2e347c9a6c29a2437f24d8c"
+    "path": "outputs/human-study-0.5.7-arm64.apk",
+    "bytes": 125642904,
+    "sha256": "d2d27a3c87b1ee89d9bd5d2eb2300105f492b35076887de73472eda7d6f1c69d"
   },
   "scopeZh": "构建输入与当前APK字节核验；不表示目标版本已重新执行历史整轮功能或性能测试。"
 }

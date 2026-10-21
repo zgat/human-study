@@ -1,0 +1,179 @@
+{
+  "schemaVersion": 1,
+  "applicationVersion": "0.5.3",
+  "baseCommit": "35bce236c8bfde80fec8bec6f34295dc50476d1d",
+  "collectedAtUtc": "2026-10-21T05:46:39.179730+00:00",
+  "motion": {
+    "durationMsAtScale1": 450,
+    "easing": "quintic smootherstep; shortest yaw arc; logarithmic zoom",
+    "scope": [
+      "point/side location",
+      "structure location",
+      "fascial region location",
+      "return view",
+      "orientation buttons",
+      "whole-body reset"
+    ],
+    "touchCancels": true,
+    "newTargetReplacesOld": true,
+    "pauseFreezesElapsedTime": true,
+    "systemMotionSettingsRespected": true,
+    "orientationPreservesLocalTargetAndDistance": true
+  },
+  "interactionFixes": [
+    "Retire obsolete return bookmarks after a selected-point observation preset",
+    "Reproject annotations with the current camera; keep surface/ray work asynchronous",
+    "Recheck nearby hit candidates against current camera occlusion",
+    "Invalidate older asynchronous picks after new touch/location/navigation"
+  ],
+  "allAssetsUnchanged": true,
+  "jvm": {
+    "tests": 96,
+    "failed": 0,
+    "newCameraTests": 8
+  },
+  "build": {
+    "debug": true,
+    "release": true,
+    "androidTest": true,
+    "lintErrors": 0,
+    "existingLintWarnings": 18
+  },
+  "device": {
+    "model": "OPD2404",
+    "api": 36,
+    "animationScale": 1,
+    "tests": 12,
+    "passed": 12,
+    "failed": 0,
+    "skipped": 0,
+    "testNames": [
+      "catalogueLocationHasObservableIntermediateFramesAndKeepsPointAndRouteHighlighted",
+      "retargetTouchCancellationAndPauseResumeKeepTheCurrentlyRenderedPose",
+      "orientationButtonsKeepLocalFramingRestoreSmoothlyAndOnlyResetReturnsToWholeBody",
+      "observationPresetReleasesTheOldBookmarkBeforeTheNextCatalogueLocation",
+      "selectingAPosteriorPointThenOpeningOrgansKeepsItsActualCameraView",
+      "organAndHalfBodyButtonsKeepTheSelectedPointAndOwningRoute",
+      "uncheckingOwningRouteKeepsPointContextUntilExplicitlyCleared",
+      "observationPreparationPreservesControlsButExplicitRestoreStillClearsSelection",
+      "addingRemovingAndExpandingOtherRoutesDoNotReplacePointFocus",
+      "taraReaderAndLicenseKeepSelectedChestPointCameraAndActualViewportUnchanged",
+      "offlineRepositoryKeepsChestAnchorsRoutesAndTaraSourceCollectionsDistinct",
+      "nativeTapFindsUnshownLungPointAndEnablesItsOwningRoute"
+    ],
+    "durationSeconds": 38.041,
+    "newMotionTests": 4,
+    "selectionTests": 5,
+    "taraChestTests": 2,
+    "nativeTapTests": 1,
+    "compactLayoutDp": [
+      420,
+      760
+    ],
+    "liveProjectionMatrixChecks": 1,
+    "preferencesRestoredByHash": true,
+    "finalReleaseHashVerified": true,
+    "releaseLocalLoadAndSameProcessResumePassed": true
+  },
+  "motionObservations": {
+    "bookmark-restore-new-view": {
+      "sampleCount": 34,
+      "distinctPoses": 15,
+      "lastObservedMs": 500
+    },
+    "pause-resume": {
+      "sampleCount": 29,
+      "distinctPoses": 14,
+      "lastObservedMs": 449
+    },
+    "catalogue-st12": {
+      "sampleCount": 4,
+      "distinctPoses": 3,
+      "lastObservedMs": 652
+    },
+    "bookmark-first-point": {
+      "sampleCount": 28,
+      "distinctPoses": 15,
+      "lastObservedMs": 489
+    },
+    "orientation-左": {
+      "sampleCount": 31,
+      "distinctPoses": 14,
+      "lastObservedMs": 480
+    },
+    "orientation-背": {
+      "sampleCount": 32,
+      "distinctPoses": 15,
+      "lastObservedMs": 499
+    },
+    "reset-whole-body": {
+      "sampleCount": 34,
+      "distinctPoses": 15,
+      "lastObservedMs": 516
+    },
+    "orientation-正": {
+      "sampleCount": 30,
+      "distinctPoses": 15,
+      "lastObservedMs": 478
+    },
+    "retarget-current-pose": {
+      "sampleCount": 40,
+      "distinctPoses": 15,
+      "lastObservedMs": 505
+    },
+    "bookmark-next-point": {
+      "sampleCount": 28,
+      "distinctPoses": 15,
+      "lastObservedMs": 475
+    },
+    "preset-test-catalogue": {
+      "sampleCount": 30,
+      "distinctPoses": 15,
+      "lastObservedMs": 494
+    },
+    "restore-before-location": {
+      "sampleCount": 32,
+      "distinctPoses": 15,
+      "lastObservedMs": 500
+    },
+    "orientation-右": {
+      "sampleCount": 32,
+      "distinctPoses": 14,
+      "lastObservedMs": 512
+    }
+  },
+  "apk": {
+    "path": "outputs/human-study-0.5.3-arm64.apk",
+    "bytes": 125530732,
+    "sha256": "5e62322c3696552bc2351250226edd95f5eff7958db28c8eed6bf317f5f884c3",
+    "package": "com.zga.meridianatlas",
+    "versionName": "0.5.3",
+    "versionCode": 13,
+    "minSdk": 29,
+    "targetSdk": 36,
+    "signingPurpose": "local-testing"
+  },
+  "apkChecks": {
+    "zipCrc": true,
+    "bundledSourceHashes": true,
+    "offlinePermission": true,
+    "arm64Only": true,
+    "elf16KiBAlignment": true,
+    "signature": true,
+    "zip16KiBAlignment": true,
+    "applicationLabel": true
+  },
+  "boundariesZh": [
+    "紧凑布局是本平板内420×760dp约束，不是另一台实体手机。",
+    "真实渲染帧有中间姿态、正确终点及打断/续播；截图与轮询影响采样时间，不据此声称帧率或精确动画耗时。",
+    "运动中实际复核相机矩阵投影1次，终点另查；射线遮挡仍后台批量更新，点按近邻另作当前视角射线核验，不声称逐帧遮挡验收。",
+    "本机系统动画比例为1，未修改全局动画设置；关闭动画分支仅经源码与兼容性检查，未做Android10实体机或十分钟性能验证。",
+    "本次解剖、穴位、经络及筋膜数据全部保持，专业医学审校结论不变。"
+  ],
+  "publication": {
+    "sourceMain": "0.5.2",
+    "latestRelease": "0.5.0",
+    "thisVersionPushed": false,
+    "thisVersionReleased": false
+  }
+}

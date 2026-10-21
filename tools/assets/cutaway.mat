@@ -9,16 +9,18 @@ material {
     useDefaultDepthVariant : false,
     parameters : [
         { type : float4, name : baseColorFactor },
+        { type : float, name : roughnessFactor },
+        { type : float, name : metallicFactor },
         { type : float, name : cutSign }
     ],
-    variantFilter : [ skinning, shadowReceiver, fog, vsm, ssr, stereo ]
+    variantFilter : [ skinning, fog, vsm, ssr, stereo ]
 }
 fragment {
     void material(inout MaterialInputs material) {
         prepareMaterial(material);
         material.baseColor = materialParams.baseColorFactor;
         material.baseColor.a = materialParams.cutSign * getUserWorldPosition().x > 0.0 ? 0.0 : 1.0;
-        material.metallic = 0.0;
-        material.roughness = 0.73;
+        material.metallic = materialParams.metallicFactor;
+        material.roughness = materialParams.roughnessFactor;
     }
 }

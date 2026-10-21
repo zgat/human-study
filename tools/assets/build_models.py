@@ -339,9 +339,16 @@ def translated_name(name, lexicon):
     return side + text + ('（' + prefix + '）' if prefix else ''), okay
 
 
-PALETTES = {'skin': (0.73, .49, .34, 1), 'muscle': (.63, .15, .16, 1),
-            'bone': (.88, .82, .65, 1), 'organ': (.57, .29, .29, 1),
-            'connective': (.76,.85,.79,1), 'unknown': (.49,.55,.61,1), 'space': (.41,.65,.77,1)}
+def srgb_color(rgb):
+    """Match runtime AnatomyAppearance; glTF baseColorFactor stores linear RGB."""
+    channels = [(rgb >> shift & 255) / 255 for shift in (16, 8, 0)]
+    return tuple(c / 12.92 if c <= .04045 else ((c + .055) / 1.055) ** 2.4 for c in channels) + (1,)
+
+
+PALETTES = {'skin': srgb_color(0xCB947C), 'muscle': (.63, .15, .16, 1),
+            'bone': srgb_color(0xE9E4D9), 'organ': (.57, .29, .29, 1),
+            'connective': srgb_color(0xC3CCD0), 'unknown': (.49,.55,.61,1), 'space': (.41,.65,.77,1)}
+MATERIAL_ROUGHNESS = {'skin': .56, 'bone': .58, 'connective': .42}
 
 
 class Glb:
@@ -355,7 +362,7 @@ class Glb:
         for system, color in PALETTES.items():
             material = {'name': system, 'doubleSided': True,
                 'pbrMetallicRoughness': {'baseColorFactor': color, 'metallicFactor': 0,
-                                       'roughnessFactor': .73}}
+                                       'roughnessFactor': MATERIAL_ROUGHNESS.get(system, .73)}}
             if system == 'skin':
                 material['alphaMode'] = 'BLEND'
             self.doc['materials'].append(material)

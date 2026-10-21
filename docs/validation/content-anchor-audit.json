@@ -389,7 +389,7 @@
       "nameZh": "缺盆",
       "instances": 2,
       "methods": [
-        "cervical-surface-landmark-provisional"
+        "upper-chest-local-geometry-reference-provisional"
       ],
       "reviewStatus": "provisional"
     },
@@ -398,7 +398,7 @@
       "nameZh": "气户",
       "instances": 2,
       "methods": [
-        "regional-cun-and-rib-landmark-surface-projection"
+        "upper-chest-local-geometry-reference-provisional"
       ],
       "reviewStatus": "provisional"
     },
@@ -407,7 +407,7 @@
       "nameZh": "库房",
       "instances": 2,
       "methods": [
-        "regional-cun-and-rib-landmark-surface-projection"
+        "upper-chest-local-geometry-reference-provisional"
       ],
       "reviewStatus": "provisional"
     },
@@ -2468,7 +2468,7 @@
       "nameZh": "辄筋",
       "instances": 2,
       "methods": [
-        "regional-cun-and-rib-landmark-surface-projection"
+        "side-chest-relative-surface-spacing-only-provisional"
       ],
       "reviewStatus": "provisional"
     },
@@ -2756,7 +2756,7 @@
       "nameZh": "阴廉",
       "instances": 2,
       "methods": [
-        "segment-bone-proportional-cun"
+        "same-side-st30-inferior-anterior-thigh-cun-skin-projection"
       ],
       "reviewStatus": "provisional"
     },
@@ -3723,5 +3723,12 @@
       ],
       "reviewStatus": "provisional"
     }
-  ]
+  ],
+  "sourceAsset": {
+    "path": "app/src/main/assets/content/acupoints.json",
+    "bytes": 1966476,
+    "sha256": "ce6b3a9d157fbb40d826b74eedc8c6f5d6eae88f121c85ec3c1189829ece576d"
+  },
+  "auditScope": "entry-method-metadata-only-not-new-medical-calibration",
+  "boundaryZh": "本清单仅核对最终资产中的条目、实例及定位方法元数据；不代表重新完成逐穴定位或专业医学审校。"
 }

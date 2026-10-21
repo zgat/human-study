@@ -1,16 +1,36 @@
 {
   "schemaVersion": 1,
-  "targetApplicationVersion": "0.5.0",
+  "targetApplicationVersion": "0.5.7",
   "files": [
     {
+      "path": "appearance-cun.json",
+      "bytes": 26782,
+      "sha256": "f346613413c457ed75aeb8029cf7154ab11e71ff9c7e7cb4d6798d958776515d"
+    },
+    {
+      "path": "build-evidence.json",
+      "bytes": 22081,
+      "sha256": "9915a13f9bd44f9489c5fc71fe1310fb5f4078e739ca96fa5e8ca94817f80fc6"
+    },
+    {
+      "path": "camera-motion.json",
+      "bytes": 5694,
+      "sha256": "9ca366a35858927b30303a26393334be3d695055c21184460566fc86ac37f87d"
+    },
+    {
+      "path": "card-lighting.json",
+      "bytes": 24859,
+      "sha256": "d0df9f22d92c09098e9b341e33846134bf05f27ca63ce30dcbb866c792712a4c"
+    },
+    {
       "path": "content-anchor-audit.json",
-      "bytes": 79822,
-      "sha256": "cc1da734aecf6635b291357006928fa18bb5428b75ca6af50777743174fe8daa"
+      "bytes": 80280,
+      "sha256": "62eb6bd7ec8fb3ba9cb91d2120458ca5ccc47e53470f9da19332cbddb0b97b0c"
     },
     {
       "path": "content-artifacts.json",
-      "bytes": 938,
-      "sha256": "19f1fc43db168ec4a3a905e3d6991320e66920b70dca8f05bbcccc567e98a106"
+      "bytes": 1115,
+      "sha256": "3fccbf648bc2b1b20fff21ebe613ee67cca4b0f9df9065531724a40228eb8dea"
     },
     {
       "path": "content-functions.json",
@@ -24,13 +44,28 @@
     },
     {
       "path": "content-validation.json",
-      "bytes": 4760,
-      "sha256": "f693e43ce48f307e634b9fa24968b0a43c614caa53a4e775f64d7e2c0327c6ad"
+      "bytes": 4534,
+      "sha256": "08ef6a881384ebb6c4ffe90bb95a4d264c3603674961671216e3cf22db4d5297"
+    },
+    {
+      "path": "cun-constraints.csv",
+      "bytes": 1448725,
+      "sha256": "052f61be3960d5dd8cbea4e285d07fe14bca7e0fb5a5d7adb11853bf72e0ab2e"
+    },
+    {
+      "path": "cun-review.csv",
+      "bytes": 422190,
+      "sha256": "d6644f8f2c6de0bb102fe1fbac75f2bd6e2e075014b6c8dd967d38e924ea00c7"
     },
     {
       "path": "cutaway-material.json",
-      "bytes": 1512,
-      "sha256": "b188f9b5bd8fefaa26bdb3713fdf397245d9f7a63a87e2d3152a3fe4ec040833"
+      "bytes": 1752,
+      "sha256": "d0cec006dbb1f1bfbfaa23828197660089775273af3e9a40b8c878332f199446"
+    },
+    {
+      "path": "delivery-evidence.json",
+      "bytes": 5376,
+      "sha256": "673e4d115e9084e34a6c041644bb1ddca736d071baa30c4d44e5c10fc38beb98"
     },
     {
       "path": "fascia-content.json",
@@ -38,9 +73,39 @@
       "sha256": "22c9d97eba9344a03c8666ac8ab561cb9f9e738cf2404a32f78689369d289486"
     },
     {
+      "path": "fascia-expansion.json",
+      "bytes": 4243,
+      "sha256": "c2297d92511bdab6d1e8470967f1b18e746516ba71f55ffe5b2beaf89717113d"
+    },
+    {
+      "path": "fascia-standards.json",
+      "bytes": 26487,
+      "sha256": "091c034a3616e4be907bd7963d04d69d9b3d4b0dd0b4af81cf75a2e8f8f49de4"
+    },
+    {
+      "path": "gb23-labels.json",
+      "bytes": 2581,
+      "sha256": "96044480440ab9f89fbf2d359e5b593ff8ec762c85562ae36776592ff2dae664"
+    },
+    {
+      "path": "half-face.json",
+      "bytes": 9058,
+      "sha256": "9d8b47b72213ada49028820b3e82fbd16f76b7283d7d39769d5addaca0b2b8f1"
+    },
+    {
+      "path": "halfbody-face-fix.json",
+      "bytes": 19099,
+      "sha256": "d8764d3158c6b2a4ba6d996b1a8a3f4def007a21ec017d891bd1a8191636804e"
+    },
+    {
       "path": "meridian-palette.json",
       "bytes": 1219,
       "sha256": "3a95c12f83a7847142964791edfb8017d58bba8607086c7da097088dffe5e2f0"
+    },
+    {
+      "path": "mode-controls.json",
+      "bytes": 3110,
+      "sha256": "8a0381d3b366102d5eb6647217c571a711dc5e97bd510731ddf0b1ac8addb82e"
     },
     {
       "path": "model-build.json",
@@ -108,25 +173,35 @@
       "sha256": "114a45f4455962fabba7f0e370ffe00d938f3e3fea2ff30db04bbfaaea2aaaab"
     },
     {
+      "path": "rename-checks.json",
+      "bytes": 595,
+      "sha256": "c58c079a6e8574382b6eafbc7c491d2257565144c89f68fafd6fb3b638e72092"
+    },
+    {
       "path": "route-rendering.json",
       "bytes": 4924,
       "sha256": "807ff53ffc34b15c95a90a11e4f534a0505f75cb0cf1b59420c2befd31430f4a"
     },
     {
+      "path": "st12-tara.json",
+      "bytes": 17517,
+      "sha256": "ceb86c08e7d04182ca8d78589fba3560ebecfabbbe9fef79656a2bb9a1208b87"
+    },
+    {
+      "path": "structure-groups.json",
+      "bytes": 2293,
+      "sha256": "b955ec22d72aa3ce007f78cf289fc570d078c3bbacf34402f1373b458cc5a52a"
+    },
+    {
       "path": "test-summary.json",
-      "bytes": 6273,
-      "sha256": "45d928b9b08a1f4d9e77d2f150a1d8d23255b29262c53f9adb5bc3c6ad705bea"
+      "bytes": 8084,
+      "sha256": "a745fc39cfe7c38e5c258ac6a0f2ba8e63914920303857a0a99829dc64e7f837"
     },
     {
-      "path": "build-evidence.json",
-      "bytes": 27551,
-      "sha256": "a35a83b3a594a4cfb782499bebd5866267d9af8deaf10ea4b641fd3842d0c724"
-    },
-    {
-      "path": "delivery-evidence.json",
-      "bytes": 4880,
-      "sha256": "b81566b5971b9028d138fe7545834cb11951a7a58bf64a7387c29a807f062c05"
+      "path": "workspace-restore.json",
+      "bytes": 9385,
+      "sha256": "b8ec24b79eda177f2a1fc1c118abba576bf2416930416f97fa17b003e5f48215"
     }
   ],
-  "policyZh": "固定素材清单白名单；设备与历史原件不复制；构建证据须显式启用并与当前版本和APK哈希匹配。"
+  "policyZh": "本索引核对公开目录内全部JSON及CSV的实际字节；历史报告保持其原版本/资产哈希，当前构建和设备未执行边界见workspace-restore.json，不把索引目标版本当作所有报告的重跑版本。"
 }

@@ -183,7 +183,7 @@ class FasciaDeviceTest {
                 val callback = viewer.onProjection
                 viewer.onProjection = { anchors -> callback(anchors); latest.set(anchors.toList()) }
                 // Request the same anatomical target again to publish a fresh camera projection.
-                viewer.focusOn(target.position, .41f, target.normal)
+                viewer.focusOn(target.position, .41f, target.normal, animated = false)
             }
             compose.onNode(hasText("关闭") and hasClickAction()).performClick()
             compose.onNodeWithText("连接证据与条件").assertDoesNotExist()

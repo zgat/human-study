@@ -92,3 +92,25 @@ python3 tools/qa/frametimeline.py outputs/qa/<运行标识>/model-frametimeline.
 `FasciaEvidenceDeviceTest` 使用随包真实数据和紧凑界面，检查默认解剖目录、搜索与组织独显，关系线/辅助线/标记独立开关且保留穴位，以及逐项研究条件、限制和出处。`FasciaDeviceTest`、`FasciaExpansionDeviceTest` 继续覆盖已有观察、恢复和参考区操作。测试APK编译通过不表示设备用例已执行，实际执行范围见验收报告。
 
 主机可运行 `test_fascia_geometry.py` 与 `test_fascia_evidence.py`；前者验证三角面、重心坐标及固定几何，后者验证研究关联与范围线无传力证据。`preview_fascia_assets.py` 使用NumPy和Pillow生成真实GLB的离线正交预览，仅用于素材几何检查，不连接设备，不代替Filament截图或医学验收。
+
+## 1.8 说明卡与随视角照明
+
+`SelectionCardOcclusionDeviceTest` 在原生宽度至少840dp、高度至少760dp的平板运行，缺少条件会失败而不跳过。四项用例覆盖GB22/GB23左右实例、420×760和320×568dp约束、多点末实例、真实旋转缩放及详情开关；约束布局不是另一台实体手机。通过真实目录与显示位置按钮定位，将原始穴位投影和实际卡片统一到屏幕像素后比较，要求12dp高亮圈外再留4dp空隙。隐藏、遮挡或离屏的点不计作避让通过；同时检查SurfaceView对象、位置、大小及详情打开前后的相机。
+
+`AppearanceDeviceTest` 检查实际灯光方向、颜色与强度随正背左右、俯仰及上下极点同步，并保留两档材质、半身和真实PixelCopy截图检查。固定上躯干左右区域的正背亮度中位数比例不得超过1.35，绝对差不得超过30（8位显示亮度）；这是大反差回归阈值，不是同顶点配准或临床色度标准。`LabelContinuityDeviceTest` 补查连续点选与后台缓存更新；它的轨迹和卡片语义不等于逐帧Canvas文字像素。
+
+安装并核验同次构建的Debug及AndroidTest APK、备份当前应用偏好后，可运行这13项检查：
+
+```sh
+python3 tools/device.py -- shell am instrument -w -r \
+  -e class com.zga.meridianatlas.AppearanceDeviceTest,com.zga.meridianatlas.SelectionCardOcclusionDeviceTest,com.zga.meridianatlas.LabelContinuityDeviceTest \
+  com.zga.meridianatlas.test/androidx.test.runner.AndroidJUnitRunner
+```
+
+设备端输出位于应用私有目录`files/qa/appearance`、`files/qa/selection-card-occlusion`和`files/qa/label-continuity`；失败原因为`files/qa/failures`。应保存完整instrumentation终态，确认13项无失败或跳过；无线中断、日志只收到部分通过时不能判定完整套件通过。测试会改变浏览图层，结束后需恢复备份偏好；交付Release的覆盖安装、实际APK哈希和加载/前后台检查另行记录。当前结果与边界见[说明卡与照明核验](../../docs/validation/card-lighting.json)。
+
+## 1.9 组织显示还原与紧凑工具栏
+
+`VisibilityHistoryTest` 在主机验证按模式独立的32步历史、同名组织/分区/总开关的实际显隐、还原可撤销、预设事务合并及保留现有标注。`WorkspaceToolbarDeviceTest` 检查320dp宽且所有上下文操作出现时的触控区域、52dp高度及按钮禁用状态；该类需要设备执行，编译不表示布局验收通过。
+
+撤销与一键还原只作用于当前模式的解剖显示，保留选中对象与观察角度；历史仅保留在当前会话。真机未连接时应明确记为未执行，不引用旧版本的设备结果替代。

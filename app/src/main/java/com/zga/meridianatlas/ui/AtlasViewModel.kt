@@ -18,9 +18,11 @@ data class AtlasUiState(
     val layers: Map<AtlasMode, LayerState> = AtlasMode.entries.associateWith(VisibilityPolicy::defaults),
     val enabledMeridians: Set<String> = emptySet(), val selectedMeridian: String? = null,
     val selectedPoint: String? = null, val selectedStructure: String? = null,
-    val canRestore: Boolean = false, val activeMeridian: String? = null
+    val canRestore: Boolean = false, val activeMeridian: String? = null,
+    val canUndoVisibility: Boolean = false
 ) {
     val layer: LayerState get() = layers.getValue(mode)
+    val canResetAnatomy: Boolean get() = !AnatomyVisibilitySnapshot.isDefault(mode, layer)
     val selectedPointMeridian: String? get() = data?.points?.firstOrNull { it.id == selectedPoint }?.meridianId
 
     /** A route checkbox changes the browsing set, not the selected point's anatomical context. */
@@ -35,6 +37,7 @@ class AtlasViewModel(application: Application) : AndroidViewModel(application) {
     val state = mutable.asStateFlow()
     private var saveJob: Job? = null
     private val focusSnapshots = mutableMapOf<AtlasMode, FocusSnapshot>()
+    private val visibilityHistory = VisibilityHistory()
     init { reload() }
     fun reload() {
         viewModelScope.launch {
@@ -44,6 +47,8 @@ class AtlasViewModel(application: Application) : AndroidViewModel(application) {
                 val saved = preferences.read()
                 val defaultMeridian = data.meridians.firstOrNull()?.id
                 val enabled = saved?.meridians ?: setOfNotNull(defaultMeridian)
+                visibilityHistory.clear()
+                focusSnapshots.clear()
                 mutable.value = AtlasUiState(loading = false, data = data,
                     mode = saved?.mode ?: AtlasMode.OVERVIEW, quality = saved?.quality ?: ModelQuality.STANDARD,
                     layers = saved?.states ?: AtlasMode.entries.associateWith(VisibilityPolicy::defaults),
@@ -66,10 +71,51 @@ class AtlasViewModel(application: Application) : AndroidViewModel(application) {
             preferences.write(SavedPreferences(value.mode, value.quality, stableLayers, stableMeridians))
         }
     }
-    fun mode(mode: AtlasMode) { mutable.update { it.copy(mode = mode, canRestore = mode in focusSnapshots) }; persist() }
+    fun mode(mode: AtlasMode) {
+        mutable.update { it.copy(mode = mode, canRestore = mode in focusSnapshots,
+            canUndoVisibility = visibilityHistory.canUndo(mode, it.layers.getValue(mode))) }
+        persist()
+    }
     fun quality(quality: ModelQuality) { mutable.update { it.copy(quality = quality) }; persist() }
     fun layer(transform: (LayerState) -> LayerState) {
-        mutable.update { it.copy(layers = it.layers + (it.mode to transform(it.layer))) }; persist()
+        val before = mutable.value
+        val after = transform(before.layer)
+        visibilityHistory.record(before.mode, before.layer, after)
+        mutable.update { value -> value.copy(layers = value.layers + (before.mode to after),
+            canUndoVisibility = visibilityHistory.canUndo(value.mode, if (value.mode == before.mode) after else value.layer)) }
+        persist()
+    }
+
+    /** Batch temporary-focus restoration plus a preset into one anatomy undo checkpoint. */
+    fun <T> visibilityTransaction(change: () -> T): T {
+        try { return visibilityHistory.transaction({ mutable.value.layers }, change) }
+        finally { mutable.update { it.copy(canUndoVisibility = visibilityHistory.canUndo(it.mode, it.layer)) } }
+    }
+
+    /** Returns true also when only an old focus bookmark was ended; the caller discards its camera bookmark. */
+    fun undoVisibility(): Boolean {
+        val value = mutable.value
+        val restored = visibilityHistory.undo(value.mode, value.layer)
+        val endedFocus = focusSnapshots.remove(value.mode) != null
+        mutable.update { current ->
+            val layer = restored ?: current.layer
+            current.copy(layers = current.layers + (value.mode to layer), canRestore = false,
+                canUndoVisibility = visibilityHistory.canUndo(current.mode, layer))
+        }
+        if (restored != null || endedFocus) persist()
+        return restored != null || endedFocus
+    }
+
+    /** Restore this mode's anatomy defaults, preserving selection and all annotation controls. */
+    fun restoreAnatomy(): Boolean {
+        val value = mutable.value
+        val restored = visibilityHistory.restoreDefaults(value.mode, value.layer)
+        val endedFocus = focusSnapshots.remove(value.mode) != null
+        mutable.update { current -> current.copy(layers = current.layers + (value.mode to restored), canRestore = false,
+            canUndoVisibility = visibilityHistory.canUndo(current.mode, restored)) }
+        val changed = restored != value.layer
+        if (changed || endedFocus) persist()
+        return changed || endedFocus
     }
     fun toggleAnatomySystem(system: String) {
         val value = mutable.value
@@ -181,26 +227,30 @@ class AtlasViewModel(application: Application) : AndroidViewModel(application) {
      */
     fun prepareObservationPreset(): Boolean {
         val snapshot = focusSnapshots.remove(mutable.value.mode) ?: return false
-        mutable.update { value ->
-            val restoredLayer = snapshot.layer.copy(points = value.layer.points, lines = value.layer.lines,
-                labels = value.layer.labels, details = value.layer.details,
-                internalRelations = value.layer.internalRelations,
-                fasciaChains = value.layer.fasciaChains, fasciaTargets = value.layer.fasciaTargets,
-                fasciaRelations = value.layer.fasciaRelations, fasciaContext = value.layer.fasciaContext,
-                enabledFascialConnections = value.layer.enabledFascialConnections)
-            value.copy(layers = value.layers + (value.mode to restoredLayer), canRestore = false,
-                selectedMeridian = value.selectedPointMeridian ?: value.selectedMeridian)
+        return visibilityTransaction {
+            mutable.update { value ->
+                val restoredLayer = snapshot.layer.copy(points = value.layer.points, lines = value.layer.lines,
+                    labels = value.layer.labels, details = value.layer.details,
+                    internalRelations = value.layer.internalRelations,
+                    fasciaChains = value.layer.fasciaChains, fasciaTargets = value.layer.fasciaTargets,
+                    fasciaRelations = value.layer.fasciaRelations, fasciaContext = value.layer.fasciaContext,
+                    enabledFascialConnections = value.layer.enabledFascialConnections)
+                value.copy(layers = value.layers + (value.mode to restoredLayer), canRestore = false,
+                    selectedMeridian = value.selectedPointMeridian ?: value.selectedMeridian)
+            }
+            persist()
+            true
         }
-        persist()
-        return true
     }
 
     fun restore() {
-        val snapshot = focusSnapshots.remove(mutable.value.mode)
-        if (snapshot != null) mutable.update { it.copy(mode = snapshot.mode,
-            layers = it.layers + (snapshot.mode to snapshot.layer), enabledMeridians = snapshot.meridians ?: it.enabledMeridians,
-            selectedPoint = null, selectedStructure = null, canRestore = false) }
-        persist()
+        visibilityTransaction {
+            val snapshot = focusSnapshots.remove(mutable.value.mode)
+            if (snapshot != null) mutable.update { it.copy(mode = snapshot.mode,
+                layers = it.layers + (snapshot.mode to snapshot.layer), enabledMeridians = snapshot.meridians ?: it.enabledMeridians,
+                selectedPoint = null, selectedStructure = null, canRestore = false) }
+            persist()
+        }
     }
     fun clearSelection() { mutable.update { it.copy(selectedPoint = null, selectedStructure = null) } }
     fun resetLayers() { layer { VisibilityPolicy.defaults(mutable.value.mode) } }

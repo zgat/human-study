@@ -3,8 +3,13 @@
   "files": [
     {
       "path": "app/src/main/assets/content/acupoints.json",
-      "bytes": 1622631,
-      "sha256": "2de017d6bee27b3356969181f49ec94de04b725b95af6ddf0096700a22c1018e"
+      "bytes": 1966476,
+      "sha256": "ce6b3a9d157fbb40d826b74eedc8c6f5d6eae88f121c85ec3c1189829ece576d"
+    },
+    {
+      "path": "app/src/main/assets/content/fascia.json",
+      "bytes": 1970286,
+      "sha256": "fad1312eae8ddb0cf0f7ecb0a53248703510b7f17cc34ede9ed966fefd88328e"
     },
     {
       "path": "app/src/main/assets/content/landmarks.json",
@@ -13,8 +18,8 @@
     },
     {
       "path": "app/src/main/assets/content/meridians.json",
-      "bytes": 183807,
-      "sha256": "382ce05df71c208fa490f216981523ccf8c3743214493d093c4f15568d3fc382"
+      "bytes": 183811,
+      "sha256": "9e1a589bda74113cfc0c0c875a9446eae7155f3509b388cb0d9cd6523010df3d"
     },
     {
       "path": "app/src/main/assets/content/organ-landmarks.json",

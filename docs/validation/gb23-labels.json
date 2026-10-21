@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "applicationVersion": "0.5.4",
+  "collectedAtUtc": "2026-10-21T06:23:08.056465+00:00",
+  "baseCommit": "35bce236c8bfde80fec8bec6f34295dc50476d1d",
+  "geometry": {
+    "changedAnchorInstances": [
+      "gb23-left-1",
+      "gb23-right-1"
+    ],
+    "gb22PositionUnchanged": true,
+    "changedRouteNodes": 2,
+    "surfaceArcLengthMetres": [
+      0.026,
+      0.026
+    ],
+    "chordLengthMetres": [
+      0.0255087,
+      0.0255368
+    ],
+    "teachingScaleReference": "ST16 model lateral offset .104 metres / 4",
+    "individualBCunCalibration": false,
+    "gb22FourthInterspaceAndMidaxillaryLocationVerified": false,
+    "inAppCoordinateLimitationNotice": true,
+    "sourceGeometryTests": {
+      "tests": 11,
+      "failures": 0
+    }
+  },
+  "labels": {
+    "selectedInstancePinned": true,
+    "selectedLabelPrioritizedAndAvoidsCard": true,
+    "edgeMarkerClearance": true,
+    "priorityProjectionIndependentOfRouteBatch": true,
+    "freshSelectedInstanceOcclusion": true,
+    "hitTargetsIndependentOfRouteBatch": true,
+    "viewportResizeInvalidatesProjection": true
+  },
+  "jvm": {
+    "tests": 107,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "build": {
+    "debug": true,
+    "release": true,
+    "androidTest": true,
+    "lintErrors": 0,
+    "lintWarnings": 19,
+    "newLintWarnings": [
+      "UseKtx: Canvas.withClip suggestion in AtlasOverlay"
+    ]
+  },
+  "device": {
+    "model": "OPD2404",
+    "api": 36,
+    "status": "interrupted-awaiting-wireless-debugging",
+    "testsAccepted": 0,
+    "finalReleaseInstalled": false,
+    "preferencesRestorePending": true,
+    "candidateDebugWasInstalled": true,
+    "evidenceBoundary": "Old-version diagnostic traces and screenshots exist; candidate run lost wireless ADB. Final-version frame and actual Canvas label continuity are not accepted."
+  },
+  "apk": {
+    "path": "outputs/human-study-0.5.4-arm64.apk",
+    "bytes": 125534500,
+    "sha256": "dd35b7314601bee4f8f310f19ef74d0772ad3547ba05c8436d470514df605b79",
+    "package": "com.zga.meridianatlas",
+    "versionName": "0.5.4",
+    "versionCode": 14,
+    "minSdk": 29,
+    "targetSdk": 36,
+    "signingPurpose": "local-testing"
+  },
+  "limitations": [
+    "GB23 spacing repair is relative to an unreviewed GB22 base; fourth-interspace height and midaxillary location are not corrected.",
+    "No medical coordinate review completed.",
+    "No 10-minute performance or Android10 device test.",
+    "The final Release is archived; candidate Debug remains on device pending reconnection, original preferences are backed up."
+  ]
+}

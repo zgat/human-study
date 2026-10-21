@@ -31,7 +31,9 @@ data class Acupoint(
     val traditionalIndicationsZh: String = "",
     val functionSourceRefs: List<String> = emptyList(),
     val functionReviewStatus: String = "pending",
-    val taraReferences: List<TaraReference> = emptyList()
+    val taraReferences: List<TaraReference> = emptyList(),
+    val coordinateNoticeZh: String = "",
+    val cunReviewZh: String = ""
 )
 data class RoutePath(val id: String, val side: String, val internal: Boolean,
     val points: List<Vec3>, val reviewStatus: String = "provisional")

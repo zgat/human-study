@@ -1,0 +1,277 @@
+{
+  "schemaVersion": 1,
+  "applicationVersion": "0.5.7",
+  "versionCode": 17,
+  "changesZh": [
+    "组织显示按模式保留32步撤销；还原默认解剖显示本身也可撤销。",
+    "仅记录11项解剖可见字段；保留当前穴位、模式、镜头与现有标注/经络/筋膜参考设置。",
+    "统一旧隐藏恢复入口，显式还原/撤销结束旧定位书签，避免恢复持久化旧隐藏。",
+    "52dp高搜索工具栏，撤销与还原附文字，移除原大标题；320dp全操作与禁用状态用例已编译但未执行。"
+  ],
+  "jvm": {
+    "applicationVersion": "0.5.7",
+    "buildVariant": "debug",
+    "tests": 149,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "passed": 149,
+    "suites": [
+      {
+        "name": "com.zga.meridianatlas.CutawayPolicyTest",
+        "tests": 7,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "reportSha256": "b859e43d7fc76bfa16f74b04f6619c93271b0033a434e69a458b8a4ffdda2028"
+      },
+      {
+        "name": "com.zga.meridianatlas.MeridianCatalogueContentTest",
+        "tests": 5,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "reportSha256": "bb68ea3d77702159e8db38600e4486262f0eb585b4e20cc3765e9ee517de5682"
+      },
+      {
+        "name": "com.zga.meridianatlas.MeridianSelectionPolicyTest",
+        "tests": 5,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "reportSha256": "4b43cb42fbaa9401f67ad349f356e9b6fa0b0bcfb9426842f7fc820ecdb8115b"
+      },
+      {
+        "name": "com.zga.meridianatlas.SearchIndexTest",
+        "tests": 3,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "reportSha256": "ee7fbf0bc10a981a7f7ad55f52768ba50c0a87b828a650a170b5ea9d679d065e"
+      },
+      {
+        "name": "com.zga.meridianatlas.StructureGroupsTest",
+        "tests": 8,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "reportSha256": "ed6af3b3cd89c7b2cb4d02ff16232f40c5015635abafafd1a33753ac400b1dbf"
+      },
+      {
+        "name": "com.zga.meridianatlas.TaraContentTest",
+        "tests": 6,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "reportSha256": "8a267c3fd90a535def8c27ecbbe4ab8bc6743e59eb125ef83f3ebd5a2b6cbe91"
+      },
+      {
+        "name": "com.zga.meridianatlas.VisibilityHistoryTest",
+        "tests": 19,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "reportSha256": "ff2aa9873f5e945f7efc23b48e8ab5418f72fbde182b2f9e0424da997a240a4a"
+      },
+      {
+        "name": "com.zga.meridianatlas.VisibilityPolicyTest",
+        "tests": 16,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "reportSha256": "3e9ca81c753f6c94024edcd892b92f8749b5890a8571f3c47f06e950ec01e605"
+      },
+      {
+        "name": "com.zga.meridianatlas.ui.FasciaOverlayTest",
+        "tests": 10,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "reportSha256": "8497f57cade8e2254a4c214104ba47dad62488ad63c0ba5d1e5b57271f000f0a"
+      },
+      {
+        "name": "com.zga.meridianatlas.ui.LabelLayoutTest",
+        "tests": 11,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "reportSha256": "d03db5b86b66375a7082ea48daedf51d01188930928a9ff355fdba639897c5cf"
+      },
+      {
+        "name": "com.zga.meridianatlas.ui.OverlayPolicyTest",
+        "tests": 9,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "reportSha256": "c8b2d032ba8b664808a958a4d79dd8f9145e92d113ae2c766d8682cddaa955c6"
+      },
+      {
+        "name": "com.zga.meridianatlas.ui.SelectionCardPlacementTest",
+        "tests": 14,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "reportSha256": "f532282863f723ec434653df3b4e7346b8159b688f1f75b9883f3e41a64a68c6"
+      },
+      {
+        "name": "com.zga.meridianatlas.viewer.AnatomyAppearanceTest",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "reportSha256": "e7acf50456f1f79ef0dcfa232d3e2d964cd7a2876bbce7487617e4f6207bf2d0"
+      },
+      {
+        "name": "com.zga.meridianatlas.viewer.CameraMotionTest",
+        "tests": 8,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "reportSha256": "1ecfa3bfa09764f7c73d2c0b4757e81f4492f8fc3f8f95e55455bf4f3024825f"
+      },
+      {
+        "name": "com.zga.meridianatlas.viewer.OrbitLightingTest",
+        "tests": 7,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "reportSha256": "886ada510498e4f735f402188fc93c439fe153555af24c1dfb1b7454903a9af7"
+      },
+      {
+        "name": "com.zga.meridianatlas.viewer.SkinOccluderTest",
+        "tests": 10,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "reportSha256": "977f2d8edb15d2c9ac65a47f25481b3298290fc77b64e8be3d09b6588cb83700"
+      },
+      {
+        "name": "com.zga.meridianatlas.viewer.SurfaceRouteAssetTest",
+        "tests": 1,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "reportSha256": "1a800c695f06f3160a76e3bd69a7775e02900389d13c09ad280ac82c97f66974"
+      },
+      {
+        "name": "com.zga.meridianatlas.viewer.SurfaceRoutesTest",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "reportSha256": "7efb3dd6b61eb08947f6ddd6e4c5919e620c11113695e52744c9a83188e632d8"
+      },
+      {
+        "name": "com.zga.meridianatlas.viewer.ViewerMathTest",
+        "tests": 6,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "reportSha256": "622951654c7784cfbd22a0299a9c541958a54181121539d4e965df5de24f538f"
+      }
+    ],
+    "scopeZh": "本轮JUnit XML计数与摘要；不替代该版本的设备功能回归、安装或性能测试。"
+  },
+  "python": {
+    "status": "passed",
+    "tests": 79,
+    "logSha256": "67a9d28b00e0b52528829d415f29d8b68dfa4214b63c4857ef702613fca4ed10",
+    "scopeZh": "主机完整tools/qa测试发现集；含LR11同侧与前皮肤投影回归，不替代医学审校。"
+  },
+  "build": {
+    "debug": "passed",
+    "androidTest": "compiled-not-executed",
+    "release": "passed",
+    "lint": {
+      "status": "passed",
+      "errors": 0,
+      "warnings": 19
+    }
+  },
+  "device": {
+    "status": "not-run",
+    "connectedTransportsObserved": 0,
+    "scopeZh": "当前无已连接ADB设备，本次按要求跳过安装和交互验证。0.5.6的13项设备测试只作为历史结果。"
+  },
+  "lr11Repair": {
+    "changedPointIds": [
+      "lr11"
+    ],
+    "unchangedOtherEntries": 412,
+    "changedInstances": 2,
+    "assetCount": 23,
+    "changedAssets": [
+      "app/src/main/assets/content/acupoints.json",
+      "app/src/main/assets/content/meridians.json"
+    ],
+    "unchangedOtherAssets": 21,
+    "assetHashesBeforeAndAfterValidationEqual": true,
+    "sourceSurfaceReconstructionMaxDistanceMetres": 7.59186760086495e-08,
+    "contentChecksPassed": true,
+    "medicalReviewedInstances": 0
+  },
+  "currentCunReview": {
+    "entries": 226,
+    "constraints": 259,
+    "instances": 486,
+    "constraintInstances": 552,
+    "formalMeridianTextComparedEntries": 203,
+    "extraFormalFullTextPendingEntries": 23,
+    "exports": [
+      {
+        "path": "docs/validation/cun-review.csv",
+        "bytes": 422190,
+        "sha256": "d6644f8f2c6de0bb102fe1fbac75f2bd6e2e075014b6c8dd967d38e924ea00c7"
+      },
+      {
+        "path": "docs/validation/cun-constraints.csv",
+        "bytes": 1448725,
+        "sha256": "052f61be3960d5dd8cbea4e285d07fe14bca7e0fb5a5d7adb11853bf72e0ab2e"
+      }
+    ],
+    "scopeZh": "两份CSV根据LR11修复后的实际资产重新审计；appearance-cun.json保留0.5.5原资产与原设备检查，不能替换其旧哈希。"
+  },
+  "releaseArtifact": {
+    "path": "outputs/human-study-0.5.7-arm64.apk",
+    "bytes": 125642904,
+    "sha256": "d2d27a3c87b1ee89d9bd5d2eb2300105f492b35076887de73472eda7d6f1c69d",
+    "package": "com.zga.meridianatlas",
+    "versionName": "0.5.7",
+    "versionCode": 17,
+    "minSdk": 29,
+    "targetSdk": 36,
+    "signingPurpose": "local-testing"
+  },
+  "deliveryChecks": {
+    "zipCrc": true,
+    "bundledSourceHashes": true,
+    "offlinePermission": true,
+    "arm64Only": true,
+    "elf16KiBAlignment": true,
+    "signature": true,
+    "zip16KiBAlignment": true,
+    "applicationLabel": true
+  },
+  "content": {
+    "entries": 413,
+    "instances": 843,
+    "routes": 20,
+    "medicalReviewedInstances": 0
+  },
+  "inputSnapshot": {
+    "path": "manifests/build-inputs-v0.5.7.json",
+    "bytes": 31456,
+    "sha256": "99445c4b4e1ad7eb03d7594146cfadff395210669e605f2260059d139f620048"
+  },
+  "historicalRuntimeEvidence": {
+    "applicationVersion": "0.5.6",
+    "report": "docs/validation/card-lighting.json",
+    "scopeZh": "说明卡和随视角照明的旧APK设备结果；0.5.7重排布局并修LR11后未重跑，不能当作新APK安装或帧率证明。"
+  },
+  "limitsZh": [
+    "撤销记录仅保存于当前进程，重启后清空；不提供重做。",
+    "还原恢复当前模式默认组织显示，不修改经络选择、中文名称或说明开关；肌肉模式仍以肌肉为主，经络模式仍默认体表。",
+    "专业医学审校完成数为0；骨度纵寸和源表面检查不能等同专业逐穴校准。",
+    "本轮没有真机、十分钟性能、更多机型或Android10设备验收。"
+  ]
+}

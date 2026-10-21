@@ -1,8 +1,11 @@
 package com.zga.meridianatlas.viewer
 
+import android.animation.ValueAnimator
 import android.content.Context
+import android.os.Build
 import android.os.Handler
 import android.os.Looper
+import android.provider.Settings
 import android.util.Log
 import android.view.Choreographer
 import android.view.MotionEvent
@@ -19,6 +22,7 @@ import com.google.android.filament.MaterialInstance
 import com.google.android.filament.Skybox
 import com.google.android.filament.SwapChain
 import com.google.android.filament.Viewport
+import com.google.android.filament.View.QualityLevel
 import com.google.android.filament.android.UiHelper
 import com.google.android.filament.gltfio.AssetLoader
 import com.google.android.filament.gltfio.FilamentAsset
@@ -87,6 +91,7 @@ class AnatomySurfaceView(context: Context) : SurfaceView(context), AutoCloseable
     private val skybox: Skybox
     private val indirectLight: IndirectLight
     private val lights = ArrayList<Int>()
+    private var appearanceQuality: ModelQuality? = null
     private val uiHelper = UiHelper(UiHelper.ContextErrorPolicy.DONT_CHECK)
     private var swapChain: SwapChain? = null
     private var asset: FilamentAsset? = null
@@ -119,6 +124,12 @@ class AnatomySurfaceView(context: Context) : SurfaceView(context), AutoCloseable
     private var pose = OrbitPose()
     private var homePose = pose
     private var savedPose: OrbitPose? = null
+    private var cameraMotion: CameraMotion? = null
+    private var motionElapsedNs = 0L
+    private var motionDurationNs = 0L
+    private var motionLastFrameNs = 0L
+    /** Camera motion is driven by the same frames that render the model. */
+    val isCameraMoving: Boolean get() = cameraMotion != null
     private val cameraBookmarks = HashMap<String, OrbitPose>()
     private var maxDistance = 12f
     private var viewportWidth = 1
@@ -130,6 +141,13 @@ class AnatomySurfaceView(context: Context) : SurfaceView(context), AutoCloseable
     private var projectionInFlight = false
     private var projectionContentRevision = 0L
     private var projectionIntervalNs = 33_000_000L
+    private data class ProjectionCache(val revision: Long, val anchors: List<ProjectionAnchor>,
+        val occluded: List<Boolean>)
+    private var projectionCache: ProjectionCache? = null
+    private var projectedPose: OrbitPose? = null
+    private var priorityAnchorIds: Set<String> = emptySet()
+    private var currentProjections: List<ProjectedAnchor> = emptyList()
+    private var pickRevision = 0L
     private var skinOccluder: SkinOccluder? = null
     private var surfaceRouteProjector: SurfaceRouteProjector? = null
     private var lastRenderNs = 0L
@@ -152,7 +170,9 @@ class AnatomySurfaceView(context: Context) : SurfaceView(context), AutoCloseable
 
     init {
         Gltfio.init()
-        engine = Engine.create(Engine.Backend.OPENGL)
+        // Filament evaluates only one directional light unless this explicit engine option is set.
+        engine = Engine.Builder().backend(Engine.Backend.OPENGL)
+            .config(Engine.Config().apply { enableMultipleDirectionalLights = true }).build()
         renderer = engine.createRenderer()
         scene = engine.createScene()
         cameraEntity = EntityManager.get().create()
@@ -162,7 +182,8 @@ class AnatomySurfaceView(context: Context) : SurfaceView(context), AutoCloseable
             scene = this@AnatomySurfaceView.scene
             camera = this@AnatomySurfaceView.camera
             setVisibleLayers(0xff, 1)
-            setShadowingEnabled(false)
+            setShadowingEnabled(true)
+            setShadowType(com.google.android.filament.View.ShadowType.PCF)
         }
         materialProvider = UbershaderProvider(engine)
         assetLoader = AssetLoader(engine, materialProvider, EntityManager.get())
@@ -173,10 +194,17 @@ class AnatomySurfaceView(context: Context) : SurfaceView(context), AutoCloseable
         }
         skybox = Skybox.Builder().color(0.025f, 0.038f, 0.055f, 1f).build(engine)
         scene.skybox = skybox
+        val ambient = OrbitLighting.ambientIrradiance
         indirectLight = IndirectLight.Builder()
-            .irradiance(1, floatArrayOf(0.65f, 0.68f, 0.72f)).intensity(45_000f).build(engine)
+            .irradiance(1, floatArrayOf(ambient.x, ambient.y, ambient.z))
+            .intensity(OrbitLighting.ambientIntensity).build(engine)
         scene.indirectLight = indirectLight
-        addLight(-0.5f, -0.4f, -1f, 85_000f)
+        val lightColor = OrbitLighting.color
+        OrbitLighting.lights.zip(OrbitLighting.directions(pose)).forEach { (light, direction) ->
+            addLight(direction.x, direction.y, direction.z, light.intensity,
+                floatArrayOf(lightColor.x, lightColor.y, lightColor.z), shadows = light.shadows)
+        }
+        configureAppearance(quality)
         uiHelper.renderCallback = object : UiHelper.RendererCallback {
             override fun onNativeWindowChanged(surface: Surface) {
                 if (closed) return
@@ -186,6 +214,7 @@ class AnatomySurfaceView(context: Context) : SurfaceView(context), AutoCloseable
             }
 
             override fun onDetachedFromSurface() {
+                motionLastFrameNs = 0L
                 swapChain?.let {
                     engine.destroySwapChain(it)
                     engine.flushAndWait()
@@ -202,6 +231,8 @@ class AnatomySurfaceView(context: Context) : SurfaceView(context), AutoCloseable
                 ++projectionContentRevision
                 filamentView.viewport = Viewport(0, 0, width, height)
                 updateCamera()
+                projectedPose = null
+                publishCachedProjection()
                 publishProjection()
             }
         }
@@ -220,6 +251,7 @@ class AnatomySurfaceView(context: Context) : SurfaceView(context), AutoCloseable
     ) {
         requireMainThread()
         if (closed) return
+        configureAppearance(quality)
         if (currentPath == assetPath && asset != null) {
             this.quality = quality
             if (nodeBindings != nodeNameToStructureId) {
@@ -322,21 +354,31 @@ class AnatomySurfaceView(context: Context) : SurfaceView(context), AutoCloseable
         ++projectionContentRevision
         projectionIntervalNs = if (anchors.count { it.occlusionTest } > 1_500) 66_000_000L else 33_000_000L
         projectionDirty = true
+        projectedPose = null
+        publishCachedProjection()
         publishProjection()
     }
 
-    fun applyCameraPreset(preset: CameraPreset) {
+    /** The selected name must not wait for every route sample to finish conforming. */
+    fun setPriorityAnchorIds(ids: Set<String>) {
+        requireMainThread()
+        if (closed || priorityAnchorIds == ids) return
+        priorityAnchorIds = ids.toSet()
+        projectedPose = null
+        publishCachedProjection()
+    }
+
+    fun applyCameraPreset(preset: CameraPreset, animated: Boolean = true) {
         requireMainThread()
         if (closed) return
         savedPose = null
-        pose = homePose.copy(yaw = when (preset) {
+        val destination = if (preset == CameraPreset.RESET) homePose else pose.copy(yaw = when (preset) {
             CameraPreset.BACK -> PI.toFloat()
             CameraPreset.LEFT -> PI.toFloat() / 2f
             CameraPreset.RIGHT -> -PI.toFloat() / 2f
             CameraPreset.FRONT, CameraPreset.RESET -> 0f
-        })
-        updateCamera()
-        publishProjection()
+        }, pitch = 0f)
+        moveCamera(destination, animated)
     }
 
     fun focusOnStructure(group: StructureGroup) {
@@ -351,7 +393,7 @@ class AnatomySurfaceView(context: Context) : SurfaceView(context), AutoCloseable
     }
 
     /** Saves the current orbit once so a sequence of selected points has a stable return view. */
-    fun focusOn(position: Vec3, distance: Float = 0.35f, normal: Vec3? = null) {
+    fun focusOn(position: Vec3, distance: Float = 0.35f, normal: Vec3? = null, animated: Boolean = true) {
         requireMainThread()
         if (closed) return
         if (savedPose == null) savedPose = pose
@@ -363,19 +405,16 @@ class AnatomySurfaceView(context: Context) : SurfaceView(context), AutoCloseable
             else if (dx * dx + dz * dz > 0.0001f) atan2(dx, dz) else pose.yaw
         val pitch = if (normal != null && length > 0.00001f)
             asin((normal.y / length).coerceIn(-1f, 1f)) else 0f
-        pose = pose.copy(target = position, yaw = yaw, pitch = pitch,
-            distance = distance.coerceIn(0.08f, maxDistance))
-        updateCamera()
-        publishProjection()
+        moveCamera(pose.copy(target = position, yaw = yaw, pitch = pitch,
+            distance = distance.coerceIn(0.08f, maxDistance)), animated)
     }
 
     fun restoreCamera() {
         requireMainThread()
         if (closed) return
-        savedPose?.let { pose = it }
+        val original = savedPose
         savedPose = null
-        updateCamera()
-        publishProjection()
+        original?.let { moveCamera(it) }
     }
 
     /** The first temporary action in a mode owns its return view until that mode restores it. */
@@ -388,9 +427,80 @@ class AnatomySurfaceView(context: Context) : SurfaceView(context), AutoCloseable
         requireMainThread()
         if (closed) return
         val original = cameraBookmarks.remove(key) ?: return
-        pose = original
-        updateCamera()
-        publishProjection()
+        moveCamera(original)
+    }
+
+    /** Finish a temporary observation without moving the selected point's current view. */
+    fun discardCameraBookmark(key: String) {
+        requireMainThread()
+        cameraBookmarks.remove(key)
+        savedPose = null
+    }
+
+    fun invalidatePendingPicks() {
+        requireMainThread()
+        ++pickRevision
+    }
+
+    /** Uses the viewer's current camera projection, independently of Compose recomposition timing. */
+    fun projectionsForHitTest(): List<ProjectedAnchor> {
+        requireMainThread()
+        if (closed) return emptyList()
+        publishCachedProjection()
+        if (viewportWidth < 2 || viewportHeight < 2) return emptyList()
+        // Pick targets are raw anatomical anchors; they never need route conforming.
+        // Refresh their screen positions even while a new route batch is still preparing.
+        camera.getProjectionMatrix(projection)
+        camera.getViewMatrix(viewMatrix)
+        return AnchorProjector.project(anchors.filter { it.id.startsWith("point:") ||
+            it.id.startsWith("hitpoint:") || it.id.startsWith("fascial-target:") },
+            projection, viewMatrix, pose.eye(), viewportWidth, viewportHeight)
+    }
+
+    /** Only nearby tap candidates need a fresh ray; display occlusion remains batched off-thread. */
+    fun isAnchorVisibleForHitTest(id: String): Boolean {
+        requireMainThread()
+        if (closed) return false
+        val anchor = anchors.firstOrNull { it.id == id } ?: return false
+        return !anchor.occlusionTest || skinOccluder?.isOccluded(pose.eye(), anchor.position) != true
+    }
+
+    private fun moveCamera(destination: OrbitPose, animated: Boolean = true) {
+        invalidatePendingPicks()
+        cancelCameraMotion()
+        val scale = animationDurationScale()
+        if (!animated || scale == 0f || pose == destination) {
+            pose = destination
+            updateCamera()
+            publishCachedProjection()
+            publishProjection()
+            return
+        }
+        cameraMotion = CameraMotion(pose, destination)
+        motionDurationNs = (450_000_000.0 * scale).toLong().coerceAtLeast(1L)
+        scheduleFrame()
+    }
+
+    private fun animationDurationScale(): Float {
+        if (!ValueAnimator.areAnimatorsEnabled()) return 0f
+        val scale = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) ValueAnimator.getDurationScale()
+            else Settings.Global.getFloat(context.contentResolver, Settings.Global.ANIMATOR_DURATION_SCALE, 1f)
+        return scale.takeIf { it.isFinite() }?.coerceAtLeast(0f) ?: 1f
+    }
+
+    private fun advanceCameraMotion(frameTimeNanos: Long) {
+        val motion = cameraMotion ?: return
+        if (motionLastFrameNs != 0L) motionElapsedNs += (frameTimeNanos - motionLastFrameNs).coerceAtLeast(0L)
+        motionLastFrameNs = frameTimeNanos
+        val fraction = (motionElapsedNs.toDouble() / motionDurationNs).coerceIn(0.0, 1.0).toFloat()
+        pose = motion.poseAt(fraction)
+        if (fraction >= 1f) cancelCameraMotion()
+    }
+
+    private fun cancelCameraMotion() {
+        cameraMotion = null
+        motionElapsedNs = 0L
+        motionLastFrameNs = 0L
     }
 
     fun resume() {
@@ -409,6 +519,7 @@ class AnatomySurfaceView(context: Context) : SurfaceView(context), AutoCloseable
         requireMainThread()
         if (closed || !resumed) return
         resumed = false
+        motionLastFrameNs = 0L
         choreographer.removeFrameCallback(frameCallback)
         frameScheduled = false
         resetFrameClock()
@@ -423,6 +534,7 @@ class AnatomySurfaceView(context: Context) : SurfaceView(context), AutoCloseable
 
     override fun onDetachedFromWindow() {
         attached = false
+        motionLastFrameNs = 0L
         choreographer.removeFrameCallback(frameCallback)
         frameScheduled = false
         super.onDetachedFromWindow()
@@ -463,10 +575,14 @@ class AnatomySurfaceView(context: Context) : SurfaceView(context), AutoCloseable
         EntityManager.get().destroy(cameraEntity)
         engine.destroy()
         anchors = emptyList()
+        priorityAnchorIds = emptySet()
         skinOccluder = null
         surfaceRouteProjector = null
         cameraBookmarks.clear()
         savedPose = null
+        cancelCameraMotion()
+        projectionCache = null
+        currentProjections = emptyList()
         onPick = {}
         onTap = null
         onProjection = {}
@@ -478,6 +594,8 @@ class AnatomySurfaceView(context: Context) : SurfaceView(context), AutoCloseable
         if (closed) return false
         when (event.actionMasked) {
             MotionEvent.ACTION_DOWN -> {
+                invalidatePendingPicks()
+                cancelCameraMotion()
                 parent?.requestDisallowInterceptTouchEvent(true)
                 pointerCount = 1
                 downX = event.x
@@ -488,6 +606,7 @@ class AnatomySurfaceView(context: Context) : SurfaceView(context), AutoCloseable
                 moved = false
             }
             MotionEvent.ACTION_POINTER_DOWN -> {
+                cancelCameraMotion()
                 moved = true
                 resetTouch(event)
             }
@@ -517,6 +636,7 @@ class AnatomySurfaceView(context: Context) : SurfaceView(context), AutoCloseable
                     lastTouchY = event.y
                 }
                 updateCamera()
+                publishCachedProjection()
             }
             MotionEvent.ACTION_POINTER_UP -> {
                 moved = true
@@ -559,9 +679,10 @@ class AnatomySurfaceView(context: Context) : SurfaceView(context), AutoCloseable
     private fun pick(x: Float, y: Float) {
         if (asset == null || !uiHelper.isReadyToRender || loadingResources) return
         val requestGeneration = generation
+        val requestPick = pickRevision
         filamentView.pick(x.toInt().coerceIn(0, viewportWidth - 1),
             (viewportHeight - 1 - y.toInt()).coerceIn(0, viewportHeight - 1), main) { result ->
-            if (!closed && requestGeneration == generation) {
+            if (!closed && requestGeneration == generation && requestPick == pickRevision) {
                 val id = entityIds[result.renderable]
                 onPick(id?.takeIf { isNormallyVisible(it) && isRendered(it) })
             }
@@ -618,11 +739,16 @@ class AnatomySurfaceView(context: Context) : SurfaceView(context), AutoCloseable
         val manager = engine.renderableManager
         entityIds.forEach { (entity, id) ->
             val instance = manager.getInstance(entity)
-            if (instance != 0) manager.setLayerMask(instance, 0xff,
-                if (isRendered(id)) 1 else 0)
+            if (instance != 0) {
+                val rendered = isRendered(id)
+                manager.setLayerMask(instance, 0xff, if (rendered) 1 else 0)
+                // A translucent reference shell must not cast a solid silhouette on the organs.
+                manager.setCastShadows(instance, rendered && !isReferenceSkin(id))
+                manager.setReceiveShadows(instance, !isReferenceSkin(id))
+            }
         }
-        // Fully visible skin is also BLEND in our assets; reference skin must not block picking
-        // the structures inside it. Transparent picking uses a separate depth pass in Filament.
+        // The source skin supports BLEND for the reference shell. Keep that shell out of
+        // transparent picking so it cannot block the structures visible through it.
         filamentView.setTransparentPickingEnabled(referenceSkinIds.any(::isNormallyVisible))
     }
 
@@ -632,25 +758,34 @@ class AnatomySurfaceView(context: Context) : SurfaceView(context), AutoCloseable
         // bindings are final, otherwise a copied instance can keep its temporary dummy textures.
         if (loadingResources) return
         val manager = engine.renderableManager
+        val updatedMaterials = hashSetOf<Long>()
         entitiesById.forEach { (id, entities) ->
-            val skin = id in referenceSkinIds
+            val catalogSkin = id in referenceSkinIds
             val reference = isReferenceSkin(id)
             val selected = id in selectedIds && isNormallyVisible(id)
             val cutaway = cutawaySide != 0 && id in cutawayStructureIds && isNormallyVisible(id)
-            if (!skin && !reference && !selected && !cutaway) return@forEach
             entities.forEach entityLoop@ { entity ->
                 val instance = manager.getInstance(entity)
                 if (instance == 0) return@entityLoop
                 for (primitive in 0 until manager.getPrimitiveCount(instance)) {
                     val original = manager.getMaterialInstanceAt(instance, primitive) ?: continue
+                    val appearance = AnatomyAppearance.forMaterialName(original.name)
+                    if (appearance != null && updatedMaterials.add(original.nativeObject)) appearance.applyTo(original)
+                    val skin = catalogSkin || original.name == "skin"
+                    if (!skin && !reference && !selected && !cutaway) continue
+                    // The source skin is BLEND for the optional reference shell. Normal skin
+                    // instead uses the lit masked material, giving it the opaque depth/AO pass.
+                    val opaqueSkin = skin && !reference
                     // Our GLBs use standard glTF PBR, whose ubershader declares this factor.
-                    val replacement = if (cutaway) cutawayMaterial.createInstance("atlas-cutaway")
+                    val replacement = if (cutaway || opaqueSkin) cutawayMaterial.createInstance("atlas-cutaway")
                         else MaterialInstance.duplicate(original, "atlas-override")
-                    if (cutaway) {
-                        replacement.setParameter("cutSign", cutawaySide.toFloat())
-                        val color = cutawayBaseColors[id]?.getOrNull(primitive)
+                    if (cutaway || opaqueSkin) {
+                        replacement.setParameter("cutSign", if (cutaway) cutawaySide.toFloat() else 0f)
+                        val color = appearance?.color() ?: cutawayBaseColors[id]?.getOrNull(primitive)
                             ?: floatArrayOf(1f, 1f, 1f, 1f)
                         replacement.setParameter("baseColorFactor", color[0], color[1], color[2], color[3])
+                        replacement.setParameter("roughnessFactor", appearance?.roughness ?: .73f)
+                        replacement.setParameter("metallicFactor", appearance?.metallic ?: 0f)
                     }
                     if (skin) {
                         // gltfio's double-sided BLEND mode draws back/front passes and ignores
@@ -663,7 +798,7 @@ class AnatomySurfaceView(context: Context) : SurfaceView(context), AutoCloseable
                     }
                     val alpha = if (reference) 0.055f else 1f
                     if (selected) replacement.setParameter("baseColorFactor", 1f, 0.62f, 0.08f, alpha)
-                    else if (reference) replacement.setParameter("baseColorFactor", 0.83f, 0.65f, 0.50f, alpha)
+                    else if (reference) AnatomyAppearance.forMaterialName("skin")!!.applyTo(replacement, alpha)
                     manager.setMaterialInstanceAt(instance, primitive, replacement)
                     highlighted += HighlightBinding(entity, primitive, original, replacement)
                 }
@@ -703,6 +838,7 @@ class AnatomySurfaceView(context: Context) : SurfaceView(context), AutoCloseable
             max(half[0], half[2]) / (halfFovTan * aspect.coerceAtLeast(0.2f))) + half[2]) * 1.12f
         homePose = OrbitPose(Vec3(center[0], center[1], center[2]), distance = fitDistance.coerceAtLeast(0.5f))
         pose = homePose
+        cancelCameraMotion()
         maxDistance = max(6f, homePose.distance * 4f)
     }
 
@@ -721,6 +857,8 @@ class AnatomySurfaceView(context: Context) : SurfaceView(context), AutoCloseable
             upX.toDouble(), upY.toDouble(), upZ.toDouble())
         camera.setProjection(45.0, viewportWidth.toDouble() / viewportHeight,
             0.01, maxDistance.toDouble() + 5.0, Camera.Fov.VERTICAL)
+        // Apply the same actual orbit pose to the light rig before this camera frame is drawn.
+        updateLighting()
         cameraPoseApplied = pose
         cameraWidthApplied = viewportWidth
         cameraHeightApplied = viewportHeight
@@ -752,11 +890,34 @@ class AnatomySurfaceView(context: Context) : SurfaceView(context), AutoCloseable
             main.post {
                 if (!closed) {
                     projectionInFlight = false
-                    if (contentRevision == projectionContentRevision) onProjection(projected)
-                    else projectionDirty = true
+                    if (contentRevision == projectionContentRevision) {
+                        // Reproject with the current camera, not the worker's older camera frame.
+                        projectionCache = ProjectionCache(contentRevision, prepared, projected.map { it.occluded })
+                        projectedPose = null
+                        publishCachedProjection()
+                    } else projectionDirty = true
                 }
             }
         }
+    }
+
+    /** Batch routes off-thread; only the selected instance needs a current-frame skin ray. */
+    private fun publishCachedProjection() {
+        if (closed || projectedPose == pose || viewportWidth < 2 || viewportHeight < 2) return
+        val cached = projectionCache
+        camera.getProjectionMatrix(projection)
+        camera.getViewMatrix(viewMatrix)
+        val currentIds = if (cached?.revision != projectionContentRevision) anchors.mapTo(hashSetOf()) { it.id } else null
+        val projected = cached?.let {
+            AnchorProjector.project(it.anchors, projection, viewMatrix, pose.eye(), viewportWidth, viewportHeight)
+                .mapIndexed { index, anchor -> anchor.copy(occluded = it.occluded[index]) }
+                .filter { anchor -> anchor.id !in priorityAnchorIds && (currentIds == null || anchor.id in currentIds) }
+        }.orEmpty()
+        val selected = AnchorProjector.project(anchors.filter { it.id in priorityAnchorIds },
+            projection, viewMatrix, pose.eye(), viewportWidth, viewportHeight, skinOccluder)
+        currentProjections = projected + selected
+        onProjection(currentProjections)
+        projectedPose = pose
     }
 
     private fun loadSkinOccluder() {
@@ -768,7 +929,9 @@ class AnatomySurfaceView(context: Context) : SurfaceView(context), AutoCloseable
                         skinOccluder = mesh
                         surfaceRouteProjector = SurfaceRouteProjector(mesh)
                         ++projectionContentRevision
+                        projectedPose = null
                         projectionDirty = true
+                        publishCachedProjection()
                         publishProjection()
                     }
                 }
@@ -801,6 +964,7 @@ class AnatomySurfaceView(context: Context) : SurfaceView(context), AutoCloseable
                     if (installedGeneration == generation) onLoadState(false, null)
                 }
             }
+            advanceCameraMotion(frameTimeNanos)
             updateCamera()
             if (renderer.beginFrame(chain, frameTimeNanos)) {
                 renderer.render(filamentView)
@@ -808,6 +972,7 @@ class AnatomySurfaceView(context: Context) : SurfaceView(context), AutoCloseable
                 ++statsFrames
                 ++totalFrames
             }
+            publishCachedProjection()
             if (frameTimeNanos - lastProjectionNs >= projectionIntervalNs) {
                 publishProjection()
             }
@@ -853,13 +1018,51 @@ class AnatomySurfaceView(context: Context) : SurfaceView(context), AutoCloseable
         loadingResources = false
     }
 
-    private fun addLight(x: Float, y: Float, z: Float, intensity: Float) {
+    private fun configureAppearance(quality: ModelQuality) {
+        if (appearanceQuality == quality) return
+        filamentView.setAmbientOcclusionOptions(com.google.android.filament.View.AmbientOcclusionOptions().apply {
+            enabled = true
+            radius = .05f
+            bias = .001f
+            power = 1f
+            intensity = .65f
+            resolution = .5f
+            this.quality = if (quality == ModelQuality.LOW) QualityLevel.LOW else QualityLevel.MEDIUM
+            lowPassFilter = QualityLevel.MEDIUM
+            upsampling = QualityLevel.MEDIUM
+            ssctEnabled = false
+        })
+        // One shadow caster and one cascade keep the mobile cost bounded in both model modes.
+        lights.firstOrNull()?.let { entity ->
+            val manager = engine.lightManager
+            manager.setShadowOptions(manager.getInstance(entity), LightManager.ShadowOptions().apply {
+                mapSize = if (quality == ModelQuality.LOW) 1024 else 2048
+                shadowCascades = 1
+                constantBias = .001f
+                normalBias = 1f
+                shadowNearHint = .1f
+                shadowFarHint = 8f
+            })
+        }
+        appearanceQuality = quality
+    }
+
+    private fun addLight(x: Float, y: Float, z: Float, intensity: Float, color: FloatArray,
+        shadows: Boolean = false) {
         val entity = EntityManager.get().create()
         LightManager.Builder(LightManager.Type.DIRECTIONAL)
-            .color(1f, 0.97f, 0.94f).intensity(intensity).direction(x, y, z)
-            .castShadows(false).build(engine, entity)
+            .color(color[0], color[1], color[2]).intensity(intensity).direction(x, y, z)
+            .castShadows(shadows).build(engine, entity)
         scene.addEntity(entity)
         lights += entity
+    }
+
+    private fun updateLighting() {
+        val manager = engine.lightManager
+        OrbitLighting.directions(pose).forEachIndexed { index, direction ->
+            val instance = manager.getInstance(lights[index])
+            manager.setDirection(instance, direction.x, direction.y, direction.z)
+        }
     }
 
     private fun readAsset(path: String): ByteBuffer {
