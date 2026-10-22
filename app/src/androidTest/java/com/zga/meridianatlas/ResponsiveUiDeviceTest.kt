@@ -97,7 +97,7 @@ class ResponsiveUiDeviceTest {
         return compose.onAllNodes(hasText(text) and hasClickAction() and hasAnyAncestor(isDialog())).onLast()
     }
     private fun search(query: String) {
-        compose.onNodeWithContentDescription("搜索图谱").performClick()
+        openCatalogueIfNeeded(compose)
         compose.onNode(hasSetTextAction()).performTextReplacement(query)
         compose.waitForIdle()
     }

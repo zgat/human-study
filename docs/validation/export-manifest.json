@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "targetApplicationVersion": "0.5.7",
+  "targetApplicationVersion": "0.5.9",
   "files": [
     {
       "path": "appearance-cun.json",
@@ -9,8 +9,8 @@
     },
     {
       "path": "build-evidence.json",
-      "bytes": 22081,
-      "sha256": "9915a13f9bd44f9489c5fc71fe1310fb5f4078e739ca96fa5e8ca94817f80fc6"
+      "bytes": 23083,
+      "sha256": "6d8efa22eca0b45a7de233276525db41cdf5020699054f4f73b91b062d3c7ed3"
     },
     {
       "path": "camera-motion.json",
@@ -65,7 +65,7 @@
     {
       "path": "delivery-evidence.json",
       "bytes": 5376,
-      "sha256": "673e4d115e9084e34a6c041644bb1ddca736d071baa30c4d44e5c10fc38beb98"
+      "sha256": "1a5d6b992a44981dac28e30658c5d8dd6aea3ceb2546f0179212254b04b1f5c2"
     },
     {
       "path": "fascia-content.json",
@@ -183,6 +183,11 @@
       "sha256": "807ff53ffc34b15c95a90a11e4f534a0505f75cb0cf1b59420c2befd31430f4a"
     },
     {
+      "path": "side-actions.json",
+      "bytes": 12260,
+      "sha256": "265d1218fc1d9277660196a671eadf2886189f85e9c00f64dcfc1320bf9ebb25"
+    },
+    {
       "path": "st12-tara.json",
       "bytes": 17517,
       "sha256": "ceb86c08e7d04182ca8d78589fba3560ebecfabbbe9fef79656a2bb9a1208b87"
@@ -194,8 +199,8 @@
     },
     {
       "path": "test-summary.json",
-      "bytes": 8084,
-      "sha256": "a745fc39cfe7c38e5c258ac6a0f2ba8e63914920303857a0a99829dc64e7f837"
+      "bytes": 8642,
+      "sha256": "3fe2deff9a7875daef9de851ab6b432015c08a8849bfb865ede65b0479785bbe"
     },
     {
       "path": "workspace-restore.json",
@@ -203,5 +208,5 @@
       "sha256": "8482981e463c50f58ddb215bb6de8b6c94da44f990dd86640825cb8737e7ac80"
     }
   ],
-  "policyZh": "本索引核对公开目录内全部JSON及CSV的实际字节；历史报告保持其原版本/资产哈希，当前构建和设备未执行边界见workspace-restore.json，不把索引目标版本当作所有报告的重跑版本。"
+  "policyZh": "本索引核对公开目录内全部JSON及CSV实际字节；历史报告保持原版本与资产边界，当前构建及针对性设备验收见side-actions.json，不将索引目标版本作为全部报告重跑版本。"
 }

@@ -1,9 +1,9 @@
 {
-  "applicationVersion": "0.5.7",
+  "applicationVersion": "0.5.9",
   "apk": {
-    "path": "outputs/human-study-0.5.7-arm64.apk",
-    "bytes": 125642904,
-    "sha256": "d2d27a3c87b1ee89d9bd5d2eb2300105f492b35076887de73472eda7d6f1c69d"
+    "path": "outputs/human-study-0.5.9-arm64.apk",
+    "bytes": 125642908,
+    "sha256": "bc490a7b837c500d342bb099f52f1797be7ea638184cd12bae5ac72edb36d708"
   },
   "package": "com.zga.meridianatlas",
   "checks": {

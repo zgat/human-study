@@ -68,7 +68,7 @@ class SelectionStateDeviceTest {
         compose.waitUntil(180_000) {
             compose.onAllNodesWithText("正在载入真实解剖模型").fetchSemanticsNodes().isEmpty()
         }
-        compose.onNodeWithContentDescription("搜索图谱").performClick()
+        openCatalogueIfNeeded(compose)
         compose.onNodeWithContentDescription("搜索经络与穴位").performTextReplacement("BL13")
         compose.onNodeWithContentDescription("定位肺俞").performClick()
         compose.onNodeWithContentDescription("查看完整说明").assertIsDisplayed()

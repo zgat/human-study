@@ -213,7 +213,7 @@ class SelectionCardOcclusionDeviceTest {
 
     private fun locateThroughCatalogue(id: String) {
         val selected = point(id)
-        compose.onNodeWithContentDescription("搜索图谱").performClick()
+        openCatalogueIfNeeded(compose)
         compose.onNodeWithContentDescription("搜索经络与穴位").performTextReplacement(selected.codes.first())
         compose.onNodeWithContentDescription("定位${selected.nameZh}").assertIsDisplayed().performClick()
         compose.waitForIdle()

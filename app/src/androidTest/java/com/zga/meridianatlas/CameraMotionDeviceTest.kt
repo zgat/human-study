@@ -190,7 +190,7 @@ class CameraMotionDeviceTest {
         record("pause-resume", frozen, resumed)
     }
 
-    @Test fun orientationButtonsKeepLocalFramingRestoreSmoothlyAndOnlyResetReturnsToWholeBody() {
+    @Test fun orientationButtonsKeepLocalFramingAndRestoreSmoothlyWithoutResetEntry() {
         ui { viewer.focusOn(Vec3(0f, 1.08f, .1f), 1.2f, Vec3(0f, 0f, 1f), animated = false) }
         val original = pose()
         animate("preset-test-catalogue", catalogueAction("quepen", "缺盆"))
@@ -212,12 +212,7 @@ class CameraMotionDeviceTest {
         val restored = animate("restore-before-location", semanticsAction(
             compose.onNodeWithContentDescription("恢复定位前显示")))
         assertPose(original, restored.end, "Restore must return to the captured pre-location view")
-        ui { viewer.focusOn(pointPosition("st12"), .36f, Vec3(0f, 0f, 1f), animated = false) }
-        val reset = animate("reset-whole-body", semanticsAction(compose.onNodeWithContentDescription("复位")))
-        lateinit var home: Pose
-        ui { home = readPose(field("homePose")) }
-        assertPose(home, reset.end, "RESET must return to whole-body framing")
-        assertTrue(reset.end.distance > local.distance)
+        compose.onNodeWithContentDescription("复位").assertDoesNotExist()
     }
 
     @Test fun observationPresetReleasesTheOldBookmarkBeforeTheNextCatalogueLocation() {
@@ -250,7 +245,7 @@ class CameraMotionDeviceTest {
     /** Fetch the real catalogue callback before native timing starts. performClick's idle wait
      * would hide the first part of a 450 ms renderer animation behind the modal dismissal. */
     private fun catalogueAction(query: String, name: String): () -> Unit {
-        compose.onNodeWithContentDescription("搜索图谱").performClick()
+        openCatalogueIfNeeded(compose)
         compose.onNode(hasSetTextAction()).performTextReplacement(query)
         val node = compose.onNodeWithContentDescription("定位$name")
         node.assertIsDisplayed()

@@ -412,7 +412,7 @@ class LabelContinuityDeviceTest {
     }
 
     private fun catalogueAction(point: Acupoint): () -> Unit {
-        compose.onNodeWithContentDescription("搜索图谱").performClick()
+        openCatalogueIfNeeded(compose)
         compose.onNodeWithContentDescription("搜索经络与穴位").performTextReplacement(point.codes.first())
         val node = compose.onNodeWithContentDescription("定位${point.nameZh}")
         node.assertIsDisplayed()

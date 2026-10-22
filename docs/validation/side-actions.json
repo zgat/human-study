@@ -1,0 +1,370 @@
+{
+  "schemaVersion": 1,
+  "applicationVersion": "0.5.9",
+  "versionCode": 19,
+  "changesZh": [
+    "删除外部搜索框，紧凑屏在目录内点击搜索才弹输入法；宽屏使用固定侧栏。",
+    "左侧为正背左右，删除复位按钮及顶部操作栏；右侧关于、目录、撤销、还原，宽屏省略目录。",
+    "圆形按钮保留48dp触控扩展；短视窗可滚动，所选说明与图层入口在模型底部。",
+    "主界面首次返回提示，2秒内再次返回退出；面板和键盘优先返回，后台清除退出计时。"
+  ],
+  "jvm": {
+    "applicationVersion": "0.5.9",
+    "buildVariant": "debug",
+    "tests": 156,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "passed": 156,
+    "suites": [
+      {
+        "name": "com.zga.meridianatlas.CutawayPolicyTest",
+        "tests": 7,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "reportSha256": "18b6e246b6e377a94ad1f69f41aa5b92aa081a4c5f1c1dfd9f2ccae4facc266d"
+      },
+      {
+        "name": "com.zga.meridianatlas.MeridianCatalogueContentTest",
+        "tests": 5,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "reportSha256": "85f10483e8c15fd3b9d6535008493a3aa47f32b1334b82b92f667ce9ac5c3783"
+      },
+      {
+        "name": "com.zga.meridianatlas.MeridianSelectionPolicyTest",
+        "tests": 5,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "reportSha256": "8c166009d08d36e79b1626e1defd6aba2232703c886577505ea48ad77a22354e"
+      },
+      {
+        "name": "com.zga.meridianatlas.SearchIndexTest",
+        "tests": 3,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "reportSha256": "b844051618fed0f7986de442d9d50e05f5d394f591872a990b02ce22abe7620e"
+      },
+      {
+        "name": "com.zga.meridianatlas.StructureGroupsTest",
+        "tests": 8,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "reportSha256": "c48600cedc2f20712da6942a0920fa2c92f7716d1f1157f1c5c0c07a90c3daa8"
+      },
+      {
+        "name": "com.zga.meridianatlas.TaraContentTest",
+        "tests": 6,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "reportSha256": "ec9b797f0d148790c9b96d56b6008586383016c27d401644cb087eab6b3f0e2d"
+      },
+      {
+        "name": "com.zga.meridianatlas.VisibilityHistoryTest",
+        "tests": 19,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "reportSha256": "72f761ad1f8d89b7f00815212ea0f7005870996422190f033b00f3e9f527b853"
+      },
+      {
+        "name": "com.zga.meridianatlas.VisibilityPolicyTest",
+        "tests": 16,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "reportSha256": "fc4734efa1b1fcb890440155573a2ab8f58c52285cb3bec91d9b31ce891251d9"
+      },
+      {
+        "name": "com.zga.meridianatlas.ui.DoubleBackExitStateTest",
+        "tests": 7,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "reportSha256": "c1b4b57f00b6ca2d885561bcd35501edb2bbb9514486bc7952a1074947538325"
+      },
+      {
+        "name": "com.zga.meridianatlas.ui.FasciaOverlayTest",
+        "tests": 10,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "reportSha256": "de8a5480775ad544ce1a537d99deadf5d14d6418a2ac56e353d6915b1a1dfbdf"
+      },
+      {
+        "name": "com.zga.meridianatlas.ui.LabelLayoutTest",
+        "tests": 11,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "reportSha256": "7815e19b85412106602e6b7c3f8ab6ca4d8428d8451fa3e2e801b770ed1a68ac"
+      },
+      {
+        "name": "com.zga.meridianatlas.ui.OverlayPolicyTest",
+        "tests": 9,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "reportSha256": "e288bdceaf605c35b4c627b01ed72ab7040104da153e005fa12207afd06db998"
+      },
+      {
+        "name": "com.zga.meridianatlas.ui.SelectionCardPlacementTest",
+        "tests": 14,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "reportSha256": "fb8eab4e466f3d02803cd0dd99f929acfe1e6213628b14170eb72f4888bffb25"
+      },
+      {
+        "name": "com.zga.meridianatlas.viewer.AnatomyAppearanceTest",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "reportSha256": "d42d0f5f96096163fc603ad6ad891fbada5d9cc07063e28dd3d26e3a9a80f19e"
+      },
+      {
+        "name": "com.zga.meridianatlas.viewer.CameraMotionTest",
+        "tests": 8,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "reportSha256": "a910145e0bc4c10466a7c888530d0aa6c532926791f90ecb75a3e20c25a4bfbf"
+      },
+      {
+        "name": "com.zga.meridianatlas.viewer.OrbitLightingTest",
+        "tests": 7,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "reportSha256": "361c65287cc22b6eabe5a57a281389ff8cd78aac9cb192540136e698cf38d915"
+      },
+      {
+        "name": "com.zga.meridianatlas.viewer.SkinOccluderTest",
+        "tests": 10,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "reportSha256": "8bb70ff07c81305d8d73b6d44a1f121dbc7b813840bdc9c803492b9005eaca1c"
+      },
+      {
+        "name": "com.zga.meridianatlas.viewer.SurfaceRouteAssetTest",
+        "tests": 1,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "reportSha256": "ce6a124089b67b2d721c13dee8d3ce772b605807c59019499c3aedf84a27a886"
+      },
+      {
+        "name": "com.zga.meridianatlas.viewer.SurfaceRoutesTest",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "reportSha256": "2758a7dfb3dd5e9afd13ead79eb42a1a44198a70fd0977fb118655a1f6cc6e93"
+      },
+      {
+        "name": "com.zga.meridianatlas.viewer.ViewerMathTest",
+        "tests": 6,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "reportSha256": "2241a89be32eb17235921a9c45527b5a27c26ecfb86077ac94d9cc6791e96134"
+      }
+    ],
+    "scopeZh": "本轮JUnit XML计数与摘要；不替代该版本的设备功能回归、安装或性能测试。"
+  },
+  "lint": {
+    "errors": 0,
+    "warnings": 19
+  },
+  "device": {
+    "model": "OPD2404",
+    "androidApi": 36,
+    "buildVariant": "debug",
+    "tests": 15,
+    "passed": 15,
+    "failed": 0,
+    "skipped": 0,
+    "durationSeconds": 94.682,
+    "applicationApkSha256": "67dade53028736e4a4cf8fa96b0bee688e40581caa7fd232f2b9f7091714b223",
+    "testApkSha256": "505eee134d1d1ffc523ceea74d6bdedeb4df0398fe0cc356fa9c4ab519e7c6d2",
+    "instrumentationLogSha256": "e465001f383c1ebba902a3fd4d045868ae92c6bbfe4b26c3d6d3363920e04141",
+    "cases": [
+      {
+        "class": "com.zga.meridianatlas.SearchImeDeviceTest",
+        "test": "compactAllModesUseOneInternalSearchAndStableRealKeyboard",
+        "code": 0
+      },
+      {
+        "class": "com.zga.meridianatlas.SearchImeDeviceTest",
+        "test": "portraitTabletOrRecordedLimitedFixtureKeepsSearchFixedWithRealKeyboard",
+        "code": 0
+      },
+      {
+        "class": "com.zga.meridianatlas.SearchImeDeviceTest",
+        "test": "nativeWideSidebarKeepsItsOnlySearchFixedWithRealKeyboard",
+        "code": 0
+      },
+      {
+        "class": "com.zga.meridianatlas.WorkspaceToolbarDeviceTest",
+        "test": "circularActionsKeepVerticalOrderAndSeparateTouchTargetsIn320dpWidth",
+        "code": 0
+      },
+      {
+        "class": "com.zga.meridianatlas.WorkspaceToolbarDeviceTest",
+        "test": "short320dpWorkspaceScrollsEveryCircularActionIntoBounds",
+        "code": 0
+      },
+      {
+        "class": "com.zga.meridianatlas.WorkspaceToolbarDeviceTest",
+        "test": "unavailableHistoryAndDefaultAnatomyHaveDisabledActions",
+        "code": 0
+      },
+      {
+        "class": "com.zga.meridianatlas.WorkspaceToolbarDeviceTest",
+        "test": "sidebarActionsOmitCatalogueAndItsSpacingWithoutLeavingAnEmptySlot",
+        "code": 0
+      },
+      {
+        "class": "com.zga.meridianatlas.VisibilityRestoreDeviceTest",
+        "test": "halfBodyPresetsUndoAsOneStepAndRetainSideRouteAndAnnotationControls",
+        "code": 0
+      },
+      {
+        "class": "com.zga.meridianatlas.VisibilityRestoreDeviceTest",
+        "test": "groupedOrganHideAndIsolationRestoreAllPiecesWithoutMovingCamera",
+        "code": 0
+      },
+      {
+        "class": "com.zga.meridianatlas.VisibilityRestoreDeviceTest",
+        "test": "modeHistoriesAreIndependentAndUndoEndsTemporaryOralFocusBeforeSaving",
+        "code": 0
+      },
+      {
+        "class": "com.zga.meridianatlas.VisibilityRestoreDeviceTest",
+        "test": "actualRegionalChipAndMuscleMasterSwitchesUndoInOrder",
+        "code": 0
+      },
+      {
+        "class": "com.zga.meridianatlas.VisibilityRestoreDeviceTest",
+        "test": "compactRealWorkspaceToolbarSearchInformationDetailsAndRestoreKeepViewport",
+        "code": 0
+      },
+      {
+        "class": "com.zga.meridianatlas.VisibilityRestoreDeviceTest",
+        "test": "nativeTabletSystemRestoreAndUndoKeepTheSelectedPointAndWorkspace",
+        "code": 0
+      },
+      {
+        "class": "com.zga.meridianatlas.BackNavigationDeviceTest",
+        "test": "mainFirstBackKeepsActivityAndSecondRealBackExits",
+        "code": 0
+      },
+      {
+        "class": "com.zga.meridianatlas.BackNavigationDeviceTest",
+        "test": "aboutPanelBackClosesPanelWithoutCountingAsFirstExitBack",
+        "code": 0
+      }
+    ],
+    "preferencesRestored": true
+  },
+  "ime": {
+    "transitionFrames": 984,
+    "maximumHeaderTitleSearchBoundsChangePx": 0,
+    "realKeyboardInsetsVerified": true,
+    "chineseAndStandardCodeQueries": true,
+    "selectedResultHidesKeyboard": true
+  },
+  "backNavigation": {
+    "windowMillis": 2000,
+    "mainDoubleBackInputMillis": 615,
+    "aboutDismissToFirstMainBackMillis": 146,
+    "afterAboutDoubleBackInputMillis": 642,
+    "secondBackFinishesActivity": true,
+    "toastTextVisuallyConfirmed": "再按一次返回键退出"
+  },
+  "layout": {
+    "compactFixtureDp": [
+      320,
+      568
+    ],
+    "viewportPx": [
+      0,
+      84,
+      840,
+      714
+    ],
+    "systemTopInsetPx": 84,
+    "leftActions": [
+      "正",
+      "背",
+      "左",
+      "右"
+    ],
+    "compactRightActions": [
+      "关于",
+      "目录",
+      "撤销",
+      "还原"
+    ],
+    "wideRightActions": [
+      "关于",
+      "撤销",
+      "还原"
+    ],
+    "noToolbarRow": true,
+    "noResetButton": true
+  },
+  "release": {
+    "apk": {
+      "path": "outputs/human-study-0.5.9-arm64.apk",
+      "bytes": 125642908,
+      "sha256": "bc490a7b837c500d342bb099f52f1797be7ea638184cd12bae5ac72edb36d708",
+      "package": "com.zga.meridianatlas",
+      "versionName": "0.5.9",
+      "versionCode": 19,
+      "minSdk": 29,
+      "targetSdk": 36,
+      "signingPurpose": "local-testing"
+    },
+    "actualInstalledApkSha256": "bc490a7b837c500d342bb099f52f1797be7ea638184cd12bae5ac72edb36d708",
+    "nonDebuggableVerified": true,
+    "localModelAndUiReady": true,
+    "sameProcessBackgroundResume": true,
+    "checks": {
+      "zipCrc": true,
+      "bundledSourceHashes": true,
+      "offlinePermission": true,
+      "arm64Only": true,
+      "elf16KiBAlignment": true,
+      "signature": true,
+      "zip16KiBAlignment": true,
+      "applicationLabel": true
+    }
+  },
+  "assets": {
+    "count": 23,
+    "unchangedSince": "0.5.7",
+    "modelsRebuilt": false,
+    "shaderRecompiled": false,
+    "sourceHashesMatchPackagedAssets": true
+  },
+  "compiledOnlyHistoricalDeviceCases": [
+    "CameraMotionDeviceTest.orientationButtonsKeepLocalFramingAndRestoreSmoothlyWithoutResetEntry",
+    "ResponsiveUiDeviceTest.nativeTabletKeepsCatalogueAndSearchAvailable"
+  ],
+  "scopeZh": [
+    "最终15项为原生宽屏与受限紧凑布局的针对性回归，非历史全部设备套件。",
+    "最终竖屏用例为580×760受限替代布局；独立目录面板仍受真实平板窗口约束，不等同实体手机。",
+    "同生产Debug早轮有原生竖屏IME子用例通过，该轮整体未通过，不能写成两种原生方向均整组通过。",
+    "Android10实体机、其他机型、十分钟性能、断网首次安装和医学逐穴审校未在本版验收。",
+    "仅公开匿名统计和哈希，不公开设备标识、原始截图、用户浏览偏好或本机执行路径。"
+  ]
+}

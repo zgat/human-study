@@ -1,5 +1,5 @@
 {
-  "applicationVersion": "0.5.7",
+  "applicationVersion": "0.5.9",
   "versions": {
     "gradle": "8.14.3",
     "agp": "8.13.2",
@@ -14,8 +14,9 @@
   "commands": [
     "./tools/build.sh :app:testDebugUnitTest :app:assembleDebug :app:assembleDebugAndroidTest",
     "./tools/build.sh :app:assembleRelease",
-    "./tools/build.sh :app:lintDebug",
-    "python3 tools/verify_delivery.py outputs/human-study-0.5.7-arm64.apk"
+    "./tools/build.sh :app:lint",
+    "python3 tools/verify_delivery.py outputs/human-study-0.5.9-arm64.apk",
+    "./tools/build.sh :app:assembleDebugAndroidTest"
   ],
   "releaseParameters": {
     "variant": "release",
@@ -30,7 +31,12 @@
     {
       "path": "app/build.gradle.kts",
       "bytes": 2648,
-      "sha256": "4728cfe9aa04f0a4b106a8e6bf7f2813a4c4cdde771ca751c35e0ccb33bf8da3"
+      "sha256": "b3fa348b91f3bdddb1d77f53e3f9841d3fb819122b2066bf53d258c9a5563ec5"
+    },
+    {
+      "path": "app/libs/filament-utils-v1.78.0-android.aar",
+      "bytes": 1212025,
+      "sha256": "238c02f02ad555328e3b65bed883e0e482dd0948e01e858cb72c6a27907e1aae"
     },
     {
       "path": "app/libs/filament-v1.78.0-android.aar",
@@ -68,9 +74,19 @@
       "sha256": "64278092fda6705e033906324bf573cdd4152c59fac0fafa20d37a7a666c53d0"
     },
     {
+      "path": "app/src/androidTest/java/com/zga/meridianatlas/BackNavigationDeviceTest.kt",
+      "bytes": 13017,
+      "sha256": "90854db81d0670e86213a340498ed5b5f4dfd02b7671dc1c0b3422f5934e9300"
+    },
+    {
       "path": "app/src/androidTest/java/com/zga/meridianatlas/CameraMotionDeviceTest.kt",
-      "bytes": 21735,
-      "sha256": "16f144cbd27bcd49abae1263d8e1631c48fd20ffaac07fe72a06c04fe3e42e0c"
+      "bytes": 21339,
+      "sha256": "3f821df96b55105b24fc49a2efd97d8e373b6aa0a37f44a3e3f0dee3afa1e433"
+    },
+    {
+      "path": "app/src/androidTest/java/com/zga/meridianatlas/CatalogueTestActions.kt",
+      "bytes": 578,
+      "sha256": "5eae6dee94f5ba710f5b82def2a0fe95c93b721dbf6bf9ab6dd9a91a8e034866"
     },
     {
       "path": "app/src/androidTest/java/com/zga/meridianatlas/FasciaDeviceTest.kt",
@@ -94,8 +110,8 @@
     },
     {
       "path": "app/src/androidTest/java/com/zga/meridianatlas/LabelContinuityDeviceTest.kt",
-      "bytes": 31213,
-      "sha256": "e1a685ac1fa8279b7586302404cc1393933b878cf620b4aebb0f3563163e7e12"
+      "bytes": 31176,
+      "sha256": "8238058e229402d09f5435fc29848da92f42adf5d17420ded1ddecf97e3ead56"
     },
     {
       "path": "app/src/androidTest/java/com/zga/meridianatlas/QaFailureRule.kt",
@@ -104,18 +120,23 @@
     },
     {
       "path": "app/src/androidTest/java/com/zga/meridianatlas/ResponsiveUiDeviceTest.kt",
-      "bytes": 41788,
-      "sha256": "cab3d9f5a9559378b4c5f4ee1f3715a52888cbb2835f13b48f51a9d5e8d2d6b6"
+      "bytes": 41751,
+      "sha256": "aa41900d68da775e230170a819f858652f149bcde6b7edb22e6f0cab687cbe04"
+    },
+    {
+      "path": "app/src/androidTest/java/com/zga/meridianatlas/SearchImeDeviceTest.kt",
+      "bytes": 29578,
+      "sha256": "a987f8faad1c64e340b962af317c98d1e048dc09e0eaeb98f7d690abbcaf7aef"
     },
     {
       "path": "app/src/androidTest/java/com/zga/meridianatlas/SelectionCardOcclusionDeviceTest.kt",
-      "bytes": 25788,
-      "sha256": "b519af9d4b2624278107d304ade22b76e3d12c471cee807ceae08dab218dc7f0"
+      "bytes": 25751,
+      "sha256": "01f65013544ad8d95d447141ceb0cd4eda93a640bf9a8cace19453eaaad083ab"
     },
     {
       "path": "app/src/androidTest/java/com/zga/meridianatlas/SelectionStateDeviceTest.kt",
-      "bytes": 7519,
-      "sha256": "3748e22d344d7be7f836a696054843da1c4917c29e6e4a10a1e8c2de23e1f69c"
+      "bytes": 7482,
+      "sha256": "4299a25a89319293d5c27f6d36c8a0f55b91574b063cf05c40bf292cd87709ca"
     },
     {
       "path": "app/src/androidTest/java/com/zga/meridianatlas/St12TaraDeviceTest.kt",
@@ -124,13 +145,18 @@
     },
     {
       "path": "app/src/androidTest/java/com/zga/meridianatlas/StructureGroupDeviceTest.kt",
-      "bytes": 10703,
-      "sha256": "699f2a404c66d78369cf8d869d92aadaf4f02843ed491257f048fb967c9f3d4a"
+      "bytes": 10666,
+      "sha256": "63a291d32f314e4e631f1a33a3c768f3dadd07f6ba6cb4f59edcde12b362d739"
+    },
+    {
+      "path": "app/src/androidTest/java/com/zga/meridianatlas/VisibilityRestoreDeviceTest.kt",
+      "bytes": 35095,
+      "sha256": "04aa3bbd8b9d2f7fe97295458678b744aac76f91dbc4922b906603b27d7c9183"
     },
     {
       "path": "app/src/androidTest/java/com/zga/meridianatlas/WorkspaceToolbarDeviceTest.kt",
-      "bytes": 2404,
-      "sha256": "56e3af2380586d8681c12c4c76d6a83c2d9445765c04d6d741454d3965e038d8"
+      "bytes": 9324,
+      "sha256": "7b790dc58b55d3b12a82f21498a5f2a3be33f54c328a4efd153b9674ea07c0d6"
     },
     {
       "path": "app/src/main/AndroidManifest.xml",
@@ -324,13 +350,13 @@
     },
     {
       "path": "app/src/main/java/com/zga/meridianatlas/ui/AtlasApp.kt",
-      "bytes": 55189,
-      "sha256": "ba3cf91c0461b9b6b4e2d0d3e47ea25ab03e6cb1700db9883b4bec76dde75717"
+      "bytes": 56105,
+      "sha256": "2b6608455cbb2527d26fda014dd83f80d8dd4bec7551b75cfbad8d8c65148fe9"
     },
     {
       "path": "app/src/main/java/com/zga/meridianatlas/ui/AtlasCatalogue.kt",
-      "bytes": 23409,
-      "sha256": "ba008ea8f184589b4054b328af0a0a13b32b246e2af54c8b653587c7ec7d537e"
+      "bytes": 23358,
+      "sha256": "40ed1dd752d5cd11b375e2f600784c9d2abcef602830213876878a6be47f4c19"
     },
     {
       "path": "app/src/main/java/com/zga/meridianatlas/ui/AtlasOverlay.kt",
@@ -341,6 +367,11 @@
       "path": "app/src/main/java/com/zga/meridianatlas/ui/AtlasViewModel.kt",
       "bytes": 15238,
       "sha256": "060d0c424496c0a9c4b5b088a7879c268b37228c6cf24d254aa8980bdb34ffe9"
+    },
+    {
+      "path": "app/src/main/java/com/zga/meridianatlas/ui/DoubleBackExit.kt",
+      "bytes": 3032,
+      "sha256": "80b5434b7957566604728b7768c56aeaf38c0e1236c67cb3457ec905788d8222"
     },
     {
       "path": "app/src/main/java/com/zga/meridianatlas/ui/FasciaOverlay.kt",
@@ -379,8 +410,8 @@
     },
     {
       "path": "app/src/main/java/com/zga/meridianatlas/ui/WorkspaceToolbar.kt",
-      "bytes": 2784,
-      "sha256": "9dcc1d3ae962fdfc5fbc6daf65589f6973ae2eb09199e5be2f0e0110de54246e"
+      "bytes": 2885,
+      "sha256": "1b49bb25be4d0e696d4fff119665a8e420adee65e6d36ef752fb4208a406edf1"
     },
     {
       "path": "app/src/main/java/com/zga/meridianatlas/viewer/AnatomyAppearance.kt",
@@ -488,6 +519,11 @@
       "sha256": "66b46edf3b9543b6937595aff1d9fb4f150bfb120fbe2c0efffbc28b354e8669"
     },
     {
+      "path": "app/src/test/java/com/zga/meridianatlas/ui/DoubleBackExitStateTest.kt",
+      "bytes": 2267,
+      "sha256": "8e289a6a40b68219a52d27d75409da56b320f8753fe0659e64a509629f452e38"
+    },
+    {
       "path": "app/src/test/java/com/zga/meridianatlas/ui/FasciaOverlayTest.kt",
       "bytes": 7589,
       "sha256": "00f53f30d9ffb35bec0af7c65458379a3c1bedb6c04cf33ac41d6d2acaf07714"
@@ -548,40 +584,25 @@
       "sha256": "b688c4266d77c22b568a43f0529ab1b023b01765a426d113ae688a2cb13200b7"
     },
     {
-      "path": "gradle.properties",
-      "bytes": 158,
-      "sha256": "6120cd7184e920474c98fafa5b5ff100c0db528054bd4cb3651d90edc16afe8d"
-    },
-    {
-      "path": "gradle/wrapper/gradle-wrapper.jar",
-      "bytes": 43764,
-      "sha256": "7d3a4ac4de1c32b59bc6a4eb8ecb8e612ccd0cf1ae1e99f66902da64df296172"
-    },
-    {
       "path": "gradle/wrapper/gradle-wrapper.properties",
       "bytes": 253,
       "sha256": "b3f0251c0bc35050e7e8e9d3b0a9e0c43d5b0001b784c63a2d8863d7a59fcf04"
     },
     {
-      "path": "gradlew",
-      "bytes": 8755,
-      "sha256": "fb49f8cb2e5b1d83fba3dcc2c0dd0934c5655cbaf8bd1510ada7cc02692095ca"
+      "path": "gradle.properties",
+      "bytes": 158,
+      "sha256": "6120cd7184e920474c98fafa5b5ff100c0db528054bd4cb3651d90edc16afe8d"
     },
     {
       "path": "settings.gradle.kts",
       "bytes": 279,
       "sha256": "3883e45745b9d40a1f068aa3c19caa6dfce1de6af3fbc59cf1ad9ba5a7797bea"
-    },
-    {
-      "path": "tools/build.sh",
-      "bytes": 653,
-      "sha256": "c47c70aa304b6701caa5f6666247b9ed1f046ed6e740ec48a2dbe21d1f9ea41e"
     }
   ],
   "releaseArtifact": {
-    "path": "outputs/human-study-0.5.7-arm64.apk",
-    "bytes": 125642904,
-    "sha256": "d2d27a3c87b1ee89d9bd5d2eb2300105f492b35076887de73472eda7d6f1c69d"
+    "path": "outputs/human-study-0.5.9-arm64.apk",
+    "bytes": 125642908,
+    "sha256": "bc490a7b837c500d342bb099f52f1797be7ea638184cd12bae5ac72edb36d708"
   },
   "scopeZh": "构建输入与当前APK字节核验；不表示目标版本已重新执行历史整轮功能或性能测试。"
 }

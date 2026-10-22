@@ -24,6 +24,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
@@ -64,6 +65,7 @@ fun MeridianAtlasApp(model: AtlasViewModel = viewModel()) {
         onBackground = Color(0xffedf5f8), onSurface = Color(0xffedf5f8), onSurfaceVariant = Muted, outline = LineColor)) {
         CompositionLocalProvider(LocalContentColor provides Color(0xffedf5f8)) {
         if (state.loading || state.data == null) {
+            DoubleBackExit(enabled = !WindowInsets.isImeVisible)
             Box(Modifier.fillMaxSize().background(Ink).systemBarsPadding(), contentAlignment = Alignment.Center) {
                 Column(horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(16.dp)) {
                     Icon(Icons.Outlined.AccessibilityNew, null, Modifier.size(54.dp), Accent)
@@ -89,10 +91,10 @@ private fun AtlasWorkspace(state: AtlasUiState, model: AtlasViewModel) {
     var loadingModel by remember { mutableStateOf(true) }
     var modelError by remember { mutableStateOf<String?>(null) }
     var panel by remember { mutableStateOf<Panel?>(null) }
+    DoubleBackExit(enabled = panel == null && !WindowInsets.isImeVisible)
     var licenseDocument by remember { mutableStateOf<String?>(null) }
     var queries by remember { mutableStateOf(AtlasMode.entries.associateWith { "" }) }
     val query = queries.getValue(state.mode)
-    var searchRequest by remember { mutableIntStateOf(0) }
     val focusManager = LocalFocusManager.current
     val keyboard = LocalSoftwareKeyboardController.current
     var activeSide by remember { mutableIntStateOf(0) }
@@ -113,6 +115,7 @@ private fun AtlasWorkspace(state: AtlasUiState, model: AtlasViewModel) {
     val showSelectionCard = state.layer.details && (displayPoint != null || displayStructure != null || fascialSelection != null)
     var selectionCardBounds by remember { mutableStateOf<Rect?>(null) }
     var viewControlsBounds by remember { mutableStateOf<Rect?>(null) }
+    var workspaceActionsBounds by remember { mutableStateOf<Rect?>(null) }
     var bottomControlsBounds by remember { mutableStateOf<Rect?>(null) }
     var gestureHintBounds by remember { mutableStateOf<Rect?>(null) }
     val selectedInstance = point?.instances?.let { it.getOrNull(activeSide)?.takeIf { item -> item.position != null } ?: it.firstOrNull { item -> item.position != null } }
@@ -302,21 +305,17 @@ private fun AtlasWorkspace(state: AtlasUiState, model: AtlasViewModel) {
     BoxWithConstraints(Modifier.fillMaxSize().background(Ink).systemBarsPadding()) {
         val wide = maxWidth >= 840.dp
         Column(Modifier.fillMaxSize()) {
-            WorkspaceToolbar(canUndo = state.canUndoVisibility, canRestoreAnatomy = state.canResetAnatomy,
-                onSearch = { searchRequest++; panel = Panel.CATALOGUE }, onAbout = { panel = Panel.ABOUT },
-                onUndo = { if (model.undoVisibility()) viewer.discardCameraBookmark(state.mode.name) },
-                onRestoreAnatomy = { if (model.restoreAnatomy()) viewer.discardCameraBookmark(state.mode.name) },
-                onSelectionDetails = if (showSelectionCard) ::showSelectionDetails else null)
             Row(Modifier.weight(1f).fillMaxWidth()) {
                 Column(Modifier.weight(1f).fillMaxHeight()) {
-                    Box(Modifier.weight(1f).fillMaxWidth().clip(RoundedCornerShape(22.dp))) {
+                    BoxWithConstraints(Modifier.weight(1f).fillMaxWidth().clip(RoundedCornerShape(22.dp))) {
+                        val compactViewport = maxHeight < 300.dp
                         AndroidView(factory = { viewer }, modifier = Modifier.fillMaxSize())
                         AtlasOverlay(projections, overlay, state.layer.labels, state.selectedPoint,
                             !state.layer.skin && state.layer.focusIds.isEmpty() && (state.layer.points || state.layer.lines), density,
                             labelExclusion = selectionCardBounds.takeIf { showSelectionCard }, selectedAnchorId = selectedAnchorId)
                         FasciaOverlay(projections, fascialOverlay, selectedFascialTarget, state.layer.labels, density,
                             selectionCardBounds.takeIf { showSelectionCard })
-                        if (point == null && displayStructure == null && fascialSelection == null) Column(
+                        if (!compactViewport && point == null && displayStructure == null && fascialSelection == null) Column(
                             Modifier.align(Alignment.TopStart).padding(18.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
                             Text("成人男性 · 离线图谱", fontSize = 10.sp, color = Muted)
                             Text(when (state.mode) { AtlasMode.OVERVIEW -> "观察皮肤、内脏与骨骼的空间关系"; AtlasMode.MERIDIANS -> "点按体表查看附近穴位，联动所属经络"; AtlasMode.MUSCLES -> "点选查看说明，可逐块隐藏肌肉" }, fontSize = 11.sp, color = Muted)
@@ -326,27 +325,33 @@ private fun AtlasWorkspace(state: AtlasUiState, model: AtlasViewModel) {
                             }
                             if (state.layer.cutawaySide != CutawaySide.NONE) Text("${state.layer.cutawaySide.title} · 按人体自身左右", color = Accent, fontSize = 10.sp)
                         }
-                        Column(Modifier.align(Alignment.CenterEnd).padding(end = 12.dp)
-                            .onGloballyPositioned { viewControlsBounds = it.boundsInParent() }, verticalArrangement = Arrangement.spacedBy(6.dp)) {
+                        Column(Modifier.align(Alignment.CenterStart).padding(start = 12.dp, top = 8.dp, bottom = 8.dp)
+                            .onGloballyPositioned { viewControlsBounds = it.boundsInParent() }
+                            .testTag("view-controls").verticalScroll(rememberScrollState()),
+                            verticalArrangement = Arrangement.spacedBy(6.dp)) {
                             listOf("正" to CameraPreset.FRONT, "背" to CameraPreset.BACK, "左" to CameraPreset.LEFT, "右" to CameraPreset.RIGHT).forEach { (title, preset) ->
-                                Surface(onClick = { viewer.applyCameraPreset(preset) }, shape = CircleShape, color = PanelColor.copy(alpha = .93f), border = BorderStroke(1.dp, LineColor)) {
-                                    Box(Modifier.size(36.dp), contentAlignment = Alignment.Center) { Text(title, fontSize = 12.sp, color = Muted) }
-                                }
+                                WorkspaceActionButton(title, title, onClick = { viewer.applyCameraPreset(preset) })
                             }
-                            RoundAction(Icons.Outlined.CenterFocusStrong, "复位") { viewer.applyCameraPreset(CameraPreset.RESET) }
                         }
-                        Row(Modifier.align(Alignment.BottomStart).padding(16.dp)
+                        WorkspaceActions(canUndo = state.canUndoVisibility, canRestoreAnatomy = state.canResetAnatomy,
+                            onAbout = { dismissKeyboard(); panel = Panel.ABOUT },
+                            onCatalogue = if (wide) null else ({ dismissKeyboard(); panel = Panel.CATALOGUE }),
+                            onUndo = { if (model.undoVisibility()) viewer.discardCameraBookmark(state.mode.name) },
+                            onRestoreAnatomy = { if (model.restoreAnatomy()) viewer.discardCameraBookmark(state.mode.name) },
+                            modifier = Modifier.align(Alignment.CenterEnd).padding(end = 12.dp, top = 8.dp, bottom = 8.dp)
+                                .onGloballyPositioned { workspaceActionsBounds = it.boundsInParent() })
+                        Row(Modifier.align(Alignment.BottomCenter).padding(bottom = 12.dp)
                             .onGloballyPositioned { bottomControlsBounds = it.boundsInParent() }, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                             RoundAction(Icons.Outlined.Tune, "图层控制") { panel = Panel.LAYERS }
-                            if (!wide) RoundAction(Icons.Outlined.FormatListBulleted, "图谱目录") { searchRequest = 0; panel = Panel.CATALOGUE }
+                            if (showSelectionCard) RoundAction(Icons.Outlined.Subject, "所选项目说明", ::showSelectionDetails)
                             if (state.canRestore) RoundAction(Icons.Outlined.Undo, "恢复定位前显示") { selectedFascialTarget = null; model.restore(); viewer.restoreCamera(state.mode.name) }
                         }
-                        Text("双指缩放 / 平移 · ${if (state.quality == ModelQuality.LOW) "流畅" else "标准"}",
-                            fontSize = 10.sp, color = Muted, modifier = Modifier.align(Alignment.BottomEnd).padding(18.dp)
+                        if (!compactViewport) Text("双指缩放 / 平移 · ${if (state.quality == ModelQuality.LOW) "流畅" else "标准"}",
+                            fontSize = 10.sp, color = Muted, modifier = Modifier.align(Alignment.BottomCenter).padding(bottom = 68.dp)
                                 .onGloballyPositioned { gestureHintBounds = it.boundsInParent() })
                         if (showSelectionCard) {
                             FloatingSelectionCard("${state.mode}:$cardAnchorId", primaryCardPoint, nearbyCardPoints,
-                                listOfNotNull(viewControlsBounds, bottomControlsBounds, gestureHintBounds).map {
+                                listOfNotNull(viewControlsBounds, workspaceActionsBounds, bottomControlsBounds, gestureHintBounds.takeUnless { compactViewport }).map {
                                     LabelRect(it.left-4*density, it.top-4*density, it.right+4*density, it.bottom+4*density)
                                 }, onBounds = { selectionCardBounds = it }) { summary, cardModifier ->
                                 if (fascialSelection != null) FascialSelectionCard(fascialSelection.first, fascialSelection.second,
@@ -375,7 +380,7 @@ private fun AtlasWorkspace(state: AtlasUiState, model: AtlasViewModel) {
                         AtlasCatalogue(data, state, query, ::updateQuery,
                             onMeridian = model::selectMeridianForCatalogue, onToggleMeridian = model::toggleMeridian,
                             onSetMeridians = model::setMeridians,
-                            onPoint = { focusPoint(it) }, onStructure = { focusStructure(it) }, requestSearchFocus = searchRequest)
+                            onPoint = { focusPoint(it) }, onStructure = { focusStructure(it) })
                     }
                 }
             }
@@ -385,7 +390,7 @@ private fun AtlasWorkspace(state: AtlasUiState, model: AtlasViewModel) {
                     val selected = mode == state.mode
                     val icon = when (mode) { AtlasMode.OVERVIEW -> Icons.Outlined.AccessibilityNew; AtlasMode.MERIDIANS -> Icons.Outlined.Route; AtlasMode.MUSCLES -> Icons.Outlined.Layers }
                     Column(Modifier.weight(1f).clip(RoundedCornerShape(14.dp)).background(if (selected) Accent.copy(alpha = .10f) else Color.Transparent)
-                        .clickable { dismissKeyboard(); viewer.invalidatePendingPicks(); searchRequest = 0; model.mode(mode); if (panel == Panel.CATALOGUE) panel = null }.padding(vertical = 9.dp), horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(3.dp)) {
+                        .clickable { dismissKeyboard(); viewer.invalidatePendingPicks(); model.mode(mode); if (panel == Panel.CATALOGUE) panel = null }.padding(vertical = 9.dp), horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(3.dp)) {
                         Icon(icon, mode.title, Modifier.size(22.dp), if (selected) Accent else Muted)
                         Text(mode.title, fontSize = 11.sp, color = if (selected) Accent else Muted)
                     }
@@ -395,13 +400,17 @@ private fun AtlasWorkspace(state: AtlasUiState, model: AtlasViewModel) {
         if (panel != null && !(wide && panel == Panel.CATALOGUE)) {
             ModalBottomSheet(onDismissRequest = { panel = null }, containerColor = PanelColor, contentColor = Color.White,
                 sheetState = rememberModalBottomSheetState(skipPartiallyExpanded = true)) {
-                Box(Modifier.fillMaxWidth().heightIn(max = this@BoxWithConstraints.maxHeight * .88f).navigationBarsPadding()) {
+                // Filling the available sheet height keeps Expanded at offset zero during IME animation.
+                // The catalogue header stays fixed; its weighted results area takes the height change.
+                val panelSize = if (panel == Panel.CATALOGUE) Modifier.fillMaxHeight()
+                    else Modifier.heightIn(max = this@BoxWithConstraints.maxHeight * .88f)
+                Box(Modifier.fillMaxWidth().then(panelSize).navigationBarsPadding()) {
                     when (panel) {
                         Panel.CATALOGUE -> AtlasCatalogue(data, state, query, ::updateQuery,
                             onMeridian = model::selectMeridianForCatalogue, onToggleMeridian = model::toggleMeridian,
                             onSetMeridians = model::setMeridians,
                             onPoint = { focusPoint(it); panel = null },
-                            onStructure = { focusStructure(it); panel = null }, requestSearchFocus = searchRequest)
+                            onStructure = { focusStructure(it); panel = null })
                         Panel.LAYERS -> LayersPanel(data, state, model, onReset = {
                             model.restoreAnatomy(); viewer.discardCameraBookmark(state.mode.name)
                         })
@@ -668,7 +677,7 @@ private fun toggleInternalRelations(layer: LayerState): LayerState =
         DetailText("使用边界", "三维标记和经络线是学习用定位示意，定位校对状态逐条记录。口腔等局部结构以实际提供的网格为限。本版本不提供针刺操作指导。")
         DetailText("传统主治资料", "传统主治用于理解中医文献中的穴位用途，不等同于现代临床疗效证据。各条目保留资料来源，内容仍待专业审校。")
         DetailText("TARA 英文原文", "TARA 穴位知识资料独立收录，保留原文、出处及 CC BY-NC-ND 4.0 许可；不提供本模型的坐标校准，也不替换国标中文定位。原始资料、版本及使用条件见离线来源与许可。")
-        DetailText("交互", "单指旋转，双指缩放和平移。顶部搜索打开当前模式目录；“撤销”退回上一步组织显示操作，“还原”一键恢复当前模式的默认组织显示。各模式独立保留最近32步，退出应用后清空撤销记录。还原与撤销保留观察角度、穴位高亮和中文标注设置。点选结构查看说明，也可用图层面板逐层隐藏。")
+        DetailText("交互", "单指旋转，双指缩放和平移。左侧“正／背／左／右”切换观察方向，保留当前局部位置和缩放；右侧提供关于、撤销、还原，紧凑屏另有目录入口。目录内可搜索当前模式的结构或穴位；“撤销”退回上一步组织显示操作，“还原”一键恢复当前模式的默认组织显示。各模式独立保留最近32步，退出应用后清空撤销记录。还原与撤销保留观察角度、穴位高亮和中文标注设置。点选结构查看说明，也可用图层面板逐层隐藏。主界面连续两次返回退出，首次返回提示；有面板或键盘时先收起。")
     }
 }
 @Composable private fun LicensePanel(initialDocument: String? = null) {

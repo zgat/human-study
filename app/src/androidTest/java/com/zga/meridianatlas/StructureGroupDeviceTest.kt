@@ -128,7 +128,7 @@ class StructureGroupDeviceTest {
         awaitModel()
         val proximal = group("回肠近侧部")
         val viewer = surface()
-        compose.onNodeWithContentDescription("搜索图谱").performClick()
+        openCatalogueIfNeeded(compose)
         compose.onNodeWithContentDescription("搜索解剖结构").performTextReplacement(proximal.representative.nameZh)
         val row = hasText(proximal.representative.nameZh) and hasClickAction()
         compose.onAllNodes(row).assertCountEquals(1)

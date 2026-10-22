@@ -17,9 +17,8 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.focus.FocusRequester
-import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.semantics.contentDescription
@@ -48,12 +47,10 @@ internal fun AtlasCatalogue(
     onToggleMeridian: (String) -> Unit,
     onSetMeridians: (Set<String>, Boolean) -> Unit,
     onPoint: (Acupoint) -> Unit,
-    onStructure: (AnatomyStructure) -> Unit,
-    requestSearchFocus: Int = 0
+    onStructure: (AnatomyStructure) -> Unit
 ) {
     val focus = LocalFocusManager.current
     val keyboard = LocalSoftwareKeyboardController.current
-    val searchFocus = remember { FocusRequester() }
     val title = when (state.mode) {
         AtlasMode.MERIDIANS -> "经络与穴位"
         AtlasMode.MUSCLES -> "肌肉目录"
@@ -79,30 +76,24 @@ internal fun AtlasCatalogue(
         AtlasMode.MUSCLES -> "${data.structureGroups.entries.count { it.representative.system == "muscle" }} 个肌肉结构 · 分区分层"
         AtlasMode.OVERVIEW -> "${data.structureGroups.entries.size} 个结构 · 解剖系统"
     }
-    LaunchedEffect(requestSearchFocus) {
-        if (requestSearchFocus > 0) {
-            searchFocus.requestFocus()
-            keyboard?.show()
-        }
-    }
     val choosePoint: (Acupoint) -> Unit = {
         focus.clearFocus(); keyboard?.hide(); onPoint(it)
     }
     val chooseStructure: (AnatomyStructure) -> Unit = {
         focus.clearFocus(); keyboard?.hide(); onStructure(it)
     }
-    Column(Modifier.fillMaxSize()) {
-        Row(Modifier.fillMaxWidth().padding(horizontal = 20.dp, vertical = 17.dp),
+    Column(Modifier.fillMaxSize().testTag("atlas-catalogue")) {
+        Row(Modifier.fillMaxWidth().padding(horizontal = 20.dp, vertical = 17.dp).testTag("atlas-catalogue-header"),
             verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(10.dp)) {
             Icon(icon, null, tint = MaterialTheme.colorScheme.primary, modifier = Modifier.size(24.dp))
             Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(4.dp)) {
-                Text(title, fontWeight = FontWeight.SemiBold, fontSize = 21.sp)
+                Text(title, modifier = Modifier.testTag("atlas-catalogue-title"), fontWeight = FontWeight.SemiBold, fontSize = 21.sp)
                 Text(subtitle, color = MaterialTheme.colorScheme.onSurfaceVariant, fontSize = 11.sp)
             }
         }
         OutlinedTextField(
             value = query, onValueChange = onQuery, singleLine = true,
-            modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp).focusRequester(searchFocus)
+            modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp).testTag("atlas-catalogue-search")
                 .semantics { contentDescription = searchDescription },
             placeholder = { Text(placeholder, fontSize = 12.sp, maxLines = 1) },
             leadingIcon = { Icon(Icons.Outlined.Search, null) },
@@ -113,11 +104,13 @@ internal fun AtlasCatalogue(
             },
             shape = RoundedCornerShape(14.dp)
         )
-        when (state.mode) {
-            AtlasMode.MERIDIANS -> MeridianCatalogue(data, state, query, onMeridian,
-                onToggleMeridian, onSetMeridians, choosePoint, Modifier.weight(1f))
-            AtlasMode.MUSCLES -> StructureCatalogue(data, state, query, true, chooseStructure, Modifier.weight(1f))
-            AtlasMode.OVERVIEW -> StructureCatalogue(data, state, query, false, chooseStructure, Modifier.weight(1f))
+        Box(Modifier.weight(1f).fillMaxWidth().testTag("atlas-catalogue-results")) {
+            when (state.mode) {
+                AtlasMode.MERIDIANS -> MeridianCatalogue(data, state, query, onMeridian,
+                    onToggleMeridian, onSetMeridians, choosePoint, Modifier.fillMaxSize())
+                AtlasMode.MUSCLES -> StructureCatalogue(data, state, query, true, chooseStructure, Modifier.fillMaxSize())
+                AtlasMode.OVERVIEW -> StructureCatalogue(data, state, query, false, chooseStructure, Modifier.fillMaxSize())
+            }
         }
     }
 }
