@@ -34,11 +34,6 @@
       "sha256": "b3fa348b91f3bdddb1d77f53e3f9841d3fb819122b2066bf53d258c9a5563ec5"
     },
     {
-      "path": "app/libs/filament-utils-v1.78.0-android.aar",
-      "bytes": 1212025,
-      "sha256": "238c02f02ad555328e3b65bed883e0e482dd0948e01e858cb72c6a27907e1aae"
-    },
-    {
       "path": "app/libs/filament-v1.78.0-android.aar",
       "bytes": 5299967,
       "sha256": "329bca0503e515bc15e433383f0dc091424d6921050da0d11a14839432e4118d"

@@ -9,8 +9,8 @@
     },
     {
       "path": "build-evidence.json",
-      "bytes": 23083,
-      "sha256": "6d8efa22eca0b45a7de233276525db41cdf5020699054f4f73b91b062d3c7ed3"
+      "bytes": 22902,
+      "sha256": "490673b96291b148f9d727edd61fa1bc4cb105392d4b2ffd026b9c130dd23a2b"
     },
     {
       "path": "camera-motion.json",
